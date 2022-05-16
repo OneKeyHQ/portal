@@ -48,7 +48,6 @@ export const Header: FC = () => {
             height: '100%',
             paddingTop: 78,
             paddingBottom: 78,
-            backgroundColor: '#e9e9e9',
           }}
         >
           <Background />
