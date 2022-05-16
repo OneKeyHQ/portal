@@ -106,6 +106,7 @@ export const LeftArea: FC<LeftAreaProps> = (props) => {
                   width: '90%',
                   height: 'auto',
                   marginTop: -180,
+                  marginLeft: 'auto',
                 }}
                 src="./images/OneKeyLite.png"
                 alt="OneKeyLite"

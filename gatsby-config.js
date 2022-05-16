@@ -43,7 +43,7 @@ module.exports = {
           breakpoints: [414, 960, 1200, 1440, 1920],
           placeholder: "blurred",
           backgroundColor: `transparent`,
-        }
+        },
       }
     },
     `gatsby-plugin-less`
