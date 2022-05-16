@@ -7,7 +7,6 @@ export * from './Hidden';
 export * from './PageFooter';
 export * from './Navigation';
 export * from './Logo';
-export * from './Marquee';
 export * from './RoundCursor';
 export * from './SEO';
 export * from './Swiper';

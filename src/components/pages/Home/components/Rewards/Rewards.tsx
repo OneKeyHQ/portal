@@ -1,6 +1,8 @@
 import { FC } from 'react';
 
-import { Box, Img, Marquee, Section } from '../../../../base';
+import Marquee from 'react-fast-marquee';
+
+import { Box, Img, Section } from '../../../../base';
 
 import logo1 from './images/logo01.svg';
 import logo2 from './images/logo02.svg';
@@ -44,32 +46,25 @@ export const Rewards: FC = () => (
         paddingBottom: 64,
       }}
     >
-      <Marquee>
-        <Box
-          css={{
-            display: 'flex',
-            alignItems: 'center',
-            userSelect: 'none',
-            userDrag: 'none',
-          }}
-        >
-          {images.map((image) => (
-            <Img
-              xs={{
-                width: 182,
-                height: 60,
-              }}
-              m={{
-                width: 330,
-                height: 110,
-              }}
-              draggable={false}
-              key={image}
-              src={image}
-              alt="logo"
-            />
-          ))}
-        </Box>
+      <Marquee gradientWidth={0}>
+        {images.map((image) => (
+          <Img
+            xs={{
+              width: 182,
+              height: 60,
+              userSelect: 'none',
+              userDrag: 'none',
+            }}
+            m={{
+              width: 330,
+              height: 110,
+            }}
+            draggable={false}
+            key={image}
+            src={image}
+            alt="logo"
+          />
+        ))}
       </Marquee>
     </Box>
   </Section>
