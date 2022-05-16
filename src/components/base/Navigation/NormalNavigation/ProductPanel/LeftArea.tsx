@@ -87,14 +87,14 @@ export const LeftArea: FC<LeftAreaProps> = (props) => {
             animate={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 20 }}
             exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.15 }}
+            transition={{ duration: 0.2 }}
           >
             {currentSelected === 'OneKey Mini' && (
               <StaticImage
                 css={{
                   width: '100%',
                   height: 'auto',
-                  marginBottom: -180,
+                  marginBottom: '-20%',
                 }}
                 src="./images/OneKeyMini.png"
                 alt="OneKeyMini"
@@ -105,7 +105,7 @@ export const LeftArea: FC<LeftAreaProps> = (props) => {
                 css={{
                   width: '90%',
                   height: 'auto',
-                  marginTop: -180,
+                  marginTop: '-26%',
                   marginLeft: 'auto',
                 }}
                 src="./images/OneKeyLite.png"
