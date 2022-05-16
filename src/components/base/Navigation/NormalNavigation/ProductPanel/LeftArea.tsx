@@ -1,23 +1,16 @@
 import { FC, ReactNode, useCallback, useState } from 'react';
 
 import { useTheme } from '@emotion/react';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
+import { StaticImage } from 'gatsby-plugin-image';
 
-import { Box, Img, Li, Ul } from '../../../Box';
-
-import image from './images/product.png';
+import { Box, Li, Ul } from '../../../Box';
 
 export interface LeftAreaProps {
   children?: ReactNode;
 }
 
-const items = [
-  'OneKey Mini',
-  'OneKey Touch',
-  'OneKey Pro',
-  'OneKey Lite',
-  'KeyTag',
-];
+const items = ['OneKey Mini', 'OneKey Lite'];
 
 const itemVariants = {
   hidden: { y: 10, opacity: 0 },
@@ -30,19 +23,14 @@ const itemVariants = {
 export const LeftArea: FC<LeftAreaProps> = (props) => {
   const { children } = props;
   const theme = useTheme();
-  const [backgroundColor, setBackgroundColor] = useState(
-    theme.background.test100,
-  );
+  const [backgroundColor] = useState(theme.background.test100);
+  const [currentSelected, setCurrentSelected] = useState('OneKey Mini');
 
-  const onClick = useCallback(
-    (item: string) => {
-      if (item === 'OneKey Pro') {
-        setBackgroundColor(theme.background.test300);
-      } else {
-        setBackgroundColor(theme.background.test100);
-      }
+  const handleMouseMove = useCallback(
+    (type: string) => {
+      setCurrentSelected(type);
     },
-    [theme],
+    [setCurrentSelected],
   );
 
   return (
@@ -66,17 +54,18 @@ export const LeftArea: FC<LeftAreaProps> = (props) => {
         <Ul>
           {items.map((item, index) => (
             <Li
+              onMouseMove={() => handleMouseMove(item)}
               xs={{
                 ...theme.text.medium400,
                 listStyle: 'none',
                 lineHeight: '44px',
+                height: 44,
                 cursor: 'pointer',
                 ':hover': {
                   color: theme.background.test300,
                 },
               }}
               key={index}
-              onClick={() => onClick(item)}
             >
               <motion.div key={index} variants={itemVariants}>
                 {item}
@@ -89,17 +78,41 @@ export const LeftArea: FC<LeftAreaProps> = (props) => {
       <Box
         xs={{
           width: '50%',
+          height: '22vw',
         }}
       >
-        <Img
-          css={{
-            width: '100%',
-            height: 'auto',
-            marginBottom: -180,
-          }}
-          src={image}
-          alt="product preview"
-        />
+        <AnimatePresence exitBeforeEnter>
+          <motion.div
+            key={currentSelected}
+            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.15 }}
+          >
+            {currentSelected === 'OneKey Mini' && (
+              <StaticImage
+                css={{
+                  width: '100%',
+                  height: 'auto',
+                  marginBottom: -180,
+                }}
+                src="./images/OneKeyMini.png"
+                alt="OneKeyMini"
+              />
+            )}
+            {currentSelected === 'OneKey Lite' && (
+              <StaticImage
+                css={{
+                  width: '90%',
+                  height: 'auto',
+                  marginTop: -180,
+                }}
+                src="./images/OneKeyLite.png"
+                alt="OneKeyLite"
+              />
+            )}
+          </motion.div>
+        </AnimatePresence>
       </Box>
       {children}
     </Box>

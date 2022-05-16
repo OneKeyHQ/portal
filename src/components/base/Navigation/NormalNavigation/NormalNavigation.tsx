@@ -45,22 +45,18 @@ export const NormalNavigation: React.FC<NormalNavigationProps> = () => {
             }}
           />
 
-          <Ul xs={{ display: 'flex', gap: 32, alignItems: 'center' }}>
+          <Ul xs={{ display: 'flex', gap: 32, alignItems: 'stretch' }}>
             {data.map((item) => (
               <Li
                 key={item.name}
                 xs={{
+                  display: 'flex',
+                  alignItems: 'center',
                   listStyle: 'none',
                 }}
+                {...(item.link === '/products' ? hoverProps : {})}
               >
-                {item.link === '/products' ? (
-                  <NavigationItem {...hoverProps}>
-                    {item.name}
-                    {isHovered}
-                  </NavigationItem>
-                ) : (
-                  <NavigationItem>{item.name}</NavigationItem>
-                )}
+                <NavigationItem>{item.name}</NavigationItem>
               </Li>
             ))}
 
