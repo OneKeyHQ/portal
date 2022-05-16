@@ -35,7 +35,17 @@ module.exports = {
     },
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          quality: 100,
+          breakpoints: [414, 960, 1200, 1440, 1920],
+          placeholder: "blurred",
+          backgroundColor: `transparent`,
+        }
+      }
+    },
     `gatsby-plugin-less`
   ],
 }
