@@ -14,7 +14,7 @@ export const Home: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Onekey</title>
+        <title>OneKey</title>
       </Helmet>
 
       <SEO title="onekey" description="onekey" />
