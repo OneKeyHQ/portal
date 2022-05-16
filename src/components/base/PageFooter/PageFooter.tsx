@@ -50,14 +50,7 @@ export const PageFooter: FC = () => {
             {media.medium && <MediaLinkList />}
           </Box>
 
-          <Box
-            m={
-              {
-                // display: 'flex',
-                // flex: 1,
-              }
-            }
-          >
+          <Box>
             {/* menu list */}
             <MenuList />
 

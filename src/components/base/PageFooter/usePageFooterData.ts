@@ -130,12 +130,12 @@ export function usePageFooterData() {
           },
           {
             name: 'Dogecoin (DOGE)',
-            link: '/',
+            link: '#Dogecoin',
             status: 'disabled',
           },
           {
             name: 'Dash (DASH)',
-            link: '/',
+            link: '#Dash',
             status: 'disabled',
           },
         ],

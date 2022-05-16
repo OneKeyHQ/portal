@@ -34,21 +34,10 @@ export const MenuList: FC = () => {
           }}
           l={{
             width: 'fit-content',
-            // paddingRight: 36,
             ':last-child': {
               paddingRight: 0,
             },
           }}
-          xl={
-            {
-              // paddingRight: 60,
-            }
-          }
-          xxl={
-            {
-              // paddingRight: 80,
-            }
-          }
         >
           <Span
             css={{
@@ -71,12 +60,18 @@ export const MenuList: FC = () => {
           >
             {/* level2 */}
             {item.list.map((childItem) => (
-              <Span
+              <a
+                href={childItem.link}
                 key={childItem.name}
-                css={{ ...theme.text.normal200, color: theme.colors.white }}
+                css={{
+                  ...theme.text.normal200,
+                  color: theme.colors.white,
+                  cursor:
+                    childItem.status === 'disabled' ? 'not-allowed' : 'pointer',
+                }}
               >
                 {childItem.name}
-              </Span>
+              </a>
             ))}
           </Box>
         </Box>
