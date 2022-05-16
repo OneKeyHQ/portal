@@ -4,8 +4,8 @@ import { jsx } from '@emotion/react';
 
 import { Box, BoxProps } from './Box';
 
-function factory(as: string) {
-  const component = (props: BoxProps) => jsx(Box, { as, ...props });
+function factory(as: string, config: Record<string, any> = {}) {
+  const component = (props: BoxProps) => jsx(Box, { as, ...config, ...props });
 
   if (process.env.NODE_ENV === 'development') {
     component.displayName = `BaseTag ${as}`;
@@ -33,4 +33,6 @@ export const Hr: FC<BoxProps> = factory('hr');
 export const Ul: FC<BoxProps> = factory('ul');
 export const Ol: FC<BoxProps> = factory('ol');
 export const Li: FC<BoxProps> = factory('li');
-export const Img: FC<BoxProps & HTMLProps<HTMLImageElement>> = factory('img');
+export const Img: FC<BoxProps & HTMLProps<HTMLImageElement>> = factory('img', {
+  loading: 'lazy',
+});
