@@ -1,34 +1,3 @@
-// Product
-// Crowdfunding
-// Mobile Wallet
-// Hardware Device
-// Browser Extension
-// Swap
-// Token List
-// Recovery Phrase Converter
-
-// Resource
-// System Status
-// Open Source Community
-// Media Kits
-// Privacy Agreement
-// User Agreement
-
-// Information
-// Submit Dapp
-// Submit Token
-// Venture Capital
-// Sales Alliance
-// Advertising
-// Investor Relations
-
-// Crypto Assets
-// Bitcoin (BTC)
-// Ethereum (ETH)
-// Litecoin (LTC)
-// Dogecoin (DOGE)
-// Dash (DASH)
-
 export function usePageFooterData() {
   return {
     menuData: [
@@ -38,31 +7,38 @@ export function usePageFooterData() {
         list: [
           {
             name: 'Crowdfunding',
-            link: '/crowdfunding',
+            link: 'https://crowdfund.onekey.so/',
+            status: 'external',
           },
           {
             name: 'Mobile Wallet',
-            link: '/mobile-wallet',
+            link: 'https://onekey.so/download',
+            status: 'external',
           },
           {
             name: 'Hardware Device',
-            link: '/hardware-device',
+            link: 'https://onekey.so/hardware',
+            status: 'external',
           },
           {
             name: 'Browser Extension',
-            link: '/browser-extension',
+            link: 'https://onekey.so/plugin',
+            status: 'external',
           },
           {
             name: 'Swap',
-            link: '/swap',
+            link: 'https://swap.onekey.so/',
+            status: 'external',
           },
           {
             name: 'Token List',
-            link: '/token-list',
+            link: 'https://onekey.so/tokens',
+            status: 'external',
           },
           {
             name: 'Recovery Phrase Converter',
-            link: '/recovery-phrase-converter',
+            link: 'https://bip39.onekey.so/',
+            status: 'external',
           },
         ],
       },
@@ -72,23 +48,28 @@ export function usePageFooterData() {
         list: [
           {
             name: 'System Status',
-            link: '/system-status',
+            link: 'https://onekeyhq.github.io/upptime',
+            status: 'external',
           },
           {
             name: 'Open Source Community',
-            link: '/open-source-community',
+            link: 'https://github.com/OneKeyHQ/OneKey-Wallet',
+            status: 'external',
           },
           {
             name: 'Media Kits',
-            link: '/media-kits',
+            link: 'https://help.onekey.so/hc/en-us/articles/360002200956',
+            status: 'external',
           },
           {
             name: 'Privacy Agreement',
-            link: '/privacy-agreement',
+            link: 'https://help.onekey.so/hc/en-us/articles/360002003315',
+            status: 'external',
           },
           {
             name: 'User Agreement',
-            link: '/user-agreement',
+            link: 'https://help.onekey.so/hc/en-us/articles/360002014776',
+            status: 'external',
           },
         ],
       },
@@ -98,27 +79,33 @@ export function usePageFooterData() {
         list: [
           {
             name: 'Submit Dapp',
-            link: '/submit-dapp',
+            link: 'https://gr4yl99ujhl.typeform.com/to/kDJuiIQ9',
+            status: 'external',
           },
           {
             name: 'Submit Token',
-            link: '/submit-token',
+            link: 'https://gr4yl99ujhl.typeform.com/to/ZM0qyr9e',
+            status: 'external',
           },
           {
             name: 'Venture Capital',
-            link: '/venture-capital',
+            link: 'https://onekey.so/ventures',
+            status: 'external',
           },
           {
             name: 'Sales Alliance',
-            link: '/sales-alliance',
+            link: 'https://help.onekey.so/hc/en-us/articles/360002658076',
+            status: 'external',
           },
           {
             name: 'Advertising',
-            link: '/advertising',
+            link: 'https://help.onekey.so/hc/en-us/articles/360002658096',
+            status: 'external',
           },
           {
             name: 'Investor Relations',
-            link: '/investor-relations',
+            link: 'https://onekey.so/invest',
+            status: 'external',
           },
         ],
       },
@@ -128,23 +115,28 @@ export function usePageFooterData() {
         list: [
           {
             name: 'Bitcoin (BTC)',
-            link: '/bitcoin',
+            link: 'https://onekey.so/coins/btc',
+            status: 'external',
           },
           {
             name: 'Ethereum (ETH)',
-            link: '/ethereum',
+            link: 'https://onekey.so/coins/eth',
+            status: 'external',
           },
           {
             name: 'Litecoin (LTC)',
-            link: '/litecoin',
+            link: 'https://onekey.so/coins/ltc',
+            status: 'external',
           },
           {
             name: 'Dogecoin (DOGE)',
-            link: '/dogecoin',
+            link: '/',
+            status: 'disabled',
           },
           {
             name: 'Dash (DASH)',
-            link: '/dash',
+            link: '/',
+            status: 'disabled',
           },
         ],
       },
