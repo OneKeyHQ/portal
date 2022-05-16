@@ -14,7 +14,7 @@ export function useData() {
     },
     {
       name: 'Developer',
-      link: '/',
+      link: 'https://docs.onekey.so/',
     },
     {
       name: 'Store',
@@ -22,7 +22,7 @@ export function useData() {
     },
     {
       name: 'Download',
-      link: '/',
+      link: 'https://onekey.so/download',
     },
     {
       name: 'Help Center',
