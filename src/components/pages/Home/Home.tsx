@@ -15,8 +15,9 @@ export const Home: React.FC = () => {
     <>
       <Helmet>
         <title>Onekey</title>
-        <SEO title="onekey" description="onekey" />
       </Helmet>
+
+      <SEO title="onekey" description="onekey" />
 
       <Navigation />
 
