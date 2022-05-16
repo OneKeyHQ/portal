@@ -91,6 +91,7 @@ export const LeftArea: FC<LeftAreaProps> = (props) => {
           >
             {currentSelected === 'OneKey Mini' && (
               <StaticImage
+                draggable={false}
                 css={{
                   width: '100%',
                   height: 'auto',
@@ -102,6 +103,7 @@ export const LeftArea: FC<LeftAreaProps> = (props) => {
             )}
             {currentSelected === 'OneKey Lite' && (
               <StaticImage
+                draggable={false}
                 css={{
                   width: '90%',
                   height: 'auto',

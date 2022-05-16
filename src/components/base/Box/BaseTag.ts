@@ -35,4 +35,5 @@ export const Ol: FC<BoxProps> = factory('ol');
 export const Li: FC<BoxProps> = factory('li');
 export const Img: FC<BoxProps & HTMLProps<HTMLImageElement>> = factory('img', {
   loading: 'lazy',
+  draggable: false,
 });
