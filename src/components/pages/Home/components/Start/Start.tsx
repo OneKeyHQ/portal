@@ -1,8 +1,9 @@
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { useTheme } from '@emotion/react';
 import useMouse from '@react-hook/mouse-position';
 import { motion } from 'framer-motion';
+import ua2os from 'ua2os';
 
 import {
   Container,
@@ -33,6 +34,11 @@ export const Start = () => {
     enterDelay: 20,
     leaveDelay: 20,
   });
+  const [type, setType] = useState('');
+
+  useEffect(() => {
+    setType(ua2os(window.navigator.userAgent) || 'unknown');
+  }, []);
 
   mouseXPosition = mouse.clientX || mouseXPosition;
   mouseYPosition = mouse.clientY || mouseYPosition;
@@ -130,6 +136,7 @@ export const Start = () => {
             />
           </Flex>
           <div ref={ref}>
+            {type}
             <Flex
               onMouseEnter={itemEnter}
               onMouseLeave={itemLeave}
