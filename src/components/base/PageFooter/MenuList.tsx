@@ -21,6 +21,7 @@ export const MenuList: FC = () => {
       {/* level1 */}
       {menuData.map((item) => (
         <Box
+          key={item.name}
           xs={{
             width: '100%',
             display: 'flex',

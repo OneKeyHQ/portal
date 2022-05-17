@@ -10,6 +10,7 @@ export const OneKey: FC<BoxProps> = (props) => (
     externalProps={props}
   >
     <Logo
+      as="span"
       xs={{
         width: 36,
         height: 36,

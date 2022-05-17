@@ -39,6 +39,7 @@ export const LogoWall: FC = () => {
           {logosGroup &&
             logosGroup.map((innerLogos) => (
               <Box
+                key={JSON.stringify(innerLogos)}
                 xs={{
                   display: 'flex',
                   justifyContent: 'space-around',

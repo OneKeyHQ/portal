@@ -45,6 +45,7 @@ export const HoverPanel: FC<HoverPanelProps> = (props) => {
       >
         {subItems?.map((item) => (
           <Box
+            key={item.name}
             xs={{
               ...theme.text.medium300,
               transition: theme.transitions.allEaseOut,
