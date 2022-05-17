@@ -4,28 +4,28 @@ import Marquee from 'react-fast-marquee';
 
 import { Box, Img, Section } from '../../../../base';
 
-import logo1 from './images/logo01.svg';
-import logo2 from './images/logo02.svg';
-import logo3 from './images/logo03.svg';
-import logo4 from './images/logo04.svg';
-import logo5 from './images/logo05.svg';
-import logo6 from './images/logo06.svg';
-import logo7 from './images/logo07.svg';
-import logo8 from './images/logo08.svg';
-import logo9 from './images/logo09.svg';
-import logo10 from './images/logo10.svg';
+import image1 from './images/image01.svg';
+import image2 from './images/image02.svg';
+import image3 from './images/image03.svg';
+import image4 from './images/image04.svg';
+import image5 from './images/image05.svg';
+import image6 from './images/image06.svg';
+import image7 from './images/image07.svg';
+import image8 from './images/image08.svg';
+import image9 from './images/image09.svg';
+import image10 from './images/image10.svg';
 
 const images = [
-  logo1,
-  logo2,
-  logo3,
-  logo4,
-  logo5,
-  logo6,
-  logo7,
-  logo8,
-  logo9,
-  logo10,
+  image1,
+  image2,
+  image3,
+  image4,
+  image5,
+  image6,
+  image7,
+  image8,
+  image9,
+  image10,
 ];
 
 export const Rewards: FC = () => (
@@ -34,12 +34,11 @@ export const Rewards: FC = () => (
       xs={{
         width: '100%',
         overflow: 'hidden',
-        paddingTop: 50,
-        paddingBottom: 50,
+        paddingTop: 40,
+        paddingBottom: 40,
         backgroundColor: '#313638',
         display: 'flex',
         flexDirection: 'column',
-        label: 'logos',
       }}
       m={{
         paddingTop: 64,
@@ -50,19 +49,19 @@ export const Rewards: FC = () => (
         {images.map((image) => (
           <Img
             xs={{
-              width: 182,
-              height: 60,
               userSelect: 'none',
               userDrag: 'none',
+              marginLeft: 20,
+              transform: 'scale(0.6)',
             }}
             m={{
-              width: 330,
-              height: 110,
+              transform: 'scale(1)',
+              marginLeft: 100,
             }}
             draggable={false}
             key={image}
             src={image}
-            alt="logo"
+            alt="image"
           />
         ))}
       </Marquee>
