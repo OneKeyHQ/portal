@@ -13,7 +13,11 @@ export const MobileMenuItems: FC<MobileMenuItemsProps> = (props) => {
   const { mobileMenus } = props;
 
   return (
-    <Box>
+    <Box
+      xs={{
+        paddingBottom: 28,
+      }}
+    >
       <Ul
         xs={{
           listStyle: 'none',

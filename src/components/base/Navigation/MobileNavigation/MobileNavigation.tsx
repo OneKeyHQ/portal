@@ -1,9 +1,7 @@
-import React, { ReactNode, useCallback, useEffect, useState } from 'react';
+import React, { ReactNode, useCallback, useState } from 'react';
 
 import { useTheme } from '@emotion/react';
-import { motion } from 'framer-motion';
 
-import { useBodyScrollLock } from '../../../../hooks';
 import { Box } from '../../Box';
 import { Container } from '../../Container';
 import { Flex } from '../../Flex';
@@ -31,7 +29,6 @@ export interface MobileNavigationProps {
 export const MobileNavigation: React.FC<MobileNavigationProps> = (props) => {
   const { children } = props;
   const [menuActive, setMenuActive] = useState(false);
-  const { ref, setIsLocked } = useBodyScrollLock();
   const theme = useTheme();
   const navigationData = useNavigationData();
 
@@ -43,17 +40,13 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = (props) => {
     setMenuActive(false);
   }, [setMenuActive]);
 
-  useEffect(() => {
-    setIsLocked(menuActive);
-  }, [menuActive, setIsLocked]);
-
   return (
     <>
       <Box
         xs={{
           backgroundColor: 'rgba(255, 255, 255, .8)',
-          paddingTop: 26,
-          paddingBottom: 26,
+          paddingTop: 18,
+          paddingBottom: 18,
           backdropFilter: 'blur(30px)',
         }}
       >
@@ -82,20 +75,23 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = (props) => {
       </Box>
 
       {menuActive && (
-        <motion.div ref={ref}>
-          <Box
-            xs={{
-              zIndex: 8888,
-              position: 'fixed',
-              top: 0,
-              left: 0,
-              right: 0,
-              backgroundColor: theme.colors.white,
-            }}
-          >
+        <Box
+          xs={{
+            zIndex: 8000,
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: theme.colors.white,
+            overflow: 'auto',
+            WebkitOverflowScrolling: 'auto',
+          }}
+        >
+          <Container>
             <Flex
               xs={{
-                padding: '26px 24px',
+                padding: '18px 0',
                 justifyContent: 'space-between',
               }}
             >
@@ -105,12 +101,10 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = (props) => {
                 <CloseIcon />
               </Box>
             </Flex>
+          </Container>
 
-            <Box>
-              <MobileMenuItems mobileMenus={navigationData} />
-            </Box>
-          </Box>
-        </motion.div>
+          <MobileMenuItems mobileMenus={navigationData} />
+        </Box>
       )}
     </>
   );
