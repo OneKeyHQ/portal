@@ -4,8 +4,6 @@ import { Helmet } from 'react-helmet';
 import { I18nextProvider } from 'react-i18next';
 
 import { createI18next } from './i18n';
-import { isBrowser } from './utils';
-import { getPageLanguage } from './utils/getPageLanguage';
 
 interface WrapPageProps {
   children: React.ReactNode;
@@ -23,23 +21,23 @@ const WrapPage: FC<WrapPageProps> = (props) => {
   const { intl } = pageContext;
 
   useEffect(() => {
-    const isI18nPage = path.includes(`/en/`) || path.includes(`/zh/`);
+    // const isI18nPage = path.includes(`/en/`) || path.includes(`/zh/`);
 
-    if (isBrowser() && !isI18nPage) {
-      const { location } = window;
-      const { search } = location;
-      const detected = getPageLanguage();
-      const {
-        originalPath,
-      }: {
-        originalPath: string;
-      } = intl;
-      const queryParams = search || '';
-      const newUrl = `${location.origin}/${detected}${originalPath}${queryParams}`;
-      localStorage.setItem('language', detected);
-      location.replace(newUrl);
-      return;
-    }
+    // if (isBrowser() && !isI18nPage) {
+    //   const { location } = window;
+    //   const { search } = location;
+    //   const detected = getPageLanguage();
+    //   const {
+    //     originalPath,
+    //   }: {
+    //     originalPath: string;
+    //   } = intl;
+    //   const queryParams = search || '';
+    //   const newUrl = `${location.origin}/${detected}${originalPath}${queryParams}`;
+    //   localStorage.setItem('language', detected);
+    //   location.replace(newUrl);
+    //   return;
+    // }
 
     import('browser-update').then((bu) => {
       bu.default({

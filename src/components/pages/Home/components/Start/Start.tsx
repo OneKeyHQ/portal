@@ -5,8 +5,8 @@ import useMouse from '@react-hook/mouse-position';
 import { motion } from 'framer-motion';
 
 import {
-  Box,
   Container,
+  Flex,
   Img,
   RoundCursor,
   Section,
@@ -80,53 +80,60 @@ export const Start = () => {
   }, []);
 
   return (
-    <div ref={ref}>
-      <Section
-        onMouseEnter={sectionEnter}
-        onMouseLeave={sectionLeave}
-        css={{
-          cursor: 'none',
-          position: 'relative',
-        }}
-      >
-        <Container>
-          <Box
-            xs={{
-              paddingTop: 164,
-              paddingBottom: 164,
-              display: 'flex',
-              flexDirection: 'column',
-              gap: 117,
-              label: 'End',
-            }}
+    <Section
+      onMouseEnter={sectionEnter}
+      onMouseLeave={sectionLeave}
+      css={{
+        position: 'relative',
+      }}
+    >
+      <Container>
+        <Flex
+          xs={{
+            paddingTop: 72,
+            paddingBottom: 72,
+            flexDirection: 'column',
+            gap: 117,
+          }}
+          xl={{
+            paddingTop: 164,
+            paddingBottom: 164,
+          }}
+        >
+          <Flex
+            xs={{ gap: 16, flexDirection: 'column' }}
+            l={{ flexDirection: 'row', alignItems: 'flex-end' }}
           >
-            <Box css={{ display: 'flex', gap: 16, alignItems: 'flex-end' }}>
-              <Span
-                css={{
-                  ...theme.text.medium1200,
-                  color: '#101111',
-                  label: 'title',
-                }}
-              >
-                Start Using
-                <br />
-                OneKey Wallet Today
-              </Span>
+            <Span
+              css={{
+                color: '#101111',
+              }}
+              xs={{
+                ...theme.text.medium900,
+              }}
+              xl={{
+                ...theme.text.medium1200,
+              }}
+            >
+              Start Using
+              <br />
+              OneKey Wallet Today
+            </Span>
 
-              <Img
-                alt="arrow.svg"
-                src={arrowSvg}
-                css={{
-                  width: 106 / 2,
-                  height: 100 / 2,
-                }}
-              />
-            </Box>
-
-            <Box
+            <Img
+              alt="arrow.svg"
+              src={arrowSvg}
+              css={{
+                width: 106 / 2,
+                height: 100 / 2,
+              }}
+            />
+          </Flex>
+          <div ref={ref}>
+            <Flex
               onMouseEnter={itemEnter}
               onMouseLeave={itemLeave}
-              css={{ display: 'flex', gap: 23, flexGrow: 1 }}
+              css={{ gap: 23, flexGrow: 1, cursor: 'none' }}
             >
               <Item
                 name="Browser Extension"
@@ -143,26 +150,26 @@ export const Start = () => {
                 description="Mac, Windows, Linux"
                 image="data:image/png;base64,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"
               />
-            </Box>
-          </Box>
-        </Container>
+            </Flex>
+          </div>
+        </Flex>
+      </Container>
 
-        <motion.div
-          css={{
-            transformOrigin: 'center',
-            userSelect: 'none',
-            pointerEvents: 'none',
-            position: 'fixed',
-            top: 0,
-            left: 0,
-          }}
-          variants={variants}
-          animate={cursorVariant}
-          transition={spring}
-        >
-          <RoundCursor />
-        </motion.div>
-      </Section>
-    </div>
+      <motion.div
+        css={{
+          transformOrigin: 'center',
+          userSelect: 'none',
+          pointerEvents: 'none',
+          position: 'fixed',
+          top: 0,
+          left: 0,
+        }}
+        variants={variants}
+        animate={cursorVariant}
+        transition={spring}
+      >
+        <RoundCursor />
+      </motion.div>
+    </Section>
   );
 };
