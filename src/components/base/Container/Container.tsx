@@ -18,8 +18,8 @@ export const Container: FC<ContainerProps> = (props) => {
         paddingRight: 24,
       }}
       s={{
-        paddingLeft: 28,
-        paddingRight: 28,
+        paddingLeft: 24,
+        paddingRight: 24,
       }}
       m={{
         paddingLeft: 0,
