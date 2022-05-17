@@ -42,8 +42,8 @@ export const MobileMenuItem: FC<MobileMenuItemProps> = (props) => {
           >
             <Box
               xs={{
-                paddingTop: 20,
-                paddingBottom: 20,
+                paddingTop: 10,
+                paddingBottom: 10,
                 ...theme.text.normal300,
               }}
             >
@@ -65,8 +65,8 @@ export const MobileMenuItem: FC<MobileMenuItemProps> = (props) => {
           >
             <Box
               xs={{
-                paddingTop: 20,
-                paddingBottom: 20,
+                paddingTop: 10,
+                paddingBottom: 10,
               }}
             >
               {menuItem.name}

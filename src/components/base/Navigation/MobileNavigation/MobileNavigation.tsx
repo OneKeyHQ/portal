@@ -52,8 +52,8 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = (props) => {
       <Box
         xs={{
           backgroundColor: 'rgba(255, 255, 255, .8)',
-          paddingTop: 28,
-          paddingBottom: 28,
+          paddingTop: 26,
+          paddingBottom: 26,
           backdropFilter: 'blur(30px)',
         }}
       >
@@ -90,13 +90,12 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = (props) => {
               top: 0,
               left: 0,
               right: 0,
-              bottom: 0,
               backgroundColor: theme.colors.white,
             }}
           >
             <Flex
               xs={{
-                padding: '28px 24px',
+                padding: '26px 24px',
                 justifyContent: 'space-between',
               }}
             >
