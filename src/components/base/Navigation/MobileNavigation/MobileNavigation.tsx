@@ -14,30 +14,40 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = (props) => {
   const { children } = props;
 
   return (
-    <Container
+    <Box
       xs={{
+        backgroundColor: 'rgba(255, 255, 255, .8)',
         paddingTop: 27,
         paddingBottom: 27,
+        backdropFilter: 'blur(30px)',
       }}
     >
-      <Box
-        xs={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-        }}
-      >
-        <Logo
-          css={{
-            width: 48,
-            height: 48,
-            color: 'black',
+      <Container>
+        <Box
+          xs={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
           }}
-        />
-        {children}
+        >
+          <Logo
+            css={{
+              width: 48,
+              height: 48,
+              color: 'black',
+            }}
+          />
+          {children}
 
-        <MenuIcon />
-      </Box>
-    </Container>
+          <Box
+            xs={{
+              cursor: 'pointer',
+            }}
+          >
+            <MenuIcon />
+          </Box>
+        </Box>
+      </Container>
+    </Box>
   );
 };

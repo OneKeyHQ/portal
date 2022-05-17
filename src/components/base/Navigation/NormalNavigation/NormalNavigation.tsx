@@ -7,9 +7,9 @@ import { Li, Ul } from '../../Box';
 import { Container } from '../../Container';
 import { LaunchAppButton } from '../../LaunchAppButton';
 import { Logo } from '../../Logo';
-import { NavigationAnimationWrap } from '../NavigationAnimationWrap';
 import { useNavigationData } from '../useNavigationData';
 
+import { NavigationAnimationWrap } from './NavigationAnimationWrap';
 import { NavigationItem } from './NavigationItem';
 import { ProductPanel } from './ProductPanel';
 
