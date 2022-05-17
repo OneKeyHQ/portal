@@ -66,7 +66,7 @@ export const Start = () => {
             />
           </Flex>
           {type}
-          <Flex css={{ gap: 23, flexGrow: 1, cursor: 'none' }}>
+          <Flex css={{ gap: 23, flexGrow: 1 }}>
             <StartItem
               name="Browser Extension"
               description="Chrome, Firefox, Edge"

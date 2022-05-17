@@ -1,6 +1,8 @@
 import { FC } from 'react';
 
-import { Box } from '../../../../base';
+import { useTheme } from '@emotion/react';
+
+import { Box, Flex, Img, Span } from '../../../../base';
 
 export interface StartItemProps {
   name: string;
@@ -10,26 +12,31 @@ export interface StartItemProps {
 
 export const StartItem: FC<StartItemProps> = (props) => {
   const { name, description, image } = props;
+  const theme = useTheme();
 
   return (
-    <Box
+    <Flex
       xs={{
         position: 'relative',
-        display: 'flex',
         flexDirection: 'column',
         gap: 32,
         flexGrow: 1,
-        transition: 'all 0.3s ease-in-out',
+        transition: theme.transitions.allEaseOut,
         ':hover': {
           opacity: 0.6,
         },
       }}
     >
       <Box css={{ height: 1, width: '100%', backgroundColor: '#101111' }} />
-      <Box css={{ display: 'flex', gap: 24, alignItems: 'center' }}>
-        <img alt="icon-png" src={image} css={{ width: 88, height: 88 }} />
-        <Box css={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-          <span
+      <Flex
+        xs={{ gap: 24, flexDirection: 'column', alignItems: 'center' }}
+        m={{
+          flexDirection: 'row',
+        }}
+      >
+        <Img alt="icon-png" src={image} css={{ width: 88, height: 88 }} />
+        <Flex css={{ flexDirection: 'column', gap: 8 }}>
+          <Span
             css={{
               fontWeight: 600,
               fontSize: 30,
@@ -37,8 +44,8 @@ export const StartItem: FC<StartItemProps> = (props) => {
             }}
           >
             {name}
-          </span>
-          <span
+          </Span>
+          <Span
             css={{
               fontWeight: 400,
               fontSize: 16,
@@ -46,9 +53,9 @@ export const StartItem: FC<StartItemProps> = (props) => {
             }}
           >
             {description}
-          </span>
-        </Box>
-      </Box>
-    </Box>
+          </Span>
+        </Flex>
+      </Flex>
+    </Flex>
   );
 };
