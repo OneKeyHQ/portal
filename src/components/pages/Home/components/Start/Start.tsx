@@ -6,7 +6,7 @@ import { OS } from 'ua2os/dist/types';
 
 import { Container, Flex, Img, Section, Span } from '../../../../base';
 
-import arrowSvg from './images/arrow.png';
+import arrowSvg from './images/arrow.svg';
 import { StartItem } from './StartItem';
 
 export const Start = () => {
