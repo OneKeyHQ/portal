@@ -4,6 +4,7 @@ import { useTheme } from '@emotion/react';
 import useMouse from '@react-hook/mouse-position';
 import { motion } from 'framer-motion';
 import ua2os from 'ua2os';
+import { OS } from 'ua2os/dist/types';
 
 import {
   Container,
@@ -34,10 +35,10 @@ export const Start = () => {
     enterDelay: 20,
     leaveDelay: 20,
   });
-  const [type, setType] = useState('');
+  const [type, setType] = useState<OS>();
 
   useEffect(() => {
-    setType(ua2os(window.navigator.userAgent) || 'unknown');
+    setType(ua2os(window.navigator.userAgent));
   }, []);
 
   mouseXPosition = mouse.clientX || mouseXPosition;
