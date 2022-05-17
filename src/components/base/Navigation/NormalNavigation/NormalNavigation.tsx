@@ -3,14 +3,13 @@ import React, { ReactNode } from 'react';
 import { useTheme } from '@emotion/react';
 
 import { useHover } from '../../../../hooks';
-import { Box, Li, Ul } from '../../Box';
+import { Li, Ul } from '../../Box';
 import { Container } from '../../Container';
 import { LaunchAppButton } from '../../LaunchAppButton';
 import { Logo } from '../../Logo';
 import { NavigationAnimationWrap } from '../NavigationAnimationWrap';
-import { useData } from '../useData';
+import { useNavigationData } from '../useNavigationData';
 
-import languageSelectIcon from './images/language.svg';
 import { NavigationItem } from './NavigationItem';
 import { ProductPanel } from './ProductPanel';
 
@@ -20,7 +19,7 @@ export interface NormalNavigationProps {
 
 export const NormalNavigation: React.FC<NormalNavigationProps> = () => {
   const theme = useTheme();
-  const data = useData();
+  const data = useNavigationData();
   const { hoverProps, isHovered } = useHover();
 
   return (
@@ -54,20 +53,20 @@ export const NormalNavigation: React.FC<NormalNavigationProps> = () => {
                   alignItems: 'center',
                   listStyle: 'none',
                 }}
-                {...(item.link === '/products' ? hoverProps : {})}
+                {...(item.path === '/products' ? hoverProps : {})}
               >
-                <NavigationItem>{item.name}</NavigationItem>
+                <NavigationItem {...item} />
               </Li>
             ))}
 
-            <Box css={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+            {/* <Box css={{ display: 'flex', gap: 8, alignItems: 'center' }}>
               <img
                 alt="language select icon"
                 src={languageSelectIcon}
                 css={{ width: 24, height: 24 }}
               />
               <NavigationItem>EN</NavigationItem>
-            </Box>
+            </Box> */}
 
             <LaunchAppButton variant="outline" />
           </Ul>
