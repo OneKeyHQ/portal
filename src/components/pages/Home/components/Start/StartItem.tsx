@@ -2,13 +2,13 @@ import { FC } from 'react';
 
 import { Box } from '../../../../base';
 
-export interface ItemProps {
+export interface StartItemProps {
   name: string;
   description: string;
   image: string;
 }
 
-export const Item: FC<ItemProps> = (props) => {
+export const StartItem: FC<StartItemProps> = (props) => {
   const { name, description, image } = props;
 
   return (
