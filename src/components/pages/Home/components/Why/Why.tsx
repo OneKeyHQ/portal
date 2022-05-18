@@ -93,8 +93,8 @@ export const Why: FC = () => {
               enabled: true,
             }}
             style={{
-              paddingLeft: media.medium ? 64 : 24,
-              paddingRight: 24,
+              paddingLeft: media.large ? 64 : 24,
+              paddingRight: media.large ? 64 : 24,
               paddingTop: media.medium ? 100 : 60,
               paddingBottom: media.medium ? 180 : 60,
             }}
