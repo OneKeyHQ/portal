@@ -12,3 +12,4 @@ export * from './SEO';
 export * from './Swiper';
 export * from './LaunchAppButton';
 export * from './ResponsiveIndicator';
+export * from './AspectRatio';
