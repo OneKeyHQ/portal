@@ -8,54 +8,64 @@ export interface StartItemProps {
   name: string;
   description: string;
   image: string;
+  path: string;
 }
 
 export const StartItem: FC<StartItemProps> = (props) => {
-  const { name, description, image } = props;
+  const { name, description, image, path } = props;
   const theme = useTheme();
 
   return (
-    <Flex
+    <Box
       xs={{
+        flex: 1,
         position: 'relative',
-        flexDirection: 'column',
-        gap: 32,
-        flexGrow: 1,
         transition: theme.transitions.allEaseOut,
         ':hover': {
           opacity: 0.6,
         },
       }}
     >
-      <Box css={{ height: 1, width: '100%', backgroundColor: '#101111' }} />
-      <Flex
-        xs={{ gap: 24, flexDirection: 'column', alignItems: 'center' }}
-        m={{
-          flexDirection: 'row',
-        }}
-      >
-        <Img alt="icon-png" src={image} css={{ width: 88, height: 88 }} />
-        <Flex css={{ flexDirection: 'column', gap: 8 }}>
-          <Span
+      <a href={path}>
+        <Box css={{ height: 1, width: '100%', backgroundColor: '#101111' }} />
+        <Flex
+          xs={{
+            paddingTop: 32,
+            textAlign: 'center',
+            gap: 24,
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+          l={{
+            textAlign: 'left',
+            flexDirection: 'row',
+          }}
+        >
+          <Img alt="icon-png" src={image} css={{ width: 88, height: 88 }} />
+          <Flex
             css={{
-              fontWeight: 600,
-              fontSize: 30,
-              lineHeight: '36px',
+              flexDirection: 'column',
+              gap: 8,
+              color: theme.background.test500,
             }}
           >
-            {name}
-          </Span>
-          <Span
-            css={{
-              fontWeight: 400,
-              fontSize: 16,
-              lineHeight: '20px',
-            }}
-          >
-            {description}
-          </Span>
+            <Span
+              xs={{
+                ...theme.text.medium600,
+              }}
+            >
+              {name}
+            </Span>
+            <Span
+              xs={{
+                ...theme.text.normal200,
+              }}
+            >
+              {description}
+            </Span>
+          </Flex>
         </Flex>
-      </Flex>
-    </Flex>
+      </a>
+    </Box>
   );
 };
