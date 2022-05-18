@@ -40,11 +40,15 @@ export const Security: FC = () => {
           >
             <SecurityHeader />
 
-            <Flex
-              css={{
+            {/* hide it, when mobile version */}
+            <Box
+              xs={{
+                display: 'none',
                 flexDirection: 'column',
                 gap: 32,
-                flexGrow: 1,
+              }}
+              l={{
+                display: 'flex',
               }}
             >
               {data.map((item) => (
@@ -56,17 +60,21 @@ export const Security: FC = () => {
                   {...item}
                 />
               ))}
-            </Flex>
+            </Box>
           </Flex>
 
-          {/* right */}
+          {/* right, hide it when mobile viewpoint */}
           <Box
-            css={{
+            xs={{
+              display: 'none',
               background: theme.background.test100,
               flex: 1,
               borderRadius: 40,
               overflow: 'hidden',
               height: 'fit-content',
+            }}
+            l={{
+              display: 'block',
             }}
           >
             <AnimatePresence exitBeforeEnter>
