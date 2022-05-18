@@ -8,10 +8,11 @@ export interface ItemProps {
   image: string;
   title: string;
   description: string;
+  hoverImage?: string;
 }
 
 export const Item: FC<ItemProps> = (props) => {
-  const { image, title, description } = props;
+  const { image, title, description, hoverImage } = props;
   const theme = useTheme();
 
   return (
@@ -32,6 +33,13 @@ export const Item: FC<ItemProps> = (props) => {
           backgroundSize: 'auto 80%',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
+          transition: theme.transitions.allEaseOut,
+          ':hover': hoverImage
+            ? {
+                backgroundImage: `url(${hoverImage})`,
+                backgroundSize: 'auto 95%',
+              }
+            : {},
         }}
       />
       <Box css={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
