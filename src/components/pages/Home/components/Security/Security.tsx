@@ -2,16 +2,15 @@ import { FC } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Box, Container, Flex, Img, Section } from '../../../../base';
+import { Box, Container, Flex, Section } from '../../../../base';
 
-import placeholderImage from './images/placeholder.png';
 import { Item } from './Item';
 import { SecurityHeader } from './SecurityHeader';
-import { useData } from './useData';
+import { useSecurityData } from './useSecurityData';
 
 export const Security: FC = () => {
   const theme = useTheme();
-  const data = useData();
+  const data = useSecurityData();
 
   return (
     <Section>
@@ -61,11 +60,12 @@ export const Security: FC = () => {
               height: 'fit-content',
             }}
           >
-            <Img
+            {data[0]?.image}
+            {/* <Img
               alt="sideImage.png"
               src={placeholderImage}
               css={{ display: 'block', width: '100%' }}
-            />
+            /> */}
           </Box>
         </Flex>
       </Container>
