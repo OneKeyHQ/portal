@@ -46,6 +46,17 @@ export const Box: FC<BoxProps> = (props) => {
     ...otherProps
   } = props;
 
+  const {
+    css: externalCss = {},
+    xs: externalXs = {},
+    s: externalS = {},
+    m: externalM = {},
+    l: externalL = {},
+    xl: externalXl = {},
+    xxl: externalXxl = {},
+    ...otherExternalProps
+  } = externalProps;
+
   const innerCSS = deepmerge.all([
     xs,
     {
@@ -56,13 +67,13 @@ export const Box: FC<BoxProps> = (props) => {
       [mq(mediaBreakpoints.xxlarge)]: xxl,
     },
     css,
-    externalProps.css || {},
-    externalProps.xs || {},
-    externalProps.s || {},
-    externalProps.m || {},
-    externalProps.l || {},
-    externalProps.xl || {},
-    externalProps.xxl || {},
+    externalCss,
+    externalXs,
+    externalS,
+    externalM,
+    externalL,
+    externalXl,
+    externalXxl,
   ] as CSSObject[]);
 
   return jsx(
@@ -70,6 +81,7 @@ export const Box: FC<BoxProps> = (props) => {
     {
       css: innerCSS,
       ...otherProps,
+      ...otherExternalProps,
     },
     children,
   );

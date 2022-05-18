@@ -1,11 +1,11 @@
+import { NonEmptyArray } from '../../../../../types';
+
 import appstoreSvg from './images/icon-download-appstore.svg';
 import desktopSvg from './images/icon-download-desktop.svg';
 import extensionSvg from './images/icon-download-extension.svg';
 import googleSvg from './images/icon-download-google-play.svg';
 import mobileSvg from './images/icon-download-mobile.svg';
 // import webSvg from './images/icon-download-web.svg';
-
-type NonEmptyArray<T> = [T, ...T[]];
 
 type StartItemData = {
   name: string;

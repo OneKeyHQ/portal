@@ -2,28 +2,34 @@ import { FC } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Box, Span } from '../../../../base';
+import { Box, BoxProps, Span } from '../../../../base';
 
-export interface ItemProps {
+export interface ItemProps extends BoxProps {
   title?: string;
   description?: string;
 }
 
 export const Item: FC<ItemProps> = (props) => {
-  const { title, description } = props;
+  const { title, description, ...otherProps } = props;
   const theme = useTheme();
 
   return (
     <Box
       xs={{
+        transition: theme.transitions.allEaseOut,
         backgroundColor: '#ffffff',
         display: 'flex',
         flexDirection: 'column',
         gap: 26,
+        opacity: 0.6,
+        ':hover': {
+          opacity: 1,
+        },
       }}
       xl={{
         gap: 32,
       }}
+      externalProps={otherProps}
     >
       <Box css={{ height: 1, width: '100%', backgroundColor: '#101111' }} />
       <Box css={{ display: 'flex', flexDirection: 'column', gap: 8 }}>

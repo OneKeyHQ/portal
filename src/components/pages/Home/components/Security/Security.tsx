@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 
 import { useTheme } from '@emotion/react';
 
@@ -6,11 +6,12 @@ import { Box, Container, Flex, Section } from '../../../../base';
 
 import { Item } from './Item';
 import { SecurityHeader } from './SecurityHeader';
-import { useSecurityData } from './useSecurityData';
+import { SecurityDataItem, useSecurityData } from './useSecurityData';
 
 export const Security: FC = () => {
   const theme = useTheme();
   const data = useSecurityData();
+  const [currentItem, setCurrentItem] = useState<SecurityDataItem>(data[0]);
 
   return (
     <Section>
@@ -46,7 +47,13 @@ export const Security: FC = () => {
               }}
             >
               {data.map((item) => (
-                <Item {...item} />
+                <Item
+                  key={item.title}
+                  onPointerEnter={() => {
+                    setCurrentItem(item);
+                  }}
+                  {...item}
+                />
               ))}
             </Flex>
           </Flex>
@@ -60,12 +67,7 @@ export const Security: FC = () => {
               height: 'fit-content',
             }}
           >
-            {data[0]?.image}
-            {/* <Img
-              alt="sideImage.png"
-              src={placeholderImage}
-              css={{ display: 'block', width: '100%' }}
-            /> */}
+            {currentItem?.image}
           </Box>
         </Flex>
       </Container>

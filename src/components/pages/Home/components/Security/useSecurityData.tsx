@@ -1,6 +1,26 @@
-import { StaticImage } from 'gatsby-plugin-image';
+import { ReactNode, useEffect } from 'react';
 
-export function useSecurityData() {
+import { StaticImage } from 'gatsby-plugin-image';
+import { Loader } from 'pixi.js';
+
+import { NonEmptyArray } from '../../../../../types';
+
+import image1 from './images/image1.jpg';
+import image2 from './images/image2.jpg';
+import image3 from './images/image3.jpg';
+import image4 from './images/image4.jpg';
+
+export type SecurityDataItem = {
+  image: ReactNode;
+  title: string;
+  description: string;
+};
+
+export function useSecurityData(): NonEmptyArray<SecurityDataItem> {
+  useEffect(() => {
+    new Loader().add([image1, image2, image3, image4]).load();
+  }, []);
+
   return [
     {
       image: (
