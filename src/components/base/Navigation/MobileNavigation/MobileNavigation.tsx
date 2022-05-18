@@ -3,7 +3,6 @@ import React, { ReactNode, useCallback, useState } from 'react';
 import { useTheme } from '@emotion/react';
 
 import { Box } from '../../Box';
-import { Container } from '../../Container';
 import { Flex } from '../../Flex';
 import { Logo } from '../../Logo';
 import { useNavigationData } from '../useNavigationData';
@@ -42,37 +41,30 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = (props) => {
 
   return (
     <>
-      <Box
+      <Flex
         xs={{
           backgroundColor: 'rgba(255, 255, 255, .8)',
           paddingTop: 18,
           paddingBottom: 18,
           backdropFilter: 'blur(10px)',
+          padding: 20,
+          justifyContent: 'space-between',
+          alignItems: 'center',
         }}
       >
-        <Container>
-          <Box
-            xs={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-            }}
-          >
-            {LogoIcon}
+        {LogoIcon}
 
-            {children}
+        {children}
 
-            <Box
-              onClick={openMenu}
-              xs={{
-                cursor: 'pointer',
-              }}
-            >
-              <MenuIcon />
-            </Box>
-          </Box>
-        </Container>
-      </Box>
+        <Box
+          onClick={openMenu}
+          xs={{
+            cursor: 'pointer',
+          }}
+        >
+          <MenuIcon />
+        </Box>
+      </Flex>
 
       {menuActive && (
         <Box
@@ -88,20 +80,18 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = (props) => {
             WebkitOverflowScrolling: 'auto',
           }}
         >
-          <Container>
-            <Flex
-              xs={{
-                padding: '18px 0',
-                justifyContent: 'space-between',
-              }}
-            >
-              {LogoIcon}
+          <Flex
+            xs={{
+              padding: '20px',
+              justifyContent: 'space-between',
+            }}
+          >
+            {LogoIcon}
 
-              <Box onClick={closeMenu}>
-                <CloseIcon />
-              </Box>
-            </Flex>
-          </Container>
+            <Box onClick={closeMenu}>
+              <CloseIcon />
+            </Box>
+          </Flex>
 
           <MobileMenuItems mobileMenus={navigationData} />
         </Box>
