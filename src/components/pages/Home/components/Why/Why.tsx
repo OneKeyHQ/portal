@@ -3,6 +3,7 @@ import { FC, useState } from 'react';
 import { useTheme } from '@emotion/react';
 import Swiper, { FreeMode, Navigation } from 'swiper';
 
+import { useMediaQuery } from '../../../../../hooks';
 import {
   Box,
   Flex,
@@ -20,6 +21,7 @@ export const Why: FC = () => {
   const theme = useTheme();
   const data = useData();
   const [thumbsSwiper, setThumbsSwiper] = useState<Swiper>();
+  const media = useMediaQuery();
 
   return (
     <Section>
@@ -28,7 +30,6 @@ export const Why: FC = () => {
           position: 'relative',
           zIndex: 1,
           paddingTop: 64,
-          paddingBottom: 64,
           backgroundColor: theme.colors.white,
           label: 'whySection',
         }}
@@ -92,14 +93,17 @@ export const Why: FC = () => {
               enabled: true,
             }}
             style={{
-              paddingTop: 100,
-              paddingBottom: 100,
+              paddingLeft: media.medium ? 64 : 24,
+              paddingRight: 24,
+              paddingTop: media.medium ? 100 : 60,
+              paddingBottom: media.medium ? 180 : 60,
             }}
           >
             {data.map((item) => (
               <SwiperSlide
                 style={{
                   minWidth: 271,
+                  maxWidth: 600,
                   width: '30vw',
                 }}
                 key={item.title}
