@@ -15,10 +15,13 @@ export const Item: FC<ItemProps> = (props) => {
 
   return (
     <Box
-      css={{
+      xs={{
         backgroundColor: '#ffffff',
         display: 'flex',
         flexDirection: 'column',
+        gap: 26,
+      }}
+      xl={{
         gap: 32,
       }}
     >
