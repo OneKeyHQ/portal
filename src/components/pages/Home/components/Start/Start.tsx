@@ -60,7 +60,7 @@ export const Start = () => {
         >
           <Flex
             xs={{ gap: 16, flexDirection: 'column' }}
-            l={{ flexDirection: 'row', alignItems: 'flex-end' }}
+            m={{ flexDirection: 'row', alignItems: 'flex-end' }}
           >
             <Span
               css={{
