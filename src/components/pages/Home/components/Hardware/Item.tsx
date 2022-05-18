@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Box } from '../../../../base';
+import { Box, Span } from '../../../../base';
 
 export interface ItemProps {
   image: string;
@@ -43,12 +43,12 @@ export const Item: FC<ItemProps> = (props) => {
           }}
         />
         <Box css={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-          <span css={{ ...theme.text.medium600, color: '#ffffff' }}>
+          <Span css={{ ...theme.text.medium600, color: '#ffffff' }}>
             {title}
-          </span>
-          <span css={{ ...theme.text.normal300, color: '#ffffff' }}>
+          </Span>
+          <Span css={{ ...theme.text.normal300, color: '#ffffff' }}>
             {description}
-          </span>
+          </Span>
         </Box>
       </Box>
     </Box>
