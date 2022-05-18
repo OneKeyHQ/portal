@@ -30,8 +30,7 @@ export const Products: FC = () => {
       <Container>
         <Box
           css={{
-            paddingLeft: 87,
-            paddingRight: 87,
+            paddingLeft: 20,
             paddingTop: 87,
             paddingBottom: 87,
             display: 'flex',
@@ -39,7 +38,12 @@ export const Products: FC = () => {
             position: 'relative',
           }}
         >
-          <Box css={{ display: 'flex', gap: 200, flexGrow: 1 }}>
+          <Box
+            xs={{ display: 'flex', gap: 80 }}
+            xxl={{
+              gap: 200,
+            }}
+          >
             {/* left */}
             <Box css={{ display: 'flex', gap: 24 }}>
               <Box
