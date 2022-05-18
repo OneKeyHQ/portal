@@ -34,6 +34,14 @@ export const Arrow: FC<ArrowProps> = (props) => {
           backgroundColor: '#101111',
           borderColor: '#101111',
           opacity: 1,
+          width: 128,
+        },
+        svg: {
+          transition: theme.transitions.allEase,
+        },
+        ':active svg': {
+          marginRight: -20,
+          transform: 'scale(1.1)',
         },
       }}
     >
