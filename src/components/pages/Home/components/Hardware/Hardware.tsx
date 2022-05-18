@@ -29,14 +29,16 @@ export const Hardware: FC = () => {
     >
       <div ref={paddingRef} />
       <Box
-        css={{
+        xs={{
+          paddingTop: 72,
+          paddingBottom: 72,
+          borderRadius: 32,
+          backgroundColor: '#313638',
+        }}
+        m={{
           paddingTop: 112,
           paddingBottom: 112,
-          borderBottomLeftRadius: 40,
-          borderBottomRightRadius: 40,
-          borderTopLeftRadius: 40,
-          borderTopRightRadius: 40,
-          backgroundColor: '#313638',
+          borderRadius: 40,
         }}
       >
         <Container>
@@ -54,14 +56,20 @@ export const Hardware: FC = () => {
               }}
             >
               <Span
-                css={{
-                  ...theme.text.medium600,
+                xs={{
+                  ...theme.text.medium500,
                   color: theme.background.test300,
+                }}
+                m={{
+                  ...theme.text.medium600,
                 }}
               >
                 INTUITIVE HARDWARE
               </Span>
-              <Span css={{ ...theme.text.medium900, color: '#ffffff' }}>
+              <Span
+                xs={{ ...theme.text.medium800, color: '#ffffff' }}
+                m={{ ...theme.text.medium900 }}
+              >
                 Choose OneKey Hardware <br /> Wallet Right for You
               </Span>
             </Flex>

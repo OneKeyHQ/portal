@@ -1,5 +1,5 @@
-import image1 from './images/1.png';
-import image2 from './images/2.png';
+import image1 from './images/1.svg';
+import image2 from './images/2.svg';
 
 export function useData() {
   return [

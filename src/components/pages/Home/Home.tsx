@@ -6,7 +6,15 @@ import { Helmet } from 'react-helmet';
 import { Box, Main, Navigation, PageFooter, SEO } from '../../base';
 import { FadeIn } from '../../base/FadeIn';
 
-import { Header, LogoWall, Rewards, Slogan, Start, Why } from './components';
+import {
+  Hardware,
+  Header,
+  LogoWall,
+  Rewards,
+  Slogan,
+  Start,
+  Why,
+} from './components';
 
 export const Home: React.FC = () => {
   const theme = useTheme();
@@ -36,17 +44,17 @@ export const Home: React.FC = () => {
             <FadeIn>
               <Products />
             </FadeIn>
-      
-            <FadeIn>
-              <Hardware />
-            </FadeIn>
-      
+      */}
+        <FadeIn>
+          <Hardware />
+        </FadeIn>
+        {/*
             <FadeIn>
               <Security />
             </FadeIn>
       
-            <Feature /> */}
-
+            <Feature /> 
+*/}
         <Why />
 
         <FadeIn>
