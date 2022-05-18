@@ -21,7 +21,7 @@ export const MobileMenuItem: FC<MobileMenuItemProps> = (props) => {
   return (
     <Li
       xs={{
-        paddingLeft: level * 20 + 28,
+        paddingLeft: 28,
         paddingRight: 28,
         ':active': {
           backgroundColor: theme.colors.gray600,
