@@ -20,7 +20,7 @@ export const Security: FC = () => {
   return (
     <Section>
       {/* pc */}
-      {media.medium && (
+      {media.large && (
         <Container
           xs={{
             display: 'none',
@@ -97,7 +97,7 @@ export const Security: FC = () => {
         </Container>
       )}
 
-      {!media.medium && (
+      {!media.large && (
         <Box
           xs={{
             paddingTop: 16,

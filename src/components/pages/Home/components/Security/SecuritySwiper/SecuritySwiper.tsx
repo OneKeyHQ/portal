@@ -32,7 +32,7 @@ export const SecuritySwiper: FC<SecuritySwiperProps> = (props) => {
         <SwiperSlide
           style={{
             minWidth: 272,
-            width: '30vw',
+            width: '26vw',
           }}
         >
           <SecuritySwiperItem
