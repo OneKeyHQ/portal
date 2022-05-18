@@ -1,11 +1,11 @@
-import { FC } from 'react';
+import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
 import { Box, Span } from '../../../../base';
 
 export interface ItemProps {
-  image: string;
+  image: string | ReactNode;
   title: string;
   description: string;
 }
@@ -43,11 +43,7 @@ export const Item: FC<ItemProps> = (props) => {
             display: 'flex',
           }}
         >
-          <img
-            src={image}
-            alt="Illustration"
-            css={{ width: 421, height: 421 }}
-          />
+          {image}
         </Box>
         <Box
           css={{
