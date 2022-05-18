@@ -1,6 +1,7 @@
 import { FC, useState } from 'react';
 
 import { useTheme } from '@emotion/react';
+import { AnimatePresence, motion } from 'framer-motion';
 
 import { Box, Container, Flex, Section } from '../../../../base';
 
@@ -61,13 +62,24 @@ export const Security: FC = () => {
           {/* right */}
           <Box
             css={{
+              background: theme.background.test100,
               flex: 1,
               borderRadius: 40,
               overflow: 'hidden',
               height: 'fit-content',
             }}
           >
-            {currentItem?.image}
+            <AnimatePresence exitBeforeEnter>
+              <motion.div
+                key={currentItem.title}
+                animate={{ opacity: 1 }}
+                initial={{ opacity: 0 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.1 }}
+              >
+                {currentItem?.image}
+              </motion.div>
+            </AnimatePresence>
           </Box>
         </Flex>
       </Container>
