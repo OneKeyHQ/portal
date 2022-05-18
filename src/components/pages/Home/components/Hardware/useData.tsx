@@ -1,8 +1,16 @@
+import { useEffect } from 'react';
+
+import { Loader } from 'pixi.js';
+
 import image1 from './images/1.svg';
 import image2 from './images/2.svg';
 import hardware from './images/home-hardware-mini-2.png';
 
 export function useData() {
+  useEffect(() => {
+    new Loader().add(hardware).load();
+  }, []);
+
   return [
     {
       image: image1,
