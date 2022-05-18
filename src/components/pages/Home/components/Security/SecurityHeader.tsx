@@ -21,10 +21,22 @@ export const SecurityHeader: FC<SecurityHeaderProps> = (props) => {
       }}
     >
       <Flex css={{ flexDirection: 'column', gap: 8 }}>
-        <Span css={{ ...theme.text.medium700, color: '#8a9195' }}>
+        <Span
+          xs={{
+            ...theme.text.medium500,
+            color: '#8a9195',
+          }}
+          s={{ ...theme.text.medium600 }}
+          m={{ ...theme.text.medium700 }}
+        >
           SECURITY
         </Span>
-        <Span css={{ ...theme.text.medium1100, color: '#101111' }}>
+        <Span
+          xs={{ ...theme.text.medium800, color: '#101111' }}
+          s={{ ...theme.text.medium900 }}
+          m={{ ...theme.text.medium1000 }}
+          l={{ ...theme.text.medium1100 }}
+        >
           Security,
           <br /> both hard and soft.
         </Span>
