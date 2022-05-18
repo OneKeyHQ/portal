@@ -23,18 +23,23 @@ export const Security: FC = () => {
   return (
     <Section>
       <Container>
-        <Box
-          css={{
+        <Flex
+          xs={{
+            flexDirection: 'column',
             paddingTop: 16,
             paddingBottom: 16,
             backgroundColor: '#ffffff',
-            display: 'flex',
             gap: 46,
             label: 'Security',
           }}
+          m={{
+            flexDirection: 'row',
+          }}
         >
+          {/* left */}
           <Flex
             xs={{
+              flex: 1,
               flexDirection: 'column',
               gap: 68,
             }}
@@ -75,14 +80,21 @@ export const Security: FC = () => {
           </Flex>
 
           {/* right */}
-          <Box css={{ borderRadius: 40, overflow: 'hidden' }}>
+          <Box
+            css={{
+              flex: 1,
+              borderRadius: 40,
+              overflow: 'hidden',
+              height: 'fit-content',
+            }}
+          >
             <Img
               alt="sideImage.png"
               src={placeholderImage}
-              css={{ width: 633 }}
+              css={{ display: 'block', width: '100%' }}
             />
           </Box>
-        </Box>
+        </Flex>
       </Container>
     </Section>
   );
