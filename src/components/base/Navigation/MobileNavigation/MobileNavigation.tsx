@@ -47,7 +47,7 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = (props) => {
           backgroundColor: 'rgba(255, 255, 255, .8)',
           paddingTop: 18,
           paddingBottom: 18,
-          backdropFilter: 'blur(30px)',
+          backdropFilter: 'blur(10px)',
         }}
       >
         <Container>
