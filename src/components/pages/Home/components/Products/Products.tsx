@@ -9,6 +9,7 @@ import {
   Button,
   CanvasPlayer,
   Container,
+  Flex,
   LaunchAppButton,
   Section,
   Span,
@@ -28,24 +29,23 @@ export const Products: FC = () => {
   return (
     <Section>
       <Container>
-        <Box
+        <Flex
           css={{
             paddingLeft: 20,
             paddingTop: 87,
             paddingBottom: 87,
-            display: 'flex',
             alignItems: 'center',
             position: 'relative',
           }}
         >
-          <Box
-            xs={{ display: 'flex', gap: 80 }}
+          <Flex
+            xs={{ gap: 80 }}
             xxl={{
               gap: 200,
             }}
           >
             {/* left */}
-            <Box css={{ display: 'flex', gap: 24 }}>
+            <Flex css={{ gap: 24 }}>
               <Box
                 xs={{
                   marginRight: 30,
@@ -56,9 +56,8 @@ export const Products: FC = () => {
 
               {/* item 1 */}
               <Box>
-                <Box
+                <Flex
                   css={{
-                    display: 'flex',
                     flexDirection: 'column',
                     gap: 24,
                     height: 500,
@@ -79,20 +78,17 @@ export const Products: FC = () => {
                   <Box>
                     <LaunchAppButton />
                   </Box>
-                </Box>
+                </Flex>
 
                 {/* item2 */}
-                <Box
+                <Flex
                   css={{
-                    display: 'flex',
                     flexDirection: 'column',
                     gap: 24,
                     height: 500,
                   }}
                 >
-                  <Box
-                    css={{ display: 'flex', flexDirection: 'column', gap: 8 }}
-                  >
+                  <Flex css={{ flexDirection: 'column', gap: 8 }}>
                     <Span css={{ ...theme.text.medium900 }}>
                       Need more security? No problem.
                     </Span>
@@ -105,14 +101,14 @@ export const Products: FC = () => {
                       don't have to worry about the loss or theft of your mobile
                       phone.
                     </Span>
-                  </Box>
+                  </Flex>
 
                   <Box>
                     <Button variant="outline">Go to shop</Button>
                   </Box>
-                </Box>
+                </Flex>
               </Box>
-            </Box>
+            </Flex>
 
             {/* right */}
             <Box>
@@ -145,8 +141,8 @@ export const Products: FC = () => {
                 </Box>
               </Box>
             </Box>
-          </Box>
-        </Box>
+          </Flex>
+        </Flex>
       </Container>
     </Section>
   );
