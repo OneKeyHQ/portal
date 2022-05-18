@@ -51,16 +51,25 @@ export const Item: FC<ItemProps> = (props) => {
           }}
         />
         <Box css={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-          <Span css={{ ...theme.text.medium600, color: '#ffffff' }}>
+          <Span
+            xs={{
+              ...theme.text.medium500,
+              color: '#ffffff',
+            }}
+            m={{ ...theme.text.medium600 }}
+          >
             {title}
           </Span>
           <Span
-            css={{
-              ...theme.text.normal300,
+            xs={{
+              ...theme.text.normal200,
               color: theme.background.test300,
               ':hover': {
                 color: theme.colors.white,
               },
+            }}
+            m={{
+              ...theme.text.normal300,
             }}
           >
             {description}

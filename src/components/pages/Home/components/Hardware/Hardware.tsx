@@ -1,15 +1,25 @@
-import { FC } from 'react';
+import React from 'react';
 
 import { useTheme } from '@emotion/react';
 import { motion } from 'framer-motion';
+import { FreeMode } from 'swiper';
 
-import { usePositionAnimation } from '../../../../../hooks';
-import { Box, Button, Container, Flex, Span } from '../../../../base';
+import { useMediaQuery, usePositionAnimation } from '../../../../../hooks';
+import {
+  Box,
+  Button,
+  Container,
+  Flex,
+  Span,
+  Swiper as SwiperComponent,
+  SwiperSlide,
+} from '../../../../base';
 
 import { Item } from './Item';
 import { useData } from './useData';
 
-export const Hardware: FC = () => {
+export const Hardware: React.FC = () => {
+  const media = useMediaQuery();
   const theme = useTheme();
   const data = useData();
   const { ref: paddingRef, motionValue: paddingMotionValue } =
@@ -81,11 +91,43 @@ export const Hardware: FC = () => {
           </Flex>
 
           {/* list */}
-          <Box css={{ display: 'flex', gap: 81, paddingTop: 64 }}>
-            {data.map((item) => (
-              <Item key={item.title} {...item} />
-            ))}
-          </Box>
+          <Flex
+            xs={{ paddingTop: 64, gap: 24 }}
+            xl={{
+              gap: 64,
+            }}
+          >
+            {/* for large screen */}
+            {media.medium && (
+              <>
+                {data.map((item) => (
+                  <Item key={item.title} {...item} />
+                ))}
+              </>
+            )}
+
+            {/* small screen */}
+            {!media.medium && (
+              <SwiperComponent
+                slidesPerView="auto"
+                spaceBetween={30}
+                modules={[FreeMode]}
+                freeMode={{
+                  enabled: true,
+                }}
+              >
+                {data.map((item) => (
+                  <SwiperSlide
+                    style={{
+                      width: 272,
+                    }}
+                  >
+                    <Item key={item.title} {...item} />
+                  </SwiperSlide>
+                ))}
+              </SwiperComponent>
+            )}
+          </Flex>
         </Container>
       </Box>
     </motion.section>
