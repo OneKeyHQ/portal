@@ -21,22 +21,13 @@ export const Security: FC = () => {
     <Section>
       {/* pc */}
       {media.large && (
-        <Container
-          xs={{
-            display: 'none',
-          }}
-          l={{
-            display: 'block',
-          }}
-        >
+        <Container>
           <Flex
             xs={{
-              flexDirection: 'column',
               paddingTop: 16,
               paddingBottom: 16,
               backgroundColor: theme.colors.white,
               gap: 46,
-              label: 'Security',
             }}
             m={{
               flexDirection: 'row',
