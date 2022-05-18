@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Box } from '../../../../base';
+import { Box, Span } from '../../../../base';
 
 export interface ItemProps {
   title?: string;
@@ -22,13 +22,24 @@ export const Item: FC<ItemProps> = (props) => {
         gap: 32,
       }}
     >
-      <div css={{ height: 1, width: '100%', backgroundColor: '#101111' }} />
-      <div css={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-        <span css={{ ...theme.text.medium700, color: '#101111' }}>{title}</span>
-        <span css={{ ...theme.text.normal400, color: '#101111' }}>
+      <Box css={{ height: 1, width: '100%', backgroundColor: '#101111' }} />
+      <Box css={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+        <Span
+          xs={{ color: '#101111', ...theme.text.medium600 }}
+          xl={{ ...theme.text.medium700 }}
+        >
+          {title}
+        </Span>
+        <Span
+          xs={{
+            ...theme.text.normal300,
+            color: '#101111',
+          }}
+          xl={{ ...theme.text.normal400 }}
+        >
           {description}
-        </span>
-      </div>
+        </Span>
+      </Box>
     </Box>
   );
 };

@@ -27,7 +27,7 @@ export const SecurityHeader: FC<SecurityHeaderProps> = (props) => {
             color: '#8a9195',
           }}
           s={{ ...theme.text.medium600 }}
-          m={{ ...theme.text.medium700 }}
+          xl={{ ...theme.text.medium700 }}
         >
           SECURITY
         </Span>
@@ -35,7 +35,7 @@ export const SecurityHeader: FC<SecurityHeaderProps> = (props) => {
           xs={{ ...theme.text.medium800, color: '#101111' }}
           s={{ ...theme.text.medium900 }}
           m={{ ...theme.text.medium1000 }}
-          l={{ ...theme.text.medium1100 }}
+          xl={{ ...theme.text.medium1100 }}
         >
           Security,
           <br /> both hard and soft.
