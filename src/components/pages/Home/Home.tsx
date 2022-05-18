@@ -11,6 +11,7 @@ import {
   Header,
   LogoWall,
   Rewards,
+  Security,
   Slogan,
   Start,
   Why,
@@ -48,11 +49,12 @@ export const Home: React.FC = () => {
         <FadeIn>
           <Hardware />
         </FadeIn>
+
+        <FadeIn>
+          <Security />
+        </FadeIn>
+
         {/*
-            <FadeIn>
-              <Security />
-            </FadeIn>
-      
             <Feature /> 
 */}
         <Why />
