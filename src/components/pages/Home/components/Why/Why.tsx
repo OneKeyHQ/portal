@@ -1,8 +1,8 @@
 import { FC, useState } from 'react';
 
+import { useTheme } from '@emotion/react';
 import Swiper, { FreeMode, Navigation } from 'swiper';
 
-import { theme } from '../../../../../theme';
 import {
   Box,
   Flex,
@@ -17,29 +17,29 @@ import { Item } from './Item';
 import { useData } from './useData';
 
 export const Why: FC = () => {
-  const itemStyle = {
-    width: 421,
-  };
+  const theme = useTheme();
   const data = useData();
   const [thumbsSwiper, setThumbsSwiper] = useState<Swiper>();
 
   return (
     <Section>
-      <Flex
+      <Box
         css={{
           position: 'relative',
           zIndex: 1,
           paddingTop: 64,
           paddingBottom: 64,
-          backgroundColor: '#ffffff',
-          flexDirection: 'column',
-          gap: 97,
+          backgroundColor: theme.colors.white,
           label: 'whySection',
         }}
       >
         <Flex
-          css={{
+          xs={{
             justifyContent: 'space-between',
+            paddingLeft: 24,
+            paddingRight: 24,
+          }}
+          l={{
             paddingLeft: 64,
             paddingRight: 64,
           }}
@@ -49,9 +49,12 @@ export const Why: FC = () => {
           </Span>
 
           {/* controller */}
-          <Flex
+          <Box
             xs={{
-              gap: 8,
+              display: 'none',
+            }}
+            m={{
+              display: 'flex',
             }}
           >
             <Arrow
@@ -61,13 +64,17 @@ export const Why: FC = () => {
               direction="left"
             />
             <Arrow
+              xs={{
+                marginLeft: 8,
+              }}
               onClick={() => {
                 thumbsSwiper?.slideNext();
               }}
               direction="right"
             />
-          </Flex>
+          </Box>
         </Flex>
+
         <Box
           css={{
             width: '100%',
@@ -84,18 +91,25 @@ export const Why: FC = () => {
             freeMode={{
               enabled: true,
             }}
+            style={{
+              paddingTop: 100,
+              paddingBottom: 100,
+            }}
           >
             {data.map((item) => (
               <SwiperSlide
+                style={{
+                  minWidth: 271,
+                  width: '30vw',
+                }}
                 key={item.title}
-                style={{ ...itemStyle, marginLeft: 64 }}
               >
                 <Item {...item} />
               </SwiperSlide>
             ))}
           </SwiperComponent>
         </Box>
-      </Flex>
+      </Box>
     </Section>
   );
 };
