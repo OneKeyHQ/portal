@@ -86,7 +86,10 @@ export const Why: FC = () => {
             }}
           >
             {data.map((item) => (
-              <SwiperSlide style={{ ...itemStyle, marginLeft: 64 }}>
+              <SwiperSlide
+                key={item.title}
+                style={{ ...itemStyle, marginLeft: 64 }}
+              >
                 <Item {...item} />
               </SwiperSlide>
             ))}
