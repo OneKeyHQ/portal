@@ -18,7 +18,7 @@ export const LogoWall: FC = () => {
     logos.slice(6, 8),
   ];
 
-  if (media.xLarge) {
+  if (media.xlarge) {
     logosGroup = [[...logos]];
   } else if (media.medium) {
     logosGroup = [logos.slice(0, 4), logos.slice(4, 8)];

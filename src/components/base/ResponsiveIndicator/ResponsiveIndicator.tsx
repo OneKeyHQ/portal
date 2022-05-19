@@ -10,7 +10,7 @@ export interface ResponsiveIndicatorProps {
 export const ResponsiveIndicator: FC<ResponsiveIndicatorProps> = (props) => {
   const { children } = props;
   const mediaQuery = useMediaQuery();
-  const { small, medium, large, xLarge, xxLarge } = mediaQuery;
+  const { small, medium, large, xlarge, xxlarge } = mediaQuery;
   let currentMediaQuery = 'xSmall';
   const [isHidden, setIsHidden] = useState(false);
 
@@ -23,10 +23,10 @@ export const ResponsiveIndicator: FC<ResponsiveIndicatorProps> = (props) => {
     return null;
   }
 
-  if (xxLarge) {
-    currentMediaQuery = 'xxLarge';
-  } else if (xLarge) {
-    currentMediaQuery = 'xLarge';
+  if (xxlarge) {
+    currentMediaQuery = 'xxlarge';
+  } else if (xlarge) {
+    currentMediaQuery = 'xlarge';
   } else if (large) {
     currentMediaQuery = 'large';
   } else if (medium) {

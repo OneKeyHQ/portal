@@ -7,10 +7,10 @@ export function useMediaQueryMapValues<T = any>(
 ) {
   const mediaQuery = useMediaQuery();
 
-  if (mediaQuery.xxLarge) {
+  if (mediaQuery.xxlarge) {
     return value.xxlarge;
   }
-  if (mediaQuery.xLarge) {
+  if (mediaQuery.xlarge) {
     return value.xlarge;
   }
   if (mediaQuery.large) {
