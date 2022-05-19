@@ -22,6 +22,7 @@ export const StartItem: FC<StartItemProps> = (props) => {
         position: 'relative',
         transition: theme.transitions.allEaseOut,
         ':hover': {
+          cursor: 'pointer',
           opacity: 0.6,
         },
       }}
