@@ -1,6 +1,5 @@
 import { FC } from 'react';
 
-import { useTheme } from '@emotion/react';
 import { useTransform } from 'framer-motion';
 
 import {
@@ -15,14 +14,13 @@ import {
   Flex,
   LaunchAppButton,
   Section,
-  Span,
 } from '../../../../../base';
 import { useProductsData } from '../useProductsData';
 
 import { Progress } from './Progress';
+import { TextContent } from './TextContent';
 
 export const NormalProductSection: FC = () => {
-  const theme = useTheme();
   const productsData = useProductsData();
   const { ref, elementInViewportProgress } = useElementInViewportProgress(0);
   const motionValue = useTransform(
@@ -54,7 +52,7 @@ export const NormalProductSection: FC = () => {
           <Flex
             xs={{ gap: 80 }}
             xxl={{
-              gap: 200,
+              gap: 160,
             }}
           >
             {/* left */}
@@ -76,16 +74,11 @@ export const NormalProductSection: FC = () => {
                     height: 500,
                   }}
                 >
-                  <Box
-                    css={{ display: 'flex', flexDirection: 'column', gap: 16 }}
-                  >
-                    <Span css={{ ...theme.text.medium900 }}>
-                      {productsData[0]?.title}
-                    </Span>
-                    <Span css={{ ...theme.text.normal400 }}>
-                      {productsData[0]?.description}
-                    </Span>
-                  </Box>
+                  <TextContent
+                    title={productsData[0]?.title}
+                    description={productsData[0]?.description}
+                  />
+
                   <Box>
                     <LaunchAppButton />
                   </Box>
@@ -99,15 +92,10 @@ export const NormalProductSection: FC = () => {
                     height: 500,
                   }}
                 >
-                  <Flex css={{ flexDirection: 'column', gap: 8 }}>
-                    <Span css={{ ...theme.text.medium900 }}>
-                      {productsData[1]?.title}
-                    </Span>
-
-                    <Span css={{ ...theme.text.normal400 }}>
-                      {productsData[1]?.description}
-                    </Span>
-                  </Flex>
+                  <TextContent
+                    title={productsData[1]?.title}
+                    description={productsData[1]?.description}
+                  />
 
                   <Box>
                     <Button variant="outline">Go to shop</Button>
