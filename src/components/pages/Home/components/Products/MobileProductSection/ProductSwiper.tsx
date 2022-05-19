@@ -40,6 +40,7 @@ export const ProductSwiper: FC<ProductSwiperProps> = (props) => {
             key={item.title}
             imageNode={item.image}
             title={item.title}
+            buttonNode={item.button}
             description={item.description}
           />
         </SwiperSlide>

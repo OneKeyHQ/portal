@@ -9,10 +9,11 @@ export interface ProductSwiperItemProps {
   title: string;
   description: string;
   imageNode: ReactNode;
+  buttonNode?: ReactNode;
 }
 
 export const ProductSwiperItem: FC<ProductSwiperItemProps> = (props) => {
-  const { children, title, description, imageNode } = props;
+  const { children, title, description, imageNode, buttonNode } = props;
   const theme = useTheme();
 
   return (
@@ -37,6 +38,8 @@ export const ProductSwiperItem: FC<ProductSwiperItemProps> = (props) => {
           {description}
         </P>
       </Box>
+
+      <Box xs={{ paddingTop: 24 }}>{buttonNode}</Box>
 
       {children}
     </Box>
