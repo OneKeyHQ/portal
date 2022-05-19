@@ -17,11 +17,13 @@ import {
   Section,
   Span,
 } from '../../../../../base';
+import { useProductsData } from '../useProductsData';
 
 import { Progress } from './Progress';
 
 export const NormalProductSection: FC = () => {
   const theme = useTheme();
+  const productsData = useProductsData();
   const { ref, elementInViewportProgress } = useElementInViewportProgress(0);
   const motionValue = useTransform(
     elementInViewportProgress,
@@ -78,12 +80,10 @@ export const NormalProductSection: FC = () => {
                     css={{ display: 'flex', flexDirection: 'column', gap: 16 }}
                   >
                     <Span css={{ ...theme.text.medium900 }}>
-                      Advanced on-chain wallet app
+                      {productsData[0]?.title}
                     </Span>
                     <Span css={{ ...theme.text.normal400 }}>
-                      Use the OneKey App separately to store and use your crypto
-                      assets in a secure and convenient manner. Each user's
-                      assets are secured appropriately and stored locally.
+                      {productsData[0]?.description}
                     </Span>
                   </Box>
                   <Box>
@@ -101,16 +101,11 @@ export const NormalProductSection: FC = () => {
                 >
                   <Flex css={{ flexDirection: 'column', gap: 8 }}>
                     <Span css={{ ...theme.text.medium900 }}>
-                      Need more security? No problem.
+                      {productsData[1]?.title}
                     </Span>
 
                     <Span css={{ ...theme.text.normal400 }}>
-                      Hardware wallets take the securitisation of digital assets
-                      to another level. From physically isolating hackers to
-                      preventing Trojan horses and software attacks. All
-                      transfers must be approved by the hardware wallet, so you
-                      don't have to worry about the loss or theft of your mobile
-                      phone.
+                      {productsData[1]?.description}
                     </Span>
                   </Flex>
 
