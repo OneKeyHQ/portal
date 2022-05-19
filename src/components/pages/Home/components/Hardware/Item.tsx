@@ -2,6 +2,7 @@ import { FC } from 'react';
 
 import { useTheme } from '@emotion/react';
 
+import { useHover } from '../../../../../hooks';
 import { Box, Span } from '../../../../base';
 
 export interface ItemProps {
@@ -14,9 +15,13 @@ export interface ItemProps {
 export const Item: FC<ItemProps> = (props) => {
   const { image, title, description, hoverImage } = props;
   const theme = useTheme();
+  const { hoverProps, isHovered } = useHover({
+    timeout: 100,
+  });
 
   return (
     <Box
+      {...hoverProps}
       css={{
         display: 'flex',
         flexDirection: 'column',
@@ -34,12 +39,12 @@ export const Item: FC<ItemProps> = (props) => {
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
           transition: theme.transitions.allEaseOut,
-          ':hover': hoverImage
+          ...(hoverImage && isHovered
             ? {
                 backgroundImage: `url(${hoverImage})`,
                 backgroundSize: 'auto 95%',
               }
-            : {},
+            : {}),
         }}
       />
       <Box css={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
@@ -63,10 +68,8 @@ export const Item: FC<ItemProps> = (props) => {
           <Span
             xs={{
               ...theme.text.normal200,
-              color: theme.background.test300,
-              ':hover': {
-                color: theme.colors.white,
-              },
+              transition: theme.transitions.allEaseOut,
+              color: isHovered ? theme.colors.white : theme.background.test300,
             }}
             m={{
               ...theme.text.normal300,
