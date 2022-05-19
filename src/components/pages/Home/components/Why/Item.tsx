@@ -33,6 +33,7 @@ export const Item: FC<ItemProps> = (props) => {
             borderStyle: 'solid',
             borderColor: '#dadee1',
             borderRadius: 32,
+            overflow: 'hidden',
             backgroundColor: '#f0f1f2',
             flexDirection: 'column',
             transition: theme.transitions.allEaseOut,
