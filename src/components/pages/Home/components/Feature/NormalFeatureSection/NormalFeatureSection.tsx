@@ -9,10 +9,10 @@ import {
 } from '../../../../../../hooks';
 import { Box, CanvasPlayer, Section } from '../../../../../base';
 import { FeatureHeader } from '../FeatureHeader';
+import { FeatureItem } from '../FeatureItem';
 import { useFeatureData } from '../useFeatureData';
 
 import { HorizontalScrollingView } from './HorizontalScrollingView';
-import { Item } from './Item';
 
 export interface NormalFeatureSectionProps {
   children?: ReactNode;
@@ -94,11 +94,13 @@ export const NormalFeatureSection: FC<NormalFeatureSectionProps> = () => {
           }}
         />
 
-        <FeatureHeader />
+        <Box xs={{ padding: 120 }}>
+          <FeatureHeader />
+        </Box>
 
         <HorizontalScrollingView progress={elementInViewportProgress}>
           {data.map((itemData, index) => (
-            <Item
+            <FeatureItem
               key={index}
               imageNode={itemData.image}
               title={itemData.title}

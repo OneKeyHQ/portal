@@ -16,6 +16,7 @@ export const Container: FC<ContainerProps> = (props) => {
         maxWidth: '100%',
         paddingLeft: 24,
         paddingRight: 24,
+        label: 'Container',
       }}
       s={{
         paddingLeft: 24,

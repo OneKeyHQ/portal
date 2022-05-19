@@ -23,7 +23,6 @@ export const FeatureHeader: FC<HeaderProps> = () => {
         alignItems: 'center',
         gap: 20,
         textAlign: 'center',
-        padding: 120,
       }}
     >
       <Span

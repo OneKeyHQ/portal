@@ -3,6 +3,7 @@ import { FC, ReactNode } from 'react';
 import { useMediaQuery } from '../../../../../hooks';
 import { Box } from '../../../../base';
 
+import { MobileFeatureSection } from './MobileFeatureSection';
 import { NormalFeatureSection } from './NormalFeatureSection';
 
 export interface FeatureProps {
@@ -16,6 +17,7 @@ export const Feature: FC<FeatureProps> = (props) => {
   return (
     <Box>
       {mediaQuery.medium && <NormalFeatureSection />}
+      {!mediaQuery.medium && <MobileFeatureSection />}
 
       {children}
     </Box>
