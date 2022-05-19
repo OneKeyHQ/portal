@@ -3,7 +3,7 @@ import React, { ReactNode } from 'react';
 import { useTheme } from '@emotion/react';
 
 import { useHover } from '../../../../hooks';
-import { Li, Ul } from '../../Box';
+import { Box, Li, Ul } from '../../Box';
 import { Container } from '../../Container';
 import { LaunchAppButton } from '../../LaunchAppButton';
 import { Logo } from '../../Logo';
@@ -23,16 +23,20 @@ export const NormalNavigation: React.FC<NormalNavigationProps> = () => {
   const { hoverProps, isHovered } = useHover();
 
   return (
-    <>
+    <Box
+      xs={{
+        display: 'none',
+      }}
+      l={{
+        display: 'block',
+      }}
+    >
       <NavigationAnimationWrap>
         <Container
           xs={{
-            display: 'none',
+            display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
-          }}
-          l={{
-            display: 'flex',
           }}
         >
           <Logo
@@ -46,7 +50,6 @@ export const NormalNavigation: React.FC<NormalNavigationProps> = () => {
               },
             }}
           />
-
           <Ul xs={{ display: 'flex', gap: 32, alignItems: 'stretch' }}>
             {data.map((item) => (
               <Li
@@ -77,6 +80,6 @@ export const NormalNavigation: React.FC<NormalNavigationProps> = () => {
       </NavigationAnimationWrap>
 
       <ProductPanel isActive={isHovered} />
-    </>
+    </Box>
   );
 };
