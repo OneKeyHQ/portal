@@ -1,5 +1,7 @@
 import { FC, ReactNode } from 'react';
 
+import { ProductSwiper } from './ProductSwiper';
+
 export interface MobileProductSectionProps {
   children?: ReactNode;
 }
@@ -7,5 +9,10 @@ export interface MobileProductSectionProps {
 export const MobileProductSection: FC<MobileProductSectionProps> = (props) => {
   const { children } = props;
 
-  return <div>MobileProductSection {children}</div>;
+  return (
+    <div>
+      <ProductSwiper />
+      {children}
+    </div>
+  );
 };
