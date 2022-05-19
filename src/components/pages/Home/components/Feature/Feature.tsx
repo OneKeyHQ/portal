@@ -81,6 +81,19 @@ export const Feature: FC<FeatureProps> = () => {
           />
         </Box>
 
+        {/* mask */}
+        <Box
+          xs={{
+            position: 'absolute',
+            left: 0,
+            top: 0,
+            right: 0,
+            height: '50vh',
+            background:
+              'linear-gradient(354.74deg, #F0F1F2 24.25%, rgba(238, 239, 241, 0) 96.87%)',
+          }}
+        />
+
         <FeatureHeader />
 
         <HorizontalScrollingView progress={elementInViewportProgress}>
