@@ -109,7 +109,6 @@ export const Security: FC = () => {
           <Box
             xs={{
               marginTop: 46,
-              width: '100vw',
               overflow: 'hidden',
             }}
             l={{
