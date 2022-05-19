@@ -27,9 +27,12 @@ export const NormalNavigation: React.FC<NormalNavigationProps> = () => {
       <NavigationAnimationWrap>
         <Container
           xs={{
-            display: 'flex',
+            display: 'none',
             justifyContent: 'space-between',
             alignItems: 'center',
+          }}
+          l={{
+            display: 'flex',
           }}
         >
           <Logo

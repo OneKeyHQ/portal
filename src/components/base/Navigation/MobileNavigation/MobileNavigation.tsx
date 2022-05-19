@@ -41,8 +41,9 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = (props) => {
 
   return (
     <>
-      <Flex
+      <Box
         xs={{
+          display: 'flex',
           backgroundColor: 'rgba(255, 255, 255, .8)',
           paddingTop: 18,
           paddingBottom: 18,
@@ -50,6 +51,9 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = (props) => {
           padding: 20,
           justifyContent: 'space-between',
           alignItems: 'center',
+        }}
+        l={{
+          display: 'none',
         }}
       >
         {LogoIcon}
@@ -64,7 +68,7 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = (props) => {
         >
           <MenuIcon />
         </Box>
-      </Flex>
+      </Box>
 
       {menuActive && (
         <Box
