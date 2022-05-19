@@ -7,6 +7,7 @@ import { Box, Main, Navigation, PageFooter, SEO } from '../../base';
 import { FadeIn } from '../../base/FadeIn';
 
 import {
+  Feature,
   Hardware,
   Header,
   LogoWall,
@@ -54,10 +55,13 @@ export const Home: React.FC = () => {
           <Security />
         </FadeIn>
 
-        {/*
-            <Feature /> 
-*/}
-        <Why />
+        <FadeIn>
+          <Feature />
+        </FadeIn>
+
+        <FadeIn>
+          <Why />
+        </FadeIn>
 
         <FadeIn>
           <Rewards />

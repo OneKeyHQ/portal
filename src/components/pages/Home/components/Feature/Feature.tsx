@@ -9,7 +9,7 @@ import {
 } from '../../../../../hooks';
 import { Box, CanvasPlayer, Section } from '../../../../base';
 
-import { Header } from './Header';
+import { FeatureHeader } from './FeatureHeader';
 import { HorizontalScrollingView } from './HorizontalScrollingView';
 import { Item } from './Item';
 import { useFeatureData } from './useFeatureData';
@@ -41,6 +41,7 @@ export const Feature: FC<FeatureProps> = () => {
     >
       <div ref={ref} />
 
+      {/* for space */}
       <Box
         xs={{
           height: '300vh',
@@ -62,6 +63,7 @@ export const Feature: FC<FeatureProps> = () => {
             left: 0,
             top: 0,
             right: 0,
+            height: '100vh',
           }}
         >
           <CanvasPlayer
@@ -77,7 +79,7 @@ export const Feature: FC<FeatureProps> = () => {
           />
         </Box>
 
-        <Header />
+        <FeatureHeader />
 
         <HorizontalScrollingView progress={elementInViewportProgress}>
           {data.map((itemData, index) => (

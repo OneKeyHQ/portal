@@ -2,13 +2,13 @@ import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Box, Button, Logo } from '../../../../base';
+import { Box, Button, Logo, Span } from '../../../../base';
 
 export interface HeaderProps {
   children?: ReactNode;
 }
 
-export const Header: FC<HeaderProps> = () => {
+export const FeatureHeader: FC<HeaderProps> = () => {
   const theme = useTheme();
 
   return (
@@ -25,15 +25,15 @@ export const Header: FC<HeaderProps> = () => {
         padding: 120,
       }}
     >
-      <span
+      <Span
         css={{
           ...theme.text.medium1000,
           color: '#101111',
         }}
       >
         Supercharge great Web3 products
-      </span>
-      <span
+      </Span>
+      <Span
         css={{
           ...theme.text.normal500,
           color: '#101111',
@@ -41,7 +41,7 @@ export const Header: FC<HeaderProps> = () => {
       >
         Compatible with MetaMask and other wallets. DeFi and Mining also
         integrated.
-      </span>
+      </Span>
 
       <Box>
         <Button
