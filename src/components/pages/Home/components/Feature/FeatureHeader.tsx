@@ -10,6 +10,7 @@ export interface HeaderProps {
 
 export const FeatureHeader: FC<HeaderProps> = () => {
   const theme = useTheme();
+  const { text: textStyle } = theme;
 
   return (
     <Box
@@ -26,18 +27,17 @@ export const FeatureHeader: FC<HeaderProps> = () => {
       }}
     >
       <Span
-        css={{
-          ...theme.text.medium1000,
-          color: '#101111',
-        }}
+        xs={{ ...textStyle.medium800, color: '#101111' }}
+        m={{ ...textStyle.medium900 }}
+        l={{ ...textStyle.medium1000 }}
       >
         Supercharge great Web3 products
       </Span>
       <Span
-        css={{
-          ...theme.text.normal500,
-          color: '#101111',
-        }}
+        xs={{ ...textStyle.normal200, color: theme.colors.test400 }}
+        m={{ ...textStyle.normal300 }}
+        l={{ ...textStyle.normal400 }}
+        xl={{ ...textStyle.normal500 }}
       >
         Compatible with MetaMask and other wallets. DeFi and Mining also
         integrated.

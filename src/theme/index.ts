@@ -21,9 +21,10 @@ export const theme = {
     brand900: '#004206',
     white: '#FFFFFF',
     transparent: 'transparent',
+    test400: '#313638',
   },
   background: {
-    test100: 'linear-gradient(0deg, #F0F1F2, #F0F1F2), #EEEEEE',
+    test100: '#F0F1F2',
     test300: '#8A9195',
     test500: '#101111',
   },
