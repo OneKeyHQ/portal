@@ -26,7 +26,7 @@ export const NormalProductSection: FC = () => {
   const motionValue = useTransform(
     elementInViewportProgress,
     [0, 1.5],
-    [0, 119],
+    [0, 59],
   );
 
   const canvasSize = useMediaQueryMapValues({
@@ -131,12 +131,6 @@ export const NormalProductSection: FC = () => {
                       ...new Array(60)
                         .fill(0)
                         .map((_, i) => `/home-intro/home-intro${i}.jpg`),
-                      ...new Array(60)
-                        .fill(0)
-                        .map(
-                          (_, i) =>
-                            `/hardware-mini-features/onekey-mini-features${i}.jpg`,
-                        ),
                     ]}
                     frame={parseInt(motionValue.get().toFixed(0))}
                   />

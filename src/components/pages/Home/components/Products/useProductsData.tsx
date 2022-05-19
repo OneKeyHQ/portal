@@ -28,9 +28,6 @@ export function useProductsData() {
       description:
         "Hardware wallets take the securitisation of digital assets to another level. From physically isolating hackers to preventing Trojan horses and software attacks. All transfers must be approved by the hardware wallet, so you don't have to worry about the loss or theft of your mobile phone.",
       button: <GoToShopButton />,
-      frames: new Array(60)
-        .fill(0)
-        .map((_, i) => `/hardware-mini-features/image${i}.jpg`),
     },
   ];
 }
