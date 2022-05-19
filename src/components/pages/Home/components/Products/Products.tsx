@@ -1,7 +1,9 @@
 import { FC, ReactNode } from 'react';
 
+import { useMediaQuery } from '../../../../../hooks';
 import { Box } from '../../../../base';
 
+import { MobileProductSection } from './MobileProductSection';
 import { NormalProductSection } from './NormalProductSection';
 
 export interface ProductsProps {
@@ -10,10 +12,12 @@ export interface ProductsProps {
 
 export const Products: FC<ProductsProps> = (props) => {
   const { children } = props;
+  const mediaQuery = useMediaQuery();
 
   return (
     <Box>
-      <NormalProductSection />
+      {mediaQuery.large && <NormalProductSection />}
+      {!mediaQuery.large && <MobileProductSection />}
 
       {children}
     </Box>
