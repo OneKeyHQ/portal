@@ -71,6 +71,7 @@ export const Security: FC = () => {
                 borderRadius: 40,
                 overflow: 'hidden',
                 height: 'fit-content',
+                maxHeight: 929,
               }}
             >
               <AnimatePresence exitBeforeEnter>

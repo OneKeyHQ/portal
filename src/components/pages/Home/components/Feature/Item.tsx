@@ -2,7 +2,7 @@ import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Box } from '../../../../base';
+import { Box, Span } from '../../../../base';
 
 export interface ItemProps {
   imageNode: ReactNode;
@@ -30,22 +30,22 @@ export const Item: FC<ItemProps> = (props) => {
           margin: '0 auto',
         }}
       >
-        <span
+        <Span
           css={{
             ...theme.text.medium900,
             color: '#101111',
           }}
         >
           {title}
-        </span>
-        <span
+        </Span>
+        <Span
           css={{
             ...theme.text.normal500,
             color: '#101111',
           }}
         >
           {description}
-        </span>
+        </Span>
       </Box>
 
       {imageNode}
