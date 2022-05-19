@@ -25,7 +25,7 @@ export const Security: FC = () => {
           <Flex
             xs={{
               paddingTop: 16,
-              paddingBottom: 16,
+              paddingBottom: 80,
               backgroundColor: theme.colors.white,
               gap: 46,
             }}

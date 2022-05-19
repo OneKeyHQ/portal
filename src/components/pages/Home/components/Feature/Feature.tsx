@@ -54,6 +54,8 @@ export const Feature: FC<FeatureProps> = () => {
           bottom: 0,
           position: 'sticky',
           paddingTop: 120,
+          paddingBottom: 60,
+          minHeight: 'calc(100vh - 80px)',
         }}
       >
         <Box
