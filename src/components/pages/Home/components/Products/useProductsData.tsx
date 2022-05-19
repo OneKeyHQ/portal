@@ -6,7 +6,7 @@ export function useProductsData() {
       image: (
         <StaticImage
           alt="Advanced on-chain wallet app"
-          src="./images/image1.jpg"
+          src="./images/product-image1.jpg"
         />
       ),
       title: 'Advanced on-chain wallet app',
@@ -17,7 +17,7 @@ export function useProductsData() {
       image: (
         <StaticImage
           alt="Need more security? No problem"
-          src="./images/image2.jpg"
+          src="./images/product-image2.jpg"
         />
       ),
       title: 'Need more security? No problem.',
