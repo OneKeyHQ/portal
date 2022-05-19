@@ -12,7 +12,7 @@ import { Box, CanvasPlayer, Section } from '../../../../base';
 import { Header } from './Header';
 import { HorizontalScrollingView } from './HorizontalScrollingView';
 import { Item } from './Item';
-import { useData } from './useData';
+import { useFeatureData } from './useFeatureData';
 
 export interface FeatureProps {
   children?: ReactNode;
@@ -26,7 +26,7 @@ export const Feature: FC<FeatureProps> = () => {
     [0.4, 0.8],
     [0, 29],
   );
-  const data = useData();
+  const data = useFeatureData();
   const { width: windowWidth } = useWindowSize();
 
   return (
@@ -83,7 +83,7 @@ export const Feature: FC<FeatureProps> = () => {
           {data.map((itemData, index) => (
             <Item
               key={index}
-              image={itemData.image}
+              imageNode={itemData.image}
               title={itemData.title}
               description={itemData.description}
             />

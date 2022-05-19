@@ -1,17 +1,17 @@
-import { FC } from 'react';
+import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
 import { Box } from '../../../../base';
 
 export interface ItemProps {
-  image: string;
+  imageNode: ReactNode;
   title: string;
   description: string;
 }
 
 export const Item: FC<ItemProps> = (props) => {
-  const { image, title, description } = props;
+  const { imageNode, title, description } = props;
   const theme = useTheme();
 
   return (
@@ -48,14 +48,7 @@ export const Item: FC<ItemProps> = (props) => {
         </span>
       </Box>
 
-      <img
-        style={{
-          width: '100%',
-        }}
-        src={image}
-        alt=""
-        srcSet=""
-      />
+      {imageNode}
     </Box>
   );
 };
