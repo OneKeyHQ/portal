@@ -31,6 +31,7 @@ export const Hardware: React.FC = () => {
   return (
     <motion.section
       style={{
+        overflow: 'hidden',
         paddingRight: paddingMotionValue,
         paddingLeft: paddingMotionValue,
         paddingTop: 60,
@@ -98,7 +99,7 @@ export const Hardware: React.FC = () => {
             }}
           >
             {/* for large screen */}
-            {media.medium && (
+            {media.large && (
               <>
                 {data.map((item) => (
                   <Item key={item.title} {...item} />
@@ -107,7 +108,7 @@ export const Hardware: React.FC = () => {
             )}
 
             {/* small screen */}
-            {!media.medium && (
+            {!media.large && (
               <SwiperComponent
                 slidesPerView="auto"
                 spaceBetween={30}

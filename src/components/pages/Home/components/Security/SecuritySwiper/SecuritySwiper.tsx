@@ -30,6 +30,7 @@ export const SecuritySwiper: FC<SecuritySwiperProps> = (props) => {
     >
       {data.map((item) => (
         <SwiperSlide
+          key={item.title}
           style={{
             minWidth: 272,
             width: '26vw',

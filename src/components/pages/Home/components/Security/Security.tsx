@@ -94,7 +94,7 @@ export const Security: FC = () => {
         <Box
           xs={{
             paddingTop: 16,
-            paddingBottom: 16,
+            paddingBottom: 80,
             backgroundColor: theme.colors.white,
           }}
         >
