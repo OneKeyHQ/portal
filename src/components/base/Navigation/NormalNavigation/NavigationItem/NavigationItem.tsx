@@ -32,7 +32,7 @@ export const NavigationItem: FC<NavigationItemProps> = (props) => {
           cursor: 'pointer',
 
           ':hover': {
-            color: theme.background.test100,
+            color: '#878888',
           },
         }}
       >
