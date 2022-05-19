@@ -15,6 +15,7 @@ export function useProductsData() {
       description:
         "Use OneKey App separately to store and use your crypto assets in a secure and convenient manner. Each user's assets are appropriately secured and stored locally.",
       button: <LaunchAppButton />,
+      frames: new Array(60).fill(0).map((_, i) => `/home-intro/image${i}.jpg`),
     },
     {
       image: (
@@ -27,6 +28,9 @@ export function useProductsData() {
       description:
         "Hardware wallets take the securitisation of digital assets to another level. From physically isolating hackers to preventing Trojan horses and software attacks. All transfers must be approved by the hardware wallet, so you don't have to worry about the loss or theft of your mobile phone.",
       button: <GoToShopButton />,
+      frames: new Array(60)
+        .fill(0)
+        .map((_, i) => `/hardware-mini-features/image${i}.jpg`),
     },
   ];
 }

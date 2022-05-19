@@ -56,7 +56,7 @@ export function init(
 
     animatedSprite.loop = false;
 
-    animatedSprite.scale.set(0.5, 0.5);
+    animatedSprite.scale.set(width, height);
 
     // add the sprite to the stage
     app.stage.addChild(animatedSprite);
