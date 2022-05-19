@@ -3,7 +3,10 @@ import { FC } from 'react';
 import { useTheme } from '@emotion/react';
 import { useTransform } from 'framer-motion';
 
-import { useElementInViewportProgress } from '../../../../../hooks';
+import {
+  useElementInViewportProgress,
+  useMediaQueryMapValues,
+} from '../../../../../hooks';
 import {
   Box,
   Button,
@@ -25,6 +28,14 @@ export const Products: FC = () => {
     [0, 1.5],
     [0, 59],
   );
+
+  const canvasSize = useMediaQueryMapValues({
+    small: { width: 540, height: 421 },
+    medium: { width: 540, height: 421 },
+    large: { width: 540, height: 421 },
+    xlarge: { width: 644, height: 502 },
+    xxlarge: { width: 792, height: 618 },
+  });
 
   return (
     <Section>
@@ -124,15 +135,15 @@ export const Products: FC = () => {
                   css={{
                     top: `calc(50% - ${502 / 2}px)`,
                     position: 'sticky',
-                    width: 644,
-                    height: 502,
+                    width: canvasSize.width,
+                    height: canvasSize.height,
                     borderRadius: 24,
                     overflow: 'hidden',
                   }}
                 >
                   <CanvasPlayer
-                    width={1288 / 2}
-                    height={1004 / 2}
+                    width={canvasSize.width}
+                    height={canvasSize.height}
                     images={new Array(60)
                       .fill(0)
                       .map((_, i) => `/canvas/image${i}.jpg`)}
