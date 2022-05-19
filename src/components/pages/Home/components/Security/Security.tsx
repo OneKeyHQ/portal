@@ -55,6 +55,7 @@ export const Security: FC = () => {
                     onPointerEnter={() => {
                       setCurrentItem(item);
                     }}
+                    image={item.image}
                     title={item.title}
                     description={item.description}
                   />
@@ -88,6 +89,7 @@ export const Security: FC = () => {
         </Container>
       )}
 
+      {/* for mobile */}
       {!media.large && (
         <Box
           xs={{

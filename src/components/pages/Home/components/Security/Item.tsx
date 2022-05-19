@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
@@ -7,10 +7,11 @@ import { Box, BoxProps, Span } from '../../../../base';
 export interface ItemProps extends BoxProps {
   title?: string;
   description?: string;
+  image: ReactNode;
 }
 
 export const Item: FC<ItemProps> = (props) => {
-  const { title, description, ...otherProps } = props;
+  const { title, description, image, ...otherProps } = props;
   const theme = useTheme();
 
   return (
@@ -48,6 +49,18 @@ export const Item: FC<ItemProps> = (props) => {
         >
           {description}
         </Span>
+      </Box>
+
+      {/* for preload image */}
+      <Box
+        xs={{
+          width: 1,
+          height: 1,
+          opacity: 0,
+          position: 'absolute',
+        }}
+      >
+        {image}
       </Box>
     </Box>
   );
