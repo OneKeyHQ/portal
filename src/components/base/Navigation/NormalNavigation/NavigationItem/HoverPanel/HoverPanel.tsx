@@ -44,9 +44,8 @@ export const HoverPanel: FC<HoverPanelProps> = (props) => {
         }}
       >
         {subItems?.map((item) => (
-          <a href={item.path} target="_blank" rel="noreferrer">
+          <a key={item.name} href={item.path} target="_blank" rel="noreferrer">
             <Box
-              key={item.name}
               xs={{
                 ...theme.text.medium300,
                 transition: theme.transitions.allEaseOut,
