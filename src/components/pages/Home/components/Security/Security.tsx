@@ -42,12 +42,14 @@ export const Security: FC = () => {
         <Container>
           <Flex
             xs={{
-              paddingTop: 16,
+              paddingTop: 80,
               paddingBottom: 80,
               backgroundColor: theme.colors.white,
               gap: 46,
             }}
             m={{
+              paddingTop: 120,
+              paddingBottom: 120,
               flexDirection: 'row',
             }}
           >
