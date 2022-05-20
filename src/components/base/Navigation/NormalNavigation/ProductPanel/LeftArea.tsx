@@ -3,7 +3,9 @@ import { FC, ReactNode, useCallback, useState } from 'react';
 import { useTheme } from '@emotion/react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { StaticImage } from 'gatsby-plugin-image';
+import ReactDOM from 'react-dom';
 
+import { isBrowser } from '../../../../../utils';
 import { Box, Li, Ul } from '../../../Box';
 
 export interface LeftAreaProps {
@@ -91,6 +93,7 @@ export const LeftArea: FC<LeftAreaProps> = (props) => {
           >
             {currentSelected === 'OneKey Mini' && (
               <StaticImage
+                loading="eager"
                 draggable={false}
                 css={{
                   width: '100%',
@@ -103,6 +106,7 @@ export const LeftArea: FC<LeftAreaProps> = (props) => {
             )}
             {currentSelected === 'OneKey Lite' && (
               <StaticImage
+                loading="eager"
                 draggable={false}
                 css={{
                   width: '90%',
@@ -118,6 +122,25 @@ export const LeftArea: FC<LeftAreaProps> = (props) => {
         </AnimatePresence>
       </Box>
       {children}
+
+      {isBrowser() &&
+        ReactDOM.createPortal(
+          <Box
+            css={{
+              position: 'absolute',
+              bottom: 0,
+              left: 0,
+              width: 1,
+              height: 1,
+              opacity: 0.1,
+              overflow: 'hidden',
+            }}
+          >
+            <StaticImage src="./images/OneKeyLite.png" alt="OneKeyLite" />
+            <StaticImage src="./images/OneKeyMini.png" alt="OneKeyMini" />
+          </Box>,
+          document.body,
+        )}
     </Box>
   );
 };
