@@ -19,29 +19,36 @@ export const NavigationItem: FC<NavigationItemProps> = (props) => {
   });
   const theme = useTheme();
 
+  const contentNode = (
+    <Box
+      {...otherProps}
+      {...hoverProps}
+      xs={{
+        ...theme.text.medium300,
+        color: theme.background.test500,
+        cursor: 'pointer',
+
+        ':hover': {
+          color: '#878888',
+        },
+      }}
+    >
+      {name}
+    </Box>
+  );
+
   return (
     <Box
       xs={{
         position: 'relative',
       }}
     >
-      <a href={path} target="_blank" rel="noreferrer">
-        <Box
-          {...otherProps}
-          {...hoverProps}
-          xs={{
-            ...theme.text.medium300,
-            color: theme.background.test500,
-            cursor: 'pointer',
-
-            ':hover': {
-              color: '#878888',
-            },
-          }}
-        >
-          {name}
-        </Box>
-      </a>
+      {!subItems && (
+        <a href={path} target="_blank" rel="noreferrer">
+          {contentNode}
+        </a>
+      )}
+      {subItems && contentNode}
 
       {subItems && <HoverPanel isActive={isHovered} subItems={subItems} />}
     </Box>
