@@ -52,14 +52,14 @@ export const Item: FC<ItemProps> = (props) => {
           css={{
             height: 1,
             width: '100%',
-            backgroundColor: '#ffffff',
+            backgroundColor: theme.colors.test300,
           }}
         />
         <Box css={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
           <Span
             xs={{
               ...theme.text.medium500,
-              color: '#ffffff',
+              color: theme.colors.white,
             }}
             m={{ ...theme.text.medium600 }}
           >
