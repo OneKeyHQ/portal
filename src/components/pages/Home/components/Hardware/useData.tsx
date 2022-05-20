@@ -17,18 +17,21 @@ export function useData() {
       hoverImage: hardware,
       title: 'OneKey Mini',
       description: 'Mini sized, safety without compromise.',
+      status: 'available',
     },
     {
       image: image2,
       title: 'OneKey Touch',
       description:
         'Secure, buy, exchange, grow your crypto and manage your NFTs with our new Bluetooth-enabled hardware wallet. ',
+      status: 'coming-soon',
     },
     {
       image: image2,
       title: 'OneKey Pro',
       description:
         'Secure, trade, grow your crypto and manage your NFTs with our new Bluetooth-enabled hardware wallet. ',
+      status: 'coming-soon',
     },
   ];
 }
