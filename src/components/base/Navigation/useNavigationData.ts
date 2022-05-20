@@ -26,24 +26,25 @@ export function useNavigationData(): NavigationDataItem[] {
       name: 'For Developer',
       path: '/',
     },
-    {
-      name: 'For Business',
-      path: '#',
-      subItems: [
-        {
-          name: 'Enterprise Solutions',
-          path: '',
-        },
-        {
-          name: 'Referral',
-          path: '',
-        },
-        {
-          name: 'Co-branded products',
-          path: '',
-        },
-      ],
-    },
+    // todo: temp hide it
+    // {
+    //   name: 'For Business',
+    //   path: '#',
+    //   subItems: [
+    //     {
+    //       name: 'Enterprise Solutions',
+    //       path: '',
+    //     },
+    //     {
+    //       name: 'Referral',
+    //       path: '',
+    //     },
+    //     {
+    //       name: 'Co-branded products',
+    //       path: '',
+    //     },
+    //   ],
+    // },
     {
       name: 'Help Center',
       path: '/',
