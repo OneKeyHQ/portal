@@ -14,3 +14,4 @@ export * from './LaunchAppButton';
 export * from './ResponsiveIndicator';
 export * from './AspectRatio';
 export * from './GoToShopButton';
+export * from './Icon';

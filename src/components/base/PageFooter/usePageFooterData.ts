@@ -1,5 +1,23 @@
 export function usePageFooterData() {
   return {
+    media: {
+      twitter: {
+        url: 'https://twitter.com/OneKeyHQ',
+        username: 'OneKeyHQ',
+      },
+      discord: {
+        url: 'https://discord.gg/nwUJaTzjzv',
+      },
+      github: {
+        url: 'https://github.com/OneKeyHQ/OneKey-Wallet',
+      },
+      reddit: {
+        url: 'https://www.reddit.com/r/OneKeyHQ/',
+      },
+      weibo: {
+        url: 'https://weibo.com/yourKeysyourBitcoin',
+      },
+    },
     menuData: [
       {
         name: 'product',
