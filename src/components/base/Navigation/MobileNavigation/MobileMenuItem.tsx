@@ -4,9 +4,8 @@ import { useTheme } from '@emotion/react';
 
 import { Box, Li, Ul } from '../../Box';
 import { Flex } from '../../Flex';
+import { MenuListArrowIcon } from '../../Icon';
 import { NavigationDataItem } from '../useNavigationData';
-
-import { ArrowIcon } from './ArrowIcon';
 
 interface MobileMenuItemProps {
   menuItem: NavigationDataItem;
@@ -79,7 +78,7 @@ export const MobileMenuItem: FC<MobileMenuItemProps> = (props) => {
                 transition: theme.transitions.allCubicBezier,
               }}
             >
-              <ArrowIcon />
+              <MenuListArrowIcon />
             </Box>
           </Flex>
 

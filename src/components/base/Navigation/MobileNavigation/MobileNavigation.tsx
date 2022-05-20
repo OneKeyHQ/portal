@@ -4,11 +4,11 @@ import { useTheme } from '@emotion/react';
 
 import { Box } from '../../Box';
 import { Flex } from '../../Flex';
+import { MenuCloseIcon } from '../../Icon';
 import { Logo } from '../../Logo';
 import { NavigationAnimationWrap } from '../NavigationAnimationWrap';
 import { useNavigationData } from '../useNavigationData';
 
-import { CloseIcon } from './CloseIcon';
 import { MenuIcon } from './MenuIcon';
 import { MobileMenuItems } from './MobileMenuItems';
 
@@ -96,7 +96,12 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = (props) => {
             {LogoIcon}
 
             <Box onClick={closeMenu}>
-              <CloseIcon />
+              <MenuCloseIcon
+                {...{
+                  width: 40,
+                  height: 40,
+                }}
+              />
             </Box>
           </Flex>
 
