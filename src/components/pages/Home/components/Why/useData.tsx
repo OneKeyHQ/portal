@@ -6,7 +6,7 @@ export function useData() {
       image: <StaticImage src="./images/Home1.jpg" alt="Beginner friendly" />,
       title: 'Beginner friendly',
       description:
-        "Use our products with ease whether you are an experienced practitioner or a beginner, even it's for your grandma.",
+        'Whether you are an OG, beginner or purchasing for your grandma! Use our products with ease.',
     },
     {
       image: (
@@ -16,8 +16,7 @@ export function useData() {
         />
       ),
       title: 'Software and hardware, better together',
-      description:
-        'Wanna be safe and easy at the same time when investing cryptos? You can have both here.',
+      description: 'Wana trade and invest securely with ease? You can here. ',
     },
     {
       image: (

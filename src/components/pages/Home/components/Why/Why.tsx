@@ -22,16 +22,10 @@ export const Why: FC = () => {
   const data = useData();
   const [thumbsSwiper, setThumbsSwiper] = useState<Swiper>();
   const media = useMediaQuery();
-  const [activeIndex, setActiveIndex] = useState(0);
   const [allowSlideNext, setAllowSlideNext] = useState<boolean | undefined>();
   const [allowSlidePrev, setAllowSlidePrev] = useState<boolean | undefined>();
 
-  const onSlideChange = (swiper: Swiper) => {
-    setActiveIndex(swiper.activeIndex);
-  };
-
   const updateSlideStatus = () => {
-    console.log(thumbsSwiper?.isEnd);
     setAllowSlideNext(!thumbsSwiper?.isEnd);
     setAllowSlidePrev(!thumbsSwiper?.isBeginning);
   };
@@ -59,7 +53,7 @@ export const Why: FC = () => {
           }}
         >
           <Span css={{ ...theme.text.medium900, color: '#101111' }}>
-            Why Choose OneKey {activeIndex} {allowSlideNext?.toString()}
+            Why Choose OneKey
           </Span>
 
           {/* controller */}
@@ -100,7 +94,6 @@ export const Why: FC = () => {
           }}
         >
           <SwiperComponent
-            onSlideChange={onSlideChange}
             onSwiper={(swiper) => {
               setAllowSlideNext(!swiper.isEnd);
               setAllowSlidePrev(!swiper.isBeginning);

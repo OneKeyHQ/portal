@@ -73,9 +73,9 @@ export const Start = () => {
                 ...theme.text.medium1200,
               }}
             >
-              Start Using
+              Start using
               <br />
-              OneKey Wallet Today
+              OneKey wallet today
             </Span>
 
             <Img

@@ -17,7 +17,7 @@ export const FeatureHeader: FC<HeaderProps> = () => {
       xs={{
         position: 'relative',
         margin: '0 auto',
-        maxWidth: 760,
+        maxWidth: 520,
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',

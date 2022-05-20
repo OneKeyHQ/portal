@@ -2,7 +2,7 @@ import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Box, Flex, Span } from '../../../../../base';
+import { Flex, Span } from '../../../../../base';
 
 export interface TextContentProps {
   children?: ReactNode;

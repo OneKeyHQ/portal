@@ -40,9 +40,9 @@ export const Content: FC<ContentProps> = () => {
             ...theme.text.medium1000,
           }}
         >
-          All-in-One Crypto Wallet.
+          All-in-one crypto wallet.
           <br />
-          Trusted by Millions.
+          Trusted by millions.
         </H1>
         <Box
           xs={{
