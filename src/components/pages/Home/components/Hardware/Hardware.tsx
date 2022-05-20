@@ -1,10 +1,11 @@
 import React from 'react';
 
 import { useTheme } from '@emotion/react';
-import { motion } from 'framer-motion';
+import { motion, useMotionValue } from 'framer-motion';
 import { FreeMode } from 'swiper';
 
 import { useMediaQuery, usePositionAnimation } from '../../../../../hooks';
+import { mergeRefs } from '../../../../../utils';
 import {
   Box,
   Button,
@@ -22,34 +23,40 @@ export const Hardware: React.FC = () => {
   const media = useMediaQuery();
   const theme = useTheme();
   const data = useData();
+  const zeroMotionValue = useMotionValue(0);
   const { ref: paddingRef, motionValue: paddingMotionValue } =
     usePositionAnimation({
       from: 60,
       to: 0,
     });
+  const { ref: borderRadiusRef, motionValue: borderRadiusMotionValue } =
+    usePositionAnimation({
+      from: 40,
+      to: 0,
+    });
+  const borderRadiusDefaultValue = useMotionValue(media.medium ? 40 : 32);
+
+  const ref = mergeRefs(borderRadiusRef, paddingRef);
 
   return (
     <motion.section
+      ref={ref}
       style={{
         overflow: 'hidden',
-        paddingRight: media.medium ? paddingMotionValue : 0,
-        paddingLeft: media.medium ? paddingMotionValue : 0,
+        paddingRight: media.medium ? paddingMotionValue : zeroMotionValue,
+        paddingLeft: media.medium ? paddingMotionValue : zeroMotionValue,
         paddingTop: 60,
         paddingBottom: 60,
       }}
     >
-      <div ref={paddingRef} />
-      <Box
-        xs={{
-          paddingTop: 72,
-          paddingBottom: 72,
-          borderRadius: 32,
+      <motion.div
+        style={{
+          borderRadius: media.medium
+            ? borderRadiusMotionValue
+            : borderRadiusDefaultValue,
           backgroundColor: '#313638',
-        }}
-        m={{
-          paddingTop: 112,
-          paddingBottom: 112,
-          borderRadius: 40,
+          paddingTop: media.medium ? 112 : 72,
+          paddingBottom: media.medium ? 112 : 72,
         }}
       >
         <Container>
@@ -130,7 +137,7 @@ export const Hardware: React.FC = () => {
             )}
           </Flex>
         </Container>
-      </Box>
+      </motion.div>
     </motion.section>
   );
 };
