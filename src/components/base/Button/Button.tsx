@@ -16,6 +16,16 @@ export interface ButtonProps extends BoxProps {
 
 const { assign } = Object;
 
+export const buttonBaseStyle = {
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  padding: '12px 16px',
+  fontStyle: 'normal',
+  cursor: 'pointer',
+  borderRadius: 100,
+};
+
 export const Button: FC<ButtonProps> = (props) => {
   const theme = useTheme();
   const {
@@ -41,13 +51,7 @@ export const Button: FC<ButtonProps> = (props) => {
 
   const buttonStyle: CSSObject = {
     ...theme.text.medium300,
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: '12px 16px',
-    fontStyle: 'normal',
-    cursor: 'pointer',
-    borderRadius: 100,
+    ...buttonBaseStyle,
   };
 
   if (disabled) {
