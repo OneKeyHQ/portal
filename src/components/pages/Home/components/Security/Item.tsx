@@ -41,10 +41,7 @@ export const Item: FC<ItemProps> = (props) => {
           {title}
         </Span>
         <Span
-          xs={{
-            ...theme.text.normal300,
-            color: '#101111',
-          }}
+          xs={{ ...theme.text.normal300, color: '#101111' }}
           xl={{ ...theme.text.normal400 }}
         >
           {description}
