@@ -7,42 +7,51 @@ import { Box, BoxProps } from '../../../../base';
 export interface ArrowProps extends BoxProps {
   children?: ReactNode;
   direction?: 'up' | 'down' | 'left' | 'right';
+  disabled?: boolean;
 }
 
 export const Arrow: FC<ArrowProps> = (props) => {
-  const { children, direction, ...otherProps } = props;
+  const { children, direction, disabled = false, ...otherProps } = props;
   const theme = useTheme();
+
+  const activeStyle = {
+    ':hover': {
+      color: 'white',
+      backgroundColor: '#101111',
+      borderColor: '#101111',
+      opacity: 1,
+      width: 128,
+    },
+    svg: {
+      transition: theme.transitions.allEase,
+    },
+    ':active svg': {
+      marginRight: -20,
+      transform: 'scale(1.1)',
+    },
+  };
+
+  const style = {
+    cursor: disabled ? 'not-allowed' : 'pointer',
+    height: 64,
+    width: 64,
+    borderWidth: 1,
+    borderStyle: 'solid',
+    borderColor: theme.background.test500,
+    borderRadius: 100,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    transition: theme.transitions.allEase,
+    opacity: 0.5,
+  };
 
   return (
     <Box
       {...otherProps}
       css={{
-        cursor: 'pointer',
-        height: 64,
-        width: 64,
-        borderWidth: 1,
-        borderStyle: 'solid',
-        borderColor: theme.background.test500,
-        borderRadius: 100,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        transition: theme.transitions.allEase,
-        opacity: 0.5,
-        ':hover': {
-          color: 'white',
-          backgroundColor: '#101111',
-          borderColor: '#101111',
-          opacity: 1,
-          width: 128,
-        },
-        svg: {
-          transition: theme.transitions.allEase,
-        },
-        ':active svg': {
-          marginRight: -20,
-          transform: 'scale(1.1)',
-        },
+        ...style,
+        ...(disabled ? {} : activeStyle),
       }}
     >
       <Box

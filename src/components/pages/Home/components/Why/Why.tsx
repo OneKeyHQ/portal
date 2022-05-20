@@ -22,6 +22,19 @@ export const Why: FC = () => {
   const data = useData();
   const [thumbsSwiper, setThumbsSwiper] = useState<Swiper>();
   const media = useMediaQuery();
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [allowSlideNext, setAllowSlideNext] = useState<boolean | undefined>();
+  const [allowSlidePrev, setAllowSlidePrev] = useState<boolean | undefined>();
+
+  const onSlideChange = (swiper: Swiper) => {
+    setActiveIndex(swiper.activeIndex);
+  };
+
+  const updateSlideStatus = () => {
+    console.log(thumbsSwiper?.isEnd);
+    setAllowSlideNext(!thumbsSwiper?.isEnd);
+    setAllowSlidePrev(!thumbsSwiper?.isBeginning);
+  };
 
   return (
     <Section>
@@ -46,7 +59,7 @@ export const Why: FC = () => {
           }}
         >
           <Span css={{ ...theme.text.medium900, color: '#101111' }}>
-            Why Choose OneKey
+            Why Choose OneKey {activeIndex} {allowSlideNext?.toString()}
           </Span>
 
           {/* controller */}
@@ -59,17 +72,21 @@ export const Why: FC = () => {
             }}
           >
             <Arrow
+              disabled={!allowSlidePrev}
               onClick={() => {
                 thumbsSwiper?.slidePrev();
+                updateSlideStatus();
               }}
               direction="left"
             />
             <Arrow
+              disabled={!allowSlideNext}
               xs={{
-                marginLeft: 8,
+                marginLeft: 24,
               }}
               onClick={() => {
                 thumbsSwiper?.slideNext();
+                updateSlideStatus();
               }}
               direction="right"
             />
@@ -83,7 +100,10 @@ export const Why: FC = () => {
           }}
         >
           <SwiperComponent
+            onSlideChange={onSlideChange}
             onSwiper={(swiper) => {
+              setAllowSlideNext(!swiper.isEnd);
+              setAllowSlidePrev(!swiper.isBeginning);
               setThumbsSwiper(swiper);
             }}
             slidesPerView="auto"
