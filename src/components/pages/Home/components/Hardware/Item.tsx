@@ -42,7 +42,6 @@ export const Item: FC<ItemProps> = (props) => {
           ...(hoverImage && isHovered
             ? {
                 backgroundImage: `url(${hoverImage})`,
-                backgroundSize: 'auto 95%',
               }
             : {}),
         }}
