@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 
 import { useHover } from '../../../../../hooks';
 import { Box } from '../../../Box';
+import { Container } from '../../../Container';
 
 import { LeftArea } from './LeftArea';
 import { RightArea } from './RightArea';
@@ -53,31 +54,35 @@ export const ProductPanel: FC<ProductPanelProps> = (props) => {
       style={{
         width: '100%',
         overflow: 'hidden',
+        background:
+          'linear-gradient(90deg, #F0F1F2 0%, #F0F1F2 53.76%, rgba(255, 255, 255, 1) 56.6%)',
       }}
     >
-      <Box
-        {...hoverProps}
-        xs={{
-          display: 'flex',
-          justifyContent: 'space-between',
-        }}
-      >
+      <Container>
         <Box
+          {...hoverProps}
           xs={{
-            flex: 1,
+            display: 'flex',
+            justifyContent: 'space-between',
           }}
         >
-          <LeftArea />
+          <Box
+            xs={{
+              flex: 1,
+            }}
+          >
+            <LeftArea />
+          </Box>
+          <Box
+            xs={{
+              width: '33%',
+            }}
+          >
+            <RightArea />
+          </Box>
         </Box>
-        <Box
-          xs={{
-            width: '33%',
-          }}
-        >
-          <RightArea />
-        </Box>
-      </Box>
-      {children}
+        {children}
+      </Container>
     </motion.div>
   );
 };

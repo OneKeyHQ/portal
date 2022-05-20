@@ -48,12 +48,16 @@ export const LeftArea: FC<LeftAreaProps> = (props) => {
       <Box
         xs={{
           width: '50%',
-          paddingLeft: 64,
           display: 'flex',
           alignItems: 'center',
         }}
       >
-        <Ul>
+        <Ul
+          xs={{
+            margin: 0,
+            padding: 0,
+          }}
+        >
           {items.map((item, index) => (
             <Li
               onMouseMove={() => handleMouseMove(item)}
@@ -80,7 +84,13 @@ export const LeftArea: FC<LeftAreaProps> = (props) => {
       <Box
         xs={{
           width: '50%',
-          height: '22vw',
+          height: '100%',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+        xl={{
+          height: '450px',
         }}
       >
         <AnimatePresence exitBeforeEnter>
@@ -96,9 +106,9 @@ export const LeftArea: FC<LeftAreaProps> = (props) => {
                 loading="eager"
                 draggable={false}
                 css={{
-                  width: '100%',
+                  width: '90%',
                   height: 'auto',
-                  marginBottom: '-20%',
+                  marginBottom: '-33%',
                 }}
                 src="./images/OneKeyMini.png"
                 alt="OneKeyMini"
@@ -111,8 +121,7 @@ export const LeftArea: FC<LeftAreaProps> = (props) => {
                 css={{
                   width: '90%',
                   height: 'auto',
-                  marginTop: '-26%',
-                  marginLeft: 'auto',
+                  marginTop: '-33%',
                 }}
                 src="./images/OneKeyLite.png"
                 alt="OneKeyLite"
