@@ -69,7 +69,21 @@ export const Content: FC<ContentProps> = () => {
           <Button variant="outline">Go to shop</Button>
         </Box>
 
-        <Span xs={{ ...theme.text.normal100 }}>Trustpilot score & review</Span>
+        {/* todo: i18n link */}
+        <a href="https://help.onekey.so/hc/en-us/articles/360002003315-Privacy-Policy">
+          <Span
+            xs={{
+              ...theme.text.normal100,
+              color: theme.colors.test400,
+              borderBottom: `1px solid ${theme.colors.test400}`,
+              ':hover': {
+                opacity: 0.6,
+              },
+            }}
+          >
+            Trustpilot score & review
+          </Span>
+        </a>
       </Box>
     </Container>
   );
