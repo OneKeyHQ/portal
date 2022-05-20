@@ -9,7 +9,7 @@ export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost';
 export interface ButtonProps extends BoxProps {
   disabled?: boolean;
   variant?: ButtonVariant;
-  themeColor?: 'brand' | 'gray';
+  themeColor?: 'brand' | 'white';
   rightIcon?: React.ReactNode;
   leftIcon?: React.ReactNode;
 }
@@ -94,14 +94,15 @@ export const Button: FC<ButtonProps> = (props) => {
     assign(buttonStyle, secondaryButtonStyle);
   } else if (variant === 'outline') {
     const outlineButtonStyle = {
-      color: theme.colors.gray900,
+      color: themeColor === 'white' ? theme.colors.white : theme.colors.gray900,
       background: 'transparent',
       borderWidth: 1,
       borderStyle: 'solid',
-      borderColor: theme.colors.gray900,
+      borderColor:
+        themeColor === 'white' ? theme.colors.white : theme.colors.gray900,
       ':hover': {
-        color: color700,
-        borderColor: color700,
+        color: themeColor === 'white' ? theme.colors.brand400 : color700,
+        borderColor: themeColor === 'white' ? theme.colors.brand400 : color700,
       },
       ':active': {
         color: color900,

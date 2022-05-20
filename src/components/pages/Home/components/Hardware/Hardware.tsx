@@ -94,7 +94,7 @@ export const Hardware: React.FC = () => {
             <Box>
               <GoToShopButton
                 buttonProps={{
-                  variant: 'primary',
+                  themeColor: 'white',
                 }}
               />
             </Box>

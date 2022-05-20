@@ -21,7 +21,6 @@ export const GoToShopButton: FC<GoToShopButtonProps> = (props) => {
       <Button variant="outline" {...buttonProps}>
         Go to shop {children}
       </Button>
-      ;
     </a>
   );
 };
