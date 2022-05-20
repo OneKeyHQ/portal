@@ -45,7 +45,7 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = (props) => {
       xs={{
         display: 'block',
       }}
-      l={{
+      m={{
         display: 'none',
       }}
     >

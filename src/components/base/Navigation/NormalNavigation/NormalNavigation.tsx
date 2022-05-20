@@ -27,7 +27,7 @@ export const NormalNavigation: React.FC<NormalNavigationProps> = () => {
       xs={{
         display: 'none',
       }}
-      l={{
+      m={{
         display: 'block',
       }}
     >
