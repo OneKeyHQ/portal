@@ -44,24 +44,27 @@ export const HoverPanel: FC<HoverPanelProps> = (props) => {
         }}
       >
         {subItems?.map((item) => (
-          <Box
-            key={item.name}
-            xs={{
-              ...theme.text.medium300,
-              transition: theme.transitions.allEaseOut,
-              padding: '12px 22px',
-              borderRadius: 12,
-              textAlign: 'center',
-              wordBreak: 'keep-all',
-              whiteSpace: 'nowrap',
-              cursor: 'pointer',
-              ':hover': {
-                backgroundColor: '#f0f1f2',
-              },
-            }}
-          >
-            {item.name}
-          </Box>
+          <a href={item.path} target="_blank" rel="noreferrer">
+            <Box
+              key={item.name}
+              xs={{
+                ...theme.text.medium300,
+                transition: theme.transitions.allEaseOut,
+                padding: '12px 22px',
+                borderRadius: 12,
+                textAlign: 'center',
+                wordBreak: 'keep-all',
+                whiteSpace: 'nowrap',
+                cursor: 'pointer',
+                color: theme.colors.test500,
+                ':hover': {
+                  backgroundColor: '#f0f1f2',
+                },
+              }}
+            >
+              {item.name}
+            </Box>
+          </a>
         ))}
         {children}
       </Flex>

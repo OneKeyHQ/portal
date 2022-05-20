@@ -33,7 +33,7 @@ export const MobileMenuItem: FC<MobileMenuItemProps> = (props) => {
       key={menuItem.name}
     >
       {!menuItem.subItems && (
-        <Box>
+        <a href={menuItem.path} target="_blank" rel="noreferrer">
           <Flex
             xs={{
               alignItems: 'center',
@@ -42,6 +42,7 @@ export const MobileMenuItem: FC<MobileMenuItemProps> = (props) => {
           >
             <Box
               xs={{
+                color: theme.colors.test500,
                 paddingTop: 10,
                 paddingBottom: 10,
                 ...theme.text.normal300,
@@ -50,7 +51,7 @@ export const MobileMenuItem: FC<MobileMenuItemProps> = (props) => {
               {menuItem.name}
             </Box>
           </Flex>
-        </Box>
+        </a>
       )}
 
       {menuItem.subItems && (

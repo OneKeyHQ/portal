@@ -13,7 +13,7 @@ export interface NavigationItemProps extends NavigationDataItem {
 }
 
 export const NavigationItem: FC<NavigationItemProps> = (props) => {
-  const { children, name, subItems, ...otherProps } = props;
+  const { children, name, subItems, path, ...otherProps } = props;
   const { hoverProps, isHovered } = useHover();
   const theme = useTheme();
 
@@ -23,22 +23,23 @@ export const NavigationItem: FC<NavigationItemProps> = (props) => {
         position: 'relative',
       }}
     >
-      <Box
-        {...otherProps}
-        {...hoverProps}
-        xs={{
-          ...theme.text.medium300,
-          color: theme.background.test500,
-          cursor: 'pointer',
+      <a href={path} target="_blank" rel="noreferrer">
+        <Box
+          {...otherProps}
+          {...hoverProps}
+          xs={{
+            ...theme.text.medium300,
+            color: theme.background.test500,
+            cursor: 'pointer',
 
-          ':hover': {
-            color: '#878888',
-          },
-        }}
-      >
-        {name}
-        {children}
-      </Box>
+            ':hover': {
+              color: '#878888',
+            },
+          }}
+        >
+          {name}
+        </Box>
+      </a>
 
       {subItems && <HoverPanel isActive={isHovered} subItems={subItems} />}
     </Box>
