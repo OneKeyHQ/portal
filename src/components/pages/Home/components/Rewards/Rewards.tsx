@@ -2,6 +2,7 @@ import { FC } from 'react';
 
 import Marquee from 'react-fast-marquee';
 
+import { theme } from '../../../../../theme';
 import { Box, Img, Section } from '../../../../base';
 
 import image1 from './images/image01.svg';
@@ -28,46 +29,63 @@ const images = [
   image10,
 ];
 
-export const Rewards: FC = () => (
-  <Section>
-    <Box
-      xs={{
-        width: '100%',
-        overflow: 'hidden',
-        paddingTop: 40,
-        paddingBottom: 40,
-        backgroundColor: '#313638',
-      }}
-      m={{
-        paddingTop: 64,
-        paddingBottom: 64,
-      }}
-    >
-      <Marquee gradientWidth={0}>
-        <Box
-          xs={{
-            display: 'flex',
-            alignItems: 'center',
-          }}
-        >
-          {images.map((image) => (
-            <Img
-              xs={{
-                userSelect: 'none',
-                userDrag: 'none',
-                margin: '0 10px',
+export const Rewards: FC = () => {
+  const itemStyle = {
+    xs: {
+      margin: '0 10px',
+      transform: 'scale(.8)',
+    },
+    m: {
+      margin: '0 50px',
+      transform: 'scale(1)',
+    },
+  };
+
+  return (
+    <Section>
+      <Box
+        xs={{
+          width: '100%',
+          overflow: 'hidden',
+          paddingTop: 40,
+          paddingBottom: 40,
+          backgroundColor: '#313638',
+        }}
+        m={{
+          paddingTop: 64,
+          paddingBottom: 64,
+        }}
+      >
+        <Marquee gradientWidth={0} direction="right">
+          <Box
+            xs={{
+              display: 'flex',
+              alignItems: 'center',
+            }}
+          >
+            <Box
+              m={itemStyle.m}
+              xs={itemStyle.xs}
+              css={{
+                ...theme.text.medium800,
+                color: theme.colors.test300,
               }}
-              m={{
-                margin: '0 50px',
-              }}
-              draggable={false}
-              key={image}
-              src={image}
-              alt="image"
-            />
-          ))}
-        </Box>
-      </Marquee>
-    </Box>
-  </Section>
-);
+            >
+              Backed by the Best
+            </Box>
+            {images.map((image) => (
+              <Img
+                m={itemStyle.m}
+                xs={itemStyle.xs}
+                draggable={false}
+                key={image}
+                src={image}
+                alt="image"
+              />
+            ))}
+          </Box>
+        </Marquee>
+      </Box>
+    </Section>
+  );
+};
