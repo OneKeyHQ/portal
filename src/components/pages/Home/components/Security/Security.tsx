@@ -3,7 +3,7 @@ import { FC, useState } from 'react';
 import { useTheme } from '@emotion/react';
 import { AnimatePresence, motion } from 'framer-motion';
 
-import { useMediaQuery } from '../../../../../hooks';
+import { useInterval, useMediaQuery } from '../../../../../hooks';
 import { Box, Container, Flex, Section } from '../../../../base';
 
 import { Item } from './Item';
@@ -15,7 +15,25 @@ export const Security: FC = () => {
   const theme = useTheme();
   const data = useSecurityData();
   const media = useMediaQuery();
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [currentItem, setCurrentItem] = useState<SecurityDataItem>(data[0]);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  useInterval(() => {
+    if (isAnimating) {
+      return;
+    }
+
+    const newIndex = (currentIndex + 1) % data.length;
+
+    setCurrentIndex(newIndex);
+
+    const nextItem = data[newIndex];
+
+    if (nextItem) {
+      setCurrentItem(nextItem);
+    }
+  }, 3000);
 
   return (
     <Section>
@@ -48,12 +66,16 @@ export const Security: FC = () => {
                   flexDirection: 'column',
                   gap: 32,
                 }}
+                onMouseEnter={() => setIsAnimating(true)}
+                onMouseLeave={() => setIsAnimating(false)}
               >
-                {data.map((item) => (
+                {data.map((item, index) => (
                   <Item
+                    active={index === currentIndex}
                     key={item.title}
                     onPointerEnter={() => {
                       setCurrentItem(item);
+                      setCurrentIndex(index);
                     }}
                     image={item.image}
                     title={item.title}

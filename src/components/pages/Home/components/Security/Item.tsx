@@ -7,11 +7,12 @@ import { Box, BoxProps, Span } from '../../../../base';
 export interface ItemProps extends BoxProps {
   title?: string;
   description?: string;
+  active?: boolean;
   image: ReactNode;
 }
 
 export const Item: FC<ItemProps> = (props) => {
-  const { title, description, image, ...otherProps } = props;
+  const { title, description, image, active = false, ...otherProps } = props;
   const theme = useTheme();
 
   return (
@@ -26,6 +27,11 @@ export const Item: FC<ItemProps> = (props) => {
         ':hover': {
           opacity: 1,
         },
+        ...(active
+          ? {
+              opacity: 1,
+            }
+          : {}),
       }}
       xl={{
         gap: 32,
