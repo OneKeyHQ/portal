@@ -25,7 +25,7 @@ export const NormalProductSection: FC = () => {
   const { ref, elementInViewportProgress } = useElementInViewportProgress(0);
   const motionValue = useTransform(
     elementInViewportProgress,
-    [0, 1.5],
+    [0.5, 1],
     [0, 59],
   );
 
