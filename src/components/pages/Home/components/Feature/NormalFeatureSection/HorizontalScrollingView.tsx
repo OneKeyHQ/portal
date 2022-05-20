@@ -16,7 +16,7 @@ export const HorizontalScrollingView: FC<HorizontalScrollingViewProps> = (
   const theme = useTheme();
   const { children, progress } = props;
 
-  const x = useTransform(progress, (value) => (value - 1.5) * -600);
+  const x = useTransform(progress, (value) => (value - 1.5) * -1900);
 
   return (
     <Box

@@ -44,7 +44,7 @@ export const NormalFeatureSection: FC<NormalFeatureSectionProps> = () => {
       {/* for space */}
       <Box
         xs={{
-          height: '300vh',
+          height: '100vh',
           width: 100,
         }}
       />
