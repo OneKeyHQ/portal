@@ -3,7 +3,7 @@ import { FC, useCallback, useState } from 'react';
 import { revueFromSubscriptionSubmit } from '@dinehq/revue-form-subscriber';
 import { useTheme } from '@emotion/react';
 
-import { Box } from '../Box';
+import { Box, Span } from '../Box';
 import { Button } from '../Button';
 
 export const EmailSubscribe: FC = () => {
@@ -29,9 +29,9 @@ export const EmailSubscribe: FC = () => {
         maxWidth: 780,
       }}
     >
-      <span css={{ fontSize: 14, color: '#ffffff99' }}>
+      <Span css={{ fontSize: 14, color: '#ffffff99' }}>
         Subscribe to our notifications
-      </span>
+      </Span>
 
       <div
         css={{
@@ -55,7 +55,8 @@ export const EmailSubscribe: FC = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-        <Button onClick={subscribe} variant="ghost">
+
+        <Button onClick={subscribe} variant="outline">
           Subscribe
         </Button>
       </div>
@@ -64,11 +65,11 @@ export const EmailSubscribe: FC = () => {
         xs={{ height: 1, width: '100%', backgroundColor: theme.colors.white }}
       />
 
-      <span css={{ ...theme.text.normal100, color: '#ffffff99' }}>
+      <Span css={{ ...theme.text.normal100, color: '#ffffff99' }}>
         Subscribe to our notifications (for privacy reason, use different email
         than the one you use to purchase onekey. we also periodically delete
         those order information)
-      </span>
+      </Span>
     </Box>
   );
 };
