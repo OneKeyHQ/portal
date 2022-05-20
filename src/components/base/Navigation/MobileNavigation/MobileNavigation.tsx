@@ -41,7 +41,14 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = (props) => {
   }, [setMenuActive]);
 
   return (
-    <>
+    <Box
+      xs={{
+        display: 'block',
+      }}
+      l={{
+        display: 'none',
+      }}
+    >
       <NavigationAnimationWrap paddingRange={[20, 12]} isSpring>
         <Flex
           xs={{
@@ -49,9 +56,6 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = (props) => {
             paddingRight: 20,
             justifyContent: 'space-between',
             alignItems: 'center',
-          }}
-          l={{
-            display: 'none',
           }}
         >
           {LogoIcon}
@@ -99,6 +103,6 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = (props) => {
           <MobileMenuItems mobileMenus={navigationData} />
         </Box>
       )}
-    </>
+    </Box>
   );
 };
