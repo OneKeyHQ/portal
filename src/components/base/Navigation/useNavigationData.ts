@@ -8,33 +8,33 @@ export function useNavigationData(): NavigationDataItem[] {
   return [
     {
       name: 'Products',
-      path: '#',
-      subItems: [
-        {
-          name: 'Wallet App',
-          path: 'https://onekey.so/download',
-        },
-        {
-          name: 'Browser Extension',
-          path: 'https://onekey.so/plugin',
-        },
-        {
-          name: 'Hardware Device',
-          path: 'https://onekey.so/hardware',
-        },
-        {
-          name: 'Swap',
-          path: 'https://swap.onekey.so/',
-        },
-        {
-          name: 'Token List',
-          path: 'https://onekey.so/tokens',
-        },
-        {
-          name: 'Recovery Phrase Converter',
-          path: 'https://bip39.onekey.so/',
-        },
-      ],
+      path: '/products',
+      // subItems: [
+      //   {
+      //     name: 'Wallet App',
+      //     path: 'https://onekey.so/download',
+      //   },
+      //   {
+      //     name: 'Browser Extension',
+      //     path: 'https://onekey.so/plugin',
+      //   },
+      //   {
+      //     name: 'Hardware Device',
+      //     path: 'https://onekey.so/hardware',
+      //   },
+      //   {
+      //     name: 'Swap',
+      //     path: 'https://swap.onekey.so/',
+      //   },
+      //   {
+      //     name: 'Token List',
+      //     path: 'https://onekey.so/tokens',
+      //   },
+      //   {
+      //     name: 'Recovery Phrase Converter',
+      //     path: 'https://bip39.onekey.so/',
+      //   },
+      // ],
     },
     {
       name: 'App',
