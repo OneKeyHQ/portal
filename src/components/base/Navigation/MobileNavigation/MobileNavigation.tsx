@@ -5,6 +5,7 @@ import { useTheme } from '@emotion/react';
 import { Box } from '../../Box';
 import { Flex } from '../../Flex';
 import { Logo } from '../../Logo';
+import { NavigationAnimationWrap } from '../NavigationAnimationWrap';
 import { useNavigationData } from '../useNavigationData';
 
 import { CloseIcon } from './CloseIcon';
@@ -41,34 +42,32 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = (props) => {
 
   return (
     <>
-      <Box
-        xs={{
-          display: 'flex',
-          backgroundColor: 'rgba(255, 255, 255, .8)',
-          paddingTop: 18,
-          paddingBottom: 18,
-          backdropFilter: 'blur(10px)',
-          padding: 20,
-          justifyContent: 'space-between',
-          alignItems: 'center',
-        }}
-        l={{
-          display: 'none',
-        }}
-      >
-        {LogoIcon}
-
-        {children}
-
-        <Box
-          onClick={openMenu}
+      <NavigationAnimationWrap paddingRange={[20, 12]} isSpring>
+        <Flex
           xs={{
-            cursor: 'pointer',
+            paddingLeft: 20,
+            paddingRight: 20,
+            justifyContent: 'space-between',
+            alignItems: 'center',
+          }}
+          l={{
+            display: 'none',
           }}
         >
-          <MenuIcon />
-        </Box>
-      </Box>
+          {LogoIcon}
+
+          {children}
+
+          <Box
+            onClick={openMenu}
+            xs={{
+              cursor: 'pointer',
+            }}
+          >
+            <MenuIcon />
+          </Box>
+        </Flex>
+      </NavigationAnimationWrap>
 
       {menuActive && (
         <Box

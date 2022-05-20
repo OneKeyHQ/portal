@@ -1,17 +1,24 @@
 import { FC, ReactNode } from 'react';
 
-import { motion, useTransform, useViewportScroll } from 'framer-motion';
+import {
+  motion,
+  useSpring,
+  useTransform,
+  useViewportScroll,
+} from 'framer-motion';
 
 export interface NavigationAnimationWrapProps {
   children?: ReactNode;
+  paddingRange: [number, number];
+  isSpring?: boolean;
 }
 
 export const NavigationAnimationWrap: FC<NavigationAnimationWrapProps> = (
   props,
 ) => {
-  const { children } = props;
+  const { paddingRange, isSpring = false, children } = props;
   const { scrollY } = useViewportScroll();
-  const y = useTransform(scrollY, [0, 100], [38, 16]);
+  const paddingValue = useTransform(scrollY, [0, 100], paddingRange);
   const backgroundColor = useTransform(scrollY, (value: number) => {
     const opacity = value > 90 ? 0.9 : value / 100;
 
@@ -23,13 +30,16 @@ export const NavigationAnimationWrap: FC<NavigationAnimationWrapProps> = (
     return `blur(${blurValue}px)`;
   });
 
+  const paddingSpringValue = useSpring(paddingValue);
+  const blurSpringValue = useSpring(blur);
+
   return (
     <motion.div
       style={{
         backgroundColor,
-        paddingTop: y,
-        paddingBottom: y,
-        backdropFilter: blur,
+        paddingTop: isSpring ? paddingSpringValue : paddingValue,
+        paddingBottom: isSpring ? paddingSpringValue : paddingValue,
+        backdropFilter: isSpring ? blurSpringValue : blur,
       }}
     >
       {children}
