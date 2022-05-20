@@ -41,12 +41,20 @@ export const NormalProductSection: FC = () => {
     <Section>
       <Container>
         <Flex
-          css={{
+          xs={{
             paddingLeft: 20,
             paddingTop: 87,
             paddingBottom: 87,
             alignItems: 'center',
             position: 'relative',
+          }}
+          m={{
+            paddingTop: 100,
+            paddingBottom: 100,
+          }}
+          l={{
+            paddingTop: 120,
+            paddingBottom: 120,
           }}
         >
           <Flex
@@ -58,11 +66,14 @@ export const NormalProductSection: FC = () => {
             {/* left */}
             <Flex css={{ gap: 24 }}>
               <Box
-                xs={{
-                  marginRight: 30,
+                l={{
+                  marginRight: 52,
+                }}
+                xl={{
+                  marginRight: 64,
                 }}
               >
-                <Progress />
+                <Progress height={canvasSize.height} />
               </Box>
 
               {/* item 1 */}

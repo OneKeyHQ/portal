@@ -4,10 +4,11 @@ import { Box } from '../../../../../base';
 
 export interface ProgressProps {
   children?: ReactNode;
+  height: number;
 }
 
 export const Progress: FC<ProgressProps> = (props) => {
-  const { children } = props;
+  const { children, height } = props;
 
   return (
     <Box
@@ -20,7 +21,7 @@ export const Progress: FC<ProgressProps> = (props) => {
       <Box
         xs={{
           width: '100%',
-          height: 502,
+          height,
           position: 'sticky',
           background: 'black',
           top: `calc(50% - ${502 / 2}px)`,
