@@ -14,11 +14,18 @@ export interface ProductPanelProps {
 }
 
 const container = {
-  hidden: { height: 0, opacity: 0 },
+  hidden: {
+    height: 0,
+    opacity: 0,
+    transition: {
+      duration: 0,
+    },
+  },
   visible: {
     height: 'fit-content',
     opacity: 1,
     transition: {
+      duration: 0,
       delayChildren: 0.1,
       staggerChildren: 0.08,
     },
