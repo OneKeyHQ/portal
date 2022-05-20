@@ -74,7 +74,7 @@ export const RightArea: FC<RightAreaProps> = (props) => {
             color: '#8a9195',
           }}
         >
-          Get started quickly from O to 1, and most of the questions you may
+          Get started quickly from 0 to 1, and most of the questions you may
           encounter can be answered here.
         </Span>
       </Box>
