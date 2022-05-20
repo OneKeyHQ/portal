@@ -18,14 +18,14 @@ const container = {
     height: 0,
     opacity: 0,
     transition: {
-      duration: 0,
+      duration: 0.15,
     },
   },
   visible: {
     height: 'fit-content',
     opacity: 1,
     transition: {
-      duration: 0,
+      duration: 0.15,
       delayChildren: 0.1,
       staggerChildren: 0.08,
     },
