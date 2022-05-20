@@ -45,34 +45,23 @@ export const Slogan: React.FC = () => {
           }}
         >
           <motion.p
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 'all' }}
             variants={variants}
             whileInView="open"
             initial="closed"
           >
             {media.medium ? (
-              <>
-                <motion.span variants={itemVariants}>
-                  <OneKey /> is the smartest way
-                </motion.span>
-                <motion.span variants={itemVariants}>
-                  to secure, buy, exchange and{' '}
-                </motion.span>
-                <motion.span variants={itemVariants}>
-                  grow your crypto assets.
-                </motion.span>
-              </>
+              <motion.span variants={itemVariants}>
+                <OneKey /> is the smartest way
+                <br /> to secure, buy, exchange and <br />
+                grow your crypto assets.
+              </motion.span>
             ) : (
-              <>
-                <motion.span variants={itemVariants}>
-                  <OneKey />
-                </motion.span>
-                <motion.span variants={itemVariants}>
-                  is the smartest way to secure, buy, exchange and grow your
-                  crypto assets.
-                </motion.span>
-                <motion.span variants={itemVariants} />
-              </>
+              <motion.span variants={itemVariants}>
+                <OneKey />
+                is the smartest way to secure, buy, exchange and grow your
+                crypto assets.
+              </motion.span>
             )}
           </motion.p>
         </Box>
