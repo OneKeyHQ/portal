@@ -72,11 +72,16 @@ export const Why: FC = () => {
                 updateSlideStatus();
               }}
               direction="left"
+              xs={{
+                width: 64,
+              }}
             />
             <Arrow
               disabled={!allowSlideNext}
               xs={{
                 marginLeft: 24,
+                width: 128,
+                justifyContent: 'flex-end',
               }}
               onClick={() => {
                 thumbsSwiper?.slideNext();

@@ -20,21 +20,19 @@ export const Arrow: FC<ArrowProps> = (props) => {
       backgroundColor: '#101111',
       borderColor: '#101111',
       opacity: 1,
-      width: 128,
     },
     svg: {
+      transform: 'scale(1) translateX(0)',
       transition: theme.transitions.allEase,
     },
     ':active svg': {
-      marginRight: -20,
-      transform: 'scale(1.1)',
+      transform: 'scale(1.1) translateX(5px)',
     },
   };
 
   const style = {
     cursor: disabled ? 'not-allowed' : 'pointer',
     height: 64,
-    width: 64,
     borderWidth: 1,
     borderStyle: 'solid',
     borderColor: theme.background.test500,
@@ -44,15 +42,17 @@ export const Arrow: FC<ArrowProps> = (props) => {
     justifyContent: 'center',
     transition: theme.transitions.allEase,
     opacity: 0.5,
+    paddingRight: 20,
+    paddingLeft: 20,
   };
 
   return (
     <Box
-      {...otherProps}
-      css={{
+      xs={{
         ...style,
         ...(disabled ? {} : activeStyle),
       }}
+      externalProps={otherProps}
     >
       <Box
         css={{
@@ -60,16 +60,22 @@ export const Arrow: FC<ArrowProps> = (props) => {
         }}
       >
         <svg
-          width="25"
-          height="25"
-          viewBox="0 0 25 25"
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
             fillRule="evenodd"
             clipRule="evenodd"
-            d="M20.5866 11.4999L10.7983 1.70684L12.2129 0.292969L24.4139 12.4999L12.2129 24.7068L10.7983 23.293L20.5866 13.4999H0V11.4999H20.5866Z"
+            d="M5.12012 15L23.0401 15L23.0401 17L5.12012 17L5.12012 15Z"
+            fill="currentColor"
+          />
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M25.671 14.8222L17.2412 6.04117L18.5989 4.62695L27.0287 13.408C28.4033 14.8399 28.4033 17.1615 27.0287 18.5935L18.5989 27.3745L17.2412 25.9603L25.671 17.1792C26.2959 16.5284 26.2959 15.4731 25.671 14.8222Z"
             fill="currentColor"
           />
         </svg>
