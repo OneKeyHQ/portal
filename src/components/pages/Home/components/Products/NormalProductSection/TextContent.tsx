@@ -19,7 +19,10 @@ export const TextContent: FC<TextContentProps> = (props) => {
       <Span xs={{ ...theme.text.medium800 }} xl={{ ...theme.text.medium900 }}>
         {title}
       </Span>
-      <Span xs={{ ...theme.text.normal300 }} xl={{ ...theme.text.normal400 }}>
+      <Span
+        xs={{ ...theme.text.normal300, color: theme.colors.test400 }}
+        xl={{ ...theme.text.normal400 }}
+      >
         {description}
       </Span>
 
