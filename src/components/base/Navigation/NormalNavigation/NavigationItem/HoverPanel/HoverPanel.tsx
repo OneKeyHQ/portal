@@ -49,7 +49,7 @@ export const HoverPanel: FC<HoverPanelProps> = (props) => {
             xs={{
               ...theme.text.medium300,
               transition: theme.transitions.allEaseOut,
-              padding: '12px 42px',
+              padding: '12px 22px',
               borderRadius: 12,
               textAlign: 'center',
               wordBreak: 'keep-all',

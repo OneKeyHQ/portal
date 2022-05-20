@@ -64,7 +64,8 @@ export const Button: FC<ButtonProps> = (props) => {
       background: theme.colors.brand400,
       borderWidth: 0,
       ':hover': {
-        background: color700,
+        background: theme.colors.test500,
+        color: theme.colors.white,
       },
       ':active': {
         background: color900,
@@ -78,7 +79,8 @@ export const Button: FC<ButtonProps> = (props) => {
       background: 'white',
       borderWidth: 0,
       ':hover': {
-        color: color700,
+        background: theme.colors.test500,
+        color: theme.colors.white,
       },
       ':active': {
         color: color900,

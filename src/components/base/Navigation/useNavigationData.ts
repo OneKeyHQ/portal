@@ -8,23 +8,50 @@ export function useNavigationData(): NavigationDataItem[] {
   return [
     {
       name: 'Products',
-      path: '/products',
+      path: '#',
+      subItems: [
+        {
+          name: 'Wallet App',
+          path: 'https://onekey.so/download',
+        },
+        {
+          name: 'Browser Extension',
+          path: 'https://onekey.so/plugin',
+        },
+        {
+          name: 'Hardware Device',
+          path: 'https://onekey.so/hardware',
+        },
+        {
+          name: 'Swap',
+          path: 'https://swap.onekey.so/',
+        },
+        {
+          name: 'Token List',
+          path: 'https://onekey.so/tokens',
+        },
+        {
+          name: 'Recovery Phrase Converter',
+          path: 'https://bip39.onekey.so/',
+        },
+      ],
     },
     {
       name: 'App',
-      path: '/',
+      path: 'https://onekey.so/download',
     },
-    {
-      name: 'Services',
-      path: '/',
-    },
+    // {
+    //   // todo
+    //   name: 'Services',
+    //   path: '/',
+    // },
     {
       name: 'Security',
-      path: '/',
+      path: 'https://onekey.so/security',
     },
     {
       name: 'For Developer',
-      path: '/',
+      path: 'https://docs.onekey.so/',
     },
     // todo: temp hide it
     // {
@@ -47,11 +74,31 @@ export function useNavigationData(): NavigationDataItem[] {
     // },
     {
       name: 'Help Center',
-      path: '/',
+      path: '#',
+      subItems: [
+        {
+          name: "Beginner's Guide",
+          path: 'https://help.onekey.so/hc/zh-cn/categories/360000170236',
+        },
+        {
+          name: 'Hardware Wallet Manual',
+          path: 'https://help.onekey.so/hc/zh-cn/articles/360002123856',
+        },
+      ],
     },
     {
       name: 'Shop',
-      path: '/',
+      path: '#',
+      subItems: [
+        {
+          name: 'YouZan',
+          path: 'https://j.youzan.com/dZTtS2',
+        },
+        {
+          name: 'Shopify',
+          path: 'https://shop.onekey.so/',
+        },
+      ],
     },
   ];
 }
