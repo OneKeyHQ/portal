@@ -32,8 +32,8 @@ export const Hardware: React.FC = () => {
     <motion.section
       style={{
         overflow: 'hidden',
-        paddingRight: paddingMotionValue,
-        paddingLeft: paddingMotionValue,
+        paddingRight: media.medium ? paddingMotionValue : 0,
+        paddingLeft: media.medium ? paddingMotionValue : 0,
         paddingTop: 60,
         paddingBottom: 60,
       }}
