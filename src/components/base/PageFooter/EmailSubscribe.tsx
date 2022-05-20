@@ -56,7 +56,7 @@ export const EmailSubscribe: FC = () => {
           onChange={(e) => setEmail(e.target.value)}
         />
 
-        <Button onClick={subscribe} variant="outline">
+        <Button onClick={subscribe} variant="secondary">
           Subscribe
         </Button>
       </div>

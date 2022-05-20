@@ -9,7 +9,7 @@ export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost';
 export interface ButtonProps extends BoxProps {
   disabled?: boolean;
   variant?: ButtonVariant;
-  themeColor?: 'blue' | 'orange';
+  themeColor?: 'brand' | 'gray';
   rightIcon?: React.ReactNode;
   leftIcon?: React.ReactNode;
 }
