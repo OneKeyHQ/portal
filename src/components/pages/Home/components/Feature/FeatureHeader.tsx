@@ -2,7 +2,7 @@ import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Box, Button, Logo, Span } from '../../../../base';
+import { Box, LaunchAppButton, Span } from '../../../../base';
 
 export interface HeaderProps {
   children?: ReactNode;
@@ -43,18 +43,7 @@ export const FeatureHeader: FC<HeaderProps> = () => {
       </Span>
 
       <Box>
-        <Button
-          rightIcon={
-            <Logo
-              css={{
-                width: 26,
-                height: 26,
-              }}
-            />
-          }
-        >
-          Launch App
-        </Button>
+        <LaunchAppButton />
       </Box>
     </Box>
   );

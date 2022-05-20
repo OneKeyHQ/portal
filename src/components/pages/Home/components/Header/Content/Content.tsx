@@ -3,7 +3,14 @@ import { FC, ReactNode } from 'react';
 import { useTheme } from '@emotion/react';
 
 import { dynamicTextStyle } from '../../../../../../utils';
-import { Box, Button, Container, H1, Logo, Span } from '../../../../../base';
+import {
+  Box,
+  Button,
+  Container,
+  H1,
+  LaunchAppButton,
+  Span,
+} from '../../../../../base';
 
 export interface ContentProps {
   children?: ReactNode;
@@ -54,18 +61,7 @@ export const Content: FC<ContentProps> = () => {
             flexDirection: 'row',
           }}
         >
-          <Button
-            rightIcon={
-              <Logo
-                css={{
-                  width: 26,
-                  height: 26,
-                }}
-              />
-            }
-          >
-            Launch App
-          </Button>
+          <LaunchAppButton />
           <Button variant="outline">Go to shop</Button>
         </Box>
 
