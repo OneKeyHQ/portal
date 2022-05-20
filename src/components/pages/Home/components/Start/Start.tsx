@@ -23,9 +23,9 @@ export const Start = () => {
   const items = [];
 
   if (media.medium) {
-    items.push(getStartItemDataByType('browserExtension'));
-    items.push(getStartItemDataByType('mobile'));
     items.push(getStartItemDataByType('desktop'));
+    items.push(getStartItemDataByType('mobile'));
+    items.push(getStartItemDataByType('browserExtension'));
   } else {
     // mobile
     if (type === 'ios') {
