@@ -37,8 +37,6 @@ export const Rewards: FC = () => (
         paddingTop: 40,
         paddingBottom: 40,
         backgroundColor: '#313638',
-        display: 'flex',
-        flexDirection: 'column',
       }}
       m={{
         paddingTop: 64,
@@ -46,24 +44,29 @@ export const Rewards: FC = () => (
       }}
     >
       <Marquee gradientWidth={0}>
-        {images.map((image) => (
-          <Img
-            xs={{
-              userSelect: 'none',
-              userDrag: 'none',
-              marginLeft: 20,
-              transform: 'scale(0.6)',
-            }}
-            m={{
-              transform: 'scale(1)',
-              marginLeft: 100,
-            }}
-            draggable={false}
-            key={image}
-            src={image}
-            alt="image"
-          />
-        ))}
+        <Box
+          xs={{
+            display: 'flex',
+            alignItems: 'center',
+          }}
+        >
+          {images.map((image) => (
+            <Img
+              xs={{
+                userSelect: 'none',
+                userDrag: 'none',
+                margin: '0 10px',
+              }}
+              m={{
+                margin: '0 50px',
+              }}
+              draggable={false}
+              key={image}
+              src={image}
+              alt="image"
+            />
+          ))}
+        </Box>
       </Marquee>
     </Box>
   </Section>
