@@ -4,17 +4,21 @@ import { revueFromSubscriptionSubmit } from '@dinehq/revue-form-subscriber';
 import { useTheme } from '@emotion/react';
 
 import { Box, Span } from '../Box';
-import { Button } from '../Button';
+import { buttonBaseStyle } from '../Button';
 
 export const EmailSubscribe: FC = () => {
   const theme = useTheme();
   const [email, setEmail] = useState('');
 
   const subscribe = useCallback(() => {
-    revueFromSubscriptionSubmit({
-      customUrl: 'http://news.onekey.so/add_subscriber',
-      memberEmail: email,
-    });
+    try {
+      revueFromSubscriptionSubmit({
+        customUrl: 'http://news.onekey.so/add_subscriber',
+        memberEmail: email,
+      });
+    } catch (e) {
+      console.log(e);
+    }
   }, [email]);
 
   return (
@@ -56,9 +60,25 @@ export const EmailSubscribe: FC = () => {
           onChange={(e) => setEmail(e.target.value)}
         />
 
-        <Button onClick={subscribe} variant="secondary">
+        <button
+          css={{
+            ...buttonBaseStyle,
+            border: '1px solid white',
+            background: 'transparent',
+            color: 'white',
+            opacity: 0.6,
+            ':hover': {
+              opacity: 1,
+            },
+            ':active': {
+              opacity: 0.8,
+            },
+          }}
+          type="button"
+          onClick={subscribe}
+        >
           Subscribe
-        </Button>
+        </button>
       </div>
 
       <Box
