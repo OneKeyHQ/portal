@@ -8,11 +8,9 @@ import {
 } from '../../../../../../hooks';
 import {
   Box,
-  Button,
   CanvasPlayer,
   Container,
   Flex,
-  LaunchAppButton,
   Section,
 } from '../../../../../base';
 import { useProductsData } from '../useProductsData';
@@ -91,7 +89,7 @@ export const NormalProductSection: FC = () => {
                   />
 
                   <Box>
-                    <LaunchAppButton />
+                    <Box>{productsData[0]?.button}</Box>
                   </Box>
                 </Flex>
 
@@ -108,9 +106,7 @@ export const NormalProductSection: FC = () => {
                     description={productsData[1]?.description}
                   />
 
-                  <Box>
-                    <Button variant="outline">Go to shop</Button>
-                  </Box>
+                  <Box>{productsData[1]?.button}</Box>
                 </Flex>
               </Box>
             </Flex>

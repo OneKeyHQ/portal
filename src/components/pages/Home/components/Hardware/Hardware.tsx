@@ -8,9 +8,9 @@ import { useMediaQuery, usePositionAnimation } from '../../../../../hooks';
 import { mergeRefs } from '../../../../../utils';
 import {
   Box,
-  Button,
   Container,
   Flex,
+  GoToShopButton,
   Span,
   Swiper as SwiperComponent,
   SwiperSlide,
@@ -92,9 +92,11 @@ export const Hardware: React.FC = () => {
               </Span>
             </Flex>
             <Box>
-              <Button width={122} height={50}>
-                Go to Shop
-              </Button>
+              <GoToShopButton
+                buttonProps={{
+                  variant: 'primary',
+                }}
+              />
             </Box>
           </Flex>
 

@@ -5,8 +5,8 @@ import { useTheme } from '@emotion/react';
 import { dynamicTextStyle } from '../../../../../../utils';
 import {
   Box,
-  Button,
   Container,
+  GoToShopButton,
   H1,
   LaunchAppButton,
   Span,
@@ -62,7 +62,7 @@ export const Content: FC<ContentProps> = () => {
           }}
         >
           <LaunchAppButton />
-          <Button variant="outline">Go to shop</Button>
+          <GoToShopButton />
         </Box>
 
         {/* todo: i18n link */}
