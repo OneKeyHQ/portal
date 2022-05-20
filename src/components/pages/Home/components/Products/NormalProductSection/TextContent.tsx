@@ -2,7 +2,7 @@ import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Box, Span } from '../../../../../base';
+import { Box, Flex, Span } from '../../../../../base';
 
 export interface TextContentProps {
   children?: ReactNode;
@@ -15,8 +15,11 @@ export const TextContent: FC<TextContentProps> = (props) => {
   const theme = useTheme();
 
   return (
-    <Box css={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-      <Span xs={{ ...theme.text.medium800 }} xl={{ ...theme.text.medium900 }}>
+    <Flex css={{ flexDirection: 'column', gap: 16 }}>
+      <Span
+        xs={{ ...theme.text.medium800, color: theme.colors.test500 }}
+        xl={{ ...theme.text.medium900 }}
+      >
         {title}
       </Span>
       <Span
@@ -27,6 +30,6 @@ export const TextContent: FC<TextContentProps> = (props) => {
       </Span>
 
       {children}
-    </Box>
+    </Flex>
   );
 };

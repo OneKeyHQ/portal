@@ -28,8 +28,8 @@ export const Slogan: React.FC = () => {
         <Box
           xs={{
             ...theme.text.medium700,
+            color: theme.colors.test500,
           }}
-          s={{}}
           m={{
             textAlign: 'center',
             ...theme.text.medium900,
