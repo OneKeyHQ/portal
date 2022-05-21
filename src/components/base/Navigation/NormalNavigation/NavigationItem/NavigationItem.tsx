@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
@@ -43,11 +44,16 @@ export const NavigationItem: FC<NavigationItemProps> = (props) => {
         position: 'relative',
       }}
     >
-      {!subItems && (
-        <a href={path} target="_blank" rel="noreferrer">
-          {contentNode}
-        </a>
-      )}
+      {!subItems ? (
+        name === 'Products' ? (
+          // eslint-disable-next-line jsx-a11y/anchor-is-valid
+          <a href="#">{contentNode}</a>
+        ) : (
+          <a href={path} target="_blank" rel="noreferrer">
+            {contentNode}
+          </a>
+        )
+      ) : null}
       {subItems && contentNode}
 
       {subItems && <HoverPanel isActive={isHovered} subItems={subItems} />}
