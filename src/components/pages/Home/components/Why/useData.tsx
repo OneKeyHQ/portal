@@ -6,7 +6,8 @@ export function useData() {
       image: <StaticImage src="./images/Home1.jpg" alt="Beginner friendly" />,
       title: 'Beginner friendly',
       description:
-        'Whether you are an OG, beginner or purchasing for your grandma! Use our products with ease.',
+        "Use our products with ease whether you are an experienced practitioner or a beginner, even it's for your grandma.",
+      link: 'https://help.onekey.so/hc/en-us/sections/360001102996',
     },
     {
       image: (
@@ -16,7 +17,9 @@ export function useData() {
         />
       ),
       title: 'Software and hardware, better together',
-      description: 'Wana trade and invest securely with ease? You can here. ',
+      description:
+        'Wanna be safe and easy at the same time when investing cryptos? You can have both here.',
+      link: 'https://help.onekey.so/hc/en-us/articles/360002184256-Why-Use-Hardware-Wallets-to-Manage-Private-Keys-',
     },
     {
       image: (
@@ -25,6 +28,7 @@ export function useData() {
       title: 'The hub for your cryptos',
       description:
         'Invest, trade, track DeFi & NFT portfolios, fiat on-off-ramps, and even more.',
+      link: 'https://onekey.so/cryptos',
     },
     {
       image: (
@@ -36,6 +40,7 @@ export function useData() {
       title: 'Ultra-fast customer service response',
       description:
         'Our customer service and engineers respond rapidly to your needs.',
+      link: 'https://help.onekey.so/hc/en-us',
     },
   ];
 }
