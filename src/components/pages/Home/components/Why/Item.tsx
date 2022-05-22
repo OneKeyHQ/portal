@@ -29,7 +29,7 @@ export const Item: FC<ItemProps> = (props) => {
         <Flex
           externalProps={otherProps}
           xs={{
-            // for hack safari
+            // for hack
             transform: 'translateZ(0)',
             borderWidth: 1,
             borderStyle: 'solid',

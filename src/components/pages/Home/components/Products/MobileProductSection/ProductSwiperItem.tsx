@@ -22,7 +22,7 @@ export const ProductSwiperItem: FC<ProductSwiperItemProps> = (props) => {
         xs={{
           overflow: 'hidden',
           borderRadius: 24,
-          // for hack safari
+          // for hack
           transform: 'translateZ(0)',
         }}
       >

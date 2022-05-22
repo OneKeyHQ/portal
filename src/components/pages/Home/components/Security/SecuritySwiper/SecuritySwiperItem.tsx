@@ -21,7 +21,7 @@ export const SecuritySwiperItem: FC<SecuritySwiperItemProps> = (props) => {
         xs={{
           overflow: 'hidden',
           borderRadius: 40,
-          // for hack safari
+          // for hack
           transform: 'translateZ(0)',
         }}
       >
