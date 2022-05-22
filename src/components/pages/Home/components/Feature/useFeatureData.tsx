@@ -6,42 +6,49 @@ export function useFeatureData() {
       image: (
         <StaticImage
           src="./images/home-software-01.png"
-          alt="Free and open source"
+          alt="Beginner friendly"
         />
       ),
-      title: 'Free and open source',
+      title: 'Beginner friendly',
       description:
-        'Other crypto wallets may have backdoor or viruses. We are completely transparent.',
+        "Use our products with ease whether you are an experienced practitioner or a beginner, even it's for your grandma.",
+      link: 'https://help.onekey.so/hc/en-us/sections/360001102996',
     },
     {
       image: (
         <StaticImage
           src="./images/home-software-02.png"
-          alt="Trade at the best price"
+          alt="Software and hardware, better together"
         />
       ),
-      title: 'Trade at the best price',
+      title: 'Software and hardware, better together',
       description:
-        "Hassle free, you won't need to jump between exchanges. Securely trade your crypto assets with us. ",
+        'Wanna be safe and easy at the same time when investing cryptos? You can have both here.',
+      link: 'https://help.onekey.so/hc/en-us/articles/360002184256-Why-Use-Hardware-Wallets-to-Manage-Private-Keys-',
     },
     {
       image: (
-        <StaticImage src="./images/home-software-03.png" alt="Peace of mind" />
+        <StaticImage
+          src="./images/home-software-03.png"
+          alt="The hub for your cryptos"
+        />
       ),
-      title: 'Peace of mind',
+      title: 'The hub for your cryptos',
       description:
-        'We use industry-leading technology to protect your crypto, making it super secure.',
+        'Invest, trade, track DeFi & NFT portfolios, fiat on-off-ramps, and even more.',
+      link: 'https://onekey.so/cryptos',
     },
     {
       image: (
         <StaticImage
           src="./images/home-software-04.png"
-          alt="All platforms covered"
+          alt="Ultra-fast customer service response"
         />
       ),
-      title: 'All platforms covered',
+      title: 'Ultra-fast customer service response',
       description:
-        "iOS, macOS, Android, Windows, Linux, Chrome, Firefox, Edge, Brave... We got'em all",
+        'Our customer service and engineers respond rapidly to your needs.',
+      link: 'https://help.onekey.so/hc/en-us',
     },
   ];
 }
