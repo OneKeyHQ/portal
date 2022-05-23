@@ -1,5 +1,1 @@
-{
-    "componentChunkName": "component---src-pages-index-tsx",
-    "path": "/zh/",
-    "result": {"pageContext":{"serverData":{},"language":"zh","intl":{"language":"zh","locales":["en","zh"],"routed":true,"originalPath":"/","redirect":false,"defaultLocale":"en"}}},
-    "staticQueryHashes": []}
+{"componentChunkName":"component---src-pages-index-tsx","path":"/zh/","result":{"pageContext":{"serverData":{},"language":"zh","intl":{"language":"zh","locales":["en","zh"],"routed":true,"originalPath":"/","redirect":false,"defaultLocale":"en"}}},"staticQueryHashes":[]}
