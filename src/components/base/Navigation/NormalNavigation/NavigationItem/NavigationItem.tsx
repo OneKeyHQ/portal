@@ -5,6 +5,7 @@ import { useTheme } from '@emotion/react';
 
 import { useHover } from '../../../../../hooks';
 import { Box } from '../../../Box';
+import { Link } from '../../../Link';
 import { NavigationDataItem } from '../../useNavigationData';
 
 import { HoverPanel } from './HoverPanel';
@@ -44,17 +45,7 @@ export const NavigationItem: FC<NavigationItemProps> = (props) => {
         position: 'relative',
       }}
     >
-      {!subItems ? (
-        name === 'Products' ? (
-          // eslint-disable-next-line jsx-a11y/anchor-is-valid
-          <a href="#">{contentNode}</a>
-        ) : (
-          <a href={path} target="_blank" rel="noreferrer">
-            {contentNode}
-          </a>
-        )
-      ) : null}
-      {subItems && contentNode}
+      <Link to={path}>{contentNode}</Link>
 
       {subItems && <HoverPanel isActive={isHovered} subItems={subItems} />}
     </Box>
