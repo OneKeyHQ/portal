@@ -38,8 +38,9 @@ export const Item: FC<ItemProps> = (props) => {
         <AspectRatio ratio={media.large ? 1 / 1.6 : 1 / 1.9}>
           <Flex
             externalProps={otherProps}
-
             xs={{
+              // for hack safari
+              transform: 'translateZ(0)',
               borderWidth: 1,
               borderStyle: 'solid',
               borderColor: '#dadee1',
