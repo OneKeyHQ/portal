@@ -56,7 +56,7 @@ export const Rewards: FC = () => {
           paddingBottom: 64,
         }}
       >
-        <Marquee gradientWidth={0} direction="right">
+        <Marquee gradientWidth={0} direction="left">
           <Box
             xs={{
               display: 'flex',
