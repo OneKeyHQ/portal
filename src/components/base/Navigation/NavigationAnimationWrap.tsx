@@ -40,6 +40,7 @@ export const NavigationAnimationWrap: FC<NavigationAnimationWrapProps> = (
         paddingTop: isSpring ? paddingSpringValue : paddingValue,
         paddingBottom: isSpring ? paddingSpringValue : paddingValue,
         backdropFilter: isSpring ? blurSpringValue : blur,
+        WebkitBackdropFilter: isSpring ? blurSpringValue : blur,
       }}
     >
       {children}
