@@ -3,7 +3,7 @@ import { FC } from 'react';
 import { motion } from 'framer-motion';
 
 import { usePositionAnimation } from '../../../../../hooks';
-import { isBrowser, mergeRefs } from '../../../../../utils';
+import { mergeRefs } from '../../../../../utils';
 import { Box } from '../../../../base';
 
 import { Background } from './Background';
@@ -48,7 +48,7 @@ export const Header: FC = () => {
             height: '100%',
           }}
         >
-          {isBrowser() && <Background />}
+          <Background />
 
           <Content />
         </Box>
