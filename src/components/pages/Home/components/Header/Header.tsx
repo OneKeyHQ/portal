@@ -46,8 +46,6 @@ export const Header: FC = () => {
           xs={{
             position: 'relative',
             height: '100%',
-            paddingTop: 78,
-            paddingBottom: 78,
           }}
         >
           {isBrowser() && <Background />}

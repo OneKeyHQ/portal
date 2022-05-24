@@ -22,6 +22,8 @@ export const Content: FC<ContentProps> = () => {
   return (
     <Container
       xs={{
+        paddingTop: 78,
+        paddingBottom: 78,
         zIndex: 2,
         height: '100%',
         position: 'relative',
