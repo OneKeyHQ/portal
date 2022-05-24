@@ -38,14 +38,11 @@ export const Content: FC<ContentProps> = () => {
       >
         <H1
           xs={{
+            color: theme.colors.test500,
             ...theme.text.medium800,
           }}
-          xl={{
-            ...dynamicTextStyle(theme.text.medium800, 'xlarge'),
-          }}
-          xxl={{
-            ...theme.text.medium1000,
-          }}
+          xl={{ ...dynamicTextStyle(theme.text.medium800, 'xlarge') }}
+          xxl={{ ...theme.text.medium1000 }}
         >
           All-in-one crypto wallet.
           <br />
