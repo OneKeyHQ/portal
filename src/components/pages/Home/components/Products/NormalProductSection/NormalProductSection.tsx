@@ -23,7 +23,7 @@ export const NormalProductSection: FC = () => {
   const { ref, elementInViewportProgress } = useElementInViewportProgress(0);
   const motionValue = useTransform(
     elementInViewportProgress,
-    [0.5, 1],
+    [0.5, 1.5],
     [0, 59],
   );
 
@@ -64,12 +64,9 @@ export const NormalProductSection: FC = () => {
             {/* left */}
             <Flex css={{ gap: 24 }}>
               <Box
-                l={{
-                  marginRight: 52,
-                }}
-                xl={{
-                  marginRight: 64,
-                }}
+                m={{ marginRight: 20 }}
+                l={{ marginRight: 40 }}
+                xxl={{ marginRight: 50 }}
               >
                 <Progress height={canvasSize.height} />
               </Box>
@@ -80,7 +77,7 @@ export const NormalProductSection: FC = () => {
                   css={{
                     flexDirection: 'column',
                     gap: 24,
-                    height: 500,
+                    height: 700,
                   }}
                 >
                   <TextContent
