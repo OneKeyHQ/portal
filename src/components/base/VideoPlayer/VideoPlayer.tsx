@@ -3,7 +3,7 @@ import { FC, VideoHTMLAttributes, useEffect, useRef } from 'react';
 export interface VideoPlayerProps
   extends VideoHTMLAttributes<HTMLVideoElement> {
   src: string;
-  poster: string;
+  poster?: string;
 }
 
 export const VideoPlayer: FC<VideoPlayerProps> = (props) => {

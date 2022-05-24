@@ -1,11 +1,9 @@
 import { FC } from 'react';
 
-import { useMediaQuery } from '../../../../../../hooks';
-import { isBrowser } from '../../../../../../utils';
-import { Img, VideoPlayer } from '../../../../../base';
+import { StaticImage } from 'gatsby-plugin-image';
 
-import mobileImage from './mobile.jpg';
-import posterImage from './poster.jpg';
+import { useMediaQuery } from '../../../../../../hooks';
+import { VideoPlayer } from '../../../../../base';
 
 export const Background: FC = () => {
   const mediaQuery = useMediaQuery();
@@ -20,15 +18,18 @@ export const Background: FC = () => {
   } as const;
 
   const videoPlayer = (
-    <VideoPlayer
-      src="/video/home-hero.mp4"
-      poster={posterImage}
-      loop={false}
+    <VideoPlayer src="/video/home-hero.mp4" loop={false} style={style} />
+  );
+
+  const image = (
+    <StaticImage
       style={style}
+      quality={100}
+      layout="constrained"
+      alt="background"
+      src="./mobile.jpg"
     />
   );
 
-  const image = <Img xs={style} alt="background" src={mobileImage} />;
-
-  return mediaQuery.medium || !isBrowser() ? videoPlayer : image;
+  return mediaQuery.medium ? videoPlayer : image;
 };
