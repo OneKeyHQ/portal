@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { useHover } from '../../../../../hooks';
 import { Box } from '../../../Box';
 import { Container } from '../../../Container';
+import { Flex } from '../../../Flex';
 
 import { LeftArea } from './LeftArea';
 import { RightArea } from './RightArea';
@@ -67,27 +68,14 @@ export const ProductPanel: FC<ProductPanelProps> = (props) => {
         }}
       >
         <Container>
-          <Box
-            xs={{
-              display: 'flex',
-              justifyContent: 'space-between',
-            }}
-          >
-            <Box
-              xs={{
-                flex: 1,
-              }}
-            >
+          <Flex xs={{ justifyContent: 'space-between' }}>
+            <Box xs={{ flex: 1 }}>
               <LeftArea />
             </Box>
-            <Box
-              xs={{
-                width: '33%',
-              }}
-            >
+            <Box xs={{ width: '33%' }}>
               <RightArea {...RightAreaHoverProps} />
             </Box>
-          </Box>
+          </Flex>
           {children}
         </Container>
       </Box>
