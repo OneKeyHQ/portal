@@ -1,20 +1,33 @@
 import { FC } from 'react';
 
-import { StaticImage } from 'gatsby-plugin-image';
+import { useMediaQuery } from '../../../../../../hooks';
+import { Img, VideoPlayer } from '../../../../../base';
 
-export const Background: FC = () => (
-  <StaticImage
-    style={{
-      position: 'absolute',
-      left: 0,
-      top: 0,
-      bottom: 0,
-      right: 0,
-      zIndex: 1,
-    }}
-    quality={100}
-    layout="constrained"
-    alt="background"
-    src="./background.jpg"
-  />
-);
+import mobileImage from './mobile.jpg';
+import posterImage from './poster.jpg';
+
+export const Background: FC = () => {
+  const mediaQuery = useMediaQuery();
+
+  const style = {
+    position: 'absolute',
+    zIndex: 1,
+    display: 'block',
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover',
+  } as const;
+
+  const videoPlayer = (
+    <VideoPlayer
+      src="/video/home-hero.mp4"
+      poster={posterImage}
+      loop={false}
+      style={style}
+    />
+  );
+
+  const image = <Img xs={style} alt="background" src={mobileImage} />;
+
+  return mediaQuery.medium ? videoPlayer : image;
+};
