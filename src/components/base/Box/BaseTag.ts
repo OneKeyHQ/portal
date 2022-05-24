@@ -36,3 +36,4 @@ export const Li: FC<BoxProps> = factory('li');
 export const Img: FC<BoxProps & HTMLProps<HTMLImageElement>> = factory('img', {
   draggable: false,
 });
+export const Anchor: FC<BoxProps & HTMLProps<HTMLAnchorElement>> = factory('a');

@@ -5,6 +5,7 @@ import { useTheme } from '@emotion/react';
 import { Box, Li, Ul } from '../../Box';
 import { Flex } from '../../Flex';
 import { MenuListArrowIcon } from '../../Icon';
+import { Link } from '../../Link';
 import { NavigationDataItem } from '../useNavigationData';
 
 interface MobileMenuItemProps {
@@ -32,7 +33,7 @@ export const MobileMenuItem: FC<MobileMenuItemProps> = (props) => {
       key={menuItem.name}
     >
       {!menuItem.subItems && (
-        <a href={menuItem.path} target="_blank" rel="noreferrer">
+        <Link to={menuItem.path}>
           <Flex
             xs={{
               alignItems: 'center',
@@ -50,7 +51,7 @@ export const MobileMenuItem: FC<MobileMenuItemProps> = (props) => {
               {menuItem.name}
             </Box>
           </Flex>
-        </a>
+        </Link>
       )}
 
       {menuItem.subItems && (

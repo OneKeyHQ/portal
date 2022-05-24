@@ -22,6 +22,8 @@ export const ProductSwiperItem: FC<ProductSwiperItemProps> = (props) => {
         xs={{
           overflow: 'hidden',
           borderRadius: 24,
+          // for hack
+          transform: 'translateZ(0)',
         }}
       >
         {imageNode}

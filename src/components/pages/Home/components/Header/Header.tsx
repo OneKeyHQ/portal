@@ -39,6 +39,8 @@ export const Header: FC = () => {
         style={{
           boxShadow: '0px -6px 40px rgba(0, 0, 0, 0.08)',
           height: '100%',
+          // for hack
+          transform: 'translateZ(0)',
           borderRadius: borderRadiusMotionValue,
           overflow: 'hidden',
         }}

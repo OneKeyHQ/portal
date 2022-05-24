@@ -33,6 +33,7 @@
     "browser-update": "^3.3.38",
     "click-to-react-component": "^1.0.6",
     "deepmerge": "^4.2.2",
+    "detect-browser": "^5.3.0",
     "framer-motion": "^6.3.0",
     "gatsby": "^4.12.1",
     "gatsby-plugin-emotion": "^7.12.1",

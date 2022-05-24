@@ -16,3 +16,4 @@ export * from './AspectRatio';
 export * from './GoToShopButton';
 export * from './Icon';
 export * from './VideoPlayer';
+export * from './Link';

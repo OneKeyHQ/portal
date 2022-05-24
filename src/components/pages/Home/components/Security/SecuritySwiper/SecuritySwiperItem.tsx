@@ -21,6 +21,8 @@ export const SecuritySwiperItem: FC<SecuritySwiperItemProps> = (props) => {
         xs={{
           overflow: 'hidden',
           borderRadius: 40,
+          // for hack
+          transform: 'translateZ(0)',
         }}
       >
         {imageNode}
