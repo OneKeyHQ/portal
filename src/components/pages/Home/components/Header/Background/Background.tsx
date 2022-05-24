@@ -1,7 +1,5 @@
 import { FC } from 'react';
 
-import { StaticImage } from 'gatsby-plugin-image';
-
 import { useMediaQuery } from '../../../../../../hooks';
 import { isBrowser } from '../../../../../../utils';
 import { Img, VideoPlayer } from '../../../../../base';
@@ -32,17 +30,5 @@ export const Background: FC = () => {
 
   const image = <Img xs={style} alt="background" src={mobileImage} />;
 
-  if (!isBrowser()) {
-    return (
-      <StaticImage
-        style={style}
-        quality={100}
-        layout="constrained"
-        alt="background"
-        src="./background.jpg"
-      />
-    );
-  }
-
-  return mediaQuery.medium ? videoPlayer : image;
+  return mediaQuery.medium || !isBrowser() ? videoPlayer : image;
 };
