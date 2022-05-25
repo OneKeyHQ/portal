@@ -2,9 +2,9 @@ import { FC } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Box } from '../Box';
 import { Flex } from '../Flex';
 import { DiscordIcon, GithubIcon, TwitterIcon } from '../Icon';
+import { Link } from '../Link';
 
 import { Copyright } from './Copyright';
 import { usePageFooterData } from './usePageFooterData';
@@ -14,11 +14,10 @@ export const MediaLinkList: FC = () => {
   const { media: mediaData } = usePageFooterData();
 
   return (
-    <Box
+    <Flex
       xs={{
         paddingTop: 20,
         paddingBottom: 80,
-        display: 'flex',
         flexDirection: 'column',
         gap: 32,
       }}
@@ -33,24 +32,26 @@ export const MediaLinkList: FC = () => {
           svg: {
             color: theme.colors.white,
             ':hover': {
-              color: theme.colors.brand400,
+              opacity: 0.8,
             },
           },
         }}
       >
-        <a target="_blank" href={mediaData.twitter.url} rel="noreferrer">
+        <Link to={mediaData.twitter.url}>
           <TwitterIcon />
-        </a>
-        <a target="_blank" href={mediaData.github.url} rel="noreferrer">
+        </Link>
+
+        <Link to={mediaData.github.url}>
           <GithubIcon />
-        </a>
-        <a target="_blank" href={mediaData.discord.url} rel="noreferrer">
+        </Link>
+
+        <Link to={mediaData.discord.url}>
           <DiscordIcon />
-        </a>
+        </Link>
       </Flex>
 
       {/* Copyright */}
       <Copyright />
-    </Box>
+    </Flex>
   );
 };
