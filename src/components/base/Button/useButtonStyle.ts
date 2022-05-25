@@ -117,6 +117,22 @@ export function useButtonStyle(
         },
       });
     }
+  } else if (themeColor === 'dark') {
+    if (variant === 'outlined') {
+      assign(buttonStyle, {
+        backgroundColor: themeColors.transparent,
+        borderColor: themeColors.white,
+        color: themeColors.white,
+        ':hover': {
+          color: themeColors.test500,
+          backgroundColor: themeColors.white,
+          borderColor: themeColors.white,
+        },
+        ':disabled': {
+          opacity: 0.5,
+        },
+      });
+    }
   }
 
   return buttonStyle;
