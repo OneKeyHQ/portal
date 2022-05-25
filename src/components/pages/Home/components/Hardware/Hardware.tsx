@@ -17,13 +17,14 @@ import {
 } from '../../../../base';
 
 import { Item } from './Item';
-import { useData } from './useData';
+import { useHardwareData } from './useHardwareData';
 
 export const Hardware: React.FC = () => {
   const media = useMediaQuery();
   const theme = useTheme();
-  const data = useData();
+  const data = useHardwareData();
   const zeroMotionValue = useMotionValue(0);
+  const isMedium = media.medium;
   const { ref: paddingRef, motionValue: paddingMotionValue } =
     usePositionAnimation({
       from: 60,
@@ -34,7 +35,7 @@ export const Hardware: React.FC = () => {
       from: 40,
       to: 0,
     });
-  const borderRadiusDefaultValue = useMotionValue(media.medium ? 40 : 32);
+  const borderRadiusDefaultValue = useMotionValue(isMedium ? 40 : 32);
 
   const ref = mergeRefs(borderRadiusRef, paddingRef);
 
@@ -43,20 +44,20 @@ export const Hardware: React.FC = () => {
       ref={ref}
       style={{
         overflow: 'hidden',
-        paddingRight: media.medium ? paddingMotionValue : zeroMotionValue,
-        paddingLeft: media.medium ? paddingMotionValue : zeroMotionValue,
+        paddingRight: isMedium ? paddingMotionValue : zeroMotionValue,
+        paddingLeft: isMedium ? paddingMotionValue : zeroMotionValue,
         paddingTop: 60,
         paddingBottom: 60,
       }}
     >
       <motion.div
         style={{
-          borderRadius: media.medium
+          borderRadius: isMedium
             ? borderRadiusMotionValue
             : borderRadiusDefaultValue,
           backgroundColor: '#313638',
-          paddingTop: media.medium ? 112 : 72,
-          paddingBottom: media.medium ? 112 : 72,
+          paddingTop: isMedium ? 112 : 72,
+          paddingBottom: isMedium ? 112 : 72,
         }}
       >
         <Container>
