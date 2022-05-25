@@ -50,7 +50,7 @@ export const NormalNavigation: React.FC<NormalNavigationProps> = () => {
               },
             }}
           />
-          <Ul xs={{ display: 'flex', gap: 32, alignItems: 'stretch' }}>
+          <Ul xs={{ flex: 1, display: 'flex', gap: 32, paddingLeft: 12 }}>
             {data.map((item) => (
               <Li
                 key={item.name}
@@ -73,9 +73,9 @@ export const NormalNavigation: React.FC<NormalNavigationProps> = () => {
               />
               <NavigationItem>EN</NavigationItem>
             </Box> */}
-
-            <LaunchAppButton variant="outline" />
           </Ul>
+
+          <LaunchAppButton variant="outline" />
         </Container>
       </NavigationAnimationWrap>
 

@@ -45,7 +45,7 @@ export const Button: FC<ButtonProps> = (props) => {
 
   if (themeColor === 'brand') {
     color700 = theme.colors.brand300;
-    color800 = theme.colors.brand400;
+    color800 = theme.colors.brandAlt400;
     color900 = theme.colors.brand500;
   }
 
@@ -65,7 +65,7 @@ export const Button: FC<ButtonProps> = (props) => {
   if (variant === 'primary') {
     const primaryButtonStyle = {
       color: 'black',
-      background: theme.colors.brand400,
+      background: theme.colors.brandAlt400,
       borderWidth: 0,
       ':hover': {
         background: theme.colors.test500,
@@ -101,8 +101,9 @@ export const Button: FC<ButtonProps> = (props) => {
       borderColor:
         themeColor === 'white' ? theme.colors.white : theme.colors.gray900,
       ':hover': {
-        color: themeColor === 'white' ? theme.colors.brand400 : color700,
-        borderColor: themeColor === 'white' ? theme.colors.brand400 : color700,
+        color: themeColor === 'white' ? theme.colors.brandAlt400 : color700,
+        borderColor:
+          themeColor === 'white' ? theme.colors.brandAlt400 : color700,
       },
       ':active': {
         color: color900,

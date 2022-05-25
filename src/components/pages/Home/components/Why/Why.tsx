@@ -53,7 +53,7 @@ export const Why: FC = () => {
           }}
         >
           <Span css={{ ...theme.text.medium900, color: '#101111' }}>
-            Why Choose OneKey
+            Why Choose OneKey?
           </Span>
 
           {/* controller */}

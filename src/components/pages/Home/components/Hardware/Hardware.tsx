@@ -89,7 +89,7 @@ export const Hardware: React.FC = () => {
                 xs={{ ...theme.text.medium800, color: '#ffffff' }}
                 m={{ ...theme.text.medium900 }}
               >
-                Choose OneKey hardware <br /> wallet right for you
+                Choose OneKey hardware <br /> wallet right for you.
               </Span>
             </Flex>
             <Box>

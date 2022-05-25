@@ -54,19 +54,17 @@ export const Security: FC = () => {
             }}
           >
             {/* left */}
-            <Flex
-              xs={{
-                flex: 1,
-                flexDirection: 'column',
-                gap: 68,
-              }}
-            >
+            <Box xs={{ flex: 1 }}>
               <SecurityHeader />
 
               <Flex
                 xs={{
+                  marginTop: 50,
                   flexDirection: 'column',
                   gap: 32,
+                }}
+                xxl={{
+                  marginTop: 100,
                 }}
                 onMouseEnter={() => setIsAnimating(true)}
                 onMouseLeave={() => setIsAnimating(false)}
@@ -85,17 +83,15 @@ export const Security: FC = () => {
                   />
                 ))}
               </Flex>
-            </Flex>
+            </Box>
 
             {/* right */}
             <Box
               xs={{
                 background: theme.background.test100,
-                flex: 1,
                 borderRadius: 40,
                 overflow: 'hidden',
-                height: 'fit-content',
-                maxHeight: 929,
+                flex: 1,
               }}
             >
               <AnimatePresence exitBeforeEnter>

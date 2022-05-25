@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { useHover } from '../../../../../hooks';
 import { Box } from '../../../Box';
 import { Container } from '../../../Container';
+import { Flex } from '../../../Flex';
 
 import { LeftArea } from './LeftArea';
 import { RightArea } from './RightArea';
@@ -37,6 +38,8 @@ export const ProductPanel: FC<ProductPanelProps> = (props) => {
   const { children, isActive } = props;
   const { hoverProps, isHovered } = useHover({ timeout: 100 });
   const [cursorVariant, setCursorVariant] = useState('hidden');
+  const { hoverProps: RightAreaHoverProps, isHovered: isRightAreaHovered } =
+    useHover({ timeout: 100 });
 
   useEffect(() => {
     if (isHovered || isActive) {
@@ -54,35 +57,28 @@ export const ProductPanel: FC<ProductPanelProps> = (props) => {
       style={{
         width: '100%',
         overflow: 'hidden',
-        background:
-          'linear-gradient(90deg, #F0F1F2 0%, #F0F1F2 53.76%, rgba(255, 255, 255, 1) 56.6%)',
       }}
     >
-      <Container>
-        <Box
-          {...hoverProps}
-          xs={{
-            display: 'flex',
-            justifyContent: 'space-between',
-          }}
-        >
-          <Box
-            xs={{
-              flex: 1,
-            }}
-          >
-            <LeftArea />
-          </Box>
-          <Box
-            xs={{
-              width: '33%',
-            }}
-          >
-            <RightArea />
-          </Box>
-        </Box>
-        {children}
-      </Container>
+      <Box
+        {...hoverProps}
+        xs={{
+          background: `linear-gradient(90deg, #F0F1F2 0%, #F0F1F2 50%, ${
+            isRightAreaHovered ? '#F8F8F8' : '#FFFFFF'
+          } 50%)`,
+        }}
+      >
+        <Container>
+          <Flex xs={{ justifyContent: 'space-between' }}>
+            <Box xs={{ flex: 1 }}>
+              <LeftArea />
+            </Box>
+            <Box xs={{ width: '33%' }}>
+              <RightArea {...RightAreaHoverProps} />
+            </Box>
+          </Flex>
+          {children}
+        </Container>
+      </Box>
     </motion.div>
   );
 };

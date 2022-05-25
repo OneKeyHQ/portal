@@ -2,9 +2,9 @@ import { FC } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Span } from '../../../../base';
+import { BoxProps, Span } from '../../../../base';
 
-export const ComingSoon: FC = () => {
+export const ComingSoon: FC<BoxProps> = (props) => {
   const theme = useTheme();
 
   return (
@@ -13,22 +13,16 @@ export const ComingSoon: FC = () => {
         ...theme.text.medium100,
         paddingLeft: 8,
         paddingRight: 8,
-        paddingTop: 2,
-        paddingBottom: 2,
-
+        paddingTop: 4,
+        paddingBottom: 4,
         borderRadius: 99,
-        backgroundColor: '#8a9195',
-        color: '#101111',
+        backgroundColor: theme.colors.test300,
+        color: theme.colors.test500,
+        textTransform: 'uppercase',
       }}
-      m={{
-        paddingLeft: 16,
-        paddingRight: 16,
-        paddingTop: 8,
-        paddingBottom: 8,
-        ...theme.text.medium200,
-      }}
+      externalProps={props}
     >
-      COMING SOON
+      coming soon
     </Span>
   );
 };

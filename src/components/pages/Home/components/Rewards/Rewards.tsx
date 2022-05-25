@@ -5,7 +5,6 @@ import Marquee from 'react-fast-marquee';
 import { theme } from '../../../../../theme';
 import { Box, Img, Section } from '../../../../base';
 
-import image1 from './images/image01.svg';
 import image2 from './images/image02.svg';
 import image3 from './images/image03.svg';
 import image4 from './images/image04.svg';
@@ -17,7 +16,6 @@ import image9 from './images/image09.svg';
 import image10 from './images/image10.svg';
 
 const images = [
-  image1,
   image2,
   image3,
   image4,
@@ -56,7 +54,7 @@ export const Rewards: FC = () => {
           paddingBottom: 64,
         }}
       >
-        <Marquee gradientWidth={0} direction="right">
+        <Marquee gradientWidth={0} direction="left">
           <Box
             xs={{
               display: 'flex',

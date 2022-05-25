@@ -11,7 +11,7 @@ export function useProductsData() {
           src="./images/product-image1.jpg"
         />
       ),
-      title: 'Advanced on-chain wallet app',
+      title: 'Advanced on-chain wallet app.',
       description:
         "Use OneKey App separately to store and use your crypto assets in a secure and convenient manner. Each user's assets are appropriately secured and stored locally.",
       button: <LaunchAppButton />,

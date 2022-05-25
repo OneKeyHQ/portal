@@ -8,6 +8,7 @@ import { Box } from '../../../../base';
 
 import { Background } from './Background';
 import { Content } from './Content';
+import defaultBackgroundImage from './images/background.jpg';
 
 export const Header: FC = () => {
   const { ref: paddingRef, motionValue: paddingMotionValue } =
@@ -48,8 +49,8 @@ export const Header: FC = () => {
           xs={{
             position: 'relative',
             height: '100%',
-            paddingTop: 78,
-            paddingBottom: 78,
+            backgroundImage: `url(${defaultBackgroundImage})`,
+            backgroundSize: 'cover',
           }}
         >
           {isBrowser() && <Background />}
