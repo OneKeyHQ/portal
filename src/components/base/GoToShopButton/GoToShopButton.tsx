@@ -4,21 +4,31 @@ import { Button, ButtonProps } from '../Button';
 
 export interface GoToShopButtonProps {
   children?: ReactNode;
-  buttonProps?: ButtonProps;
-  linkProps?: AnchorHTMLAttributes<HTMLAnchorElement>;
+  overrides?: {
+    link: AnchorHTMLAttributes<HTMLAnchorElement>;
+    button: ButtonProps;
+  };
 }
 
 export const GoToShopButton: FC<GoToShopButtonProps> = (props) => {
-  const { children, buttonProps = {}, linkProps = {} } = props;
+  const {
+    children,
+    overrides = {
+      button: {},
+      link: {},
+    },
+  } = props;
+
+  const { button: buttonOverrides = {}, link: linkOverrides = {} } = overrides;
 
   return (
     <a
       href="https://shop.onekey.so/"
       target="_blank"
       rel="noreferrer"
-      {...linkProps}
+      {...linkOverrides}
     >
-      <Button variant="outline" {...buttonProps}>
+      <Button variant="outlined" {...buttonOverrides}>
         Go to shop {children}
       </Button>
     </a>

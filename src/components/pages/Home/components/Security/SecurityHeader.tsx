@@ -44,7 +44,7 @@ export const SecurityHeader: FC<SecurityHeaderProps> = (props) => {
 
       <Box>
         <a href="https://onekey.so/security" target="_blank" rel="noreferrer">
-          <Button variant="outline">Learn More</Button>
+          <Button variant="outlined">Learn More</Button>
         </a>
       </Box>
 

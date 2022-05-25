@@ -92,11 +92,7 @@ export const Hardware: React.FC = () => {
               </Span>
             </Flex>
             <Box>
-              <GoToShopButton
-                buttonProps={{
-                  themeColor: 'white',
-                }}
-              />
+              <GoToShopButton />
             </Box>
           </Flex>
 
