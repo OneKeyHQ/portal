@@ -23,7 +23,7 @@ export const NormalFeatureSection: FC<NormalFeatureSectionProps> = () => {
   const { ref, elementInViewportProgress } = useElementInViewportProgress(0);
   const motionValue = useTransform(
     elementInViewportProgress,
-    [0.6, 1.1],
+    [0.3, 1.1],
     [0, 29],
   );
   const data = useFeatureData();
