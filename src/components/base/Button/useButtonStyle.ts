@@ -133,6 +133,23 @@ export function useButtonStyle(
         },
       });
     }
+  } else if (themeColor === 'gray') {
+    if (variant === 'outlined') {
+      assign(buttonStyle, {
+        backgroundColor: themeColors.transparent,
+        borderColor: themeColors.white,
+        color: themeColors.white,
+        opacity: 0.6,
+        ':hover': {
+          color: themeColors.test500,
+          backgroundColor: themeColors.white,
+          borderColor: themeColors.white,
+        },
+        ':disabled': {
+          opacity: 0.2,
+        },
+      });
+    }
   }
 
   return buttonStyle;

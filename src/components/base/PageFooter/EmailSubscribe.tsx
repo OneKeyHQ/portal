@@ -4,7 +4,7 @@ import { revueFromSubscriptionSubmit } from '@dinehq/revue-form-subscriber';
 import { useTheme } from '@emotion/react';
 
 import { Box, Span } from '../Box';
-import { buttonBaseStyle } from '../Button';
+import { Button } from '../Button';
 
 export const EmailSubscribe: FC = () => {
   const theme = useTheme();
@@ -60,25 +60,9 @@ export const EmailSubscribe: FC = () => {
           onChange={(e) => setEmail(e.target.value)}
         />
 
-        <button
-          css={{
-            ...buttonBaseStyle,
-            border: '1px solid white',
-            background: 'transparent',
-            color: 'white',
-            opacity: 0.6,
-            ':hover': {
-              opacity: 1,
-            },
-            ':active': {
-              opacity: 0.8,
-            },
-          }}
-          type="button"
-          onClick={subscribe}
-        >
+        <Button variant="outlined" themeColor="gray" onClick={subscribe}>
           Subscribe
-        </button>
+        </Button>
       </div>
 
       <Box
