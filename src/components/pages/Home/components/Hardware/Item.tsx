@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { useHover } from '../../../../../hooks';
+import { useHover, useMediaQuery } from '../../../../../hooks';
 import { Box, Span } from '../../../../base';
 
 import { ComingSoon } from './ComingSoon';
@@ -18,10 +18,14 @@ export interface ItemProps {
 export const Item: FC<ItemProps> = (props) => {
   const { image, title, description, hoverImage, status } = props;
   const theme = useTheme();
+  const mediaQuery = useMediaQuery();
   const { hoverProps, isHovered } = useHover({
     timeout: 100,
     isDisabled: status === 'coming-soon',
   });
+
+  const backgroundImage =
+    hoverImage && (isHovered || !mediaQuery.medium) ? hoverImage : image;
 
   return (
     <Box
@@ -39,16 +43,11 @@ export const Item: FC<ItemProps> = (props) => {
           margin: '0 auto',
           width: 310,
           height: 384,
-          backgroundImage: `url(${image})`,
+          backgroundImage: `url(${backgroundImage})`,
           backgroundSize: 'auto 80%',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
           transition: theme.transitions.allEaseOut,
-          ...(hoverImage && isHovered
-            ? {
-                backgroundImage: `url(${hoverImage})`,
-              }
-            : {}),
         }}
       />
       <Box css={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
