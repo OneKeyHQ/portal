@@ -22,6 +22,7 @@ export interface UseButtonStyleProps {
   variant?: ButtonVariant;
   themeColor?: ThemeColor;
   disabled?: boolean;
+  fillHeight?: boolean;
 }
 
 export function useButtonStyle(
@@ -34,6 +35,7 @@ export function useButtonStyle(
     variant = 'filled',
     themeColor = 'brand',
     disabled = false,
+    fillHeight = false,
   } = useButtonStyleProps;
 
   const buttonStyle = {
@@ -43,6 +45,12 @@ export function useButtonStyle(
   if (disabled) {
     assign(buttonStyle, {
       cursor: 'not-allowed',
+    });
+  }
+
+  if (fillHeight) {
+    assign(buttonStyle, {
+      height: '100%',
     });
   }
 

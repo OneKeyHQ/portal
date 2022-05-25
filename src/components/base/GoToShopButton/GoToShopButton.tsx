@@ -5,8 +5,8 @@ import { Button, ButtonProps } from '../Button';
 export interface GoToShopButtonProps {
   children?: ReactNode;
   overrides?: {
-    link: AnchorHTMLAttributes<HTMLAnchorElement>;
-    button: ButtonProps;
+    link?: AnchorHTMLAttributes<HTMLAnchorElement>;
+    button?: ButtonProps;
   };
 }
 

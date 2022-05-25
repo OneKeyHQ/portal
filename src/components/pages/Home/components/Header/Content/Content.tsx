@@ -62,7 +62,13 @@ export const Content: FC<ContentProps> = () => {
           }}
         >
           <LaunchAppButton />
-          <GoToShopButton />
+          <GoToShopButton
+            overrides={{
+              button: {
+                fillHeight: true,
+              },
+            }}
+          />
         </Box>
 
         {/* todo: i18n link */}

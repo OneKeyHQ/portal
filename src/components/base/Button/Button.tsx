@@ -2,12 +2,11 @@ import { FC } from 'react';
 
 import { Box, BoxProps } from '../Box';
 
-import { ButtonVariant, ThemeColor, useButtonStyle } from './useButtonStyle';
+import { UseButtonStyleProps, useButtonStyle } from './useButtonStyle';
 
-export interface ButtonProps extends BoxProps {
-  disabled?: boolean;
-  variant?: ButtonVariant;
-  themeColor?: ThemeColor;
+export interface ButtonProps
+  extends Omit<BoxProps, 'size'>,
+    UseButtonStyleProps {
   rightIcon?: React.ReactNode;
   leftIcon?: React.ReactNode;
 }
@@ -20,13 +19,17 @@ export const Button: FC<ButtonProps> = (props) => {
     themeColor = 'brand',
     rightIcon,
     leftIcon,
+    fillHeight,
+    size,
     ...otherProps
   } = props;
 
   const buttonStyle = useButtonStyle({
+    fillHeight,
     themeColor,
     variant,
     disabled,
+    size,
   });
 
   return (
