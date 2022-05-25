@@ -30,7 +30,7 @@ export const FeatureHeader: FC<HeaderProps> = () => {
         m={{ ...textStyle.medium900 }}
         l={{ ...textStyle.medium1000 }}
       >
-        Supercharge great Web3 products
+        Supercharge great Web3 products.
       </Span>
       <Span
         xs={{ ...textStyle.normal200, color: theme.colors.test400 }}

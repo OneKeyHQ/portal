@@ -71,15 +71,7 @@ export const Item: FC<ItemProps> = (props) => {
           >
             {title}
 
-            {status === 'coming-soon' && (
-              <Span
-                xs={{
-                  marginLeft: 8,
-                }}
-              >
-                <ComingSoon />
-              </Span>
-            )}
+            {status === 'coming-soon' && <ComingSoon xs={{ marginLeft: 8 }} />}
           </Box>
           <Span
             xs={{

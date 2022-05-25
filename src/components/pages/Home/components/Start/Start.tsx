@@ -75,7 +75,7 @@ export const Start = () => {
             >
               Start using
               <br />
-              OneKey wallet today
+              OneKey wallet today.
             </Span>
 
             <Img
