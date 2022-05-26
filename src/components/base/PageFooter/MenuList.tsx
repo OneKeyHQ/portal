@@ -69,6 +69,9 @@ export const MenuList: FC = () => {
                   color: theme.colors.white,
                   cursor:
                     childItem.status === 'disabled' ? 'not-allowed' : 'pointer',
+                  ':first-letter': {
+                    textTransform: 'uppercase',
+                  },
                 }}
               >
                 {childItem.name}
