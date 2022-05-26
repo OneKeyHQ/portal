@@ -35,14 +35,16 @@ export const Security: FC = () => {
             xs={{
               paddingTop: 80,
               paddingBottom: 80,
+              flexDirection: 'row',
               backgroundColor: theme.colors.white,
-              gap: 46,
             }}
             m={{
               paddingTop: 120,
               paddingBottom: 120,
-              flexDirection: 'row',
             }}
+            l={{ gap: 118 }}
+            xl={{ gap: 136 }}
+            xxl={{ gap: 112 + 24 * 2 }}
           >
             {/* left */}
             <Box xs={{ flex: 1 }}>
