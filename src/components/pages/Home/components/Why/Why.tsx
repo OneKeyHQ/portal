@@ -6,6 +6,7 @@ import Swiper, { FreeMode, Navigation } from 'swiper';
 import { useMediaQuery } from '../../../../../hooks';
 import {
   Box,
+  Container,
   Flex,
   Section,
   Span,
@@ -41,56 +42,58 @@ export const Why: FC = () => {
           label: 'whySection',
         }}
       >
-        <Flex
-          xs={{
-            justifyContent: 'space-between',
-            paddingLeft: 24,
-            paddingRight: 24,
-          }}
-          l={{
-            paddingLeft: 64,
-            paddingRight: 64,
-          }}
-        >
-          <Span css={{ ...theme.text.medium900, color: '#101111' }}>
-            Why Choose OneKey?
-          </Span>
-
-          {/* controller */}
-          <Box
+        <Container>
+          <Flex
             xs={{
-              display: 'none',
+              justifyContent: 'space-between',
+              paddingLeft: 24,
+              paddingRight: 24,
             }}
-            m={{
-              display: 'flex',
+            l={{
+              paddingLeft: 64,
+              paddingRight: 64,
             }}
           >
-            <Arrow
-              disabled={!allowSlidePrev}
-              onClick={() => {
-                thumbsSwiper?.slidePrev();
-                updateSlideStatus();
-              }}
-              direction="left"
+            <Span css={{ ...theme.text.medium900, color: '#101111' }}>
+              Why Choose OneKey?
+            </Span>
+
+            {/* controller */}
+            <Box
               xs={{
-                width: 64,
+                display: 'none',
               }}
-            />
-            <Arrow
-              disabled={!allowSlideNext}
-              xs={{
-                marginLeft: 24,
-                width: 128,
-                justifyContent: 'flex-end',
+              m={{
+                display: 'flex',
               }}
-              onClick={() => {
-                thumbsSwiper?.slideNext();
-                updateSlideStatus();
-              }}
-              direction="right"
-            />
-          </Box>
-        </Flex>
+            >
+              <Arrow
+                disabled={!allowSlidePrev}
+                onClick={() => {
+                  thumbsSwiper?.slidePrev();
+                  updateSlideStatus();
+                }}
+                direction="left"
+                xs={{
+                  width: 64,
+                }}
+              />
+              <Arrow
+                disabled={!allowSlideNext}
+                xs={{
+                  marginLeft: 24,
+                  width: 128,
+                  justifyContent: 'flex-end',
+                }}
+                onClick={() => {
+                  thumbsSwiper?.slideNext();
+                  updateSlideStatus();
+                }}
+                direction="right"
+              />
+            </Box>
+          </Flex>
+        </Container>
 
         <Box
           css={{
