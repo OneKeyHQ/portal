@@ -1,39 +1,28 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 
 import { useTheme } from '@emotion/react';
 import { AnimatePresence, motion } from 'framer-motion';
 
-import { useInterval, useMediaQuery } from '../../../../../hooks';
+import { useMediaQuery } from '../../../../../hooks';
 import { Box, Container, Flex, Section } from '../../../../base';
 
 import { Item } from './Item';
 import { SecurityHeader } from './SecurityHeader';
 import { SecuritySwiper } from './SecuritySwiper';
-import { SecurityDataItem, useSecurityData } from './useSecurityData';
+import { useSecurityAutoSwitch } from './useSecurityAutoSwitch';
+import { useSecurityData } from './useSecurityData';
 
 export const Security: FC = () => {
   const theme = useTheme();
   const data = useSecurityData();
   const media = useMediaQuery();
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [currentItem, setCurrentItem] = useState<SecurityDataItem>(data[0]);
-  const [isAnimating, setIsAnimating] = useState(false);
-
-  useInterval(() => {
-    if (isAnimating) {
-      return;
-    }
-
-    const newIndex = (currentIndex + 1) % data.length;
-
-    setCurrentIndex(newIndex);
-
-    const nextItem = data[newIndex];
-
-    if (nextItem) {
-      setCurrentItem(nextItem);
-    }
-  }, 3000);
+  const {
+    currentItem,
+    currentIndex,
+    setIsAnimating,
+    setCurrentIndex,
+    setCurrentItem,
+  } = useSecurityAutoSwitch();
 
   return (
     <Section>
