@@ -75,7 +75,13 @@ export const NormalNavigation: React.FC<NormalNavigationProps> = () => {
             </Box> */}
           </Ul>
 
-          <LaunchAppButton variant="outlined" />
+          <LaunchAppButton
+            override={{
+              button: {
+                variant: 'outlined',
+              },
+            }}
+          />
         </Container>
       </NavigationAnimationWrap>
 

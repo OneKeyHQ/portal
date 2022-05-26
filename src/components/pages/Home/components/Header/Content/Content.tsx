@@ -2,13 +2,16 @@ import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
+import { useMediaQuery } from '../../../../../../hooks';
 import { dynamicTextStyle } from '../../../../../../utils';
 import {
   Box,
+  ButtonProps,
   Container,
   GoToShopButton,
   H1,
   LaunchAppButton,
+  Link,
   Span,
 } from '../../../../../base';
 
@@ -18,6 +21,18 @@ export interface ContentProps {
 
 export const Content: FC<ContentProps> = () => {
   const theme = useTheme();
+  const mediaQuery = useMediaQuery();
+
+  const buttonProp: ButtonProps = mediaQuery.small
+    ? {
+        size: 'medium',
+      }
+    : {
+        xs: {
+          width: '100%',
+        },
+        size: 'large',
+      };
 
   return (
     <Container
@@ -36,6 +51,7 @@ export const Content: FC<ContentProps> = () => {
           display: 'flex',
           flexDirection: 'column',
           gap: 24,
+          flex: 1,
         }}
       >
         <H1
@@ -46,9 +62,13 @@ export const Content: FC<ContentProps> = () => {
           xl={{ ...dynamicTextStyle(theme.text.medium800, 'xlarge') }}
           xxl={{ ...theme.text.medium1000 }}
         >
-          All-in-one crypto wallet.
+          All-in-one
+          {!mediaQuery.small && <br />}
+          crypto wallet.
           <br />
-          Trusted by millions.
+          Trusted by
+          {!mediaQuery.small && <br />}
+          millions.
         </H1>
         <Box
           xs={{
@@ -60,10 +80,15 @@ export const Content: FC<ContentProps> = () => {
             flexDirection: 'row',
           }}
         >
-          <LaunchAppButton />
+          <LaunchAppButton
+            override={{
+              button: buttonProp,
+            }}
+          />
           <GoToShopButton
             overrides={{
               button: {
+                ...buttonProp,
                 fillHeight: true,
               },
             }}
@@ -71,20 +96,22 @@ export const Content: FC<ContentProps> = () => {
         </Box>
 
         {/* todo: i18n link */}
-        <a href="https://help.onekey.so/hc/en-us/articles/360002003315-Privacy-Policy">
-          <Span
-            xs={{
-              ...theme.text.normal100,
-              color: theme.colors.test400,
-              borderBottom: `1px solid ${theme.colors.test400}`,
-              ':hover': {
-                opacity: 0.6,
-              },
-            }}
-          >
-            Trustpilot score & review
-          </Span>
-        </a>
+        <Box xs={{ textAlign: 'center' }} m={{ textAlign: 'left' }}>
+          <Link to="https://help.onekey.so/hc/en-us/articles/360002003315-Privacy-Policy">
+            <Span
+              xs={{
+                ...theme.text.normal100,
+                color: theme.colors.test400,
+                borderBottom: `1px solid ${theme.colors.test400}`,
+                ':hover': {
+                  opacity: 0.6,
+                },
+              }}
+            >
+              Trustpilot score & review
+            </Span>
+          </Link>
+        </Box>
       </Box>
     </Container>
   );
