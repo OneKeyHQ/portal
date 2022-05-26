@@ -25,11 +25,9 @@ export const Header: FC = () => {
       to: 0,
     });
 
-  const allRef = mergeRefs(borderRadiusRef, paddingRef);
-
   return (
     <motion.div
-      ref={allRef}
+      ref={mergeRefs(borderRadiusRef, paddingRef)}
       style={{
         height: '100vh',
         padding: paddingMotionValue,
