@@ -46,7 +46,6 @@ export const Hardware: React.FC = () => {
         paddingRight: media.medium ? paddingMotionValue : zeroMotionValue,
         paddingLeft: media.medium ? paddingMotionValue : zeroMotionValue,
         paddingTop: 60,
-        paddingBottom: 60,
       }}
     >
       <motion.div
