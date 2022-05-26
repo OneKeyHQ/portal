@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import { motion } from 'framer-motion';
 
-import { usePositionAnimation } from '../../../../../hooks';
+import { useMediaQuery, usePositionAnimation } from '../../../../../hooks';
 import { isBrowser, mergeRefs } from '../../../../../utils';
 import { Box } from '../../../../base';
 
@@ -11,11 +11,13 @@ import { Content } from './Content';
 import defaultBackgroundImage from './images/background.jpg';
 
 export const Header: FC = () => {
+  const mediaQuery = useMediaQuery();
   const { ref: paddingRef, motionValue: paddingMotionValue } =
     usePositionAnimation({
       defaultProgress: 1,
       from: 60,
       to: 0,
+      disabled: !mediaQuery.medium,
     });
 
   const { ref: borderRadiusRef, motionValue: borderRadiusMotionValue } =
