@@ -29,7 +29,7 @@ export const Item: FC<ItemProps> = (props) => {
       xl={{
         gap: 32,
       }}
-      externalProps={otherProps}
+      {...otherProps}
     >
       <Box
         css={{
