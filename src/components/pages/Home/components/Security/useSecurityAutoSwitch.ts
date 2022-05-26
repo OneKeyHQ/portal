@@ -1,6 +1,9 @@
 import { useState } from 'react';
 
-import { useInterval } from '../../../../../hooks';
+import {
+  useElementInViewportProgress,
+  useInterval,
+} from '../../../../../hooks';
 
 import { SecurityDataItem, useSecurityData } from './useSecurityData';
 
@@ -10,7 +13,15 @@ export function useSecurityAutoSwitch() {
   const [currentItem, setCurrentItem] = useState<SecurityDataItem>(data[0]);
   const [isAnimating, setIsAnimating] = useState(false);
 
+  const { ref, elementInViewportProgress } = useElementInViewportProgress();
+
   useInterval(() => {
+    const visibleValue = elementInViewportProgress.get();
+
+    if (visibleValue < 0.8 || visibleValue > 1.5) {
+      return;
+    }
+
     if (isAnimating) {
       return;
     }
@@ -32,5 +43,6 @@ export function useSecurityAutoSwitch() {
     setIsAnimating,
     setCurrentIndex,
     setCurrentItem,
+    ref,
   };
 }

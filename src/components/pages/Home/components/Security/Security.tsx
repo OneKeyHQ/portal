@@ -17,6 +17,7 @@ export const Security: FC = () => {
   const data = useSecurityData();
   const media = useMediaQuery();
   const {
+    ref,
     currentItem,
     currentIndex,
     setIsAnimating,
@@ -26,6 +27,7 @@ export const Security: FC = () => {
 
   return (
     <Section>
+      <div ref={ref} />
       {/* pc */}
       {media.large && (
         <Container>
@@ -108,11 +110,7 @@ export const Security: FC = () => {
             backgroundColor: theme.colors.white,
           }}
         >
-          <Box
-            xs={{
-              paddingLeft: 24,
-            }}
-          >
+          <Box xs={{ paddingLeft: 24 }}>
             <SecurityHeader />
           </Box>
 
