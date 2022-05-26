@@ -12,6 +12,7 @@ import {
   Span,
   Swiper as SwiperComponent,
   SwiperSlide,
+  useCurrentContainerWidth,
 } from '../../../../base';
 
 import { Arrow } from './Arrow';
@@ -31,6 +32,8 @@ export const Why: FC = () => {
     setAllowSlidePrev(!thumbsSwiper?.isBeginning);
   };
 
+  const value = useCurrentContainerWidth();
+
   return (
     <Section>
       <Box
@@ -43,18 +46,10 @@ export const Why: FC = () => {
         }}
       >
         <Container>
-          <Flex
-            xs={{
-              justifyContent: 'space-between',
-              paddingLeft: 24,
-              paddingRight: 24,
-            }}
-            l={{
-              paddingLeft: 64,
-              paddingRight: 64,
-            }}
-          >
-            <Span css={{ ...theme.text.medium900, color: '#101111' }}>
+          <Flex xs={{ justifyContent: 'space-between' }}>
+            <Span
+              css={{ ...theme.text.medium900, color: theme.colors.test500 }}
+            >
               Why Choose OneKey?
             </Span>
 
@@ -114,7 +109,7 @@ export const Why: FC = () => {
               enabled: true,
             }}
             style={{
-              paddingLeft: media.large ? 64 : 24,
+              paddingLeft: (window.innerWidth - value) / 2 || 24,
               paddingRight: media.large ? 64 : 24,
               paddingTop: media.medium ? 100 : 60,
               paddingBottom: media.medium ? 180 : 60,
@@ -124,7 +119,7 @@ export const Why: FC = () => {
               <SwiperSlide
                 style={{
                   minWidth: 271,
-                  maxWidth: 600,
+                  maxWidth: 421,
                   width: '30vw',
                 }}
                 key={item.title}
