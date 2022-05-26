@@ -22,15 +22,16 @@ export const Arrow: FC<ArrowProps> = (props) => {
       opacity: 1,
     },
     svg: {
-      transform: 'scale(1) translateX(0)',
+      transform: 'scale(1)',
       transition: theme.transitions.allEase,
     },
     ':active svg': {
-      transform: 'scale(1.1) translateX(5px)',
+      transform: 'scale(1.1)',
     },
   };
 
   const style = {
+    color: theme.background.test500,
     cursor: disabled ? 'not-allowed' : 'pointer',
     height: 64,
     borderWidth: 1,
@@ -41,7 +42,7 @@ export const Arrow: FC<ArrowProps> = (props) => {
     alignItems: 'center',
     justifyContent: 'center',
     transition: theme.transitions.allEase,
-    opacity: 0.5,
+    opacity: disabled ? 0.4 : 0.5,
     paddingRight: 20,
     paddingLeft: 20,
   };
