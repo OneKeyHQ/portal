@@ -2,7 +2,7 @@ import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Box, BoxProps, Span } from '../../../../base';
+import { Box, BoxProps, Flex, Span } from '../../../../base';
 
 export interface ItemProps extends BoxProps {
   title?: string;
@@ -16,43 +16,42 @@ export const Item: FC<ItemProps> = (props) => {
   const theme = useTheme();
 
   return (
-    <Box
+    <Flex
       xs={{
         transition: theme.transitions.allEaseOut,
-        backgroundColor: '#ffffff',
-        display: 'flex',
         flexDirection: 'column',
         gap: 26,
-        opacity: 0.6,
+        opacity: active ? 1 : 0.5,
         ':hover': {
           opacity: 1,
         },
-        ...(active
-          ? {
-              opacity: 1,
-            }
-          : {}),
       }}
       xl={{
         gap: 32,
       }}
       externalProps={otherProps}
     >
-      <Box css={{ height: 1, width: '100%', backgroundColor: '#101111' }} />
-      <Box css={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+      <Box
+        css={{
+          height: 1,
+          width: '100%',
+          backgroundColor: theme.colors.test500,
+        }}
+      />
+      <Flex css={{ flexDirection: 'column', gap: 8 }}>
         <Span
-          xs={{ color: '#101111', ...theme.text.medium600 }}
+          xs={{ color: theme.colors.test500, ...theme.text.medium600 }}
           xl={{ ...theme.text.medium700 }}
         >
           {title}
         </Span>
         <Span
-          xs={{ ...theme.text.normal300, color: '#101111' }}
+          xs={{ ...theme.text.normal300, color: theme.colors.test500 }}
           xl={{ ...theme.text.normal400 }}
         >
           {description}
         </Span>
-      </Box>
+      </Flex>
 
       {/* for preload image */}
       <Box
@@ -65,6 +64,6 @@ export const Item: FC<ItemProps> = (props) => {
       >
         {image}
       </Box>
-    </Box>
+    </Flex>
   );
 };
