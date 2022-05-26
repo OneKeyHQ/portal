@@ -35,12 +35,11 @@ const container = {
 };
 
 export const ProductPanel: FC<ProductPanelProps> = (props) => {
-  const { children } = props;
+  const { children, isActive } = props;
   const { hoverProps, isHovered } = useHover({ timeout: 100 });
   const [cursorVariant, setCursorVariant] = useState('hidden');
   const { hoverProps: RightAreaHoverProps, isHovered: isRightAreaHovered } =
     useHover({ timeout: 100 });
-  const isActive = true;
 
   useEffect(() => {
     if (isHovered || isActive) {
