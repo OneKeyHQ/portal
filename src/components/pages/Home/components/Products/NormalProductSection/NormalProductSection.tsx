@@ -5,6 +5,7 @@ import { useTransform } from 'framer-motion';
 import {
   useElementInViewportProgress,
   useMediaQueryMapValues,
+  useWindowSize,
 } from '../../../../../../hooks';
 import {
   Box,
@@ -27,6 +28,8 @@ export const NormalProductSection: FC = () => {
     [0, 59],
   );
 
+  const { height: windowHeight = 0 } = useWindowSize();
+
   const canvasSize = useMediaQueryMapValues({
     small: { width: 540, height: 421 },
     medium: { width: 540, height: 421 },
@@ -34,6 +37,15 @@ export const NormalProductSection: FC = () => {
     xlarge: { width: 644, height: 502 },
     xxlarge: { width: 792, height: 618 },
   });
+
+  const stickyPosition =
+    windowHeight > canvasSize.height + 200
+      ? {
+          top: `calc(50% - ${canvasSize.height / 2}px)`,
+        }
+      : {
+          top: 100,
+        };
 
   return (
     <Section>
@@ -120,7 +132,7 @@ export const NormalProductSection: FC = () => {
               >
                 <Box
                   css={{
-                    top: `calc(50% - ${502 / 2}px)`,
+                    ...stickyPosition,
                     position: 'sticky',
                     width: canvasSize.width,
                     height: canvasSize.height,
