@@ -3,7 +3,7 @@ import { FC, useState } from 'react';
 import { useTheme } from '@emotion/react';
 import Swiper, { FreeMode, Navigation } from 'swiper';
 
-import { useMediaQuery } from '../../../../../hooks';
+import { useMediaQuery, useWindowSize } from '../../../../../hooks';
 import {
   Box,
   Container,
@@ -32,7 +32,8 @@ export const Why: FC = () => {
     setAllowSlidePrev(!thumbsSwiper?.isBeginning);
   };
 
-  const value = useCurrentContainerWidth();
+  const currentContainerWidth = useCurrentContainerWidth();
+  const { width: windowWidth = 0 } = useWindowSize();
 
   return (
     <Section>
@@ -109,7 +110,7 @@ export const Why: FC = () => {
               enabled: true,
             }}
             style={{
-              paddingLeft: (window.innerWidth - value) / 2 || 24,
+              paddingLeft: (windowWidth - currentContainerWidth) / 2 || 24,
               paddingRight: media.large ? 64 : 24,
               paddingTop: media.medium ? 100 : 60,
               paddingBottom: media.medium ? 180 : 60,

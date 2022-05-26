@@ -1,7 +1,6 @@
 import { FC, ReactNode } from 'react';
 
-import { useMediaQueryMapValues } from '../../../hooks';
-import { isBrowser } from '../../../utils';
+import { useMediaQueryMapValues, useWindowSize } from '../../../hooks';
 import { Box, BoxProps } from '../Box';
 
 export interface ContainerProps extends BoxProps {
@@ -16,8 +15,10 @@ export const defaultContainerWidth = {
 };
 
 export function useCurrentContainerWidth() {
+  const { width: windowWidth = 0 } = useWindowSize();
+
   return useMediaQueryMapValues({
-    small: isBrowser() ? window.innerWidth : 0,
+    small: windowWidth,
     ...defaultContainerWidth,
   });
 }
