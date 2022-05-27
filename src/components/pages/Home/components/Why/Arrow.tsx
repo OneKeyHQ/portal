@@ -42,7 +42,7 @@ export const Arrow: FC<ArrowProps> = (props) => {
     alignItems: 'center',
     justifyContent: 'center',
     transition: theme.transitions.allEase,
-    opacity: disabled ? 0.4 : 0.5,
+    opacity: disabled ? 0.4 : 1,
     paddingRight: 20,
     paddingLeft: 20,
   };
