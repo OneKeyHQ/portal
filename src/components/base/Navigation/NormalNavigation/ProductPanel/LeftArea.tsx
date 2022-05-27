@@ -111,7 +111,7 @@ export const LeftArea: FC<LeftAreaProps> = (props) => {
                   width: '100%',
                   height: '100%',
                 }}
-                src="./images/OneKeyMini2.png"
+                src="./images/OneKeyMini.png"
                 alt="OneKeyMini"
               />
             )}
