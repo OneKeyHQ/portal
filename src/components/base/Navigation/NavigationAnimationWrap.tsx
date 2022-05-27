@@ -36,6 +36,8 @@ export const NavigationAnimationWrap: FC<NavigationAnimationWrapProps> = (
   const blur = useTransform(scrollY, (value: number) => {
     const blurValue = value >= 0 && value < 100 ? (value / 100) * 10 : 10;
 
+    console.log(blurValue);
+
     return `blur(${blurValue}px)`;
   });
 

@@ -17,11 +17,9 @@ export const Background: FC = () => {
     objectFit: 'cover',
   } as const;
 
-  const videoPlayer = (
+  return mediaQuery.medium ? (
     <VideoPlayer src="/video/home-hero.mp4" loop={false} style={style} />
-  );
-
-  const image = (
+  ) : (
     <StaticImage
       style={style}
       quality={100}
@@ -30,6 +28,4 @@ export const Background: FC = () => {
       src="./mobile.jpg"
     />
   );
-
-  return mediaQuery.medium ? videoPlayer : image;
 };
