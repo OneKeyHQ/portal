@@ -45,14 +45,19 @@ export const Header: FC = () => {
           overflow: 'hidden',
         }}
       >
-        <Box
-          xs={{
-            position: 'relative',
-            height: '100%',
-            backgroundImage: `url(${defaultBackgroundImage})`,
-            backgroundSize: 'cover',
-          }}
-        >
+        <Box xs={{ position: 'relative', height: '100%' }}>
+          <img
+            src={defaultBackgroundImage}
+            alt="background"
+            css={{
+              position: 'absolute',
+              display: 'block',
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+            }}
+          />
+
           {isBrowser() && <Background />}
 
           <Content />
