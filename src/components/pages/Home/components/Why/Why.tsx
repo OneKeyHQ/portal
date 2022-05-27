@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, useCallback, useEffect, useState } from 'react';
 
 import { useTheme } from '@emotion/react';
 import Swiper, { FreeMode, Navigation } from 'swiper';
@@ -26,14 +26,17 @@ export const Why: FC = () => {
   const media = useMediaQuery();
   const [allowSlideNext, setAllowSlideNext] = useState<boolean | undefined>();
   const [allowSlidePrev, setAllowSlidePrev] = useState<boolean | undefined>();
-
-  const updateSlideStatus = () => {
-    setAllowSlideNext(!thumbsSwiper?.isEnd);
-    setAllowSlidePrev(!thumbsSwiper?.isBeginning);
-  };
-
   const currentContainerWidth = useCurrentContainerWidth();
   const { width: windowWidth = 0 } = useWindowSize();
+
+  const updateSlideStatus = useCallback(() => {
+    setAllowSlideNext(!thumbsSwiper?.isEnd);
+    setAllowSlidePrev(!thumbsSwiper?.isBeginning);
+  }, [thumbsSwiper?.isBeginning, thumbsSwiper?.isEnd]);
+
+  useEffect(() => {
+    updateSlideStatus();
+  }, [updateSlideStatus, windowWidth]);
 
   return (
     <Section>
