@@ -21,14 +21,14 @@ export const HorizontalScrollingView: FC<HorizontalScrollingViewProps> = (
   const x = useTransform(progress, (value) => {
     let result = 0;
 
-    if (value <= 1) {
-      return 1;
+    if (value <= 1.7) {
+      return 0;
     }
 
-    result = (value - 1) * -2000;
+    result = (value - 1.7) * -2000;
 
-    if (-(3200 - windowWidth) > result) {
-      result = -(3200 - windowWidth);
+    if (-(3100 - windowWidth) > result) {
+      result = -(3100 - windowWidth);
     }
 
     if (result > 100) {
