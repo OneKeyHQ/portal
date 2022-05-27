@@ -35,7 +35,7 @@ export const Security: FC = () => {
             xs={{
               paddingTop: 80,
               paddingBottom: 80,
-              flexDirection: 'row',
+              alignItems: 'flex-start',
               backgroundColor: theme.colors.white,
             }}
             m={{
