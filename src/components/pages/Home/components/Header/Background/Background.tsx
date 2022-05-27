@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { StaticImage } from 'gatsby-plugin-image';
-
+import { isBrowser } from '../../../../../../utils';
 import { Box, Img, VideoPlayer } from '../../../../../base';
 
 import defaultBackgroundImage from './images/background.jpg';
+import mobile from './images/mobile.jpg';
 
 export const Background: React.FC = () => {
   const style = {
@@ -19,17 +19,13 @@ export const Background: React.FC = () => {
   return (
     <>
       <Box xs={{ display: 'block' }} m={{ display: 'none' }}>
-        <StaticImage
-          style={style}
-          quality={100}
-          layout="constrained"
-          alt="background"
-          src="./images/mobile.jpg"
-        />
+        <Img src={mobile} style={style} />
       </Box>
       <Box xs={{ display: 'none' }} m={{ display: 'block' }}>
         <Img src={defaultBackgroundImage} alt="background" css={style} />
-        <VideoPlayer src="/video/home-hero.mp4" loop={false} style={style} />
+        {isBrowser() && (
+          <VideoPlayer src="/video/home-hero.mp4" loop={false} style={style} />
+        )}
       </Box>
     </>
   );
