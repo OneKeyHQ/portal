@@ -3,12 +3,11 @@ import { FC } from 'react';
 import { motion } from 'framer-motion';
 
 import { usePositionAnimation } from '../../../../../hooks';
-import { isBrowser, mergeRefs } from '../../../../../utils';
+import { mergeRefs } from '../../../../../utils';
 import { Box } from '../../../../base';
 
 import { Background } from './Background';
 import { Content } from './Content';
-import defaultBackgroundImage from './images/background.jpg';
 
 export const Header: FC = () => {
   const { ref: paddingRef, motionValue: paddingMotionValue } =
@@ -46,19 +45,7 @@ export const Header: FC = () => {
         }}
       >
         <Box xs={{ position: 'relative', height: '100%' }}>
-          <img
-            src={defaultBackgroundImage}
-            alt="background"
-            css={{
-              position: 'absolute',
-              display: 'block',
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-            }}
-          />
-
-          {isBrowser() && <Background />}
+          <Background />
 
           <Content />
         </Box>
