@@ -12,6 +12,10 @@ export const EmailSubscribe: FC = () => {
 
   const subscribe = useCallback(() => {
     try {
+      if (!email) {
+        return;
+      }
+
       revueFromSubscriptionSubmit({
         customUrl: 'http://news.onekey.so/add_subscriber',
         memberEmail: email,
@@ -60,7 +64,12 @@ export const EmailSubscribe: FC = () => {
           onChange={(e) => setEmail(e.target.value)}
         />
 
-        <Button variant="outlined" themeColor="gray" onClick={subscribe}>
+        <Button
+          disabled={!email}
+          variant="outlined"
+          themeColor="dark"
+          onClick={subscribe}
+        >
           Subscribe
         </Button>
       </div>
