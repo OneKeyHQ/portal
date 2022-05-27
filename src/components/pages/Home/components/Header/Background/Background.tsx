@@ -19,7 +19,13 @@ export const Background: React.FC = () => {
   return (
     <>
       <Box xs={{ display: 'block' }} m={{ display: 'none' }}>
-        <Img src={mobileBackground} style={style} />
+        <Box
+          xs={{
+            backgroundImage: `url(${mobileBackground})`,
+            backgroundSize: 'cover',
+            ...style,
+          }}
+        />
       </Box>
       <Box xs={{ display: 'none' }} m={{ display: 'block' }}>
         <Img src={defaultBackgroundImage} alt="background" css={style} />
