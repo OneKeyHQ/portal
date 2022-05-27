@@ -47,7 +47,7 @@ export const Content: FC<ContentProps> = () => {
         alignItems: 'flex-end',
       }}
     >
-      <FadeIn>
+      <FadeIn style={{ flex: 1 }}>
         <Box
           xs={{
             display: 'flex',
