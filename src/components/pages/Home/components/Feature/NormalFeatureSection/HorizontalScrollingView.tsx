@@ -3,6 +3,7 @@ import { FC, ReactNode } from 'react';
 import { useTheme } from '@emotion/react';
 import { MotionValue, motion, useTransform } from 'framer-motion';
 
+import { useWindowSize } from '../../../../../../hooks';
 import { Box } from '../../../../../base';
 
 export interface HorizontalScrollingViewProps {
@@ -15,8 +16,27 @@ export const HorizontalScrollingView: FC<HorizontalScrollingViewProps> = (
 ) => {
   const theme = useTheme();
   const { children, progress } = props;
+  const { width: windowWidth = 0 } = useWindowSize();
 
-  const x = useTransform(progress, (value) => (value - 1.5) * -1900);
+  const x = useTransform(progress, (value) => {
+    let result = 0;
+
+    if (value <= 1) {
+      return 1;
+    }
+
+    result = (value - 1) * -2000;
+
+    if (-(3200 - windowWidth) > result) {
+      result = -(3200 - windowWidth);
+    }
+
+    if (result > 100) {
+      result = 100;
+    }
+
+    return result;
+  });
 
   return (
     <Box
