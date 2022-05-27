@@ -4,7 +4,7 @@ import { isBrowser } from '../../../../../../utils';
 import { Box, Img, VideoPlayer } from '../../../../../base';
 
 import defaultBackgroundImage from './images/background.jpg';
-import mobile from './images/mobile.jpg';
+import mobileBackground from './images/mobileBackground.jpg';
 
 export const Background: React.FC = () => {
   const style = {
@@ -19,7 +19,7 @@ export const Background: React.FC = () => {
   return (
     <>
       <Box xs={{ display: 'block' }} m={{ display: 'none' }}>
-        <Img src={mobile} style={style} />
+        <Img src={mobileBackground} style={style} />
       </Box>
       <Box xs={{ display: 'none' }} m={{ display: 'block' }}>
         <Img src={defaultBackgroundImage} alt="background" css={style} />
