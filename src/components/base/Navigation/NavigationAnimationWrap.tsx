@@ -36,13 +36,10 @@ export const NavigationAnimationWrap: FC<NavigationAnimationWrapProps> = (
   const blur = useTransform(scrollY, (value: number) => {
     const blurValue = value >= 0 && value < 100 ? (value / 100) * 10 : 10;
 
-    console.log(blurValue);
-
     return `blur(${blurValue}px)`;
   });
 
   const paddingSpringValue = useSpring(paddingValue);
-  const blurSpringValue = useSpring(blur);
 
   return (
     <motion.div
@@ -50,8 +47,8 @@ export const NavigationAnimationWrap: FC<NavigationAnimationWrapProps> = (
         backgroundColor,
         paddingTop: isSpring ? paddingSpringValue : paddingValue,
         paddingBottom: isSpring ? paddingSpringValue : paddingValue,
-        backdropFilter: isSpring ? blurSpringValue : blur,
-        WebkitBackdropFilter: isSpring ? blurSpringValue : blur,
+        backdropFilter: blur,
+        WebkitBackdropFilter: blur,
       }}
     >
       {children}
