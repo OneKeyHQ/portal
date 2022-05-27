@@ -85,30 +85,31 @@ export const LeftArea: FC<LeftAreaProps> = (props) => {
         xs={{
           width: '50%',
           height: '100%',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
+          position: 'relative',
         }}
-        xl={{
-          height: '450px',
+        xxl={{
+          height: '340px',
         }}
       >
         <AnimatePresence exitBeforeEnter>
           <motion.div
             key={currentSelected}
             animate={{ opacity: 1, y: 0 }}
-            initial={{ opacity: 0, y: 20 }}
-            exit={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: 12 }}
+            exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.2 }}
+            style={{
+              width: '100%',
+              height: '100%',
+            }}
           >
             {currentSelected === 'OneKey Mini' && (
               <StaticImage
                 loading="eager"
                 draggable={false}
                 css={{
-                  width: '90%',
-                  height: 'auto',
-                  marginBottom: '-33%',
+                  width: '100%',
+                  height: '100%',
                 }}
                 src="./images/OneKeyMini.png"
                 alt="OneKeyMini"
@@ -121,7 +122,7 @@ export const LeftArea: FC<LeftAreaProps> = (props) => {
                 css={{
                   width: '90%',
                   height: 'auto',
-                  marginTop: '-33%',
+                  marginTop: '-30%',
                 }}
                 src="./images/OneKeyLite.png"
                 alt="OneKeyLite"

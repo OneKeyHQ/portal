@@ -45,6 +45,9 @@ export const MenuList: FC = () => {
               ...theme.text.medium200,
               color: theme.colors.white,
               opacity: 0.6,
+              ':first-letter': {
+                textTransform: 'uppercase',
+              },
             }}
           >
             {item.name}
@@ -69,6 +72,9 @@ export const MenuList: FC = () => {
                   color: theme.colors.white,
                   cursor:
                     childItem.status === 'disabled' ? 'not-allowed' : 'pointer',
+                  ':first-letter': {
+                    textTransform: 'uppercase',
+                  },
                 }}
               >
                 {childItem.name}
