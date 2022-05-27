@@ -1,5 +1,6 @@
 import { FC } from 'react';
 
+import { useMediaQueryMapValues } from '../../../hooks';
 import { Box, BoxProps } from '../Box';
 
 import { UseButtonStyleProps, useButtonStyle } from './useButtonStyle';
@@ -33,7 +34,12 @@ export const Button: FC<ButtonProps> = (props) => {
   });
 
   return (
-    <Box as="button" disabled={disabled} {...otherProps} xs={buttonStyle}>
+    <Box
+      as="button"
+      disabled={disabled}
+      xs={buttonStyle}
+      externalProps={otherProps}
+    >
       {leftIcon && <Box css={{ marginRight: 8 }}>{leftIcon}</Box>}
       {children}
       {rightIcon && <Box css={{ marginLeft: 8 }}>{rightIcon}</Box>}
