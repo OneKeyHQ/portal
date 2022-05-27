@@ -68,11 +68,18 @@ const WrapPage: FC<WrapPageProps> = (props) => {
         titleTemplate="%s"
       >
         <script
-          src="https://jarvis-website.onekey.so/script.js"
-          data-site="WWLGDZJB"
-          data-spa="auto"
-          defer
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-YL0P6QCC0D"
         />
+        <script>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-YL0P6QCC0D');
+          `}
+        </script>
       </Helmet>
 
       <I18nextProvider i18n={i18n}>{children}</I18nextProvider>
