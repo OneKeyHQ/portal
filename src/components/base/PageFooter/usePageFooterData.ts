@@ -76,17 +76,17 @@ export function usePageFooterData() {
           },
           {
             name: 'Media Kits',
-            link: 'https://help.onekey.so/hc/en-us/articles/360002200956',
+            link: 'https://help.onekey.so/hc/articles/360002200956',
             status: 'external',
           },
           {
             name: 'Privacy Agreement',
-            link: 'https://help.onekey.so/hc/en-us/articles/360002003315',
+            link: 'https://help.onekey.so/hc/articles/360002003315',
             status: 'external',
           },
           {
             name: 'User Agreement',
-            link: 'https://help.onekey.so/hc/en-us/articles/360002014776',
+            link: 'https://help.onekey.so/hc/articles/360002014776',
             status: 'external',
           },
         ],
@@ -112,12 +112,12 @@ export function usePageFooterData() {
           },
           {
             name: 'Sales Alliance',
-            link: 'https://help.onekey.so/hc/en-us/articles/360002658076',
+            link: 'https://help.onekey.so/hc/articles/360002658076',
             status: 'external',
           },
           {
             name: 'Advertising',
-            link: 'https://help.onekey.so/hc/en-us/articles/360002658096',
+            link: 'https://help.onekey.so/hc/articles/360002658096',
             status: 'external',
           },
           {

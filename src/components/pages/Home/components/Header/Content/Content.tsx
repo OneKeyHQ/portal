@@ -99,7 +99,7 @@ export const Content: FC<ContentProps> = () => {
 
           {/* todo: i18n link */}
           <Box xs={{ textAlign: 'center' }} m={{ textAlign: 'left' }}>
-            <Link to="https://help.onekey.so/hc/en-us/articles/360002003315-Privacy-Policy">
+            <Link to="https://help.onekey.so/hc/articles/360002003315-Privacy-Policy">
               <Span
                 xs={{
                   ...theme.text.normal100,
