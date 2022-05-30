@@ -24,20 +24,22 @@ export const HorizontalScrollingView: FC<HorizontalScrollingViewProps> = (
   const containerWidth = useCurrentContainerWidth();
   const fullWidth = 3000;
 
-  const x = useTransform(progress, (value) => {
-    let result = 0;
+  const x = useTransform(progress, (progressValue) => {
+    let offset = 0;
+    const delay = 1.5;
+    const speed = 1600;
 
-    if (value <= 1) {
+    if (progressValue <= delay) {
       return 0;
     }
 
-    result = (value - 1) * -1600;
+    offset = (progressValue - delay) * -speed;
 
-    if (result < -(fullWidth - containerWidth)) {
-      result = -(fullWidth - containerWidth);
+    if (offset < -(fullWidth - containerWidth)) {
+      offset = -(fullWidth - containerWidth);
     }
 
-    return result;
+    return offset;
   });
 
   return (
