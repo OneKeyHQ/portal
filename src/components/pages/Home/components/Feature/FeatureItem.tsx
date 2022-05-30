@@ -2,7 +2,7 @@ import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Box, Span } from '../../../../base';
+import { Box, Flex, Span } from '../../../../base';
 
 export interface FeatureItemProps {
   imageNode: ReactNode;
@@ -20,9 +20,8 @@ export const FeatureItem: FC<FeatureItemProps> = (props) => {
         maxWidth: 754,
       }}
     >
-      <Box
+      <Flex
         css={{
-          display: 'flex',
           flexDirection: 'column',
           gap: 16,
           textAlign: 'center',
@@ -31,7 +30,7 @@ export const FeatureItem: FC<FeatureItemProps> = (props) => {
         }}
       >
         <Span
-          xs={{ color: '#101111', ...theme.text.medium600 }}
+          xs={{ color: theme.colors.test500, ...theme.text.medium600 }}
           m={{ ...theme.text.medium700 }}
           l={{ ...theme.text.medium800 }}
           xl={{ ...theme.text.medium900 }}
@@ -39,14 +38,14 @@ export const FeatureItem: FC<FeatureItemProps> = (props) => {
           {title}
         </Span>
         <Span
-          xs={{ color: '#101111', ...theme.text.normal200 }}
+          xs={{ color: theme.colors.test500, ...theme.text.normal200 }}
           m={{ ...theme.text.normal300 }}
           l={{ ...theme.text.normal400 }}
           xl={{ ...theme.text.normal500 }}
         >
           {description}
         </Span>
-      </Box>
+      </Flex>
 
       {imageNode}
     </Box>
