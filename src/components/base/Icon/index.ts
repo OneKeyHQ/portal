@@ -3,3 +3,4 @@ export * from './DiscordIcon';
 export * from './GithubIcon';
 export * from './MenuCloseIcon';
 export * from './MenuListArrowIcon';
+export * from './TextfillSuccess.svg';
