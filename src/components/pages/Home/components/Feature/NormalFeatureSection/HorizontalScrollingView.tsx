@@ -26,7 +26,7 @@ export const HorizontalScrollingView: FC<HorizontalScrollingViewProps> = (
 
   const x = useTransform(progress, (progressValue) => {
     let offset = 0;
-    const delay = 1.5;
+    const delay = 1.3;
     const speed = 1600;
 
     if (progressValue <= delay) {
