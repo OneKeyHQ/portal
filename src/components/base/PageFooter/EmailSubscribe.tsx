@@ -7,6 +7,7 @@ import { isEmail } from '../../../utils';
 import { Box, Span } from '../Box';
 import { Button } from '../Button';
 import { Flex } from '../Flex';
+import { TextfillSuccessIcon } from '../Icon';
 
 export const EmailSubscribe: FC = () => {
   const theme = useTheme();
@@ -28,6 +29,8 @@ export const EmailSubscribe: FC = () => {
         customUrl: 'http://news.onekey.so/add_subscriber',
         memberEmail: email,
       });
+
+      setShowErrorMessage(false);
     } catch (e) {
       console.log(e);
     }
@@ -82,10 +85,17 @@ export const EmailSubscribe: FC = () => {
       />
 
       {showErrorMessage && (
-        <Span css={{ ...theme.text.normal100, color: theme.colors.white }}>
-          {/* <TextfillSuccessIcon /> */}
-          Please enter an email address.
-        </Span>
+        <Flex
+          css={{
+            ...theme.text.normal100,
+            color: theme.colors.white,
+            alignItems: 'center',
+            gap: 8,
+          }}
+        >
+          <TextfillSuccessIcon width={24} height={24} />
+          <Span>Please enter an email address.</Span>
+        </Flex>
       )}
 
       <Span
