@@ -39,6 +39,8 @@ export const Hardware: React.FC = () => {
 
   const ref = mergeRefs(borderRadiusRef, paddingRef);
 
+  console.log(media);
+
   return (
     <motion.section
       ref={ref}
@@ -61,18 +63,8 @@ export const Hardware: React.FC = () => {
       >
         <Container>
           {/* header */}
-          <Flex
-            xs={{
-              flexDirection: 'column',
-              gap: 24,
-            }}
-          >
-            <Flex
-              xs={{
-                flexDirection: 'column',
-                gap: 8,
-              }}
-            >
+          <Flex xs={{ flexDirection: 'column', gap: 24 }}>
+            <Flex xs={{ flexDirection: 'column', gap: 8 }}>
               <Span
                 xs={{
                   ...theme.text.medium500,
@@ -103,12 +95,7 @@ export const Hardware: React.FC = () => {
           </Flex>
 
           {/* list */}
-          <Flex
-            xs={{ paddingTop: 64, gap: 24 }}
-            xl={{
-              gap: 64,
-            }}
-          >
+          <Flex xs={{ paddingTop: 64, gap: 24 }} xl={{ gap: 64 }}>
             {/* for large screen */}
             {media.large && (
               <>
@@ -129,11 +116,7 @@ export const Hardware: React.FC = () => {
                 }}
               >
                 {data.map((item) => (
-                  <SwiperSlide
-                    style={{
-                      width: 272,
-                    }}
-                  >
+                  <SwiperSlide key={item.title} style={{ width: 280 }}>
                     <Item key={item.title} {...item} />
                   </SwiperSlide>
                 ))}
