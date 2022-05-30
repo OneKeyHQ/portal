@@ -19,7 +19,7 @@ export interface PageFooterProps {
 }
 
 export const PageFooter: FC<PageFooterProps> = (props) => {
-  const { isShowEmailSubscribe = true, isShowMediaLinks = false } = props;
+  const { isShowEmailSubscribe = true, isShowMediaLinks = true } = props;
   const theme = useTheme();
   const media = useMediaQuery();
 

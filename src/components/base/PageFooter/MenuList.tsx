@@ -26,12 +26,14 @@ export const MenuList: FC = () => {
             width: '100%',
             display: 'flex',
             flexDirection: 'column',
+            paddingBottom: 48,
             gap: 32,
           }}
           s={{
             width: '50%',
           }}
           l={{
+            paddingBottom: 0,
             width: 'fit-content',
             ':last-child': {
               paddingRight: 0,
