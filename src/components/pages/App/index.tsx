@@ -4,6 +4,8 @@ import { Helmet } from 'react-helmet';
 
 import { Main, Navigation, PageFooter, SEO } from '../../base';
 
+import { DownloadPanel } from './DownloadPanel';
+
 const AppPage: React.FC = () => (
   <>
     <Helmet>
@@ -14,7 +16,9 @@ const AppPage: React.FC = () => (
 
     <Navigation />
 
-    <Main>sdf</Main>
+    <Main>
+      <DownloadPanel />
+    </Main>
 
     <PageFooter isShowEmailSubscribe={false} isShowMediaLinks={false} />
   </>
