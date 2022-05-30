@@ -1,6 +1,5 @@
 import { FC } from 'react';
 
-import { useMediaQueryMapValues } from '../../../hooks';
 import { Box, BoxProps } from '../Box';
 
 import { UseButtonStyleProps, useButtonStyle } from './useButtonStyle';
