@@ -4,12 +4,11 @@ import { useTheme } from '@emotion/react';
 
 import { Box } from '../../Box';
 import { Flex } from '../../Flex';
-import { MenuCloseIcon } from '../../Icon';
+import { MenuCloseIcon, MenuIcon } from '../../Icon';
 import { Logo } from '../../Logo';
 import { NavigationAnimationWrap } from '../NavigationAnimationWrap';
 import { useNavigationData } from '../useNavigationData';
 
-import { MenuIcon } from './MenuIcon';
 import { MobileMenuItems } from './MobileMenuItems';
 
 const LogoIcon = (
@@ -68,7 +67,7 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = (props) => {
               cursor: 'pointer',
             }}
           >
-            <MenuIcon />
+            <MenuIcon width={40} height={40} />
           </Box>
         </Flex>
       </NavigationAnimationWrap>

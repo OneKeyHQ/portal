@@ -1,13 +1,12 @@
-import { FC } from 'react';
+import React from 'react';
 
-import { StaticImage } from 'gatsby-plugin-image';
+import { isBrowser } from '../../../../../../utils';
+import { Box, Img, VideoPlayer } from '../../../../../base';
 
-import { useMediaQuery } from '../../../../../../hooks';
-import { VideoPlayer } from '../../../../../base';
+import defaultBackgroundImage from './images/background.jpg';
+import mobileBackground from './images/mobileBackground.jpg';
 
-export const Background: FC = () => {
-  const mediaQuery = useMediaQuery();
-
+export const Background: React.FC = () => {
   const style = {
     position: 'absolute',
     zIndex: 1,
@@ -17,19 +16,23 @@ export const Background: FC = () => {
     objectFit: 'cover',
   } as const;
 
-  const videoPlayer = (
-    <VideoPlayer src="/video/home-hero.mp4" loop={false} style={style} />
+  return (
+    <>
+      <Box xs={{ display: 'block' }} m={{ display: 'none' }}>
+        <Box
+          xs={{
+            backgroundImage: `url(${mobileBackground})`,
+            backgroundSize: 'cover',
+            ...style,
+          }}
+        />
+      </Box>
+      <Box xs={{ display: 'none' }} m={{ display: 'block' }}>
+        <Img src={defaultBackgroundImage} alt="background" css={style} />
+        {isBrowser() && (
+          <VideoPlayer src="/video/home-hero.mp4" loop={false} style={style} />
+        )}
+      </Box>
+    </>
   );
-
-  const image = (
-    <StaticImage
-      style={style}
-      quality={100}
-      layout="constrained"
-      alt="background"
-      src="./mobile.jpg"
-    />
-  );
-
-  return mediaQuery.medium ? videoPlayer : image;
 };

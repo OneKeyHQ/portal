@@ -66,6 +66,7 @@
     "@babel/plugin-transform-react-jsx": "^7.14.9",
     "@babel/preset-react": "^7.16.0",
     "@lokalise/node-api": "^7.2.0",
+    "@svgr/webpack": "^6.2.1",
     "@types/body-scroll-lock": "^3.1.0",
     "@types/browser-lang": "^0.1.0",
     "@types/browser-update": "^3.3.0",

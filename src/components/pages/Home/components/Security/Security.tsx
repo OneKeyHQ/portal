@@ -1,42 +1,33 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 
 import { useTheme } from '@emotion/react';
 import { AnimatePresence, motion } from 'framer-motion';
 
-import { useInterval, useMediaQuery } from '../../../../../hooks';
+import { useMediaQuery } from '../../../../../hooks';
 import { Box, Container, Flex, Section } from '../../../../base';
 
 import { Item } from './Item';
 import { SecurityHeader } from './SecurityHeader';
 import { SecuritySwiper } from './SecuritySwiper';
-import { SecurityDataItem, useSecurityData } from './useSecurityData';
+import { useSecurityAutoSwitch } from './useSecurityAutoSwitch';
+import { useSecurityData } from './useSecurityData';
 
 export const Security: FC = () => {
   const theme = useTheme();
   const data = useSecurityData();
   const media = useMediaQuery();
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [currentItem, setCurrentItem] = useState<SecurityDataItem>(data[0]);
-  const [isAnimating, setIsAnimating] = useState(false);
-
-  useInterval(() => {
-    if (isAnimating) {
-      return;
-    }
-
-    const newIndex = (currentIndex + 1) % data.length;
-
-    setCurrentIndex(newIndex);
-
-    const nextItem = data[newIndex];
-
-    if (nextItem) {
-      setCurrentItem(nextItem);
-    }
-  }, 3000);
+  const {
+    ref,
+    currentItem,
+    currentIndex,
+    setIsAnimating,
+    setCurrentIndex,
+    setCurrentItem,
+  } = useSecurityAutoSwitch();
 
   return (
     <Section>
+      <div ref={ref} />
       {/* pc */}
       {media.large && (
         <Container>
@@ -44,14 +35,16 @@ export const Security: FC = () => {
             xs={{
               paddingTop: 80,
               paddingBottom: 80,
+              alignItems: 'flex-start',
               backgroundColor: theme.colors.white,
-              gap: 46,
             }}
             m={{
               paddingTop: 120,
               paddingBottom: 120,
-              flexDirection: 'row',
             }}
+            l={{ gap: 118 }}
+            xl={{ gap: 136 }}
+            xxl={{ gap: 112 + 24 * 2 }}
           >
             {/* left */}
             <Box xs={{ flex: 1 }}>
@@ -119,11 +112,7 @@ export const Security: FC = () => {
             backgroundColor: theme.colors.white,
           }}
         >
-          <Box
-            xs={{
-              paddingLeft: 24,
-            }}
-          >
+          <Box xs={{ paddingLeft: 24 }}>
             <SecurityHeader />
           </Box>
 

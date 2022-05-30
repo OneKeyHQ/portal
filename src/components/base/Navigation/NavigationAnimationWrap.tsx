@@ -18,6 +18,10 @@ export const NavigationAnimationWrap: FC<NavigationAnimationWrapProps> = (
   props,
 ) => {
   const browser = detect();
+  const isWeakMode =
+    browser?.name === 'firefox' ||
+    browser?.os === 'Android OS' ||
+    browser?.os === 'iOS';
 
   const { paddingRange, isSpring = false, children } = props;
   const { scrollY } = useViewportScroll();
@@ -25,7 +29,7 @@ export const NavigationAnimationWrap: FC<NavigationAnimationWrapProps> = (
   const backgroundColor = useTransform(scrollY, (value: number) => {
     let opacity = 0;
 
-    if (browser?.name === 'firefox') {
+    if (isWeakMode) {
       opacity = value >= 100 ? 1 : value / 100;
     } else {
       opacity = value > 90 ? 0.9 : value / 100;
@@ -34,13 +38,16 @@ export const NavigationAnimationWrap: FC<NavigationAnimationWrapProps> = (
     return `rgba(255, 255, 255, ${opacity})`;
   });
   const blur = useTransform(scrollY, (value: number) => {
-    const blurValue = value >= 0 && value < 100 ? (value / 100) * 10 : 10;
+    let blurValue = value >= 0 && value < 100 ? (value / 100) * 10 : 10;
+
+    if (isWeakMode) {
+      blurValue = 0;
+    }
 
     return `blur(${blurValue}px)`;
   });
 
   const paddingSpringValue = useSpring(paddingValue);
-  const blurSpringValue = useSpring(blur);
 
   return (
     <motion.div
@@ -48,8 +55,8 @@ export const NavigationAnimationWrap: FC<NavigationAnimationWrapProps> = (
         backgroundColor,
         paddingTop: isSpring ? paddingSpringValue : paddingValue,
         paddingBottom: isSpring ? paddingSpringValue : paddingValue,
-        backdropFilter: isSpring ? blurSpringValue : blur,
-        WebkitBackdropFilter: isSpring ? blurSpringValue : blur,
+        backdropFilter: blur,
+        WebkitBackdropFilter: blur,
       }}
     >
       {children}
