@@ -3,7 +3,7 @@ import { FC, useCallback, useEffect, useState } from 'react';
 import { useTheme } from '@emotion/react';
 import Swiper, { FreeMode, Navigation } from 'swiper';
 
-import { useMediaQuery, useWindowSize } from '../../../../../hooks';
+import { useMediaQuery } from '../../../../../hooks';
 import {
   Box,
   Container,
@@ -12,7 +12,7 @@ import {
   Span,
   Swiper as SwiperComponent,
   SwiperSlide,
-  useCurrentContainerWidth,
+  useContainerMargin,
 } from '../../../../base';
 
 import { Arrow } from './Arrow';
@@ -26,8 +26,7 @@ export const Why: FC = () => {
   const media = useMediaQuery();
   const [allowSlideNext, setAllowSlideNext] = useState<boolean | undefined>();
   const [allowSlidePrev, setAllowSlidePrev] = useState<boolean | undefined>();
-  const currentContainerWidth = useCurrentContainerWidth();
-  const { width: windowWidth = 0 } = useWindowSize();
+  const containerMargin = useContainerMargin();
 
   const updateSlideStatus = useCallback(() => {
     setAllowSlideNext(!thumbsSwiper?.isEnd);
@@ -36,7 +35,7 @@ export const Why: FC = () => {
 
   useEffect(() => {
     updateSlideStatus();
-  }, [updateSlideStatus, windowWidth]);
+  }, [containerMargin, updateSlideStatus]);
 
   return (
     <Section>
@@ -113,7 +112,7 @@ export const Why: FC = () => {
               enabled: true,
             }}
             style={{
-              paddingLeft: (windowWidth - currentContainerWidth) / 2 || 24,
+              paddingLeft: containerMargin,
               paddingRight: media.large ? 64 : 24,
               paddingTop: media.medium ? 100 : 60,
               paddingBottom: media.medium ? 180 : 60,
