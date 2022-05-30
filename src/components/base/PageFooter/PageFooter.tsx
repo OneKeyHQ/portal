@@ -5,13 +5,21 @@ import { useTheme } from '@emotion/react';
 import { useMediaQuery } from '../../../hooks';
 import { Box, Footer } from '../Box';
 import { Container } from '../Container';
+import { Flex } from '../Flex';
 
+import { Copyright } from './Copyright';
 import { EmailSubscribe } from './EmailSubscribe';
 import { Logo } from './Logo';
 import { MediaLinkList } from './MediaLinkList';
 import { MenuList } from './MenuList';
 
-export const PageFooter: FC = () => {
+export interface PageFooterProps {
+  isShowEmailSubscribe?: boolean;
+  isShowMediaLinks?: boolean;
+}
+
+export const PageFooter: FC<PageFooterProps> = (props) => {
+  const { isShowEmailSubscribe = true, isShowMediaLinks = false } = props;
   const theme = useTheme();
   const media = useMediaQuery();
 
@@ -37,25 +45,45 @@ export const PageFooter: FC = () => {
             justifyContent: 'space-between',
           }}
         >
-          <Box
-            m={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              flexDirection: 'column',
-            }}
+          <Flex
+            m={{ justifyContent: 'space-between', flexDirection: 'column' }}
           >
             {/* Logo */}
             <Logo />
 
-            {media.medium && <MediaLinkList />}
-          </Box>
+            <Flex
+              xs={{
+                paddingTop: 20,
+                paddingBottom: 80,
+                flexDirection: 'column',
+                gap: 32,
+              }}
+              m={{
+                padding: 0,
+              }}
+            >
+              {media.medium && isShowMediaLinks && <MediaLinkList />}
 
-          <Box>
+              {/* Copyright */}
+              <Copyright />
+            </Flex>
+          </Flex>
+
+          <Box
+            xs={{
+              maxWidth: 867,
+              flex: 1,
+            }}
+          >
             {/* menu list */}
             <MenuList />
 
             {/* email */}
-            <EmailSubscribe />
+            {isShowEmailSubscribe && (
+              <Box xs={{ paddingTop: 80 }}>
+                <EmailSubscribe />
+              </Box>
+            )}
           </Box>
 
           {!media.medium && <MediaLinkList />}

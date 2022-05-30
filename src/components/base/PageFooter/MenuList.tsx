@@ -27,11 +27,9 @@ export const MenuList: FC = () => {
             display: 'flex',
             flexDirection: 'column',
             gap: 32,
-            paddingBottom: 50,
           }}
           s={{
             width: '50%',
-            paddingBottom: 80,
           }}
           l={{
             width: 'fit-content',
