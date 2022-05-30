@@ -3,8 +3,12 @@ import { FC, ReactNode } from 'react';
 import { useTheme } from '@emotion/react';
 import { MotionValue, motion, useTransform } from 'framer-motion';
 
-import { useWindowSize } from '../../../../../../hooks';
-import { Box } from '../../../../../base';
+import {
+  Box,
+  Flex,
+  useContainerMargin,
+  useCurrentContainerWidth,
+} from '../../../../../base';
 
 export interface HorizontalScrollingViewProps {
   children?: ReactNode;
@@ -16,23 +20,21 @@ export const HorizontalScrollingView: FC<HorizontalScrollingViewProps> = (
 ) => {
   const theme = useTheme();
   const { children, progress } = props;
-  const { width: windowWidth = 0 } = useWindowSize();
+  const containerMargin = useContainerMargin();
+  const containerWidth = useCurrentContainerWidth();
+  const fullWidth = 3000;
 
   const x = useTransform(progress, (value) => {
     let result = 0;
 
-    if (value <= 1.7) {
+    if (value <= 1) {
       return 0;
     }
 
-    result = (value - 1.7) * -2000;
+    result = (value - 1) * -1600;
 
-    if (-(3100 - windowWidth) > result) {
-      result = -(3100 - windowWidth);
-    }
-
-    if (result > 100) {
-      result = 100;
+    if (result < -(fullWidth - containerWidth)) {
+      result = -(fullWidth - containerWidth);
     }
 
     return result;
@@ -44,6 +46,8 @@ export const HorizontalScrollingView: FC<HorizontalScrollingViewProps> = (
         position: 'relative',
         overflow: 'hidden',
         width: '100%',
+        paddingLeft: containerMargin,
+        paddingRight: containerMargin,
       }}
     >
       <motion.div
@@ -52,15 +56,7 @@ export const HorizontalScrollingView: FC<HorizontalScrollingViewProps> = (
           x,
         }}
       >
-        <Box
-          xs={{
-            position: 'relative',
-            display: 'flex',
-            width: 3000,
-          }}
-        >
-          {children}
-        </Box>
+        <Flex xs={{ position: 'relative', width: fullWidth }}>{children}</Flex>
       </motion.div>
     </Box>
   );
