@@ -4,6 +4,7 @@ import { isBrowser } from '../../../../../../utils';
 import { Box, Img, VideoPlayer } from '../../../../../base';
 
 import defaultBackgroundImage from './images/background.jpg';
+import homeVideoEnd from './images/homeVideoEnd.jpg';
 import mobileBackground from './images/mobileBackground.jpg';
 
 export const Background: React.FC = () => {
@@ -15,6 +16,12 @@ export const Background: React.FC = () => {
     height: '100%',
     objectFit: 'cover',
   } as const;
+
+  const [isVideoEnd, setIsVideoEnd] = React.useState(false);
+
+  const onVideoEnded = () => {
+    setIsVideoEnd(true);
+  };
 
   return (
     <>
@@ -30,8 +37,23 @@ export const Background: React.FC = () => {
       <Box xs={{ display: 'none' }} m={{ display: 'block' }}>
         <Img src={defaultBackgroundImage} alt="background" css={style} />
         {isBrowser() && (
-          <VideoPlayer src="/video/home-hero.mp4" loop={false} style={style} />
+          <VideoPlayer
+            onEnded={onVideoEnded}
+            src="/video/home-hero.mp4"
+            loop={false}
+            style={style}
+          />
         )}
+
+        <Img
+          src={homeVideoEnd}
+          alt="background"
+          css={{
+            ...style,
+            transition: 'opacity 0.3s linear',
+            opacity: isVideoEnd ? 1 : 0,
+          }}
+        />
       </Box>
     </>
   );
