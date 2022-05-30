@@ -25,6 +25,14 @@ export const RightArea: FC<RightAreaProps> = (props) => {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
+          paddingTop: 24,
+          paddingBottom: 24,
+          paddingLeft: 40,
+        }}
+        l={{
+          padding: 38,
+        }}
+        xl={{
           padding: 64,
         }}
         externalProps={otherProps}
@@ -33,6 +41,9 @@ export const RightArea: FC<RightAreaProps> = (props) => {
           xs={{
             display: 'flex',
             flexDirection: 'column',
+            gap: 8,
+          }}
+          l={{
             gap: 16,
           }}
         >

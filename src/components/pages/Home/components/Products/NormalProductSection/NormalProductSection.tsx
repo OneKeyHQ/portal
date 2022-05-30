@@ -5,6 +5,7 @@ import { useTransform } from 'framer-motion';
 import {
   useElementInViewportProgress,
   useMediaQueryMapValues,
+  useWindowSize,
 } from '../../../../../../hooks';
 import {
   Box,
@@ -23,9 +24,11 @@ export const NormalProductSection: FC = () => {
   const { ref, elementInViewportProgress } = useElementInViewportProgress(0);
   const motionValue = useTransform(
     elementInViewportProgress,
-    [0.5, 1],
+    [0.7, 1.4],
     [0, 59],
   );
+
+  const { height: windowHeight = 0 } = useWindowSize();
 
   const canvasSize = useMediaQueryMapValues({
     small: { width: 540, height: 421 },
@@ -34,6 +37,15 @@ export const NormalProductSection: FC = () => {
     xlarge: { width: 644, height: 502 },
     xxlarge: { width: 792, height: 618 },
   });
+
+  const stickyPosition =
+    windowHeight > canvasSize.height + 200
+      ? {
+          top: `calc(50% - ${canvasSize.height / 2}px)`,
+        }
+      : {
+          top: 100,
+        };
 
   return (
     <Section>
@@ -64,12 +76,9 @@ export const NormalProductSection: FC = () => {
             {/* left */}
             <Flex css={{ gap: 24 }}>
               <Box
-                l={{
-                  marginRight: 52,
-                }}
-                xl={{
-                  marginRight: 64,
-                }}
+                m={{ marginRight: 20 }}
+                l={{ marginRight: 40 }}
+                xxl={{ marginRight: 50 }}
               >
                 <Progress height={canvasSize.height} />
               </Box>
@@ -80,7 +89,7 @@ export const NormalProductSection: FC = () => {
                   css={{
                     flexDirection: 'column',
                     gap: 24,
-                    height: 500,
+                    height: 700,
                   }}
                 >
                   <TextContent
@@ -123,7 +132,7 @@ export const NormalProductSection: FC = () => {
               >
                 <Box
                   css={{
-                    top: `calc(50% - ${502 / 2}px)`,
+                    ...stickyPosition,
                     position: 'sticky',
                     width: canvasSize.width,
                     height: canvasSize.height,

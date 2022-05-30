@@ -18,7 +18,7 @@ export const Navigation: FC<NavigationProps> = (props) => {
         position: 'fixed',
         width: '100%',
         zIndex: 2000,
-        top: 0,
+        top: -1,
         left: 0,
         right: 0,
         transition: 'all 0.3s ease-in-out',

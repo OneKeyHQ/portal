@@ -1,16 +1,18 @@
-import { FC, useState } from 'react';
+import { FC, useCallback, useEffect, useState } from 'react';
 
 import { useTheme } from '@emotion/react';
 import Swiper, { FreeMode, Navigation } from 'swiper';
 
-import { useMediaQuery } from '../../../../../hooks';
+import { useMediaQuery, useWindowSize } from '../../../../../hooks';
 import {
   Box,
+  Container,
   Flex,
   Section,
   Span,
   Swiper as SwiperComponent,
   SwiperSlide,
+  useCurrentContainerWidth,
 } from '../../../../base';
 
 import { Arrow } from './Arrow';
@@ -24,11 +26,17 @@ export const Why: FC = () => {
   const media = useMediaQuery();
   const [allowSlideNext, setAllowSlideNext] = useState<boolean | undefined>();
   const [allowSlidePrev, setAllowSlidePrev] = useState<boolean | undefined>();
+  const currentContainerWidth = useCurrentContainerWidth();
+  const { width: windowWidth = 0 } = useWindowSize();
 
-  const updateSlideStatus = () => {
+  const updateSlideStatus = useCallback(() => {
     setAllowSlideNext(!thumbsSwiper?.isEnd);
     setAllowSlidePrev(!thumbsSwiper?.isBeginning);
-  };
+  }, [thumbsSwiper?.isBeginning, thumbsSwiper?.isEnd]);
+
+  useEffect(() => {
+    updateSlideStatus();
+  }, [updateSlideStatus, windowWidth]);
 
   return (
     <Section>
@@ -41,56 +49,50 @@ export const Why: FC = () => {
           label: 'whySection',
         }}
       >
-        <Flex
-          xs={{
-            justifyContent: 'space-between',
-            paddingLeft: 24,
-            paddingRight: 24,
-          }}
-          l={{
-            paddingLeft: 64,
-            paddingRight: 64,
-          }}
-        >
-          <Span css={{ ...theme.text.medium900, color: '#101111' }}>
-            Why Choose OneKey?
-          </Span>
+        <Container>
+          <Flex xs={{ justifyContent: 'space-between' }}>
+            <Span
+              css={{ ...theme.text.medium900, color: theme.colors.test500 }}
+            >
+              Why Choose OneKey?
+            </Span>
 
-          {/* controller */}
-          <Box
-            xs={{
-              display: 'none',
-            }}
-            m={{
-              display: 'flex',
-            }}
-          >
-            <Arrow
-              disabled={!allowSlidePrev}
-              onClick={() => {
-                thumbsSwiper?.slidePrev();
-                updateSlideStatus();
-              }}
-              direction="left"
+            {/* controller */}
+            <Box
               xs={{
-                width: 64,
+                display: 'none',
               }}
-            />
-            <Arrow
-              disabled={!allowSlideNext}
-              xs={{
-                marginLeft: 24,
-                width: 128,
-                justifyContent: 'flex-end',
+              m={{
+                display: 'flex',
               }}
-              onClick={() => {
-                thumbsSwiper?.slideNext();
-                updateSlideStatus();
-              }}
-              direction="right"
-            />
-          </Box>
-        </Flex>
+            >
+              <Arrow
+                disabled={!allowSlidePrev}
+                onClick={() => {
+                  thumbsSwiper?.slidePrev();
+                  updateSlideStatus();
+                }}
+                direction="left"
+                xs={{
+                  width: 64,
+                }}
+              />
+              <Arrow
+                disabled={!allowSlideNext}
+                xs={{
+                  marginLeft: 24,
+                  width: 128,
+                  justifyContent: 'flex-end',
+                }}
+                onClick={() => {
+                  thumbsSwiper?.slideNext();
+                  updateSlideStatus();
+                }}
+                direction="right"
+              />
+            </Box>
+          </Flex>
+        </Container>
 
         <Box
           css={{
@@ -111,7 +113,7 @@ export const Why: FC = () => {
               enabled: true,
             }}
             style={{
-              paddingLeft: media.large ? 64 : 24,
+              paddingLeft: (windowWidth - currentContainerWidth) / 2 || 24,
               paddingRight: media.large ? 64 : 24,
               paddingTop: media.medium ? 100 : 60,
               paddingBottom: media.medium ? 180 : 60,
@@ -121,7 +123,7 @@ export const Why: FC = () => {
               <SwiperSlide
                 style={{
                   minWidth: 271,
-                  maxWidth: 600,
+                  maxWidth: 421,
                   width: '30vw',
                 }}
                 key={item.title}

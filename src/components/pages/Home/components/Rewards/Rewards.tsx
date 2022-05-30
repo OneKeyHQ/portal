@@ -16,15 +16,15 @@ import image9 from './images/image09.svg';
 import image10 from './images/image10.svg';
 
 const images = [
-  image2,
-  image3,
-  image4,
-  image5,
-  image6,
-  image7,
-  image8,
-  image9,
   image10,
+  image9,
+  image8,
+  image7,
+  image6,
+  image5,
+  image4,
+  image3,
+  image2,
 ];
 
 export const Rewards: FC = () => {
