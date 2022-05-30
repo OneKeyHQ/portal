@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Helmet } from 'react-helmet';
 
-import { PageFooter, SEO } from '../../base';
+import { Main, Navigation, PageFooter, SEO } from '../../base';
 
 const AppPage: React.FC = () => (
   <>
@@ -12,7 +12,9 @@ const AppPage: React.FC = () => (
 
     <SEO title="onekey" description="onekey" />
 
-    <main>sdf</main>
+    <Navigation />
+
+    <Main>sdf</Main>
 
     <PageFooter isShowEmailSubscribe={false} isShowMediaLinks={false} />
   </>
