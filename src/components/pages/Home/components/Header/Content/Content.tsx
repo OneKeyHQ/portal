@@ -65,11 +65,11 @@ export const Content: FC<ContentProps> = () => {
             xxl={{ ...theme.text.medium1000 }}
           >
             All-in-one
-            {!mediaQuery.small && <br />}
+            {!mediaQuery.small ? <br /> : ' '}
             crypto wallet.
             <br />
             Trusted by
-            {!mediaQuery.small && <br />}
+            {!mediaQuery.small ? <br /> : ' '}
             millions.
           </H1>
           <Box
