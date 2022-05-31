@@ -18,7 +18,9 @@ export const MobileApp: FC<MobileAppProps> = (props) => {
     if (browser?.os === 'iOS') {
       navigate('https://onekey.so/download?client=ios');
     } else if (browser?.os === 'Android OS') {
-      navigate('https://onekey.so/download?client=android');
+      navigate(
+        'https://play.google.com/store/apps/details?id=com.bixin.wallet.mainnet',
+      );
     } else {
       navigate('https://onekey.so/download');
     }
