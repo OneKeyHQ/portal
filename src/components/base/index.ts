@@ -18,3 +18,4 @@ export * from './Icon';
 export * from './VideoPlayer';
 export * from './Link';
 export * from './Display';
+export * from './Grid';

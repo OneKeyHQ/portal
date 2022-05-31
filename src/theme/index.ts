@@ -220,6 +220,7 @@ export const theme = {
 export type MediaBreakpointsKey = keyof typeof mediaBreakpoints;
 
 export const mediaBreakpoints = {
+  xSmall: 0,
   small: 414,
   medium: 960,
   large: 1200,

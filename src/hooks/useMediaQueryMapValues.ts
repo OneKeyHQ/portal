@@ -2,26 +2,34 @@ import { MediaBreakpointsKey } from '../theme';
 
 import { useMediaQuery } from './useMediaQuery';
 
+export type UseMediaQueryMapValuesValue<T> = Record<MediaBreakpointsKey, T> | T;
+
 export function useMediaQueryMapValues<T = any>(
-  value: Record<MediaBreakpointsKey, T>,
-) {
+  value: UseMediaQueryMapValuesValue<T>,
+): T {
   const mediaQuery = useMediaQuery();
 
-  if (mediaQuery.xxlarge) {
-    return value.xxlarge;
-  }
-  if (mediaQuery.xlarge) {
-    return value.xlarge;
-  }
-  if (mediaQuery.large) {
-    return value.large;
-  }
-  if (mediaQuery.medium) {
-    return value.medium;
-  }
-  if (mediaQuery.small) {
-    return value.small;
+  if (typeof value !== 'object') {
+    return value;
   }
 
-  return value.small;
+  const objectMediaQueryValue = value as Record<MediaBreakpointsKey, T>;
+
+  if (mediaQuery.xxlarge) {
+    return objectMediaQueryValue.xxlarge;
+  }
+  if (mediaQuery.xlarge) {
+    return objectMediaQueryValue.xlarge;
+  }
+  if (mediaQuery.large) {
+    return objectMediaQueryValue.large;
+  }
+  if (mediaQuery.medium) {
+    return objectMediaQueryValue.medium;
+  }
+  if (mediaQuery.small) {
+    return objectMediaQueryValue.small;
+  }
+
+  return objectMediaQueryValue.small;
 }
