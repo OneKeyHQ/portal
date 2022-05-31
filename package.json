@@ -22,7 +22,8 @@
     "clean": "gatsby clean",
     "life": "git clean -xdf && yarn install && yarn develop",
     "lint": "tsc --noEmit && eslint . --ext .ts,.tsx --fix",
-    "lokalise": "node ./scripts/lokalise.js"
+    "lokalise": "node ./scripts/lokalise.js",
+    "icon": "node ./scripts/icon.js"
   },
   "dependencies": {
     "@dinehq/revue-form-subscriber": "^1.1.0",
