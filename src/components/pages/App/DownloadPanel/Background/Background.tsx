@@ -14,6 +14,7 @@ export const Background: FC<BackgroundProps> = (props) => {
   return (
     <Box
       xs={{
+        position: 'absolute',
         height: '100%',
         width: '100%',
       }}

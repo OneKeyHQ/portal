@@ -2,7 +2,8 @@ import React from 'react';
 
 import { Helmet } from 'react-helmet';
 
-import { Main, Navigation, PageFooter, SEO } from '../../base';
+import { Container, Main, Navigation, PageFooter, SEO } from '../../base';
+import { StayInTouch } from '../../common';
 
 import { DownloadPanel } from './DownloadPanel';
 
@@ -18,6 +19,10 @@ const AppPage: React.FC = () => (
 
     <Main>
       <DownloadPanel />
+
+      <Container>
+        <StayInTouch />
+      </Container>
     </Main>
 
     <PageFooter isShowEmailSubscribe={false} isShowMediaLinks={false} />

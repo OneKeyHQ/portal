@@ -17,7 +17,7 @@ export const DownloadPanel: FC<DownloadPanelProps> = (props) => {
   return (
     <Box
       xs={{
-        overflow: 'hidden',
+        position: 'relative',
         width: '100%',
         height: '100vh',
         minHeight: 720,
@@ -30,6 +30,7 @@ export const DownloadPanel: FC<DownloadPanelProps> = (props) => {
       <Container>
         <AppleIcon width={20} />
       </Container>
+
       {children}
     </Box>
   );
