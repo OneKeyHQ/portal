@@ -1,6 +1,7 @@
 import { FC, ReactNode } from 'react';
 
 import { detect } from 'detect-browser';
+import { navigate } from 'gatsby';
 
 import { isBrowser } from '../../../utils';
 
@@ -15,11 +16,11 @@ export const MobileApp: FC<MobileAppProps> = (props) => {
     const browser = detect();
 
     if (browser?.os === 'iOS') {
-      window.location.href = 'https://onekey.so/download?client=ios';
+      navigate('https://onekey.so/download?client=ios');
     } else if (browser?.os === 'Android OS') {
-      window.location.href = 'https://onekey.so/download?client=android';
+      navigate('https://onekey.so/download?client=android');
     } else {
-      window.location.href = 'https://onekey.so/download';
+      navigate('https://onekey.so/download');
     }
   }
 
