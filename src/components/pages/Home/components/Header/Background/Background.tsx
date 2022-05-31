@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { useMediaQuery } from '../../../../../../hooks';
 import { isBrowser } from '../../../../../../utils';
 import { Box, Img, VideoPlayer } from '../../../../../base';
 
@@ -18,6 +19,7 @@ export const Background: React.FC = () => {
   } as const;
 
   const [isVideoEnd, setIsVideoEnd] = React.useState(false);
+  const mediaQuery = useMediaQuery();
 
   const onVideoEnded = () => {
     setIsVideoEnd(true);
@@ -39,7 +41,11 @@ export const Background: React.FC = () => {
         {isBrowser() && (
           <VideoPlayer
             onEnded={onVideoEnded}
-            src="/video/home-hero.mp4"
+            src={
+              mediaQuery.xlarge
+                ? '/video/home-hero-animation-4k.mp4'
+                : '/video/home-hero-animation.mp4'
+            }
             loop={false}
             style={style}
           />
