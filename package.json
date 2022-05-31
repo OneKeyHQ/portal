@@ -19,7 +19,7 @@
     "start": "gatsby develop",
     "build": "npm run clean && gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean",
+    "clean": "gatsby clean && rm -rf .cache",
     "life": "git clean -xdf && yarn install && yarn develop",
     "lint": "tsc --noEmit && eslint . --ext .ts,.tsx --fix",
     "lokalise": "node ./scripts/lokalise.js"
