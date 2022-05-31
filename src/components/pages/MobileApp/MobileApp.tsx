@@ -1,6 +1,8 @@
-import { FC, ReactNode, useEffect } from 'react';
+import { FC, ReactNode } from 'react';
 
 import { detect } from 'detect-browser';
+
+import { isBrowser } from '../../../utils';
 
 export interface MobileAppProps {
   children?: ReactNode;
@@ -9,7 +11,7 @@ export interface MobileAppProps {
 export const MobileApp: FC<MobileAppProps> = (props) => {
   const { children } = props;
 
-  useEffect(() => {
+  if (isBrowser()) {
     const browser = detect();
 
     if (browser?.os === 'iOS') {
@@ -19,7 +21,7 @@ export const MobileApp: FC<MobileAppProps> = (props) => {
     } else {
       window.location.href = 'https://onekey.so/download';
     }
-  }, []);
+  }
 
   return <div>{children}</div>;
 };
