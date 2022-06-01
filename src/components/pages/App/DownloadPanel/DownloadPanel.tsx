@@ -5,6 +5,7 @@ import { useTheme } from '@emotion/react';
 import { AppleIcon, Box, Container } from '../../../base';
 
 import { Background } from './Background';
+import { Tabs } from './Tabs';
 
 export interface DownloadPanelProps {
   children?: ReactNode;
@@ -30,6 +31,8 @@ export const DownloadPanel: FC<DownloadPanelProps> = (props) => {
       <Container>
         <AppleIcon width={20} />
       </Container>
+
+      <Tabs />
 
       {children}
     </Box>
