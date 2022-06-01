@@ -39,8 +39,6 @@ export const Hardware: React.FC = () => {
 
   const ref = mergeRefs(borderRadiusRef, paddingRef);
 
-  console.log(media);
-
   return (
     <motion.section
       ref={ref}
