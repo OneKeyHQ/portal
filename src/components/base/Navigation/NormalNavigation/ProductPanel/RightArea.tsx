@@ -17,7 +17,7 @@ export const RightArea: FC<RightAreaProps> = (props) => {
   const theme = useTheme();
 
   return (
-    <Link to="https://help.onekey.so/hc/en-us/categories/360000170236-User-s-Guide">
+    <Link to="https://help.onekey.so/hc/categories/360000170236-User-s-Guide">
       <Box
         xs={{
           width: '100%',

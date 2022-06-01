@@ -3,6 +3,8 @@ import { FC, ReactNode } from 'react';
 import { useMediaQueryMapValues, useWindowSize } from '../../../hooks';
 import { Box, BoxProps } from '../Box';
 
+const ContainerMinPadding = 24;
+
 export interface ContainerProps extends BoxProps {
   children?: ReactNode;
 }
@@ -23,6 +25,13 @@ export function useCurrentContainerWidth() {
   });
 }
 
+export function useContainerMargin() {
+  const currentContainerWidth = useCurrentContainerWidth();
+  const { width: windowWidth = 0 } = useWindowSize();
+
+  return (windowWidth - currentContainerWidth) / 2 || ContainerMinPadding;
+}
+
 export const Container: FC<ContainerProps> = (props) => {
   const { children, ...externalProps } = props;
 
@@ -31,13 +40,13 @@ export const Container: FC<ContainerProps> = (props) => {
       xs={{
         margin: '0 auto',
         maxWidth: '100%',
-        paddingLeft: 24,
-        paddingRight: 24,
+        paddingLeft: ContainerMinPadding,
+        paddingRight: ContainerMinPadding,
         label: 'Container',
       }}
       s={{
-        paddingLeft: 24,
-        paddingRight: 24,
+        paddingLeft: ContainerMinPadding,
+        paddingRight: ContainerMinPadding,
       }}
       m={{
         paddingLeft: 0,
