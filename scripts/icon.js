@@ -4,6 +4,8 @@ const scriptPath = (p) => path.join(__dirname, p);
 const path = require('path');
 
 async function main() {
+  const IconComponentPath = '../src/components/base/Icon';
+
   // read all icon files from './src/components/base/Icon/images
   const files = fs.readdirSync(
     scriptPath('../src/components/base/Icon/images'),
@@ -20,6 +22,20 @@ async function main() {
     const fileExt = filePath.split('.')[1];
 
     if (fileExt === 'svg') {
+      // remove all svg file #101111 color, replace with `currentColor`
+      const fileContent = fs.readFileSync(
+        scriptPath(`${IconComponentPath}/images/${filePath}`),
+        'utf8',
+      );
+
+      const newFileContent = fileContent.replace(/#101111/g, 'currentColor');
+
+      // save to file
+      fs.writeFileSync(
+        scriptPath(`${IconComponentPath}/images/${filePath}`),
+        newFileContent,
+      );
+
       // format the file name to PascalCase and add 'Icon' to the end
       const componentName = fileName
         .split('-')
@@ -41,7 +57,7 @@ async function main() {
 
   // write the codes to './src/components/base/Icon/IconAutoGenerate.ts'
   fs.writeFileSync(
-    scriptPath('../src/components/base/Icon/IconAutoGenerate.ts'),
+    scriptPath(`${IconComponentPath}/IconAutoGenerate.ts`),
     `${codes.join('\n')}\n`,
   );
 }
