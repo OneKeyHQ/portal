@@ -15,6 +15,8 @@ export const Tabs: FC<TabsProps> = (props) => {
   return (
     <Box
       css={{
+        paddingTop: 32,
+        paddingBottom: 32,
         color: theme.colors.white,
         backgroundColor: theme.colors.test500,
       }}

@@ -9,5 +9,5 @@ export interface CardsProps {
 export const Cards: FC<CardsProps> = (props) => {
   const { children } = props;
 
-  return <Box>Cards {children}</Box>;
+  return <Box>{children}</Box>;
 };

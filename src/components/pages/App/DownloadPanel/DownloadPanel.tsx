@@ -2,7 +2,7 @@ import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { AppleIcon, Box, Container } from '../../../base';
+import { Box } from '../../../base';
 
 import { Background } from './Background';
 import { Tabs } from './Tabs';
@@ -18,6 +18,8 @@ export const DownloadPanel: FC<DownloadPanelProps> = (props) => {
   return (
     <Box
       xs={{
+        display: 'flex',
+        flexDirection: 'column',
         position: 'relative',
         width: '100%',
         height: '100vh',
@@ -26,11 +28,18 @@ export const DownloadPanel: FC<DownloadPanelProps> = (props) => {
         backgroundColor: theme.colors.white,
       }}
     >
-      <Background />
+      <Box
+        css={{
+          flex: 1,
+          position: 'relative',
+        }}
+      >
+        <Background />
 
-      <Container>
-        <AppleIcon width={20} />
-      </Container>
+        {/* <Container>
+          <AppleIcon width={20} />
+        </Container> */}
+      </Box>
 
       <Tabs />
 
