@@ -20,3 +20,11 @@ yarn install
 ```
 yarn develop
 ```
+
+## Auto Generate Icon Components
+
+`src/component/base/icon`
+
+```
+yarn run icon
+```
