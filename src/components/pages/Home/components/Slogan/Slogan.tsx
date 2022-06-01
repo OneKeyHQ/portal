@@ -58,9 +58,8 @@ export const Slogan: React.FC = () => {
               </motion.span>
             ) : (
               <motion.span variants={itemVariants}>
-                <OneKey />
-                is the smartest way to secure, buy, exchange and grow your
-                crypto assets.
+                <OneKey /> is the smartest way to secure, buy, exchange and grow
+                your crypto assets.
               </motion.span>
             )}
           </motion.p>
