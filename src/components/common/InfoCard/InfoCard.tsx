@@ -2,7 +2,7 @@ import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Box } from '../../base/Box';
+import { Box, Span } from '../../base/Box';
 
 export interface InfoCardProps {
   children?: ReactNode;
@@ -21,11 +21,20 @@ export const InfoCard: FC<InfoCardProps> = (props) => {
         backgroundColor: theme.colors.test100,
       }}
     >
-      <Box>{title}</Box>
+      <Span css={{ ...theme.text.medium800, color: theme.colors.test500 }}>
+        {title}
+      </Span>
 
       {children}
 
-      {imageNode}
+      <Box
+        css={{
+          width: 420,
+          height: 420,
+        }}
+      >
+        {imageNode}
+      </Box>
     </Box>
   );
 };

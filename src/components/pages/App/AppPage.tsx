@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet';
 import { Container, Main, Navigation, PageFooter, SEO } from '../../base';
 import { StayInTouch } from '../../common';
 
+import { Cards } from './Cards';
 import { DownloadPanel } from './DownloadPanel';
 
 const AppPage: React.FC = () => (
@@ -21,6 +22,8 @@ const AppPage: React.FC = () => (
       <DownloadPanel />
 
       <Container>
+        <Cards />
+
         <StayInTouch />
       </Container>
     </Main>
