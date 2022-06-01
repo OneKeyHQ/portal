@@ -65,11 +65,11 @@ export const Content: FC<ContentProps> = () => {
             xxl={{ ...theme.text.medium1000 }}
           >
             All-in-one
-            {!mediaQuery.small && <br />}
+            {!mediaQuery.small ? <br /> : ' '}
             crypto wallet.
             <br />
             Trusted by
-            {!mediaQuery.small && <br />}
+            {!mediaQuery.small ? <br /> : ' '}
             millions.
           </H1>
           <Box
@@ -99,7 +99,7 @@ export const Content: FC<ContentProps> = () => {
 
           {/* todo: i18n link */}
           <Box xs={{ textAlign: 'center' }} m={{ textAlign: 'left' }}>
-            <Link to="https://help.onekey.so/hc/en-us/articles/360002003315-Privacy-Policy">
+            <Link to="https://help.onekey.so/hc/articles/360002003315-Privacy-Policy">
               <Span
                 xs={{
                   ...theme.text.normal100,

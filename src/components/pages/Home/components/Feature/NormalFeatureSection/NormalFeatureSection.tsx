@@ -39,15 +39,13 @@ export const NormalFeatureSection: FC<NormalFeatureSectionProps> = () => {
         width: '100%',
       }}
     >
+      {/* for space */}
+      <Box xs={{ height: 200, width: 100 }} />
+
       <div ref={ref} />
 
       {/* for space */}
-      <Box
-        xs={{
-          height: '100vh',
-          width: 100,
-        }}
-      />
+      <Box xs={{ height: '160vh', width: 100 }} />
 
       <Box
         xs={{

@@ -78,11 +78,11 @@ export function useNavigationData(): NavigationDataItem[] {
       subItems: [
         {
           name: "Beginner's Guide",
-          path: 'https://help.onekey.so/hc/zh-cn/categories/360000170236',
+          path: 'https://help.onekey.so/hc/categories/360000170236',
         },
         {
           name: 'Hardware Wallet Manual',
-          path: 'https://help.onekey.so/hc/zh-cn/articles/360002123856',
+          path: 'https://help.onekey.so/hc/articles/360002123856',
         },
       ],
     },

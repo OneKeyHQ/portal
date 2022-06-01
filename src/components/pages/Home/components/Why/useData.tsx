@@ -7,7 +7,7 @@ export function useData() {
       title: 'Beginner friendly',
       description:
         "Use our products with ease whether you are an experienced practitioner or a beginner, even it's for your grandma.",
-      link: 'https://help.onekey.so/hc/en-us/sections/360001102996',
+      link: 'https://help.onekey.so/hc/sections/360001102996',
     },
     {
       image: (
@@ -19,7 +19,7 @@ export function useData() {
       title: 'Software and hardware, better together',
       description:
         'Wanna be safe and easy at the same time when investing cryptos? You can have both here.',
-      link: 'https://help.onekey.so/hc/en-us/articles/360002184256-Why-Use-Hardware-Wallets-to-Manage-Private-Keys-',
+      link: 'https://help.onekey.so/hc/articles/360002184256-Why-Use-Hardware-Wallets-to-Manage-Private-Keys-',
     },
     {
       image: (
@@ -40,7 +40,7 @@ export function useData() {
       title: 'Ultra-fast customer service response',
       description:
         'Our customer service and engineers respond rapidly to your needs.',
-      link: 'https://help.onekey.so/hc/en-us',
+      link: 'https://help.onekey.so',
     },
   ];
 }
