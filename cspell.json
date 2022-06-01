@@ -3,8 +3,10 @@
         "airbnb",
         "avif",
         "bignore",
+        "bitcoinonly",
         "bixin",
         "bnever",
+        "bootloader",
         "browserslist",
         "bupdate",
         "cobo",
@@ -24,6 +26,7 @@
         "Swiper",
         "WWLGDZJB",
         "xlarge",
-        "xxlarge"
+        "xxlarge",
+        "zadig"
     ]
 }

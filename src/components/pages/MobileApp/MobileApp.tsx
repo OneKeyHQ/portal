@@ -1,8 +1,10 @@
-import { FC, ReactNode, useEffect } from 'react';
+import { FC, ReactNode, useEffect, useRef } from 'react';
 
 import { detect } from 'detect-browser';
 import { navigate } from 'gatsby';
+import queryString from 'query-string';
 
+import { useOneKeyVersion } from '../../../hooks';
 import { isBrowser } from '../../../utils';
 
 export interface MobileAppProps {
@@ -11,12 +13,23 @@ export interface MobileAppProps {
 
 export const MobileApp: FC<MobileAppProps> = (props) => {
   const { children } = props;
+  const isDownloading = useRef<boolean>();
+
+  const { data: oneKeyVersionData } = useOneKeyVersion();
 
   useEffect(() => {
     if (isBrowser()) {
       const browser = detect();
 
-      if (browser?.os === 'iOS') {
+      // onekey.so/mobile-app?type=apk
+      const parsed = queryString.parse(window.location.search);
+
+      if (parsed.type === 'apk') {
+        if (oneKeyVersionData && !isDownloading.current) {
+          isDownloading.current = true;
+          navigate(oneKeyVersionData?.APK.url);
+        }
+      } else if (browser?.os === 'iOS') {
         navigate('https://itunes.apple.com/app/chrome/id1609559473');
       } else if (browser?.os === 'Android OS') {
         navigate(
@@ -28,15 +41,8 @@ export const MobileApp: FC<MobileAppProps> = (props) => {
     }
 
     return () => {};
-  }, []);
+  }, [oneKeyVersionData]);
 
-  return (
-    <div>
-      {children}
-      {detect()?.os}
-      <a href="https://itunes.apple.com/app/chrome/id1609559473">
-        https://itunes.apple.com/app/chrome/id1609559473
-      </a>
-    </div>
-  );
+  // todo: import download content
+  return <div>{children}</div>;
 };
