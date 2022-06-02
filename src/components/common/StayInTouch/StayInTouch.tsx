@@ -1,7 +1,9 @@
 import { FC, ReactNode } from 'react';
 
 import { useColumnSize } from '../../../theme';
-import { Box } from '../../base';
+import { Box } from '../../base/Box';
+
+import { EmailSubscribe } from './EmailSubscribe';
 
 export interface StayInTouchProps {
   children?: ReactNode;
@@ -23,6 +25,7 @@ export const StayInTouch: FC<StayInTouchProps> = (props) => {
       }}
     >
       StayInTouch {children}
+      <EmailSubscribe />
     </Box>
   );
 };

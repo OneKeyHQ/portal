@@ -2,9 +2,9 @@ import { FC } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Flex } from '../Flex';
-import { DiscordIcon, GithubIcon, TwitterIcon } from '../Icon';
-import { Link } from '../Link';
+import { Flex } from '../../base/Flex';
+import { DiscordIcon, GithubIcon, TwitterIcon } from '../../base/Icon';
+import { Link } from '../../base/Link';
 
 import { usePageFooterData } from './usePageFooterData';
 

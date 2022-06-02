@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Span } from '../Box';
+import { Span } from '../../base/Box';
 
 export const Copyright: FC = () => {
   const theme = useTheme();

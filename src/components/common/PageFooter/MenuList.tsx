@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Box, Span } from '../Box';
+import { Box, Span } from '../../base/Box';
 
 import { usePageFooterData } from './usePageFooterData';
 

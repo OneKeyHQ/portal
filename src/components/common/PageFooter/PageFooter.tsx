@@ -3,9 +3,9 @@ import { FC } from 'react';
 import { useTheme } from '@emotion/react';
 
 import { useMediaQuery } from '../../../hooks';
-import { Box, Footer } from '../Box';
-import { Container } from '../Container';
-import { Flex } from '../Flex';
+import { Box, Footer } from '../../base/Box';
+import { Container } from '../../base/Container';
+import { Flex } from '../../base/Flex';
 
 import { Copyright } from './Copyright';
 import { EmailSubscribe } from './EmailSubscribe';
@@ -80,7 +80,7 @@ export const PageFooter: FC<PageFooterProps> = (props) => {
 
             {/* email */}
             {isShowEmailSubscribe && (
-              <Box xs={{ paddingTop: 80 }}>
+              <Box xs={{ paddingTop: 80, maxWidth: 480 }} l={{ maxWidth: 780 }}>
                 <EmailSubscribe />
               </Box>
             )}

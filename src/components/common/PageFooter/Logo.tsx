@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { Box } from '../Box';
+import { Box } from '../../base/Box';
 
 export const Logo: FC = () => (
   <Box
