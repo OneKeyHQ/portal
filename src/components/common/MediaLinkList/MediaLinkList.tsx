@@ -6,11 +6,27 @@ import { Flex } from '../../base/Flex';
 import { DiscordIcon, GithubIcon, TwitterIcon } from '../../base/Icon';
 import { Link } from '../../base/Link';
 
-import { usePageFooterData } from './usePageFooterData';
+const mediaData = {
+  twitter: {
+    url: 'https://twitter.com/OneKeyHQ',
+    username: 'OneKeyHQ',
+  },
+  discord: {
+    url: 'https://discord.gg/nwUJaTzjzv',
+  },
+  github: {
+    url: 'https://github.com/OneKeyHQ/OneKey-Wallet',
+  },
+  reddit: {
+    url: 'https://www.reddit.com/r/OneKeyHQ/',
+  },
+  weibo: {
+    url: 'https://weibo.com/yourKeysyourBitcoin',
+  },
+};
 
 export const MediaLinkList: FC = () => {
   const theme = useTheme();
-  const { media: mediaData } = usePageFooterData();
 
   return (
     <Flex

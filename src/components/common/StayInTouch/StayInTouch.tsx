@@ -2,6 +2,7 @@ import { FC, ReactNode } from 'react';
 
 import { useColumnSize } from '../../../theme';
 import { Box } from '../../base/Box';
+import { MediaLinkList } from '../MediaLinkList';
 
 import { EmailSubscribe } from './EmailSubscribe';
 
@@ -24,8 +25,11 @@ export const StayInTouch: FC<StayInTouchProps> = (props) => {
         paddingRight: columnSize,
       }}
     >
-      StayInTouch {children}
+      <MediaLinkList />
+
       <EmailSubscribe />
+
+      {children}
     </Box>
   );
 };

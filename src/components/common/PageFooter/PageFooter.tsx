@@ -6,11 +6,11 @@ import { useMediaQuery } from '../../../hooks';
 import { Box, Footer } from '../../base/Box';
 import { Container } from '../../base/Container';
 import { Flex } from '../../base/Flex';
+import { MediaLinkList } from '../MediaLinkList';
 
 import { Copyright } from './Copyright';
 import { EmailSubscribe } from './EmailSubscribe';
 import { Logo } from './Logo';
-import { MediaLinkList } from './MediaLinkList';
 import { MenuList } from './MenuList';
 
 export interface PageFooterProps {
