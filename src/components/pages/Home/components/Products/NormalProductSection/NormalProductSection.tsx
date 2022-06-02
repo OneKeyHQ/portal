@@ -31,6 +31,7 @@ export const NormalProductSection: FC = () => {
   const { height: windowHeight = 0 } = useWindowSize();
 
   const canvasSize = useMediaQueryMapValues({
+    xSmall: { width: 540, height: 421 },
     small: { width: 540, height: 421 },
     medium: { width: 540, height: 421 },
     large: { width: 540, height: 421 },
