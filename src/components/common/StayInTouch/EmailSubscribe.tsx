@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Box, Button, Flex, InfoIcon, Span } from '../../base';
+import { Box, Button, Divider, Flex, InfoIcon, Span } from '../../base';
 import { useEmailSubscribe } from '../../headless/EmailSubscribe';
 
 export const EmailSubscribe: FC = () => {
@@ -38,9 +38,7 @@ export const EmailSubscribe: FC = () => {
         />
       </Flex>
 
-      <Box
-        xs={{ height: 1, width: '100%', backgroundColor: theme.colors.test500 }}
-      />
+      <Divider />
 
       {showErrorMessage && texts && (
         <Flex
