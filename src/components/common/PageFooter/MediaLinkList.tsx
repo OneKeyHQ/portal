@@ -26,15 +26,15 @@ export const MediaLinkList: FC = () => {
       }}
     >
       <Link to={mediaData.twitter.url}>
-        <TwitterIcon />
+        <TwitterIcon width={32} height={32} />
       </Link>
 
       <Link to={mediaData.github.url}>
-        <GithubIcon />
+        <GithubIcon width={32} height={32} />
       </Link>
 
       <Link to={mediaData.discord.url}>
-        <DiscordIcon />
+        <DiscordIcon width={32} height={32} />
       </Link>
     </Flex>
   );

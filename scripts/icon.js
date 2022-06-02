@@ -16,6 +16,7 @@ async function main() {
   // export { default as MenuIconInline } from './MenuIcon.svg';
 
   const codes = [];
+  const componentNames = [];
 
   files.forEach((filePath) => {
     const fileName = filePath.split('.')[0];
@@ -43,6 +44,8 @@ async function main() {
         .join('')
         .concat('Icon');
 
+      componentNames.push(componentName);
+
       const componentNameInline = componentName.replace('Icon', 'IconInline');
 
       codes.push(
@@ -59,6 +62,14 @@ async function main() {
   fs.writeFileSync(
     scriptPath(`${IconComponentPath}/IconAutoGenerate.ts`),
     `${codes.join('\n')}\n`,
+  );
+
+  // write the component names to './src/components/base/Icon/IconTypes.ts'
+  fs.writeFileSync(
+    scriptPath(`${IconComponentPath}/IconTypes.ts`),
+    `export type IconTypes =\n  ${componentNames
+      .map((name) => `| '${name}'`)
+      .join('\n  ')};\n`,
   );
 }
 
