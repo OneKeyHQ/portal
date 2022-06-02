@@ -7,12 +7,12 @@ import { useEmailSubscribe } from '../../headless/EmailSubscribe';
 
 export const EmailSubscribe: FC = () => {
   const theme = useTheme();
-  const { email, setEmail, showErrorMessage, subscribe, texts } =
+  const { showErrorMessage, texts, buttonProps, inputProps } =
     useEmailSubscribe();
 
   return (
     <Flex xs={{ flexDirection: 'column', gap: 16 }}>
-      <Span css={{ fontSize: 14, color: theme.colors.white, opacity: 0.6 }}>
+      <Span css={{ fontSize: 14, color: theme.colors.white }}>
         {texts.title}
       </Span>
 
@@ -27,21 +27,15 @@ export const EmailSubscribe: FC = () => {
             color: theme.colors.white,
             flex: 1,
           }}
-          type="email"
-          placeholder={texts.inputPlaceholder}
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          {...inputProps}
         />
 
         <Button
-          size="small"
-          disabled={!email}
-          variant="outlined"
           themeColor="dark"
-          onClick={subscribe}
-        >
-          {texts.button}
-        </Button>
+          variant="outlined"
+          size="small"
+          {...buttonProps}
+        />
       </Flex>
 
       <Box
