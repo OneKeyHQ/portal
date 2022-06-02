@@ -11,10 +11,10 @@ export const EmailSubscribe: FC = () => {
     useEmailSubscribe();
 
   return (
-    <Flex xs={{ flexDirection: 'column', gap: 16 }}>
-      <Span css={{ fontSize: 14, color: theme.colors.white }}>
-        {texts.title}
-      </Span>
+    <Flex
+      css={{ flexDirection: 'column', gap: 16, color: theme.colors.test500 }}
+    >
+      <Span css={{ ...theme.text.medium800 }}>{texts.title}</Span>
 
       <Flex css={{ justifyContent: 'space-between', alignItems: 'center' }}>
         <input
@@ -24,14 +24,14 @@ export const EmailSubscribe: FC = () => {
             backgroundColor: 'transparent',
             borderWidth: 0,
             outline: 'none',
-            color: theme.colors.white,
+            color: theme.colors.test500,
             flex: 1,
           }}
           {...inputProps}
         />
 
         <Button
-          themeColor="dark"
+          themeColor="brand"
           variant="outlined"
           size="small"
           {...buttonProps}
@@ -39,15 +39,15 @@ export const EmailSubscribe: FC = () => {
       </Flex>
 
       <Box
-        xs={{ height: 1, width: '100%', backgroundColor: theme.colors.white }}
+        xs={{ height: 1, width: '100%', backgroundColor: theme.colors.test500 }}
       />
 
       {showErrorMessage && texts && (
         <Flex
           css={{
             ...theme.text.normal100,
-            color: theme.colors.white,
             alignItems: 'center',
+            color: theme.colors.test500,
             gap: 8,
           }}
         >
@@ -59,8 +59,6 @@ export const EmailSubscribe: FC = () => {
       <Span
         css={{
           ...theme.text.normal100,
-          color: theme.colors.white,
-          opacity: 0.6,
         }}
       >
         {texts.information}

@@ -1,7 +1,6 @@
 import { FC } from 'react';
 
-import { useTheme } from '@emotion/react';
-
+import { BoxProps } from '../../base/Box';
 import { Flex } from '../../base/Flex';
 import { DiscordIcon, GithubIcon, TwitterIcon } from '../../base/Icon';
 import { Link } from '../../base/Link';
@@ -25,21 +24,26 @@ const mediaData = {
   },
 };
 
-export const MediaLinkList: FC = () => {
-  const theme = useTheme();
+export interface MediaLinkListProps {
+  color: string;
+}
+
+export const MediaLinkList: FC<BoxProps> = (props) => {
+  const { color, ...otherProps } = props;
 
   return (
     <Flex
       css={{
         gap: 24,
         alignItems: 'center',
+        color,
         svg: {
-          color: theme.colors.white,
           ':hover': {
             opacity: 0.8,
           },
         },
       }}
+      externalProps={otherProps}
     >
       <Link to={mediaData.twitter.url}>
         <TwitterIcon width={32} height={32} />

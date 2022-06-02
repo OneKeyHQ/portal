@@ -1,6 +1,6 @@
 import { FC, ReactNode } from 'react';
 
-import { useColumnSize } from '../../../theme';
+import { useColumnSize, useTheme } from '../../../theme';
 import { Box } from '../../base/Box';
 import { MediaLinkList } from '../MediaLinkList';
 
@@ -13,6 +13,7 @@ export interface StayInTouchProps {
 export const StayInTouch: FC<StayInTouchProps> = (props) => {
   const { children } = props;
   const columnSize = useColumnSize(1);
+  const theme = useTheme();
 
   return (
     <Box
@@ -25,7 +26,7 @@ export const StayInTouch: FC<StayInTouchProps> = (props) => {
         paddingRight: columnSize,
       }}
     >
-      <MediaLinkList />
+      <MediaLinkList color={theme.colors.test500} />
 
       <EmailSubscribe />
 
