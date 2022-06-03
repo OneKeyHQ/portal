@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Box, Button, Divider, Flex, InfoIcon, Span } from '../../base';
+import { Button, Divider, Flex, InfoIcon, Span } from '../../base';
 import { useEmailSubscribe } from '../../headless/EmailSubscribe';
 
 export const EmailSubscribe: FC = () => {
