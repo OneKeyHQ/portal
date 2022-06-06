@@ -3,17 +3,18 @@ import { FC } from 'react';
 import { useTheme } from '@emotion/react';
 
 import { DownloadTypes } from '../../../../../data/useDownloadData';
-import { Box, Flex, Span } from '../../../../base';
+import { Box, BoxProps, Flex, Span } from '../../../../base';
 import { PlatformIcon } from '../../../../common';
 
-export interface TabItemProps {
+export interface TabItemProps extends BoxProps {
   iconType: DownloadTypes;
   name?: string;
   description?: string;
+  active?: boolean;
 }
 
 export const TabItem: FC<TabItemProps> = (props) => {
-  const { description, iconType, name } = props;
+  const { description, iconType, name, active = false, ...otherProps } = props;
   const theme = useTheme();
 
   return (
@@ -21,12 +22,13 @@ export const TabItem: FC<TabItemProps> = (props) => {
       xs={{
         position: 'relative',
         transition: theme.transitions.allEaseOut,
-        opacity: 0.6,
+        opacity: active ? 1 : 0.6,
         cursor: 'pointer',
         ':hover': {
           opacity: 1,
         },
       }}
+      externalProps={otherProps}
     >
       <Flex
         m={{

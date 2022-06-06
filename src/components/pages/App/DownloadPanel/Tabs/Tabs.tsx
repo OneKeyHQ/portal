@@ -1,9 +1,11 @@
 import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
+import { SetStateAction } from 'jotai';
 
 import { DownloadTypes, useDownloadData } from '../../../../../data';
 import { Box, Container, Flex } from '../../../../base';
+import { TabTypes, useCurrentTabAtom } from '../atom';
 
 import { TabItem } from './TabItem';
 
@@ -21,6 +23,7 @@ export const Tabs: FC<TabsProps> = (props) => {
     downloadData.browserExtension,
     downloadData.web,
   ];
+  const [currentTabAtom, setCurrentTabAtom] = useCurrentTabAtom();
 
   return (
     <Box
@@ -37,8 +40,15 @@ export const Tabs: FC<TabsProps> = (props) => {
             const iconType = item.image as DownloadTypes;
 
             return (
-              <Box xs={{ width: '25%' }} key={item.name}>
+              <Box
+                xs={{ width: '25%' }}
+                key={item.name}
+                onClick={() => {
+                  setCurrentTabAtom(iconType as SetStateAction<TabTypes>);
+                }}
+              >
                 <TabItem
+                  active={currentTabAtom === iconType}
                   iconType={iconType}
                   name={item.name}
                   description={item.description}
