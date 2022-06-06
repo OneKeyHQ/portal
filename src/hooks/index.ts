@@ -7,4 +7,3 @@ export * from './useMediaQuery';
 export * from './useBodyScrollLock';
 export * from './useMediaQueryMapValues';
 export * from './useInterval';
-export * from './useOneKeyVersion';

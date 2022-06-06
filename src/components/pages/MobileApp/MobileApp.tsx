@@ -1,18 +1,14 @@
-import { FC, ReactNode, useEffect, useRef } from 'react';
+import { FC, useEffect, useRef } from 'react';
 
 import { detect } from 'detect-browser';
 import { navigate } from 'gatsby';
 import queryString from 'query-string';
 
-import { useOneKeyVersion } from '../../../hooks';
+import { useOneKeyVersion } from '../../../data';
 import { isBrowser } from '../../../utils';
+import AppPage from '../App';
 
-export interface MobileAppProps {
-  children?: ReactNode;
-}
-
-export const MobileApp: FC<MobileAppProps> = (props) => {
-  const { children } = props;
+export const MobileApp: FC = () => {
   const isDownloading = useRef<boolean>();
 
   const { data: oneKeyVersionData } = useOneKeyVersion();
@@ -44,5 +40,5 @@ export const MobileApp: FC<MobileAppProps> = (props) => {
   }, [oneKeyVersionData]);
 
   // todo: import download content
-  return <div>{children}</div>;
+  return <AppPage />;
 };
