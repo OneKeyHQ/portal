@@ -2,7 +2,7 @@ import { FC, ReactNode } from 'react';
 
 import { Box, Img } from '../../../../base';
 
-import pcImage from './images/pc.jpg';
+import pcImage from './images/desktop.jpg';
 
 export interface BackgroundProps {
   children?: ReactNode;
