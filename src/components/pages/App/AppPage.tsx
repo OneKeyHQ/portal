@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Helmet } from 'react-helmet';
 
-import { Container, Main, Navigation, SEO } from '../../base';
+import { Container, Flex, Main, Navigation, SEO } from '../../base';
 import { PageFooter, StayInTouch } from '../../common';
 
 import { Cards } from './Cards';
@@ -22,9 +22,19 @@ const AppPage: React.FC = () => (
       <DownloadPanel />
 
       <Container>
-        <Cards />
+        <Flex
+          xs={{
+            flexDirection: 'column',
+            paddingTop: 40,
+            paddingBottom: 40,
+            gap: 40,
+          }}
+          l={{ paddingTop: 80, paddingBottom: 80 }}
+        >
+          <Cards />
 
-        <StayInTouch />
+          <StayInTouch />
+        </Flex>
       </Container>
     </Main>
 

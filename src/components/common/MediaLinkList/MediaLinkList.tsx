@@ -45,15 +45,15 @@ export const MediaLinkList: FC<BoxProps> = (props) => {
       }}
       externalProps={otherProps}
     >
-      <Link to={mediaData.twitter.url}>
+      <Link css={{ color }} to={mediaData.twitter.url}>
         <TwitterIcon width={32} height={32} />
       </Link>
 
-      <Link to={mediaData.github.url}>
+      <Link css={{ color }} to={mediaData.github.url}>
         <GithubIcon width={32} height={32} />
       </Link>
 
-      <Link to={mediaData.discord.url}>
+      <Link css={{ color }} to={mediaData.discord.url}>
         <DiscordIcon width={32} height={32} />
       </Link>
     </Flex>
