@@ -16,9 +16,9 @@ interface SEOProps {
 
 export const SEO: FC<SEOProps> = (props) => {
   const {
-    title,
-    description,
-    keywords,
+    title = 'OneKey Wallet | All-in-one crypto wallet trusted by millions.',
+    description = 'The best way to keep crypto assets safe in the industry. Your bitcoin, ethereum, solana, and other crypto assets can all be safe and secure.',
+    keywords = 'hardware wallet, defi, nft, btc, eth, near, fantom, solana, algo, starcoin, metamask, glow, trezor, ledger, safepal, keystone, imtoken, tokenpocket, rainbow wallet',
     image = `https://portal.onekey.so/og/og.jpg`,
     url = isBrowser() ? window.location.href : '',
     twitterUsername = 'OneKeyHQ',
@@ -26,9 +26,9 @@ export const SEO: FC<SEOProps> = (props) => {
   } = props;
 
   const seo = {
-    title : "OneKey Wallet | All-in-one crypto wallet trusted by millions.",
-    description : "The best way to keep crypto assets safe in the industry. Your bitcoin, ethereum, solana, and other crypto assets can all be safe and secure.",
-    keywords : "hardware wallet, defi, nft, btc, eth, near, fantom, solana, algo, starcoin, metamask, glow, trezor, ledger, safepal, keystone, imtoken, tokenpocket, rainbow wallet",
+    title,
+    description,
+    keywords,
     image,
     url,
   };
