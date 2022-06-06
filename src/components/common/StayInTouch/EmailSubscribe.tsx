@@ -14,7 +14,13 @@ export const EmailSubscribe: FC = () => {
     <Flex
       css={{ flexDirection: 'column', gap: 16, color: theme.colors.test500 }}
     >
-      <Span css={{ ...theme.text.medium800 }}>{texts.title}</Span>
+      <Span
+        xs={{ ...theme.text.medium600 }}
+        m={{ ...theme.text.medium700 }}
+        l={{ ...theme.text.medium800 }}
+      >
+        {texts.title}
+      </Span>
 
       <Flex css={{ justifyContent: 'space-between', alignItems: 'center' }}>
         <input
@@ -33,7 +39,7 @@ export const EmailSubscribe: FC = () => {
         <Button
           themeColor="brand"
           variant="outlined"
-          size="small"
+          size="medium"
           {...buttonProps}
         />
       </Flex>
