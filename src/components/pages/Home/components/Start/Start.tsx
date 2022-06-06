@@ -1,3 +1,5 @@
+import { useMemo } from 'react';
+
 import { useTheme } from '@emotion/react';
 import { detect } from 'detect-browser';
 
@@ -17,31 +19,31 @@ export const Start = () => {
   const detectResult = detect();
   const downloadData = useDownloadData();
 
-  const items = [];
+  const items = useMemo(() => {
+    const innerItems = [];
 
-  if (media.medium) {
-    items.push(downloadData.desktop);
-    items.push(downloadData.mobile);
-    items.push(downloadData.browserExtension);
-  } else {
-    // mobile
-    if (detectResult?.os === 'iOS') {
-      items.push(downloadData.ios);
-    } else if (detectResult?.os === 'android') {
-      items.push(downloadData.android);
+    if (media.medium) {
+      innerItems.push(downloadData.desktop);
+      innerItems.push(downloadData.mobile);
+      innerItems.push(downloadData.browserExtension);
     } else {
-      items.push(downloadData.mobile);
+      // mobile
+      if (detectResult?.os === 'iOS') {
+        innerItems.push(downloadData.ios);
+      } else if (detectResult?.os === 'android') {
+        innerItems.push(downloadData.android);
+      } else {
+        innerItems.push(downloadData.mobile);
+      }
+
+      innerItems.push(downloadData.otherPlatforms);
     }
 
-    items.push(downloadData.otherPlatforms);
-  }
+    return innerItems;
+  }, [detectResult?.os, downloadData, media.medium]);
 
   return (
-    <Section
-      css={{
-        position: 'relative',
-      }}
-    >
+    <Section css={{ position: 'relative' }}>
       <Container>
         <Flex
           xs={{
