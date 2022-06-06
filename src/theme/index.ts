@@ -37,6 +37,28 @@ export const theme = {
     test300: '#8A9195',
     test500: '#101111',
   },
+  size: {
+    xxl: {
+      column: 112,
+      gutter: 24,
+    },
+    xl: {
+      column: 64,
+      gutter: 24,
+    },
+    l: {
+      column: 48,
+      gutter: 24,
+    },
+    // todo: check the size
+    m: {
+      column: (896 - 16 * 11) / 12,
+      gutter: 24,
+    },
+    s: {
+      gutter: 16,
+    },
+  },
   gradients: {},
   text: {
     medium100: {
