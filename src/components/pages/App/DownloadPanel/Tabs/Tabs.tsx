@@ -2,7 +2,10 @@ import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Box, Container } from '../../../../base';
+import { DownloadTypes, useDownloadData } from '../../../../../data';
+import { Box, Container, Flex } from '../../../../base';
+
+import { TabItem } from './TabItem';
 
 export interface TabsProps {
   children?: ReactNode;
@@ -11,6 +14,13 @@ export interface TabsProps {
 export const Tabs: FC<TabsProps> = (props) => {
   const { children } = props;
   const theme = useTheme();
+  const downloadData = useDownloadData();
+  const tabs = [
+    downloadData.desktop,
+    downloadData.mobile,
+    downloadData.browserExtension,
+    downloadData.web,
+  ];
 
   return (
     <Box
@@ -21,7 +31,23 @@ export const Tabs: FC<TabsProps> = (props) => {
         backgroundColor: theme.colors.test500,
       }}
     >
-      <Container>Tabs</Container>
+      <Container>
+        <Flex l={{ gap: 20 }} xl={{ gap: 40 }}>
+          {tabs.map((item) => {
+            const iconType = item.image as DownloadTypes;
+
+            return (
+              <Box xs={{ width: '25%' }} key={item.name}>
+                <TabItem
+                  iconType={iconType}
+                  name={item.name}
+                  description={item.description}
+                />
+              </Box>
+            );
+          })}
+        </Flex>
+      </Container>
       {children}
     </Box>
   );

@@ -48,17 +48,28 @@ const mobile = {
   description: 'iOS and Android',
 };
 
+const web = {
+  type: 'web',
+  path: '',
+  image: 'web',
+  name: 'Web',
+  description: 'Web app',
+};
+
+const downloadData = {
+  otherPlatforms,
+  ios,
+  android,
+  desktop,
+  browserExtension,
+  mobile,
+  web,
+};
+
+export type DownloadTypes = keyof typeof downloadData;
+
 export function useDownloadData() {
   const { data: oneKeyVersionData } = useOneKeyVersion();
-
-  const downloadData = {
-    otherPlatforms,
-    ios,
-    android,
-    desktop,
-    browserExtension,
-    mobile,
-  };
 
   console.log('oneKeyVersionData', oneKeyVersionData);
 
