@@ -2,12 +2,14 @@ import { FC } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Box, Flex, Img, Span } from '../../../../base';
+import { DownloadTypes } from '../../../../../data/useDownloadData';
+import { Box, Flex, Link, Span } from '../../../../base';
+import { PlatformIcon } from '../../../../common';
 
 export interface StartItemProps {
   name: string;
   description: string;
-  image: string;
+  image: DownloadTypes;
   path: string;
 }
 
@@ -27,8 +29,22 @@ export const StartItem: FC<StartItemProps> = (props) => {
         },
       }}
     >
-      <a href={path}>
-        <Box css={{ height: 1, width: '100%', backgroundColor: '#101111' }} />
+      <Link
+        css={{
+          color: theme.background.test500,
+          ':hover': {
+            color: theme.background.test500,
+          },
+        }}
+        to={path}
+      >
+        <Box
+          css={{
+            height: 1,
+            width: '100%',
+            backgroundColor: theme.background.test500,
+          }}
+        />
         <Flex
           xs={{
             paddingTop: 32,
@@ -42,7 +58,8 @@ export const StartItem: FC<StartItemProps> = (props) => {
             flexDirection: 'row',
           }}
         >
-          <Img alt="icon-png" src={image} css={{ width: 88, height: 88 }} />
+          <PlatformIcon iconType={image} width={88} height={88} />
+
           <Flex
             css={{
               flexDirection: 'column',
@@ -50,23 +67,11 @@ export const StartItem: FC<StartItemProps> = (props) => {
               color: theme.background.test500,
             }}
           >
-            <Span
-              xs={{
-                ...theme.text.medium600,
-              }}
-            >
-              {name}
-            </Span>
-            <Span
-              xs={{
-                ...theme.text.normal200,
-              }}
-            >
-              {description}
-            </Span>
+            <Span xs={{ ...theme.text.medium600 }}>{name}</Span>
+            <Span xs={{ ...theme.text.normal200 }}>{description}</Span>
           </Flex>
         </Flex>
-      </a>
+      </Link>
     </Box>
   );
 };

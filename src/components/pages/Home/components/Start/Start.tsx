@@ -1,42 +1,39 @@
-import { useEffect, useState } from 'react';
-
 import { useTheme } from '@emotion/react';
-import ua2os from 'ua2os';
-import { OS } from 'ua2os/dist/types';
+import { detect } from 'detect-browser';
 
+import {
+  DownloadTypes,
+  useDownloadData,
+} from '../../../../../data/useDownloadData';
 import { useMediaQuery } from '../../../../../hooks';
 import { Container, Flex, Img, Section, Span } from '../../../../base';
 
 import arrowSvg from './images/arrow.svg';
 import { StartItem } from './StartItem';
-import { getStartItemDataByType } from './useStartItemsData';
 
 export const Start = () => {
   const theme = useTheme();
-  const [type, setType] = useState<OS>();
   const media = useMediaQuery();
-
-  useEffect(() => {
-    setType(ua2os(window.navigator.userAgent));
-  }, []);
+  const detectResult = detect();
+  const downloadData = useDownloadData();
 
   const items = [];
 
   if (media.medium) {
-    items.push(getStartItemDataByType('desktop'));
-    items.push(getStartItemDataByType('mobile'));
-    items.push(getStartItemDataByType('browserExtension'));
+    items.push(downloadData.desktop);
+    items.push(downloadData.mobile);
+    items.push(downloadData.browserExtension);
   } else {
     // mobile
-    if (type === 'ios') {
-      items.push(getStartItemDataByType('ios'));
-    } else if (type === 'android') {
-      items.push(getStartItemDataByType('android'));
+    if (detectResult?.os === 'iOS') {
+      items.push(downloadData.ios);
+    } else if (detectResult?.os === 'android') {
+      items.push(downloadData.android);
     } else {
-      items.push(getStartItemDataByType('mobile'));
+      items.push(downloadData.mobile);
     }
 
-    items.push(getStartItemDataByType('otherPlatforms'));
+    items.push(downloadData.otherPlatforms);
   }
 
   return (
@@ -63,15 +60,9 @@ export const Start = () => {
             m={{ flexDirection: 'row', alignItems: 'flex-end' }}
           >
             <Span
-              css={{
-                color: '#101111',
-              }}
-              xs={{
-                ...theme.text.medium900,
-              }}
-              xl={{
-                ...theme.text.medium1200,
-              }}
+              css={{ color: theme.colors.test500 }}
+              xs={{ ...theme.text.medium900 }}
+              xl={{ ...theme.text.medium1200 }}
             >
               Start using
               <br />
@@ -88,9 +79,10 @@ export const Start = () => {
             />
           </Flex>
           <Flex css={{ gap: 23 }}>
-            {items.map((item) => (
-              <StartItem key={item.type} {...item} />
-            ))}
+            {items.map((item) => {
+              const iconType = item.image as DownloadTypes;
+              return <StartItem key={item.type} {...item} image={iconType} />;
+            })}
           </Flex>
         </Flex>
       </Container>

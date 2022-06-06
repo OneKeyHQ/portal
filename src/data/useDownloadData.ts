@@ -35,7 +35,7 @@ const desktop = {
 const browserExtension = {
   type: 'browserExtension',
   path: 'https://onekey.so/plugin',
-  image: 'extension',
+  image: 'browserExtension',
   name: 'Browser extension',
   description: 'Chrome, Firefox, Edge',
 };
