@@ -5,6 +5,7 @@ import { ThemeProvider } from '@emotion/react';
 import { ClickToComponent } from 'click-to-react-component';
 
 import { ResponsiveIndicator } from './components/base';
+import { OpenBrowserBanner } from './components/common';
 import './style/global.less';
 import './style/stabilGroteskFont.less';
 import { theme } from './theme';
@@ -21,6 +22,7 @@ const WrapApp: WrapAppComponent = (props) => {
       {children}
       <ClickToComponent />
       <ResponsiveIndicator />
+      <OpenBrowserBanner />
     </ThemeProvider>
   );
 };
