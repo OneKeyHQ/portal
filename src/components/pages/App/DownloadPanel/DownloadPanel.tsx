@@ -2,7 +2,7 @@ import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Box, Container, Flex } from '../../../base';
+import { Box } from '../../../base';
 
 import { Background } from './Background';
 import { Content } from './Content';
@@ -32,21 +32,7 @@ export const DownloadPanel: FC<DownloadPanelProps> = (props) => {
       <Box css={{ flex: 1, position: 'relative' }}>
         <Background />
 
-        <Container xs={{ height: '100%' }}>
-          <Flex
-            xs={{
-              width: '50%',
-              alignItems: 'flex-end',
-              height: '100%',
-              paddingBottom: 40,
-              paddingTop: 140,
-              paddingRight: 64,
-              paddingLeft: 0,
-            }}
-          >
-            <Content />
-          </Flex>
-        </Container>
+        <Content />
       </Box>
 
       <Tabs />

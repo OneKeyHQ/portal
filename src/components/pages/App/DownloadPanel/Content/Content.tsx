@@ -7,6 +7,7 @@ import {
   AppStoreIcon,
   Box,
   Button,
+  Container,
   Divider,
   Flex,
   Span,
@@ -28,45 +29,69 @@ export const Content: FC<ContentProps> = (props) => {
   const theme = useTheme();
 
   return (
-    <Box xs={{ position: 'relative', zIndex: 1 }}>
-      <Flex xs={{ flexDirection: 'column', gap: 32 }}>
-        <Span xs={{ ...theme.text.medium900 }}>
-          Bring your crypto assets to mobile, too.
-        </Span>
+    <Container xs={{ height: '100%' }}>
+      <Flex
+        xs={{
+          height: '100%',
+          width: '50%',
+          paddingBottom: 40,
+          paddingTop: 140,
+          paddingRight: 64,
+          paddingLeft: 0,
+          position: 'relative',
+          zIndex: 1,
+          flexDirection: 'column',
+          gap: 16,
+        }}
+      >
+        <Flex
+          xs={{
+            flex: 1,
+            gap: 32,
+            flexDirection: 'column',
+            justifyContent: 'center',
+          }}
+        >
+          <Span xs={{ ...theme.text.medium900 }}>
+            Bring your <br /> crypto assets <br /> to mobile, too.
+          </Span>
 
-        <Flex xs={{ gap: 16 }}>
-          <Flex xs={{ flexDirection: 'column', alignItems: 'center' }}>
-            <Box xs={{ paddingBottom: 8 }}>
-              <Button
-                leftIcon={<AppStoreIcon {...iconSize} />}
-                size="large"
-                variant="outlined"
-                xs={{ minWidth: 220 }}
-              >
-                App Store
-              </Button>
-            </Box>
-            <Span xs={{ ...theme.text.normal100 }}>v2.12.3, for iOS 13.0+</Span>
-            <Span xs={{ ...theme.text.normal100 }}>
-              Not available on the Chinese App Store
-            </Span>
-          </Flex>
+          <Flex xs={{ gap: 16 }}>
+            <Flex xs={{ flexDirection: 'column', alignItems: 'center' }}>
+              <Box xs={{ paddingBottom: 8 }}>
+                <Button
+                  leftIcon={<AppStoreIcon {...iconSize} />}
+                  size="large"
+                  variant="outlined"
+                  xs={{ minWidth: 220 }}
+                >
+                  App Store
+                </Button>
+              </Box>
+              <Span xs={{ ...theme.text.normal100 }}>
+                v2.12.3, for iOS 13.0+
+              </Span>
+              <Span xs={{ ...theme.text.normal100 }}>
+                Not available on the Chinese App Store
+              </Span>
+            </Flex>
 
-          <Flex xs={{ flexDirection: 'column', alignItems: 'center' }}>
-            <Box xs={{ paddingBottom: 8 }}>
-              <Button
-                leftIcon={<AndroidIcon {...iconSize} />}
-                variant="outlined"
-                size="large"
-                xs={{ minWidth: 220 }}
-              >
-                Android
-              </Button>
-            </Box>
+            <Flex xs={{ flexDirection: 'column', alignItems: 'center' }}>
+              <Box xs={{ paddingBottom: 8 }}>
+                <Button
+                  leftIcon={<AndroidIcon {...iconSize} />}
+                  variant="outlined"
+                  size="large"
+                  xs={{ minWidth: 220 }}
+                >
+                  Android
+                </Button>
+              </Box>
 
-            <Span xs={{ ...theme.text.normal100 }}>
-              v2.12.3, for Android 8.0+
-            </Span>
+              <Span xs={{ ...theme.text.normal100 }}>
+                v2.12.3, for Android 8.0+
+              </Span>
+            </Flex>
           </Flex>
         </Flex>
 
@@ -86,6 +111,6 @@ export const Content: FC<ContentProps> = (props) => {
       </Flex>
 
       {children}
-    </Box>
+    </Container>
   );
 };
