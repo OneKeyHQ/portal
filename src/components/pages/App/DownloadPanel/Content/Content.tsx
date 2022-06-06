@@ -25,6 +25,18 @@ const iconSize = {
   height: 24,
 };
 
+const faq = {
+  title: 'iOS FAQ',
+  questions: [
+    {
+      text: 'How to register an account?',
+    },
+    {
+      text: 'How to activate discover page?',
+    },
+  ],
+};
+
 export const Content: FC<ContentProps> = (props) => {
   const { children } = props;
   const theme = useTheme();
@@ -92,17 +104,7 @@ export const Content: FC<ContentProps> = (props) => {
 
         <Divider />
 
-        <FAQ
-          titleString="iOS FAQ"
-          questions={[
-            {
-              textString: 'How to register an account?',
-            },
-            {
-              textString: 'How to activate discover page?',
-            },
-          ]}
-        />
+        {faq && <FAQ titleString={faq.title} questions={faq.questions} />}
       </Flex>
 
       {children}

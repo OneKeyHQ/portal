@@ -8,8 +8,8 @@ export interface FAQProps {
   children?: ReactNode;
   titleString?: string;
   questions?: {
-    textString: string;
-    questionLink?: string;
+    text: string;
+    link?: string;
   }[];
 }
 
@@ -22,13 +22,13 @@ export const FAQ: FC<FAQProps> = (props) => {
       <Box xs={{ ...theme.text.medium200 }}>{titleString}</Box>
 
       {questions?.map((question) => (
-        <Box key={question.textString}>
+        <Box key={question.text}>
           <Flex xs={{ alignItems: 'center', ...theme.text.normal200 }}>
             <HelpIcon height={16} width={16} />
-            <Span xs={{ marginLeft: 4 }}>{question.textString}</Span>
+            <Span xs={{ marginLeft: 4 }}>{question.text}</Span>
           </Flex>
           {/* todo: add link */}
-          {/* <Box>{question.questionLink}</Box> */}
+          {/* <Box>{question.link}</Box> */}
         </Box>
       ))}
 
