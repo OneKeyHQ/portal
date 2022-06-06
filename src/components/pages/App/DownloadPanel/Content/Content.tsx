@@ -14,6 +14,7 @@ import {
 } from '../../../../base';
 
 import { FAQ } from './FAQ';
+import { InfoText } from './InfoText';
 
 export interface ContentProps {
   children?: ReactNode;
@@ -68,12 +69,8 @@ export const Content: FC<ContentProps> = (props) => {
                   App Store
                 </Button>
               </Box>
-              <Span xs={{ ...theme.text.normal100 }}>
-                v2.12.3, for iOS 13.0+
-              </Span>
-              <Span xs={{ ...theme.text.normal100 }}>
-                Not available on the Chinese App Store
-              </Span>
+              <InfoText>v2.12.3, for iOS 13.0+</InfoText>
+              <InfoText>Not available on the Chinese App Store</InfoText>
             </Flex>
 
             <Flex xs={{ flexDirection: 'column', alignItems: 'center' }}>
@@ -88,9 +85,7 @@ export const Content: FC<ContentProps> = (props) => {
                 </Button>
               </Box>
 
-              <Span xs={{ ...theme.text.normal100 }}>
-                v2.12.3, for Android 8.0+
-              </Span>
+              <InfoText>v2.12.3, for Android 8.0+</InfoText>
             </Flex>
           </Flex>
         </Flex>
