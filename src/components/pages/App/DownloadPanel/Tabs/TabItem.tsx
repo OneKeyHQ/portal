@@ -22,6 +22,7 @@ export const TabItem: FC<TabItemProps> = (props) => {
       xs={{
         position: 'relative',
         transition: theme.transitions.allEaseOut,
+        willChange: 'opacity',
         opacity: active ? 1 : 0.6,
         cursor: 'pointer',
         ':hover': {
