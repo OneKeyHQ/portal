@@ -1,5 +1,7 @@
 import { FC, cloneElement } from 'react';
 
+import { Link as InnerLink } from 'gatsby';
+
 import { Anchor, Box, BoxProps } from '../Box';
 
 export interface LinkProps extends BoxProps {
@@ -36,5 +38,14 @@ export const Link: FC<LinkProps> = (props) => {
   }
 
   // todo: inner i18n route
-  return <Box>{children}</Box>;
+  return (
+    <Box
+      // @ts-ignore
+      as={InnerLink}
+      to={to}
+      externalProps={omittedProps}
+    >
+      {children}
+    </Box>
+  );
 };

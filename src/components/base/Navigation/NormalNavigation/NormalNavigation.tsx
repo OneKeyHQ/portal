@@ -6,6 +6,7 @@ import { useHover } from '../../../../hooks';
 import { Box, Li, Ul } from '../../Box';
 import { Container } from '../../Container';
 import { LaunchAppButton } from '../../LaunchAppButton';
+import { Link } from '../../Link';
 import { Logo } from '../../Logo';
 import { NavigationAnimationWrap } from '../NavigationAnimationWrap';
 import { useNavigationData } from '../useNavigationData';
@@ -23,14 +24,7 @@ export const NormalNavigation: React.FC<NormalNavigationProps> = () => {
   const { hoverProps, isHovered } = useHover();
 
   return (
-    <Box
-      xs={{
-        display: 'none',
-      }}
-      m={{
-        display: 'block',
-      }}
-    >
+    <Box xs={{ display: 'none' }} m={{ display: 'block' }}>
       <NavigationAnimationWrap paddingRange={[38, 16]}>
         <Container
           xs={{
@@ -39,17 +33,19 @@ export const NormalNavigation: React.FC<NormalNavigationProps> = () => {
             alignItems: 'center',
           }}
         >
-          <Logo
-            css={{
-              width: 48,
-              height: 48,
-              color: 'black',
-              ':hover': {
-                cursor: 'pointer',
-                color: theme.colors.brand400,
-              },
-            }}
-          />
+          <Link to="/">
+            <Logo
+              css={{
+                width: 48,
+                height: 48,
+                color: 'black',
+                ':hover': {
+                  cursor: 'pointer',
+                  color: theme.colors.brand400,
+                },
+              }}
+            />
+          </Link>
           <Ul xs={{ flex: 1, display: 'flex', gap: 32, paddingLeft: 12 }}>
             {data.map((item) => (
               <Li

@@ -1,4 +1,4 @@
-import { FC, HTMLProps } from 'react';
+import { ComponentClass, FC, FunctionComponent, HTMLProps } from 'react';
 
 import { CSSObject, Interpolation, Theme, jsx } from '@emotion/react';
 import deepmerge from 'deepmerge';
@@ -20,9 +20,11 @@ export interface StyleProps extends ResponsiveStyleProps {
   css?: Interpolation<Theme> | CSSObject;
 }
 
-export interface BoxProps extends HTMLProps<HTMLElement>, StyleProps {
+export interface BoxProps
+  extends Omit<HTMLProps<HTMLElement>, 'as'>,
+    StyleProps {
   children?: React.ReactNode;
-  as?: string;
+  as?: string | FunctionComponent | ComponentClass;
   externalProps?: StyleProps;
   hiddenRange?: [ResponsiveStyleKeys, ResponsiveStyleKeys];
   isMounted?: [ResponsiveStyleKeys, ResponsiveStyleKeys];
@@ -76,13 +78,11 @@ export const Box: FC<BoxProps> = (props) => {
     externalXxl,
   ] as CSSObject[]);
 
-  return jsx(
-    as,
-    {
-      css: innerCSS,
-      ...otherProps,
-      ...otherExternalProps,
-    },
-    children,
-  );
+  const jsxProps = {
+    css: innerCSS,
+    ...otherProps,
+    ...otherExternalProps,
+  };
+
+  return jsx(as, jsxProps, children);
 };
