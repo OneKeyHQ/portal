@@ -13,15 +13,11 @@ export const OpenBrowserBanner: FC<OpenBrowserBannerProps> = (props) => {
   const { children } = props;
   const theme = useTheme();
 
-  if (!isBrowser()) {
-    return null;
-  }
+  if (!isBrowser()) return null;
 
-  const isWeChat = /micromessenger/i.test(navigator.userAgent);
+  const isWeChat = /micromessenger/i.test(window.navigator.userAgent);
 
-  if (!isWeChat) {
-    return null;
-  }
+  if (!isWeChat) return null;
 
   return (
     <Box
