@@ -35,21 +35,39 @@ export const Content: FC<ContentProps> = (props) => {
         </Span>
 
         <Flex xs={{ gap: 16 }}>
-          <Button
-            leftIcon={<AppStoreIcon {...iconSize} />}
-            size="large"
-            variant="outlined"
-          >
-            App Store
-          </Button>
+          <Flex xs={{ flexDirection: 'column', alignItems: 'center' }}>
+            <Box xs={{ paddingBottom: 8 }}>
+              <Button
+                leftIcon={<AppStoreIcon {...iconSize} />}
+                size="large"
+                variant="outlined"
+                xs={{ minWidth: 220 }}
+              >
+                App Store
+              </Button>
+            </Box>
+            <Span xs={{ ...theme.text.normal100 }}>v2.12.3, for iOS 13.0+</Span>
+            <Span xs={{ ...theme.text.normal100 }}>
+              Not available on the Chinese App Store
+            </Span>
+          </Flex>
 
-          <Button
-            leftIcon={<AndroidIcon {...iconSize} />}
-            variant="outlined"
-            size="large"
-          >
-            Android
-          </Button>
+          <Flex xs={{ flexDirection: 'column', alignItems: 'center' }}>
+            <Box xs={{ paddingBottom: 8 }}>
+              <Button
+                leftIcon={<AndroidIcon {...iconSize} />}
+                variant="outlined"
+                size="large"
+                xs={{ minWidth: 220 }}
+              >
+                Android
+              </Button>
+            </Box>
+
+            <Span xs={{ ...theme.text.normal100 }}>
+              v2.12.3, for Android 8.0+
+            </Span>
+          </Flex>
         </Flex>
 
         <Divider />
