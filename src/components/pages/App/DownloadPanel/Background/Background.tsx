@@ -27,9 +27,7 @@ export const Background: FC<BackgroundProps> = (props) => {
           height: '100%',
           objectFit: 'cover',
         }}
-        l={{
-          width: '50%',
-        }}
+        l={{ width: '50%' }}
         src={pcImage}
       />
 
