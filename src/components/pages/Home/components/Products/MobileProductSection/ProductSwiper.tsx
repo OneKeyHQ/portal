@@ -30,6 +30,7 @@ export const ProductSwiper: FC<ProductSwiperProps> = (props) => {
     >
       {data.map((item) => (
         <SwiperSlide
+          key={item.title}
           style={{
             minWidth: 272,
             maxWidth: 600,

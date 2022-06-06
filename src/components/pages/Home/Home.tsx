@@ -26,10 +26,10 @@ export const Home: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>OneKey</title>
+        <title>OneKey | All-in-one crypto wallet trusted by millions.</title>
       </Helmet>
 
-      <SEO title="onekey" description="onekey" />
+      <SEO title="OneKey | All-in-one crypto wallet trusted by millions." description="The best way to keep crypto assets safe in the industry. Your bitcoin, ethereum, solana, and other crypto assets can all be safe and secure." />
 
       <Navigation />
 

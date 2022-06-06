@@ -4,8 +4,10 @@
         "appstore",
         "avif",
         "bignore",
+        "bitcoinonly",
         "bixin",
         "bnever",
+        "bootloader",
         "browserslist",
         "bupdate",
         "cobo",
@@ -27,6 +29,7 @@
         "weibo",
         "WWLGDZJB",
         "xlarge",
-        "xxlarge"
+        "xxlarge",
+        "zadig"
     ]
 }

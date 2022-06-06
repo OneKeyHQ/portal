@@ -4,4 +4,5 @@ export * from './isBrowser';
 export * from './isChinese';
 export * from './mergeRefs';
 export * from './dynamicTextStyle';
+export * from './fetcher';
 export * from './isEmail';

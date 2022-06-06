@@ -16,7 +16,7 @@ export interface ItemProps {
 }
 
 export const Item: FC<ItemProps> = (props) => {
-  const { image, title, description, hoverImage, status } = props;
+  const { image, title, description, hoverImage = '', status } = props;
   const theme = useTheme();
   const mediaQuery = useMediaQuery();
   const { hoverProps, isHovered } = useHover({
@@ -24,8 +24,7 @@ export const Item: FC<ItemProps> = (props) => {
     isDisabled: status === 'coming-soon',
   });
 
-  const backgroundImage =
-    hoverImage && (isHovered || !mediaQuery.medium) ? hoverImage : image;
+  const showProductImage = hoverImage && (isHovered || !mediaQuery.medium);
 
   return (
     <Flex
@@ -43,13 +42,27 @@ export const Item: FC<ItemProps> = (props) => {
           width: '100%',
           height: 384,
           maxWidth: 310,
-          backgroundImage: `url(${backgroundImage})`,
+          backgroundImage: `url(${image})`,
           backgroundSize: 'auto 80%',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
-          transition: theme.transitions.allEaseOut,
         }}
-      />
+      >
+        {hoverImage && (
+          <Box
+            xs={{
+              width: '100%',
+              height: '100%',
+              backgroundImage: `url(${hoverImage})`,
+              backgroundSize: 'auto 80%',
+              backgroundRepeat: 'no-repeat',
+              backgroundPosition: 'center',
+              opacity: showProductImage ? 1 : 0,
+              transition: theme.transitions.allEaseOut,
+            }}
+          />
+        )}
+      </Box>
       <Flex css={{ flexDirection: 'column', gap: 24 }}>
         <Box
           css={{
