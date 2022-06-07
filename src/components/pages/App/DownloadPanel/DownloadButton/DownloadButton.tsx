@@ -1,6 +1,6 @@
 import { FC, createElement } from 'react';
 
-import { Box, Button, ButtonProps, Flex } from '../../../../base';
+import { Button, ButtonProps, Flex } from '../../../../base';
 
 import { InfoText } from './InfoText';
 
@@ -25,21 +25,24 @@ export const DownloadButton: FC<DownloadButtonProps> = (props) => {
         flexDirection: 'column',
         alignItems: 'center',
         textAlign: 'center',
+        flex: 1,
+        maxWidth: 220,
       }}
     >
-      <Box xs={{ paddingBottom: 8 }}>
-        <Button
-          leftIcon={createElement(icon, iconSize)}
-          size="large"
-          variant={buttonType}
-          xs={{ minWidth: 220 }}
-        >
-          {text}
-        </Button>
-      </Box>
-      {information.map((info) => (
-        <InfoText key={info}>{info}</InfoText>
-      ))}
+      <Button
+        fillWidth
+        leftIcon={createElement(icon, iconSize)}
+        size="large"
+        variant={buttonType}
+      >
+        {text}
+      </Button>
+
+      <Flex xs={{ flexDirection: 'column', paddingTop: 8 }}>
+        {information.map((info) => (
+          <InfoText key={info}>{info}</InfoText>
+        ))}
+      </Flex>
     </Flex>
   );
 };

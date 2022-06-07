@@ -23,6 +23,7 @@ export interface UseButtonStyleProps {
   themeColor?: ThemeColor;
   disabled?: boolean;
   fillHeight?: boolean;
+  fillWidth?: boolean;
 }
 
 export function useButtonStyle(
@@ -36,6 +37,7 @@ export function useButtonStyle(
     themeColor = 'brand',
     disabled = false,
     fillHeight = false,
+    fillWidth = false,
   } = useButtonStyleProps;
 
   const buttonStyle = {
@@ -51,6 +53,12 @@ export function useButtonStyle(
   if (fillHeight) {
     assign(buttonStyle, {
       height: '100%',
+    });
+  }
+
+  if (fillWidth) {
+    assign(buttonStyle, {
+      width: '100%',
     });
   }
 

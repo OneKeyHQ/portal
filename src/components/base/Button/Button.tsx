@@ -20,12 +20,14 @@ export const Button: FC<ButtonProps> = (props) => {
     rightIcon,
     leftIcon,
     fillHeight,
+    fillWidth,
     size,
     ...otherProps
   } = props;
 
   const buttonStyle = useButtonStyle({
     fillHeight,
+    fillWidth,
     themeColor,
     variant,
     disabled,
