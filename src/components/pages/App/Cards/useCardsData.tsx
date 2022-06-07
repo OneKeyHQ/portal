@@ -5,6 +5,7 @@ export function useCardsData() {
     {
       mainTitle: 'Set up your OneKey hardware wallet',
       button: 'Getting started',
+      link: 'https://help.onekey.so/hc/en-us/articles/4930350875919',
       imageNode: (
         <StaticImage
           draggable={false}
@@ -16,6 +17,7 @@ export function useCardsData() {
     {
       mainTitle: 'Multi-Chain Support',
       button: 'Check the full list',
+      link: 'https://onekey.so/tokens',
       imageNode: (
         <StaticImage
           draggable={false}

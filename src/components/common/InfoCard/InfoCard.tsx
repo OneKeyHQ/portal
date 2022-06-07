@@ -2,6 +2,7 @@ import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
+import { Link } from '../../base';
 import { Box, BoxProps, Span } from '../../base/Box';
 
 export interface InfoCardProps extends BoxProps {
@@ -9,10 +10,12 @@ export interface InfoCardProps extends BoxProps {
   imageNode?: ReactNode;
   buttonNode?: ReactNode;
   mainTitle?: string | ReactNode;
+  link: string;
 }
 
 export const InfoCard: FC<InfoCardProps> = (props) => {
-  const { children, imageNode, mainTitle, buttonNode, ...otherProps } = props;
+  const { link, children, imageNode, mainTitle, buttonNode, ...otherProps } =
+    props;
   const theme = useTheme();
 
   return (
@@ -51,7 +54,7 @@ export const InfoCard: FC<InfoCardProps> = (props) => {
           zIndex: 1,
         }}
       >
-        {buttonNode}
+        <Link to={link}>{buttonNode}</Link>
       </Box>
 
       {children}

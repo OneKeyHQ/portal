@@ -20,6 +20,7 @@ export const Cards: FC<CardsProps> = (props) => {
     >
       {data.map((item) => (
         <InfoCard
+          link={item.link}
           key={item.mainTitle}
           mainTitle={item.mainTitle}
           imageNode={item.imageNode}
