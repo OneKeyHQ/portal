@@ -2,7 +2,7 @@ import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Span } from '../../../../base';
+import { Span } from '../../../../../base';
 
 export interface InfoTextProps {
   children?: ReactNode;

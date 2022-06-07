@@ -11,7 +11,7 @@ import {
   Divider,
   Flex,
   Span,
-} from '../../../../base';
+} from '../../../../../base';
 
 import { FAQ } from './FAQ';
 import { InfoText } from './InfoText';

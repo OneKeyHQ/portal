@@ -2,8 +2,8 @@ import { FC, ReactNode, useEffect } from 'react';
 
 import { Loader } from 'pixi.js';
 
-import { Box, Img } from '../../../../base';
-import { useCurrentTabAtom } from '../atom';
+import { Box, Img } from '../../../../../base';
+import { useCurrentTabAtom } from '../../atom';
 
 import browserExtensionImage from './images/browser.jpg';
 import desktopImage from './images/desktop.jpg';

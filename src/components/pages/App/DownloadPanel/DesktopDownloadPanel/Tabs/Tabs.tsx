@@ -3,9 +3,9 @@ import { FC, ReactNode } from 'react';
 import { useTheme } from '@emotion/react';
 import { SetStateAction } from 'jotai';
 
-import { DownloadTypes, useDownloadData } from '../../../../../data';
-import { Box, Container, Flex } from '../../../../base';
-import { TabTypes, useCurrentTabAtom } from '../atom';
+import { DownloadTypes, useDownloadData } from '../../../../../../data';
+import { Box, Container, Flex } from '../../../../../base';
+import { TabTypes, useCurrentTabAtom } from '../../atom';
 
 import { TabItem } from './TabItem';
 

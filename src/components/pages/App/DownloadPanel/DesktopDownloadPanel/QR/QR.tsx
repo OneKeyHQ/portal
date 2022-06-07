@@ -1,6 +1,6 @@
 import { FC, ReactNode } from 'react';
 
-import { Box, Img, Span } from '../../../../base';
+import { Box, Img, Span } from '../../../../../base';
 
 export interface QRProps {
   children?: ReactNode;

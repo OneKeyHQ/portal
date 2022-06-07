@@ -2,9 +2,9 @@ import { FC } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { DownloadTypes } from '../../../../../data/useDownloadData';
-import { Box, BoxProps, Flex, Span } from '../../../../base';
-import { PlatformIcon } from '../../../../common';
+import { DownloadTypes } from '../../../../../../data/useDownloadData';
+import { Box, BoxProps, Flex, Span } from '../../../../../base';
+import { PlatformIcon } from '../../../../../common';
 
 export interface TabItemProps extends BoxProps {
   iconType: DownloadTypes;
