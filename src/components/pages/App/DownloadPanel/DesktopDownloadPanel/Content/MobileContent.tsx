@@ -1,13 +1,12 @@
 import { FC, ReactNode } from 'react';
 
-import { useTheme } from '@emotion/react';
-
-import { Span } from '../../../../../base/Box';
 import { Divider } from '../../../../../base/Divider';
 import { Flex } from '../../../../../base/Flex';
 import { AndroidIcon, AppStoreIcon } from '../../../../../base/Icon';
 import { DownloadButton } from '../../DownloadButton';
 import { FAQ } from '../../FAQ';
+
+import { Title } from './Title';
 
 export interface MobileContentProps {
   children?: ReactNode;
@@ -43,7 +42,6 @@ const title = ['Bring your', 'crypto assets', 'to mobile, too.'];
 
 export const MobileContent: FC<MobileContentProps> = (props) => {
   const { children } = props;
-  const theme = useTheme();
 
   return (
     <>
@@ -55,18 +53,7 @@ export const MobileContent: FC<MobileContentProps> = (props) => {
           justifyContent: 'center',
         }}
       >
-        <Flex xs={{ flexDirection: 'column' }}>
-          {title.map((item) => (
-            <Span
-              key={item}
-              xs={{
-                ...theme.text.medium900,
-              }}
-            >
-              {item}
-            </Span>
-          ))}
-        </Flex>
+        <Title text={title} />
 
         <Flex xs={{ gap: 16 }}>
           {buttons.map((item) => (

@@ -1,13 +1,12 @@
 import { FC, ReactNode } from 'react';
 
-import { useTheme } from '@emotion/react';
-
 import { ChromeIcon, EdgeIcon, FirefoxIcon } from '../../../../../base';
-import { Span } from '../../../../../base/Box';
 import { Divider } from '../../../../../base/Divider';
 import { Flex } from '../../../../../base/Flex';
 import { DownloadButton } from '../../DownloadButton';
 import { FAQ } from '../../FAQ';
+
+import { Title } from './Title';
 
 export interface BrowserContentProps {
   children?: ReactNode;
@@ -44,7 +43,6 @@ const title = ['Download', 'OneKey.'];
 
 export const BrowserContent: FC<BrowserContentProps> = (props) => {
   const { children } = props;
-  const theme = useTheme();
 
   return (
     <>
@@ -56,18 +54,7 @@ export const BrowserContent: FC<BrowserContentProps> = (props) => {
           justifyContent: 'center',
         }}
       >
-        <Flex xs={{ flexDirection: 'column' }}>
-          {title.map((item) => (
-            <Span
-              key={item}
-              xs={{
-                ...theme.text.medium900,
-              }}
-            >
-              {item}
-            </Span>
-          ))}
-        </Flex>
+        <Title text={title} />
 
         <Flex xs={{ gap: 16 }}>
           {buttons.map((item) => (
