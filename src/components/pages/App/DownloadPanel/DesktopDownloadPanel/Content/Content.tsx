@@ -12,8 +12,8 @@ import {
   Flex,
   Span,
 } from '../../../../../base';
+import { FAQ } from '../../FAQ';
 
-import { FAQ } from './FAQ';
 import { InfoText } from './InfoText';
 
 export interface ContentProps {
@@ -108,7 +108,7 @@ export const Content: FC<ContentProps> = (props) => {
 
         <Divider />
 
-        {faq && <FAQ titleString={faq.title} questions={faq.questions} />}
+        {faq && <FAQ title={faq.title} questions={faq.questions} />}
       </Flex>
 
       {children}

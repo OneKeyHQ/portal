@@ -2,11 +2,11 @@ import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Box, Flex, HelpIcon, Span } from '../../../../../../base';
+import { Box, Flex, HelpIcon, Span } from '../../../../base';
 
 export interface FAQProps {
   children?: ReactNode;
-  titleString?: string;
+  title?: string;
   questions?: {
     text: string;
     link?: string;
@@ -14,12 +14,12 @@ export interface FAQProps {
 }
 
 export const FAQ: FC<FAQProps> = (props) => {
-  const { children, titleString, questions } = props;
+  const { children, title, questions } = props;
   const theme = useTheme();
 
   return (
     <Flex xs={{ gap: 8, flexDirection: 'column' }}>
-      <Box xs={{ ...theme.text.medium200 }}>{titleString}</Box>
+      {title && <Box xs={{ ...theme.text.medium200 }}>{title}</Box>}
 
       {questions?.map((question) => (
         <Box key={question.text}>
