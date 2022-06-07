@@ -32,6 +32,7 @@ export const MobileDownloadPanel: FC<MobileDownloadPanelProps> = (props) => {
           position: 'relative',
           borderBottomLeftRadius: 40,
           borderBottomRightRadius: 40,
+          transform: 'translateZ(0)',
         }}
       >
         <Background />

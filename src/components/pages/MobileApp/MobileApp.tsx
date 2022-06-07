@@ -11,7 +11,7 @@ import AppPage from '../App';
 export const MobileApp: FC = () => {
   const isDownloading = useRef<boolean>();
 
-  const { data: oneKeyVersionData } = useOneKeyVersion();
+  const { formattedData: formattedOneKeyVersionData } = useOneKeyVersion();
 
   useEffect(() => {
     if (isBrowser()) {
@@ -21,23 +21,21 @@ export const MobileApp: FC = () => {
       const parsed = queryString.parse(window.location.search);
 
       if (parsed.type === 'apk') {
-        if (oneKeyVersionData && !isDownloading.current) {
+        if (formattedOneKeyVersionData && !isDownloading.current) {
           isDownloading.current = true;
-          navigate(oneKeyVersionData?.APK.url);
+          navigate(formattedOneKeyVersionData.androidAPK.url);
         }
       } else if (browser?.os === 'iOS') {
-        navigate('https://itunes.apple.com/app/chrome/id1609559473');
+        navigate(formattedOneKeyVersionData.ios.url);
       } else if (browser?.os === 'Android OS') {
-        navigate(
-          'https://play.google.com/store/apps/details?id=com.bixin.wallet.mainnet',
-        );
+        navigate(formattedOneKeyVersionData.androidGooglePlay.url);
       } else {
         navigate('https://onekey.so/download');
       }
     }
 
     return () => {};
-  }, [oneKeyVersionData]);
+  }, [formattedOneKeyVersionData]);
 
   // todo: import download content
   return <AppPage />;
