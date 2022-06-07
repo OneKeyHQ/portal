@@ -1,6 +1,6 @@
 import { FC, createElement } from 'react';
 
-import { Box, Button, Flex } from '../../../../base';
+import { Box, Button, ButtonProps, Flex } from '../../../../base';
 
 import { InfoText } from './InfoText';
 
@@ -13,10 +13,11 @@ export interface DownloadButtonProps {
   icon: React.FC<React.SVGProps<SVGSVGElement>>;
   text: string;
   information: string[];
+  buttonType?: ButtonProps['variant'];
 }
 
 export const DownloadButton: FC<DownloadButtonProps> = (props) => {
-  const { information, text, icon } = props;
+  const { information, text, icon, buttonType = 'outlined' } = props;
 
   return (
     <Flex
@@ -30,7 +31,7 @@ export const DownloadButton: FC<DownloadButtonProps> = (props) => {
         <Button
           leftIcon={createElement(icon, iconSize)}
           size="large"
-          variant="outlined"
+          variant={buttonType}
           xs={{ minWidth: 220 }}
         >
           {text}

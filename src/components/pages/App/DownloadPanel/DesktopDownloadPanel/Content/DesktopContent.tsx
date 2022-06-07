@@ -1,5 +1,7 @@
 import { FC, ReactNode } from 'react';
 
+import { detect } from 'detect-browser';
+
 import { Divider } from '../../../../../base/Divider';
 import { Flex } from '../../../../../base/Flex';
 import { AppleIcon, LinuxIcon, WindowsIcon } from '../../../../../base/Icon';
@@ -26,16 +28,19 @@ const buttons = [
     text: 'macOS',
     icon: AppleIcon,
     infos: ['v23.0.1, for macOS 10.8+'],
+    systemType: 'mac',
   },
   {
     text: 'Windows',
     icon: WindowsIcon,
     infos: ['v23.0.1, for Windows 10+'],
+    systemType: 'windows',
   },
   {
     text: 'Linux',
     icon: LinuxIcon,
     infos: ['v23.0.1, for Ubuntu 12.04+', 'Fedora 21+, Debian 8+'],
+    systemType: 'linux',
   },
 ];
 
@@ -43,6 +48,7 @@ const title = ['Download', 'OneKey.'];
 
 export const DesktopContent: FC<DesktopContentProps> = (props) => {
   const { children } = props;
+  const detectResult = detect();
 
   return (
     <>
@@ -63,6 +69,11 @@ export const DesktopContent: FC<DesktopContentProps> = (props) => {
               icon={item.icon}
               text={item.text}
               information={item.infos}
+              buttonType={
+                detectResult?.os?.toLowerCase().includes(item.systemType)
+                  ? 'filled'
+                  : 'outlined'
+              }
             />
           ))}
         </Flex>
