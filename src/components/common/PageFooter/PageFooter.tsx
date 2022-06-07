@@ -37,13 +37,8 @@ export const PageFooter: FC<PageFooterProps> = (props) => {
     >
       <Container>
         <Box
-          xs={{
-            display: 'block',
-          }}
-          m={{
-            display: 'flex',
-            justifyContent: 'space-between',
-          }}
+          xs={{ display: 'block' }}
+          m={{ display: 'flex', justifyContent: 'space-between' }}
         >
           <Flex
             m={{ justifyContent: 'space-between', flexDirection: 'column' }}
@@ -58,23 +53,18 @@ export const PageFooter: FC<PageFooterProps> = (props) => {
                 flexDirection: 'column',
                 gap: 32,
               }}
-              m={{
-                padding: 0,
-              }}
+              m={{ padding: 0 }}
             >
-              {media.medium && isShowMediaLinks && <MediaLinkList />}
+              {media.medium && isShowMediaLinks && (
+                <MediaLinkList color={theme.colors.white} />
+              )}
 
               {/* Copyright */}
               <Copyright />
             </Flex>
           </Flex>
 
-          <Box
-            xs={{
-              maxWidth: 867,
-              flex: 1,
-            }}
-          >
+          <Box xs={{ maxWidth: 867, flex: 1 }}>
             {/* menu list */}
             <MenuList />
 
