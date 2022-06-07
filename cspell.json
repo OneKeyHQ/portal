@@ -10,6 +10,7 @@
         "bootloader",
         "browserslist",
         "bupdate",
+        "camelcase",
         "cobo",
         "deepmerge",
         "defi",
