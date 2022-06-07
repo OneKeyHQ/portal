@@ -19,7 +19,13 @@ export const DownloadButton: FC<DownloadButtonProps> = (props) => {
   const { information, text, icon } = props;
 
   return (
-    <Flex xs={{ flexDirection: 'column', alignItems: 'center' }}>
+    <Flex
+      xs={{
+        flexDirection: 'column',
+        alignItems: 'center',
+        textAlign: 'center',
+      }}
+    >
       <Box xs={{ paddingBottom: 8 }}>
         <Button
           leftIcon={createElement(icon, iconSize)}

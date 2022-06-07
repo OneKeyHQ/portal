@@ -1,12 +1,9 @@
 module.exports = {
-  plugins: [],
+  plugins: ['@emotion'],
   presets: [
     [
-      'babel-preset-gatsby',
-      {
-        reactRuntime: 'automatic',
-        reactImportSource: '@emotion/react',
-      },
+      '@babel/preset-react',
+      { runtime: 'automatic', importSource: '@emotion/react' },
     ],
   ],
 };
