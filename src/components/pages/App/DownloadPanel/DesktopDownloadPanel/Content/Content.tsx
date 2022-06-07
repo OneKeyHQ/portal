@@ -1,29 +1,21 @@
-import { FC, ReactNode, createElement } from 'react';
+import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
 import {
   AndroidIcon,
   AppStoreIcon,
-  Box,
-  Button,
   Container,
   Divider,
   Flex,
   Span,
 } from '../../../../../base';
+import { DownloadButton } from '../../DownloadButton';
 import { FAQ } from '../../FAQ';
-
-import { InfoText } from './InfoText';
 
 export interface ContentProps {
   children?: ReactNode;
 }
-
-const iconSize = {
-  width: 24,
-  height: 24,
-};
 
 const faq = {
   title: 'iOS FAQ',
@@ -84,24 +76,12 @@ export const Content: FC<ContentProps> = (props) => {
 
           <Flex xs={{ gap: 16 }}>
             {buttons.map((item) => (
-              <Flex
+              <DownloadButton
                 key={item.text}
-                xs={{ flexDirection: 'column', alignItems: 'center' }}
-              >
-                <Box xs={{ paddingBottom: 8 }}>
-                  <Button
-                    leftIcon={createElement(item.icon, iconSize)}
-                    size="large"
-                    variant="outlined"
-                    xs={{ minWidth: 220 }}
-                  >
-                    {item.text}
-                  </Button>
-                </Box>
-                {item.infos.map((info) => (
-                  <InfoText key={info}>{info}</InfoText>
-                ))}
-              </Flex>
+                icon={item.icon}
+                text={item.text}
+                information={item.infos}
+              />
             ))}
           </Flex>
         </Flex>
