@@ -1,6 +1,6 @@
 import { FC, ReactNode } from 'react';
 
-import { Box } from '../../../../../base';
+import { Box } from '../../../../base';
 
 export interface MaskProps {
   children?: ReactNode;

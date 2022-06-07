@@ -3,8 +3,8 @@ import { FC, ReactNode } from 'react';
 import { useTheme } from '@emotion/react';
 
 import { Box } from '../../../../base';
+import { Background } from '../Background';
 
-import { Background } from './Background';
 import { Content } from './Content';
 import { Tabs } from './Tabs';
 
