@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react';
+import { FC, ReactNode, createElement } from 'react';
 
 import { useTheme } from '@emotion/react';
 
@@ -37,6 +37,19 @@ const faq = {
   ],
 };
 
+const buttons = [
+  {
+    text: 'App Store',
+    icon: AppStoreIcon,
+    infos: ['v2.12.3, for iOS 13.0+', 'Not available on the Chinese App Store'],
+  },
+  {
+    text: 'Android',
+    icon: AndroidIcon,
+    infos: ['v2.12.3, for Android 8.0+'],
+  },
+];
+
 export const Content: FC<ContentProps> = (props) => {
   const { children } = props;
   const theme = useTheme();
@@ -70,35 +83,26 @@ export const Content: FC<ContentProps> = (props) => {
           </Span>
 
           <Flex xs={{ gap: 16 }}>
-            <Flex xs={{ flexDirection: 'column', alignItems: 'center' }}>
-              <Box xs={{ paddingBottom: 8 }}>
-                <Button
-                  leftIcon={<AppStoreIcon {...iconSize} />}
-                  size="large"
-                  variant="outlined"
-                  xs={{ minWidth: 220 }}
-                >
-                  App Store
-                </Button>
-              </Box>
-              <InfoText>v2.12.3, for iOS 13.0+</InfoText>
-              <InfoText>Not available on the Chinese App Store</InfoText>
-            </Flex>
-
-            <Flex xs={{ flexDirection: 'column', alignItems: 'center' }}>
-              <Box xs={{ paddingBottom: 8 }}>
-                <Button
-                  leftIcon={<AndroidIcon {...iconSize} />}
-                  variant="outlined"
-                  size="large"
-                  xs={{ minWidth: 220 }}
-                >
-                  Android
-                </Button>
-              </Box>
-
-              <InfoText>v2.12.3, for Android 8.0+</InfoText>
-            </Flex>
+            {buttons.map((item) => (
+              <Flex
+                key={item.text}
+                xs={{ flexDirection: 'column', alignItems: 'center' }}
+              >
+                <Box xs={{ paddingBottom: 8 }}>
+                  <Button
+                    leftIcon={createElement(item.icon, iconSize)}
+                    size="large"
+                    variant="outlined"
+                    xs={{ minWidth: 220 }}
+                  >
+                    {item.text}
+                  </Button>
+                </Box>
+                {item.infos.map((info) => (
+                  <InfoText key={info}>{info}</InfoText>
+                ))}
+              </Flex>
+            ))}
           </Flex>
         </Flex>
 
