@@ -1,5 +1,7 @@
 import { FC, ReactNode } from 'react';
 
+import { detect } from 'detect-browser';
+
 import { Box, Container } from '../../../../base';
 import { Background } from '../Background';
 
@@ -11,6 +13,14 @@ export interface MobileDownloadPanelProps {
 
 export const MobileDownloadPanel: FC<MobileDownloadPanelProps> = (props) => {
   const { children } = props;
+
+  const detectResult = detect();
+
+  let isMobilePhone = false;
+
+  if (detectResult) {
+    isMobilePhone = detectResult.os === 'android' || detectResult.os === 'iOS';
+  }
 
   return (
     <Box>
@@ -26,7 +36,7 @@ export const MobileDownloadPanel: FC<MobileDownloadPanelProps> = (props) => {
       >
         <Background />
 
-        <Container>x</Container>
+        <Container>{isMobilePhone ? 'a' : 'b'}</Container>
 
         {children}
       </Box>

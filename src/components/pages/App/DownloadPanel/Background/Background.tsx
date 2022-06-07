@@ -51,6 +51,20 @@ export const Background: FC<BackgroundProps> = (props) => {
         src={imageMap[currentTab]}
       />
 
+      <Box
+        xs={{
+          position: 'absolute',
+          bottom: 0,
+          left: 0,
+          top: 0,
+          right: 0,
+          zIndex: 999999,
+          background:
+            'linear-gradient(180deg, rgba(215, 218, 220, 0) 51.88%, rgba(231, 236, 239, 0.97) 71.45%, #E7ECEF 77.01%)',
+        }}
+        l={{ display: 'none' }}
+      />
+
       {children}
     </Box>
   );
