@@ -59,8 +59,11 @@ export const PageFooter: FC<PageFooterProps> = (props) => {
                 <MediaLinkList color={theme.colors.white} />
               )}
 
-              {/* Copyright */}
-              <Copyright />
+              {media.medium && (
+                <Box xs={{ paddingBottom: 46 }} l={{ paddingBottom: 0 }}>
+                  <Copyright />
+                </Box>
+              )}
             </Flex>
           </Flex>
 
@@ -76,7 +79,15 @@ export const PageFooter: FC<PageFooterProps> = (props) => {
             )}
           </Box>
 
-          {!media.medium && <MediaLinkList />}
+          {!media.medium && (
+            <Box xs={{ paddingTop: 20, paddingBottom: 80 }}>
+              {isShowMediaLinks && <MediaLinkList color={theme.colors.white} />}
+
+              <Box xs={{ paddingTop: 8 }}>
+                <Copyright />
+              </Box>
+            </Box>
+          )}
         </Box>
       </Container>
     </Footer>
