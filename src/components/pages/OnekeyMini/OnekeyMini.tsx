@@ -6,6 +6,7 @@ import { Box, Container, Main, Navigation } from '../../base';
 import { PageFooter, StayInTouch } from '../../common';
 
 import { IntroductionSection } from './components/IntroductionSection';
+import { RecommendSection } from './components/RecommendSection';
 
 export interface OnekeyMiniProps {
   children?: ReactNode;
@@ -27,6 +28,8 @@ export const OnekeyMini: FC<OnekeyMiniProps> = (props) => {
         {children}
 
         <Container>
+          <RecommendSection />
+
           <StayInTouch />
         </Container>
       </Main>
