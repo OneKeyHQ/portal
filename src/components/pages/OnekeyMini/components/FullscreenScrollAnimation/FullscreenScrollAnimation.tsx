@@ -1,5 +1,7 @@
 import { FC, ReactNode } from 'react';
 
+import { Box } from '../../../../base';
+
 export interface FullscreenScrollAnimationProps {
   children?: ReactNode;
 }
@@ -9,5 +11,5 @@ export const FullscreenScrollAnimation: FC<FullscreenScrollAnimationProps> = (
 ) => {
   const { children } = props;
 
-  return <div>FullscreenScrollAnimation {children}</div>;
+  return <Box>FullscreenScrollAnimation {children}</Box>;
 };

@@ -1,5 +1,9 @@
 import { FC, ReactNode } from 'react';
 
+import { Box } from '../../base';
+
+import { IntroductionSection } from './components/IntroductionSection';
+
 export interface OnekeyMiniProps {
   children?: ReactNode;
 }
@@ -7,5 +11,11 @@ export interface OnekeyMiniProps {
 export const OnekeyMini: FC<OnekeyMiniProps> = (props) => {
   const { children } = props;
 
-  return <div>OnekeyMini {children}</div>;
+  return (
+    <Box>
+      OnekeyMini
+      <IntroductionSection />
+      {children}
+    </Box>
+  );
 };
