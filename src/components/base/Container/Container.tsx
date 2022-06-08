@@ -20,7 +20,7 @@ export function useCurrentContainerWidth() {
   const { width: windowWidth = 0 } = useWindowSize();
 
   return useMediaQueryMapValues({
-    xSmall: windowWidth,
+    xsmall: windowWidth,
     small: windowWidth,
     ...defaultContainerWidth,
   });

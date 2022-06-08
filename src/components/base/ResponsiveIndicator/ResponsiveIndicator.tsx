@@ -11,7 +11,7 @@ export const ResponsiveIndicator: FC<ResponsiveIndicatorProps> = (props) => {
   const { children } = props;
   const mediaQuery = useMediaQuery();
   const { small, medium, large, xlarge, xxlarge } = mediaQuery;
-  let currentMediaQuery = 'xSmall';
+  let currentMediaQuery = 'xsmall';
   const [isHidden, setIsHidden] = useState(false);
 
   // click it and hide
