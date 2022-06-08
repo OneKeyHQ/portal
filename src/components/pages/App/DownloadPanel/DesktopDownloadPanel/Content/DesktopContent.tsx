@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 
 import { detect } from 'detect-browser';
 
@@ -46,7 +46,7 @@ const buttons = [
 
 const title = ['Download', 'OneKey.'];
 
-export const DesktopContent: FC<DesktopContentProps> = (props) => {
+export const DesktopContent: React.FC<DesktopContentProps> = (props) => {
   const { children } = props;
   const detectResult = detect();
 
