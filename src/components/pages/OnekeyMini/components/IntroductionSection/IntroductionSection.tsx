@@ -12,7 +12,7 @@ export const IntroductionSection: FC<IntroductionSectionProps> = (props) => {
 
   return (
     <Section>
-      <Box>
+      <Box xs={{ height: '400vh', position: 'relative' }}>
         <FullscreenScrollAnimation />
         {children}
       </Box>
