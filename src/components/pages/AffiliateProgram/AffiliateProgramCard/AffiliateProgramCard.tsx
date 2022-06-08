@@ -39,13 +39,21 @@ export const AffiliateProgramCard: FC<AffiliateProgramCardProps> = (props) => {
       <Flex
         xs={{
           textAlign: 'left',
-          gap: 80,
-          padding: 80,
+          gap: 32,
+          padding: 32,
           flexDirection: 'column',
           boxSizing: 'border-box',
         }}
+        m={{
+          gap: 80,
+          padding: 80,
+        }}
       >
-        <Span xs={{ ...theme.text.medium900, textAlign: 'center' }}>
+        <Span
+          xs={{ ...theme.text.medium700, textAlign: 'center' }}
+          m={{ ...theme.text.medium800 }}
+          l={{ ...theme.text.medium900 }}
+        >
           {title}
         </Span>
 
@@ -84,7 +92,23 @@ export const AffiliateProgramCard: FC<AffiliateProgramCardProps> = (props) => {
         </Button>
       </Flex>
 
-      <Box xs={{ textAlign: 'center', paddingBottom: 80 }}>
+      <Box
+        xs={{
+          textAlign: 'center',
+          paddingBottom: 32,
+          paddingLeft: 32,
+          paddingRight: 32,
+        }}
+        m={{
+          paddingBottom: 80,
+          paddingLeft: 80,
+          paddingRight: 80,
+        }}
+        xl={{
+          paddingLeft: 0,
+          paddingRight: 0,
+        }}
+      >
         <Span xs={{ ...theme.text.normal200 }}>
           Contact our customer success team to{' '}
           <Span

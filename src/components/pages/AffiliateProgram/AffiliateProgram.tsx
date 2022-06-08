@@ -29,7 +29,17 @@ export const AffiliateProgram: FC<AffiliateProgramProps> = (props) => {
           <MainTitle />
 
           <Flex xs={{ alignItems: 'center', justifyContent: 'center' }}>
-            <Flex xs={{ gap: 24, maxWidth: 1336, paddingBottom: 80 }}>
+            <Flex
+              xs={{
+                gap: 24,
+                maxWidth: 1336,
+                paddingBottom: 80,
+                flexDirection: 'column',
+              }}
+              m={{
+                flexDirection: 'row',
+              }}
+            >
               {affiliateProgramData.cards.map((card) => (
                 <AffiliateProgramCard key={card.title} {...card} />
               ))}
