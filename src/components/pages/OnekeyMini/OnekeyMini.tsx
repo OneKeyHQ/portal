@@ -1,6 +1,9 @@
 import { FC, ReactNode } from 'react';
 
-import { Box } from '../../base';
+import { Helmet } from 'react-helmet';
+
+import { Box, Container, Main, Navigation } from '../../base';
+import { PageFooter, StayInTouch } from '../../common';
 
 import { IntroductionSection } from './components/IntroductionSection';
 
@@ -13,9 +16,22 @@ export const OnekeyMini: FC<OnekeyMiniProps> = (props) => {
 
   return (
     <Box>
-      OnekeyMini
-      <IntroductionSection />
-      {children}
+      <Helmet>
+        <title>OneKey</title>
+      </Helmet>
+
+      <Navigation />
+
+      <Main>
+        <IntroductionSection />
+        {children}
+
+        <Container>
+          <StayInTouch />
+        </Container>
+      </Main>
+
+      <PageFooter isShowEmailSubscribe={false} isShowMediaLinks={false} />
     </Box>
   );
 };
