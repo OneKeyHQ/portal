@@ -12,6 +12,12 @@ export interface FullscreenScrollAnimationProps {
   children?: ReactNode;
 }
 
+const images = [
+  ...new Array(60)
+    .fill(0)
+    .map((_, i) => `/hardware-mini-features/onekey-mini-features${i}.jpg`),
+];
+
 export const FullscreenScrollAnimation: FC<FullscreenScrollAnimationProps> = (
   props,
 ) => {
@@ -19,11 +25,7 @@ export const FullscreenScrollAnimation: FC<FullscreenScrollAnimationProps> = (
   const { height: windowHeight = 1, width: windowWidth = 1 } = useWindowSize();
   const { ref, elementInViewportProgress } = useElementInViewportProgress(0);
 
-  const motionValue = useTransform(
-    elementInViewportProgress,
-    [0.7, 1.4],
-    [0, 59],
-  );
+  const motionValue = useTransform(elementInViewportProgress, [0, 2], [0, 59]);
 
   return (
     <Box>
@@ -48,14 +50,7 @@ export const FullscreenScrollAnimation: FC<FullscreenScrollAnimationProps> = (
           <CanvasPlayer
             width={windowWidth}
             height={windowHeight}
-            images={[
-              ...new Array(60)
-                .fill(0)
-                .map(
-                  (_, i) =>
-                    `/hardware-mini-features/onekey-mini-features${i}.jpg`,
-                ),
-            ]}
+            images={images}
             frame={parseInt(motionValue.get().toFixed(0))}
           />
         </Box>
