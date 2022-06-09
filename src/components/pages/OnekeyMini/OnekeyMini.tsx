@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet';
 import { Box, Container, Main, Navigation } from '../../base';
 import { PageFooter, StayInTouch } from '../../common';
 
-import { IntroductionSection } from './components/IntroductionSection';
+// import { IntroductionSection } from './components/IntroductionSection';
 import { RecommendSection } from './components/RecommendSection';
 
 export interface OnekeyMiniProps {
@@ -24,13 +24,16 @@ export const OnekeyMini: FC<OnekeyMiniProps> = (props) => {
       <Navigation />
 
       <Main>
-        <IntroductionSection />
+        {/* <IntroductionSection /> */}
         {children}
 
-        <Container>
-          <RecommendSection />
+        <RecommendSection />
 
-          <Box xs={{ paddingBottom: 80 }}>
+        <Container>
+          <Box
+            xs={{ paddingTop: 40, paddingBottom: 40 }}
+            m={{ paddingBottom: 80 }}
+          >
             <StayInTouch />
           </Box>
         </Container>

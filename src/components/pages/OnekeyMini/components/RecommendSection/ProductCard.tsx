@@ -2,7 +2,7 @@ import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { AspectRatio, Box, Divider, Flex, Img, Span } from '../../../../base';
+import { Box, Divider, Flex, Img, Span } from '../../../../base';
 
 import { RecommendSectionDataItem } from './useRecommendSectionData';
 
@@ -18,25 +18,30 @@ export const ProductCard: FC<ProductCardProps> = (props) => {
   return (
     <Box
       xs={{
-        width: 420,
-        height: 720,
+        maxWidth: 420,
         borderRadius: 40,
         backgroundColor: theme.colors.test100,
       }}
     >
-      <AspectRatio ratio={1}>
-        <Flex xs={{ alignItems: 'center', justifyContent: 'center' }}>
-          <Box xs={{ width: 166, height: 'auto' }}>
-            <Img src={data.image} />
-          </Box>
-        </Flex>
-      </AspectRatio>
+      <Flex
+        xs={{ padding: 50, alignItems: 'center', justifyContent: 'center' }}
+      >
+        <Box xs={{ width: 166, height: 'auto' }}>
+          <Img src={data.image} />
+        </Box>
+      </Flex>
 
       <Box xs={{ paddingLeft: 24, paddingRight: 24 }}>
         <Divider />
       </Box>
 
-      <Flex xs={{ padding: 24, gap: 24, flexDirection: 'column' }}>
+      <Flex
+        xs={{
+          padding: '24px 24px 40px 24px',
+          gap: 24,
+          flexDirection: 'column',
+        }}
+      >
         <Flex xs={{ gap: 8, flexDirection: 'column' }}>
           <Span xs={theme.text.medium700}>{data.name}</Span>
           <Span xs={theme.text.normal400}>{data.description}</Span>
