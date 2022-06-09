@@ -6,6 +6,7 @@ import { Box, Container, Main, Navigation } from '../../base';
 import { PageFooter, StayInTouch } from '../../common';
 
 // import { IntroductionSection } from './components/IntroductionSection';
+import { FeatureSection } from './components/FeatureSection';
 import { MultiChainSupportSection } from './components/MultiChainSupportSection';
 import { RecommendSection } from './components/RecommendSection';
 import { TechnicalSpecificationsSection } from './components/TechnicalSpecificationsSection';
@@ -27,7 +28,8 @@ export const OnekeyMini: FC<OnekeyMiniProps> = (props) => {
 
       <Main>
         {/* <IntroductionSection /> */}
-        {children}
+
+        <FeatureSection />
 
         <MultiChainSupportSection />
 
@@ -46,6 +48,8 @@ export const OnekeyMini: FC<OnekeyMiniProps> = (props) => {
       </Main>
 
       <PageFooter isShowEmailSubscribe={false} isShowMediaLinks={false} />
+
+      {children}
     </Box>
   );
 };
