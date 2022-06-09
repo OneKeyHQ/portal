@@ -30,7 +30,9 @@ export const OnekeyMini: FC<OnekeyMiniProps> = (props) => {
         <Container>
           <RecommendSection />
 
-          <StayInTouch />
+          <Box xs={{ paddingBottom: 80 }}>
+            <StayInTouch />
+          </Box>
         </Container>
       </Main>
 
