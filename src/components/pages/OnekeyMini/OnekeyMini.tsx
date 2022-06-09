@@ -8,6 +8,7 @@ import { PageFooter, StayInTouch } from '../../common';
 // import { IntroductionSection } from './components/IntroductionSection';
 import { FeatureSection } from './components/FeatureSection';
 import { MultiChainSupportSection } from './components/MultiChainSupportSection';
+import { ProductInformation } from './components/ProductInformation';
 import { RecommendSection } from './components/RecommendSection';
 import { TechnicalSpecificationsSection } from './components/TechnicalSpecificationsSection';
 
@@ -27,6 +28,8 @@ export const OnekeyMini: FC<OnekeyMiniProps> = (props) => {
       <Navigation />
 
       <Main>
+        <ProductInformation />
+
         {/* <IntroductionSection /> */}
 
         <FeatureSection />
