@@ -3,7 +3,11 @@ import { FC, ReactNode } from 'react';
 import { Helmet } from 'react-helmet';
 
 import { Box, Container, Main, Navigation } from '../../base';
-import { PageFooter, StayInTouch } from '../../common';
+import {
+  MultiChainSupportMediaCard,
+  PageFooter,
+  StayInTouch,
+} from '../../common';
 
 // import { IntroductionSection } from './components/IntroductionSection';
 import { RecommendSection } from './components/RecommendSection';
@@ -27,6 +31,16 @@ export const OnekeyMini: FC<OnekeyMiniProps> = (props) => {
       <Main>
         {/* <IntroductionSection /> */}
         {children}
+
+        <Container>
+          <Box
+            xs={{ paddingTop: 72, paddingBottom: 72 }}
+            m={{ paddingTop: 100, paddingBottom: 100 }}
+            l={{ paddingTop: 120, paddingBottom: 120 }}
+          >
+            <MultiChainSupportMediaCard />
+          </Box>
+        </Container>
 
         <TechnicalSpecificationsSection />
 

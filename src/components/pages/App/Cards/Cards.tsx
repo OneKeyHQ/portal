@@ -1,6 +1,7 @@
 import { FC, ReactNode } from 'react';
 
 import { Button, Flex } from '../../../base';
+import { MultiChainSupportMediaCard } from '../../../common';
 import { InfoCard } from '../../../common/InfoCard';
 
 import { useCardsData } from './useCardsData';
@@ -27,6 +28,8 @@ export const Cards: FC<CardsProps> = (props) => {
           buttonNode={<Button variant="outlined">{item.button}</Button>}
         />
       ))}
+
+      <MultiChainSupportMediaCard />
 
       {children}
     </Flex>
