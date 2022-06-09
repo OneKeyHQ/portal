@@ -2,8 +2,9 @@ import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Box, Container } from '../../../../base';
+import { Box, Container, Flex } from '../../../../base';
 
+import { ProductContent } from './ProductContent';
 import { ProductImageSwiper } from './ProductImageSwiper';
 
 export interface ProductInformationProps {
@@ -15,13 +16,13 @@ export const ProductInformation: FC<ProductInformationProps> = (props) => {
   const theme = useTheme();
 
   return (
-    <Box
-      xs={{
-        backgroundColor: theme.colors.test100,
-      }}
-    >
+    <Box xs={{ backgroundColor: theme.colors.test100 }}>
       <Container>
-        <ProductImageSwiper />
+        <Flex>
+          <ProductImageSwiper />
+
+          <ProductContent />
+        </Flex>
       </Container>
       {children}
     </Box>
