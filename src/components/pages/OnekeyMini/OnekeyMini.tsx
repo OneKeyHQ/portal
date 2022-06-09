@@ -28,9 +28,7 @@ export const OnekeyMini: FC<OnekeyMiniProps> = (props) => {
         {/* <IntroductionSection /> */}
         {children}
 
-        <Container>
-          <TechnicalSpecificationsSection />
-        </Container>
+        <TechnicalSpecificationsSection />
 
         <RecommendSection />
 
