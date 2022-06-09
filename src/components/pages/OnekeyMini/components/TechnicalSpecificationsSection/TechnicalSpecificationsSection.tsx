@@ -4,6 +4,7 @@ import { useTheme } from '@emotion/react';
 
 import { Box, Span } from '../../../../base';
 
+import { Content } from './Content';
 import { SideImage } from './SideImage';
 
 export interface TechnicalSpecificationsSectionProps {
@@ -31,6 +32,8 @@ export const TechnicalSpecificationsSection: FC<
       </Box>
 
       <SideImage />
+
+      <Content />
       {children}
     </Box>
   );
