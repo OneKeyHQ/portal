@@ -20,14 +20,18 @@ export const ProductInformation: FC<ProductInformationProps> = (props) => {
       <Container>
         <Flex
           xs={{
-            gap: 88,
+            width: '100%',
             flexDirection: 'column',
-            paddingTop: 60,
+            paddingTop: 100,
             paddingBottom: 60,
           }}
           l={{
+            gap: 60,
             alignItems: 'flex-end',
             flexDirection: 'row',
+          }}
+          xl={{
+            gap: 80,
           }}
         >
           <ProductImageSwiper />

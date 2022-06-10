@@ -39,7 +39,13 @@ export const ProductImageSwiper: FC<ProductImageSwiperProps> = (props) => {
   };
 
   return (
-    <Box xs={{ maxWidth: 800 }}>
+    <Box
+      m={{
+        width: '100%',
+      }}
+      l={{ maxWidth: 700 }}
+      xl={{ maxWidth: 800 }}
+    >
       <Flex xs={{ alignItems: 'center' }}>
         <ArrowWrap
           disabled={!allowSlidePrev}
@@ -89,7 +95,7 @@ export const ProductImageSwiper: FC<ProductImageSwiperProps> = (props) => {
         </ArrowWrap>
       </Flex>
 
-      <Flex xs={{ margin: '24px auto 0 auto', justifyContent: 'center' }}>
+      <Flex xs={{ justifyContent: 'center' }}>
         <Progress
           containerColor={theme.colors.test200}
           amount={6}

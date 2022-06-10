@@ -30,13 +30,16 @@ export const Review: FC<ReviewProps> = (props) => {
         }}
       >
         <Span>
-          <Span xs={theme.text.medium300}>4.4 Star Rating</Span>
+          <Span xs={theme.text.medium200} m={theme.text.medium300}>
+            4.4 Star Rating
+          </Span>
           <Span
             xs={{
               textDecoration: 'underline',
               ...theme.text.normal200,
-              paddingLeft: 6,
+              paddingLeft: 10,
             }}
+            m={{ paddingLeft: 6 }}
           >
             See Reviews
           </Span>
