@@ -38,7 +38,7 @@ export const ProductImageSwiper: FC<ProductImageSwiperProps> = (props) => {
   }, [thumbsSwiper?.isBeginning, thumbsSwiper?.isEnd]);
 
   return (
-    <Box xs={{ maxWidth: 620 }}>
+    <Box xs={{ maxWidth: 800 }}>
       <Flex xs={{ alignItems: 'center' }}>
         <ArrowWrap
           disabled={!allowSlidePrev}

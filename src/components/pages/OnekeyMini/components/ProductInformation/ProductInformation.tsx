@@ -18,10 +18,19 @@ export const ProductInformation: FC<ProductInformationProps> = (props) => {
   return (
     <Box xs={{ backgroundColor: theme.colors.test100 }}>
       <Container>
-        <Flex>
-          <Box xs={{ paddingTop: 60, paddingBottom: 60 }}>
-            <ProductImageSwiper />
-          </Box>
+        <Flex
+          xs={{
+            gap: 88,
+            flexDirection: 'column',
+            paddingTop: 60,
+            paddingBottom: 60,
+          }}
+          l={{
+            alignItems: 'flex-end',
+            flexDirection: 'row',
+          }}
+        >
+          <ProductImageSwiper />
 
           <ProductContent />
         </Flex>
