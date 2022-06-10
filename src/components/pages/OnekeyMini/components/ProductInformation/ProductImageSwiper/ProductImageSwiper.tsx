@@ -7,6 +7,7 @@ import { Swiper } from 'swiper/types';
 import {
   Box,
   Flex,
+  Progress,
   Swiper as SwiperComponent,
   SwiperSlide,
 } from '../../../../../base';
@@ -87,26 +88,14 @@ export const ProductImageSwiper: FC<ProductImageSwiperProps> = (props) => {
         </ArrowWrap>
       </Flex>
 
-      <Box
-        xs={{
-          overflow: 'hidden',
-          margin: '24px auto 0 auto',
-          label: 'progress',
-          width: 175,
-          height: 3,
-          background: theme.colors.white,
-        }}
-      >
-        <Box
-          xs={{
-            transition: theme.transitions.allEaseOut,
-            height: '100%',
-            background: theme.colors.gray900,
-            width: `${((activeIndex + 1) / 6) * 100}%`,
-            willChange: 'width',
-          }}
+      <Flex xs={{ margin: '24px auto 0 auto', justifyContent: 'center' }}>
+        <Progress
+          containerColor={theme.colors.test200}
+          amount={6}
+          activeIndex={activeIndex}
         />
-      </Box>
+      </Flex>
+
       {children}
     </Box>
   );
