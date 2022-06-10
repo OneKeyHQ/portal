@@ -96,7 +96,6 @@ export const ImageIntroduction: FC<ImageIntroductionProps> = (props) => {
           <Box
             xs={{
               position: 'absolute',
-              zIndex: 1,
               top: '45%',
               textAlign: 'center',
               left: 0,

@@ -18,7 +18,7 @@ export const IntroductionText: FC<IntroductionTextProps> = (props) => {
     <Flex
       xs={{
         gap: 8,
-        color: theme.colors.test500,
+        color: theme.colors.white,
         flexDirection: 'column',
         justifyContent: 'center',
         mixBlendMode: 'difference',
