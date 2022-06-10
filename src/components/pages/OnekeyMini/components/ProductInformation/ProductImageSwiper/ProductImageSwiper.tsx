@@ -28,14 +28,15 @@ export const ProductImageSwiper: FC<ProductImageSwiperProps> = (props) => {
   const [allowSlidePrev, setAllowSlidePrev] = useState<boolean | undefined>();
   const [thumbsSwiper, setThumbsSwiper] = useState<Swiper>();
 
-  const onSlideChange = (swiper: Swiper) => {
-    setActiveIndex(swiper.activeIndex);
-  };
-
   const updateSlideStatus = useCallback(() => {
     setAllowSlideNext(!thumbsSwiper?.isEnd);
     setAllowSlidePrev(!thumbsSwiper?.isBeginning);
   }, [thumbsSwiper?.isBeginning, thumbsSwiper?.isEnd]);
+
+  const onSlideChange = (swiper: Swiper) => {
+    setActiveIndex(swiper.activeIndex);
+    updateSlideStatus();
+  };
 
   return (
     <Box xs={{ maxWidth: 800 }}>
