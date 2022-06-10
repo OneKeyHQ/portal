@@ -5,8 +5,8 @@ import { Helmet } from 'react-helmet';
 import { Box, Container, Main, Navigation } from '../../base';
 import { PageFooter, StayInTouch } from '../../common';
 
-// import { IntroductionSection } from './components/IntroductionSection';
 import { FeatureSection } from './components/FeatureSection';
+import { IntroductionSection } from './components/IntroductionSection';
 import { MultiChainSupportSection } from './components/MultiChainSupportSection';
 import { ProductInformation } from './components/ProductInformation';
 import { RecommendSection } from './components/RecommendSection';
@@ -30,7 +30,7 @@ export const OnekeyMini: FC<OnekeyMiniProps> = (props) => {
       <Main>
         <ProductInformation />
 
-        {/* <IntroductionSection /> */}
+        <IntroductionSection />
 
         <FeatureSection />
 
