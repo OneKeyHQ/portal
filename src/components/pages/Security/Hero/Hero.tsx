@@ -3,6 +3,7 @@ import { FC, ReactNode } from 'react';
 import { useTheme } from '@emotion/react';
 import { StaticImage } from 'gatsby-plugin-image';
 
+import { isBrowser } from '../../../../utils';
 import { Box, Container, Flex, Span } from '../../../base';
 import { BackgroundMask } from '../../../common';
 
@@ -36,14 +37,16 @@ export const Hero: FC<HeroProps> = (props) => {
         }}
         l={{ width: '50%' }}
       >
-        <StaticImage
-          css={{
-            width: '100%',
-            height: '100%',
-          }}
-          src="./images/hero.jpg"
-          alt="background"
-        />
+        {isBrowser() && (
+          <StaticImage
+            css={{
+              width: '100%',
+              height: '100%',
+            }}
+            src="./images/hero.jpg"
+            alt="background"
+          />
+        )}
 
         <BackgroundMask />
       </Box>
