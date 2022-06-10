@@ -19,7 +19,9 @@ export const ProductInformation: FC<ProductInformationProps> = (props) => {
     <Box xs={{ backgroundColor: theme.colors.test100 }}>
       <Container>
         <Flex>
-          <ProductImageSwiper />
+          <Box xs={{ paddingTop: 60, paddingBottom: 60 }}>
+            <ProductImageSwiper />
+          </Box>
 
           <ProductContent />
         </Flex>
