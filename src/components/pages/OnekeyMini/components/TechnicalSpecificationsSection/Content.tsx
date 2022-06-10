@@ -23,11 +23,11 @@ export const Content: FC = () => {
             <Span xs={medium600}>Dimensions & weight</Span>
             <Flex xs={{ flexDirection: 'column', gap: 4 }}>
               <Span xs={m3}>Size</Span>
-              <Span xs={n2}>72mm x 18.6mm x 11.75mm</Span>
+              <Span xs={n2}>71 x 34 x 6.8 (mm)</Span>
             </Flex>
             <Flex xs={{ flexDirection: 'column', gap: 4 }}>
               <Span xs={m3}>Weight</Span>
-              <Span xs={n2}>34g</Span>
+              <Span xs={n2}>15.6g</Span>
             </Flex>
           </Flex>
         </Flex>
