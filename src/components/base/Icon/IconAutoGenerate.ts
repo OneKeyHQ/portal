@@ -10,6 +10,8 @@ export { ReactComponent as ArrowLeftIcon } from './images/arrow-left.svg';
 export { default as ArrowLeftIconInline } from './images/arrow-left.svg';
 export { ReactComponent as ArrowRightIcon } from './images/arrow-right.svg';
 export { default as ArrowRightIconInline } from './images/arrow-right.svg';
+export { ReactComponent as CheckIcon } from './images/check.svg';
+export { default as CheckIconInline } from './images/check.svg';
 export { ReactComponent as ChevronDownIcon } from './images/chevron-down.svg';
 export { default as ChevronDownIconInline } from './images/chevron-down.svg';
 export { ReactComponent as ChevronLeftIcon } from './images/chevron-left.svg';

@@ -1,10 +1,11 @@
-export type IconType =
+export type IconTypes =
   | 'AddIcon'
   | 'AndroidIcon'
   | 'AppStoreIcon'
   | 'AppleIcon'
   | 'ArrowLeftIcon'
   | 'ArrowRightIcon'
+  | 'CheckIcon'
   | 'ChevronDownIcon'
   | 'ChevronLeftIcon'
   | 'ChevronRightIcon'
