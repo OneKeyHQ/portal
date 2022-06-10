@@ -33,6 +33,8 @@ export type IconTypes =
   | 'MenuIcon'
   | 'MobileIcon'
   | 'ServiceIcon'
+  | 'StarHalfIcon'
+  | 'StarIcon'
   | 'TwitterIcon'
   | 'WebIcon'
   | 'WindowsIcon';
