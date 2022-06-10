@@ -98,6 +98,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.4.0",
+    "eslint-plugin-unused-imports": "^2.0.0",
     "extract-zip": "^2.0.1",
     "graphql": "^16.4.0",
     "prettier": "^2.6.2",
