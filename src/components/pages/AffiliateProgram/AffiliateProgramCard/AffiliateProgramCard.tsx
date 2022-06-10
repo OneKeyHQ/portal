@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
@@ -22,7 +22,9 @@ export interface AffiliateProgramCardProps {
   points: string[];
 }
 
-export const AffiliateProgramCard: FC<AffiliateProgramCardProps> = (props) => {
+export const AffiliateProgramCard: React.FC<AffiliateProgramCardProps> = (
+  props,
+) => {
   const { children, button, points, descriptions, title } = props;
   const theme = useTheme();
 
