@@ -2,7 +2,7 @@ import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Box, Button, Flex, P, Span } from '../../../base';
+import { Button, Flex, Link, P, Span } from '../../../base';
 
 import { FeatureSectionDataItem } from './useFeatureSectionData';
 
@@ -25,11 +25,11 @@ export const TextBlock: FC<TextBlockProps> = (props) => {
       ))}
 
       {button && (
-        <Box>
+        <Link to={button.link}>
           <Button themeColor="dark" variant={button.variant}>
             {button.text}
           </Button>
-        </Box>
+        </Link>
       )}
 
       {children}
