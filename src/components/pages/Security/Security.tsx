@@ -7,6 +7,7 @@ import { Box, Container, Main, Navigation, SEO } from '../../base';
 import { PageFooter, StayInTouch } from '../../common';
 
 import { Hero } from './Hero';
+import { TextDescriptionSection } from './TextDescriptionSection';
 
 export interface SecurityProps {
   children?: ReactNode;
@@ -32,6 +33,8 @@ export const Security: FC<SecurityProps> = (props) => {
         </Box>
 
         <Container>
+          <TextDescriptionSection />
+
           <Box xs={{ paddingBottom: 80 }}>
             <StayInTouch />
           </Box>
