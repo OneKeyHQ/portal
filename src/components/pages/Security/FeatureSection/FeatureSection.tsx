@@ -2,9 +2,11 @@ import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Box, Container, Section } from '../../../base';
+import { Box, Container, Section, SwiperSlide } from '../../../base';
+import { FreeSwiper } from '../../../common';
 
 import { ImageSwitcher } from './ImageSwitcher';
+import { TextBlock } from './TextBlock';
 import { Title } from './Title';
 import { useFeatureSectionData } from './useFeatureSectionData';
 
@@ -30,17 +32,29 @@ export const FeatureSection: FC<FeatureSectionProps> = (props) => {
         paddingBottom: 120,
       }}
     >
-      <Box>
-        <Container>
-          <Title {...featureSectionData} />
-        </Container>
+      <Container>
+        <Title {...featureSectionData} />
 
         <ImageSwitcher
           imageNodes={featureSectionData.items.map((item) => item.imageNode)}
         />
+      </Container>
 
-        <Box>{children}</Box>
-      </Box>
+      <FreeSwiper
+        spaceBetween={24}
+        style={{
+          paddingLeft: 24,
+          paddingRight: 24,
+        }}
+      >
+        {featureSectionData.items.map((item) => (
+          <SwiperSlide style={{ width: 272 }}>
+            <TextBlock key={item.name} {...item} />
+          </SwiperSlide>
+        ))}
+      </FreeSwiper>
+
+      <Box>{children}</Box>
     </Section>
   );
 };

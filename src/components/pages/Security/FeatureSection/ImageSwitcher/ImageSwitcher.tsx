@@ -11,7 +11,7 @@ export const ImageSwitcher: FC<ImageSwitcherProps> = (props) => {
   const { imageNodes, children } = props;
 
   return (
-    <Box xs={{ position: 'relative' }}>
+    <Box xs={{ position: 'relative', maxWidth: 1064 }}>
       {imageNodes.map((node, index) => (
         <Box
           xs={{

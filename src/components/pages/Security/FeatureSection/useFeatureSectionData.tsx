@@ -1,6 +1,28 @@
+import { ReactNode } from 'react';
+
 import { StaticImage } from 'gatsby-plugin-image';
 
-export function useFeatureSectionData() {
+import { ButtonProps } from '../../../base';
+
+export type FeatureSectionData = {
+  subtitle: string;
+  title: string;
+  description: string;
+  items: FeatureSectionDataItem[];
+};
+
+export type FeatureSectionDataItem = {
+  description: string[];
+  name: string;
+  imageNode: ReactNode;
+  button?: {
+    text: string;
+    link: string;
+    variant: ButtonProps['variant'];
+  };
+};
+
+export function useFeatureSectionData(): FeatureSectionData {
   return {
     subtitle: 'PROFESSIONAL’S CHOICE',
     title: 'What Makes OneKey Earn the Trust of Top Pro Institutions',
