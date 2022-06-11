@@ -6,6 +6,7 @@ import { Helmet } from 'react-helmet';
 import { Box, Container, Main, Navigation, SEO } from '../../base';
 import { PageFooter, StayInTouch } from '../../common';
 
+import { FeatureSection } from './FeatureSection';
 import { Hero } from './Hero';
 import { TextDescriptionSection } from './TextDescriptionSection';
 
@@ -31,6 +32,8 @@ export const Security: FC<SecurityProps> = (props) => {
         <Box xs={{ backgroundColor: theme.colors.test500 }}>
           <Hero />
         </Box>
+
+        <FeatureSection />
 
         <Container>
           <TextDescriptionSection />
