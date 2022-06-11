@@ -15,15 +15,7 @@ const jsRules = {
 };
 const tsRules = {
   'unused-imports/no-unused-imports': 'error',
-  'unused-imports/no-unused-vars': [
-    'error',
-    {
-      vars: 'all',
-      varsIgnorePattern: '^_',
-      args: 'after-used',
-      argsIgnorePattern: '^_',
-    },
-  ],
+  'unused-imports/no-unused-vars': 'error',
   '@typescript-eslint/no-unused-vars': 'off',
   '@typescript-eslint/no-use-before-define': ['error'],
   '@typescript-eslint/no-shadow': ['error'],
