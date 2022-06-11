@@ -18,7 +18,6 @@ export const BackgroundMask: FC<BackgroundMaskProps> = (props) => {
         top: 0,
         right: 0,
         zIndex: 1,
-
         background:
           'linear-gradient(180deg, rgba(215, 218, 220, 0) 60%, rgba(231, 236, 239, 0.97) 80%, #E7ECEF 80%)',
       }}
