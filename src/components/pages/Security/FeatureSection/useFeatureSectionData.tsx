@@ -14,7 +14,7 @@ export function useFeatureSectionData() {
           "We believe that only by doing so can we clarify ourselves to ensure that OneKey's ethics are scrutinized by the masses.",
         ],
         imageNode: (
-          <StaticImage src="./images/security-1.jpg" alt="Open source" />
+          <StaticImage src="./images/security-01.jpg" alt="Open source" />
         ),
         button: {
           text: 'Learn More',
@@ -30,7 +30,7 @@ export function useFeatureSectionData() {
           'With the exquisitely designed SHA-256 response control, we can use it to effectively prevent replay and eavesdropping attacks.',
         ],
         imageNode: (
-          <StaticImage src="./images/security-2.jpg" alt="Secure element" />
+          <StaticImage src="./images/security-02.jpg" alt="Secure element" />
         ),
       },
       {
@@ -41,7 +41,7 @@ export function useFeatureSectionData() {
           "Specifically, OneKey helps you confirm and authorize every on-chain transaction, the signing process is done on your device, not your PC or phone. This prevents malicious programs from spoofing or tricking you into high-risk operations: such as sending crypto assets to a bad guy's disguised address.",
         ],
         imageNode: (
-          <StaticImage src="./images/security-3.jpg" alt="Cold keys" />
+          <StaticImage src="./images/security-03.jpg" alt="Cold keys" />
         ),
       },
     ],

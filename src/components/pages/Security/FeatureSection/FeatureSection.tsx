@@ -4,6 +4,7 @@ import { useTheme } from '@emotion/react';
 
 import { Box, Container, Section } from '../../../base';
 
+import { ImageSwitcher } from './ImageSwitcher';
 import { Title } from './Title';
 import { useFeatureSectionData } from './useFeatureSectionData';
 
@@ -24,20 +25,22 @@ export const FeatureSection: FC<FeatureSectionProps> = (props) => {
         paddingTop: 56,
         paddingBottom: 72,
       }}
+      l={{
+        paddingTop: 120,
+        paddingBottom: 120,
+      }}
     >
-      <Container>
-        <Box>
+      <Box>
+        <Container>
           <Title {...featureSectionData} />
+        </Container>
 
-          <Box>
-            {featureSectionData.items.map((feature) => (
-              <Box key={feature.name}>{feature.imageNode}</Box>
-            ))}
-          </Box>
+        <ImageSwitcher
+          imageNodes={featureSectionData.items.map((item) => item.imageNode)}
+        />
 
-          <Box>{children}</Box>
-        </Box>
-      </Container>
+        <Box>{children}</Box>
+      </Box>
     </Section>
   );
 };
