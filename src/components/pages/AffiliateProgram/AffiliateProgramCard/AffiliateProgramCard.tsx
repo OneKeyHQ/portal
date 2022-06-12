@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import React from 'react';
 
 import { useTheme } from '@emotion/react';
 
@@ -10,7 +10,9 @@ import {
 
 export type AffiliateProgramCardProps = FeatureInformationCardProps;
 
-export const AffiliateProgramCard: FC<AffiliateProgramCardProps> = (props) => {
+export const AffiliateProgramCard: React.FC<AffiliateProgramCardProps> = (
+  props,
+) => {
   const { children, ...otherProps } = props;
   const theme = useTheme();
 

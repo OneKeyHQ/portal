@@ -15,7 +15,7 @@ export interface NavigationItemProps extends NavigationDataItem {
 }
 
 export const NavigationItem: FC<NavigationItemProps> = (props) => {
-  const { children, name, subItems, path, ...otherProps } = props;
+  const { name, subItems, path, ...otherProps } = props;
   const { hoverProps, isHovered } = useHover({
     timeout: 100,
   });

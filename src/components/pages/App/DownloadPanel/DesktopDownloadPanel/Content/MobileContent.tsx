@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 
 import { Divider } from '../../../../../base/Divider';
 import { Flex } from '../../../../../base/Flex';
@@ -40,7 +40,7 @@ const buttons = [
 // Bring your <br /> crypto assets <br /> to mobile, too.
 const title = ['Bring your', 'crypto assets', 'to mobile, too.'];
 
-export const MobileContent: FC<MobileContentProps> = (props) => {
+export const MobileContent: React.FC<MobileContentProps> = (props) => {
   const { children } = props;
 
   return (

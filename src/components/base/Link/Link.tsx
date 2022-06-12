@@ -11,13 +11,7 @@ export interface LinkProps extends BoxProps {
 }
 
 export const Link: FC<LinkProps> = (props) => {
-  const {
-    to,
-    toLanguage,
-    children,
-    target = '_blank',
-    ...omittedProps
-  } = props;
+  const { to, children, target = '_blank', ...omittedProps } = props;
   const isExternal = to.startsWith('http');
 
   if (!to) {

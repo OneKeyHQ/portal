@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react';
+import React, { FC } from 'react';
 
 import { ChromeIcon, EdgeIcon, FirefoxIcon } from '../../../../../base';
 import { Divider } from '../../../../../base/Divider';
@@ -9,7 +9,7 @@ import { FAQ } from '../../FAQ';
 import { Title } from './Title';
 
 export interface BrowserContentProps {
-  children?: ReactNode;
+  children?: React.ReactNode;
 }
 
 const faq = {

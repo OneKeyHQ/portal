@@ -44,7 +44,6 @@ export const Box: FC<BoxProps> = (props) => {
     xl = {},
     xxl = {},
     externalProps = {},
-    hiddenRange,
     ...otherProps
   } = props;
 

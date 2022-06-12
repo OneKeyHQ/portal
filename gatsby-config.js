@@ -16,6 +16,7 @@ module.exports = {
         redirect: false,
       },
     },
+    'gatsby-plugin-emotion',
     {
       resolve: `gatsby-plugin-typescript`,
       options: {

@@ -19,3 +19,5 @@ export * from './Link';
 export * from './Display';
 export * from './FloatCard';
 export * from './Divider';
+export * from './Progress';
+export * from './OnlyDisplay';

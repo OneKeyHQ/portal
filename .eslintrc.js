@@ -14,7 +14,9 @@ const jsRules = {
   'react/prop-types': 'off',
 };
 const tsRules = {
-  '@typescript-eslint/no-unused-vars': ['error'],
+  'unused-imports/no-unused-imports': 'error',
+  'unused-imports/no-unused-vars': 'error',
+  '@typescript-eslint/no-unused-vars': 'off',
   '@typescript-eslint/no-use-before-define': ['error'],
   '@typescript-eslint/no-shadow': ['error'],
   '@typescript-eslint/explicit-module-boundary-types': 'off',
@@ -63,6 +65,7 @@ const tsRules = {
   ],
 };
 module.exports = {
+  plugins: ['unused-imports'],
   settings: {
     'import/resolver': {
       node: {

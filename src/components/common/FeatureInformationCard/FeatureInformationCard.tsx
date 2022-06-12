@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
@@ -15,7 +15,7 @@ export interface FeatureInformationCardProps {
   points?: string[];
 }
 
-export const FeatureInformationCard: FC<FeatureInformationCardProps> = (
+export const FeatureInformationCard: React.FC<FeatureInformationCardProps> = (
   props,
 ) => {
   const { children, button, points, descriptions, title } = props;

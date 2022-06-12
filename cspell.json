@@ -2,6 +2,7 @@
     "words": [
         "airbnb",
         "appstore",
+        "ATECC",
         "avif",
         "bignore",
         "bitcoinonly",
@@ -19,9 +20,11 @@
         "Grotesk",
         "gtag",
         "imtoken",
+        "keychain",
         "Litecoin",
         "Lokalise",
         "luxon",
+        "Microcontrollers",
         "micromessenger",
         "msgmore",
         "onekey",
@@ -35,8 +38,10 @@
         "Textfill",
         "tokenpocket",
         "weibo",
+        "wesbos",
         "WWLGDZJB",
         "xlarge",
+        "xsmall",
         "xxlarge",
         "zadig"
     ]
