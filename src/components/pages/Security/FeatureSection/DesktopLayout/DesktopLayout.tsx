@@ -42,7 +42,7 @@ export const DesktopLayout: FC<DesktopLayoutProps> = (props) => {
       <Container>
         <Flex xs={{ justifyContent: 'space-between', paddingTop: 80 }}>
           <Box>
-            <Progress height={320} />
+            <Progress />
           </Box>
 
           <Flex

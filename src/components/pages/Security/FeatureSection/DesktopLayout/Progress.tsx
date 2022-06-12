@@ -6,11 +6,10 @@ import { Box } from '../../../../base';
 
 export interface ProgressProps {
   children?: ReactNode;
-  height: number;
 }
 
 export const Progress: FC<ProgressProps> = (props) => {
-  const { children, height } = props;
+  const { children } = props;
   const theme = useTheme();
 
   return (
@@ -24,11 +23,13 @@ export const Progress: FC<ProgressProps> = (props) => {
       <Box
         xs={{
           width: '100%',
-          height,
+          height: 320,
           position: 'sticky',
           background: theme.colors.white,
-          top: `calc(50% - ${502 / 2}px)`,
+          top: `calc(50% - ${320}px)`,
         }}
+        xl={{ height: 280 }}
+        xxl={{ height: 250 }}
       />
       {children}
     </Box>
