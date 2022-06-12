@@ -2,7 +2,7 @@ import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Box, Container, Section } from '../../../base';
+import { Box, Container, OnlyDisplay, Section } from '../../../base';
 
 import { MobileLayout } from './MobileLayout';
 import { TabletLayout } from './TabletLayout';
@@ -36,18 +36,14 @@ export const FeatureSection: FC<FeatureSectionProps> = (props) => {
       </Container>
 
       {/* mobile */}
-      <Box xs={{ display: 'block' }} m={{ display: 'none' }}>
+      <OnlyDisplay xs s>
         <MobileLayout />
-      </Box>
+      </OnlyDisplay>
 
       {/* tablet */}
-      <Box
-        xs={{ display: 'none' }}
-        m={{ display: 'block' }}
-        l={{ display: 'none' }}
-      >
+      <OnlyDisplay m>
         <TabletLayout />
-      </Box>
+      </OnlyDisplay>
 
       <Box>{children}</Box>
     </Section>
