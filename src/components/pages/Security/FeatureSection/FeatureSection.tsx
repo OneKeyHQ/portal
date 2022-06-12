@@ -4,6 +4,7 @@ import { useTheme } from '@emotion/react';
 
 import { Box, Container, OnlyDisplay, Section } from '../../../base';
 
+import { DesktopLayout } from './DesktopLayout';
 import { MobileLayout } from './MobileLayout';
 import { TabletLayout } from './TabletLayout';
 import { Title } from './Title';
@@ -43,6 +44,11 @@ export const FeatureSection: FC<FeatureSectionProps> = (props) => {
       {/* tablet */}
       <OnlyDisplay m>
         <TabletLayout />
+      </OnlyDisplay>
+
+      {/* desktop */}
+      <OnlyDisplay l xl xxl>
+        <DesktopLayout />
       </OnlyDisplay>
 
       <Box>{children}</Box>
