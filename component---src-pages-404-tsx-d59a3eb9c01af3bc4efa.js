@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkportal=self.webpackChunkportal||[]).push([[218],{2224:function(e,r,n){n.r(r);var t=n(8319);r.default=e=>{const{children:r}=e;return(0,t.BX)("div",{children:["404 ",r]})}}}]);
-//# sourceMappingURL=component---src-pages-404-tsx-d59a3eb9c01af3bc4efa.js.map
