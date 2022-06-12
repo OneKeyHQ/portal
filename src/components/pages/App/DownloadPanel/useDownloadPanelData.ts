@@ -11,8 +11,6 @@ export function useDownloadPanelData() {
     downloadData.web,
   ];
 
-  console.log(oneKeyVersionData);
-
   return {
     tabs,
     desktop: downloadData.desktop,

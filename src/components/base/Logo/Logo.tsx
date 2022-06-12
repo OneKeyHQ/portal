@@ -6,7 +6,7 @@ import { Box, BoxProps } from '../Box';
 export type LogoProps = BoxProps;
 
 export const Logo: FC<LogoProps> = (props) => {
-  const { children, ...otherProps } = props;
+  const { ...otherProps } = props;
 
   return (
     <Box {...otherProps}>

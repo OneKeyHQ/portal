@@ -14,7 +14,7 @@ const AppPage: React.FC = () => (
       <title>OneKey</title>
     </Helmet>
 
-    <SEO title="onekey" description="onekey" />
+    <SEO title="onekey" />
 
     <Navigation />
 
