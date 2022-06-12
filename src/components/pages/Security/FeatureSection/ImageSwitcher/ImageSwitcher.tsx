@@ -18,9 +18,9 @@ export const ImageSwitcher: FC<ImageSwitcherProps> = (props) => {
         <Box
           key={item.name}
           xs={{
-            opacity: index === active ? 1 : 0,
+            opacity: index <= active ? 1 : 0,
             willChange: 'opacity',
-            transition: 'opacity 0.5s',
+            transition: 'opacity 0.5s ease',
             top: 0,
             position: index === 0 ? 'relative' : 'absolute',
           }}
