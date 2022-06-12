@@ -34,7 +34,9 @@ export const FeatureSection: FC<FeatureSectionProps> = (props) => {
         <Title {...featureSectionData} />
       </Container>
 
-      <MobileLayout />
+      <Box xs={{ display: 'block' }} m={{ display: 'none' }}>
+        <MobileLayout />
+      </Box>
 
       <Box>{children}</Box>
     </Section>
