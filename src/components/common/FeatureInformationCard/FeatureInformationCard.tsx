@@ -24,9 +24,9 @@ export const FeatureInformationCard: React.FC<FeatureInformationCardProps> = (
   return (
     <Box
       xs={{
-        alignItems: 'stretch',
         flex: 1,
         display: 'flex',
+        flexDirection: 'column',
         borderWidth: 1,
         borderRadius: 40,
         borderStyle: 'solid',
