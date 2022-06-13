@@ -9,7 +9,7 @@ import { LaunchAppButton } from '../../LaunchAppButton';
 import { Link } from '../../Link';
 import { Logo } from '../../Logo';
 import { NavigationAnimationWrap } from '../NavigationAnimationWrap';
-import { useNavigationData } from '../useNavigationData';
+import { NavigationDataItem, useNavigationData } from '../useNavigationData';
 
 import { NavigationItem } from './NavigationItem';
 import { ProductPanel } from './ProductPanel';
@@ -21,7 +21,7 @@ export interface NormalNavigationProps {
 
 export const NormalNavigation: React.FC<NormalNavigationProps> = () => {
   const theme = useTheme();
-  const data = useNavigationData();
+  const data = useNavigationData('array') as NavigationDataItem[];
   const { hoverProps: productMenuHoverProps, isHovered: isProductMenuHovered } =
     useHover();
   const { hoverProps: serviceMenuHoverProps, isHovered: isServiceMenuHovered } =
