@@ -224,6 +224,7 @@ export const theme = {
     allEaseOut: 'all .3s ease-out',
     allEaseIn: 'all .3s ease-in',
     allEase: 'all .3s ease',
+    allEaseInOut: 'all .3s ease-in-out',
     allLinear: 'all .3s linear',
     motion: 'all 0.1s linear',
   },
