@@ -19,6 +19,29 @@ export function useNavigationData(): NavigationDataItem[] {
     {
       name: 'Services',
       key: 'services',
+      subItems: [
+        {
+          name: 'Swap',
+          key: 'ETH, BSC mainnet support, swap token in lightning speed. Stable supply of liquid pools, rest assured.',
+          path: 'https://swap.onekey.so/#/swap',
+        },
+        {
+          name: 'Portfolio',
+          key: 'ETH, BSC mainnet support, swap token in lightning speed. Stable supply of liquid pools, rest assured.',
+          // todo
+          path: 'https://google.com',
+        },
+        {
+          name: 'Tonkenlist',
+          key: 'Add ETH, BSC, HECO tokens to Extension and App',
+          path: 'https://onekey.so/tokens',
+        },
+        {
+          name: 'Recovery Phrase Converter',
+          key: 'A tool for converting BIP39 mnemonic to addresses and private keys',
+          path: 'https://bip39.onekey.so/',
+        },
+      ],
     },
     {
       name: 'Security',
