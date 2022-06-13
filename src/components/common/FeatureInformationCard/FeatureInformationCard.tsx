@@ -24,6 +24,7 @@ export const FeatureInformationCard: React.FC<FeatureInformationCardProps> = (
   return (
     <Box
       xs={{
+        alignItems: 'stretch',
         flex: 1,
         borderWidth: 1,
         borderRadius: 40,
@@ -39,15 +40,14 @@ export const FeatureInformationCard: React.FC<FeatureInformationCardProps> = (
           flexDirection: 'column',
           boxSizing: 'border-box',
         }}
-        m={{
-          gap: 80,
-          padding: 80,
-        }}
+        l={{ gap: 40, padding: 40 }}
+        xl={{ gap: 50, padding: 50 }}
+        xxl={{ gap: 80, padding: 80 }}
       >
         <Span
           xs={{ ...theme.text.medium700, textAlign: 'center' }}
-          m={{ ...theme.text.medium800 }}
-          l={{ ...theme.text.medium900 }}
+          l={{ ...theme.text.medium800 }}
+          xl={{ ...theme.text.medium900 }}
         >
           {title}
         </Span>
@@ -73,7 +73,12 @@ export const FeatureInformationCard: React.FC<FeatureInformationCardProps> = (
           >
             {points.map((point) => (
               <Flex>
-                <Box xs={{ color: theme.colors.brandAlt400 }}>
+                <Box
+                  xs={{
+                    color: theme.colors.brandAlt400,
+                    opacity: point ? 1 : 0,
+                  }}
+                >
                   <CheckIcon width={24} height={24} />
                 </Box>
                 <Box xs={{ paddingLeft: 16 }}>{point}</Box>
