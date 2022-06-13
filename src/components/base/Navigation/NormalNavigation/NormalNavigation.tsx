@@ -46,7 +46,10 @@ export const NormalNavigation: React.FC<NormalNavigationProps> = () => {
               }}
             />
           </Link>
-          <Ul xs={{ flex: 1, display: 'flex', gap: 32, paddingLeft: 12 }}>
+          <Ul
+            xs={{ flex: 1, display: 'flex', gap: 28, paddingLeft: 12 }}
+            l={{ gap: 32 }}
+          >
             {data.map((item) => (
               <Li
                 key={item.name}

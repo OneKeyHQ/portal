@@ -40,11 +40,10 @@ export function useNavigationData(): NavigationDataItem[] {
       name: 'App',
       path: 'https://onekey.so/download',
     },
-    // {
-    //   // todo
-    //   name: 'Services',
-    //   path: '/',
-    // },
+    {
+      name: 'Services',
+      path: '/',
+    },
     {
       name: 'Security',
       path: 'https://onekey.so/security',
