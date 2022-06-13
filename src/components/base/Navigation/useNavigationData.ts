@@ -89,19 +89,7 @@ const shop = {
   ],
 };
 
-export function useNavigationData(type: 'array' | 'object' = 'array') {
-  if (type === 'array') {
-    return [
-      products,
-      app,
-      services,
-      security,
-      forDeveloper,
-      helpCenter,
-      shop,
-    ] as NavigationDataItem[];
-  }
-
+export function useNavigationDataObject() {
   return {
     products,
     app,
@@ -110,5 +98,9 @@ export function useNavigationData(type: 'array' | 'object' = 'array') {
     forDeveloper,
     helpCenter,
     shop,
-  } as const;
+  };
+}
+
+export function useNavigationData(): NavigationDataItem[] {
+  return [products, app, services, security, forDeveloper, helpCenter, shop];
 }

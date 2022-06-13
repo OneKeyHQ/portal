@@ -7,7 +7,7 @@ import { Flex } from '../../Flex';
 import { MenuCloseIcon, MenuIcon } from '../../Icon';
 import { Logo } from '../../Logo';
 import { NavigationAnimationWrap } from '../NavigationAnimationWrap';
-import { NavigationDataItem, useNavigationData } from '../useNavigationData';
+import { useNavigationData } from '../useNavigationData';
 
 import { MobileMenuItems } from './MobileMenuItems';
 
@@ -29,7 +29,7 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = (props) => {
   const { children } = props;
   const [menuActive, setMenuActive] = useState(false);
   const theme = useTheme();
-  const navigationData = useNavigationData('array') as NavigationDataItem[];
+  const navigationData = useNavigationData();
 
   const openMenu = useCallback(() => {
     setMenuActive(true);
