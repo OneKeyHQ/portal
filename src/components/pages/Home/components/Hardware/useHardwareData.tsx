@@ -2,11 +2,15 @@ import { useEffect } from 'react';
 
 import { Loader } from 'pixi.js';
 
+import { useOneKeyMiniData } from '../../../../../data/useOneKeyMiniData';
+
 import image1 from './images/1.svg';
 import image2 from './images/2.svg';
 import hardware from './images/home-hardware-mini-2.png';
 
 export function useHardwareData() {
+  const oneKeyData = useOneKeyMiniData();
+
   useEffect(() => {
     new Loader().add(hardware).load();
   }, []);
@@ -18,6 +22,7 @@ export function useHardwareData() {
       title: 'OneKey Mini',
       description: 'Mini sized, safety without compromise.',
       status: 'available',
+      link: oneKeyData.shopLink,
     },
     {
       image: image2,

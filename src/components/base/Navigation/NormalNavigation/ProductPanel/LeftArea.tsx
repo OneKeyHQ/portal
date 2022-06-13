@@ -5,14 +5,14 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { StaticImage } from 'gatsby-plugin-image';
 import ReactDOM from 'react-dom';
 
+import { useOneKeyMiniData } from '../../../../../data';
 import { isBrowser } from '../../../../../utils';
 import { Box, Li, Ul } from '../../../Box';
+import { Link } from '../../../Link';
 
 export interface LeftAreaProps {
   children?: ReactNode;
 }
-
-const items = ['OneKey Mini', 'OneKey Lite'];
 
 const itemVariants = {
   hidden: { y: 10, opacity: 0 },
@@ -27,6 +27,18 @@ export const LeftArea: FC<LeftAreaProps> = (props) => {
   const theme = useTheme();
   const [backgroundColor] = useState(theme.background.test100);
   const [currentSelected, setCurrentSelected] = useState('OneKey Mini');
+
+  const oneKeyData = useOneKeyMiniData();
+  const items = [
+    {
+      name: 'OneKey Mini',
+      link: oneKeyData.shopLink,
+    },
+    {
+      name: 'OneKey Lite',
+      link: '',
+    },
+  ];
 
   const handleMouseMove = useCallback(
     (type: string) => {
@@ -59,24 +71,27 @@ export const LeftArea: FC<LeftAreaProps> = (props) => {
           }}
         >
           {items.map((item, index) => (
-            <Li
-              onMouseMove={() => handleMouseMove(item)}
-              xs={{
-                ...theme.text.medium400,
-                listStyle: 'none',
-                lineHeight: '44px',
-                height: 44,
-                cursor: 'pointer',
-                ':hover': {
-                  color: theme.background.test300,
-                },
-              }}
-              key={index}
-            >
-              <motion.div key={index} variants={itemVariants}>
-                {item}
-              </motion.div>
-            </Li>
+            <Link to={item.link}>
+              <Li
+                onMouseMove={() => handleMouseMove(item.name)}
+                xs={{
+                  ...theme.text.medium400,
+                  listStyle: 'none',
+                  lineHeight: '44px',
+                  height: 44,
+                  cursor: 'pointer',
+                  color: theme.colors.test400,
+                  ':hover': {
+                    color: theme.background.test300,
+                  },
+                }}
+                key={index}
+              >
+                <motion.div key={index} variants={itemVariants}>
+                  {item.name}
+                </motion.div>
+              </Li>
+            </Link>
           ))}
         </Ul>
       </Box>

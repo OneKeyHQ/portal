@@ -4,6 +4,7 @@ export * from './PageFooter';
 export * from './MediaLinkList';
 export * from './OpenBrowserBanner';
 export * from './PlatformIcon';
+export * from './FeatureInformationCard';
 export * from './MultiChainSupportMediaCard';
 export * from './BackgroundMask';
 export * from './FreeSwiper';
