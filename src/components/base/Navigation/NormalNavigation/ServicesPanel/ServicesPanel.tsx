@@ -14,7 +14,7 @@ import { ServicesPanelItem } from './ServicesPanelItem';
 export interface ServicesPanelProps {
   children?: ReactNode;
   isActive: boolean;
-  subItems: NavigationDataItem[];
+  subItems?: NavigationDataItem[];
 }
 
 export const ServicesPanel: FC<ServicesPanelProps> = (props) => {
