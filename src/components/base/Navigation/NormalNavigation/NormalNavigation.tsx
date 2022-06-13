@@ -13,6 +13,7 @@ import { useNavigationData } from '../useNavigationData';
 
 import { NavigationItem } from './NavigationItem';
 import { ProductPanel } from './ProductPanel';
+import { ServicesPanel } from './ServicesPanel';
 
 export interface NormalNavigationProps {
   children?: ReactNode;
@@ -22,6 +23,8 @@ export const NormalNavigation: React.FC<NormalNavigationProps> = () => {
   const theme = useTheme();
   const data = useNavigationData();
   const { hoverProps: productMenuHoverProps, isHovered: isProductMenuHovered } =
+    useHover();
+  const { hoverProps: serviceMenuHoverProps, isHovered: isServiceMenuHovered } =
     useHover();
 
   return (
@@ -60,6 +63,7 @@ export const NormalNavigation: React.FC<NormalNavigationProps> = () => {
                   listStyle: 'none',
                 }}
                 {...(item.key === 'products' ? productMenuHoverProps : {})}
+                {...(item.key === 'services' ? serviceMenuHoverProps : {})}
               >
                 <NavigationItem {...item} />
               </Li>
@@ -86,6 +90,7 @@ export const NormalNavigation: React.FC<NormalNavigationProps> = () => {
       </NavigationAnimationWrap>
 
       <ProductPanel isActive={isProductMenuHovered} />
+      <ServicesPanel isActive={isServiceMenuHovered} />
     </Box>
   );
 };
