@@ -27,9 +27,8 @@ export function useNavigationData(): NavigationDataItem[] {
         },
         {
           name: 'Portfolio',
-          key: 'ETH, BSC mainnet support, swap token in lightning speed. Stable supply of liquid pools, rest assured.',
-          // todo
-          path: 'https://google.com',
+          key: 'Manage all your web3 portfolio, from DeFi to NFTs and beyond. Invest in the latest prospects from one place.',
+          path: 'https://portfolio.onekey.so/',
         },
         {
           name: 'Tonkenlist',
@@ -53,25 +52,6 @@ export function useNavigationData(): NavigationDataItem[] {
       key: 'for-developer',
       path: 'https://docs.onekey.so/',
     },
-    // todo: temp hide it
-    // {
-    //   name: 'For Business',
-    //   path: '#',
-    //   subItems: [
-    //     {
-    //       name: 'Enterprise Solutions',
-    //       path: '',
-    //     },
-    //     {
-    //       name: 'Referral',
-    //       path: '',
-    //     },
-    //     {
-    //       name: 'Co-branded products',
-    //       path: '',
-    //     },
-    //   ],
-    // },
     {
       name: 'Help Center',
       key: 'help-center',
