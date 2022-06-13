@@ -31,6 +31,11 @@ export const FeatureInformationCard: React.FC<FeatureInformationCardProps> = (
         borderRadius: 40,
         borderStyle: 'solid',
         borderColor: theme.colors.test200,
+        transition: theme.transitions.allEaseOut,
+        ':hover': {
+          transform: 'translateY(-40px)',
+          boxShadow: '0px 24px 48px rgba(0, 0, 0, 0.08)',
+        },
       }}
     >
       <Flex
