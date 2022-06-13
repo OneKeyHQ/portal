@@ -7,6 +7,7 @@ import { PageFooter } from '../../common';
 
 import { Hero } from './Hero';
 import { OurOfferSection } from './OurOfferSection';
+import { ProductShowcaseSection } from './ProductShowcaseSection';
 
 export interface CoBrandedPartnershipProps {
   children?: ReactNode;
@@ -26,6 +27,8 @@ export const CoBrandedPartnership: FC<CoBrandedPartnershipProps> = (props) => {
         <Hero />
 
         <OurOfferSection />
+
+        <ProductShowcaseSection />
 
         {children}
       </Main>
