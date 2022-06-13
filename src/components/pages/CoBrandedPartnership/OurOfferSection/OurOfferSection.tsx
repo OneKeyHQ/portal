@@ -46,7 +46,10 @@ export const OurOfferSection: FC<OurOfferSectionProps> = (props) => {
       </Flex>
 
       <Container>
-        <Flex xs={{ gap: 20, paddingTop: 80 }}>
+        <Flex
+          xs={{ gap: 20, paddingTop: 80, flexDirection: 'column' }}
+          m={{ flexDirection: 'row' }}
+        >
           {ourOfferSectionData.cards.map((card) => (
             <FeatureInformationCard key={card.title} {...card} />
           ))}

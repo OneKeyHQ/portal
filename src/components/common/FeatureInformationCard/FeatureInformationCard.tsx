@@ -26,6 +26,7 @@ export const FeatureInformationCard: React.FC<FeatureInformationCardProps> = (
       xs={{
         alignItems: 'stretch',
         flex: 1,
+        display: 'flex',
         borderWidth: 1,
         borderRadius: 40,
         borderStyle: 'solid',
@@ -34,6 +35,7 @@ export const FeatureInformationCard: React.FC<FeatureInformationCardProps> = (
     >
       <Flex
         xs={{
+          width: '100%',
           textAlign: 'left',
           gap: 32,
           padding: 32,
@@ -88,13 +90,15 @@ export const FeatureInformationCard: React.FC<FeatureInformationCardProps> = (
         )}
 
         {button && (
-          <Button
-            size="large"
-            fillWidth
-            rightIcon={<ArrowRightIcon width={24} height={24} />}
-          >
-            {button.text}
-          </Button>
+          <Box xs={{ flex: 1, display: 'flex', alignItems: 'flex-end' }}>
+            <Button
+              size="large"
+              fillWidth
+              rightIcon={<ArrowRightIcon width={24} height={24} />}
+            >
+              {button.text}
+            </Button>
+          </Box>
         )}
       </Flex>
 

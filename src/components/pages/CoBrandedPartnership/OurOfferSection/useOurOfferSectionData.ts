@@ -6,7 +6,7 @@ export function useOurOfferSectionData() {
     cards: [
       {
         title: 'Standard',
-        points: ['Logo engraving', 'Minimum 100 units', '', ''],
+        points: ['Logo engraving', 'Minimum 100 units'],
         button: {
           text: 'Lean More',
           link: '#',
@@ -14,7 +14,7 @@ export function useOurOfferSectionData() {
       },
       {
         title: 'Pro Team',
-        points: ['Logo engraving', 'Custom packaging', 'Minimum 300 units', ''],
+        points: ['Logo engraving', 'Custom packaging', 'Minimum 300 units'],
         button: {
           text: 'Lean More',
           link: '#',
