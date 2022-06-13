@@ -35,6 +35,7 @@ export const FeatureInformationCard: React.FC<FeatureInformationCardProps> = (
     >
       <Flex
         xs={{
+          flex: 1,
           width: '100%',
           textAlign: 'left',
           gap: 32,
