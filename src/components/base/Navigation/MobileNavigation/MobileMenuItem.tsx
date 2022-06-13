@@ -33,7 +33,7 @@ export const MobileMenuItem: FC<MobileMenuItemProps> = (props) => {
       key={menuItem.name}
     >
       {!menuItem.subItems && (
-        <Link to={menuItem.path}>
+        <Link to={menuItem.path || ''}>
           <Flex
             xs={{
               alignItems: 'center',
