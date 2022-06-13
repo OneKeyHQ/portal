@@ -24,12 +24,12 @@ export const NormalNavigation: React.FC<NormalNavigationProps> = () => {
   const menuData = [
     {
       ...data.products,
-      panel: ProductPanel,
+      panelComponent: ProductPanel,
     },
     data.app,
     {
       ...data.services,
-      panel: ServicesPanel,
+      panelComponent: ServicesPanel,
     },
     data.security,
     data.forDeveloper,

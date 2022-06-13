@@ -1,5 +1,5 @@
 /* eslint-disable no-nested-ternary */
-import { FC, ReactNode } from 'react';
+import { FC, ReactNode, createElement } from 'react';
 
 import { useTheme } from '@emotion/react';
 
@@ -12,10 +12,14 @@ import { HoverPanel } from './HoverPanel';
 
 export interface NavigationItemProps extends NavigationDataItem {
   children?: ReactNode;
+  panelComponent?: FC<{
+    isActive: boolean;
+    subItems: NavigationDataItem['subItems'];
+  }>;
 }
 
 export const NavigationItem: FC<NavigationItemProps> = (props) => {
-  const { name, subItems, path, ...otherProps } = props;
+  const { name, subItems, path, panelComponent, ...otherProps } = props;
   const { hoverProps, isHovered } = useHover({
     timeout: 100,
   });
@@ -29,7 +33,6 @@ export const NavigationItem: FC<NavigationItemProps> = (props) => {
         ...theme.text.medium300,
         color: theme.background.test500,
         cursor: 'pointer',
-
         ':hover': {
           color: '#878888',
         },
@@ -45,10 +48,16 @@ export const NavigationItem: FC<NavigationItemProps> = (props) => {
         position: 'relative',
       }}
     >
+      {/* only a link */}
       {path && <Link to={path}>{contentNode}</Link>}
       {!path && contentNode}
 
-      {subItems && <HoverPanel isActive={isHovered} subItems={subItems} />}
+      {/* sub */}
+      {!panelComponent && subItems && (
+        <HoverPanel isActive={isHovered} subItems={subItems} />
+      )}
+      {panelComponent &&
+        createElement(panelComponent, { isActive: isHovered, subItems })}
     </Box>
   );
 };
