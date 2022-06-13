@@ -3,15 +3,18 @@ import { FC, ReactNode } from 'react';
 import { useTheme } from '@emotion/react';
 
 import { useHover } from '../../../../../hooks';
-import { Box, Img } from '../../../Box';
+import { Box } from '../../../Box';
 import { Container } from '../../../Container';
+import { Flex } from '../../../Flex';
 import { NavigationDataItem } from '../../useNavigationData';
 import { useNormalNavigationHeight } from '../useNormalNavigationHeight';
+
+import { ServicesPanelItem } from './ServicesPanelItem';
 
 export interface ServicesPanelProps {
   children?: ReactNode;
   isActive: boolean;
-  subItems: NavigationDataItem['subItems'];
+  subItems: NavigationDataItem[];
 }
 
 export const ServicesPanel: FC<ServicesPanelProps> = (props) => {
@@ -30,10 +33,9 @@ export const ServicesPanel: FC<ServicesPanelProps> = (props) => {
         right: 0,
         top: top * 0.8,
       }}
-      {...hoverProps}
     >
       <Container>
-        <Box xs={{ width: '50%' }}>
+        <Box xs={{ width: 820 }} {...hoverProps}>
           <Box
             xs={{
               padding: 8,
@@ -42,12 +44,16 @@ export const ServicesPanel: FC<ServicesPanelProps> = (props) => {
               boxShadow: theme.shadow.hover,
             }}
           >
-            {subItems?.map((item) => (
-              <Box key={item.key}>
-                <Img src={item.icon} alt={item.name} />
-                <Box>{item.name}</Box>
-              </Box>
-            ))}
+            <Flex xs={{ flexWrap: 'wrap' }}>
+              {subItems
+                // todo: add eips link
+                ?.filter((item) => item.key !== 'eips')
+                .map((item) => (
+                  <Box key={item.key} xs={{ width: '50%' }}>
+                    <ServicesPanelItem {...item} />
+                  </Box>
+                ))}
+            </Flex>
           </Box>
         </Box>
       </Container>
