@@ -21,7 +21,8 @@ export interface NormalNavigationProps {
 export const NormalNavigation: React.FC<NormalNavigationProps> = () => {
   const theme = useTheme();
   const data = useNavigationData();
-  const { hoverProps, isHovered } = useHover();
+  const { hoverProps: productMenuHoverProps, isHovered: isProductMenuHovered } =
+    useHover();
 
   return (
     <Box xs={{ display: 'none' }} m={{ display: 'block' }}>
@@ -58,7 +59,7 @@ export const NormalNavigation: React.FC<NormalNavigationProps> = () => {
                   alignItems: 'center',
                   listStyle: 'none',
                 }}
-                {...(item.path === '/products' ? hoverProps : {})}
+                {...(item.key === 'products' ? productMenuHoverProps : {})}
               >
                 <NavigationItem {...item} />
               </Li>
@@ -84,7 +85,7 @@ export const NormalNavigation: React.FC<NormalNavigationProps> = () => {
         </Container>
       </NavigationAnimationWrap>
 
-      <ProductPanel isActive={isHovered} />
+      <ProductPanel isActive={isProductMenuHovered} />
     </Box>
   );
 };

@@ -1,6 +1,7 @@
 export type NavigationDataItem = {
   name: string;
-  path: string;
+  key: string;
+  path?: string;
   subItems?: NavigationDataItem[];
 };
 
@@ -8,48 +9,25 @@ export function useNavigationData(): NavigationDataItem[] {
   return [
     {
       name: 'Products',
-      path: '/products',
-      // subItems: [
-      //   {
-      //     name: 'Wallet App',
-      //     path: 'https://onekey.so/download',
-      //   },
-      //   {
-      //     name: 'Browser Extension',
-      //     path: 'https://onekey.so/plugin',
-      //   },
-      //   {
-      //     name: 'Hardware Device',
-      //     path: 'https://onekey.so/hardware',
-      //   },
-      //   {
-      //     name: 'Swap',
-      //     path: 'https://swap.onekey.so/',
-      //   },
-      //   {
-      //     name: 'Token List',
-      //     path: 'https://onekey.so/tokens',
-      //   },
-      //   {
-      //     name: 'Recovery Phrase Converter',
-      //     path: 'https://bip39.onekey.so/',
-      //   },
-      // ],
+      key: 'products',
     },
     {
       name: 'App',
+      key: 'app',
       path: 'https://onekey.so/download',
     },
     {
       name: 'Services',
-      path: '/',
+      key: 'services',
     },
     {
       name: 'Security',
+      key: 'security',
       path: 'https://onekey.so/security',
     },
     {
       name: 'For Developer',
+      key: 'for-developer',
       path: 'https://docs.onekey.so/',
     },
     // todo: temp hide it
@@ -73,28 +51,32 @@ export function useNavigationData(): NavigationDataItem[] {
     // },
     {
       name: 'Help Center',
-      path: '#',
+      key: 'help-center',
       subItems: [
         {
           name: "Beginner's Guide",
+          key: 'beginner-guide',
           path: 'https://help.onekey.so/hc/categories/360000170236',
         },
         {
           name: 'Hardware Wallet Manual',
+          key: 'hardware-wallet-manual',
           path: 'https://help.onekey.so/hc/articles/360002123856',
         },
       ],
     },
     {
       name: 'Shop',
-      path: '#',
+      key: 'shop',
       subItems: [
         {
           name: 'YouZan',
+          key: 'youzan',
           path: 'https://j.youzan.com/dZTtS2',
         },
         {
           name: 'Shopify',
+          key: 'shopify',
           path: 'https://shop.onekey.so/',
         },
       ],

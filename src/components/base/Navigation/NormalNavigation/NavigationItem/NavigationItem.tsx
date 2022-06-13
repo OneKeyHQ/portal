@@ -45,7 +45,8 @@ export const NavigationItem: FC<NavigationItemProps> = (props) => {
         position: 'relative',
       }}
     >
-      <Link to={path}>{contentNode}</Link>
+      {path && <Link to={path}>{contentNode}</Link>}
+      {!path && contentNode}
 
       {subItems && <HoverPanel isActive={isHovered} subItems={subItems} />}
     </Box>
