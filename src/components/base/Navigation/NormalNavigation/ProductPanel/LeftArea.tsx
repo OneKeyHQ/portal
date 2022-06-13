@@ -70,8 +70,8 @@ export const LeftArea: FC<LeftAreaProps> = (props) => {
             padding: 0,
           }}
         >
-          {items.map((item, index) => (
-            <Link to={item.link}>
+          {items.map((item) => (
+            <Link key={item.name} to={item.link}>
               <Li
                 onMouseMove={() => handleMouseMove(item.name)}
                 xs={{
@@ -85,11 +85,8 @@ export const LeftArea: FC<LeftAreaProps> = (props) => {
                     color: theme.background.test300,
                   },
                 }}
-                key={index}
               >
-                <motion.div key={index} variants={itemVariants}>
-                  {item.name}
-                </motion.div>
+                <motion.div variants={itemVariants}>{item.name}</motion.div>
               </Li>
             </Link>
           ))}
