@@ -12,11 +12,12 @@ export interface LinkProps extends BoxProps {
 
 export const Link: FC<LinkProps> = (props) => {
   const { to, children, target = '_blank', ...omittedProps } = props;
-  const isExternal = to.startsWith('http');
 
   if (!to) {
     return cloneElement(children as React.ReactElement);
   }
+
+  const isExternal = to.startsWith('http');
 
   if (isExternal) {
     return (
