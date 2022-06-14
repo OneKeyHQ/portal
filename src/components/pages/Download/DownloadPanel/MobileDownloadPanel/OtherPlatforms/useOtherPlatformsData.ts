@@ -12,7 +12,16 @@ import {
   WindowsIcon,
 } from '../../../../../base';
 
-export function useOtherPlatformsData() {
+export type OtherPlatformsDataItem = {
+  icon: React.FC<React.SVGProps<SVGSVGElement>>;
+  name: string;
+  description: string;
+  subItems?: OtherPlatformsDataItem[];
+};
+
+export function useOtherPlatformsData(): {
+  items: OtherPlatformsDataItem[];
+} {
   return {
     items: [
       {

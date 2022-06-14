@@ -1,23 +1,27 @@
-import { FC, ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
 import { Box, Divider, Flex, Span } from '../../../../../base';
 
+import { OtherPlatformsItem } from './OtherPlatformsItem';
+import { useOtherPlatformsData } from './useOtherPlatformsData';
+
 export interface OtherPlatformsProps {
   children?: ReactNode;
 }
 
-export const OtherPlatforms: FC<OtherPlatformsProps> = (props) => {
+export const OtherPlatforms: React.FC<OtherPlatformsProps> = (props) => {
   const { children } = props;
   const theme = useTheme();
+  const otherPlatformsData = useOtherPlatformsData();
 
   return (
     <Flex
       xs={{
         paddingTop: 40,
         color: theme.colors.test500,
-        gap: 32,
+        gap: 24,
         flexDirection: 'column',
       }}
     >
@@ -25,7 +29,12 @@ export const OtherPlatforms: FC<OtherPlatformsProps> = (props) => {
 
       <Divider />
 
-      <Box>content</Box>
+      {otherPlatformsData.items.map((item) => (
+        <>
+          <OtherPlatformsItem {...item} />
+          <Divider />
+        </>
+      ))}
 
       <Box>{children}</Box>
     </Flex>
