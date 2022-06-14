@@ -1,10 +1,12 @@
 import { FC, ReactNode } from 'react';
 
 import { useRuntimeDetect } from '../../../../../hooks';
-import { Box, Container, Flex } from '../../../../base';
+import { Box, Container } from '../../../../base';
 import { Background } from '../Background';
-import { Title } from '../Title';
 
+import { AndroidContent } from './content/AndroidContent';
+import { IOSContent } from './content/IOSContent';
+import { OtherContent } from './content/OtherContent';
 import { OtherPlatforms } from './OtherPlatforms';
 
 export interface MobileDownloadPanelProps {
@@ -13,7 +15,7 @@ export interface MobileDownloadPanelProps {
 
 export const MobileDownloadPanel: FC<MobileDownloadPanelProps> = (props) => {
   const { children } = props;
-  const { isMobilePhone } = useRuntimeDetect();
+  const { isIOS, isAndroid } = useRuntimeDetect();
 
   return (
     <Box>
@@ -29,20 +31,9 @@ export const MobileDownloadPanel: FC<MobileDownloadPanelProps> = (props) => {
       >
         <Background />
 
-        <Container>
-          <Flex
-            xs={{
-              height: 656,
-              position: 'relative',
-              zIndex: 100,
-              alignItems: 'flex-end',
-            }}
-          >
-            {!isMobilePhone && (
-              <Title text={['Bring your crypto assets to mobile, too.']} />
-            )}
-          </Flex>
-        </Container>
+        {isIOS && <IOSContent />}
+        {isAndroid && <AndroidContent />}
+        {!isIOS && !isAndroid && <OtherContent />}
 
         {children}
       </Box>
