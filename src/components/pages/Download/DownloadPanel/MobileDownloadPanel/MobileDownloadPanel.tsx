@@ -3,6 +3,7 @@ import { FC, ReactNode } from 'react';
 import { useRuntimeDetect } from '../../../../../hooks';
 import { Box, Container, Flex } from '../../../../base';
 import { Background } from '../Background';
+import { Title } from '../Title';
 
 import { OtherPlatforms } from './OtherPlatforms';
 
@@ -38,7 +39,7 @@ export const MobileDownloadPanel: FC<MobileDownloadPanelProps> = (props) => {
             }}
           >
             {!isMobilePhone && (
-              <Box>Bring your crypto assets to mobile, too.</Box>
+              <Title text={['Bring your crypto assets to mobile, too.']} />
             )}
           </Flex>
         </Container>
