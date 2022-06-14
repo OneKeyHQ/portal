@@ -1,13 +1,12 @@
 import { useMemo } from 'react';
 
 import { useTheme } from '@emotion/react';
-import { detect } from 'detect-browser';
 
 import {
   DownloadTypes,
   useDownloadData,
 } from '../../../../../data/useDownloadData';
-import { useMediaQuery } from '../../../../../hooks';
+import { useMediaQuery, useRuntimeDetect } from '../../../../../hooks';
 import { Container, Flex, Img, Section, Span } from '../../../../base';
 
 import arrowSvg from './images/arrow.svg';
@@ -16,8 +15,8 @@ import { StartItem } from './StartItem';
 export const Start = () => {
   const theme = useTheme();
   const media = useMediaQuery();
-  const detectResult = detect();
   const downloadData = useDownloadData();
+  const { isIOS, isAndroid } = useRuntimeDetect();
 
   const items = useMemo(() => {
     const innerItems = [];
@@ -28,9 +27,9 @@ export const Start = () => {
       innerItems.push(downloadData.browserExtension);
     } else {
       // mobile
-      if (detectResult?.os === 'iOS') {
+      if (isIOS) {
         innerItems.push(downloadData.ios);
-      } else if (detectResult?.os === 'android') {
+      } else if (isAndroid) {
         innerItems.push(downloadData.android);
       } else {
         innerItems.push(downloadData.mobile);
@@ -40,7 +39,17 @@ export const Start = () => {
     }
 
     return innerItems;
-  }, [detectResult?.os, downloadData, media.medium]);
+  }, [
+    downloadData.android,
+    downloadData.browserExtension,
+    downloadData.desktop,
+    downloadData.ios,
+    downloadData.mobile,
+    downloadData.otherPlatforms,
+    isAndroid,
+    isIOS,
+    media.medium,
+  ]);
 
   return (
     <Section css={{ position: 'relative' }}>

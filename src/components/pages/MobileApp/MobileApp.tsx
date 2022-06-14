@@ -10,7 +10,7 @@ import AppPage from '../Download';
 
 export const MobileApp: FC = () => {
   const isDownloading = useRef<boolean>();
-  const runtimeDetect = useRuntimeDetect();
+  const { isIOS, isAndroid } = useRuntimeDetect();
 
   const { formattedData: formattedOneKeyVersionData } = useOneKeyVersion();
 
@@ -24,9 +24,9 @@ export const MobileApp: FC = () => {
           isDownloading.current = true;
           navigate(formattedOneKeyVersionData.androidAPK.url);
         }
-      } else if (runtimeDetect.isIOS) {
+      } else if (isIOS) {
         navigate(formattedOneKeyVersionData.ios.url);
-      } else if (runtimeDetect.isAndroid) {
+      } else if (isAndroid) {
         navigate(formattedOneKeyVersionData.androidGooglePlay.url);
       } else {
         navigate('https://onekey.so/download');
@@ -34,11 +34,7 @@ export const MobileApp: FC = () => {
     }
 
     return () => {};
-  }, [
-    formattedOneKeyVersionData,
-    runtimeDetect.isAndroid,
-    runtimeDetect.isIOS,
-  ]);
+  }, [formattedOneKeyVersionData, isAndroid, isIOS]);
 
   // todo: import download content
   return <AppPage />;

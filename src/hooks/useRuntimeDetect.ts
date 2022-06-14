@@ -5,6 +5,6 @@ export function useRuntimeDetect() {
 
   return {
     isIOS: browser?.os === 'iOS',
-    isAndroid: browser?.os === 'Android OS',
+    isAndroid: browser?.os === 'Android OS' || browser?.os === 'android',
   };
 }
