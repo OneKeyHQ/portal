@@ -16,12 +16,7 @@ export const Title: FC<TitleProps> = (props) => {
   return (
     <Flex xs={{ flexDirection: 'column' }}>
       {text.map((item) => (
-        <Span
-          key={item}
-          xs={{
-            ...theme.text.medium900,
-          }}
-        >
+        <Span key={item} xs={theme.text.medium800} l={theme.text.medium900}>
           {item}
         </Span>
       ))}
