@@ -8,7 +8,7 @@ import { PageFooter, StayInTouch } from '../../common';
 import { Cards } from './Cards';
 import { DownloadPanel } from './DownloadPanel';
 
-const AppPage: React.FC = () => (
+const Download: React.FC = () => (
   <>
     <Helmet>
       <title>OneKey</title>
@@ -42,4 +42,4 @@ const AppPage: React.FC = () => (
   </>
 );
 
-export default AppPage;
+export default Download;

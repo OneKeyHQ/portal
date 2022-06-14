@@ -6,7 +6,7 @@ import queryString from 'query-string';
 
 import { useOneKeyVersion } from '../../../data';
 import { isBrowser } from '../../../utils';
-import AppPage from '../App';
+import AppPage from '../Download';
 
 export const MobileApp: FC = () => {
   const isDownloading = useRef<boolean>();

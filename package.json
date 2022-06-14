@@ -22,7 +22,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean && rm -rf .cache",
     "life": "git clean -xdf && yarn install && yarn develop",
-    "lint": "tsc --noEmit && eslint . --ext .ts,.tsx --fix",
+    "lint": "tsc --noEmit && eslint . --ext .ts,.tsx --fix --cache",
     "lokalise": "node ./scripts/lokalise.js",
     "icon": "node ./scripts/icon.js"
   },
