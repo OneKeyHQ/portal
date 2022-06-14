@@ -18,6 +18,7 @@ export const OtherPlatforms: React.FC<OtherPlatformsProps> = (props) => {
 
   return (
     <Flex
+      id="otherPlatforms"
       xs={{
         paddingTop: 40,
         color: theme.colors.test500,
