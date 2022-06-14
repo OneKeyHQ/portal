@@ -1,9 +1,10 @@
-import { FC, ReactNode } from 'react';
+import { FC, ReactNode, useState } from 'react';
 
 import { useTheme } from '@emotion/react';
 
 import { Box, Flex, Span } from '../../../../../base';
 
+import { Toggle } from './Toggle';
 import { OtherPlatformsDataItem } from './useOtherPlatformsData';
 
 export interface OtherPlatformsItemProps extends OtherPlatformsDataItem {
@@ -13,6 +14,8 @@ export interface OtherPlatformsItemProps extends OtherPlatformsDataItem {
 export const OtherPlatformsItem: FC<OtherPlatformsItemProps> = (props) => {
   const { subItems, icon: Icon, children, name, description } = props;
   const theme = useTheme();
+  const hasSubItems = subItems && subItems.length > 0;
+  const [isExpanded, setIsExpanded] = useState(false);
 
   return (
     <Flex xs={{ gap: 24, flexDirection: 'column' }}>
@@ -30,13 +33,32 @@ export const OtherPlatformsItem: FC<OtherPlatformsItemProps> = (props) => {
             </Span>
           )}
         </Flex>
+
+        {hasSubItems && (
+          <Flex
+            onClick={() => {
+              setIsExpanded(!isExpanded);
+            }}
+            xs={{ flex: 1, justifyContent: 'flex-end' }}
+          >
+            <Box
+              xs={{
+                transition: theme.transitions.allEaseOut,
+                transform: isExpanded ? 'rotate(45deg)' : 'rotate(0deg)',
+              }}
+            >
+              <Toggle />
+            </Box>
+          </Flex>
+        )}
       </Flex>
 
-      {subItems?.map((item) => (
-        <Box xs={{ paddingLeft: 60 }}>
-          <OtherPlatformsItem {...item} />
-        </Box>
-      ))}
+      {isExpanded &&
+        subItems?.map((item) => (
+          <Box xs={{ paddingLeft: 60 }}>
+            <OtherPlatformsItem {...item} />
+          </Box>
+        ))}
 
       {children}
     </Flex>
