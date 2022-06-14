@@ -16,13 +16,19 @@ export const OtherPlatformsItem: FC<OtherPlatformsItemProps> = (props) => {
 
   return (
     <Flex xs={{ gap: 24, flexDirection: 'column' }}>
-      <Flex xs={{ gap: 12 }}>
+      <Flex xs={{ gap: 12, alignItems: 'center' }}>
         <Icon width={40} height={40} />
         <Flex xs={{ flexDirection: 'column' }}>
           <Span xs={theme.text.medium300}>{name}</Span>
-          <Span css={{ color: theme.colors.test300 }} xs={theme.text.normal100}>
-            {description}
-          </Span>
+
+          {description && (
+            <Span
+              css={{ color: theme.colors.test300 }}
+              xs={theme.text.normal100}
+            >
+              {description}
+            </Span>
+          )}
         </Flex>
       </Flex>
 
