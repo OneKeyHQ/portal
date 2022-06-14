@@ -1,7 +1,6 @@
 import { FC, ReactNode } from 'react';
 
-import { detect } from 'detect-browser';
-
+import { useRuntimeDetect } from '../../../../../hooks';
 import { Box, Container } from '../../../../base';
 import { Background } from '../Background';
 
@@ -13,14 +12,7 @@ export interface MobileDownloadPanelProps {
 
 export const MobileDownloadPanel: FC<MobileDownloadPanelProps> = (props) => {
   const { children } = props;
-
-  const detectResult = detect();
-
-  let isMobilePhone = false;
-
-  if (detectResult) {
-    isMobilePhone = detectResult.os === 'android' || detectResult.os === 'iOS';
-  }
+  const { isMobilePhone } = useRuntimeDetect();
 
   return (
     <Box>

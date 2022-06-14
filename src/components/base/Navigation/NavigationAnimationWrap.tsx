@@ -1,12 +1,13 @@
 import { FC, ReactNode } from 'react';
 
-import { detect } from 'detect-browser';
 import {
   motion,
   useSpring,
   useTransform,
   useViewportScroll,
 } from 'framer-motion';
+
+import { useRuntimeDetect } from '../../../hooks';
 
 export interface NavigationAnimationWrapProps {
   children?: ReactNode;
@@ -17,11 +18,8 @@ export interface NavigationAnimationWrapProps {
 export const NavigationAnimationWrap: FC<NavigationAnimationWrapProps> = (
   props,
 ) => {
-  const browser = detect();
-  const isWeakMode =
-    browser?.name === 'firefox' ||
-    browser?.os === 'Android OS' ||
-    browser?.os === 'iOS';
+  const { isFirefox, isMobilePhone } = useRuntimeDetect();
+  const isWeakMode = isFirefox || isMobilePhone;
 
   const { paddingRange, isSpring = false, children } = props;
   const { scrollY } = useViewportScroll();
