@@ -6,41 +6,31 @@ import { AndroidIcon, AppStoreIcon } from '../../../../../base/Icon';
 import { DownloadButton } from '../../DownloadButton';
 import { FAQ } from '../../FAQ';
 import { Title } from '../../Title';
+import { useOneKeyDownloadData } from '../../useOneKeyDownloadData';
 
 export interface MobileContentProps {
   children?: ReactNode;
 }
 
-const faq = {
-  title: 'iOS FAQ',
-  questions: [
-    {
-      text: 'How to register an account?',
-    },
-    {
-      text: 'How to activate discover page?',
-    },
-  ],
-};
-
-const buttons = [
-  {
-    text: 'App Store',
-    icon: AppStoreIcon,
-    infos: ['v2.12.3, for iOS 13.0+', 'Not available on the Chinese App Store'],
-  },
-  {
-    text: 'Android',
-    icon: AndroidIcon,
-    infos: ['v2.12.3, for Android 8.0+'],
-  },
-];
-
-// Bring your <br /> crypto assets <br /> to mobile, too.
-const title = ['Bring your', 'crypto assets', 'to mobile, too.'];
-
 export const MobileContent: React.FC<MobileContentProps> = (props) => {
   const { children } = props;
+  const {
+    platforms: { ios, androidGooglePlay },
+    types: { mobile },
+  } = useOneKeyDownloadData();
+
+  const buttons = [
+    {
+      text: ios.name,
+      icon: AppStoreIcon,
+      infos: ios.description.split('<br/>'),
+    },
+    {
+      text: androidGooglePlay.name,
+      icon: AndroidIcon,
+      infos: androidGooglePlay.description,
+    },
+  ];
 
   return (
     <>
@@ -52,7 +42,7 @@ export const MobileContent: React.FC<MobileContentProps> = (props) => {
           justifyContent: 'center',
         }}
       >
-        <Title text={title} />
+        <Title text={mobile.pageTitle} />
 
         <Flex xs={{ gap: 16 }}>
           {buttons.map((item) => (
@@ -68,7 +58,7 @@ export const MobileContent: React.FC<MobileContentProps> = (props) => {
 
       <Divider />
 
-      {faq && <FAQ title={faq.title} questions={faq.questions} />}
+      {ios.faq && <FAQ title={ios.faq.title} questions={ios.faq.questions} />}
 
       {children}
     </>

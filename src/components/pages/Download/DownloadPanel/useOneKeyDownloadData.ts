@@ -19,8 +19,19 @@ export function useOneKeyDownloadData() {
   const ios = {
     icon: AppleIcon,
     name: 'App Store',
-    description: `v${formattedData.ios.version}, for iOS 13.0+`,
+    description: `v${formattedData.ios.version}, for iOS 13.0+,<br/>Not available on the Chinese App Store`,
     url: formattedData.ios.url,
+    faq: {
+      title: 'iOS FAQ',
+      questions: [
+        {
+          text: 'How to register an account?',
+        },
+        {
+          text: 'How to activate discover page?',
+        },
+      ],
+    },
   };
 
   const androidGooglePlay = {
@@ -83,6 +94,7 @@ export function useOneKeyDownloadData() {
     icon: MobileIcon,
     name: 'Mobile',
     description: 'iOS and Android',
+    pageTitle: ['Bring your', 'crypto assets', 'to mobile, too.'],
   };
 
   const desktop = {

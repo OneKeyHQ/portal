@@ -12,7 +12,7 @@ const iconSize = {
 export interface DownloadButtonProps {
   icon: React.FC<React.SVGProps<SVGSVGElement>>;
   text: string;
-  information: string[];
+  information: string[] | string;
   buttonType?: ButtonProps['variant'];
 }
 
@@ -39,9 +39,11 @@ export const DownloadButton: FC<DownloadButtonProps> = (props) => {
       </Button>
 
       <Flex xs={{ flexDirection: 'column', paddingTop: 8 }}>
-        {information.map((info) => (
-          <InfoText key={info}>{info}</InfoText>
-        ))}
+        {Array.isArray(information) ? (
+          information.map((info) => <InfoText key={info}>{info}</InfoText>)
+        ) : (
+          <InfoText>{information}</InfoText>
+        )}
       </Flex>
     </Flex>
   );
