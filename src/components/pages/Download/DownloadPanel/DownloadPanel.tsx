@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 
-import { Box } from '../../../base/Box';
+import { OnlyDisplay } from '../../../base';
 
 import { DesktopDownloadPanel } from './DesktopDownloadPanel/DesktopDownloadPanel';
 import { MobileDownloadPanel } from './MobileDownloadPanel';
@@ -14,13 +14,13 @@ export const DownloadPanel: React.FC<DownloadPanelProps> = (props) => {
 
   return (
     <>
-      <Box xs={{ display: 'none' }} l={{ display: 'block' }}>
+      <OnlyDisplay l xl xxl>
         <DesktopDownloadPanel />
-      </Box>
+      </OnlyDisplay>
 
-      <Box xs={{ display: 'block' }} l={{ display: 'none' }}>
+      <OnlyDisplay xs s m>
         <MobileDownloadPanel />
-      </Box>
+      </OnlyDisplay>
 
       {children}
     </>
