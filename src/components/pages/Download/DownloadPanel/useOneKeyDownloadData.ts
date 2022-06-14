@@ -1,0 +1,114 @@
+import { useOneKeyVersion } from '../../../../data';
+import {
+  AndroidIcon,
+  AppleIcon,
+  ChromeIcon,
+  DesktopIcon,
+  EdgeIcon,
+  FirefoxIcon,
+  GooglePlayIcon,
+  LinuxIcon,
+  MobileIcon,
+  WebIcon,
+  WindowsIcon,
+} from '../../../base';
+
+export function useOneKeyDownloadData() {
+  const { formattedData } = useOneKeyVersion();
+
+  const ios = {
+    icon: AppleIcon,
+    name: 'App Store',
+    description: `v${formattedData.ios.version}, for iOS 13.0+`,
+    url: formattedData.ios.url,
+  };
+
+  const androidGooglePlay = {
+    icon: GooglePlayIcon,
+    name: 'Google Play',
+    description: `v${formattedData.androidGooglePlay.version}, for Android 8.0+`,
+    url: formattedData.androidGooglePlay.url,
+  };
+
+  const androidAPK = {
+    icon: AndroidIcon,
+    name: 'Android APK',
+    description: `v${formattedData.androidAPK.version}, for Android 8.0+`,
+    url: formattedData.androidAPK.url,
+  };
+
+  const mac = {
+    icon: AppleIcon,
+    name: 'macOS',
+    description: `v${formattedData.mac.version}, for macOS 10.8+`,
+    url: formattedData.mac.url,
+  };
+
+  const win = {
+    icon: WindowsIcon,
+    name: 'Windows',
+    description: `v${formattedData.win.version}, for Windows 10+`,
+    url: formattedData.win.url,
+  };
+
+  const linux = {
+    icon: LinuxIcon,
+    name: 'Linux',
+    description: `v${formattedData.linux.version}, for Ubuntu 12.04+, Fedora 21+, Debian 8+`,
+    url: formattedData.linux.url,
+  };
+
+  const chrome = {
+    icon: ChromeIcon,
+    name: 'Chrome',
+    description: '',
+    url: formattedData.chrome.url,
+  };
+
+  const firefox = {
+    icon: FirefoxIcon,
+    name: 'Firefox',
+    description: '',
+    url: formattedData.firefox.url,
+  };
+
+  const edge = {
+    icon: EdgeIcon,
+    name: 'Edge',
+    description: '',
+    url: formattedData.edge.url,
+  };
+
+  const mobile = {
+    icon: MobileIcon,
+    name: 'Mobile',
+    description: 'iOS and Android',
+  };
+
+  const desktop = {
+    icon: DesktopIcon,
+    name: 'Desktop',
+    description: 'Mac, Windows, Linux',
+  };
+
+  const browser = {
+    icon: WebIcon,
+    name: 'Browser',
+    description: 'Chrome, Firefox, Edge',
+  };
+
+  return {
+    types: { mobile, desktop, browser },
+    platforms: {
+      ios,
+      androidGooglePlay,
+      androidAPK,
+      mac,
+      win,
+      linux,
+      chrome,
+      firefox,
+      edge,
+    },
+  };
+}
