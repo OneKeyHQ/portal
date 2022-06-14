@@ -6,10 +6,11 @@ import { AddIcon, Box } from '../../../../../base';
 
 export interface ToggleProps {
   children?: ReactNode;
+  isExpanded: boolean;
 }
 
 export const Toggle: FC<ToggleProps> = (props) => {
-  const { children } = props;
+  const { children, isExpanded = false } = props;
   const theme = useTheme();
 
   return (
@@ -18,6 +19,7 @@ export const Toggle: FC<ToggleProps> = (props) => {
         cursor: 'pointer',
         willChange: 'opacity, transform',
         transition: theme.transitions.allEaseOut,
+        transform: isExpanded ? 'rotate(45deg)' : 'rotate(0deg)',
         ':hover': {
           opacity: 0.6,
         },

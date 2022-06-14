@@ -18,7 +18,7 @@ export const OtherPlatformsItem: FC<OtherPlatformsItemProps> = (props) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <Flex xs={{ gap: 24, flexDirection: 'column' }}>
+    <Flex xs={{ flexDirection: 'column' }}>
       <Flex xs={{ gap: 12, alignItems: 'center' }}>
         <Icon width={40} height={40} />
         <Flex xs={{ flexDirection: 'column' }}>
@@ -41,24 +41,25 @@ export const OtherPlatformsItem: FC<OtherPlatformsItemProps> = (props) => {
             }}
             xs={{ flex: 1, justifyContent: 'flex-end' }}
           >
-            <Box
-              xs={{
-                transition: theme.transitions.allEaseOut,
-                transform: isExpanded ? 'rotate(45deg)' : 'rotate(0deg)',
-              }}
-            >
-              <Toggle />
-            </Box>
+            <Toggle isExpanded={isExpanded} />
           </Flex>
         )}
       </Flex>
 
-      {isExpanded &&
-        subItems?.map((item) => (
-          <Box xs={{ paddingLeft: 60 }}>
+      <Flex
+        xs={{
+          flexDirection: 'column',
+          maxHeight: isExpanded ? 666 : 0,
+          overflow: 'hidden',
+          transition: theme.transitions.allEaseOut,
+        }}
+      >
+        {subItems?.map((item) => (
+          <Box key={item.name} xs={{ paddingLeft: 60, paddingTop: 24 }}>
             <OtherPlatformsItem {...item} />
           </Box>
         ))}
+      </Flex>
 
       {children}
     </Flex>
