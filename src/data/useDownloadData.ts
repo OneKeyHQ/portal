@@ -1,5 +1,3 @@
-import { useOneKeyVersion } from './useOneKeyVersion';
-
 const otherPlatforms = {
   type: 'otherPlatforms',
   path: 'https://onekey.so/download',
@@ -69,9 +67,5 @@ const downloadData = {
 export type DownloadTypes = keyof typeof downloadData;
 
 export function useDownloadData() {
-  const { data: oneKeyVersionData } = useOneKeyVersion();
-
-  console.log('oneKeyVersionData', oneKeyVersionData);
-
   return downloadData;
 }

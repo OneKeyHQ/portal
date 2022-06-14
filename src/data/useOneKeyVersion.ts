@@ -50,12 +50,25 @@ export function useOneKeyVersion() {
   const formattedData = {
     ios: {
       url: 'https://itunes.apple.com/app/chrome/id1609559473',
+      version: '',
     },
     androidGooglePlay: {
       url: 'https://play.google.com/store/apps/details?id=com.bixin.wallet.mainnet',
+      version: '',
     },
-    androidAPK: {
-      url: '',
+    androidAPK: { url: '', version: '' },
+    mac: { url: '', version: '' },
+    win: { url: '', version: '' },
+    linux: { url: '', version: '' },
+    asc: { url: '', version: '' },
+    chrome: {
+      url: 'https://chrome.google.com/webstore/detail/onekey/jnmbobjmhlngoefaiojfljckilhhlhcj',
+    },
+    firefox: {
+      url: 'https://addons.mozilla.org/firefox/addon/onekey-wallet/',
+    },
+    edge: {
+      url: 'https://microsoftedge.microsoft.com/addons/detail/onekey/leimfdljadbnnecmkpfmgcdmiglejnnp',
     },
   };
 
@@ -69,18 +82,31 @@ export function useOneKeyVersion() {
   );
 
   if (oneKeyVersionData) {
-    formattedData.androidAPK.url = oneKeyVersionData?.apk.url;
-    const { suite } = oneKeyVersionData;
+    const { apk: android, suite } = oneKeyVersionData;
 
-    const res = {
-      version: suite.version,
-      macUrl: suite.macDmg,
-      winUrl: suite.winZadig,
-      linuxUrl: suite.linux,
-      ascUrl: suite.sha256SumAsc,
-    };
+    // android
+    formattedData.androidAPK.url = android.url;
+    formattedData.androidAPK.version = android.versionName;
+    formattedData.androidGooglePlay.version = android.versionName;
 
-    console.log(res);
+    // ios
+    formattedData.ios.version = android.versionName;
+
+    // mac
+    formattedData.mac.url = suite.macDmg;
+    formattedData.mac.version = suite.version;
+
+    // win
+    formattedData.win.url = suite.winZadig;
+    formattedData.win.version = suite.version;
+
+    // linux
+    formattedData.linux.url = suite.linux;
+    formattedData.linux.version = suite.version;
+
+    // asc
+    formattedData.asc.url = suite.sha256SumAsc;
+    formattedData.asc.version = suite.version;
   }
 
   return {

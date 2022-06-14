@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { Fragment, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
@@ -30,10 +30,10 @@ export const OtherPlatforms: React.FC<OtherPlatformsProps> = (props) => {
       <Divider />
 
       {otherPlatformsData.items.map((item) => (
-        <>
+        <Fragment key={item.name}>
           <OtherPlatformsItem {...item} />
           <Divider />
-        </>
+        </Fragment>
       ))}
 
       <Box>{children}</Box>
