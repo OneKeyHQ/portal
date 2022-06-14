@@ -19,7 +19,7 @@ export const SEO: FC<SEOProps> = (props) => {
     title = 'OneKey Wallet | All-in-one crypto wallet trusted by millions.',
     description = 'The best way to keep crypto assets safe in the industry. Your bitcoin, ethereum, solana, and other crypto assets can all be safe and secure.',
     keywords = 'hardware wallet, defi, nft, btc, eth, near, fantom, solana, algo, starcoin, metamask, glow, trezor, ledger, safepal, keystone, imtoken, tokenpocket, rainbow wallet',
-    image = `https://portal.onekey.so/og/og.jpg`,
+    image = `https://onekey.so/og/og2.jpg`,
     url = isBrowser() ? window.location.href : '',
     twitterUsername = 'OneKeyHQ',
     isArticle = false,
