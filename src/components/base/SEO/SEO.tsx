@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet';
 import { isBrowser } from '../../../utils';
 
 interface SEOProps {
-  title: string;
+  title?: string;
   description?: string;
   keywords?: string;
   image?: string;

@@ -65,7 +65,8 @@ const WrapPage: FC<WrapPageProps> = (props) => {
     <div>
       <Helmet
         htmlAttributes={{ lang: pageContext.language }}
-        titleTemplate="%s"
+        titleTemplate="OneKey Wallet | %s"
+        defaultTitle="OneKey Wallet | All-in-one crypto wallet trusted by millions."
       >
         <script
           async
