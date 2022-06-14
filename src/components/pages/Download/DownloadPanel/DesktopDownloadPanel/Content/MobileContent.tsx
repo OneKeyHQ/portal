@@ -5,8 +5,7 @@ import { Flex } from '../../../../../base/Flex';
 import { AndroidIcon, AppStoreIcon } from '../../../../../base/Icon';
 import { DownloadButton } from '../../DownloadButton';
 import { FAQ } from '../../FAQ';
-
-import { Title } from './Title';
+import { Title } from '../../Title';
 
 export interface MobileContentProps {
   children?: ReactNode;

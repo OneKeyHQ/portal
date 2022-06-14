@@ -2,8 +2,8 @@ import { FC } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Span } from '../../../../../base/Box';
-import { Flex } from '../../../../../base/Flex';
+import { Span } from '../../../../base/Box';
+import { Flex } from '../../../../base/Flex';
 
 export interface TitleProps {
   text: string[];

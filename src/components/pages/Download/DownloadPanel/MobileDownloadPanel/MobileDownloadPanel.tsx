@@ -1,7 +1,7 @@
 import { FC, ReactNode } from 'react';
 
 import { useRuntimeDetect } from '../../../../../hooks';
-import { Box, Container } from '../../../../base';
+import { Box, Container, Flex } from '../../../../base';
 import { Background } from '../Background';
 
 import { OtherPlatforms } from './OtherPlatforms';
@@ -18,7 +18,6 @@ export const MobileDownloadPanel: FC<MobileDownloadPanelProps> = (props) => {
     <Box>
       <Box
         xs={{
-          height: 656,
           width: '100%',
           overflow: 'hidden',
           position: 'relative',
@@ -29,7 +28,20 @@ export const MobileDownloadPanel: FC<MobileDownloadPanelProps> = (props) => {
       >
         <Background />
 
-        <Container>{isMobilePhone ? 'a' : 'b'}</Container>
+        <Container>
+          <Flex
+            xs={{
+              height: 656,
+              position: 'relative',
+              zIndex: 100,
+              alignItems: 'flex-end',
+            }}
+          >
+            {!isMobilePhone && (
+              <Box>Bring your crypto assets to mobile, too.</Box>
+            )}
+          </Flex>
+        </Container>
 
         {children}
       </Box>

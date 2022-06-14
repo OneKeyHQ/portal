@@ -7,8 +7,7 @@ import { Flex } from '../../../../../base/Flex';
 import { AppleIcon, LinuxIcon, WindowsIcon } from '../../../../../base/Icon';
 import { DownloadButton } from '../../DownloadButton';
 import { FAQ } from '../../FAQ';
-
-import { Title } from './Title';
+import { Title } from '../../Title';
 
 export interface DesktopContentProps {
   children?: ReactNode;

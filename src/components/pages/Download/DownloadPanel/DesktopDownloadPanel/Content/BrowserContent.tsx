@@ -5,8 +5,7 @@ import { Divider } from '../../../../../base/Divider';
 import { Flex } from '../../../../../base/Flex';
 import { DownloadButton } from '../../DownloadButton';
 import { FAQ } from '../../FAQ';
-
-import { Title } from './Title';
+import { Title } from '../../Title';
 
 export interface BrowserContentProps {
   children?: React.ReactNode;
