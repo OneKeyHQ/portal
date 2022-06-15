@@ -1,47 +1,40 @@
 import React, { FC } from 'react';
 
-import { ChromeIcon, EdgeIcon, FirefoxIcon } from '../../../../../base';
 import { Divider } from '../../../../../base/Divider';
 import { Flex } from '../../../../../base/Flex';
 import { DownloadButton } from '../../DownloadButton';
 import { FAQ } from '../../FAQ';
 import { Title } from '../../Title';
+import { useOneKeyDownloadData } from '../../useOneKeyDownloadData';
 
 export interface BrowserContentProps {
   children?: React.ReactNode;
 }
 
-const faq = {
-  title: '',
-  questions: [
-    {
-      text: "Edge version hasn't support Hardware yet.",
-    },
-  ],
-};
-
-const buttons = [
-  {
-    text: 'Chrome',
-    icon: ChromeIcon,
-    infos: [],
-  },
-  {
-    text: 'Firefox',
-    icon: FirefoxIcon,
-    infos: [],
-  },
-  {
-    text: 'Edge',
-    icon: EdgeIcon,
-    infos: [],
-  },
-];
-
-const title = ['Download', 'OneKey.'];
-
 export const BrowserContent: FC<BrowserContentProps> = (props) => {
   const { children } = props;
+  const {
+    platforms: { chrome, edge, firefox },
+    types: { browser },
+  } = useOneKeyDownloadData();
+
+  const buttons = [
+    {
+      text: chrome.name,
+      icon: chrome.icon,
+      infos: [],
+    },
+    {
+      text: firefox.name,
+      icon: firefox.icon,
+      infos: [],
+    },
+    {
+      text: edge.name,
+      icon: edge.icon,
+      infos: [],
+    },
+  ];
 
   return (
     <>
@@ -53,7 +46,7 @@ export const BrowserContent: FC<BrowserContentProps> = (props) => {
           justifyContent: 'center',
         }}
       >
-        <Title text={title} />
+        <Title text={browser.pageTitle} />
 
         <Flex xs={{ gap: 16 }}>
           {buttons.map((item) => (
@@ -69,7 +62,9 @@ export const BrowserContent: FC<BrowserContentProps> = (props) => {
 
       <Divider />
 
-      {faq && <FAQ title={faq.title} questions={faq.questions} />}
+      {edge.faq && (
+        <FAQ title={edge.faq.title} questions={edge.faq.questions} />
+      )}
 
       {children}
     </>

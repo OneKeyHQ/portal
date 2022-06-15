@@ -88,6 +88,14 @@ export function useOneKeyDownloadData() {
     name: 'Edge',
     description: '',
     url: formattedData.edge.url,
+    faq: {
+      title: '',
+      questions: [
+        {
+          text: "Edge version hasn't support Hardware yet.",
+        },
+      ],
+    },
   };
 
   const mobile = {
@@ -116,6 +124,7 @@ export function useOneKeyDownloadData() {
     icon: WebIcon,
     name: 'Browser',
     description: 'Chrome, Firefox, Edge',
+    pageTitle: ['Download', 'OneKey.'],
   };
 
   return {
