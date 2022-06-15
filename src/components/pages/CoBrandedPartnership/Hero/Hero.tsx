@@ -80,7 +80,10 @@ export const Hero: FC<HeroProps> = (props) => {
             <Span
               xs={theme.text.medium700}
               m={theme.text.medium800}
-              l={theme.text.medium900}
+              l={{
+                ...theme.text.medium900,
+                maxWidth: 400,
+              }}
               xl={theme.text.medium1000}
             >
               Co-Branded Partnership
