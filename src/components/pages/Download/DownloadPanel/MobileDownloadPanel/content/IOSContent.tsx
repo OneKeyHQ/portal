@@ -16,7 +16,7 @@ export const IOSContent: FC<IOSContentProps> = (props) => {
   const { children } = props;
 
   const {
-    platforms: { ios, androidGooglePlay },
+    platforms: { ios, web },
     types: { mobile },
   } = useOneKeyDownloadData();
 
@@ -28,10 +28,10 @@ export const IOSContent: FC<IOSContentProps> = (props) => {
       infos: ios.description.split('<br/>'),
     },
     {
-      text: androidGooglePlay.name,
-      icon: androidGooglePlay.icon,
-      url: androidGooglePlay.url,
-      infos: androidGooglePlay.description,
+      text: web.name,
+      icon: web.icon,
+      url: web.url,
+      infos: web.description,
     },
   ];
 
