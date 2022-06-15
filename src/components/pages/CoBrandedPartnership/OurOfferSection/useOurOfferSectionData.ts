@@ -2,7 +2,7 @@ export function useOurOfferSectionData() {
   return {
     title: 'Our Offer',
     description:
-      'Customize your hardware wallet & reward your community, partners or employees.',
+      'Customize your OneKey hardware wallet and reward your community, partners, or staff with incentives.',
     cards: [
       {
         title: 'Standard',

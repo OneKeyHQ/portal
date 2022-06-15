@@ -14,7 +14,7 @@ export interface ProductShowcaseSectionItemProps
 export const ProductShowcaseSectionItem: FC<ProductShowcaseSectionItemProps> = (
   props,
 ) => {
-  const { children, imageNode, name, description, points, button, layout } =
+  const { units, children, imageNode, name, description, points, button } =
     props;
   const theme = useTheme();
 
@@ -24,7 +24,7 @@ export const ProductShowcaseSectionItem: FC<ProductShowcaseSectionItemProps> = (
         xs={{ flexDirection: 'column', gap: 20 }}
         m={{
           alignItems: 'center',
-          flexDirection: layout[0] === 'text' ? 'row' : 'row-reverse',
+          flexDirection: 'row-reverse',
         }}
         l={{ gap: 160 }}
       >
@@ -40,9 +40,16 @@ export const ProductShowcaseSectionItem: FC<ProductShowcaseSectionItemProps> = (
         </Box>
 
         <Flex xs={{ flexDirection: 'column', gap: 16, flex: 1 }}>
-          <Span xs={theme.text.medium700} l={theme.text.medium800}>
-            {name}
-          </Span>
+          <Flex xs={{ flexDirection: 'column' }}>
+            <Span xs={theme.text.medium700} l={theme.text.medium800}>
+              {name}
+            </Span>
+
+            <Span xs={{ ...theme.text.normal400, color: theme.colors.test300 }}>
+              {units}
+            </Span>
+          </Flex>
+
           <Span xs={theme.text.normal400}>{description}</Span>
 
           <Flex xs={{ gap: 8, flexDirection: 'column' }}>

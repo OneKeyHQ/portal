@@ -4,6 +4,7 @@ import { useTheme } from '@emotion/react';
 import { StaticImage } from 'gatsby-plugin-image';
 
 import { useContactUs } from '../../../../data';
+import { isBrowser } from '../../../../utils';
 import {
   ArrowRightIcon,
   Box,
@@ -13,6 +14,7 @@ import {
   Link,
   Span,
 } from '../../../base';
+import { BackgroundMask } from '../../../common';
 
 export interface HeroProps {
   children?: ReactNode;
@@ -26,21 +28,47 @@ export const Hero: FC<HeroProps> = (props) => {
   return (
     <Box
       xs={{
-        background: theme.colors.test200,
+        position: 'relative',
       }}
     >
+      {isBrowser() && (
+        <Box
+          xs={{
+            height: '100%',
+            width: '100%',
+            position: 'absolute',
+            right: 0,
+            borderRadius: '0 0 40px 40px',
+            overflow: 'hidden',
+          }}
+          l={{ width: '50%', borderRadius: 0 }}
+        >
+          <StaticImage
+            style={{
+              height: '100%',
+              width: '100%',
+            }}
+            src="./images/CoBrandedPartnershipHero.jpg"
+            alt="hero"
+          />
+
+          <BackgroundMask />
+        </Box>
+      )}
+
       <Container>
         <Flex
           xs={{
             paddingTop: 80,
             flexDirection: 'column',
-            justifyContent: 'center',
+            justifyContent: 'flex-end',
             height: '80vh',
             minHeight: 600,
             maxHeight: 1000,
             gap: 20,
+            paddingBottom: 30,
           }}
-          m={{ minHeight: 700 }}
+          m={{ minHeight: 700, paddingBottom: 60 }}
           l={{ flexDirection: 'row', justifyContent: 'space-between' }}
           xl={{ minHeight: 800 }}
         >
@@ -57,6 +85,7 @@ export const Hero: FC<HeroProps> = (props) => {
             >
               Co-Branded Partnership
             </Span>
+
             <Span xs={theme.text.normal300}>
               DISCOVER OUR CO-BRANDED OFFERS AND BRING YOUR MARKETING TO LIFE
             </Span>
@@ -75,15 +104,6 @@ export const Hero: FC<HeroProps> = (props) => {
                 </Button>
               </Link>
             </Flex>
-          </Flex>
-
-          <Flex
-            xs={{ justifyContent: 'flex-end', marginTop: -50 }}
-            m={{ alignItems: 'center', justifyContent: 'center', marginTop: 0 }}
-          >
-            <Box xs={{ width: 220 }} m={{ width: 460 }} xl={{ width: 600 }}>
-              <StaticImage src="./images/image.png" alt="image" />
-            </Box>
           </Flex>
         </Flex>
       </Container>

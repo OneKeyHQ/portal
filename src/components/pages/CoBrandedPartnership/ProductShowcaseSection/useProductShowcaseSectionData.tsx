@@ -2,58 +2,58 @@ import { ReactNode } from 'react';
 
 import { StaticImage } from 'gatsby-plugin-image';
 
+import { useContactUs } from '../../../../data';
 import { CheckIcon } from '../../../base';
 
 export type ProductShowcaseSectionDataItem = {
   name: string;
   description: string;
   imageNode: ReactNode;
+  units: string;
   points: {
     text: string;
     iconNode: ReactNode;
   }[];
   button: {
     text: string;
+    url: string;
   };
-  layout: string[];
 };
 
 export type ProductShowcaseSectionDataItems = ProductShowcaseSectionDataItem[];
 
 const tempIcon = <CheckIcon width={24} height={24} />;
-const tempImage = <StaticImage src="./images/export.jpg" alt="image" />;
 
 export function useProductShowcaseSectionData(): {
   items: ProductShowcaseSectionDataItems;
 } {
+  const contactUs = useContactUs();
+
   return {
     items: [
       {
-        layout: ['text', 'image'],
         name: 'Co-Branded Standard',
+        units: 'Minimum 100 units',
         description:
-          'PLACE HOLDER: OneKey provides best-in-class security for encrypted assets without compromising ',
-        imageNode: tempImage,
+          "Personalize your OneKey's latest device with a custom engraving.",
+        imageNode: <StaticImage src="./images/co-intro-0.jpg" alt="image" />,
         points: [
           {
             iconNode: tempIcon,
             text: 'Logo engraving',
           },
-          {
-            iconNode: tempIcon,
-            text: 'Minimum 100 units',
-          },
         ],
         button: {
           text: 'Contact us',
+          url: contactUs.url,
         },
       },
       {
-        layout: ['image', 'text'],
-        name: 'Co-Branded Pro Team',
+        name: 'Pro Team',
+        units: 'Minimum 300 units',
         description:
-          'PLACE HOLDER: OneKey provides best-in-class security for encrypted assets without compromising ',
-        imageNode: tempImage,
+          'Promote and personalize your latest OneKey device. Services range from engraving the hardware wallet to customizations of packaging, cards and sleeves.',
+        imageNode: <StaticImage src="./images/co-intro-1.jpg" alt="image" />,
         points: [
           {
             iconNode: tempIcon,
@@ -63,21 +63,18 @@ export function useProductShowcaseSectionData(): {
             iconNode: tempIcon,
             text: 'Custom packaging',
           },
-          {
-            iconNode: tempIcon,
-            text: 'Minimum 300 units',
-          },
         ],
         button: {
           text: 'Contact us',
+          url: contactUs.url,
         },
       },
       {
-        layout: ['text', 'image'],
         name: 'Dropshipping',
+        units: 'Minimum 1000 units',
         description:
-          'PLACE HOLDER: OneKey provides best-in-class security for encrypted assets without compromising ',
-        imageNode: tempImage,
+          "We'll design the product together, and OneKey will take care of the rest of the process - this includes delivery logistics.",
+        imageNode: <StaticImage src="./images/co-intro-2.jpg" alt="image" />,
         points: [
           {
             iconNode: tempIcon,
@@ -91,13 +88,10 @@ export function useProductShowcaseSectionData(): {
             iconNode: tempIcon,
             text: 'Deliver to end-users',
           },
-          {
-            iconNode: tempIcon,
-            text: 'Minimum 1000 units',
-          },
         ],
         button: {
           text: 'Contact us',
+          url: contactUs.url,
         },
       },
     ],
