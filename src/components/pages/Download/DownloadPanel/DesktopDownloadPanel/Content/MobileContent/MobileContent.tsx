@@ -28,7 +28,6 @@ export const MobileContent: React.FC<MobileContentProps> = (props) => {
           gap: 32,
           flexDirection: 'column',
           justifyContent: 'center',
-          overflow: 'hidden',
         }}
       >
         <Title text={mobile.pageTitle} />
