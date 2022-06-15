@@ -14,11 +14,19 @@ export interface DownloadButtonProps {
   text: string;
   information: string[] | string;
   buttonType?: ButtonProps['variant'];
+  buttonSize?: ButtonProps['size'];
   url?: string;
 }
 
 export const DownloadButton: FC<DownloadButtonProps> = (props) => {
-  const { information, text, icon, url = '', buttonType = 'outlined' } = props;
+  const {
+    information,
+    text,
+    icon,
+    url = '',
+    buttonSize = 'large',
+    buttonType = 'outlined',
+  } = props;
 
   return (
     <Flex
@@ -34,7 +42,7 @@ export const DownloadButton: FC<DownloadButtonProps> = (props) => {
         <Button
           fillWidth
           leftIcon={createElement(icon, iconSize)}
-          size="large"
+          size={buttonSize}
           variant={buttonType}
         >
           {text}
