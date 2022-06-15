@@ -106,6 +106,16 @@ export function useNavigationDataObject() {
     key: 'shop',
     subItems: [
       {
+        name: 'Amazon (Global)',
+        key: 'amazon-Global',
+        path: 'https://www.amazon.com/dp/B0B2MWW2WJ',
+      },
+      {
+        name: 'Amazon (Japan)',
+        key: 'amazon-Japan',
+        path: 'https://www.amazon.co.jp/dp/B0B2MWW2WJ',
+      },
+      {
         name: 'YouZan',
         key: 'youzan',
         path: 'https://j.youzan.com/dZTtS2',

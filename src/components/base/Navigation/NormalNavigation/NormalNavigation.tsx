@@ -66,7 +66,7 @@ export const NormalNavigation: React.FC<NormalNavigationProps> = () => {
           >
             {menuData.map((item) => (
               <Li
-                key={item.name}
+                key={item.key}
                 xs={{
                   display: 'flex',
                   alignItems: 'center',
