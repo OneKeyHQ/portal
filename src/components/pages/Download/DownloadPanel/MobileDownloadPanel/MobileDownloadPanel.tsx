@@ -1,7 +1,7 @@
 import { FC, ReactNode } from 'react';
 
 import { useRuntimeDetect } from '../../../../../hooks';
-import { Box, Container } from '../../../../base';
+import { Box, Container, OnlyDisplay } from '../../../../base';
 import { Background } from '../Background';
 
 import { AndroidContent } from './content/AndroidContent';
@@ -15,7 +15,7 @@ export interface MobileDownloadPanelProps {
 
 export const MobileDownloadPanel: FC<MobileDownloadPanelProps> = (props) => {
   const { children } = props;
-  const { isIOS, isAndroid } = useRuntimeDetect();
+  const { isIOS } = useRuntimeDetect();
 
   return (
     <Box>
@@ -31,9 +31,13 @@ export const MobileDownloadPanel: FC<MobileDownloadPanelProps> = (props) => {
       >
         <Background />
 
-        {isIOS && <IOSContent />}
-        {isAndroid && <AndroidContent />}
-        {!isIOS && !isAndroid && <OtherContent />}
+        <OnlyDisplay xs s>
+          {isIOS ? <IOSContent /> : <AndroidContent />}
+        </OnlyDisplay>
+
+        <OnlyDisplay m l>
+          <OtherContent />
+        </OnlyDisplay>
 
         {children}
       </Box>
