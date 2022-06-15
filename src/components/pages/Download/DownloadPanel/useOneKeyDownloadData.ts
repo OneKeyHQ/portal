@@ -8,6 +8,7 @@ import {
   FirefoxIcon,
   GooglePlayIcon,
   LinuxIcon,
+  LogoIcon,
   MobileIcon,
   WebIcon,
   WindowsIcon,
@@ -98,6 +99,13 @@ export function useOneKeyDownloadData() {
     },
   };
 
+  const web = {
+    icon: LogoIcon,
+    name: 'Web app',
+    description: '',
+    url: 'https://app.onekey.so/',
+  };
+
   const mobile = {
     icon: MobileIcon,
     name: 'Mobile',
@@ -130,6 +138,7 @@ export function useOneKeyDownloadData() {
   return {
     types: { mobile, desktop, browser },
     platforms: {
+      web,
       ios,
       androidGooglePlay,
       androidAPK,
