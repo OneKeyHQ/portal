@@ -37,7 +37,7 @@ export const MobileContent: React.FC<MobileContentProps> = (props) => {
             icon={ios.icon}
             text={ios.name}
             url={ios.url}
-            information={ios.description}
+            information={ios.description.split('<br/>')}
           />
 
           <AndroidDownloadButton />
