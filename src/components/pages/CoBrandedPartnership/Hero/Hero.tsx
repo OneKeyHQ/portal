@@ -90,7 +90,7 @@ export const Hero: FC<HeroProps> = (props) => {
             </Span>
 
             <Span xs={theme.text.normal300}>
-              DISCOVER OUR CO-BRANDED OFFERS AND BRING YOUR MARKETING TO LIFE
+              CHECK OUT OUR CO-BRANDED OFFERS TO BRING YOUR MARKETING TO LIFE.
             </Span>
 
             <Flex
