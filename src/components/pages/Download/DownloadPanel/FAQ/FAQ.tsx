@@ -2,14 +2,14 @@ import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Box, Flex, HelpIcon, Span } from '../../../../base';
+import { Box, Flex, HelpIcon, Link, Span } from '../../../../base';
 
 export interface FAQProps {
   children?: ReactNode;
   title?: string;
   questions?: {
     text: string;
-    link?: string;
+    url?: string;
   }[];
 }
 
@@ -25,10 +25,10 @@ export const FAQ: FC<FAQProps> = (props) => {
         <Box key={question.text}>
           <Flex xs={{ alignItems: 'center', ...theme.text.normal200 }}>
             <HelpIcon height={16} width={16} />
-            <Span xs={{ marginLeft: 4 }}>{question.text}</Span>
+            <Link to={question.url || ''}>
+              <Span xs={{ marginLeft: 4 }}>{question.text}</Span>
+            </Link>
           </Flex>
-          {/* todo: add link */}
-          {/* <Box>{question.link}</Box> */}
         </Box>
       ))}
 
