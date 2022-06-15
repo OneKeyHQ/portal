@@ -27,9 +27,11 @@ export function useOneKeyDownloadData() {
       questions: [
         {
           text: 'How to register an account?',
+          url: 'https://help.onekey.so/hc/articles/4404262744591',
         },
         {
           text: 'How to activate discover page?',
+          url: 'https://help.onekey.so/hc/articles/360004394795',
         },
       ],
     },
@@ -123,6 +125,7 @@ export function useOneKeyDownloadData() {
       questions: [
         {
           text: 'Package checksum.',
+          url: 'https://help.onekey.so/hc/articles/4978747315343',
         },
       ],
     },

@@ -26,7 +26,17 @@ export const FAQ: FC<FAQProps> = (props) => {
           <Flex xs={{ alignItems: 'center', ...theme.text.normal200 }}>
             <HelpIcon height={16} width={16} />
             <Link to={question.url || ''}>
-              <Span xs={{ marginLeft: 4 }}>{question.text}</Span>
+              <Span
+                xs={{
+                  marginLeft: 4,
+                  color: theme.colors.test500,
+                  ':hover': {
+                    textDecoration: 'underline',
+                  },
+                }}
+              >
+                {question.text}
+              </Span>
             </Link>
           </Flex>
         </Box>
