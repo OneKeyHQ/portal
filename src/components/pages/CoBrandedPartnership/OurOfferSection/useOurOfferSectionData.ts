@@ -9,7 +9,7 @@ export function useOurOfferSectionData() {
         points: ['Logo engraving', 'Minimum 100 units'],
         button: {
           text: 'Lean More',
-          link: '#',
+          link: 'https://help.onekey.so/hc/articles/4978923682703',
         },
       },
       {
@@ -17,7 +17,7 @@ export function useOurOfferSectionData() {
         points: ['Logo engraving', 'Custom packaging', 'Minimum 300 units'],
         button: {
           text: 'Lean More',
-          link: '#',
+          link: 'https://help.onekey.so/hc/articles/4978923682703',
         },
       },
       {
@@ -30,7 +30,7 @@ export function useOurOfferSectionData() {
         ],
         button: {
           text: 'Lean More',
-          link: '#',
+          link: 'https://help.onekey.so/hc/articles/4978923682703',
         },
       },
     ],

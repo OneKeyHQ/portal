@@ -2,7 +2,15 @@ import React, { ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { ArrowRightIcon, Box, Button, CheckIcon, Flex, Span } from '../../base';
+import {
+  ArrowRightIcon,
+  Box,
+  Button,
+  CheckIcon,
+  Flex,
+  Link,
+  Span,
+} from '../../base';
 
 export interface FeatureInformationCardProps {
   children?: ReactNode;
@@ -97,13 +105,15 @@ export const FeatureInformationCard: React.FC<FeatureInformationCardProps> = (
 
         {button && (
           <Box xs={{ flex: 1, display: 'flex', alignItems: 'flex-end' }}>
-            <Button
-              size="large"
-              fillWidth
-              rightIcon={<ArrowRightIcon width={24} height={24} />}
-            >
-              {button.text}
-            </Button>
+            <Link css={{ width: '100%' }} to={button.link}>
+              <Button
+                size="large"
+                fillWidth
+                rightIcon={<ArrowRightIcon width={24} height={24} />}
+              >
+                {button.text}
+              </Button>
+            </Link>
           </Box>
         )}
       </Flex>
