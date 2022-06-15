@@ -21,3 +21,4 @@ export * from './FloatCard';
 export * from './Divider';
 export * from './Progress';
 export * from './OnlyDisplay';
+export * from './EmailLink';
