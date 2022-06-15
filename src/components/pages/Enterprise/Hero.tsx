@@ -1,9 +1,10 @@
 import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
-import { StaticImage } from 'gatsby-plugin-image';
 
 import { ArrowRightIcon, Box, Button, Container, Flex, Span } from '../../base';
+
+import enterpriseBackground from './images/enterprise-background.jpg';
 
 export interface HeroProps {
   children?: ReactNode;
@@ -16,67 +17,62 @@ export const Hero: FC<HeroProps> = (props) => {
   return (
     <Box
       xs={{
-        background: theme.colors.test100,
+        backgroundImage: `url(${enterpriseBackground})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
       }}
     >
-      <Container>
-        <Flex
-          xs={{
-            paddingTop: 80,
-            flexDirection: 'column',
-            justifyContent: 'center',
-            height: '80vh',
-            minHeight: 600,
-            gap: 20,
-          }}
-          m={{ minHeight: 700 }}
-          l={{ flexDirection: 'row', justifyContent: 'space-between' }}
-          xl={{ minHeight: 800 }}
-        >
+      <Box xs={{ background: `rgba(255, 255, 255, 0.5)` }}>
+        <Container>
           <Flex
-            xs={{ flexDirection: 'column', gap: 10 }}
-            m={{ textAlign: 'center', justifyContent: 'center' }}
-            l={{ textAlign: 'left', gap: 20 }}
+            xs={{
+              paddingTop: 80,
+              flexDirection: 'column',
+              justifyContent: 'center',
+              height: '80vh',
+              minHeight: 600,
+              gap: 20,
+              marginBottom: -100,
+            }}
+            m={{ minHeight: 700 }}
+            l={{ flexDirection: 'row', justifyContent: 'space-between' }}
+            xl={{ minHeight: 800 }}
           >
-            <Span
-              xs={theme.text.medium700}
-              m={theme.text.medium800}
-              l={theme.text.medium900}
-              xl={theme.text.medium1000}
-            >
-              Enterprise Solutions
-            </Span>
-            <Span xs={theme.text.normal300}>
-              <Box xs={{ display: 'block' }} m={{ display: 'none' }}>
-                DISCOVER OUR CO-BRANDED
-                <br />
-                OFFERS AND BRING YOUR
-                <br />
-                MARKETING TO LIFE
-              </Box>
-              <Span xs={{ display: 'none' }} m={{ display: 'inline' }}>
-                DISCOVER OUR CO-BRANDED OFFERS AND BRING YOUR MARKETING TO LIFE
-              </Span>
-            </Span>
-
             <Flex
-              xs={{ justifyContent: 'flex-start' }}
-              m={{ justifyContent: 'center' }}
-              l={{ justifyContent: 'flex-start' }}
+              xs={{ flexDirection: 'column', gap: 10 }}
+              m={{ textAlign: 'center', justifyContent: 'center' }}
+              l={{ textAlign: 'left', gap: 20 }}
             >
-              <Button variant="outlined" rightIcon={<ArrowRightIcon />}>
-                Contact us
-              </Button>
+              <Span
+                xs={theme.text.medium700}
+                m={theme.text.medium800}
+                l={theme.text.medium900}
+                xl={theme.text.medium1000}
+              >
+                Enterprise Solutions
+              </Span>
+              <Span xs={theme.text.normal300}>
+                Explore the world of co-branding with us, and see your campaign
+                come to life.
+              </Span>
+
+              <Flex
+                xs={{ justifyContent: 'flex-start' }}
+                m={{ justifyContent: 'center' }}
+                l={{ justifyContent: 'flex-start' }}
+              >
+                <Button
+                  variant="outlined"
+                  rightIcon={<ArrowRightIcon width={24} height={24} />}
+                >
+                  Contact us
+                </Button>
+              </Flex>
             </Flex>
           </Flex>
-
-          <Flex xs={{ alignItems: 'center', justifyContent: 'center' }}>
-            <Box xs={{ width: 183 }} m={{ width: 317 }}>
-              <StaticImage src="./images/image.png" alt="image" />
-            </Box>
-          </Flex>
-        </Flex>
-      </Container>
+        </Container>
+      </Box>
 
       {children}
     </Box>
