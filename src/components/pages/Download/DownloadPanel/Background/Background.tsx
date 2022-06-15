@@ -48,7 +48,7 @@ export const Background: FC<BackgroundProps> = (props) => {
           objectFit: 'cover',
         }}
         l={{ width: '50%' }}
-        src={imageMap[currentTab]}
+        src={imageMap[currentTab || 'web']}
       />
 
       <Box

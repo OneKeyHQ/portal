@@ -2,6 +2,7 @@ import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
+import { isBrowser } from '../../../../../utils';
 import { Box } from '../../../../base';
 import { Background } from '../Background';
 
@@ -30,7 +31,7 @@ export const DesktopDownloadPanel: FC<DesktopDownloadPanelProps> = (props) => {
       }}
     >
       <Box css={{ flex: 1, position: 'relative' }}>
-        <Background />
+        {isBrowser() && <Background />}
 
         <Content />
       </Box>
