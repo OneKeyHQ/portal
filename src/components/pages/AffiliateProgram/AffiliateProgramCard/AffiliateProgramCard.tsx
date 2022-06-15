@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Box, Span } from '../../../base';
+import { Box, EmailLink, Span } from '../../../base';
 import {
   FeatureInformationCard,
   FeatureInformationCardProps,
@@ -36,16 +36,19 @@ export const AffiliateProgramCard: React.FC<AffiliateProgramCardProps> = (
         }}
       >
         <Span xs={{ ...theme.text.normal200 }}>
-          Contact our customer success team to{' '}
-          <Span
-            xs={{
-              textDecoration: 'underline',
-              fontWeight: 'bold',
-            }}
-          >
-            learn more
-          </Span>{' '}
-          details about our affiliate program.
+          <EmailLink email="hi@onekey.so">
+            <Span
+              xs={{
+                color: theme.colors.test500,
+                textDecoration: 'underline',
+                fontWeight: 'bold',
+              }}
+            >
+              Contact
+            </Span>{' '}
+          </EmailLink>
+          our customer success team to learn more details about our affiliate
+          program.
         </Span>
       </Box>
 
