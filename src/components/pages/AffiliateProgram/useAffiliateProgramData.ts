@@ -14,7 +14,7 @@ export function useAffiliateProgramData() {
         ],
         button: {
           text: 'Become a OneKey Affiliate',
-          link: '#',
+          link: 'https://af.uppromote.com/onekeyhq/register',
         },
       },
       {
@@ -30,7 +30,7 @@ export function useAffiliateProgramData() {
         ],
         button: {
           text: 'Become a OneKey Reseller',
-          link: '#',
+          link: 'https://help.onekey.so/hc/requests/new',
         },
       },
     ],
