@@ -3,12 +3,14 @@ import { FC, ReactNode } from 'react';
 import { useTheme } from '@emotion/react';
 import { StaticImage } from 'gatsby-plugin-image';
 
+import { useContactUs } from '../../../../data';
 import {
   ArrowRightIcon,
   Box,
   Button,
   Container,
   Flex,
+  Link,
   Span,
 } from '../../../base';
 
@@ -19,6 +21,7 @@ export interface HeroProps {
 export const Hero: FC<HeroProps> = (props) => {
   const { children } = props;
   const theme = useTheme();
+  const contactUs = useContactUs();
 
   return (
     <Box
@@ -63,12 +66,14 @@ export const Hero: FC<HeroProps> = (props) => {
               m={{ justifyContent: 'center' }}
               l={{ justifyContent: 'flex-start' }}
             >
-              <Button
-                variant="outlined"
-                rightIcon={<ArrowRightIcon width={24} height={24} />}
-              >
-                Contact us
-              </Button>
+              <Link to={contactUs.url}>
+                <Button
+                  variant="outlined"
+                  rightIcon={<ArrowRightIcon width={24} height={24} />}
+                >
+                  Contact us
+                </Button>
+              </Link>
             </Flex>
           </Flex>
 
