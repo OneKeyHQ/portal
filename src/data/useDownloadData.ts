@@ -1,6 +1,6 @@
 const otherPlatforms = {
   type: 'otherPlatforms',
-  path: 'https://onekey.so/download',
+  path: '/beta/download#otherPlatforms',
   image: 'desktop',
   name: 'Other platforms',
   description: 'Mobile, desktop, browser',
