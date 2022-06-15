@@ -48,6 +48,9 @@ export function useOneKeyVersion() {
   );
 
   const formattedData = {
+    web: {
+      url: 'https://app.onekey.so/',
+    },
     ios: {
       url: 'https://itunes.apple.com/app/chrome/id1609559473',
       version: '',

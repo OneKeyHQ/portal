@@ -1,5 +1,6 @@
 import { FC } from 'react';
 
+import { useOneKeyVersion } from '../../../data';
 import { Button, ButtonProps } from '../Button';
 import { Logo } from '../Logo';
 
@@ -16,9 +17,10 @@ export const LaunchAppButton: FC<LaunchAppButtonProps> = (props) => {
     },
   } = props;
   const { button = {} } = override;
+  const { formattedData } = useOneKeyVersion();
 
   return (
-    <a href="https://app.onekey.so/" target="_blank" rel="noreferrer">
+    <a href={formattedData.web.url} target="_blank" rel="noreferrer">
       <Button
         {...button}
         rightIcon={

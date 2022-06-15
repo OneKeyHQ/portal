@@ -103,7 +103,7 @@ export function useOneKeyDownloadData() {
     icon: LogoIcon,
     name: 'Web app',
     description: '',
-    url: 'https://app.onekey.so/',
+    url: formattedData.web.url,
   };
 
   const mobile = {
