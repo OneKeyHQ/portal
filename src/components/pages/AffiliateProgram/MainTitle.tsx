@@ -39,7 +39,8 @@ export const MainTitle: FC<MainTitleProps> = (props) => {
         m={{ ...theme.text.normal300 }}
         l={{ ...theme.text.normal400 }}
       >
-        Asia's most trusted and easy-to-use hardware wallet.
+        Asia's most trusted and easy-to-use hardware wallet, get the most out of
+        and for your traffic.
       </Span>
 
       {children}
