@@ -1,5 +1,7 @@
 import { FC, ReactNode } from 'react';
 
+import { useTheme } from '@emotion/react';
+
 import { Nav } from '../Box';
 
 import { MobileNavigation } from './MobileNavigation';
@@ -11,6 +13,7 @@ export interface NavigationProps {
 
 export const Navigation: FC<NavigationProps> = (props) => {
   const { children } = props;
+  const theme = useTheme();
 
   return (
     <Nav
@@ -21,7 +24,7 @@ export const Navigation: FC<NavigationProps> = (props) => {
         top: -1,
         left: 0,
         right: 0,
-        transition: 'all 0.3s ease-in-out',
+        transition: theme.transitions.allEaseInOut,
         ':hover': {
           backgroundColor: 'white',
         },

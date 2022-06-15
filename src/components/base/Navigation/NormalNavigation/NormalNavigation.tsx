@@ -2,17 +2,17 @@ import React, { ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { useHover } from '../../../../hooks';
 import { Box, Li, Ul } from '../../Box';
 import { Container } from '../../Container';
 import { LaunchAppButton } from '../../LaunchAppButton';
 import { Link } from '../../Link';
 import { Logo } from '../../Logo';
 import { NavigationAnimationWrap } from '../NavigationAnimationWrap';
-import { useNavigationData } from '../useNavigationData';
+import { useNavigationDataObject } from '../useNavigationData';
 
 import { NavigationItem } from './NavigationItem';
 import { ProductPanel } from './ProductPanel';
+import { ServicesPanel } from './ServicesPanel';
 
 export interface NormalNavigationProps {
   children?: ReactNode;
@@ -20,8 +20,22 @@ export interface NormalNavigationProps {
 
 export const NormalNavigation: React.FC<NormalNavigationProps> = () => {
   const theme = useTheme();
-  const data = useNavigationData();
-  const { hoverProps, isHovered } = useHover();
+  const data = useNavigationDataObject();
+  const menuData = [
+    {
+      ...data.products,
+      panelComponent: ProductPanel,
+    },
+    data.app,
+    {
+      ...data.services,
+      panelComponent: ServicesPanel,
+    },
+    data.security,
+    data.forDeveloper,
+    data.helpCenter,
+    data.shop,
+  ];
 
   return (
     <Box xs={{ display: 'none' }} m={{ display: 'block' }}>
@@ -46,8 +60,11 @@ export const NormalNavigation: React.FC<NormalNavigationProps> = () => {
               }}
             />
           </Link>
-          <Ul xs={{ flex: 1, display: 'flex', gap: 32, paddingLeft: 12 }}>
-            {data.map((item) => (
+          <Ul
+            xs={{ flex: 1, display: 'flex', gap: 28, paddingLeft: 12 }}
+            l={{ gap: 32 }}
+          >
+            {menuData.map((item) => (
               <Li
                 key={item.name}
                 xs={{
@@ -55,7 +72,6 @@ export const NormalNavigation: React.FC<NormalNavigationProps> = () => {
                   alignItems: 'center',
                   listStyle: 'none',
                 }}
-                {...(item.path === '/products' ? hoverProps : {})}
               >
                 <NavigationItem {...item} />
               </Li>
@@ -80,8 +96,6 @@ export const NormalNavigation: React.FC<NormalNavigationProps> = () => {
           />
         </Container>
       </NavigationAnimationWrap>
-
-      <ProductPanel isActive={isHovered} />
     </Box>
   );
 };

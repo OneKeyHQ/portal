@@ -6,6 +6,7 @@ import { useHover } from '../../../../../hooks';
 import { Box } from '../../../Box';
 import { Container } from '../../../Container';
 import { Flex } from '../../../Flex';
+import { useNormalNavigationHeight } from '../useNormalNavigationHeight';
 
 import { LeftArea } from './LeftArea';
 import { RightArea } from './RightArea';
@@ -40,6 +41,7 @@ export const ProductPanel: FC<ProductPanelProps> = (props) => {
   const [cursorVariant, setCursorVariant] = useState('hidden');
   const { hoverProps: RightAreaHoverProps, isHovered: isRightAreaHovered } =
     useHover({ timeout: 100 });
+  const top = useNormalNavigationHeight();
 
   useEffect(() => {
     if (isHovered || isActive) {
@@ -57,6 +59,10 @@ export const ProductPanel: FC<ProductPanelProps> = (props) => {
       style={{
         width: '100%',
         overflow: 'hidden',
+        position: 'fixed',
+        left: 0,
+        right: 0,
+        top,
       }}
     >
       <Box

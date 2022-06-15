@@ -28,8 +28,7 @@ export const HoverPanel: FC<HoverPanelProps> = (props) => {
         transition: theme.transitions.allEaseOut,
         padding: 6,
         borderRadius: 12,
-        boxShadow:
-          '0px 0px 1px rgba(0, 0, 0, 0.08), 0px 8px 12px rgba(0, 0, 0, 0.08)',
+        boxShadow: theme.shadow.hover,
         position: 'absolute',
         top: '200%',
         left: '50%',

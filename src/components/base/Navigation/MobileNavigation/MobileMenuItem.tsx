@@ -2,7 +2,7 @@ import { FC, useState } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Box, Li, Ul } from '../../Box';
+import { Box, Img, Li, Ul } from '../../Box';
 import { Flex } from '../../Flex';
 import { MenuListArrowIcon } from '../../Icon';
 import { Link } from '../../Link';
@@ -21,8 +21,11 @@ export const MobileMenuItem: FC<MobileMenuItemProps> = (props) => {
   return (
     <Li
       xs={{
+        ...theme.text.medium300,
         paddingLeft: 28,
         paddingRight: 28,
+        paddingTop: 2,
+        paddingBottom: 2,
         ':active': {
           backgroundColor: theme.colors.gray600,
         },
@@ -33,23 +36,31 @@ export const MobileMenuItem: FC<MobileMenuItemProps> = (props) => {
       key={menuItem.name}
     >
       {!menuItem.subItems && (
-        <Link to={menuItem.path}>
+        <Link to={menuItem.path || ''}>
           <Flex
             xs={{
               alignItems: 'center',
               justifyContent: 'space-between',
+              ':hover': { opacity: 0.6 },
             }}
           >
-            <Box
+            <Flex
               xs={{
+                gap: 10,
                 color: theme.colors.test500,
                 paddingTop: 10,
                 paddingBottom: 10,
-                ...theme.text.normal300,
+                alignItems: 'center',
               }}
             >
+              {menuItem.icon && (
+                <Box xs={{ width: 24, height: 24 }}>
+                  <Img src={menuItem.icon} />
+                </Box>
+              )}
+
               {menuItem.name}
-            </Box>
+            </Flex>
           </Flex>
         </Link>
       )}

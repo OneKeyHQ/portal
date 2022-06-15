@@ -224,6 +224,7 @@ export const theme = {
     allEaseOut: 'all .3s ease-out',
     allEaseIn: 'all .3s ease-in',
     allEase: 'all .3s ease',
+    allEaseInOut: 'all .3s ease-in-out',
     allLinear: 'all .3s linear',
     motion: 'all 0.1s linear',
   },
@@ -236,6 +237,9 @@ export const theme = {
     top: 10000,
     modal: 9000,
     overlay: 8000,
+  },
+  shadow: {
+    hover: '0px 0px 1px rgba(0, 0, 0, 0.08), 0px 8px 12px rgba(0, 0, 0, 0.08)',
   },
 };
 
