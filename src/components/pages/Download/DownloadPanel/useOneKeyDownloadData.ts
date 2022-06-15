@@ -101,6 +101,15 @@ export function useOneKeyDownloadData() {
     icon: DesktopIcon,
     name: 'Desktop',
     description: 'Mac, Windows, Linux',
+    pageTitle: ['Download', 'OneKey.'],
+    faq: {
+      title: '',
+      questions: [
+        {
+          text: 'Package checksum.',
+        },
+      ],
+    },
   };
 
   const browser = {
