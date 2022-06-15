@@ -8,3 +8,4 @@ export * from './useBodyScrollLock';
 export * from './useMediaQueryMapValues';
 export * from './useInterval';
 export * from './useRuntimeDetect';
+export * from './useOnClickOutside';

@@ -1,6 +1,6 @@
-import { FC, ReactNode, useState } from 'react';
+import { FC, ReactNode, RefObject, useRef, useState } from 'react';
 
-import { useHover } from '../../../../../../../hooks';
+import { useHover, useOnClickOutside } from '../../../../../../../hooks';
 import {
   AndroidIcon,
   Box,
@@ -28,6 +28,11 @@ export const AndroidDownloadButton: FC<AndroidDownloadButtonProps> = (
   } = useOneKeyDownloadData();
   const { hoverProps, isHovered } = useHover({ timeout: 100 });
   const [isHoverPanelVisible, setIsHoverPanelVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useOnClickOutside([ref as RefObject<Element>], () => {
+    setIsHoverPanelVisible(false);
+  });
 
   return (
     <Box xs={{ flex: 1, maxWidth: 220, position: 'relative' }}>
@@ -58,13 +63,15 @@ export const AndroidDownloadButton: FC<AndroidDownloadButtonProps> = (
         Android
       </Button>
 
-      <HoverPanel
-        isActive={isHoverPanelVisible}
-        subItems={[
-          { name: androidGooglePlay.name, url: androidGooglePlay.url },
-          { name: androidAPK.name, url: androidAPK.url },
-        ]}
-      />
+      <div ref={ref}>
+        <HoverPanel
+          isActive={isHoverPanelVisible}
+          subItems={[
+            { name: androidGooglePlay.name, url: androidGooglePlay.url },
+            { name: androidAPK.name, url: androidAPK.url },
+          ]}
+        />
+      </div>
       {children}
     </Box>
   );
