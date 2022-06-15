@@ -1,8 +1,9 @@
 import { FC, ReactNode } from 'react';
 
-import { Divider, Flex } from '../../../../../base';
+import { useTheme } from '@emotion/react';
+
+import { Flex, Link, Span } from '../../../../../base';
 import { DownloadButton } from '../../DownloadButton';
-import { FAQ } from '../../FAQ';
 import { Title } from '../../Title';
 import { useOneKeyDownloadData } from '../../useOneKeyDownloadData';
 
@@ -14,24 +15,24 @@ export interface AndroidContentProps {
 
 export const AndroidContent: FC<AndroidContentProps> = (props) => {
   const { children } = props;
-
+  const theme = useTheme();
   const {
-    platforms: { ios, androidGooglePlay },
+    platforms: { web, androidGooglePlay, androidAPK },
     types: { mobile },
   } = useOneKeyDownloadData();
 
   const buttons = [
     {
-      text: ios.name,
-      icon: ios.icon,
-      url: ios.url,
-      infos: ios.description.split('<br/>'),
-    },
-    {
       text: androidGooglePlay.name,
       icon: androidGooglePlay.icon,
       url: androidGooglePlay.url,
       infos: androidGooglePlay.description,
+    },
+    {
+      text: web.name,
+      icon: web.icon,
+      url: web.url,
+      infos: web.description,
     },
   ];
 
@@ -52,9 +53,22 @@ export const AndroidContent: FC<AndroidContentProps> = (props) => {
         ))}
       </Flex>
 
-      <Divider />
-
-      {ios.faq && <FAQ title={ios.faq.title} questions={ios.faq.questions} />}
+      <Flex
+        xs={{ justifyContent: 'center' }}
+        s={{ justifyContent: 'flex-start' }}
+      >
+        <Link to={androidAPK.url}>
+          <Span
+            xs={{
+              ...theme.text.normal200,
+              textAlign: 'center',
+              color: theme.colors.test500,
+            }}
+          >
+            Download Android APK
+          </Span>
+        </Link>
+      </Flex>
 
       {children}
     </ContentContainer>
