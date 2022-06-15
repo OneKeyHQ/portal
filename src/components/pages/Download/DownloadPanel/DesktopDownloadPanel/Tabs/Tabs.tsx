@@ -1,6 +1,7 @@
 import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
+import { navigate } from 'gatsby';
 import { SetStateAction } from 'jotai';
 
 import { DownloadTypes, useDownloadData } from '../../../../../../data';
@@ -45,6 +46,8 @@ export const Tabs: FC<TabsProps> = (props) => {
                 key={item.name}
                 onClick={() => {
                   setCurrentTabAtom(iconType as SetStateAction<TabTypes>);
+                  // current use client query
+                  navigate(`?client=${iconType}`);
                 }}
               >
                 <TabItem

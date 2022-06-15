@@ -1,5 +1,8 @@
-import { FC, ReactNode } from 'react';
+import { FC, ReactNode, useEffect } from 'react';
 
+import queryString from 'query-string';
+
+import { isBrowser } from '../../../../../../utils';
 import { Container, Flex } from '../../../../../base';
 import { useCurrentTabAtom } from '../../atom';
 
@@ -14,7 +17,27 @@ export interface ContentProps {
 
 export const Content: FC<ContentProps> = (props) => {
   const { children } = props;
-  const [currentTab] = useCurrentTabAtom();
+  const [currentTab, setCurrentTab] = useCurrentTabAtom();
+
+  useEffect(() => {
+    if (isBrowser()) {
+      const { client } = queryString.parse(window.location.search);
+
+      if (client === 'desktop') {
+        setCurrentTab('desktop');
+      } else if (
+        client === 'mobile' ||
+        client === 'android' ||
+        client === 'ios'
+      ) {
+        setCurrentTab('mobile');
+      } else if (client === 'browser' || client === 'browserExtension') {
+        setCurrentTab('browserExtension');
+      } else {
+        setCurrentTab('web');
+      }
+    }
+  }, [setCurrentTab]);
 
   return (
     <Container xs={{ height: '100%' }}>
