@@ -1,3 +1,5 @@
+// for homepage app section
+
 const otherPlatforms = {
   type: 'otherPlatforms',
   path: '/beta/download#otherPlatforms',
@@ -10,13 +12,13 @@ const ios = {
   type: 'ios',
   name: 'App Store',
   description: 'Download for free',
-  path: 'https://onekey.so/download?client=ios',
+  path: '/beta/download?client=ios',
   image: 'appstore',
 };
 
 const android = {
   type: 'android',
-  path: 'https://onekey.so/download?client=android',
+  path: '/beta/download?client=android',
   image: 'google',
   name: 'Google Play',
   description: 'Download for free',
@@ -26,13 +28,13 @@ const desktop = {
   type: 'desktop',
   name: 'Desktop app',
   description: 'Mac, Windows, Linux',
-  path: 'https://onekey.so/download?client=desktop',
+  path: '/beta/download?client=desktop',
   image: 'desktop',
 };
 
 const browserExtension = {
   type: 'browserExtension',
-  path: 'https://onekey.so/plugin',
+  path: '/beta/download?client=browser',
   image: 'browserExtension',
   name: 'Browser extension',
   description: 'Chrome, Firefox, Edge',
@@ -40,7 +42,7 @@ const browserExtension = {
 
 const mobile = {
   type: 'mobile',
-  path: 'https://onekey.so/download',
+  path: '/beta/download?client=mobile',
   image: 'mobile',
   name: 'Mobile app',
   description: 'iOS and Android',
