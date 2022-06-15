@@ -1,21 +1,15 @@
 import { FC, ReactNode, useEffect } from 'react';
 
+import { StaticImage } from 'gatsby-plugin-image';
 import { Loader } from 'pixi.js';
 
-import { Box, Img } from '../../../../base';
+import { Box } from '../../../../base';
 import { useCurrentTabAtom } from '../atom';
 
 import browserExtensionImage from './images/browser.jpg';
 import desktopImage from './images/desktop.jpg';
 import mobileImage from './images/mobile.jpg';
 import webImage from './images/web.jpg';
-
-const imageMap = {
-  browserExtension: browserExtensionImage,
-  desktop: desktopImage,
-  mobile: mobileImage,
-  web: webImage,
-};
 
 export interface BackgroundProps {
   children?: ReactNode;
@@ -31,6 +25,14 @@ export const Background: FC<BackgroundProps> = (props) => {
       .load();
   }, []);
 
+  const imageStyle = {
+    marginLeft: 'auto',
+    display: 'block',
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover',
+  } as const;
+
   return (
     <Box
       xs={{
@@ -39,17 +41,38 @@ export const Background: FC<BackgroundProps> = (props) => {
         width: '100%',
       }}
     >
-      <Img
-        xs={{
-          marginLeft: 'auto',
-          display: 'block',
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
-        }}
-        l={{ width: '50%' }}
-        src={imageMap[currentTab || 'web']}
-      />
+      <Box
+        xs={{ width: '100%', height: '100%' }}
+        l={{ width: '50%', marginLeft: 'auto' }}
+      >
+        {currentTab === 'browserExtension' && (
+          <StaticImage
+            style={imageStyle}
+            src="./images/browser.jpg"
+            alt="browser"
+          />
+        )}
+
+        {currentTab === 'desktop' && (
+          <StaticImage
+            style={imageStyle}
+            src="./images/desktop.jpg"
+            alt="desktop"
+          />
+        )}
+
+        {currentTab === 'mobile' && (
+          <StaticImage
+            style={imageStyle}
+            src="./images/mobile.jpg"
+            alt="mobile"
+          />
+        )}
+
+        {currentTab === 'web' && (
+          <StaticImage style={imageStyle} src="./images/web.jpg" alt="web" />
+        )}
+      </Box>
 
       <Box
         xs={{
