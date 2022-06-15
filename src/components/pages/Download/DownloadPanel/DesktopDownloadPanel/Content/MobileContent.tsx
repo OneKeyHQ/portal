@@ -2,7 +2,6 @@ import React, { ReactNode } from 'react';
 
 import { Divider } from '../../../../../base/Divider';
 import { Flex } from '../../../../../base/Flex';
-import { AndroidIcon, AppStoreIcon } from '../../../../../base/Icon';
 import { DownloadButton } from '../../DownloadButton';
 import { FAQ } from '../../FAQ';
 import { Title } from '../../Title';
@@ -22,12 +21,14 @@ export const MobileContent: React.FC<MobileContentProps> = (props) => {
   const buttons = [
     {
       text: ios.name,
-      icon: AppStoreIcon,
+      icon: ios.icon,
+      url: ios.url,
       infos: ios.description.split('<br/>'),
     },
     {
       text: androidGooglePlay.name,
-      icon: AndroidIcon,
+      icon: androidGooglePlay.icon,
+      url: androidGooglePlay.url,
       infos: androidGooglePlay.description,
     },
   ];
@@ -50,6 +51,7 @@ export const MobileContent: React.FC<MobileContentProps> = (props) => {
               key={item.text}
               icon={item.icon}
               text={item.text}
+              url={item.url}
               information={item.infos}
             />
           ))}

@@ -1,6 +1,6 @@
 import { FC, createElement } from 'react';
 
-import { Button, ButtonProps, Flex } from '../../../../base';
+import { Button, ButtonProps, Flex, Link } from '../../../../base';
 
 import { InfoText } from './InfoText';
 
@@ -14,10 +14,11 @@ export interface DownloadButtonProps {
   text: string;
   information: string[] | string;
   buttonType?: ButtonProps['variant'];
+  url?: string;
 }
 
 export const DownloadButton: FC<DownloadButtonProps> = (props) => {
-  const { information, text, icon, buttonType = 'outlined' } = props;
+  const { information, text, icon, url = '', buttonType = 'outlined' } = props;
 
   return (
     <Flex
@@ -29,14 +30,16 @@ export const DownloadButton: FC<DownloadButtonProps> = (props) => {
         maxWidth: 220,
       }}
     >
-      <Button
-        fillWidth
-        leftIcon={createElement(icon, iconSize)}
-        size="large"
-        variant={buttonType}
-      >
-        {text}
-      </Button>
+      <Link css={{ width: '100%' }} to={url}>
+        <Button
+          fillWidth
+          leftIcon={createElement(icon, iconSize)}
+          size="large"
+          variant={buttonType}
+        >
+          {text}
+        </Button>
+      </Link>
 
       <Flex xs={{ flexDirection: 'column', paddingTop: 8 }}>
         {Array.isArray(information) ? (

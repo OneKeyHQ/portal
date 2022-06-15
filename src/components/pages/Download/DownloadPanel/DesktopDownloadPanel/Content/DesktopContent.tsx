@@ -26,18 +26,21 @@ export const DesktopContent: React.FC<DesktopContentProps> = (props) => {
       text: mac.name,
       icon: mac.icon,
       infos: mac.description,
+      url: mac.url,
       systemType: 'mac',
     },
     {
       text: win.name,
       icon: win.icon,
       infos: win.description,
+      url: win.url,
       systemType: 'windows',
     },
     {
       text: linux.name,
       icon: linux.icon,
       infos: linux.description,
+      url: linux.url,
       systemType: 'linux',
     },
   ];
@@ -60,6 +63,7 @@ export const DesktopContent: React.FC<DesktopContentProps> = (props) => {
               key={item.text}
               icon={item.icon}
               text={item.text}
+              url={item.url}
               information={item.infos}
               buttonType={
                 detectResult?.os?.toLowerCase().includes(item.systemType)

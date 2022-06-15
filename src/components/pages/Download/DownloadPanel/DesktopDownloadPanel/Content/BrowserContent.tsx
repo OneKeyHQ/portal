@@ -22,16 +22,19 @@ export const BrowserContent: FC<BrowserContentProps> = (props) => {
     {
       text: chrome.name,
       icon: chrome.icon,
+      url: chrome.url,
       infos: [],
     },
     {
       text: firefox.name,
       icon: firefox.icon,
+      url: firefox.url,
       infos: [],
     },
     {
       text: edge.name,
       icon: edge.icon,
+      url: edge.url,
       infos: [],
     },
   ];
@@ -54,6 +57,7 @@ export const BrowserContent: FC<BrowserContentProps> = (props) => {
               key={item.text}
               icon={item.icon}
               text={item.text}
+              url={item.url}
               information={item.infos}
             />
           ))}
