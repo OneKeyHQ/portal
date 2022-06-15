@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { Fragment, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
@@ -74,10 +74,10 @@ export const FeatureInformationCard: React.FC<FeatureInformationCardProps> = (
               const isLast = index === descriptions.length - 1;
 
               return (
-                <>
+                <Fragment key={description}>
                   <Span>{description}</Span>
                   {!isLast && <br />}
-                </>
+                </Fragment>
               );
             })}
           </Flex>
@@ -88,7 +88,7 @@ export const FeatureInformationCard: React.FC<FeatureInformationCardProps> = (
             xs={{ flexDirection: 'column', gap: 16, ...theme.text.medium400 }}
           >
             {points.map((point) => (
-              <Flex>
+              <Flex key={point}>
                 <Box
                   xs={{
                     color: theme.colors.brandAlt400,

@@ -54,7 +54,7 @@ export const ProductShowcaseSectionItem: FC<ProductShowcaseSectionItemProps> = (
 
           <Flex xs={{ gap: 8, flexDirection: 'column' }}>
             {points.map((point) => (
-              <Flex>
+              <Flex key={point.text}>
                 <Box xs={{ color: theme.colors.brandAlt500 }}>
                   {point.iconNode}
                 </Box>
