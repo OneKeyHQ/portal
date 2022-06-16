@@ -8,6 +8,7 @@ import {
   Box,
   ButtonProps,
   Container,
+  Flex,
   GoToShopButton,
   H1,
   Link,
@@ -15,6 +16,8 @@ import {
 } from '../../../../../base';
 import { FadeIn } from '../../../../../base/FadeIn';
 import { DownloadButton } from '../../../../../common/DownloadButton';
+
+import { Stars } from './Stars';
 
 export interface ContentProps {
   children?: ReactNode;
@@ -97,8 +100,13 @@ export const Content: FC<ContentProps> = () => {
             />
           </Box>
 
-          {/* todo: i18n link */}
-          <Box xs={{ textAlign: 'center' }} m={{ textAlign: 'left' }}>
+          <Flex
+            xs={{ gap: 8, alignItems: 'center', justifyContent: 'center' }}
+            s={{ justifyContent: 'flex-start' }}
+          >
+            <Stars />
+
+            {/* todo: i18n link */}
             <Link to="https://help.onekey.so/hc/articles/360002003315-Privacy-Policy">
               <Span
                 xs={{
@@ -113,7 +121,7 @@ export const Content: FC<ContentProps> = () => {
                 Trustpilot score & review
               </Span>
             </Link>
-          </Box>
+          </Flex>
         </Box>
       </FadeIn>
     </Container>
