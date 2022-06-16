@@ -1,6 +1,7 @@
 import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
+import { navigate } from 'gatsby';
 
 import {
   Box,
@@ -23,6 +24,10 @@ export interface ProductContentProps {
 export const ProductContent: FC<ProductContentProps> = (props) => {
   const { children } = props;
   const theme = useTheme();
+
+  const buy = () => {
+    navigate('https://shop.onekey.so/cart/41169098178722:1');
+  };
 
   return (
     <Flex
@@ -66,7 +71,7 @@ export const ProductContent: FC<ProductContentProps> = (props) => {
             x1 <ChevronDownIcon width={24} height={24} />
           </Flex>
         </Button>
-        <Button variant="filled">
+        <Button onClick={buy} variant="filled">
           <Box xs={{ width: 120 }}>Add to cart</Box>
         </Button>
       </Flex>
