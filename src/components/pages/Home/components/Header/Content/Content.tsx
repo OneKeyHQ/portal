@@ -10,11 +10,11 @@ import {
   Container,
   GoToShopButton,
   H1,
-  LaunchAppButton,
   Link,
   Span,
 } from '../../../../../base';
 import { FadeIn } from '../../../../../base/FadeIn';
+import { DownloadButton } from '../../../../../common/DownloadButton';
 
 export interface ContentProps {
   children?: ReactNode;
@@ -82,7 +82,7 @@ export const Content: FC<ContentProps> = () => {
               flexDirection: 'row',
             }}
           >
-            <LaunchAppButton
+            <DownloadButton
               override={{
                 button: buttonProp,
               }}

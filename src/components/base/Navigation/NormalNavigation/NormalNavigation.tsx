@@ -2,9 +2,9 @@ import React, { ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
+import { DownloadButton } from '../../../common/DownloadButton';
 import { Li, Ul } from '../../Box';
 import { Container } from '../../Container';
-import { LaunchAppButton } from '../../LaunchAppButton';
 import { Link } from '../../Link';
 import { Logo } from '../../Logo';
 import { NavigationAnimationWrap } from '../NavigationAnimationWrap';
@@ -87,7 +87,7 @@ export const NormalNavigation: React.FC<NormalNavigationProps> = () => {
             </Box> */}
         </Ul>
 
-        <LaunchAppButton
+        <DownloadButton
           override={{
             button: {
               variant: 'outlined',
