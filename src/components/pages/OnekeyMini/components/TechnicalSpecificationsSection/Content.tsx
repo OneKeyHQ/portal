@@ -2,13 +2,14 @@ import { FC } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Flex, Span } from '../../../../base';
+import { Box, Divider, Flex, Span } from '../../../../base';
 
 export const Content: FC = () => {
   const theme = useTheme();
-  const { medium300, medium600, normal200 } = theme.text;
+  const { medium300, medium600, normal200, normal100 } = theme.text;
   const m3 = { ...medium300, opacity: 0.5 };
   const n2 = { ...normal200, opacity: 0.5 };
+  const n1 = { ...normal100, opacity: 0.5 };
 
   return (
     <Flex
@@ -40,18 +41,18 @@ export const Content: FC = () => {
             </Flex>
             <Flex xs={{ flexDirection: 'column', gap: 4 }}>
               <Span xs={m3}>Certification level</Span>
-              <Span xs={n2}>CC EAL5+</Span>
+              <Span xs={n2}>EAL6+</Span>
             </Flex>
             <Flex xs={{ flexDirection: 'column', gap: 4 }}>
               <Span xs={m3}>Chips</Span>
-              <Span xs={n2}>ST33J2M0</Span>
+              <Span xs={n2}>STM32F405RGT6</Span>
             </Flex>
           </Flex>
         </Flex>
         <Flex xs={{ flexDirection: 'column', gap: 40 }}>
           <Flex xs={{ flexDirection: 'column', gap: 16 }}>
             <Span xs={medium600}>Materials</Span>
-            <Span xs={n2}>Brushed stainless steel and plastic.</Span>
+            <Span xs={n2}>Plastic</Span>
           </Flex>
         </Flex>
       </Flex>
@@ -59,21 +60,27 @@ export const Content: FC = () => {
         <Flex xs={{ flexDirection: 'column', gap: 40 }}>
           <Flex xs={{ flexDirection: 'column', gap: 16 }}>
             <Span xs={medium600}>Compatibility</Span>
-            <Span xs={n2}>
-              64-bits desktop computer (Windows 8.1+, macOS 10.14+, Linux)
-              excluding ARM Processors. Please note that our devices and the
-              Ledger Live App are not compatible with Chromebooks. Also
-              compatible with smartphones (iOS 13+ or Android 7+). The device is
-              not suitable for mining
-            </Span>
+            <Flex xs={{ flexDirection: 'column' }}>
+              <Span xs={n2}>Windows 10+,</Span>
+              <Span xs={n2}>macOS 10.8+,</Span>
+              <Span xs={n2}>Linux (Ubuntu 12.04+, Fedora 21+, Debian 8)</Span>
+            </Flex>
           </Flex>
         </Flex>
         <Flex xs={{ flexDirection: 'column', gap: 40 }}>
           <Flex xs={{ flexDirection: 'column', gap: 16 }}>
             <Span xs={medium600}>Flex Contents</Span>
-            <Span xs={n2}>
-              1 hardware wallet, 1 USB-C to USB-A cable, 1 getting started
-              leaflet, 3 recovery sheets, 1 keychain strap
+            <Span xs={n2}>1 hardware wallet, 1 sticker, 2 recovery sheet</Span>
+          </Flex>
+
+          <Flex xs={{ flexDirection: 'column', gap: 1 }}>
+            <Box xs={{ opacity: 0.5, paddingBottom: 12 }}>
+              <Divider color={theme.colors.white} />
+            </Box>
+
+            <Span xs={n1}>1. There is no battery in the device.</Span>
+            <Span xs={n1}>
+              2. The device does not support Bluetooth connectivity.
             </Span>
           </Flex>
         </Flex>
