@@ -3,6 +3,7 @@ import { FC, ReactNode } from 'react';
 import { useTheme } from '@emotion/react';
 
 import { Nav } from '../Box';
+import { OnlyDisplay } from '../OnlyDisplay';
 
 import { MobileNavigation } from './MobileNavigation';
 import { NormalNavigation } from './NormalNavigation';
@@ -30,9 +31,14 @@ export const Navigation: FC<NavigationProps> = (props) => {
         },
       }}
     >
-      <NormalNavigation />
+      <OnlyDisplay xs s m>
+        <MobileNavigation />
+      </OnlyDisplay>
 
-      <MobileNavigation />
+      <OnlyDisplay l xl xxl>
+        <NormalNavigation />
+      </OnlyDisplay>
+
       {children}
     </Nav>
   );

@@ -84,6 +84,28 @@ export function useNavigationDataObject() {
     path: 'https://docs.onekey.so/',
   };
 
+  const forBusiness = {
+    name: 'For Business',
+    key: 'for-business',
+    subItems: [
+      {
+        name: 'Enterprise Solutions',
+        key: 'enterprise-solutions',
+        path: '/enterprise',
+      },
+      {
+        name: 'Referral',
+        key: 'referral',
+        path: '/affiliate-program',
+      },
+      {
+        name: 'Co-branded products',
+        key: 'co-branded-products',
+        path: '/co-branded-partnership',
+      },
+    ],
+  };
+
   const helpCenter = {
     name: 'Help Center',
     key: 'help-center',
@@ -134,6 +156,7 @@ export function useNavigationDataObject() {
     services,
     security,
     forDeveloper,
+    forBusiness,
     helpCenter,
     shop,
   };
@@ -148,6 +171,7 @@ export function useNavigationData(): NavigationDataItem[] {
     object.services,
     object.security,
     object.forDeveloper,
+    object.forBusiness,
     object.helpCenter,
     object.shop,
   ];

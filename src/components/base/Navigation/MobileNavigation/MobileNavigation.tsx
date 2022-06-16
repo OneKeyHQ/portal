@@ -1,4 +1,4 @@
-import React, { ReactNode, useCallback, useState } from 'react';
+import React, { Fragment, ReactNode, useCallback, useState } from 'react';
 
 import { useTheme } from '@emotion/react';
 
@@ -40,14 +40,7 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = (props) => {
   }, [setMenuActive]);
 
   return (
-    <Box
-      xs={{
-        display: 'block',
-      }}
-      m={{
-        display: 'none',
-      }}
-    >
+    <Fragment key="MobileNavigation">
       <NavigationAnimationWrap paddingRange={[20, 12]} isSpring>
         <Flex
           xs={{
@@ -107,6 +100,6 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = (props) => {
           <MobileMenuItems mobileMenus={navigationData} />
         </Box>
       )}
-    </Box>
+    </Fragment>
   );
 };
