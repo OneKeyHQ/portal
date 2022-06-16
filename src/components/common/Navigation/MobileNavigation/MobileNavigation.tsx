@@ -2,10 +2,10 @@ import React, { Fragment, ReactNode, useCallback, useState } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Box } from '../../Box';
-import { Flex } from '../../Flex';
-import { MenuCloseIcon, MenuIcon } from '../../Icon';
-import { Logo } from '../../Logo';
+import { Box } from '../../../base/Box';
+import { Flex } from '../../../base/Flex';
+import { MenuCloseIcon, MenuIcon } from '../../../base/Icon';
+import { Logo } from '../../../base/Logo';
 import { NavigationAnimationWrap } from '../NavigationAnimationWrap';
 import { useNavigationData } from '../useNavigationData';
 

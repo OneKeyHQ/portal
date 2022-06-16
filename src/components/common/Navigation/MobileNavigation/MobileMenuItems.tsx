@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { Box, Ul } from '../../Box';
+import { Box, Ul } from '../../../base/Box';
 import { NavigationDataItem } from '../useNavigationData';
 
 import { MobileMenuItem } from './MobileMenuItem';

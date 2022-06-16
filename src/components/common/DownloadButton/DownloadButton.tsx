@@ -1,26 +1,23 @@
 import { FC } from 'react';
 
-import { useOneKeyVersion } from '../../../data';
-import { Button, ButtonProps } from '../Button';
-import { Logo } from '../Logo';
+import { Button, ButtonProps, Link, Logo } from '../../base';
 
-export interface LaunchAppButtonProps {
+export interface DownloadButtonProps {
   override?: {
     button: ButtonProps;
   };
 }
 
-export const LaunchAppButton: FC<LaunchAppButtonProps> = (props) => {
+export const DownloadButton: FC<DownloadButtonProps> = (props) => {
   const {
     override = {
       button: {},
     },
   } = props;
   const { button = {} } = override;
-  const { formattedData } = useOneKeyVersion();
 
   return (
-    <a href={formattedData.web.url} target="_blank" rel="noreferrer">
+    <Link to="/download">
       <Button
         {...button}
         rightIcon={
@@ -32,8 +29,8 @@ export const LaunchAppButton: FC<LaunchAppButtonProps> = (props) => {
           />
         }
       >
-        Launch App
+        Free Download
       </Button>
-    </a>
+    </Link>
   );
 };

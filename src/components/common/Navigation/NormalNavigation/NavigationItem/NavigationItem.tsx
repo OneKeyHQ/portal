@@ -4,8 +4,8 @@ import { FC, ReactNode, createElement } from 'react';
 import { useTheme } from '@emotion/react';
 
 import { useHover } from '../../../../../hooks';
-import { Box } from '../../../Box';
-import { Link } from '../../../Link';
+import { Box } from '../../../../base/Box';
+import { Link } from '../../../../base/Link';
 import { NavigationDataItem } from '../../useNavigationData';
 
 import { HoverPanel } from './HoverPanel';
