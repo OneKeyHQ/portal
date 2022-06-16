@@ -3,7 +3,6 @@ import React from 'react';
 import { useTheme } from '@emotion/react';
 import { Helmet } from 'react-helmet';
 
-import { useOneKeyVersion } from '../../../data';
 import { Box, Main, Navigation, SEO } from '../../base';
 import { FadeIn } from '../../base/FadeIn';
 import { PageFooter } from '../../common/PageFooter';
@@ -23,8 +22,6 @@ import {
 
 export const Home: React.FC = () => {
   const theme = useTheme();
-
-  useOneKeyVersion();
 
   return (
     <>
