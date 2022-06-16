@@ -1,6 +1,6 @@
 import { FC, ReactNode } from 'react';
 
-import { Box, Flex } from '../../../../../base';
+import { Box, Flex, OnlyDisplay } from '../../../../../base';
 import { IntroductionText } from '../IntroductionText';
 
 import { useImageIntroductionData } from './useImageIntroductionData';
@@ -18,34 +18,25 @@ export const ImageIntroduction: FC<ImageIntroductionProps> = (props) => {
       {data.items.map((item) => (
         <Box xs={{ position: 'relative' }} key={item.name}>
           <Box xs={{ borderRadius: 40, overflow: 'hidden' }}>
-            <Box xs={{ display: 'block' }} s={{ display: 'none' }}>
-              {item.sImage}
-            </Box>
-            <Box
-              xs={{ display: 'none' }}
-              s={{ display: 'block' }}
-              l={{ display: 'none' }}
-            >
-              {item.mImage}
-            </Box>
-            <Box
-              xs={{ display: 'none' }}
-              l={{ display: 'block' }}
-              xl={{ display: 'none' }}
-            >
-              {item.lImage}
-            </Box>
-            <Box xs={{ display: 'none' }} xl={{ display: 'block' }}>
-              {item.xlImage}
-            </Box>
+            <OnlyDisplay xs>{item.sImage}</OnlyDisplay>
+            <OnlyDisplay s>{item.mImage}</OnlyDisplay>
+            <OnlyDisplay l>{item.lImage}</OnlyDisplay>
+            <OnlyDisplay xl xxl>
+              <Box>{item.xlImage}</Box>
+            </OnlyDisplay>
           </Box>
           <Box
             xs={{
               position: 'absolute',
-              top: '45%',
+              display: 'flex',
               textAlign: 'center',
+              justifyContent: 'center',
+              alignItems: 'center',
+              padding: 12,
               left: 0,
               right: 0,
+              top: 0,
+              bottom: 0,
             }}
           >
             <IntroductionText name={item.name} description={item.description} />
