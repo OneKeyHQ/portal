@@ -20,9 +20,11 @@ export const ImageIntroduction: FC<ImageIntroductionProps> = (props) => {
           <Box xs={{ borderRadius: 40, overflow: 'hidden' }}>
             <OnlyDisplay xs>{item.sImage}</OnlyDisplay>
             <OnlyDisplay s>{item.mImage}</OnlyDisplay>
-            <OnlyDisplay l>{item.lImage}</OnlyDisplay>
+            <OnlyDisplay m l>
+              {item.lImage}
+            </OnlyDisplay>
             <OnlyDisplay xl xxl>
-              <Box>{item.xlImage}</Box>
+              {item.xlImage}
             </OnlyDisplay>
           </Box>
           <Box
