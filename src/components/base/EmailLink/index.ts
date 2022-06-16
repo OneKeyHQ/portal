@@ -1,1 +1,1 @@
-export * from './EmailLink'
+export * from './EmailLink';
