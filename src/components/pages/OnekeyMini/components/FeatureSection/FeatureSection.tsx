@@ -34,12 +34,14 @@ export const FeatureSection: FC<FeatureSectionProps> = (props) => {
           </Flex>
           <Flex
             xs={{
+              gap: 32,
               paddingTop: 34,
               justifyContent: 'space-around',
               alignItems: 'center',
               flexDirection: 'column',
             }}
             m={{
+              gap: 0,
               paddingTop: 80,
               alignItems: 'flex-start',
               flexDirection: 'row',

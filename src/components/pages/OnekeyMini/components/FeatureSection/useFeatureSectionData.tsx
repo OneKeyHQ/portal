@@ -7,12 +7,12 @@ export function useFeatureSectionData(): FeatureSectionDataItem[] {
     {
       imageNode: <StaticImage alt="illustration" src="./images/Product1.jpg" />,
       name: 'Open source',
-      description: 'Open source Transparent, WYSIWYG',
+      description: 'Open source transparent, WYSIWYG.',
     },
     {
       imageNode: <StaticImage alt="illustration" src="./images/Product2.jpg" />,
-      name: 'Easy to use',
-      description: 'Beginner friendly',
+      name: 'Light and mini sized',
+      description: 'Battery-free, compact and durable, suitable for holders.',
     },
     {
       imageNode: <StaticImage alt="illustration" src="./images/Product3.jpg" />,
