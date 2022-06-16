@@ -9,7 +9,6 @@ export * from './Logo';
 export * from './RoundCursor';
 export * from './SEO';
 export * from './Swiper';
-export * from './LaunchAppButton';
 export * from './ResponsiveIndicator';
 export * from './AspectRatio';
 export * from './GoToShopButton';

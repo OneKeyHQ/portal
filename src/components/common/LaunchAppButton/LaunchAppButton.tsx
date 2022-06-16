@@ -1,8 +1,8 @@
 import { FC } from 'react';
 
 import { useOneKeyVersion } from '../../../data';
-import { Button, ButtonProps } from '../Button';
-import { Logo } from '../Logo';
+import { Button, ButtonProps } from '../../base/Button';
+import { Logo } from '../../base/Logo';
 
 export interface LaunchAppButtonProps {
   override?: {

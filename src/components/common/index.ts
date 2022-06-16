@@ -9,3 +9,4 @@ export * from './MultiChainSupportMediaCard';
 export * from './BackgroundMask';
 export * from './FreeSwiper';
 export * from './DownloadButton';
+export * from './LaunchAppButton';
