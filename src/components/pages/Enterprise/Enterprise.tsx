@@ -2,8 +2,8 @@ import { FC, ReactNode } from 'react';
 
 import { Helmet } from 'react-helmet';
 
-import { Box, Main, Navigation } from '../../base';
-import { PageFooter } from '../../common';
+import { Box, Main } from '../../base';
+import { Navigation, PageFooter } from '../../common';
 
 import { Hero } from './Hero';
 

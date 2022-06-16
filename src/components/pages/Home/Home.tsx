@@ -4,8 +4,9 @@ import { useTheme } from '@emotion/react';
 import { Helmet } from 'react-helmet';
 
 import { useOneKeyVersion } from '../../../data';
-import { Box, Main, Navigation, SEO } from '../../base';
+import { Box, Main, SEO } from '../../base';
 import { FadeIn } from '../../base/FadeIn';
+import { Navigation } from '../../common/Navigation';
 import { PageFooter } from '../../common/PageFooter';
 
 import {

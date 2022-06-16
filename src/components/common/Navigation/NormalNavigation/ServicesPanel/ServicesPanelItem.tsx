@@ -2,9 +2,9 @@ import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Box, H2, Img, Span } from '../../../Box';
-import { Flex } from '../../../Flex';
-import { Link } from '../../../Link';
+import { Box, H2, Img, Span } from '../../../../base/Box';
+import { Flex } from '../../../../base/Flex';
+import { Link } from '../../../../base/Link';
 import { NavigationDataItem } from '../../useNavigationData';
 
 export interface ServicesPanelItemProps extends NavigationDataItem {

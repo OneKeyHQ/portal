@@ -7,8 +7,8 @@ import ReactDOM from 'react-dom';
 
 import { useOneKeyMiniData } from '../../../../../data';
 import { isBrowser } from '../../../../../utils';
-import { Box, Li, Ul } from '../../../Box';
-import { Link } from '../../../Link';
+import { Box, Li, Ul } from '../../../../base/Box';
+import { Link } from '../../../../base/Link';
 
 export interface LeftAreaProps {
   children?: ReactNode;

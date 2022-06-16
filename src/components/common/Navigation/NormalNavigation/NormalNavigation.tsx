@@ -2,11 +2,11 @@ import React, { ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { DownloadButton } from '../../../common/DownloadButton';
-import { Li, Ul } from '../../Box';
-import { Container } from '../../Container';
-import { Link } from '../../Link';
-import { Logo } from '../../Logo';
+import { Li, Ul } from '../../../base/Box';
+import { Container } from '../../../base/Container';
+import { Link } from '../../../base/Link';
+import { Logo } from '../../../base/Logo';
+import { DownloadButton } from '../../DownloadButton';
 import { NavigationAnimationWrap } from '../NavigationAnimationWrap';
 import { useNavigationDataObject } from '../useNavigationData';
 

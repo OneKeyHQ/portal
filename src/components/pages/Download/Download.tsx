@@ -2,8 +2,8 @@ import React from 'react';
 
 import { Helmet } from 'react-helmet';
 
-import { Container, Flex, Main, Navigation, SEO } from '../../base';
-import { PageFooter, StayInTouch } from '../../common';
+import { Container, Flex, Main, SEO } from '../../base';
+import { Navigation, PageFooter, StayInTouch } from '../../common';
 
 import { Cards } from './Cards';
 import { DownloadPanel } from './DownloadPanel';

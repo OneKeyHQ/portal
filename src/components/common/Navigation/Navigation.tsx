@@ -2,8 +2,8 @@ import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Nav } from '../Box';
-import { OnlyDisplay } from '../OnlyDisplay';
+import { Nav } from '../../base/Box';
+import { OnlyDisplay } from '../../base/OnlyDisplay';
 
 import { MobileNavigation } from './MobileNavigation';
 import { NormalNavigation } from './NormalNavigation';

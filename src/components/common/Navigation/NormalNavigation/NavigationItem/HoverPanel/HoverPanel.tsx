@@ -3,8 +3,8 @@ import { FC, ReactNode } from 'react';
 import { useTheme } from '@emotion/react';
 
 import { useHover } from '../../../../../../hooks';
-import { Box } from '../../../../Box';
-import { Flex } from '../../../../Flex';
+import { Box } from '../../../../../base/Box';
+import { Flex } from '../../../../../base/Flex';
 import { NavigationDataItem } from '../../../useNavigationData';
 
 export interface HoverPanelProps {
