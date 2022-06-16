@@ -40,6 +40,8 @@ export const FeatureInformationCard: React.FC<FeatureInformationCardProps> = (
         borderStyle: 'solid',
         borderColor: theme.colors.test200,
         transition: theme.transitions.allEaseOut,
+      }}
+      m={{
         ':hover': {
           transform: 'translateY(-40px)',
           boxShadow: '0px 24px 48px rgba(0, 0, 0, 0.08)',
