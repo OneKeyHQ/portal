@@ -1,6 +1,7 @@
 import { FC, ReactNode } from 'react';
 
-import { Flex, LaunchAppButton } from '../../../../../base';
+import { Flex } from '../../../../../base';
+import { LaunchAppButton } from '../../../../../common/LaunchAppButton';
 import { Title } from '../../Title';
 
 export interface WebContentProps {

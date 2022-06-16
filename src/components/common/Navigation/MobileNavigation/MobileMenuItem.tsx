@@ -2,10 +2,10 @@ import { FC, useState } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Box, Img, Li, Ul } from '../../Box';
-import { Flex } from '../../Flex';
-import { MenuListArrowIcon } from '../../Icon';
-import { Link } from '../../Link';
+import { Box, Img, Li, Ul } from '../../../base/Box';
+import { Flex } from '../../../base/Flex';
+import { MenuListArrowIcon } from '../../../base/Icon';
+import { Link } from '../../../base/Link';
 import { NavigationDataItem } from '../useNavigationData';
 
 interface MobileMenuItemProps {

@@ -3,9 +3,9 @@ import { FC, ReactNode, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
 import { useHover } from '../../../../../hooks';
-import { Box } from '../../../Box';
-import { Container } from '../../../Container';
-import { Flex } from '../../../Flex';
+import { Box } from '../../../../base/Box';
+import { Container } from '../../../../base/Container';
+import { Flex } from '../../../../base/Flex';
 import { useNormalNavigationHeight } from '../useNormalNavigationHeight';
 
 import { LeftArea } from './LeftArea';

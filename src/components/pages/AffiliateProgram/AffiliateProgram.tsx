@@ -2,8 +2,8 @@ import { FC, ReactNode } from 'react';
 
 import { Helmet } from 'react-helmet';
 
-import { Box, Container, Flex, Main, Navigation } from '../../base';
-import { PageFooter } from '../../common';
+import { Box, Container, Flex, Main } from '../../base';
+import { Navigation, PageFooter } from '../../common';
 
 import { AffiliateProgramCard } from './AffiliateProgramCard';
 import { MainTitle } from './MainTitle';

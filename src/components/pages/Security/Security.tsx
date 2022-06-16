@@ -3,8 +3,8 @@ import React, { ReactNode } from 'react';
 import { useTheme } from '@emotion/react';
 import { Helmet } from 'react-helmet';
 
-import { Box, Container, Main, Navigation, SEO } from '../../base';
-import { PageFooter, StayInTouch } from '../../common';
+import { Box, Container, Main, SEO } from '../../base';
+import { Navigation, PageFooter, StayInTouch } from '../../common';
 
 import { FeatureSection } from './FeatureSection';
 import { Hero } from './Hero';

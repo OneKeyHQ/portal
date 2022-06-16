@@ -2,9 +2,9 @@ import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Box, BoxProps, Span } from '../../../Box';
-import { MenuListArrowIcon } from '../../../Icon';
-import { Link } from '../../../Link';
+import { Box, BoxProps, Span } from '../../../../base/Box';
+import { MenuListArrowIcon } from '../../../../base/Icon';
+import { Link } from '../../../../base/Link';
 
 import { QuestionIcon } from './QuestionIcon';
 

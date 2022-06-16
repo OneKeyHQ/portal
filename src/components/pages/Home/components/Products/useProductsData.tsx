@@ -1,6 +1,7 @@
 import { StaticImage } from 'gatsby-plugin-image';
 
-import { GoToShopButton, LaunchAppButton } from '../../../../base';
+import { GoToShopButton } from '../../../../base';
+import { DownloadButton } from '../../../../common/DownloadButton';
 
 export function useProductsData() {
   return [
@@ -14,7 +15,7 @@ export function useProductsData() {
       title: 'Advanced on-chain wallet app.',
       description:
         "Use OneKey App separately to store and use your crypto assets in a secure and convenient manner. Each user's assets are appropriately secured and stored locally.",
-      button: <LaunchAppButton />,
+      button: <DownloadButton />,
       frames: new Array(60).fill(0).map((_, i) => `/home-intro/image${i}.jpg`),
     },
     {

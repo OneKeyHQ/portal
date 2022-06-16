@@ -2,7 +2,8 @@ import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Box, LaunchAppButton, Span } from '../../../../base';
+import { Box, Span } from '../../../../base';
+import { DownloadButton } from '../../../../common/DownloadButton';
 
 export interface HeaderProps {
   children?: ReactNode;
@@ -43,7 +44,7 @@ export const FeatureHeader: FC<HeaderProps> = () => {
       </Span>
 
       <Box>
-        <LaunchAppButton />
+        <DownloadButton />
       </Box>
     </Box>
   );

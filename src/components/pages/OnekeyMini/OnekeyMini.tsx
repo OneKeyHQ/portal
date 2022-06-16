@@ -2,8 +2,8 @@ import { FC, ReactNode } from 'react';
 
 import { Helmet } from 'react-helmet';
 
-import { Box, Container, Main, Navigation } from '../../base';
-import { PageFooter, StayInTouch } from '../../common';
+import { Box, Container, Main } from '../../base';
+import { Navigation, PageFooter, StayInTouch } from '../../common';
 
 import { FeatureSection } from './components/FeatureSection';
 import { IntroductionSection } from './components/IntroductionSection';
