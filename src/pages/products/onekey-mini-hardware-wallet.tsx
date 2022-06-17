@@ -1,1 +1,1 @@
-export { OnekeyMini as default } from '../../components/pages/OnekeyMini';
+export { OnekeyMini as default } from '../../components/pages/products/OnekeyMini';
