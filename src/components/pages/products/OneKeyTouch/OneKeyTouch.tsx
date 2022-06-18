@@ -11,17 +11,17 @@ import { ProductInformation } from '../components/ProductInformation';
 import { RecommendSection } from '../components/RecommendSection';
 import { TechnicalSpecificationsSection } from '../components/TechnicalSpecificationsSection';
 
-export interface OnekeyMiniProps {
+export interface OneKeyTouchProps {
   children?: ReactNode;
 }
 
-export const OnekeyMini: FC<OnekeyMiniProps> = (props) => {
+export const OneKeyTouch: FC<OneKeyTouchProps> = (props) => {
   const { children } = props;
 
   return (
     <Box>
       <Helmet>
-        <title>OneKey</title>
+        <title>OneKey Touch</title>
       </Helmet>
 
       <Navigation />
