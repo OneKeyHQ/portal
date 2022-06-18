@@ -15,17 +15,20 @@ import { ProductInformation } from '../components/ProductInformation';
 import { RecommendSection } from '../components/RecommendSection';
 import { TechnicalSpecificationsSection } from '../components/TechnicalSpecificationsSection';
 
+import { useOnekeyMiniData } from './useOnekeyMiniData';
+
 export interface OnekeyMiniProps {
   children?: ReactNode;
 }
 
 export const OnekeyMini: FC<OnekeyMiniProps> = (props) => {
   const { children } = props;
+  const onekeyMiniData = useOnekeyMiniData();
 
   return (
     <Box>
       <Helmet>
-        <title>OneKey</title>
+        <title>{onekeyMiniData.title}</title>
       </Helmet>
 
       <Navigation />
