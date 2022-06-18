@@ -2,8 +2,12 @@ import { FC, ReactNode } from 'react';
 
 import { Helmet } from 'react-helmet';
 
-import { Box, Container, Main } from '../../../base';
-import { Navigation, PageFooter, StayInTouch } from '../../../common';
+import { Box, Main } from '../../../base';
+import {
+  Navigation,
+  PageFooter,
+  StayInTouchWidthContainerAndPadding,
+} from '../../../common';
 import { FeatureSection } from '../components/FeatureSection';
 import { IntroductionSection } from '../components/IntroductionSection';
 import { MultiChainSupportSection } from '../components/MultiChainSupportSection';
@@ -39,14 +43,7 @@ export const OneKeyTouch: FC<OneKeyTouchProps> = (props) => {
 
         <RecommendSection />
 
-        <Container>
-          <Box
-            xs={{ paddingTop: 40, paddingBottom: 40 }}
-            m={{ paddingBottom: 80 }}
-          >
-            <StayInTouch />
-          </Box>
-        </Container>
+        <StayInTouchWidthContainerAndPadding />
       </Main>
 
       <PageFooter isShowEmailSubscribe={false} isShowMediaLinks={false} />
