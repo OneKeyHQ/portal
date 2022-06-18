@@ -4,7 +4,22 @@ import { useTheme } from '@emotion/react';
 
 import { Box, Divider, Flex, Span } from '../../../../base';
 
-export const Content: FC = () => {
+type MarkdownContentItem = {
+  type: string;
+  content: string;
+  key?: string;
+  children?: MarkdownContentItem[];
+};
+
+type MarkdownContent = {
+  content: MarkdownContentItem[];
+};
+
+export interface ContentProps {
+  text: MarkdownContent;
+}
+
+export const Content: FC<ContentProps> = () => {
   const theme = useTheme();
   const { medium300, medium600, normal200, normal100 } = theme.text;
   const m3 = { ...medium300, opacity: 0.5 };
