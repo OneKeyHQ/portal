@@ -15,17 +15,20 @@ import { ProductInformation } from '../components/ProductInformation';
 import { RecommendSection } from '../components/RecommendSection';
 import { TechnicalSpecificationsSection } from '../components/TechnicalSpecificationsSection';
 
+import { useOnekeyTouchData } from './useOneKeyTouchData';
+
 export interface OneKeyTouchProps {
   children?: ReactNode;
 }
 
 export const OneKeyTouch: FC<OneKeyTouchProps> = (props) => {
   const { children } = props;
+  const onekeyTouchData = useOnekeyTouchData();
 
   return (
     <Box>
       <Helmet>
-        <title>OneKey Touch</title>
+        <title>{onekeyTouchData.title}</title>
       </Helmet>
 
       <Navigation />
