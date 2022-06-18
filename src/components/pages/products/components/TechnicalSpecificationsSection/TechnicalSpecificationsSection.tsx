@@ -6,6 +6,7 @@ import { Box, Container, Flex, Span } from '../../../../base';
 
 import { Content } from './Content';
 import { SideImage } from './SideImage';
+import { useTechnicalSpecificationsSectionData } from './useTechnicalSpecificationsSectionData';
 
 export interface TechnicalSpecificationsSectionProps {
   children?: ReactNode;
@@ -16,6 +17,8 @@ export const TechnicalSpecificationsSection: FC<
 > = (props) => {
   const { children } = props;
   const theme = useTheme();
+
+  const sectionData = useTechnicalSpecificationsSectionData();
 
   return (
     <Box
@@ -33,7 +36,7 @@ export const TechnicalSpecificationsSection: FC<
       <Container>
         <Box xs={{ textAlign: 'center' }}>
           <Span xs={{ ...theme.text.medium800, color: theme.colors.white }}>
-            Technical Specifications
+            {sectionData.title}
           </Span>
         </Box>
 
@@ -42,7 +45,7 @@ export const TechnicalSpecificationsSection: FC<
           m={{ flexDirection: 'row', gap: 100 }}
         >
           <Box xs={{ flexGrow: 1 }}>
-            <SideImage />
+            <SideImage {...sectionData.images} />
           </Box>
           <Content />
         </Flex>

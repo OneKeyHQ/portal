@@ -19,6 +19,7 @@ export const Content: FC = () => {
       xl={{ flexDirection: 'row' }}
     >
       <Flex xs={{ flexDirection: 'column', gap: 64, flex: 1 }}>
+        {/*  */}
         <Flex xs={{ flexDirection: 'column', gap: 40 }}>
           <Flex xs={{ flexDirection: 'column', gap: 16 }}>
             <Span xs={medium600}>Dimensions & weight</Span>
@@ -32,6 +33,7 @@ export const Content: FC = () => {
             </Flex>
           </Flex>
         </Flex>
+        {/*  */}
         <Flex xs={{ flexDirection: 'column', gap: 40 }}>
           <Flex xs={{ flexDirection: 'column', gap: 16 }}>
             <Span xs={medium600}>Microcontrollers & connector</Span>
@@ -49,6 +51,8 @@ export const Content: FC = () => {
             </Flex>
           </Flex>
         </Flex>
+
+        {/*  */}
         <Flex xs={{ flexDirection: 'column', gap: 40 }}>
           <Flex xs={{ flexDirection: 'column', gap: 16 }}>
             <Span xs={medium600}>Materials</Span>

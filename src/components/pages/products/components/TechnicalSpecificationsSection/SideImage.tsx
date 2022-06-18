@@ -2,16 +2,15 @@ import { FC, ReactNode } from 'react';
 
 import { Box } from '../../../../base';
 
-import largeImageUrl from './images/large.svg';
-import mediumImageUrl from './images/medium.svg';
-import smallImageUrl from './images/small.svg';
-
 export interface SideImageProps {
   children?: ReactNode;
+  smallImageUrl: string;
+  mediumImageUrl: string;
+  largeImageUrl: string;
 }
 
 export const SideImage: FC<SideImageProps> = (props) => {
-  const { children } = props;
+  const { children, smallImageUrl, mediumImageUrl, largeImageUrl } = props;
 
   return (
     <Box
