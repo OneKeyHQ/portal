@@ -4,7 +4,7 @@ import { useMediaQuery } from '../../../../../../hooks';
 import { isBrowser } from '../../../../../../utils';
 import { Box, Img, VideoPlayer } from '../../../../../base';
 
-import defaultBackgroundImage from './images/background.jpg';
+import defaultBackgroundImage from './images/background.inline.jpg';
 import homeHeroStill4kSrc from './images/home-hero-still-4k.jpg';
 import homeHeroStillSrc from './images/home-hero-still.jpg';
 import mobileBackground from './images/mobileBackground.jpg';
