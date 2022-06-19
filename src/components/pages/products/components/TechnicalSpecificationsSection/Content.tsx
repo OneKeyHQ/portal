@@ -16,7 +16,7 @@ type MarkdownContent = {
 };
 
 export interface ContentProps {
-  text: MarkdownContent;
+  text?: MarkdownContent;
 }
 
 export const Content: FC<ContentProps> = () => {

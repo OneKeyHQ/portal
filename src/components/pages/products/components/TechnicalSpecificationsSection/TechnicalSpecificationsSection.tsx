@@ -47,6 +47,7 @@ export const TechnicalSpecificationsSection: FC<
           <Box xs={{ flexGrow: 1 }}>
             <SideImage {...sectionData.images} />
           </Box>
+
           <Content />
         </Flex>
       </Container>
