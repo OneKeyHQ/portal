@@ -29,14 +29,12 @@ export const Tabs: FC<TabsProps> = (props) => {
   return (
     <Box
       css={{
-        paddingTop: 32,
-        paddingBottom: 32,
         color: theme.colors.white,
-        backgroundColor: theme.colors.test500,
+        backgroundColor: theme.colors.test400,
       }}
     >
       <Container>
-        <Flex l={{ gap: 20 }} xl={{ gap: 40 }}>
+        <Flex>
           {tabs.map((item) => {
             const iconType = item.image as DownloadTypes;
 
@@ -46,7 +44,6 @@ export const Tabs: FC<TabsProps> = (props) => {
                 key={item.name}
                 onClick={() => {
                   setCurrentTabAtom(iconType as SetStateAction<TabTypes>);
-                  // current use client query
                   navigate(`?client=${iconType}`);
                 }}
               >
