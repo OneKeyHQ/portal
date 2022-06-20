@@ -19,6 +19,7 @@
     "develop:production": "npm run clean && gatsby develop -H 0.0.0.0",
     "start": "gatsby develop",
     "build": "npm run clean && gatsby build",
+    "build:cdn": "npm run clean && gatsby build --prefix-paths",
     "serve": "gatsby serve",
     "clean": "gatsby clean && rm -rf .cache",
     "life": "git clean -xdf && yarn install && yarn develop",
