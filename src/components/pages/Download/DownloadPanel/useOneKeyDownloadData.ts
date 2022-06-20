@@ -2,6 +2,7 @@ import { useOneKeyVersion } from '../../../../data';
 import {
   AndroidIcon,
   AppleIcon,
+  BoxIcon,
   ChromeIcon,
   DesktopIcon,
   EdgeIcon,
@@ -16,6 +17,8 @@ import {
 
 export function useOneKeyDownloadData() {
   const { formattedData } = useOneKeyVersion();
+
+  // platforms
 
   const ios = {
     icon: AppleIcon,
@@ -108,6 +111,50 @@ export function useOneKeyDownloadData() {
     url: formattedData.web.url,
   };
 
+  const bridgeMac = {
+    icon: AppleIcon,
+    name: 'macOS',
+    description: formattedData.bridge.version,
+    url: formattedData.bridge.mac.url,
+  };
+
+  const bridgeWin = {
+    icon: WindowsIcon,
+    name: 'Windows',
+    description: formattedData.bridge.version,
+    url: formattedData.bridge.win.url,
+  };
+
+  const bridgeLinux64Deb = {
+    icon: LinuxIcon,
+    name: 'Linux 64-bit (deb)',
+    description: formattedData.bridge.version,
+    url: formattedData.bridge.linux64Deb.url,
+  };
+
+  const bridgeLinux64Rpm = {
+    icon: LinuxIcon,
+    name: 'Linux 64-bit (rpm)',
+    description: formattedData.bridge.version,
+    url: formattedData.bridge.linux64Rpm.url,
+  };
+
+  const bridgeLinux32Deb = {
+    icon: LinuxIcon,
+    name: 'Linux 32-bit (deb)',
+    description: formattedData.bridge.version,
+    url: formattedData.bridge.linux32Deb.url,
+  };
+
+  const bridgeLinux32Rpm = {
+    icon: LinuxIcon,
+    name: 'Linux 32-bit (rpm)',
+    description: formattedData.bridge.version,
+    url: formattedData.bridge.linux32Rpm.url,
+  };
+
+  // types
+
   const mobile = {
     icon: MobileIcon,
     name: 'Mobile',
@@ -138,8 +185,14 @@ export function useOneKeyDownloadData() {
     pageTitle: ['Download', 'OneKey.'],
   };
 
+  const bridge = {
+    icon: BoxIcon,
+    name: 'Bridge',
+    description: 'Mac, Windows, Linux',
+  };
+
   return {
-    types: { mobile, desktop, browser },
+    types: { mobile, desktop, browser, bridge },
     platforms: {
       web,
       ios,
@@ -151,6 +204,12 @@ export function useOneKeyDownloadData() {
       chrome,
       firefox,
       edge,
+      bridgeMac,
+      bridgeWin,
+      bridgeLinux64Deb,
+      bridgeLinux64Rpm,
+      bridgeLinux32Deb,
+      bridgeLinux32Rpm,
     },
   };
 }

@@ -31,6 +31,17 @@ export function useOtherPlatformsData(): {
         ...types.browser,
         subItems: [platforms.chrome, platforms.firefox, platforms.edge],
       },
+      {
+        ...types.bridge,
+        subItems: [
+          platforms.bridgeMac,
+          platforms.bridgeWin,
+          platforms.bridgeLinux64Deb,
+          platforms.bridgeLinux64Rpm,
+          platforms.bridgeLinux32Deb,
+          platforms.bridgeLinux32Rpm,
+        ],
+      },
     ],
   };
 }
