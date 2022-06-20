@@ -20,12 +20,12 @@ export const TabItem: FC<TabItemProps> = (props) => {
   return (
     <Box
       xs={{
-        paddingLeft: 24,
+        paddingLeft: 12,
         paddingTop: 32,
         paddingBottom: 32,
         position: 'relative',
         transition: theme.transitions.allEaseOut,
-        willChange: 'opacity',
+        willChange: 'opacity,background',
         opacity: active ? 1 : 0.6,
         background: active ? theme.colors.test500 : 'transparent',
         cursor: 'pointer',
@@ -33,6 +33,9 @@ export const TabItem: FC<TabItemProps> = (props) => {
           opacity: 1,
           background: theme.colors.test500,
         },
+      }}
+      xl={{
+        paddingLeft: 24,
       }}
       externalProps={otherProps}
     >
