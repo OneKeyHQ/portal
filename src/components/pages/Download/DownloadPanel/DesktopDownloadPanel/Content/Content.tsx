@@ -34,8 +34,10 @@ export const Content: FC<ContentProps> = (props) => {
         setCurrentTab('mobile');
       } else if (client === 'browser' || client === 'browserExtension') {
         setCurrentTab('browserExtension');
-      } else {
+      } else if (client === 'web') {
         setCurrentTab('web');
+      } else {
+        setCurrentTab('desktop');
       }
     }
   }, [setCurrentTab]);
