@@ -38,6 +38,10 @@ export const LeftArea: FC<LeftAreaProps> = (props) => {
       name: 'OneKey Lite',
       link: '',
     },
+    {
+      name: 'OneKey Touch',
+      link: '',
+    },
   ];
 
   const handleMouseMove = useCallback(
@@ -129,6 +133,18 @@ export const LeftArea: FC<LeftAreaProps> = (props) => {
                 alt="OneKeyLite"
               />
             )}
+            {currentSelected === 'OneKey Touch' && (
+              <StaticImage
+                loading="eager"
+                draggable={false}
+                css={{
+                  width: '100%',
+                  height: '100%',
+                }}
+                src="./images/OneKeyTouch.png"
+                alt="OneKeyTouch"
+              />
+            )}
           </motion.div>
         </AnimatePresence>
       </Box>
@@ -149,6 +165,7 @@ export const LeftArea: FC<LeftAreaProps> = (props) => {
           >
             <StaticImage src="./images/OneKeyLite.png" alt="OneKeyLite" />
             <StaticImage src="./images/OneKeyMini.png" alt="OneKeyMini" />
+            <StaticImage src="./images/OneKeyTouch.png" alt="OneKeyTouch" />
           </Box>,
           document.body,
         )}
