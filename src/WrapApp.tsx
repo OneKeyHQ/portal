@@ -1,13 +1,13 @@
 import React, { FC } from 'react';
 
-import { ThemeProvider } from '@emotion/react';
+import { Global, ThemeProvider } from '@emotion/react';
 // eslint-disable-next-line import/no-unresolved
 import { ClickToComponent } from 'click-to-react-component';
 
 import { ResponsiveIndicator } from './components/base';
 import { OpenBrowserBanner } from './components/common';
 import './style/global.less';
-import './style/stabilGroteskFont.less';
+import { stabilGroteskFont } from './style/stabilGroteskFont';
 import { theme } from './theme';
 
 type WrapAppComponent = FC<{
@@ -19,6 +19,7 @@ const WrapApp: WrapAppComponent = (props) => {
 
   return (
     <ThemeProvider theme={theme}>
+      <Global styles={stabilGroteskFont} />
       {children}
       <ClickToComponent />
       <ResponsiveIndicator />

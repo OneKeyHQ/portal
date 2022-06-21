@@ -1,5 +1,6 @@
 import { StaticImage } from 'gatsby-plugin-image';
 
+import { staticAssetPrefix } from '../../../../../utils';
 import { GoToShopButton } from '../../../../base';
 import { DownloadButton } from '../../../../common/DownloadButton';
 
@@ -16,7 +17,9 @@ export function useProductsData() {
       description:
         "Use OneKey App separately to store and use your crypto assets in a secure and convenient manner. Each user's assets are appropriately secured and stored locally.",
       button: <DownloadButton />,
-      frames: new Array(60).fill(0).map((_, i) => `/home-intro/image${i}.jpg`),
+      frames: new Array(60)
+        .fill(0)
+        .map((_, i) => staticAssetPrefix(`/home-intro/image${i}.jpg`)),
     },
     {
       image: (

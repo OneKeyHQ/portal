@@ -7,6 +7,7 @@ import {
   useElementInViewportProgress,
   useWindowSize,
 } from '../../../../../../hooks';
+import { staticAssetPrefix } from '../../../../../../utils';
 import { Box, CanvasPlayer, Section } from '../../../../../base';
 import { FeatureHeader } from '../FeatureHeader';
 import { FeatureItem } from '../FeatureItem';
@@ -72,9 +73,10 @@ export const NormalFeatureSection: FC<NormalFeatureSectionProps> = () => {
             height={(960 / 2880) * (windowWidth || 0)}
             images={new Array(30)
               .fill('')
-              .map(
-                (_, index) =>
+              .map((_, index) =>
+                staticAssetPrefix(
                   `/home-software-header/home-software-header${index}.jpg`,
+                ),
               )}
           />
         </Box>
