@@ -3,7 +3,7 @@ import { FC, ReactNode } from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 
 import { isBrowser } from '../../../utils';
-import { Box } from '../../base';
+import { Box, Span } from '../../base';
 import { HeroLayout } from '../../common/HeroLayout';
 
 export interface HeroProps {
@@ -34,7 +34,13 @@ export const Hero: FC<HeroProps> = (props) => {
       )}
 
       <HeroLayout
-        title="Enterprise solutions"
+        title={
+          <Span>
+            Enterprise
+            <br />
+            solutions
+          </Span>
+        }
         description="Explore the world of co-branding with us, and see your campaign come to life."
       />
 

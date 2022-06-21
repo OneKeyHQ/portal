@@ -9,7 +9,7 @@ import { ContactUsButton } from '../ContactUsButton';
 
 export interface HeroLayoutProps {
   children?: ReactNode;
-  title?: string;
+  title?: string | ReactNode;
   description?: string;
 }
 
@@ -48,7 +48,7 @@ export const HeroLayout: FC<HeroLayoutProps> = (props) => {
           >
             {title}
           </Span>
-          <Span xs={theme.text.normal300}>{description} </Span>
+          <Span xs={theme.text.normal300}>{description}</Span>
 
           <Flex
             xs={{ justifyContent: 'flex-start' }}
