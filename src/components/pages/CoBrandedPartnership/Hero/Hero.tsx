@@ -16,11 +16,7 @@ export const Hero: FC<HeroProps> = (props) => {
   const theme = useTheme();
 
   return (
-    <Box
-      xs={{
-        position: 'relative',
-      }}
-    >
+    <Box xs={{ position: 'relative' }}>
       {isBrowser() && (
         <Box
           xs={{
