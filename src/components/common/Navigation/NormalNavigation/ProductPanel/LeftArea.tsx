@@ -1,14 +1,16 @@
-import { FC, ReactNode, useCallback, useState } from 'react';
+import { FC, ReactNode, useCallback } from 'react';
 
 import { useTheme } from '@emotion/react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { StaticImage } from 'gatsby-plugin-image';
 import ReactDOM from 'react-dom';
 
-import { useOneKeyProduct } from '../../../../../data';
+import { useOneKeyProduct } from '../../../../../data/useOneKeyProduct';
 import { isBrowser } from '../../../../../utils';
 import { Box, Li, Ul } from '../../../../base/Box';
 import { Link } from '../../../../base/Link';
+
+import { useProductPanel } from './useProductPanel';
 
 export interface LeftAreaProps {
   children?: ReactNode;
@@ -16,33 +18,20 @@ export interface LeftAreaProps {
 
 const itemVariants = {
   hidden: { y: 10, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-  },
+  visible: { y: 0, opacity: 1 },
 };
 
 export const LeftArea: FC<LeftAreaProps> = (props) => {
   const { children } = props;
   const theme = useTheme();
-  const [backgroundColor] = useState(theme.background.test100);
-  const [currentSelected, setCurrentSelected] = useState('OneKey Mini');
-
+  const {
+    items,
+    currentSelected,
+    setCurrentSelected,
+    currentProductBackgroundColor,
+    currentProductFontColor,
+  } = useProductPanel();
   const oneKeyProduct = useOneKeyProduct();
-  const items = [
-    {
-      name: oneKeyProduct.mini.name,
-      link: oneKeyProduct.mini.shopLink,
-    },
-    {
-      name: oneKeyProduct.lite.name,
-      link: oneKeyProduct.lite.shopLink,
-    },
-    {
-      name: oneKeyProduct.touch.name,
-      link: oneKeyProduct.touch.shopLink,
-    },
-  ];
 
   const handleMouseMove = useCallback(
     (type: string) => {
@@ -57,8 +46,7 @@ export const LeftArea: FC<LeftAreaProps> = (props) => {
         display: 'flex',
         width: '100%',
         height: '100%',
-        transition: theme.transitions.allEase,
-        background: backgroundColor,
+        background: currentProductBackgroundColor,
       }}
     >
       <Box xs={{ width: '50%', display: 'flex', alignItems: 'center' }}>
@@ -73,7 +61,7 @@ export const LeftArea: FC<LeftAreaProps> = (props) => {
                   lineHeight: '44px',
                   height: 44,
                   cursor: 'pointer',
-                  color: theme.colors.test400,
+                  color: currentProductFontColor,
                   ':hover': {
                     color: theme.background.test300,
                   },
@@ -87,60 +75,41 @@ export const LeftArea: FC<LeftAreaProps> = (props) => {
       </Box>
 
       <Box
-        xs={{
-          width: '50%',
-          height: '100%',
-          position: 'relative',
-        }}
-        xxl={{
-          height: '340px',
-        }}
+        xs={{ width: '50%', height: '100%', position: 'relative' }}
+        xxl={{ height: '340px' }}
       >
         <AnimatePresence exitBeforeEnter>
           <motion.div
             key={currentSelected}
             animate={{ opacity: 1, y: 0 }}
-            initial={{ opacity: 0, y: 12 }}
-            exit={{ opacity: 0, y: -12 }}
+            initial={{ opacity: 0, y: 6 }}
+            exit={{ opacity: 0, y: -6 }}
             transition={{ duration: 0.2 }}
-            style={{
-              width: '100%',
-              height: '100%',
-            }}
+            style={{ width: '100%', height: '100%' }}
           >
-            {currentSelected === 'OneKey Mini' && (
+            {currentSelected === oneKeyProduct.mini.name && (
               <StaticImage
                 loading="eager"
                 draggable={false}
-                css={{
-                  width: '100%',
-                  height: '100%',
-                }}
+                css={{ width: '100%', height: '100%' }}
                 src="./images/OneKeyMini.png"
                 alt="OneKeyMini"
               />
             )}
-            {currentSelected === 'OneKey Lite' && (
+            {currentSelected === oneKeyProduct.lite.name && (
               <StaticImage
                 loading="eager"
                 draggable={false}
-                css={{
-                  width: '90%',
-                  height: 'auto',
-                  marginTop: '-30%',
-                }}
+                css={{ width: '90%', height: 'auto', marginTop: '-30%' }}
                 src="./images/OneKeyLite.png"
                 alt="OneKeyLite"
               />
             )}
-            {currentSelected === 'OneKey Touch' && (
+            {currentSelected === oneKeyProduct.touch.name && (
               <StaticImage
                 loading="eager"
                 draggable={false}
-                css={{
-                  width: '100%',
-                  height: '100%',
-                }}
+                css={{ width: '100%', height: '100%' }}
                 src="./images/OneKeyTouch.png"
                 alt="OneKeyTouch"
               />

@@ -1,4 +1,4 @@
-import { FC, ReactNode, useEffect, useState } from 'react';
+import { FC, ReactNode, useEffect, useMemo, useState } from 'react';
 
 import { motion } from 'framer-motion';
 
@@ -10,6 +10,7 @@ import { useNormalNavigationHeight } from '../useNormalNavigationHeight';
 
 import { LeftArea } from './LeftArea';
 import { RightArea } from './RightArea';
+import { useProductPanel } from './useProductPanel';
 
 export interface ProductPanelProps {
   children?: ReactNode;
@@ -37,11 +38,20 @@ const container = {
 
 export const ProductPanel: FC<ProductPanelProps> = (props) => {
   const { children, isActive } = props;
+  const { currentProductBackgroundColor } = useProductPanel();
   const { hoverProps, isHovered } = useHover({ timeout: 100 });
   const [cursorVariant, setCursorVariant] = useState('hidden');
   const { hoverProps: RightAreaHoverProps, isHovered: isRightAreaHovered } =
     useHover({ timeout: 100 });
   const top = useNormalNavigationHeight();
+
+  const background = useMemo(
+    () =>
+      `linear-gradient(90deg, ${currentProductBackgroundColor} 0%, ${currentProductBackgroundColor} 50%, ${
+        isRightAreaHovered ? '#F8F8F8' : '#FFFFFF'
+      } 50%)`,
+    [currentProductBackgroundColor, isRightAreaHovered],
+  );
 
   useEffect(() => {
     if (isHovered || isActive) {
@@ -65,14 +75,7 @@ export const ProductPanel: FC<ProductPanelProps> = (props) => {
         top,
       }}
     >
-      <Box
-        {...hoverProps}
-        xs={{
-          background: `linear-gradient(90deg, #F0F1F2 0%, #F0F1F2 50%, ${
-            isRightAreaHovered ? '#F8F8F8' : '#FFFFFF'
-          } 50%)`,
-        }}
-      >
+      <Box {...hoverProps} xs={{ background }}>
         <Container>
           <Flex xs={{ justifyContent: 'space-between' }}>
             <Box xs={{ flex: 1 }}>
