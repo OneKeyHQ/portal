@@ -1,4 +1,5 @@
 module.exports = {
+  assetPrefix: process.env.PUBLIC_URL || '',
   siteMetadata: {
     siteUrl: 'https://portal.onekey.so',
     title: 'onekey',
