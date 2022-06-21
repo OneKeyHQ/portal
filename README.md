@@ -21,6 +21,20 @@ yarn install
 yarn develop
 ```
 
+## Build
+
+### CDN build
+
+```
+PUBLIC_URL=https://cdn.onekey.so yarn run build:cdn
+```
+
+### Normal build
+
+```
+yarn run build
+```
+
 ## Auto Generate Icon Components
 
 `src/component/base/icon`

@@ -75,7 +75,7 @@ export function useNavigationDataObject() {
   const security = {
     name: 'Security',
     key: 'security',
-    path: 'https://onekey.so/security',
+    path: '/security',
   };
 
   const forDeveloper = {
