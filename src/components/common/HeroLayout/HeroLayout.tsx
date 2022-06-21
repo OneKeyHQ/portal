@@ -22,22 +22,22 @@ export const HeroLayout: FC<HeroLayoutProps> = (props) => {
       <Flex
         xs={{
           position: 'relative',
-          zIndex: 10,
           paddingTop: 80,
           flexDirection: 'column',
-          justifyContent: 'center',
+          justifyContent: 'flex-end',
           height: '80vh',
           minHeight: 600,
+          maxHeight: 1000,
           gap: 20,
-          marginBottom: -100,
+          paddingBottom: 30,
+          zIndex: 10,
         }}
         m={{ minHeight: 700 }}
-        l={{ flexDirection: 'row', justifyContent: 'space-between' }}
+        l={{ paddingBottom: 64 }}
         xl={{ minHeight: 800 }}
       >
         <Flex
           xs={{ flexDirection: 'column', gap: 10 }}
-          m={{ textAlign: 'center', justifyContent: 'center' }}
           l={{ textAlign: 'left', gap: 20 }}
         >
           <Span
@@ -52,7 +52,6 @@ export const HeroLayout: FC<HeroLayoutProps> = (props) => {
 
           <Flex
             xs={{ justifyContent: 'flex-start' }}
-            m={{ justifyContent: 'center' }}
             l={{ justifyContent: 'flex-start' }}
           >
             <ContactUsButton />
