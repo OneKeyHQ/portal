@@ -6,6 +6,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 import { isBrowser } from '../../../../utils';
 import { Box, Container, Flex, Span } from '../../../base';
 import { BackgroundMask, ContactUsButton } from '../../../common';
+import { useCoBrandedPartnership } from '../useCoBrandedPartnership';
 
 export interface HeroProps {
   children?: ReactNode;
@@ -14,6 +15,7 @@ export interface HeroProps {
 export const Hero: FC<HeroProps> = (props) => {
   const { children } = props;
   const theme = useTheme();
+  const coBrandedPartnership = useCoBrandedPartnership();
 
   return (
     <Box xs={{ position: 'relative' }}>
@@ -72,11 +74,11 @@ export const Hero: FC<HeroProps> = (props) => {
               }}
               xl={theme.text.medium1000}
             >
-              Co-Branded partnership
+              {coBrandedPartnership.hero.title}
             </Span>
 
             <Span xs={theme.text.normal300}>
-              CHECK OUT OUR CO-BRANDED OFFERS TO BRING YOUR MARKETING TO LIFE.
+              {coBrandedPartnership.hero.subtitle}
             </Span>
 
             <ContactUsButton />
