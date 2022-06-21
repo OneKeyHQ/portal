@@ -2,6 +2,7 @@ import { FC, ReactNode } from 'react';
 
 import { StaticImage } from 'gatsby-plugin-image';
 
+import { isBrowser } from '../../../utils';
 import { Box } from '../../base';
 import { HeroLayout } from '../../common/HeroLayout';
 
@@ -19,16 +20,18 @@ export const Hero: FC<HeroProps> = (props) => {
         position: 'relative',
       }}
     >
-      <StaticImage
-        style={{
-          width: '100%',
-          height: '100%',
-          position: 'absolute',
-          zIndex: 1,
-        }}
-        src="./images/enterprise-background.jpg"
-        alt="background"
-      />
+      {isBrowser() && (
+        <StaticImage
+          style={{
+            width: '100%',
+            height: '100%',
+            position: 'absolute',
+            zIndex: 1,
+          }}
+          src="./images/enterprise-background.jpg"
+          alt="background"
+        />
+      )}
 
       <HeroLayout
         title="Enterprise solutions"
