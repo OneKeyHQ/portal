@@ -3,18 +3,9 @@ import { FC, ReactNode } from 'react';
 import { useTheme } from '@emotion/react';
 import { StaticImage } from 'gatsby-plugin-image';
 
-import { useContactUs } from '../../../../data';
 import { isBrowser } from '../../../../utils';
-import {
-  ArrowRightIcon,
-  Box,
-  Button,
-  Container,
-  Flex,
-  Link,
-  Span,
-} from '../../../base';
-import { BackgroundMask } from '../../../common';
+import { Box, Container, Flex, Span } from '../../../base';
+import { BackgroundMask, ContactUsButton } from '../../../common';
 
 export interface HeroProps {
   children?: ReactNode;
@@ -23,7 +14,6 @@ export interface HeroProps {
 export const Hero: FC<HeroProps> = (props) => {
   const { children } = props;
   const theme = useTheme();
-  const contactUs = useContactUs();
 
   return (
     <Box
@@ -74,7 +64,7 @@ export const Hero: FC<HeroProps> = (props) => {
         >
           <Flex
             xs={{ flexDirection: 'column', gap: 10, zIndex: 1 }}
-            m={{ textAlign: 'center', justifyContent: 'center' }}
+            m={{ justifyContent: 'center' }}
             l={{ textAlign: 'left', gap: 20 }}
           >
             <Span
@@ -86,27 +76,14 @@ export const Hero: FC<HeroProps> = (props) => {
               }}
               xl={theme.text.medium1000}
             >
-              Co-Branded Partnership
+              Co-Branded partnership
             </Span>
 
             <Span xs={theme.text.normal300}>
               CHECK OUT OUR CO-BRANDED OFFERS TO BRING YOUR MARKETING TO LIFE.
             </Span>
 
-            <Flex
-              xs={{ justifyContent: 'flex-start' }}
-              m={{ justifyContent: 'center' }}
-              l={{ justifyContent: 'flex-start' }}
-            >
-              <Link to={contactUs.url}>
-                <Button
-                  variant="outlined"
-                  rightIcon={<ArrowRightIcon width={24} height={24} />}
-                >
-                  Contact us
-                </Button>
-              </Link>
-            </Flex>
+            <ContactUsButton />
           </Flex>
         </Flex>
       </Container>
