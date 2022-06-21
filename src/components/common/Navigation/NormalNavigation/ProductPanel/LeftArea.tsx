@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { StaticImage } from 'gatsby-plugin-image';
 import ReactDOM from 'react-dom';
 
-import { useOneKeyMiniData } from '../../../../../data';
+import { useOneKeyProduct } from '../../../../../data';
 import { isBrowser } from '../../../../../utils';
 import { Box, Li, Ul } from '../../../../base/Box';
 import { Link } from '../../../../base/Link';
@@ -28,19 +28,19 @@ export const LeftArea: FC<LeftAreaProps> = (props) => {
   const [backgroundColor] = useState(theme.background.test100);
   const [currentSelected, setCurrentSelected] = useState('OneKey Mini');
 
-  const oneKeyData = useOneKeyMiniData();
+  const oneKeyProduct = useOneKeyProduct();
   const items = [
     {
-      name: 'OneKey Mini',
-      link: oneKeyData.shopLink,
+      name: oneKeyProduct.mini.name,
+      link: oneKeyProduct.mini.shopLink,
     },
     {
-      name: 'OneKey Lite',
-      link: '',
+      name: oneKeyProduct.lite.name,
+      link: oneKeyProduct.lite.shopLink,
     },
     {
-      name: 'OneKey Touch',
-      link: '',
+      name: oneKeyProduct.touch.name,
+      link: oneKeyProduct.touch.shopLink,
     },
   ];
 

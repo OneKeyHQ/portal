@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { Loader } from 'pixi.js';
 
-import { useOneKeyMiniData } from '../../../../../data/useOneKeyMiniData';
+import { useOneKeyProduct } from '../../../../../data/useOneKeyProduct';
 
 import miniOutlineImage from './images/mini.svg';
 import miniHover from './images/miniHover.png';
@@ -11,7 +11,8 @@ import touchOutlineImage from './images/touch.svg';
 import touchHover from './images/touchHover.png';
 
 export function useHardwareData() {
-  const oneKeyData = useOneKeyMiniData();
+  const oneKeyProduct = useOneKeyProduct();
+
   useEffect(() => {
     new Loader().add(miniHover).add(touchHover).load();
   }, []);
@@ -19,14 +20,14 @@ export function useHardwareData() {
     {
       image: miniOutlineImage,
       hoverImage: miniHover,
-      title: 'OneKey Mini',
+      title: oneKeyProduct.mini.name,
       description: 'Mini sized, safety without compromise.',
       status: 'available',
-      link: oneKeyData.shopLink,
+      link: oneKeyProduct.mini.shopLink,
     },
     {
       image: touchOutlineImage,
-      title: 'OneKey Touch',
+      title: oneKeyProduct.touch.name,
       hoverImage: touchHover,
       description:
         'All-new design, secure chip supercharged, beautiful and true color display.',
@@ -34,7 +35,7 @@ export function useHardwareData() {
     },
     {
       image: todoOutlineImage,
-      title: 'OneKey Pro',
+      title: oneKeyProduct.touch.name,
       hoverImage: '',
       description:
         'Biometric tech, optical encryption, so many reasons to go Pro.',
