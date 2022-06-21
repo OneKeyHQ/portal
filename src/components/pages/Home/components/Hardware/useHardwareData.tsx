@@ -29,7 +29,7 @@ export function useHardwareData() {
       title: 'OneKey Touch',
       hoverImage: '',
       description:
-        'Secure, buy, exchange, grow your crypto and manage your NFTs with our new Bluetooth-enabled hardware wallet. ',
+        'All-new design, secure chip supercharged, beautiful and true color display.',
       status: 'coming-soon',
     },
     {
@@ -37,7 +37,7 @@ export function useHardwareData() {
       title: 'OneKey Pro',
       hoverImage: '',
       description:
-        'Secure, trade, grow your crypto and manage your NFTs with our new Bluetooth-enabled hardware wallet. ',
+        'Biometric tech, optical encryption, so many reasons to go Pro.',
       status: 'coming-soon',
     },
   ] as const;
