@@ -4,36 +4,36 @@ import { Loader } from 'pixi.js';
 
 import { useOneKeyMiniData } from '../../../../../data/useOneKeyMiniData';
 
-import image1 from './images/1.svg';
-import image2 from './images/2.svg';
-import hardware from './images/home-hardware-mini-2.png';
+import miniOutlineImage from './images/mini.svg';
+import miniHover from './images/miniHover.png';
+import todoOutlineImage from './images/todo.svg';
+import touchOutlineImage from './images/touch.svg';
+import touchHover from './images/touchHover.png';
 
 export function useHardwareData() {
   const oneKeyData = useOneKeyMiniData();
-
   useEffect(() => {
-    new Loader().add(hardware).load();
+    new Loader().add(miniHover).add(touchHover).load();
   }, []);
-
   return [
     {
-      image: image1,
-      hoverImage: hardware,
+      image: miniOutlineImage,
+      hoverImage: miniHover,
       title: 'OneKey Mini',
       description: 'Mini sized, safety without compromise.',
       status: 'available',
       link: oneKeyData.shopLink,
     },
     {
-      image: image2,
+      image: touchOutlineImage,
       title: 'OneKey Touch',
-      hoverImage: '',
+      hoverImage: touchHover,
       description:
         'All-new design, secure chip supercharged, beautiful and true color display.',
-      status: 'coming-soon',
+      status: 'available',
     },
     {
-      image: image2,
+      image: todoOutlineImage,
       title: 'OneKey Pro',
       hoverImage: '',
       description:

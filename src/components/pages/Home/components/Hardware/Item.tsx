@@ -52,7 +52,7 @@ export const Item: FC<ItemProps> = (props) => {
               height: 384,
               maxWidth: 310,
               backgroundImage: `url(${image})`,
-              backgroundSize: 'auto 80%',
+              backgroundSize: 'auto 100%',
               backgroundRepeat: 'no-repeat',
               backgroundPosition: 'center',
             }}
@@ -63,7 +63,7 @@ export const Item: FC<ItemProps> = (props) => {
                   width: '100%',
                   height: '100%',
                   backgroundImage: `url(${hoverImage})`,
-                  backgroundSize: 'auto 80%',
+                  backgroundSize: 'auto 100%',
                   backgroundRepeat: 'no-repeat',
                   backgroundPosition: 'center',
                   opacity: showProductImage ? 1 : 0,
