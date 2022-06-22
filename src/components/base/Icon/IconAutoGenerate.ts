@@ -46,6 +46,8 @@ export { ReactComponent as DownloadWebIcon } from './images/download-web.svg';
 export { default as DownloadWebIconInline } from './images/download-web.svg';
 export { ReactComponent as EdgeIcon } from './images/edge.svg';
 export { default as EdgeIconInline } from './images/edge.svg';
+export { ReactComponent as FailIcon } from './images/fail.svg';
+export { default as FailIconInline } from './images/fail.svg';
 export { ReactComponent as FirefoxIcon } from './images/firefox.svg';
 export { default as FirefoxIconInline } from './images/firefox.svg';
 export { ReactComponent as GithubIcon } from './images/github.svg';

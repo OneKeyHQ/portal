@@ -2,8 +2,8 @@ import { FC, ReactNode } from 'react';
 
 import { Helmet } from 'react-helmet';
 
-import { Box, Main } from '../../base';
-import { Navigation, PageFooter } from '../../common';
+import { Box, Container, Main } from '../../base';
+import { Navigation, PageFooter, StayInTouch } from '../../common';
 
 import { Hero } from './Hero';
 import { OurOfferSection } from './OurOfferSection';
@@ -29,6 +29,12 @@ export const CoBrandedPartnership: FC<CoBrandedPartnershipProps> = (props) => {
         <OurOfferSection />
 
         <ProductShowcaseSection />
+
+        <Container>
+          <Box xs={{ paddingBottom: 80 }}>
+            <StayInTouch />
+          </Box>
+        </Container>
 
         {children}
       </Main>

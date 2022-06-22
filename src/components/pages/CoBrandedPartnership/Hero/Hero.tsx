@@ -3,18 +3,14 @@ import { FC, ReactNode } from 'react';
 import { useTheme } from '@emotion/react';
 import { StaticImage } from 'gatsby-plugin-image';
 
-import { useContactUs } from '../../../../data';
 import { isBrowser } from '../../../../utils';
+import { Box, Container, Flex, Span } from '../../../base';
 import {
-  ArrowRightIcon,
-  Box,
-  Button,
-  Container,
-  Flex,
-  Link,
-  Span,
-} from '../../../base';
-import { BackgroundMask } from '../../../common';
+  BackgroundMask,
+  ContactUsButton,
+  MultilineText,
+} from '../../../common';
+import { useCoBrandedPartnership } from '../useCoBrandedPartnership';
 
 export interface HeroProps {
   children?: ReactNode;
@@ -23,14 +19,10 @@ export interface HeroProps {
 export const Hero: FC<HeroProps> = (props) => {
   const { children } = props;
   const theme = useTheme();
-  const contactUs = useContactUs();
+  const coBrandedPartnership = useCoBrandedPartnership();
 
   return (
-    <Box
-      xs={{
-        position: 'relative',
-      }}
-    >
+    <Box xs={{ position: 'relative' }}>
       {isBrowser() && (
         <Box
           xs={{
@@ -74,39 +66,29 @@ export const Hero: FC<HeroProps> = (props) => {
         >
           <Flex
             xs={{ flexDirection: 'column', gap: 10, zIndex: 1 }}
-            m={{ textAlign: 'center', justifyContent: 'center' }}
+            m={{ justifyContent: 'center' }}
             l={{ textAlign: 'left', gap: 20 }}
           >
             <Span
               xs={theme.text.medium700}
               m={theme.text.medium800}
-              l={{
-                ...theme.text.medium900,
-                maxWidth: 400,
-              }}
+              l={theme.text.medium900}
               xl={theme.text.medium1000}
             >
-              Co-Branded Partnership
+              <MultilineText text={coBrandedPartnership.hero.title} />
             </Span>
 
             <Span xs={theme.text.normal300}>
-              CHECK OUT OUR CO-BRANDED OFFERS TO BRING YOUR MARKETING TO LIFE.
+              {coBrandedPartnership.hero.subtitle}
             </Span>
 
-            <Flex
-              xs={{ justifyContent: 'flex-start' }}
-              m={{ justifyContent: 'center' }}
-              l={{ justifyContent: 'flex-start' }}
-            >
-              <Link to={contactUs.url}>
-                <Button
-                  variant="outlined"
-                  rightIcon={<ArrowRightIcon width={24} height={24} />}
-                >
-                  Contact us
-                </Button>
-              </Link>
-            </Flex>
+            <Box xs={{ marginRight: 0 }} m={{ marginRight: 'auto' }}>
+              <ContactUsButton
+                buttonOverride={{
+                  fillWidth: true,
+                }}
+              />
+            </Box>
           </Flex>
         </Flex>
       </Container>

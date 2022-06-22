@@ -3,7 +3,7 @@ import { FC, ReactNode } from 'react';
 import { Helmet } from 'react-helmet';
 
 import { Box, Container, Flex, Main } from '../../base';
-import { Navigation, PageFooter } from '../../common';
+import { Navigation, PageFooter, StayInTouch } from '../../common';
 
 import { AffiliateProgramCard } from './AffiliateProgramCard';
 import { MainTitle } from './MainTitle';
@@ -45,6 +45,12 @@ export const AffiliateProgram: FC<AffiliateProgramProps> = (props) => {
               ))}
             </Flex>
           </Flex>
+        </Container>
+
+        <Container>
+          <Box xs={{ paddingBottom: 80 }}>
+            <StayInTouch />
+          </Box>
         </Container>
 
         {children}
