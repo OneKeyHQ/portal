@@ -82,7 +82,13 @@ export const Hero: FC<HeroProps> = (props) => {
               {coBrandedPartnership.hero.subtitle}
             </Span>
 
-            <ContactUsButton />
+            <Box xs={{ marginRight: 0 }} m={{ marginRight: 'auto' }}>
+              <ContactUsButton
+                buttonOverride={{
+                  fillWidth: true,
+                }}
+              />
+            </Box>
           </Flex>
         </Flex>
       </Container>
