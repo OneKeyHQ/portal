@@ -1,4 +1,4 @@
-declare let PWD: string;
+declare let PUBLIC_URL: string;
 
 declare module '*.jpg' {
   const value: string;
