@@ -16,7 +16,7 @@ export const MainTitle: FC<MainTitleProps> = (props) => {
   const theme = useTheme();
 
   return (
-    <Box xs={{ textAlign: 'center', paddingTop: '16vh', paddingBottom: '8vh' }}>
+    <Box xs={{ textAlign: 'center', paddingTop: '12vh', paddingBottom: '6vh' }}>
       <H1
         css={{ color: theme.colors.test500 }}
         xs={theme.text.medium800}

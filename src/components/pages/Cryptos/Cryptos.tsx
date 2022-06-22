@@ -26,9 +26,11 @@ export const Cryptos: FC<CryptosProps> = (props) => {
       <Main>
         <Container>
           <MainTitle />
+        </Container>
 
-          <CryptosTable />
+        <CryptosTable />
 
+        <Container>
           <Box xs={{ paddingTop: 80, paddingBottom: 80 }}>
             <StayInTouch />
           </Box>
