@@ -1,11 +1,3 @@
-import {
-  BitcoinBadge,
-  BitcoinCashBadge,
-  BitcoinPlusBadge,
-  DashBadge,
-  EthereumBadge,
-} from 'cryptocons';
-
 export function useCryptosTable() {
   return {
     thead: {
@@ -17,7 +9,6 @@ export function useCryptosTable() {
     items: [
       {
         coin: {
-          icon: BitcoinBadge,
           name: 'Bitcoin',
           symbol: 'BTC',
         },
@@ -32,7 +23,6 @@ export function useCryptosTable() {
       },
       {
         coin: {
-          icon: EthereumBadge,
           name: 'Ether',
           symbol: 'ETH',
         },
@@ -47,7 +37,6 @@ export function useCryptosTable() {
       },
       {
         coin: {
-          icon: BitcoinPlusBadge,
           name: 'Bitcoin Gold',
           symbol: 'BTG',
         },
@@ -62,7 +51,6 @@ export function useCryptosTable() {
       },
       {
         coin: {
-          icon: BitcoinCashBadge,
           name: 'Bitcoin Cash',
           symbol: 'BCH',
         },
@@ -77,7 +65,6 @@ export function useCryptosTable() {
       },
       {
         coin: {
-          icon: DashBadge,
           name: 'Dash',
           symbol: 'DASH',
         },

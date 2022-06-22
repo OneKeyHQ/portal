@@ -1,8 +1,17 @@
-import { FC, ReactNode, createElement } from 'react';
+import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { ArrowRightIcon, Box, Divider, Flex, Link, Span } from '../../../base';
+import { staticAssetPrefix } from '../../../../utils/staticAssetPrefix';
+import {
+  ArrowRightIcon,
+  Box,
+  Divider,
+  Flex,
+  Img,
+  Link,
+  Span,
+} from '../../../base';
 
 import { StatusIcon } from './StatusIcon';
 import { useCryptosTable } from './useCryptosTable';
@@ -66,10 +75,12 @@ export const CryptosTable: FC<CryptosTableProps> = (props) => {
             <tr css={{ height: 80 }} key={item.coin.name}>
               <td>
                 <Flex xs={{ alignItems: 'center' }}>
-                  {createElement(item.coin.icon, {
-                    width: 48,
-                    height: 48,
-                  })}
+                  <Img
+                    xs={{ width: 48, height: 48 }}
+                    src={staticAssetPrefix(
+                      `/cryptocurrency-icons/128/color/${item.coin.symbol.toLowerCase()}.png`,
+                    )}
+                  />
 
                   <Box xs={{ paddingLeft: 12 }}>
                     <Box xs={theme.text.medium400}>{item.coin.symbol}</Box>
