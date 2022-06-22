@@ -3,15 +3,7 @@ import { FC, ReactNode } from 'react';
 import { useTheme } from '@emotion/react';
 
 import { staticAssetPrefix } from '../../../../utils/staticAssetPrefix';
-import {
-  ArrowRightIcon,
-  Box,
-  Divider,
-  Flex,
-  Img,
-  Link,
-  Span,
-} from '../../../base';
+import { ArrowRightIcon, Box, Flex, Img, Link, Span } from '../../../base';
 
 import { StatusIcon } from './StatusIcon';
 import { useCryptosTable } from './useCryptosTable';
@@ -47,14 +39,17 @@ export const TableContent: FC<TableContentProps> = (props) => {
         css={{
           width: '100%',
           borderSpacing: 0,
+          borderCollapse: 'collapse',
         }}
       >
-        <thead css={{ position: 'relative' }}>
+        <thead>
           <tr
             css={{
               ...theme.text.medium200,
               height: 76,
               lineHeight: '76px',
+              position: 'relative',
+              borderBottom: borderStyle,
             }}
           >
             <th>{cryptosTable.thead.coins}</th>
@@ -63,10 +58,6 @@ export const TableContent: FC<TableContentProps> = (props) => {
             <th css={{ width: '20%' }}>{cryptosTable.thead.touchAndPro}</th>
             <th> </th>
           </tr>
-
-          <Box xs={{ position: 'absolute', left: 0, right: 0, bottom: 0 }}>
-            <Divider color={theme.colors.test200} />
-          </Box>
         </thead>
 
         <tbody
