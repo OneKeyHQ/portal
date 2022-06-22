@@ -22,24 +22,26 @@ export const CryptosTable: FC<CryptosTableProps> = (props) => {
 
       <table
         css={{
-          borderWidth: 1,
           borderStyle: 'solid',
           borderColor: theme.colors.test200,
           borderRadius: 24,
           paddingLeft: 24,
           paddingRight: 24,
+          paddingTop: 12,
+          paddingBottom: 12,
           width: '100%',
           textAlign: 'left',
+          borderSpacing: 0,
         }}
       >
         <thead>
           <tr
             css={{
               ...theme.text.medium200,
-              borderCollapse: 'collapse',
+
               height: 60,
               lineHeight: '60px',
-              borderBottom: `1px solid ${theme.colors.test300} !important`,
+              borderBottom: `1px solid ${theme.colors.test300}`,
             }}
           >
             <th>COINS</th>
