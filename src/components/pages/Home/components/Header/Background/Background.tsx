@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { useMediaQuery } from '../../../../../../hooks';
-import { isBrowser } from '../../../../../../utils';
+import { isBrowser, staticAssetPrefix } from '../../../../../../utils';
 import { Box, Img, VideoPlayer } from '../../../../../base';
 
 import defaultBackgroundImage from './images/background.inline.jpg';
@@ -44,8 +44,8 @@ export const Background: React.FC = () => {
             onEnded={onVideoEnded}
             src={
               mediaQuery.xlarge
-                ? '/video/home-hero-animation-4k.mp4'
-                : '/video/home-hero-animation.mp4'
+                ? staticAssetPrefix('/video/home-hero-animation-4k.mp4')
+                : staticAssetPrefix('/video/home-hero-animation.mp4')
             }
             loop={false}
             style={style}

@@ -14,3 +14,5 @@ export * from './Navigation';
 export * from './HeroLayout';
 export * from './ContactUsButton';
 export * from './MultilineText';
+export * from './HeroBanner';
+export * from './NormalCenterPageHeader';

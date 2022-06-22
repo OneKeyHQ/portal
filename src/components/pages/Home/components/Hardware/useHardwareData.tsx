@@ -2,42 +2,43 @@ import { useEffect } from 'react';
 
 import { Loader } from 'pixi.js';
 
-import { useOneKeyMiniData } from '../../../../../data/useOneKeyMiniData';
+import { useOneKeyProduct } from '../../../../../data/useOneKeyProduct';
 
-import image1 from './images/1.svg';
-import image2 from './images/2.svg';
-import hardware from './images/home-hardware-mini-2.png';
+import miniOutlineImage from './images/mini.svg';
+import miniHover from './images/miniHover.png';
+import todoOutlineImage from './images/todo.svg';
+import touchOutlineImage from './images/touch.svg';
+import touchHover from './images/touchHover.png';
 
 export function useHardwareData() {
-  const oneKeyData = useOneKeyMiniData();
+  const oneKeyProduct = useOneKeyProduct();
 
   useEffect(() => {
-    new Loader().add(hardware).load();
+    new Loader().add(miniHover).add(touchHover).load();
   }, []);
-
   return [
     {
-      image: image1,
-      hoverImage: hardware,
-      title: 'OneKey Mini',
+      image: miniOutlineImage,
+      hoverImage: miniHover,
+      title: oneKeyProduct.mini.name,
       description: 'Mini sized, safety without compromise.',
       status: 'available',
-      link: oneKeyData.shopLink,
+      link: oneKeyProduct.mini.shopLink,
     },
     {
-      image: image2,
-      title: 'OneKey Touch',
-      hoverImage: '',
+      image: touchOutlineImage,
+      title: oneKeyProduct.touch.name,
+      hoverImage: touchHover,
       description:
-        'Secure, buy, exchange, grow your crypto and manage your NFTs with our new Bluetooth-enabled hardware wallet. ',
-      status: 'coming-soon',
+        'All-new design, secure chip supercharged, beautiful and true color display.',
+      status: 'available',
     },
     {
-      image: image2,
-      title: 'OneKey Pro',
+      image: todoOutlineImage,
+      title: oneKeyProduct.touch.name,
       hoverImage: '',
       description:
-        'Secure, trade, grow your crypto and manage your NFTs with our new Bluetooth-enabled hardware wallet. ',
+        'Biometric tech, optical encryption, so many reasons to go Pro.',
       status: 'coming-soon',
     },
   ] as const;
