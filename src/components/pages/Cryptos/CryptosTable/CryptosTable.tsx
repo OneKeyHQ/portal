@@ -12,19 +12,17 @@ export interface CryptosTableProps {
 export const CryptosTable: FC<CryptosTableProps> = (props) => {
   const { children } = props;
 
+  const tableContent = <TableContent />;
+
   return (
     <Box>
       <OnlyDisplay m l xl xxl>
-        <Container>
-          <TableContent />
-        </Container>
+        <Container>{tableContent}</Container>
       </OnlyDisplay>
 
       <OnlyDisplay xs s>
         <Box xs={{ overflow: 'auto' }}>
-          <Box xs={{ minWidth: 600 }}>
-            <TableContent />
-          </Box>
+          <Box xs={{ minWidth: 600 }}>{tableContent}</Box>
         </Box>
       </OnlyDisplay>
 
