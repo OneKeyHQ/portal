@@ -1,91 +1,80 @@
 export interface OneKeyVersion {
-  apk: Apk;
+  android: Android;
   ios: Ios;
-  stm32: Stm32;
-  nrf: Nrf;
-  suite: Suite;
-  firmware: Stm32[];
-  miniFirmware: Stm32[];
-  ble: Nrf[];
+  ext: Ext;
   bridge: Bridge;
+  desktop: Desktop;
+  classic: HardwarePlatform;
+  mini: HardwarePlatform;
+  touch: HardwarePlatform;
+  pro: HardwarePlatform;
 }
 
-export interface Apk {
-  versionCode: string;
-  versionName: string;
+export type Version = [number, number, number];
+
+export interface HardwarePlatform {
+  firmware: Firmware[];
+  ble: BLE[];
+}
+
+export interface Ios {
   url: string;
-  size: string;
-  changelogCn: string;
-  changelogEn: string;
-  sha256SumAsc: string;
+  version: Version;
 }
 
-export interface Nrf {
+export interface Android {
+  url: string;
+  googlePlay: string;
+  version: Version;
+}
+
+export interface Ext {
+  chrome?: string;
+  firefox?: string;
+  edge?: string;
+}
+
+export interface Firmware {
   required: boolean;
-  version: string;
+  version: Version;
+  url: string;
+  fingerprint: string;
+  changelog: Changelog;
+}
+
+export interface BLE {
+  required: boolean;
+  version: Version;
   url: string;
   webUpdate: string;
-  changelogCn: string;
-  changelogEn: string;
+  fingerprint: string;
+  fingerprintWeb: string;
+  changelog: Changelog;
 }
 
 export interface Bridge {
-  version: string;
+  version: Version;
   linux32Rpm: string;
   linux64Rpm: string;
   linux32Deb: string;
   linux64Deb: string;
   win: string;
   mac: string;
-  sha256SumAsc: string;
-  changelogCn: string;
-  changelogEn: string;
+  sha256SumAsc?: string;
+  changelog: Changelog;
 }
 
-export interface Stm32 {
-  required: boolean;
-  version: number[];
-  bootloaderVersion: number[];
-  minBridgeVersion: number[];
-  minFirmwareVersion: number[];
-  minBootloaderVersion: number[];
-  url: string;
-  urlBitcoinonly: string;
-  fingerprint: string;
-  fingerprintBitcoinonly: string;
-  changelogCn: string;
-  changelogEn: string;
-}
-
-export interface Ios {
-  iOSMainNet: IOSMainNet;
-  testFlight: TestFlight;
-}
-
-export interface IOSMainNet {
-  fir: string;
-  url: string;
-  changelog: string;
-  version: string;
-  build: string;
-}
-
-export interface TestFlight {
-  version: string;
-  forcedVersion: string;
-  url: string;
-  messageCn: string;
-  messageEn: string;
-}
-
-export interface Suite {
-  version: string;
+export interface Desktop {
+  version: Version;
   linux: string;
-  macDmg: string;
-  macZip: string;
+  macX64: string;
+  macARM: string;
   win: string;
-  winZadig: string;
-  sha256SumAsc: string;
-  changelogCn: string;
-  changelogEn: string;
+  sha256SumAsc?: string;
+  changelog: Changelog;
+}
+
+export interface Changelog {
+  'zh-CN': string;
+  'en-US': string;
 }
