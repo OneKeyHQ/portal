@@ -5,7 +5,11 @@ import { StaticImage } from 'gatsby-plugin-image';
 
 import { isBrowser } from '../../../../utils';
 import { Box, Container, Flex, Span } from '../../../base';
-import { BackgroundMask, ContactUsButton } from '../../../common';
+import {
+  BackgroundMask,
+  ContactUsButton,
+  MultilineText,
+} from '../../../common';
 import { useCoBrandedPartnership } from '../useCoBrandedPartnership';
 
 export interface HeroProps {
@@ -68,13 +72,10 @@ export const Hero: FC<HeroProps> = (props) => {
             <Span
               xs={theme.text.medium700}
               m={theme.text.medium800}
-              l={{
-                ...theme.text.medium900,
-                maxWidth: 400,
-              }}
+              l={theme.text.medium900}
               xl={theme.text.medium1000}
             >
-              {coBrandedPartnership.hero.title}
+              <MultilineText text={coBrandedPartnership.hero.title} />
             </Span>
 
             <Span xs={theme.text.normal300}>
