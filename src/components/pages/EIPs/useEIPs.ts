@@ -1,3 +1,41 @@
+import { EIPs } from './eips';
+
+const eipLink = 'https://eips.ethereum.org/EIPS/';
+
+const mobileAppSupports = [
+  EIPs.eip2,
+  EIPs.eip4,
+  EIPs.eip1052,
+  EIPs.eip1193,
+  EIPs.eip1363,
+];
+
+const hardwareWalletSupports = [
+  EIPs.eip2,
+  EIPs.eip1014,
+  EIPs.eip1167,
+  EIPs.eip1363,
+];
+
+type Item = {
+  title: string;
+  id: string;
+  supports: {
+    mobileApp: boolean;
+    hardwareWallet: boolean;
+  };
+};
+
+const items: Item[] = Object.values(EIPs)
+  .map((eip) => ({
+    ...eip,
+    supports: {
+      mobileApp: mobileAppSupports.includes(eip),
+      hardwareWallet: hardwareWalletSupports.includes(eip),
+    },
+  }))
+  .filter((eip) => eip.supports.mobileApp || eip.supports.hardwareWallet);
+
 export function useEIPs() {
   return {
     mainTitle: {
@@ -11,31 +49,10 @@ export function useEIPs() {
       mobileApp: 'MOBILE APP',
       hardwareWallet: 'HARDWARE WALLET',
     },
-    items: [
-      {
-        id: 'EIP 721',
-        name: 'ERC-721 non-fungible token standard',
-        suggested: {
-          mobileApp: true,
-          hardwareWallet: true,
-        },
-      },
-      {
-        id: 'EIP 722',
-        name: 'ERC-722 non-fungible token standard',
-        suggested: {
-          mobileApp: true,
-          hardwareWallet: false,
-        },
-      },
-      {
-        id: 'EIP 723',
-        name: 'ERC-723 non-fungible token standard',
-        suggested: {
-          mobileApp: false,
-          hardwareWallet: false,
-        },
-      },
-    ],
+    eipLink,
+    EIPs,
+    mobileAppSupports,
+    hardwareWalletSupports,
+    items,
   };
 }
