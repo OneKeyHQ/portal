@@ -1,4 +1,4 @@
-exports.onCreateWebpackConfig = ({ getConfig, actions, loaders }) => {
+exports.onCreateWebpackConfig = ({ getConfig, actions, loaders, plugins }) => {
   const { setWebpackConfig } = actions;
   const existingConfig = getConfig();
 
@@ -47,5 +47,10 @@ exports.onCreateWebpackConfig = ({ getConfig, actions, loaders }) => {
         },
       ],
     },
+    plugins: [
+      plugins.define({
+        PUBLIC_URL: JSON.stringify(process.env.PUBLIC_URL || ''),
+      }),
+    ],
   });
 };
