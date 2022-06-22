@@ -19,7 +19,7 @@ export const OtherPlatformsItem: FC<OtherPlatformsItemProps> = (props) => {
 
   return (
     <Flex xs={{ flexDirection: 'column' }}>
-      <Link to={url}>
+      <Link to={url} disabled={!url}>
         <Flex
           onClick={() => {
             setIsExpanded(!isExpanded);

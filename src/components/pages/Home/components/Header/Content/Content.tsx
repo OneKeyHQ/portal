@@ -16,6 +16,7 @@ import {
 } from '../../../../../base';
 import { FadeIn } from '../../../../../base/FadeIn';
 import { DownloadButton } from '../../../../../common/DownloadButton';
+import { HeroBanner } from '../../../../../common/HeroBanner';
 
 import { Stars } from './Stars';
 
@@ -28,15 +29,8 @@ export const Content: FC<ContentProps> = () => {
   const mediaQuery = useMediaQuery();
 
   const buttonProp: ButtonProps = mediaQuery.small
-    ? {
-        size: 'medium',
-      }
-    : {
-        xs: {
-          width: '100%',
-        },
-        size: 'large',
-      };
+    ? { size: 'medium' }
+    : { xs: { width: '100%' }, size: 'large' };
 
   return (
     <Container
@@ -45,84 +39,82 @@ export const Content: FC<ContentProps> = () => {
         paddingBottom: 78,
         zIndex: 2,
         height: '100%',
+        flexDirection: 'column',
         position: 'relative',
         display: 'flex',
-        alignItems: 'flex-end',
       }}
     >
-      <FadeIn style={{ flex: 1 }}>
+      <FadeIn
+        style={{
+          flex: 1,
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 24,
+          marginTop: 'auto',
+        }}
+      >
+        {/* banner */}
         <Box
-          xs={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: 24,
-            flex: 1,
-          }}
+          xs={{ marginBottom: 'auto', marginTop: 8 }}
+          m={{ marginBottom: 0, marginTop: 'auto' }}
         >
-          <H1
-            xs={{
-              color: theme.colors.test500,
-              ...theme.text.medium800,
-            }}
-            xl={{ ...dynamicTextStyle(theme.text.medium800, 'xlarge') }}
-            xxl={{ ...theme.text.medium1000 }}
-          >
-            All-in-one
-            {!mediaQuery.small ? <br /> : ' '}
-            crypto wallet.
-            <br />
-            Trusted by
-            {!mediaQuery.small ? <br /> : ' '}
-            millions.
-          </H1>
-          <Box
-            xs={{
-              display: 'flex',
-              gap: 20,
-              flexDirection: 'column',
-            }}
-            s={{
-              flexDirection: 'row',
-            }}
-          >
-            <DownloadButton
-              override={{
-                button: buttonProp,
-              }}
-            />
-            <GoToShopButton
-              overrides={{
-                button: {
-                  ...buttonProp,
-                  fillHeight: true,
+          <HeroBanner to="https://onekeyhq.atlassian.net/wiki/spaces/OC/overview">
+            We're hiring self-motivated people to join the team.
+          </HeroBanner>
+        </Box>
+
+        {/* main title */}
+        <H1
+          xs={{
+            color: theme.colors.test500,
+            ...theme.text.medium800,
+          }}
+          xl={{ ...dynamicTextStyle(theme.text.medium800, 'xlarge') }}
+          xxl={{ ...theme.text.medium1000 }}
+        >
+          All-in-one
+          {!mediaQuery.small ? <br /> : ' '}
+          crypto wallet.
+          <br />
+          Trusted by
+          {!mediaQuery.small ? <br /> : ' '}
+          millions.
+        </H1>
+
+        {/* buttons */}
+        <Box
+          xs={{ display: 'flex', gap: 20, flexDirection: 'column' }}
+          s={{ flexDirection: 'row' }}
+        >
+          <DownloadButton override={{ button: buttonProp }} />
+          <GoToShopButton
+            overrides={{ button: { ...buttonProp, fillHeight: true } }}
+          />
+        </Box>
+
+        {/* stars and link */}
+        <Flex
+          xs={{ gap: 8, alignItems: 'center', justifyContent: 'center' }}
+          s={{ justifyContent: 'flex-start' }}
+        >
+          <Stars />
+
+          {/* todo: i18n link */}
+          <Link to="https://help.onekey.so/hc/articles/360002003315-Privacy-Policy">
+            <Span
+              xs={{
+                ...theme.text.normal100,
+                color: theme.colors.test400,
+                borderBottom: `1px solid ${theme.colors.test400}`,
+                ':hover': {
+                  opacity: 0.6,
                 },
               }}
-            />
-          </Box>
-
-          <Flex
-            xs={{ gap: 8, alignItems: 'center', justifyContent: 'center' }}
-            s={{ justifyContent: 'flex-start' }}
-          >
-            <Stars />
-
-            {/* todo: i18n link */}
-            <Link to="https://help.onekey.so/hc/articles/360002003315-Privacy-Policy">
-              <Span
-                xs={{
-                  ...theme.text.normal100,
-                  color: theme.colors.test400,
-                  borderBottom: `1px solid ${theme.colors.test400}`,
-                  ':hover': {
-                    opacity: 0.6,
-                  },
-                }}
-              >
-                Trustpilot score & review
-              </Span>
-            </Link>
-          </Flex>
-        </Box>
+            >
+              Trustpilot score & review
+            </Span>
+          </Link>
+        </Flex>
       </FadeIn>
     </Container>
   );

@@ -23,6 +23,7 @@ export type IconTypes =
   | 'DownloadMobileIcon'
   | 'DownloadWebIcon'
   | 'EdgeIcon'
+  | 'FailIcon'
   | 'FirefoxIcon'
   | 'GithubIcon'
   | 'GooglePlayIcon'
