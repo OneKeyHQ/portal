@@ -1,5 +1,6 @@
 import { FC, ReactNode } from 'react';
 
+import { useTheme } from '@emotion/react';
 import { Helmet } from 'react-helmet';
 
 import { Box, Container, Main } from '../../base';
@@ -13,9 +14,10 @@ export interface EIPsProps {
 
 export const EIPs: FC<EIPsProps> = (props) => {
   const { children } = props;
+  const theme = useTheme();
 
   return (
-    <Box>
+    <Box xs={{ background: theme.colors.test100 }}>
       <Helmet>
         <title>EIPs</title>
       </Helmet>

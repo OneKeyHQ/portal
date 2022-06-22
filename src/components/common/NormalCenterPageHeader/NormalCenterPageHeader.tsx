@@ -33,13 +33,15 @@ export const NormalCenterPageHeader: FC<NormalCenterPageHeaderProps> = (
 
       <br />
 
-      <Span
-        css={{ color: theme.colors.test400 }}
-        xs={theme.text.normal200}
-        m={theme.text.normal300}
-      >
-        {description}
-      </Span>
+      <Box xs={{ maxWidth: 800, marginLeft: 'auto', marginRight: 'auto' }}>
+        <Span
+          css={{ color: theme.colors.test400 }}
+          xs={theme.text.normal200}
+          m={theme.text.normal300}
+        >
+          {description}
+        </Span>
+      </Box>
 
       {children}
     </Box>
