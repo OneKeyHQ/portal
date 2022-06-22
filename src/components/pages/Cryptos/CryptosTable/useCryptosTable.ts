@@ -8,6 +8,12 @@ import {
 
 export function useCryptosTable() {
   return {
+    thead: {
+      coins: 'COINS',
+      app: 'APP',
+      classicAndMini: 'Classic & Mini',
+      touchAndPro: 'Touch & Pro',
+    },
     items: [
       {
         coin: {
@@ -17,8 +23,10 @@ export function useCryptosTable() {
         },
         support: {
           app: true,
-          classicAndMini: true,
-          touchAndPro: false,
+          classic: true,
+          mini: true,
+          touch: false,
+          pro: false,
         },
         link: '#',
       },
@@ -30,8 +38,10 @@ export function useCryptosTable() {
         },
         support: {
           app: true,
-          classicAndMini: true,
-          touchAndPro: false,
+          classic: true,
+          mini: true,
+          touch: false,
+          pro: false,
         },
         link: '#',
       },
@@ -43,8 +53,10 @@ export function useCryptosTable() {
         },
         support: {
           app: true,
-          classicAndMini: true,
-          touchAndPro: false,
+          classic: true,
+          mini: true,
+          touch: false,
+          pro: false,
         },
         link: '#',
       },
@@ -56,8 +68,10 @@ export function useCryptosTable() {
         },
         support: {
           app: true,
-          classicAndMini: true,
-          touchAndPro: false,
+          classic: true,
+          mini: true,
+          touch: false,
+          pro: false,
         },
         link: '#',
       },
@@ -69,8 +83,10 @@ export function useCryptosTable() {
         },
         support: {
           app: true,
-          classicAndMini: true,
-          touchAndPro: false,
+          classic: true,
+          mini: true,
+          touch: false,
+          pro: false,
         },
         link: '#',
       },

@@ -2,7 +2,7 @@ import { FC, ReactNode, createElement } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { ArrowRightIcon, Box, Flex, Link, Span } from '../../../base';
+import { ArrowRightIcon, Box, Divider, Flex, Link, Span } from '../../../base';
 
 import { StatusIcon } from './StatusIcon';
 import { useCryptosTable } from './useCryptosTable';
@@ -27,32 +27,41 @@ export const CryptosTable: FC<CryptosTableProps> = (props) => {
           borderRadius: 24,
           paddingLeft: 24,
           paddingRight: 24,
-          paddingTop: 12,
           paddingBottom: 12,
           width: '100%',
           textAlign: 'left',
           borderSpacing: 0,
         }}
       >
-        <thead>
+        <thead css={{ position: 'relative' }}>
           <tr
             css={{
               ...theme.text.medium200,
-
-              height: 60,
-              lineHeight: '60px',
-              borderBottom: `1px solid ${theme.colors.test300}`,
+              height: 76,
+              lineHeight: '76px',
             }}
           >
-            <th>COINS</th>
-            <th css={{ width: '20%' }}>APP</th>
-            <th css={{ width: '20%' }}>Classic & Mini</th>
-            <th css={{ width: '20%' }}>Touch & Pro</th>
+            <th>{cryptosTable.thead.coins}</th>
+            <th css={{ width: '20%' }}>{cryptosTable.thead.app}</th>
+            <th css={{ width: '20%' }}>{cryptosTable.thead.classicAndMini}</th>
+            <th css={{ width: '20%' }}>{cryptosTable.thead.touchAndPro}</th>
             <th> </th>
           </tr>
+
+          <Box xs={{ position: 'absolute', left: 0, right: 0, bottom: 0 }}>
+            <Divider color={theme.colors.test200} />
+          </Box>
         </thead>
 
-        <tbody css={{ paddingBottom: 20 }}>
+        <tbody
+          css={{
+            ':before': {
+              content: '""',
+              display: 'block',
+              height: '12px',
+            },
+          }}
+        >
           {cryptosTable.items.map((item) => (
             <tr css={{ height: 80 }} key={item.coin.name}>
               <td>
@@ -79,10 +88,14 @@ export const CryptosTable: FC<CryptosTableProps> = (props) => {
                 <StatusIcon isSupported={item.support.app} />
               </td>
               <td>
-                <StatusIcon isSupported={item.support.classicAndMini} />
+                <StatusIcon
+                  isSupported={item.support.classic && item.support.mini}
+                />
               </td>
               <td>
-                <StatusIcon isSupported={item.support.touchAndPro} />
+                <StatusIcon
+                  isSupported={item.support.touch && item.support.pro}
+                />
               </td>
               <td css={{ textAlign: 'right' }}>
                 <Link to={item.link}>
