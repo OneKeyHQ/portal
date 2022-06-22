@@ -11,3 +11,4 @@ export * from './FreeSwiper';
 export * from './DownloadButton';
 export * from './LaunchAppButton';
 export * from './Navigation';
+export * from './NormalCenterPageHeader';
