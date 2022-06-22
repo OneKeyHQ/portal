@@ -4,8 +4,8 @@ import { useTheme } from '@emotion/react';
 
 import { staticAssetPrefix } from '../../../../utils/staticAssetPrefix';
 import { ArrowRightIcon, Box, Flex, Img, Link, Span } from '../../../base';
+import { StatusIcon } from '../../../common/StatusIcon';
 
-import { StatusIcon } from './StatusIcon';
 import { useCryptosTable } from './useCryptosTable';
 
 export interface TableContentProps {
