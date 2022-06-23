@@ -2,9 +2,11 @@ import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Box, Divider } from '../../../../base';
+import { Box, Divider, Flex } from '../../../../base';
 import { useEIPs } from '../../useEIPs';
 import { EIPContentItem } from '../EIPContentItem';
+
+import { SuggestStatus } from './SuggestStatus';
 
 export interface ListContentProps {
   children?: ReactNode;
@@ -30,14 +32,24 @@ export const ListContent: FC<ListContentProps> = (props) => {
     >
       {EIPsData.suggestList.map((item) => (
         <Box key={item.id}>
-          <Box
+          <Flex
             xs={{
+              flexDirection: 'column',
+              gap: 16,
               paddingLeft: 24,
               paddingRight: 24,
             }}
           >
             <EIPContentItem {...item} />
-          </Box>
+
+            <SuggestStatus isSupported={item.supports.mobileApp}>
+              Mobile App
+            </SuggestStatus>
+
+            <SuggestStatus isSupported={item.supports.hardwareWallet}>
+              Hardware Wallet
+            </SuggestStatus>
+          </Flex>
 
           <Box xs={{ paddingTop: 32, paddingBottom: 32 }}>
             <Divider color={theme.colors.test200} />
