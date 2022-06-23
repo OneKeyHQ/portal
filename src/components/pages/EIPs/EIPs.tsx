@@ -6,7 +6,7 @@ import { Helmet } from 'react-helmet';
 import { Box, Container, Main } from '../../base';
 import { Navigation, PageFooter, StayInTouch } from '../../common';
 
-import { EIPsTable } from './EIPsTable';
+import { EIPsSuggestContent } from './EIPsSuggestContent';
 import { MainTitle } from './MainTitle';
 
 export interface EIPsProps {
@@ -29,7 +29,7 @@ export const EIPs: FC<EIPsProps> = (props) => {
           <MainTitle />
         </Container>
 
-        <EIPsTable />
+        <EIPsSuggestContent />
 
         <Container>
           <Box xs={{ paddingTop: 80, paddingBottom: 80 }}>

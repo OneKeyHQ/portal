@@ -6,11 +6,11 @@ import { Container } from '../../../base/Container';
 import { ListContent } from './ListContent';
 import { TableContent } from './TableContent';
 
-export interface EIPsTableProps {
+export interface EIPsSuggestContentProps {
   children?: ReactNode;
 }
 
-export const EIPsTable: FC<EIPsTableProps> = (props) => {
+export const EIPsSuggestContent: FC<EIPsSuggestContentProps> = (props) => {
   const { children } = props;
 
   return (
