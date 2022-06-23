@@ -4,7 +4,13 @@ import { useTheme } from '@emotion/react';
 import { Menu } from '@headlessui/react';
 
 import { useOneKeyVersion } from '../../../../data';
-import { Box, ChevronDownIcon, Link, useButtonStyle } from '../../../base';
+import {
+  Box,
+  ChevronDownIcon,
+  Link,
+  MenuItem,
+  useButtonStyle,
+} from '../../../base';
 
 export interface BridgeDownloadMenuProps {
   children?: ReactNode;
@@ -60,30 +66,9 @@ export const BridgeDownloadMenu: FC<BridgeDownloadMenuProps> = (props) => {
         </Box>
 
         {options.map((option) => (
-          <Menu.Item<'div'> key={option.url}>
-            <div>
-              <Link to={option.url}>
-                <Box
-                  xs={{
-                    ...theme.text.medium300,
-                    transition: theme.transitions.allEaseOut,
-                    padding: '12px 22px',
-                    borderRadius: 12,
-                    textAlign: 'center',
-                    wordBreak: 'keep-all',
-                    whiteSpace: 'nowrap',
-                    cursor: 'pointer',
-                    color: theme.colors.test500,
-                    ':hover': {
-                      backgroundColor: theme.colors.test100,
-                    },
-                  }}
-                >
-                  {option.name}
-                </Box>
-              </Link>
-            </div>
-          </Menu.Item>
+          <Link to={option.url} key={option.url}>
+            <MenuItem>{option.name}</MenuItem>
+          </Link>
         ))}
       </Menu.Items>
 
