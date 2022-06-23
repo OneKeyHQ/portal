@@ -3,9 +3,11 @@ import { FC, ReactNode } from 'react';
 import { useTheme } from '@emotion/react';
 
 import { Box, Divider, Flex } from '../../../../base';
+import { SuggestListItem } from '../../suggestList';
 import { useEIPs } from '../../useEIPs';
 import { EIPContentItem } from '../EIPContentItem';
 import { SeeMore } from '../SeeMore';
+import { useSeeMore } from '../useSeeMore';
 
 import { SuggestStatus } from './SuggestStatus';
 
@@ -17,6 +19,11 @@ export const TableContent: FC<TableContentProps> = (props) => {
   const { children } = props;
   const theme = useTheme();
   const EIPsData = useEIPs();
+
+  const { buttonProps, list, hasMore } = useSeeMore<SuggestListItem>({
+    list: EIPsData.suggestList,
+    limit: 5,
+  });
 
   const borderStyle = `1px solid ${theme.colors.test200}`;
 
@@ -69,7 +76,7 @@ export const TableContent: FC<TableContentProps> = (props) => {
             },
           }}
         >
-          {EIPsData.suggestList.map((item) => (
+          {list.map((item) => (
             <tr css={{ height: 80 }} key={item.id}>
               <td>
                 <EIPContentItem {...item} />
@@ -85,23 +92,27 @@ export const TableContent: FC<TableContentProps> = (props) => {
         </tbody>
       </table>
 
-      <Box
-        xs={{
-          paddingTop: 12,
-          paddingBottom: 12,
-        }}
-      >
-        <Divider color={theme.colors.test200} />
-      </Box>
+      {hasMore && (
+        <Box>
+          <Box
+            xs={{
+              paddingTop: 12,
+              paddingBottom: 12,
+            }}
+          >
+            <Divider color={theme.colors.test200} />
+          </Box>
 
-      <Flex
-        xs={{
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
-      >
-        <SeeMore />
-      </Flex>
+          <Flex
+            xs={{
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            <SeeMore {...buttonProps} />
+          </Flex>
+        </Box>
+      )}
 
       {children}
     </Box>

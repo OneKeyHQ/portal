@@ -3,9 +3,11 @@ import { FC, ReactNode } from 'react';
 import { useTheme } from '@emotion/react';
 
 import { Box, Divider, Flex } from '../../../../base';
+import { SuggestListItem } from '../../suggestList';
 import { useEIPs } from '../../useEIPs';
 import { EIPContentItem } from '../EIPContentItem';
 import { SeeMore } from '../SeeMore';
+import { useSeeMore } from '../useSeeMore';
 
 import { SuggestStatus } from './SuggestStatus';
 
@@ -20,6 +22,11 @@ export const ListContent: FC<ListContentProps> = (props) => {
 
   const borderStyle = `1px solid ${theme.colors.test200}`;
 
+  const { buttonProps, list, hasMore } = useSeeMore<SuggestListItem>({
+    list: EIPsData.suggestList,
+    limit: 5,
+  });
+
   return (
     <Box
       xs={{
@@ -31,7 +38,7 @@ export const ListContent: FC<ListContentProps> = (props) => {
         paddingBottom: 32,
       }}
     >
-      {EIPsData.suggestList.map((item) => (
+      {list.map((item) => (
         <Box key={item.id}>
           <Flex
             xs={{
@@ -58,14 +65,16 @@ export const ListContent: FC<ListContentProps> = (props) => {
         </Box>
       ))}
 
-      <Flex
-        xs={{
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
-      >
-        <SeeMore />
-      </Flex>
+      {hasMore && (
+        <Flex
+          xs={{
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <SeeMore {...buttonProps} />
+        </Flex>
+      )}
 
       {children}
     </Box>
