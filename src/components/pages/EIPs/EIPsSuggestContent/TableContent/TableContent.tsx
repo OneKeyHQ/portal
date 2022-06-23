@@ -2,9 +2,10 @@ import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Box } from '../../../../base';
+import { Box, Divider, Flex } from '../../../../base';
 import { useEIPs } from '../../useEIPs';
 import { EIPContentItem } from '../EIPContentItem';
+import { SeeMore } from '../SeeMore';
 
 import { SuggestStatus } from './SuggestStatus';
 
@@ -83,6 +84,24 @@ export const TableContent: FC<TableContentProps> = (props) => {
           ))}
         </tbody>
       </table>
+
+      <Box
+        xs={{
+          paddingTop: 12,
+          paddingBottom: 12,
+        }}
+      >
+        <Divider color={theme.colors.test200} />
+      </Box>
+
+      <Flex
+        xs={{
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <SeeMore />
+      </Flex>
 
       {children}
     </Box>

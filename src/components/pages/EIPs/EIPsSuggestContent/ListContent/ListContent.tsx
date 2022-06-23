@@ -5,6 +5,7 @@ import { useTheme } from '@emotion/react';
 import { Box, Divider, Flex } from '../../../../base';
 import { useEIPs } from '../../useEIPs';
 import { EIPContentItem } from '../EIPContentItem';
+import { SeeMore } from '../SeeMore';
 
 import { SuggestStatus } from './SuggestStatus';
 
@@ -56,6 +57,15 @@ export const ListContent: FC<ListContentProps> = (props) => {
           </Box>
         </Box>
       ))}
+
+      <Flex
+        xs={{
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <SeeMore />
+      </Flex>
 
       {children}
     </Box>
