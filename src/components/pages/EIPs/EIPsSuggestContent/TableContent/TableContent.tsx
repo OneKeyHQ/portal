@@ -2,8 +2,9 @@ import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Box, Flex, Span } from '../../../../base';
+import { Box } from '../../../../base';
 import { useEIPs } from '../../useEIPs';
+import { EIPContentItem } from '../EIPContentItem';
 
 import { SuggestStatus } from './SuggestStatus';
 
@@ -70,29 +71,7 @@ export const TableContent: FC<TableContentProps> = (props) => {
           {EIPsData.suggestList.map((item) => (
             <tr css={{ height: 80 }} key={item.id}>
               <td>
-                <Flex xs={{ alignItems: 'center' }}>
-                  <Box
-                    xs={{
-                      ...theme.text.medium400,
-                      background: theme.colors.brandAlt300,
-                      padding: '4px 10px',
-                      borderRadius: 8,
-                    }}
-                  >
-                    {item.id.replace('-', ' ')}
-                  </Box>
-                  <Span xs={{ paddingLeft: 6, fontSize: 22 }}>🔥</Span>
-                </Flex>
-                <Box
-                  xs={{
-                    ...theme.text.medium200,
-                    paddingTop: 4,
-                    color: theme.colors.test300,
-                    paddingRight: '5%',
-                  }}
-                >
-                  {item.id} {item.title}
-                </Box>
+                <EIPContentItem {...item} />
               </td>
               <td>
                 <SuggestStatus isSupported={item.supports.mobileApp} />

@@ -18,7 +18,7 @@ export const hardwareWalletSupports = [
   EIPs.EIP2678,
 ];
 
-type Item = {
+export type SuggestListItem = {
   title: string;
   id: string;
   supports: {
@@ -27,7 +27,7 @@ type Item = {
   };
 };
 
-export const suggestList: Item[] = Object.values(EIPs)
+export const suggestList: SuggestListItem[] = Object.values(EIPs)
   .map((eip) => ({
     ...eip,
     supports: {
