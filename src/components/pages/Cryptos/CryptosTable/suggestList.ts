@@ -1,9 +1,3 @@
-// app: true,
-// classic: true,
-// mini: true,
-// touch: false,
-// pro: false,
-
 import { currencies } from './currencies';
 
 export const appSuggestList = [
