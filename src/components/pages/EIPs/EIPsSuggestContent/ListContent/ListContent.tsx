@@ -1,5 +1,7 @@
 import { FC, ReactNode } from 'react';
 
+import { Box } from '../../../../base';
+
 export interface ListContentProps {
   children?: ReactNode;
 }
@@ -7,5 +9,5 @@ export interface ListContentProps {
 export const ListContent: FC<ListContentProps> = (props) => {
   const { children } = props;
 
-  return <div>ListContent {children}</div>;
+  return <Box>{children}</Box>;
 };
