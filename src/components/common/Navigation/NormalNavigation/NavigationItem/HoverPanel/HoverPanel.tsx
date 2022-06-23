@@ -3,7 +3,7 @@ import { FC, ReactNode } from 'react';
 import { useTheme } from '@emotion/react';
 
 import { useHover } from '../../../../../../hooks';
-import { MenuItem } from '../../../../../base';
+import { Link, MenuItem } from '../../../../../base';
 import { Box } from '../../../../../base/Box';
 import { Flex } from '../../../../../base/Flex';
 import { NavigationDataItem } from '../../../useNavigationData';
@@ -44,9 +44,9 @@ export const HoverPanel: FC<HoverPanelProps> = (props) => {
         }}
       >
         {subItems?.map((item) => (
-          <a key={item.name} href={item.path} target="_blank" rel="noreferrer">
+          <Link key={item.name} to={item.path || ''}>
             <MenuItem>{item.name}</MenuItem>
-          </a>
+          </Link>
         ))}
         {children}
       </Flex>
