@@ -27,9 +27,11 @@ export const EIPs: FC<EIPsProps> = (props) => {
       <Main>
         <Container>
           <MainTitle />
+        </Container>
 
-          <EIPsTable />
+        <EIPsTable />
 
+        <Container>
           <Box xs={{ paddingTop: 80, paddingBottom: 80 }}>
             <StayInTouch />
           </Box>

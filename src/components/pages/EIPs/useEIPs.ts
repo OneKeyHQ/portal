@@ -3,18 +3,21 @@ import { EIPs } from './eipsList';
 const eipLink = 'https://eips.ethereum.org/EIPS/';
 
 const mobileAppSupports = [
-  EIPs.eip2,
-  EIPs.eip4,
-  EIPs.eip1052,
-  EIPs.eip1193,
-  EIPs.eip1363,
+  EIPs.EIP2,
+  EIPs.EIP4,
+  EIPs.EIP1052,
+  EIPs.EIP1193,
+  EIPs.EIP1363,
 ];
 
 const hardwareWalletSupports = [
-  EIPs.eip2,
-  EIPs.eip1014,
-  EIPs.eip1167,
-  EIPs.eip1363,
+  EIPs.EIP2,
+  EIPs.EIP196,
+  EIPs.EIP1014,
+  EIPs.EIP1167,
+  EIPs.EIP1193,
+  EIPs.EIP1363,
+  EIPs.EIP2678,
 ];
 
 type Item = {

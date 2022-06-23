@@ -3,6 +3,7 @@ import { FC, ReactNode } from 'react';
 import { Box, OnlyDisplay } from '../../../base';
 import { Container } from '../../../base/Container';
 
+import { ListContent } from './ListContent';
 import { TableContent } from './TableContent';
 
 export interface EIPsTableProps {
@@ -12,18 +13,16 @@ export interface EIPsTableProps {
 export const EIPsTable: FC<EIPsTableProps> = (props) => {
   const { children } = props;
 
-  const tableContent = <TableContent />;
-
   return (
     <Box>
       <OnlyDisplay m l xl xxl>
-        <Container>{tableContent}</Container>
+        <Container>
+          <TableContent />
+        </Container>
       </OnlyDisplay>
 
       <OnlyDisplay xs s>
-        <Box xs={{ overflow: 'auto' }}>
-          <Box xs={{ minWidth: 600 }}>{tableContent}</Box>
-        </Box>
+        <ListContent />
       </OnlyDisplay>
 
       {children}

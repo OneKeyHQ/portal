@@ -52,9 +52,9 @@ export const TableContent: FC<TableContentProps> = (props) => {
               borderBottom: borderStyle,
             }}
           >
-            <th>{EIPsData.thead.EIPs}</th>
-            <th>{EIPsData.thead.mobileApp}</th>
-            <th>{EIPsData.thead.hardwareWallet}</th>
+            <th css={{ width: '50%' }}>{EIPsData.thead.EIPs}</th>
+            <th css={{ width: '25%' }}>{EIPsData.thead.mobileApp}</th>
+            <th css={{ width: '25%' }}>{EIPsData.thead.hardwareWallet}</th>
           </tr>
         </thead>
 
@@ -79,7 +79,7 @@ export const TableContent: FC<TableContentProps> = (props) => {
                       borderRadius: 8,
                     }}
                   >
-                    {item.id.toUpperCase().replace('-', ' ')}
+                    {item.id.replace('-', ' ')}
                   </Box>
                   <Span xs={{ paddingLeft: 6, fontSize: 22 }}>🔥</Span>
                 </Flex>
@@ -88,9 +88,10 @@ export const TableContent: FC<TableContentProps> = (props) => {
                     ...theme.text.medium200,
                     paddingTop: 4,
                     color: theme.colors.test300,
+                    paddingRight: '5%',
                   }}
                 >
-                  {item.title}
+                  {item.id} {item.title}
                 </Box>
               </td>
               <td>

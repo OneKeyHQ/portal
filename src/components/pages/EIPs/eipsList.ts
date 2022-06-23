@@ -1,401 +1,401 @@
 export const EIPs = {
-  eip2: {
-    id: 'eip-2',
+  EIP2: {
+    id: 'EIP-2',
     title: 'Homestead Hard-fork Changes',
   },
-  eip4: {
-    id: 'eip-4',
+  EIP4: {
+    id: 'EIP-4',
     title: 'EIP Classification',
   },
-  eip5: {
-    id: 'eip-5',
+  EIP5: {
+    id: 'EIP-5',
     title: 'Gas Usage for `RETURN` and `CALL*`',
   },
-  eip6: {
-    id: 'eip-6',
+  EIP6: {
+    id: 'EIP-6',
     title: 'Renaming SUICIDE opcode',
   },
-  eip7: {
-    id: 'eip-7',
+  EIP7: {
+    id: 'EIP-7',
     title: 'DELEGATECALL',
   },
-  eip8: {
-    id: 'eip-8',
+  EIP8: {
+    id: 'EIP-8',
     title: 'devp2p Forward Compatibility Requirements for Homestead',
   },
-  eip20: {
-    id: 'eip-20',
+  EIP20: {
+    id: 'EIP-20',
     title: 'Token Standard',
   },
-  eip55: {
-    id: 'eip-55',
+  EIP55: {
+    id: 'EIP-55',
     title: 'Mixed-case checksum address encoding',
   },
-  eip100: {
-    id: 'eip-100',
+  EIP100: {
+    id: 'EIP-100',
     title:
       'Change difficulty adjustment to target mean block time including uncles',
   },
-  eip137: {
-    id: 'eip-137',
+  EIP137: {
+    id: 'EIP-137',
     title: 'Ethereum Domain Name Service - Specification',
   },
-  eip140: {
-    id: 'eip-140',
+  EIP140: {
+    id: 'EIP-140',
     title: 'REVERT instruction',
   },
-  eip141: {
-    id: 'eip-141',
+  EIP141: {
+    id: 'EIP-141',
     title: 'Designated invalid EVM instruction',
   },
-  eip145: {
-    id: 'eip-145',
+  EIP145: {
+    id: 'EIP-145',
     title: 'Bitwise shifting instructions in EVM',
   },
-  eip150: {
-    id: 'eip-150',
+  EIP150: {
+    id: 'EIP-150',
     title: 'Gas cost changes for IO-heavy operations',
   },
-  eip152: {
-    id: 'eip-152',
+  EIP152: {
+    id: 'EIP-152',
     title: 'Add BLAKE2 compression function `F` precompile',
   },
-  eip155: {
-    id: 'eip-155',
+  EIP155: {
+    id: 'EIP-155',
     title: 'Simple replay attack protection',
   },
-  eip158: {
-    id: 'eip-158',
+  EIP158: {
+    id: 'EIP-158',
     title: 'State clearing',
   },
-  eip160: {
-    id: 'eip-160',
+  EIP160: {
+    id: 'EIP-160',
     title: 'EXP cost increase',
   },
-  eip161: {
-    id: 'eip-161',
+  EIP161: {
+    id: 'EIP-161',
     title: 'State trie clearing (invariant-preserving alternative)',
   },
-  eip162: {
-    id: 'eip-162',
+  EIP162: {
+    id: 'EIP-162',
     title: 'Initial ENS Hash Registrar',
   },
-  eip165: {
-    id: 'eip-165',
+  EIP165: {
+    id: 'EIP-165',
     title: 'Standard Interface Detection',
   },
-  eip170: {
-    id: 'eip-170',
+  EIP170: {
+    id: 'EIP-170',
     title: 'Contract code size limit',
   },
-  eip181: {
-    id: 'eip-181',
+  EIP181: {
+    id: 'EIP-181',
     title: 'ENS support for reverse resolution of Ethereum addresses',
   },
-  eip190: {
-    id: 'eip-190',
+  EIP190: {
+    id: 'EIP-190',
     title: 'Ethereum Smart Contract Packaging Standard',
   },
-  eip191: {
-    id: 'eip-191',
+  EIP191: {
+    id: 'EIP-191',
     title: 'Signed Data Standard',
   },
-  eip196: {
-    id: 'eip-196',
+  EIP196: {
+    id: 'EIP-196',
     title:
       'Precompiled contracts for addition and scalar multiplication on the elliptic curve alt_bn128',
   },
-  eip197: {
-    id: 'eip-197',
+  EIP197: {
+    id: 'EIP-197',
     title:
       'Precompiled contracts for optimal ate pairing check on the elliptic curve alt_bn128',
   },
-  eip198: {
-    id: 'eip-198',
+  EIP198: {
+    id: 'EIP-198',
     title: 'Big integer modular exponentiation',
   },
-  eip211: {
-    id: 'eip-211',
+  EIP211: {
+    id: 'EIP-211',
     title: 'New opcodes: RETURNDATASIZE and RETURNDATACOPY',
   },
-  eip214: {
-    id: 'eip-214',
+  EIP214: {
+    id: 'EIP-214',
     title: 'New opcode STATICCALL',
   },
-  eip225: {
-    id: 'eip-225',
+  EIP225: {
+    id: 'EIP-225',
     title: 'Clique proof-of-authority consensus protocol',
   },
-  eip234: {
-    id: 'eip-234',
+  EIP234: {
+    id: 'EIP-234',
     title: 'Add `blockHash` to JSON-RPC filter options.',
   },
-  eip600: {
-    id: 'eip-600',
+  EIP600: {
+    id: 'EIP-600',
     title: 'Ethereum purpose allocation for Deterministic Wallets',
   },
-  eip601: {
-    id: 'eip-601',
+  EIP601: {
+    id: 'EIP-601',
     title: 'Ethereum hierarchy for deterministic wallets',
   },
-  eip606: {
-    id: 'eip-606',
+  EIP606: {
+    id: 'EIP-606',
     title: 'Hardfork Meta: Homestead',
   },
-  eip607: {
-    id: 'eip-607',
+  EIP607: {
+    id: 'EIP-607',
     title: 'Hardfork Meta: Spurious Dragon',
   },
-  eip608: {
-    id: 'eip-608',
+  EIP608: {
+    id: 'EIP-608',
     title: 'Hardfork Meta: Tangerine Whistle',
   },
-  eip609: {
-    id: 'eip-609',
+  EIP609: {
+    id: 'EIP-609',
     title: 'Hardfork Meta: Byzantium',
   },
-  eip627: {
-    id: 'eip-627',
+  EIP627: {
+    id: 'EIP-627',
     title: 'Whisper Specification',
   },
-  eip649: {
-    id: 'eip-649',
+  EIP649: {
+    id: 'EIP-649',
     title: 'Metropolis Difficulty Bomb Delay and Block Reward Reduction',
   },
-  eip658: {
-    id: 'eip-658',
+  EIP658: {
+    id: 'EIP-658',
     title: 'Embedding transaction status code in receipts',
   },
-  eip681: {
-    id: 'eip-681',
+  EIP681: {
+    id: 'EIP-681',
     title: 'URL Format for Transaction Requests',
   },
-  eip695: {
-    id: 'eip-695',
+  EIP695: {
+    id: 'EIP-695',
     title: 'Create `eth_chainId` method for JSON-RPC',
   },
-  eip706: {
-    id: 'eip-706',
+  EIP706: {
+    id: 'EIP-706',
     title: 'DEVp2p snappy compression',
   },
-  eip721: {
-    id: 'eip-721',
+  EIP721: {
+    id: 'EIP-721',
     title: 'Non-Fungible Token Standard',
   },
-  eip777: {
-    id: 'eip-777',
+  EIP777: {
+    id: 'EIP-777',
     title: 'Token Standard',
   },
-  eip778: {
-    id: 'eip-778',
+  EIP778: {
+    id: 'EIP-778',
     title: 'Ethereum Node Records (ENR)',
   },
-  eip779: {
-    id: 'eip-779',
+  EIP779: {
+    id: 'EIP-779',
     title: 'Hardfork Meta: DAO Fork',
   },
-  eip820: {
-    id: 'eip-820',
+  EIP820: {
+    id: 'EIP-820',
     title: 'Pseudo-introspection Registry Contract',
   },
-  eip868: {
-    id: 'eip-868',
+  EIP868: {
+    id: 'EIP-868',
     title: 'Node Discovery v4 ENR Extension',
   },
-  eip1013: {
-    id: 'eip-1013',
+  EIP1013: {
+    id: 'EIP-1013',
     title: 'Hardfork Meta: Constantinople',
   },
-  eip1014: {
-    id: 'eip-1014',
+  EIP1014: {
+    id: 'EIP-1014',
     title: 'Skinny CREATE2',
   },
-  eip1052: {
-    id: 'eip-1052',
+  EIP1052: {
+    id: 'EIP-1052',
     title: 'EXTCODEHASH opcode',
   },
-  eip1108: {
-    id: 'eip-1108',
+  EIP1108: {
+    id: 'EIP-1108',
     title: 'Reduce alt_bn128 precompile gas costs',
   },
-  eip1155: {
-    id: 'eip-1155',
+  EIP1155: {
+    id: 'EIP-1155',
     title: 'Multi Token Standard',
   },
-  eip1167: {
-    id: 'eip-1167',
+  EIP1167: {
+    id: 'EIP-1167',
     title: 'Minimal Proxy Contract',
   },
-  eip1193: {
-    id: 'eip-1193',
+  EIP1193: {
+    id: 'EIP-1193',
     title: 'Ethereum Provider JavaScript API',
   },
-  eip1234: {
-    id: 'eip-1234',
+  EIP1234: {
+    id: 'EIP-1234',
     title: 'Constantinople Difficulty Bomb Delay and Block Reward Adjustment',
   },
-  eip1271: {
-    id: 'eip-1271',
+  EIP1271: {
+    id: 'EIP-1271',
     title: 'Standard Signature Validation Method for Contracts',
   },
-  eip1283: {
-    id: 'eip-1283',
+  EIP1283: {
+    id: 'EIP-1283',
     title: 'Net gas metering for SSTORE without dirty maps',
   },
-  eip1344: {
-    id: 'eip-1344',
+  EIP1344: {
+    id: 'EIP-1344',
     title: 'ChainID opcode',
   },
-  eip1363: {
-    id: 'eip-1363',
+  EIP1363: {
+    id: 'EIP-1363',
     title: ' Payable Token',
   },
-  eip1559: {
-    id: 'eip-1559',
+  EIP1559: {
+    id: 'EIP-1559',
     title: 'Fee market change for ETH 1.0 chain',
   },
-  eip1679: {
-    id: 'eip-1679',
+  EIP1679: {
+    id: 'EIP-1679',
     title: 'Hardfork Meta: Istanbul',
   },
-  eip1716: {
-    id: 'eip-1716',
+  EIP1716: {
+    id: 'EIP-1716',
     title: 'Hardfork Meta: Petersburg',
   },
-  eip1820: {
-    id: 'eip-1820',
+  EIP1820: {
+    id: 'EIP-1820',
     title: 'Pseudo-introspection Registry Contract',
   },
-  eip1884: {
-    id: 'eip-1884',
+  EIP1884: {
+    id: 'EIP-1884',
     title: 'Repricing for trie-size-dependent opcodes',
   },
-  eip1967: {
-    id: 'eip-1967',
+  EIP1967: {
+    id: 'EIP-1967',
     title: 'Standard Proxy Storage Slots',
   },
-  eip2028: {
-    id: 'eip-2028',
+  EIP2028: {
+    id: 'EIP-2028',
     title: 'Transaction data gas cost reduction',
   },
-  eip2098: {
-    id: 'eip-2098',
+  EIP2098: {
+    id: 'EIP-2098',
     title: 'Compact Signature Representation',
   },
-  eip2124: {
-    id: 'eip-2124',
+  EIP2124: {
+    id: 'EIP-2124',
     title: 'Fork identifier for chain compatibility checks',
   },
-  eip2159: {
-    id: 'eip-2159',
+  EIP2159: {
+    id: 'EIP-2159',
     title: 'Common Prometheus Metrics Names for Clients',
   },
-  eip2200: {
-    id: 'eip-2200',
+  EIP2200: {
+    id: 'EIP-2200',
     title: 'Structured Definitions for Net Gas Metering',
   },
-  eip2228: {
-    id: 'eip-2228',
+  EIP2228: {
+    id: 'EIP-2228',
     title: ' Canonicalize the name of network ID 1 and chain ID 1',
   },
-  eip2309: {
-    id: 'eip-2309',
+  EIP2309: {
+    id: 'EIP-2309',
     title: 'ERC-721 Consecutive Transfer Extension',
   },
-  eip2364: {
-    id: 'eip-2364',
+  EIP2364: {
+    id: 'EIP-2364',
     title: 'eth/64: forkid-extended protocol handshake',
   },
-  eip2384: {
-    id: 'eip-2384',
+  EIP2384: {
+    id: 'EIP-2384',
     title: 'Muir Glacier Difficulty Bomb Delay',
   },
-  eip2387: {
-    id: 'eip-2387',
+  EIP2387: {
+    id: 'EIP-2387',
     title: 'Hardfork Meta: Muir Glacier',
   },
-  eip2464: {
-    id: 'eip-2464',
+  EIP2464: {
+    id: 'EIP-2464',
     title: 'eth/65: transaction announcements and retrievals',
   },
-  eip2565: {
-    id: 'eip-2565',
+  EIP2565: {
+    id: 'EIP-2565',
     title: 'ModExp Gas Cost',
   },
-  eip2678: {
-    id: 'eip-2678',
+  EIP2678: {
+    id: 'EIP-2678',
     title: 'Revised Ethereum Smart Contract Packaging Standard (EthPM v3)',
   },
-  eip2681: {
-    id: 'eip-2681',
+  EIP2681: {
+    id: 'EIP-2681',
     title: 'Limit account nonce to 2^64-1',
   },
-  eip2696: {
-    id: 'eip-2696',
+  EIP2696: {
+    id: 'EIP-2696',
     title: 'JavaScript `request` method RPC transport',
   },
-  eip2700: {
-    id: 'eip-2700',
+  EIP2700: {
+    id: 'EIP-2700',
     title: 'JavaScript Provider Event Emitter',
   },
-  eip2718: {
-    id: 'eip-2718',
+  EIP2718: {
+    id: 'EIP-2718',
     title: 'Typed Transaction Envelope',
   },
-  eip2929: {
-    id: 'eip-2929',
+  EIP2929: {
+    id: 'EIP-2929',
     title: 'Gas cost increases for state access opcodes',
   },
-  eip2930: {
-    id: 'eip-2930',
+  EIP2930: {
+    id: 'EIP-2930',
     title: 'Optional access lists',
   },
-  eip2981: {
-    id: 'eip-2981',
+  EIP2981: {
+    id: 'EIP-2981',
     title: 'NFT Royalty Standard',
   },
-  eip3156: {
-    id: 'eip-3156',
+  EIP3156: {
+    id: 'EIP-3156',
     title: 'Flash Loans',
   },
-  eip3198: {
-    id: 'eip-3198',
+  EIP3198: {
+    id: 'EIP-3198',
     title: 'BASEFEE opcode',
   },
-  eip3448: {
-    id: 'eip-3448',
+  EIP3448: {
+    id: 'EIP-3448',
     title: 'MetaProxy Standard',
   },
-  eip3529: {
-    id: 'eip-3529',
+  EIP3529: {
+    id: 'EIP-3529',
     title: 'Reduction in refunds',
   },
-  eip3541: {
-    id: 'eip-3541',
+  EIP3541: {
+    id: 'EIP-3541',
     title: 'Reject new contract code starting with the 0xEF byte',
   },
-  eip3554: {
-    id: 'eip-3554',
+  EIP3554: {
+    id: 'EIP-3554',
     title: 'Difficulty Bomb Delay to December 2021',
   },
-  eip3607: {
-    id: 'eip-3607',
+  EIP3607: {
+    id: 'EIP-3607',
     title: 'Reject transactions from senders with deployed code',
   },
-  eip3668: {
-    id: 'eip-3668',
+  EIP3668: {
+    id: 'EIP-3668',
     title: 'CCIP Read: Secure offchain data retrieval',
   },
-  eip4345: {
-    id: 'eip-4345',
+  EIP4345: {
+    id: 'EIP-4345',
     title: 'Difficulty Bomb Delay to June 2022',
   },
-  eip4400: {
-    id: 'eip-4400',
+  EIP4400: {
+    id: 'EIP-4400',
     title: 'ERC-721 Consumable Extension',
   },
-  eip4626: {
-    id: 'eip-4626',
+  EIP4626: {
+    id: 'EIP-4626',
     title: 'Tokenized Vault Standard',
   },
 };
