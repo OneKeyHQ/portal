@@ -1,4 +1,4 @@
-import { EIPs } from './eips';
+import { EIPs } from './eipsList';
 
 const eipLink = 'https://eips.ethereum.org/EIPS/';
 
