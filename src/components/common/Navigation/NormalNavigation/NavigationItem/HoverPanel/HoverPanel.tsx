@@ -3,6 +3,7 @@ import { FC, ReactNode } from 'react';
 import { useTheme } from '@emotion/react';
 
 import { useHover } from '../../../../../../hooks';
+import { MenuItem } from '../../../../../base';
 import { Box } from '../../../../../base/Box';
 import { Flex } from '../../../../../base/Flex';
 import { NavigationDataItem } from '../../../useNavigationData';
@@ -44,24 +45,7 @@ export const HoverPanel: FC<HoverPanelProps> = (props) => {
       >
         {subItems?.map((item) => (
           <a key={item.name} href={item.path} target="_blank" rel="noreferrer">
-            <Box
-              xs={{
-                ...theme.text.medium300,
-                transition: theme.transitions.allEaseOut,
-                padding: '12px 22px',
-                borderRadius: 12,
-                textAlign: 'center',
-                wordBreak: 'keep-all',
-                whiteSpace: 'nowrap',
-                cursor: 'pointer',
-                color: theme.colors.test500,
-                ':hover': {
-                  backgroundColor: '#f0f1f2',
-                },
-              }}
-            >
-              {item.name}
-            </Box>
+            <MenuItem>{item.name}</MenuItem>
           </a>
         ))}
         {children}
