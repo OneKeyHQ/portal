@@ -67,7 +67,7 @@ export const TableContent: FC<TableContentProps> = (props) => {
             },
           }}
         >
-          {EIPsData.items.map((item) => (
+          {EIPsData.suggestList.map((item) => (
             <tr css={{ height: 80 }} key={item.id}>
               <td>
                 <Flex xs={{ alignItems: 'center' }}>
