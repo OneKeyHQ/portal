@@ -16,6 +16,13 @@ export const SuggestStatus: FC<SuggestStatusProps> = (props) => {
   return isSupported ? (
     <CheckIcon color={theme.colors.brandAlt400} width={24} height={24} />
   ) : (
-    <Span>Not supported yet</Span>
+    <Span
+      xs={{
+        ...theme.text.medium400,
+        color: theme.colors.test300,
+      }}
+    >
+      Not supported yet
+    </Span>
   );
 };

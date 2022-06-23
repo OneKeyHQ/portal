@@ -2,7 +2,7 @@ import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Box, Flex } from '../../../base';
+import { Box, Flex, Span } from '../../../base';
 import { useEIPs } from '../useEIPs';
 
 import { SuggestStatus } from './SuggestStatus';
@@ -21,6 +21,7 @@ export const TableContent: FC<TableContentProps> = (props) => {
   return (
     <Box
       xs={{
+        background: theme.colors.white,
         borderTop: borderStyle,
         borderBottom: borderStyle,
         paddingLeft: 24,
@@ -44,7 +45,7 @@ export const TableContent: FC<TableContentProps> = (props) => {
         <thead>
           <tr
             css={{
-              ...theme.text.medium200,
+              ...theme.text.medium300,
               height: 76,
               lineHeight: '76px',
               position: 'relative',
@@ -70,14 +71,33 @@ export const TableContent: FC<TableContentProps> = (props) => {
             <tr css={{ height: 80 }} key={item.id}>
               <td>
                 <Flex xs={{ alignItems: 'center' }}>
-                  <Box xs={theme.text.medium400}>{item.title}</Box>
+                  <Box
+                    xs={{
+                      ...theme.text.medium400,
+                      background: theme.colors.brandAlt300,
+                      padding: '4px 10px',
+                      borderRadius: 8,
+                    }}
+                  >
+                    {item.id.toUpperCase().replace('-', ' ')}
+                  </Box>
+                  <Span xs={{ paddingLeft: 6, fontSize: 22 }}>🔥</Span>
                 </Flex>
+                <Box
+                  xs={{
+                    ...theme.text.medium200,
+                    paddingTop: 4,
+                    color: theme.colors.test300,
+                  }}
+                >
+                  {item.title}
+                </Box>
               </td>
               <td>
-                <SuggestStatus isSupported={false} />
+                <SuggestStatus isSupported={item.supports.mobileApp} />
               </td>
               <td>
-                <SuggestStatus isSupported />
+                <SuggestStatus isSupported={item.supports.hardwareWallet} />
               </td>
             </tr>
           ))}

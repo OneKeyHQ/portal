@@ -4,8 +4,9 @@ import { useTheme } from '@emotion/react';
 import { Helmet } from 'react-helmet';
 
 import { Box, Container, Main } from '../../base';
-import { Navigation, PageFooter } from '../../common';
+import { Navigation, PageFooter, StayInTouch } from '../../common';
 
+import { EIPsTable } from './EIPsTable';
 import { MainTitle } from './MainTitle';
 
 export interface EIPsProps {
@@ -26,6 +27,12 @@ export const EIPs: FC<EIPsProps> = (props) => {
       <Main>
         <Container>
           <MainTitle />
+
+          <EIPsTable />
+
+          <Box xs={{ paddingTop: 80, paddingBottom: 80 }}>
+            <StayInTouch />
+          </Box>
         </Container>
 
         {children}
