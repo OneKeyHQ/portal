@@ -2,8 +2,8 @@ import { FC } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Span } from '../../../base/Box';
-import { CheckIcon } from '../../../base/Icon';
+import { Span } from '../../../../base/Box';
+import { CheckIcon } from '../../../../base/Icon';
 
 export interface SuggestStatusProps {
   isSupported: boolean;

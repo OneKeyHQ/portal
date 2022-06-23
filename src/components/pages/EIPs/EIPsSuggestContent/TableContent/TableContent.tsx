@@ -2,8 +2,8 @@ import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Box, Flex, Span } from '../../../base';
-import { useEIPs } from '../useEIPs';
+import { Box, Flex, Span } from '../../../../base';
+import { useEIPs } from '../../useEIPs';
 
 import { SuggestStatus } from './SuggestStatus';
 
