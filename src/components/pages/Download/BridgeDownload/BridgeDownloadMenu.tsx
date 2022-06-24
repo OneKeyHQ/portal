@@ -1,15 +1,15 @@
-import { FC, ReactNode } from 'react';
+import { FC, ReactNode, useState } from 'react';
 
 import { useTheme } from '@emotion/react';
-import { Menu } from '@headlessui/react';
 
 import { useOneKeyVersion } from '../../../../data';
 import {
   Box,
+  Button,
   ChevronDownIcon,
   Link,
   MenuItem,
-  useButtonStyle,
+  MenuItems,
 } from '../../../base';
 
 export interface BridgeDownloadMenuProps {
@@ -19,6 +19,7 @@ export interface BridgeDownloadMenuProps {
 export const BridgeDownloadMenu: FC<BridgeDownloadMenuProps> = (props) => {
   const { children } = props;
   const theme = useTheme();
+  const [isHoverPanelVisible, setIsHoverPanelVisible] = useState(false);
 
   const { formattedData } = useOneKeyVersion();
   const { bridge } = formattedData;
@@ -32,27 +33,19 @@ export const BridgeDownloadMenu: FC<BridgeDownloadMenuProps> = (props) => {
     bridge.linux64Rpm,
   ];
 
-  const buttonStyle = useButtonStyle({
-    variant: 'outlined',
-  });
-
   return (
-    <Menu>
-      <Menu.Button<'button'> css={buttonStyle}>
-        Download <ChevronDownIcon width={24} height={24} />
-      </Menu.Button>
+    <Box xs={{ position: 'relative' }}>
+      <Button
+        onClick={() => setIsHoverPanelVisible(!isHoverPanelVisible)}
+        variant="outlined"
+        rightIcon={<ChevronDownIcon width={24} height={24} />}
+      >
+        Download
+      </Button>
 
-      <Menu.Items<'div'>
-        css={{
-          transition: theme.transitions.allEaseOut,
-          padding: 6,
-          borderRadius: 12,
-          boxShadow: theme.shadow.hover,
-          position: 'absolute',
-          backgroundColor: theme.colors.white,
-          zIndex: 10,
-          marginTop: 8,
-        }}
+      <MenuItems
+        onClickOutside={() => setIsHoverPanelVisible(false)}
+        isActive={isHoverPanelVisible}
       >
         <Box
           xs={{
@@ -70,9 +63,9 @@ export const BridgeDownloadMenu: FC<BridgeDownloadMenuProps> = (props) => {
             <MenuItem>{option.name}</MenuItem>
           </Link>
         ))}
-      </Menu.Items>
+      </MenuItems>
 
       {children}
-    </Menu>
+    </Box>
   );
 };
