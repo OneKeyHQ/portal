@@ -13,7 +13,7 @@ exports.onCreatePage = async ({ page, actions }, pluginOptions) => {
     const isI18nPage = page.path.includes(`/${language}/`);
     const newPath =
       routed || isI18nPage ? `/${language}${page.path}` : page.path;
-    let serverData = {};
+    const serverData = {};
 
     if (page.context?.i18nData) {
       Object.keys(page.context.i18nData).forEach((key) => {
@@ -46,7 +46,7 @@ exports.onCreatePage = async ({ page, actions }, pluginOptions) => {
 
   locales.forEach((language) => {
     const localePage = generatePage(true, language);
-    const regexp = new RegExp('/404/?$');
+    const regexp = /\/404\/?$/;
     if (regexp.test(localePage.path)) {
       localePage.matchPath = `/${language}/*`;
     }
