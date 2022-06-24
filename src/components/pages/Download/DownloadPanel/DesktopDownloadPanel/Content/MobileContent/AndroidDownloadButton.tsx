@@ -1,4 +1,4 @@
-import { FC, ReactNode, useState } from 'react';
+import { FC, ReactNode } from 'react';
 
 import { useHover } from '../../../../../../../hooks';
 import {
@@ -10,6 +10,7 @@ import {
   Link,
   MenuItem,
   MenuItems,
+  useMenu,
 } from '../../../../../../base';
 import { useOneKeyDownloadData } from '../../../useOneKeyDownloadData';
 
@@ -29,7 +30,7 @@ export const AndroidDownloadButton: FC<AndroidDownloadButtonProps> = (
     platforms: { androidGooglePlay, androidAPK },
   } = useOneKeyDownloadData();
   const { hoverProps, isHovered } = useHover({ timeout: 100 });
-  const [isHoverPanelVisible, setIsHoverPanelVisible] = useState(false);
+  const menu = useMenu();
 
   const menus = [
     { name: androidGooglePlay.name, url: androidGooglePlay.url },
@@ -55,7 +56,7 @@ export const AndroidDownloadButton: FC<AndroidDownloadButtonProps> = (
 
       <Button
         {...hoverProps}
-        onClick={() => setIsHoverPanelVisible(!isHoverPanelVisible)}
+        {...menu.menuTriggerProps}
         fillWidth
         variant="outlined"
         size="large"
@@ -65,10 +66,7 @@ export const AndroidDownloadButton: FC<AndroidDownloadButtonProps> = (
         Android
       </Button>
 
-      <MenuItems
-        onClickOutside={() => setIsHoverPanelVisible(false)}
-        isActive={isHoverPanelVisible}
-      >
+      <MenuItems {...menu.menuItemsProps}>
         {menus.map((item) => (
           <Link key={item.name} to={item.url}>
             <MenuItem>{item.name}</MenuItem>

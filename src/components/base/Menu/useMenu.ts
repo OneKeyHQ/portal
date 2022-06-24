@@ -4,10 +4,10 @@ export function useMenu() {
   const [isActive, setIsActive] = useState(false);
 
   return {
-    menuItemsProps: {
+    menuTriggerProps: {
       onClick: () => setIsActive(!isActive),
     },
-    menuTriggerProps: {
+    menuItemsProps: {
       onClickOutside: () => setIsActive(false),
       isActive,
     },

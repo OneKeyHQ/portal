@@ -1,4 +1,4 @@
-import { FC, ReactNode, useState } from 'react';
+import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
@@ -10,6 +10,7 @@ import {
   Link,
   MenuItem,
   MenuItems,
+  useMenu,
 } from '../../../base';
 
 export interface BridgeDownloadMenuProps {
@@ -19,7 +20,7 @@ export interface BridgeDownloadMenuProps {
 export const BridgeDownloadMenu: FC<BridgeDownloadMenuProps> = (props) => {
   const { children } = props;
   const theme = useTheme();
-  const [isHoverPanelVisible, setIsHoverPanelVisible] = useState(false);
+  const menu = useMenu();
 
   const { formattedData } = useOneKeyVersion();
   const { bridge } = formattedData;
@@ -36,17 +37,14 @@ export const BridgeDownloadMenu: FC<BridgeDownloadMenuProps> = (props) => {
   return (
     <Box xs={{ position: 'relative' }}>
       <Button
-        onClick={() => setIsHoverPanelVisible(!isHoverPanelVisible)}
+        {...menu.menuTriggerProps}
         variant="outlined"
         rightIcon={<ChevronDownIcon width={24} height={24} />}
       >
         Download
       </Button>
 
-      <MenuItems
-        onClickOutside={() => setIsHoverPanelVisible(false)}
-        isActive={isHoverPanelVisible}
-      >
+      <MenuItems {...menu.menuItemsProps}>
         <Box
           xs={{
             paddingBottom: 6,
