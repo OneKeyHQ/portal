@@ -3,6 +3,7 @@ import { FC } from 'react';
 import { useTheme } from '@emotion/react';
 
 import { useMediaQuery } from '../../../hooks';
+import { useTranslation } from '../../../i18n';
 import { Box, Footer } from '../../base/Box';
 import { Container } from '../../base/Container';
 import { Flex } from '../../base/Flex';
@@ -22,6 +23,12 @@ export const PageFooter: FC<PageFooterProps> = (props) => {
   const { isShowEmailSubscribe = true, isShowMediaLinks = true } = props;
   const theme = useTheme();
   const media = useMediaQuery();
+  const { t } = useTranslation();
+
+  console.log(
+    'footer__navigation__ethereum',
+    t('footer__navigation__ethereum'),
+  );
 
   return (
     <Footer

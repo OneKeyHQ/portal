@@ -51,24 +51,23 @@ export function useI18n() {
 
   return {
     ...i18n,
-    isEnglish: i18n.language === 'en',
-    isChinese: i18n.language === 'zh',
+    is: (locale: Locales) => i18n.language === locale,
   };
 }
 
-export function useTranslation(
-  resources: {
-    [key: string]: {
-      [key: string]: string;
-    };
-  } = { zh: {}, en: {} },
-) {
-  const ns = 'translation';
+export function useTranslation(ns = 'common') {
   const i18n = useI18n();
-
-  i18n
-    .addResources('zh', ns, resources.zh || {})
-    .addResources('en', ns, resources.en || {});
+  import(`./locale/${i18n.language}.json`).then(({ default: resources }) => {
+    console.log(resources);
+    i18n.addResources(i18n.language, ns, resources);
+  });
 
   return useTranslationI18next(ns);
+}
+
+// use locals object value check the path value
+export function isI18nPath(path: string) {
+  const localesValue = Object.values(locales);
+
+  return localesValue.some((locale) => path.includes(`/${locale}/`));
 }
