@@ -6,6 +6,30 @@ import {
   useTranslation as useTranslationI18next,
 } from 'react-i18next';
 
+export const locales = {
+  it: 'it',
+  ar: 'ar',
+  bn: 'bn',
+  de: 'de',
+  en: 'en',
+  es: 'es',
+  fil: 'fil',
+  fr: 'fr',
+  hi_IN: 'hi_IN',
+  ja: 'ja',
+  ko: 'ko',
+  mn_MN: 'mn_MN',
+  pt: 'pt',
+  ru: 'ru',
+  th: 'th',
+  uk: 'uk',
+  vi: 'vi',
+  zh_CN: 'zh_CN',
+  zh_HK: 'zh_HK',
+};
+
+export type Locales = keyof typeof locales;
+
 export function createI18next(lng: string) {
   const i18n = i18next.createInstance();
 
