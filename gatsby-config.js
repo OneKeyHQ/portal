@@ -1,3 +1,5 @@
+const {languages, defaultLanguage} = require('./languages');
+
 module.exports = {
   assetPrefix: process.env.PUBLIC_URL || '',
   siteMetadata: {
@@ -10,32 +12,33 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: 'gatsby-plugin-i18n-simple',
+      resolve: `gatsby-source-filesystem`,
       options: {
-        locales: [
-          "it",
-          "ar",
-          "bn",
-          "de",
-          "en",
-          "es",
-          "fil",
-          "fr",
-          "hi_IN",
-          "ja",
-          "ko",
-          "mn_MN",
-          "pt",
-          "ru",
-          "th",
-          "uk",
-          "vi",
-          "zh_CN",
-          "zh_HK",
-        ],
-        defaultLocale: 'en',
+        path: `${__dirname}/locales`,
+        name: `locale`
+      }
+    },
+    {
+      resolve: `gatsby-plugin-react-i18next`,
+      options: {
         redirect: false,
-      },
+        localeJsonSourceName: `locale`, // name given to `gatsby-source-filesystem` plugin.
+        languages,
+        defaultLanguage,
+        // if you are using Helmet, you must include siteUrl, and make sure you add http:https
+        siteUrl: 'https://portal.onekey.so',
+        // if you are using trailingSlash gatsby config include it here, as well (the default is 'always')
+        trailingSlash: 'always',
+        // you can pass any i18next options
+        i18nextOptions: {
+          interpolation: {
+            escapeValue: false // not needed for react as it escapes by default
+          },
+          keySeparator: false,
+          nsSeparator: false
+        },
+        pages: []
+      }
     },
     'gatsby-plugin-emotion',
     {

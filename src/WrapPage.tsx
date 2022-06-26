@@ -1,9 +1,6 @@
 import { FC, useEffect } from 'react';
 
 import { Helmet } from 'react-helmet';
-import { I18nextProvider } from 'react-i18next';
-
-import { createI18next } from './i18n';
 
 interface WrapPageProps {
   children: React.ReactNode;
@@ -17,8 +14,6 @@ interface WrapPageProps {
 
 const WrapPage: FC<WrapPageProps> = (props) => {
   const { children, pageContext, path } = props;
-  const i18n = createI18next(pageContext.language);
-  const { intl } = pageContext;
 
   useEffect(() => {
     // const isI18nPage = path.includes(`/en/`) || path.includes(`/zh/`);
@@ -59,7 +54,7 @@ const WrapPage: FC<WrapPageProps> = (props) => {
         },
       });
     });
-  }, [intl, path]);
+  }, [path]);
 
   return (
     <div>
@@ -83,7 +78,7 @@ const WrapPage: FC<WrapPageProps> = (props) => {
         </script>
       </Helmet>
 
-      <I18nextProvider i18n={i18n}>{children}</I18nextProvider>
+      {children}
     </div>
   );
 };

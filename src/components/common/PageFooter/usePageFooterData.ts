@@ -1,4 +1,8 @@
+import { useTranslation } from 'gatsby-plugin-react-i18next';
+
 export function usePageFooterData() {
+  const { t } = useTranslation();
+
   return {
     media: {
       twitter: {
@@ -20,7 +24,7 @@ export function usePageFooterData() {
     },
     menuData: [
       {
-        name: 'product',
+        name: t('footer__navigation__product'),
         link: '',
         list: [
           {
@@ -61,7 +65,7 @@ export function usePageFooterData() {
         ],
       },
       {
-        name: 'resource',
+        name: t('footer__navigation__resource'),
         link: '',
         list: [
           {
