@@ -1,11 +1,12 @@
 import { FC, ReactNode, useCallback, useState } from 'react';
 
 import { useTheme } from '@emotion/react';
-import { StaticImage } from 'gatsby-plugin-image';
 import { Swiper } from 'swiper/types';
 
 import {
   Box,
+  ChevronLeftIcon,
+  ChevronRightIcon,
   Flex,
   Progress,
   Swiper as SwiperComponent,
@@ -13,15 +14,17 @@ import {
 } from '../../../../../base';
 
 import { ArrowWrap } from './ArrowWrap';
-import { ReactComponent as LeftArrowIcon } from './images/left.svg';
-import { ReactComponent as RightArrowIcon } from './images/right.svg';
 
 export interface ProductImageSwiperProps {
   children?: ReactNode;
+  gallery: {
+    key: string;
+    node: ReactNode;
+  }[];
 }
 
 export const ProductImageSwiper: FC<ProductImageSwiperProps> = (props) => {
-  const { children } = props;
+  const { children, gallery } = props;
   const [activeIndex, setActiveIndex] = useState(0);
   const theme = useTheme();
   const [allowSlideNext, setAllowSlideNext] = useState<boolean | undefined>();
@@ -54,7 +57,7 @@ export const ProductImageSwiper: FC<ProductImageSwiperProps> = (props) => {
             updateSlideStatus();
           }}
         >
-          <LeftArrowIcon width={48} height={48} />
+          <ChevronLeftIcon width={48} height={48} />
         </ArrowWrap>
         <SwiperComponent
           onSwiper={(swiper) => {
@@ -65,24 +68,9 @@ export const ProductImageSwiper: FC<ProductImageSwiperProps> = (props) => {
           onSlideChange={onSlideChange}
           slidesPerView={1}
         >
-          <SwiperSlide>
-            <StaticImage alt="0" src="./images/mini-gallery-00.png" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <StaticImage alt="1" src="./images/mini-gallery-01.png" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <StaticImage alt="2" src="./images/mini-gallery-02.png" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <StaticImage alt="3" src="./images/mini-gallery-03.png" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <StaticImage alt="4" src="./images/mini-gallery-04.png" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <StaticImage alt="5" src="./images/mini-gallery-05.png" />
-          </SwiperSlide>
+          {gallery.map((item) => (
+            <SwiperSlide key={item.key}>{item.node}</SwiperSlide>
+          ))}
         </SwiperComponent>
         <ArrowWrap
           disabled={!allowSlideNext}
@@ -91,7 +79,7 @@ export const ProductImageSwiper: FC<ProductImageSwiperProps> = (props) => {
             updateSlideStatus();
           }}
         >
-          <RightArrowIcon width={48} height={48} />
+          <ChevronRightIcon width={48} height={48} />
         </ArrowWrap>
       </Flex>
 
