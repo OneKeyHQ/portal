@@ -24,7 +24,13 @@ export const ImageIntroduction: FC<ImageIntroductionProps> = (props) => {
     <Flex xs={{ flexDirection: 'column', gap: 20 }} m={{ gap: 40 }}>
       {items.map((item) => (
         <Box xs={{ position: 'relative' }} key={item.name}>
-          <Box xs={{ borderRadius: 40, overflow: 'hidden' }}>
+          <Box
+            xs={{
+              borderRadius: 40,
+              overflow: 'hidden',
+              transform: 'translateZ(0)',
+            }}
+          >
             <OnlyDisplay xs>{item.images.s}</OnlyDisplay>
             <OnlyDisplay s>{item.images.m}</OnlyDisplay>
             <OnlyDisplay m l>
