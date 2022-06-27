@@ -16,3 +16,4 @@ export * from './ContactUsButton';
 export * from './MultilineText';
 export * from './HeroBanner';
 export * from './NormalCenterPageHeader';
+export * from './StatusIcon';

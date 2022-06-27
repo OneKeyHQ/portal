@@ -18,7 +18,9 @@ export const NormalCenterPageHeader: FC<NormalCenterPageHeaderProps> = (
   const theme = useTheme();
 
   return (
-    <Box xs={{ textAlign: 'center', paddingTop: '12vh', paddingBottom: '6vh' }}>
+    <Box
+      xs={{ textAlign: 'center', paddingTop: '18vh', paddingBottom: '12vh' }}
+    >
       <H1
         css={{ color: theme.colors.test500 }}
         xs={theme.text.medium800}
@@ -33,13 +35,15 @@ export const NormalCenterPageHeader: FC<NormalCenterPageHeaderProps> = (
 
       <br />
 
-      <Span
-        css={{ color: theme.colors.test400 }}
-        xs={theme.text.normal200}
-        m={theme.text.normal300}
-      >
-        {description}
-      </Span>
+      <Box xs={{ maxWidth: 800, marginLeft: 'auto', marginRight: 'auto' }}>
+        <Span
+          css={{ color: theme.colors.test400 }}
+          xs={theme.text.normal200}
+          m={theme.text.normal300}
+        >
+          {description}
+        </Span>
+      </Box>
 
       {children}
     </Box>
