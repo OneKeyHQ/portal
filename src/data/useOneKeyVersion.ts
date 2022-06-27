@@ -43,7 +43,7 @@ export interface DownloadResponse {
 export function useOneKeyVersion() {
   const [oneKeyVersion, setOneKeyVersion] = useOneKeyVersionAtom();
   const { data: remoteData, error } = useSWR<OneKeyVersion>(
-    'https://data.onekey.so/version.json',
+    'https://data.onekey.so/config.json',
     fetcher,
   );
 
@@ -52,11 +52,11 @@ export function useOneKeyVersion() {
       url: 'https://app.onekey.so/',
     },
     ios: {
-      url: 'https://itunes.apple.com/app/chrome/id1609559473',
+      url: '',
       version: '',
     },
     androidGooglePlay: {
-      url: 'https://play.google.com/store/apps/details?id=com.bixin.wallet.mainnet',
+      url: '',
       version: '',
     },
     androidAPK: { url: '', version: '' },
@@ -65,13 +65,46 @@ export function useOneKeyVersion() {
     linux: { url: '', version: '' },
     asc: { url: '', version: '' },
     chrome: {
-      url: 'https://chrome.google.com/webstore/detail/onekey/jnmbobjmhlngoefaiojfljckilhhlhcj',
+      url: '',
     },
     firefox: {
-      url: 'https://addons.mozilla.org/firefox/addon/onekey-wallet/',
+      url: '',
     },
     edge: {
-      url: 'https://microsoftedge.microsoft.com/addons/detail/onekey/leimfdljadbnnecmkpfmgcdmiglejnnp',
+      url: '',
+    },
+    bridge: {
+      mac: {
+        id: 'mac',
+        name: 'Mac',
+        url: '',
+      },
+      win: {
+        id: 'win',
+        name: 'Windows',
+        url: '',
+      },
+      linux64Deb: {
+        id: 'linux64Deb',
+        name: 'Linux 64-bit (deb)',
+        url: '',
+      },
+      linux64Rpm: {
+        id: 'linux64Rpm',
+        name: 'Linux 64-bit (rpm)',
+        url: '',
+      },
+      linux32Deb: {
+        id: 'linux32Deb',
+        name: 'Linux 32-bit (deb)',
+        url: '',
+      },
+      linux32Rpm: {
+        id: 'linux32Rpm',
+        name: 'Linux 32-bit (rpm)',
+        url: '',
+      },
+      version: '',
     },
   };
 
@@ -85,31 +118,49 @@ export function useOneKeyVersion() {
   );
 
   if (oneKeyVersionData) {
-    const { apk: android, suite } = oneKeyVersionData;
+    const { android, desktop, ext, ios } = oneKeyVersionData;
 
     // android
     formattedData.androidAPK.url = android.url;
-    formattedData.androidAPK.version = android.versionName;
-    formattedData.androidGooglePlay.version = android.versionName;
+    formattedData.androidAPK.version = android.version.join('.');
+
+    formattedData.androidGooglePlay.url = android.googlePlay;
+    formattedData.androidGooglePlay.version = android.version.join('.');
 
     // ios
-    formattedData.ios.version = android.versionName;
+    formattedData.ios.version = ios.version.join('.');
+    formattedData.ios.url = ios.url;
 
+    // TODO ARM version support
     // mac
-    formattedData.mac.url = suite.macDmg;
-    formattedData.mac.version = suite.version;
+    formattedData.mac.url = desktop.macX64;
+    formattedData.mac.version = desktop.version.join('.');
 
     // win
-    formattedData.win.url = suite.winZadig;
-    formattedData.win.version = suite.version;
+    formattedData.win.url = desktop.win;
+    formattedData.win.version = desktop.version.join('.');
 
     // linux
-    formattedData.linux.url = suite.linux;
-    formattedData.linux.version = suite.version;
+    formattedData.linux.url = desktop.linux;
+    formattedData.linux.version = desktop.version.join('.');
 
     // asc
-    formattedData.asc.url = suite.sha256SumAsc;
-    formattedData.asc.version = suite.version;
+    formattedData.asc.url = desktop.sha256SumAsc ?? '';
+    formattedData.asc.version = desktop.version.join('.');
+
+    // ext
+    formattedData.chrome.url = ext.chrome ?? '';
+    formattedData.firefox.url = ext.firefox ?? '';
+    formattedData.edge.url = ext.edge ?? '';
+
+    // bridge
+    formattedData.bridge.version = oneKeyVersionData.bridge.version.join('.');
+    formattedData.bridge.linux32Rpm.url = oneKeyVersionData.bridge.linux32Rpm;
+    formattedData.bridge.linux64Rpm.url = oneKeyVersionData.bridge.linux64Rpm;
+    formattedData.bridge.linux32Deb.url = oneKeyVersionData.bridge.linux32Deb;
+    formattedData.bridge.linux64Deb.url = oneKeyVersionData.bridge.linux64Deb;
+    formattedData.bridge.win.url = oneKeyVersionData.bridge.win;
+    formattedData.bridge.mac.url = oneKeyVersionData.bridge.mac;
   }
 
   return {

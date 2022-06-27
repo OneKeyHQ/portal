@@ -6,6 +6,7 @@ import {
   useElementInViewportProgress,
   useWindowSize,
 } from '../../../../../hooks';
+import { staticAssetPrefix } from '../../../../../utils';
 import { Box, CanvasPlayer } from '../../../../base';
 
 export interface FullscreenScrollAnimationProps {
@@ -15,7 +16,9 @@ export interface FullscreenScrollAnimationProps {
 const images = [
   ...new Array(60)
     .fill(0)
-    .map((_, i) => `/hardware-mini-features/onekey-mini-features${i}.jpg`),
+    .map((_, i) =>
+      staticAssetPrefix(`/hardware-mini-features/onekey-mini-features${i}.jpg`),
+    ),
 ];
 
 export const FullscreenScrollAnimation: FC<FullscreenScrollAnimationProps> = (

@@ -7,6 +7,7 @@ import {
   useMediaQueryMapValues,
   useWindowSize,
 } from '../../../../../../hooks';
+import { staticAssetPrefix } from '../../../../../../utils';
 import {
   Box,
   CanvasPlayer,
@@ -147,7 +148,9 @@ export const NormalProductSection: FC = () => {
                     images={[
                       ...new Array(60)
                         .fill(0)
-                        .map((_, i) => `/home-intro/home-intro${i}.jpg`),
+                        .map((_, i) =>
+                          staticAssetPrefix(`/home-intro/home-intro${i}.jpg`),
+                        ),
                     ]}
                     frame={parseInt(motionValue.get().toFixed(0))}
                   />

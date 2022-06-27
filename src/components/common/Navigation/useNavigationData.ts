@@ -2,7 +2,7 @@
 import portfolioSvgUrl from './images/portfolio.svg';
 import recoverySvgUrl from './images/recovery-phrase-converter.svg';
 import swapSvgUrl from './images/swap.svg';
-import tonkenlistSvgUrl from './images/tonkenlist.svg';
+import tokenlistSvgUrl from './images/tokenlist.svg';
 
 export type NavigationDataItem = {
   name: string;
@@ -55,11 +55,11 @@ export function useNavigationDataObject() {
       //   icon: eipsSvgUrl,
       // },
       {
-        name: 'Tonkenlist',
-        key: 'tonkenlist',
+        name: 'Tokenlist',
+        key: 'tokenlist',
         description: 'Add ETH, BSC, HECO tokens to Extension and App',
         path: 'https://onekey.so/tokens',
-        icon: tonkenlistSvgUrl,
+        icon: tokenlistSvgUrl,
       },
       {
         name: 'Recovery Phrase Converter',
@@ -75,7 +75,7 @@ export function useNavigationDataObject() {
   const security = {
     name: 'Security',
     key: 'security',
-    path: 'https://onekey.so/security',
+    path: '/security',
   };
 
   const forDeveloper = {

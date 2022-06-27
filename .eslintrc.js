@@ -81,7 +81,7 @@ module.exports = {
     worker: true,
   },
   globals: {
-    PWD: true,
+    PUBLIC_URL: true,
   },
   overrides: [
     {

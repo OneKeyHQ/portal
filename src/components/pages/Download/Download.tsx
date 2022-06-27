@@ -2,9 +2,10 @@ import React from 'react';
 
 import { Helmet } from 'react-helmet';
 
-import { Container, Flex, Main, SEO } from '../../base';
+import { Container, Flex, Main, OnlyDisplay, SEO } from '../../base';
 import { Navigation, PageFooter, StayInTouch } from '../../common';
 
+import { BridgeDownload } from './BridgeDownload';
 import { Cards } from './Cards';
 import { DownloadPanel } from './DownloadPanel';
 
@@ -31,6 +32,10 @@ const Download: React.FC = () => (
           }}
           l={{ paddingTop: 80, paddingBottom: 80 }}
         >
+          <OnlyDisplay l xl xxl>
+            <BridgeDownload />
+          </OnlyDisplay>
+
           <Cards />
 
           <StayInTouch />

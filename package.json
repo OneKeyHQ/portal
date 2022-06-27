@@ -19,6 +19,7 @@
     "develop:production": "npm run clean && gatsby develop -H 0.0.0.0",
     "start": "gatsby develop",
     "build": "npm run clean && gatsby build",
+    "build:cdn": "npm run clean && gatsby build --prefix-paths",
     "serve": "gatsby serve",
     "clean": "gatsby clean && rm -rf .cache",
     "life": "git clean -xdf && yarn install && yarn develop",
@@ -29,6 +30,7 @@
   "dependencies": {
     "@dinehq/revue-form-subscriber": "^1.1.0",
     "@emotion/react": "^11.9.0",
+    "@headlessui/react": "^1.6.4",
     "@react-hook/mouse-position": "^4.1.3",
     "body-scroll-lock": "^4.0.0-beta.0",
     "browser-lang": "^0.1.0",
@@ -44,6 +46,7 @@
     "gatsby-plugin-less": "^6.12.1",
     "gatsby-plugin-manifest": "^4.12.1",
     "gatsby-plugin-react-helmet": "^5.12.1",
+    "gatsby-plugin-react-i18next": "^2.0.1",
     "gatsby-plugin-sharp": "^4.14.1",
     "gatsby-plugin-sitemap": "^5.12.1",
     "gatsby-plugin-typescript": "^4.12.1",
@@ -63,7 +66,8 @@
     "swiper": "^8.1.4",
     "swr": "^1.3.0",
     "typescript": "^4.6.3",
-    "ua2os": "^2.0.0"
+    "ua2os": "^2.0.0",
+    "url-join": "^5.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.17.9",

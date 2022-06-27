@@ -38,9 +38,10 @@ export const DownloadButton: FC<DownloadButtonProps> = (props) => {
         maxWidth: 220,
       }}
     >
-      <Link css={{ width: '100%' }} to={url}>
+      <Link disabled={!url} css={{ width: '100%' }} to={url}>
         <Button
           fillWidth
+          disabled={!url}
           leftIcon={createElement(icon, iconSize)}
           size={buttonSize}
           variant={buttonType}

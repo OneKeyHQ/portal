@@ -2,8 +2,8 @@ import { FC, ReactNode } from 'react';
 
 import { Helmet } from 'react-helmet';
 
-import { Box, Main } from '../../base';
-import { Navigation, PageFooter } from '../../common';
+import { Box, Container, Main } from '../../base';
+import { Navigation, PageFooter, StayInTouch } from '../../common';
 
 import { Hero } from './Hero';
 
@@ -23,6 +23,12 @@ export const Enterprise: FC<EnterpriseProps> = (props) => {
 
       <Main>
         <Hero />
+
+        <Container>
+          <Box xs={{ paddingTop: 80, paddingBottom: 80 }}>
+            <StayInTouch />
+          </Box>
+        </Container>
 
         {children}
       </Main>
