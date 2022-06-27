@@ -3,17 +3,7 @@ import { FC, ReactNode } from 'react';
 import { Helmet } from 'react-helmet';
 
 import { Box, Main } from '../../../base';
-import {
-  Navigation,
-  PageFooter,
-  StayInTouchWidthContainerAndPadding,
-} from '../../../common';
-import { FeatureSection } from '../components/FeatureSection';
-import { IntroductionSection } from '../components/IntroductionSection';
-import { MultiChainSupportSection } from '../components/MultiChainSupportSection';
-import { ProductInformation } from '../components/ProductInformation';
-import { RecommendSection } from '../components/RecommendSection';
-import { TechnicalSpecificationsSection } from '../components/TechnicalSpecificationsSection';
+import { Navigation, PageFooter } from '../../../common';
 
 import { useOnekeyTouchData } from './useOneKeyTouchData';
 
@@ -34,7 +24,7 @@ export const OneKeyTouch: FC<OneKeyTouchProps> = (props) => {
       <Navigation />
 
       <Main>
-        <ProductInformation />
+        {/* <ProductInformation />
 
         <IntroductionSection />
 
@@ -46,7 +36,7 @@ export const OneKeyTouch: FC<OneKeyTouchProps> = (props) => {
 
         <RecommendSection />
 
-        <StayInTouchWidthContainerAndPadding />
+        <StayInTouchWidthContainerAndPadding /> */}
       </Main>
 
       <PageFooter isShowEmailSubscribe={false} isShowMediaLinks={false} />
