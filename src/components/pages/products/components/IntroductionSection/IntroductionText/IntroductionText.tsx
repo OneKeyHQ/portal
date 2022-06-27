@@ -18,13 +18,15 @@ export const IntroductionText: FC<IntroductionTextProps> = (props) => {
     <Flex
       xs={{
         gap: 8,
-        color: theme.colors.white,
         flexDirection: 'column',
+        transform: 'translateZ(0)',
         justifyContent: 'center',
+        color: theme.colors.white,
         mixBlendMode: 'difference',
       }}
     >
       <Span
+        css={{}}
         xs={theme.text.medium700}
         m={theme.text.medium900}
         xl={theme.text.medium1000}
