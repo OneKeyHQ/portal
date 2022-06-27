@@ -20,4 +20,5 @@ export * from './Divider';
 export * from './Progress';
 export * from './OnlyDisplay';
 export * from './EmailLink';
+export * from './Select';
 export * from './Menu';

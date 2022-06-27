@@ -2,14 +2,14 @@ import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Box } from '../Box';
+import { Box, BoxProps } from '../Box';
 
-export interface MenuItemProps {
+export interface MenuItemProps extends BoxProps {
   children?: ReactNode;
 }
 
 export const MenuItem: FC<MenuItemProps> = (props) => {
-  const { children } = props;
+  const { children, ...otherProps } = props;
   const theme = useTheme();
 
   return (
@@ -28,6 +28,7 @@ export const MenuItem: FC<MenuItemProps> = (props) => {
           backgroundColor: theme.colors.test100,
         },
       }}
+      externalProps={otherProps}
     >
       {children}
     </Box>
