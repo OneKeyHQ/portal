@@ -2,12 +2,14 @@ import React, { ReactNode } from 'react';
 
 import { detect } from 'detect-browser';
 
-import { Divider } from '../../../../../base/Divider';
-import { Flex } from '../../../../../base/Flex';
-import { DownloadButton } from '../../DownloadButton';
-import { FAQ } from '../../FAQ';
-import { Title } from '../../Title';
-import { useOneKeyDownloadData } from '../../useOneKeyDownloadData';
+import { Divider } from '../../../../../../base/Divider';
+import { Flex } from '../../../../../../base/Flex';
+import { DownloadButton } from '../../../DownloadButton';
+import { FAQ } from '../../../FAQ';
+import { Title } from '../../../Title';
+import { useOneKeyDownloadData } from '../../../useOneKeyDownloadData';
+
+import { MacDownloadButton } from './MacDownloadButton';
 
 export interface DesktopContentProps {
   children?: ReactNode;
@@ -17,18 +19,11 @@ export const DesktopContent: React.FC<DesktopContentProps> = (props) => {
   const { children } = props;
   const detectResult = detect();
   const {
-    platforms: { macSilicon, win, linux },
+    platforms: { win, linux },
     types: { desktop },
   } = useOneKeyDownloadData();
 
-  const buttons = [
-    {
-      text: macSilicon.name,
-      icon: macSilicon.icon,
-      infos: macSilicon.description,
-      url: macSilicon.url,
-      systemType: 'mac',
-    },
+  const normalButtons = [
     {
       text: win.name,
       icon: win.icon,
@@ -45,6 +40,11 @@ export const DesktopContent: React.FC<DesktopContentProps> = (props) => {
     },
   ];
 
+  const buttonType = (systemType: string) =>
+    detectResult?.os?.toLowerCase().includes(systemType)
+      ? 'filled'
+      : 'outlined';
+
   return (
     <>
       <Flex
@@ -58,18 +58,16 @@ export const DesktopContent: React.FC<DesktopContentProps> = (props) => {
         <Title text={desktop.pageTitle} />
 
         <Flex xs={{ gap: 16 }}>
-          {buttons.map((item) => (
+          <MacDownloadButton buttonType={buttonType('mac')} />
+
+          {normalButtons.map((item) => (
             <DownloadButton
               key={item.text}
               icon={item.icon}
               text={item.text}
               url={item.url}
               information={item.infos}
-              buttonType={
-                detectResult?.os?.toLowerCase().includes(item.systemType)
-                  ? 'filled'
-                  : 'outlined'
-              }
+              buttonType={buttonType(item.systemType)}
             />
           ))}
         </Flex>

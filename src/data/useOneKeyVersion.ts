@@ -136,7 +136,7 @@ export function useOneKeyVersion() {
     formattedData.macIntel.url = desktop.macX64;
     formattedData.macIntel.version = desktop.version.join('.');
 
-    formattedData.macSilicon.url = desktop.macARM;
+    formattedData.macSilicon.url = desktop.macArm;
     formattedData.macSilicon.version = desktop.version.join('.');
 
     // win
