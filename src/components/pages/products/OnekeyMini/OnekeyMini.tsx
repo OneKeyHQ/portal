@@ -12,7 +12,6 @@ import { FeatureSection } from '../components/FeatureSection';
 import { IntroductionSection } from '../components/IntroductionSection';
 import { MultiChainSupportSection } from '../components/MultiChainSupportSection';
 import { ProductInformation } from '../components/ProductInformation';
-import { RecommendSection } from '../components/RecommendSection';
 import { TechnicalSpecificationsSection } from '../components/TechnicalSpecificationsSection';
 
 import { useOnekeyMiniData } from './useOnekeyMiniData';
@@ -44,7 +43,7 @@ export const OnekeyMini: FC<OnekeyMiniProps> = (props) => {
 
         <TechnicalSpecificationsSection />
 
-        <RecommendSection />
+        {/* <RecommendSection /> */}
 
         <StayInTouchWidthContainerAndPadding />
       </Main>
