@@ -1,12 +1,8 @@
 import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
-import { navigate } from 'gatsby';
 
 import {
-  Box,
-  Button,
-  ChevronDownIcon,
   DeliveryIcon,
   Divider,
   Flex,
@@ -14,6 +10,7 @@ import {
   Span,
 } from '../../../../../base';
 
+import { AddToCart } from './AddToCart';
 import { OtherStoresSelect } from './OtherStoresSelect';
 import { Review } from './Review';
 
@@ -26,16 +23,12 @@ export interface ProductContentProps {
     value: number;
     formatted: string;
   };
-  shopId: string;
+  shopProductId: string;
 }
 
 export const ProductContent: FC<ProductContentProps> = (props) => {
-  const { children, shopId, name, slogan, description, price } = props;
+  const { children, shopProductId, name, slogan, description, price } = props;
   const theme = useTheme();
-
-  const buy = () => {
-    navigate(`https://shop.onekey.so/cart/${shopId}:1`);
-  };
 
   return (
     <Flex
@@ -66,19 +59,7 @@ export const ProductContent: FC<ProductContentProps> = (props) => {
         {price.formatted}
       </Span>
 
-      <Flex xs={{ gap: 12 }}>
-        {/* buttons */}
-        <Button variant="outlined">
-          <Flex
-            xs={{ width: 80, alignItems: 'center', justifyContent: 'center' }}
-          >
-            x1 <ChevronDownIcon width={24} height={24} />
-          </Flex>
-        </Button>
-        <Button onClick={buy} variant="filled">
-          <Box xs={{ width: 120 }}>Add to cart</Box>
-        </Button>
-      </Flex>
+      <AddToCart shopProductId={shopProductId} />
 
       <OtherStoresSelect />
 

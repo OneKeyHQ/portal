@@ -17,7 +17,7 @@ export function useOnekeyMiniData() {
         value: 58,
         formatted: '$58.00',
       },
-      shopId: '41169098178722',
+      shopProductId: '41169098178722',
       gallery: [
         {
           key: 'mini-gallery-00',
