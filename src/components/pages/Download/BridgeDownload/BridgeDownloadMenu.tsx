@@ -57,7 +57,7 @@ export const BridgeDownloadMenu: FC<BridgeDownloadMenuProps> = (props) => {
         </Box>
 
         {options.map((option) => (
-          <Link to={option.url} key={option.url}>
+          <Link to={option.url} key={option.name}>
             <MenuItem>{option.name}</MenuItem>
           </Link>
         ))}

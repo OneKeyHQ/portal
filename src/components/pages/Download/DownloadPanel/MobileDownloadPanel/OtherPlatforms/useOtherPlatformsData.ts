@@ -25,7 +25,12 @@ export function useOtherPlatformsData(): {
       },
       {
         ...types.desktop,
-        subItems: [platforms.mac, platforms.win, platforms.linux],
+        subItems: [
+          platforms.macIntel,
+          platforms.macSilicon,
+          platforms.win,
+          platforms.linux,
+        ],
       },
       {
         ...types.browser,

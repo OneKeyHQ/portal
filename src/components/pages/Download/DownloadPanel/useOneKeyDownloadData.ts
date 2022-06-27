@@ -54,11 +54,18 @@ export function useOneKeyDownloadData() {
     url: formattedData.androidAPK.url,
   };
 
-  const mac = {
+  const macIntel = {
     icon: AppleIcon,
-    name: 'macOS',
-    description: `v${formattedData.mac.version}, for macOS 10.8+`,
-    url: formattedData.mac.url,
+    name: 'Mac Intel',
+    description: `v${formattedData.macIntel.version}, for macOS 10.8+`,
+    url: formattedData.macIntel.url,
+  };
+
+  const macSilicon = {
+    icon: AppleIcon,
+    name: 'Mac Silicon',
+    description: `v${formattedData.macSilicon.version}, for macOS 10.8+`,
+    url: formattedData.macSilicon.url,
   };
 
   const win = {
@@ -198,7 +205,8 @@ export function useOneKeyDownloadData() {
       ios,
       androidGooglePlay,
       androidAPK,
-      mac,
+      macIntel,
+      macSilicon,
       win,
       linux,
       chrome,

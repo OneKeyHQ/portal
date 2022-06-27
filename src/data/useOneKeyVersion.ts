@@ -60,7 +60,8 @@ export function useOneKeyVersion() {
       version: '',
     },
     androidAPK: { url: '', version: '' },
-    mac: { url: '', version: '' },
+    macIntel: { url: '', version: '' },
+    macSilicon: { url: '', version: '' },
     win: { url: '', version: '' },
     linux: { url: '', version: '' },
     asc: { url: '', version: '' },
@@ -131,10 +132,12 @@ export function useOneKeyVersion() {
     formattedData.ios.version = ios.version.join('.');
     formattedData.ios.url = ios.url;
 
-    // TODO ARM version support
     // mac
-    formattedData.mac.url = desktop.macX64;
-    formattedData.mac.version = desktop.version.join('.');
+    formattedData.macIntel.url = desktop.macX64;
+    formattedData.macIntel.version = desktop.version.join('.');
+
+    formattedData.macSilicon.url = desktop.macARM;
+    formattedData.macSilicon.version = desktop.version.join('.');
 
     // win
     formattedData.win.url = desktop.win;

@@ -17,16 +17,16 @@ export const DesktopContent: React.FC<DesktopContentProps> = (props) => {
   const { children } = props;
   const detectResult = detect();
   const {
-    platforms: { mac, win, linux },
+    platforms: { macSilicon, win, linux },
     types: { desktop },
   } = useOneKeyDownloadData();
 
   const buttons = [
     {
-      text: mac.name,
-      icon: mac.icon,
-      infos: mac.description,
-      url: mac.url,
+      text: macSilicon.name,
+      icon: macSilicon.icon,
+      infos: macSilicon.description,
+      url: macSilicon.url,
       systemType: 'mac',
     },
     {
