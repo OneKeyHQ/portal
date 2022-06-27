@@ -3,28 +3,35 @@ import { FC, ReactNode } from 'react';
 import { Box, Flex, OnlyDisplay } from '../../../../../base';
 import { IntroductionText } from '../IntroductionText';
 
-import { useImageIntroductionData } from './useImageIntroductionData';
-
 export interface ImageIntroductionProps {
   children?: ReactNode;
+  items: {
+    name: string;
+    description: string;
+    images: {
+      s: ReactNode;
+      m: ReactNode;
+      l: ReactNode;
+      xl: ReactNode;
+    };
+  }[];
 }
 
 export const ImageIntroduction: FC<ImageIntroductionProps> = (props) => {
-  const { children } = props;
-  const data = useImageIntroductionData();
+  const { children, items = [] } = props;
 
   return (
     <Flex xs={{ flexDirection: 'column', gap: 20 }} m={{ gap: 40 }}>
-      {data.items.map((item) => (
+      {items.map((item) => (
         <Box xs={{ position: 'relative' }} key={item.name}>
           <Box xs={{ borderRadius: 40, overflow: 'hidden' }}>
-            <OnlyDisplay xs>{item.sImage}</OnlyDisplay>
-            <OnlyDisplay s>{item.mImage}</OnlyDisplay>
+            <OnlyDisplay xs>{item.images.s}</OnlyDisplay>
+            <OnlyDisplay s>{item.images.m}</OnlyDisplay>
             <OnlyDisplay m l>
-              {item.lImage}
+              {item.images.l}
             </OnlyDisplay>
             <OnlyDisplay xl xxl>
-              {item.xlImage}
+              {item.images.xl}
             </OnlyDisplay>
           </Box>
           <Box

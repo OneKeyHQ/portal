@@ -4,15 +4,15 @@ import { useTheme } from '@emotion/react';
 
 import { Box, Container, Section, Span } from '../../../../base';
 
-import { ImageIntroduction } from './ImageIntroduction';
+import { ImageIntroduction, ImageIntroductionProps } from './ImageIntroduction';
 // import { FullscreenScrollAnimation } from '../FullscreenScrollAnimation';
 
-export interface IntroductionSectionProps {
+export interface IntroductionSectionProps extends ImageIntroductionProps {
   children?: ReactNode;
 }
 
 export const IntroductionSection: FC<IntroductionSectionProps> = (props) => {
-  const { children } = props;
+  const { children, items } = props;
   const theme = useTheme();
 
   return (
@@ -50,7 +50,7 @@ export const IntroductionSection: FC<IntroductionSectionProps> = (props) => {
           xl={{ paddingLeft: 36, paddingRight: 36 }}
           xxl={{ paddingLeft: 40, paddingRight: 40 }}
         >
-          <ImageIntroduction />
+          <ImageIntroduction items={items} />
         </Box>
 
         {/* todo */}
