@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkportal=self.webpackChunkportal||[]).push([[737],{6156:function(n,e,t){t.r(e),t.d(e,{default:function(){return o}});var i=t(9147),r=t(3431),o=function(n){var e=n.children;return(0,r.tZ)(i.Box,{xs:{padding:100}},(0,r.tZ)(i.Flex,{xs:{flexDirection:"column"}},(0,r.tZ)(i.Link,{to:"/beta/onekey-mini"},"/beta/onekey-mini")),e)}}}]);
-//# sourceMappingURL=component---src-pages-beta-index-ts-1178f245ef959a8af1b7.js.map
