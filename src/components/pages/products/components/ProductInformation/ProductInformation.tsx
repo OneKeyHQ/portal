@@ -4,15 +4,15 @@ import { useTheme } from '@emotion/react';
 
 import { Box, Container, Flex } from '../../../../base';
 
-import { ProductContent } from './ProductContent';
+import { ProductContent, ProductContentProps } from './ProductContent';
 import { ProductImageSwiper } from './ProductImageSwiper';
 
-export interface ProductInformationProps {
+export interface ProductInformationProps extends ProductContentProps {
   children?: ReactNode;
 }
 
 export const ProductInformation: FC<ProductInformationProps> = (props) => {
-  const { children } = props;
+  const { children, ...otherProps } = props;
   const theme = useTheme();
 
   return (
@@ -36,7 +36,7 @@ export const ProductInformation: FC<ProductInformationProps> = (props) => {
         >
           <ProductImageSwiper />
 
-          <ProductContent />
+          <ProductContent {...otherProps} />
         </Flex>
       </Container>
       {children}

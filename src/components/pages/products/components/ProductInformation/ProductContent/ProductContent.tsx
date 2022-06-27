@@ -19,14 +19,22 @@ import { Review } from './Review';
 
 export interface ProductContentProps {
   children?: ReactNode;
+  name: string;
+  slogan: string;
+  description: string;
+  price: {
+    value: number;
+    formatted: string;
+  };
+  shopId: string;
 }
 
 export const ProductContent: FC<ProductContentProps> = (props) => {
-  const { children } = props;
+  const { children, shopId, name, slogan, description, price } = props;
   const theme = useTheme();
 
   const buy = () => {
-    navigate('https://shop.onekey.so/cart/41169098178722:1');
+    navigate(`https://shop.onekey.so/cart/${shopId}:1`);
   };
 
   return (
@@ -49,17 +57,13 @@ export const ProductContent: FC<ProductContentProps> = (props) => {
     >
       <Flex xs={{ flexDirection: 'column', gap: 16, maxWidth: 500 }}>
         <Span xs={theme.text.medium700} xl={theme.text.medium800}>
-          OneKey Mini - Crypto Hardware Wallet
+          {name} - {slogan}
         </Span>
-        <Span xs={theme.text.normal300}>
-          Secure, buy, exchange, grow your crypto and manage your NFTs with our
-          new Bluetooth-enabled hardware wallet. All your digital assets secured
-          in one place.
-        </Span>
+        <Span xs={theme.text.normal300}>{description}</Span>
       </Flex>
 
       <Span xs={theme.text.normal800} xl={theme.text.normal900}>
-        $48.00
+        {price.formatted}
       </Span>
 
       <Flex xs={{ gap: 12 }}>
