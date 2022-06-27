@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
 
-import { Divider } from '../../../../../base/Divider';
-import { Flex } from '../../../../../base/Flex';
-import { DownloadButton } from '../../DownloadButton';
-import { FAQ } from '../../FAQ';
-import { Title } from '../../Title';
-import { useOneKeyDownloadData } from '../../useOneKeyDownloadData';
+import { Divider } from '../../../../../../base/Divider';
+import { Flex } from '../../../../../../base/Flex';
+import { DownloadButton } from '../../../DownloadButton';
+import { FAQ } from '../../../FAQ';
+import { Title } from '../../../Title';
+import { useOneKeyDownloadData } from '../../../useOneKeyDownloadData';
 
 export interface BrowserContentProps {
   children?: React.ReactNode;
