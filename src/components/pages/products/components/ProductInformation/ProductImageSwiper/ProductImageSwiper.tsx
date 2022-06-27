@@ -50,6 +50,7 @@ export const ProductImageSwiper: FC<ProductImageSwiperProps> = (props) => {
       xl={{ maxWidth: 800 }}
     >
       <Flex xs={{ alignItems: 'center' }}>
+        {/* left arrow */}
         <ArrowWrap
           disabled={!allowSlidePrev}
           onClick={() => {
@@ -59,6 +60,8 @@ export const ProductImageSwiper: FC<ProductImageSwiperProps> = (props) => {
         >
           <ChevronLeftIcon width={48} height={48} />
         </ArrowWrap>
+
+        {/* content */}
         <SwiperComponent
           onSwiper={(swiper) => {
             setAllowSlideNext(!swiper.isEnd);
@@ -72,6 +75,8 @@ export const ProductImageSwiper: FC<ProductImageSwiperProps> = (props) => {
             <SwiperSlide key={item.key}>{item.node}</SwiperSlide>
           ))}
         </SwiperComponent>
+
+        {/* right arrow */}
         <ArrowWrap
           disabled={!allowSlideNext}
           onClick={() => {
@@ -83,6 +88,7 @@ export const ProductImageSwiper: FC<ProductImageSwiperProps> = (props) => {
         </ArrowWrap>
       </Flex>
 
+      {/* progress */}
       <Flex xs={{ justifyContent: 'center' }}>
         <Progress
           containerColor={theme.colors.test200}
