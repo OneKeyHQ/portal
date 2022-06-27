@@ -37,7 +37,7 @@ export const OnekeyMini: FC<OnekeyMiniProps> = (props) => {
 
         <IntroductionSection items={onekeyMiniData.imageIntroduction} />
 
-        <FeatureSection />
+        <FeatureSection {...onekeyMiniData.feature} />
 
         <MultiChainSupportSection />
 

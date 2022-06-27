@@ -4,7 +4,11 @@ import { useTheme } from '@emotion/react';
 
 import { Box, Flex, Span } from '../../../../base';
 
-import { FeatureSectionDataItem } from './useFeatureSectionData';
+export type FeatureSectionDataItem = {
+  imageNode: ReactNode;
+  name: string;
+  description: string;
+};
 
 export interface FeatureItemProps extends FeatureSectionDataItem {
   children?: ReactNode;

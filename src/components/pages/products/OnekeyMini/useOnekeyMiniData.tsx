@@ -2,15 +2,18 @@ import { StaticImage } from 'gatsby-plugin-image';
 
 import { useNavigationDataObject } from '../../../common/Navigation/useNavigationData';
 
+import { useFeatureSectionData } from './useFeatureSectionData';
 import { useImageIntroductionData } from './useImageIntroductionData';
 
 export function useOnekeyMiniData() {
   const { shop } = useNavigationDataObject();
 
   const imageIntroduction = useImageIntroductionData();
+  const feature = useFeatureSectionData();
 
   const onekeyMiniData = {
     imageIntroduction,
+    feature,
 
     title: 'Onekey Mini',
     shops: shop.subItems,

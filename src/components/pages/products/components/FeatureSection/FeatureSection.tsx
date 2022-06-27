@@ -4,16 +4,17 @@ import { useTheme } from '@emotion/react';
 
 import { Box, Container, Flex, Section, Span } from '../../../../base';
 
-import { FeatureItem } from './FeatureItem';
-import { useFeatureSectionData } from './useFeatureSectionData';
+import { FeatureItem, FeatureSectionDataItem } from './FeatureItem';
 
 export interface FeatureSectionProps {
   children?: ReactNode;
+  items: FeatureSectionDataItem[];
+  title: string;
+  description: string;
 }
 
 export const FeatureSection: FC<FeatureSectionProps> = (props) => {
-  const { children } = props;
-  const featureSectionData = useFeatureSectionData();
+  const { children, items: featureSectionData, title, description } = props;
   const theme = useTheme();
 
   return (
@@ -26,10 +27,10 @@ export const FeatureSection: FC<FeatureSectionProps> = (props) => {
               m={theme.text.medium900}
               l={theme.text.medium1000}
             >
-              Focus and Release
+              {title}
             </Span>
             <Span xs={theme.text.normal200} l={theme.text.normal500}>
-              Multi-Ways, Multi-Directions, Multi-Views to First Experiences
+              {description}
             </Span>
           </Flex>
           <Flex
