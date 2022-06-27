@@ -42,11 +42,13 @@ export const TechnicalSpecificationsSection: FC<
 
         <Flex
           xs={{ flexDirection: 'column', paddingTop: 40, gap: 40 }}
-          m={{ flexDirection: 'row', gap: 100 }}
+          l={{ flexDirection: 'row', gap: 100 }}
         >
-          <Box xs={{ flexGrow: 1 }}>
+          <Flex
+            xs={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}
+          >
             <SideImage {...sectionData.images} />
-          </Box>
+          </Flex>
 
           <Content />
         </Flex>
