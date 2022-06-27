@@ -11,10 +11,10 @@ import {
 } from '../../../../../base';
 
 import { AddToCart } from './AddToCart';
-import { OtherStoresSelect } from './OtherStoresSelect';
+import { OtherStoresSelect, OtherStoresSelectProps } from './OtherStoresSelect';
 import { Review } from './Review';
 
-export interface ProductContentProps {
+export interface ProductContentProps extends OtherStoresSelectProps {
   children?: ReactNode;
   name: string;
   slogan: string;
@@ -27,7 +27,8 @@ export interface ProductContentProps {
 }
 
 export const ProductContent: FC<ProductContentProps> = (props) => {
-  const { children, shopProductId, name, slogan, description, price } = props;
+  const { children, shopProductId, name, slogan, description, price, shops } =
+    props;
   const theme = useTheme();
 
   return (
@@ -61,7 +62,7 @@ export const ProductContent: FC<ProductContentProps> = (props) => {
 
       <AddToCart shopProductId={shopProductId} />
 
-      <OtherStoresSelect />
+      <OtherStoresSelect shops={shops} />
 
       <Flex xs={{ flexDirection: 'column', gap: 22 }} l={{ gap: 16 }}>
         <Divider />

@@ -40,7 +40,10 @@ export const AddToCart: FC<AddToCartProps> = (props) => {
           </Flex>
         </Button>
 
-        <MenuItems isActive={isMenuOpen}>
+        <MenuItems
+          onClickOutside={() => setIsMenuOpen(false)}
+          isActive={isMenuOpen}
+        >
           {items.map((item) => (
             <MenuItem onClick={() => selectAmount(item)} key={item}>
               <Box xs={{ paddingLeft: 16, paddingRight: 16 }}>x{item}</Box>
