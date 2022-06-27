@@ -1,6 +1,6 @@
 import { FC, cloneElement } from 'react';
 
-import { Link as InnerLink } from 'gatsby';
+import { Link as InnerLink } from 'gatsby-plugin-react-i18next';
 
 import { Anchor, Box, BoxProps } from '../Box';
 

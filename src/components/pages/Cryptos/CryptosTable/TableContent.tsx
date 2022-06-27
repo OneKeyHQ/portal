@@ -69,26 +69,31 @@ export const TableContent: FC<TableContentProps> = (props) => {
             },
           }}
         >
-          {cryptosTable.items.map((item) => (
-            <tr css={{ height: 80 }} key={item.coin.name}>
+          {cryptosTable.suggestList.map((item) => (
+            <tr css={{ height: 80 }} key={item.currency.name}>
               <td>
                 <Flex xs={{ alignItems: 'center' }}>
                   <Img
-                    xs={{ width: 48, height: 48 }}
+                    xs={{
+                      width: 48,
+                      height: 48,
+                      borderRadius: '50%',
+                      overflow: 'hidden',
+                    }}
                     src={staticAssetPrefix(
-                      `/cryptocurrency-icons/128/color/${item.coin.symbol.toLowerCase()}.png`,
+                      `/cryptocurrency-icons/128/color/${item.currency.symbol.toLowerCase()}.png`,
                     )}
                   />
 
                   <Box xs={{ paddingLeft: 12 }}>
-                    <Box xs={theme.text.medium400}>{item.coin.symbol}</Box>
+                    <Box xs={theme.text.medium400}>{item.currency.symbol}</Box>
                     <Box
                       xs={{
                         ...theme.text.medium100,
                         color: theme.colors.test300,
                       }}
                     >
-                      {item.coin.name}
+                      {item.currency.name}
                     </Box>
                   </Box>
                 </Flex>
@@ -107,7 +112,7 @@ export const TableContent: FC<TableContentProps> = (props) => {
                 />
               </td>
               <td css={{ textAlign: 'right' }}>
-                <Link to={item.link}>
+                <Link to={item.currency.link}>
                   <Flex
                     xs={{
                       justifyContent: 'flex-end',

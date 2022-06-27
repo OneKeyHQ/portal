@@ -4,11 +4,10 @@ import { FC, ReactNode, createElement } from 'react';
 import { useTheme } from '@emotion/react';
 
 import { useHover } from '../../../../../hooks';
+import { MenuItem, MenuItems } from '../../../../base';
 import { Box } from '../../../../base/Box';
 import { Link } from '../../../../base/Link';
 import { NavigationDataItem } from '../../useNavigationData';
-
-import { HoverPanel } from './HoverPanel';
 
 export interface NavigationItemProps extends NavigationDataItem {
   children?: ReactNode;
@@ -54,7 +53,13 @@ export const NavigationItem: FC<NavigationItemProps> = (props) => {
 
       {/* sub */}
       {!panelComponent && subItems && (
-        <HoverPanel isActive={isHovered} subItems={subItems} />
+        <MenuItems isActive={isHovered}>
+          {subItems.map((item) => (
+            <Link key={item.name} to={item.path || ''}>
+              <MenuItem>{item.name}</MenuItem>
+            </Link>
+          ))}
+        </MenuItems>
       )}
       {panelComponent &&
         createElement(panelComponent, { isActive: isHovered, subItems })}

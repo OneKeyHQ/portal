@@ -1,16 +1,19 @@
-import { FC, ReactNode, RefObject, useRef, useState } from 'react';
+import { FC, ReactNode } from 'react';
 
-import { useHover, useOnClickOutside } from '../../../../../../../hooks';
+import { useHover } from '../../../../../../../hooks';
 import {
   AndroidIcon,
   Box,
   Button,
   ChevronDownIcon,
   Flex,
+  Link,
+  MenuItem,
+  MenuItems,
+  useMenu,
 } from '../../../../../../base';
 import { useOneKeyDownloadData } from '../../../useOneKeyDownloadData';
 
-import { HoverPanel } from './HoverPanel';
 import apkQR from './images/apk-qr.png';
 import googlePlayQR from './images/google-play-qr.png';
 import { QR } from './QR';
@@ -27,12 +30,12 @@ export const AndroidDownloadButton: FC<AndroidDownloadButtonProps> = (
     platforms: { androidGooglePlay, androidAPK },
   } = useOneKeyDownloadData();
   const { hoverProps, isHovered } = useHover({ timeout: 100 });
-  const [isHoverPanelVisible, setIsHoverPanelVisible] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
+  const menu = useMenu();
 
-  useOnClickOutside([ref as RefObject<Element>], () => {
-    setIsHoverPanelVisible(false);
-  });
+  const menus = [
+    { name: androidGooglePlay.name, url: androidGooglePlay.url },
+    { name: androidAPK.name, url: androidAPK.url },
+  ];
 
   return (
     <Box xs={{ flex: 1, maxWidth: 220, position: 'relative' }}>
@@ -53,7 +56,7 @@ export const AndroidDownloadButton: FC<AndroidDownloadButtonProps> = (
 
       <Button
         {...hoverProps}
-        onClick={() => setIsHoverPanelVisible(!isHoverPanelVisible)}
+        {...menu.menuTriggerProps}
         fillWidth
         variant="outlined"
         size="large"
@@ -63,15 +66,14 @@ export const AndroidDownloadButton: FC<AndroidDownloadButtonProps> = (
         Android
       </Button>
 
-      <div ref={ref}>
-        <HoverPanel
-          isActive={isHoverPanelVisible}
-          subItems={[
-            { name: androidGooglePlay.name, url: androidGooglePlay.url },
-            { name: androidAPK.name, url: androidAPK.url },
-          ]}
-        />
-      </div>
+      <MenuItems {...menu.menuItemsProps}>
+        {menus.map((item) => (
+          <Link key={item.name} to={item.url}>
+            <MenuItem>{item.name}</MenuItem>
+          </Link>
+        ))}
+      </MenuItems>
+
       {children}
     </Box>
   );
