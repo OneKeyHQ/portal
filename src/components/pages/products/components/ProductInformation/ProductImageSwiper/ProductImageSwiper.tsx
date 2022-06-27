@@ -3,6 +3,7 @@ import { FC, ReactNode, useCallback, useState } from 'react';
 import { useTheme } from '@emotion/react';
 import { Swiper } from 'swiper/types';
 
+import { isBrowser } from '../../../../../../utils';
 import {
   Box,
   ChevronLeftIcon,
@@ -72,7 +73,7 @@ export const ProductImageSwiper: FC<ProductImageSwiperProps> = (props) => {
           slidesPerView={1}
         >
           {gallery.map((item) => (
-            <SwiperSlide key={item.key}>{item.node}</SwiperSlide>
+            <SwiperSlide key={item.key}>{isBrowser() && item.node}</SwiperSlide>
           ))}
         </SwiperComponent>
 
