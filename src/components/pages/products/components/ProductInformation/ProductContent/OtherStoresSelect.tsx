@@ -1,5 +1,7 @@
 import { FC, ReactNode, useState } from 'react';
 
+import { useTheme } from '@emotion/react';
+
 import {
   Box,
   ChevronDownIcon,
@@ -21,6 +23,7 @@ export interface OtherStoresSelectProps {
 export const OtherStoresSelect: FC<OtherStoresSelectProps> = (props) => {
   const { children, shops } = props;
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const theme = useTheme();
 
   return (
     <Box
@@ -31,6 +34,8 @@ export const OtherStoresSelect: FC<OtherStoresSelectProps> = (props) => {
     >
       <Flex
         xs={{
+          ...theme.text.medium300,
+          alignItems: 'center',
           cursor: 'pointer',
           ':hover': {
             opacity: 0.6,
