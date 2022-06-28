@@ -2,23 +2,26 @@ import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Box, Container, Flex, Span } from '../../../../base';
+import { Box, Container, Flex, H1 } from '../../../../base';
 
-import { Content } from './Content';
+import { Content, ContentProps } from './Content';
 import { SideImage } from './SideImage';
-import { useTechnicalSpecificationsSectionData } from './useTechnicalSpecificationsSectionData';
 
-export interface TechnicalSpecificationsSectionProps {
+export interface TechnicalSpecificationsSectionProps extends ContentProps {
   children?: ReactNode;
+  title: string;
+  images: {
+    largeImageUrl: string;
+    mediumImageUrl: string;
+    smallImageUrl: string;
+  };
 }
 
 export const TechnicalSpecificationsSection: FC<
   TechnicalSpecificationsSectionProps
 > = (props) => {
-  const { children } = props;
+  const { children, title, images, content } = props;
   const theme = useTheme();
-
-  const sectionData = useTechnicalSpecificationsSectionData();
 
   return (
     <Box
@@ -34,23 +37,26 @@ export const TechnicalSpecificationsSection: FC<
       }}
     >
       <Container>
-        <Box xs={{ textAlign: 'center' }}>
-          <Span xs={{ ...theme.text.medium800, color: theme.colors.white }}>
-            {sectionData.title}
-          </Span>
-        </Box>
+        <H1
+          xs={{
+            ...theme.text.medium800,
+            color: theme.colors.white,
+            textAlign: 'center',
+          }}
+        >
+          {title}
+        </H1>
 
         <Flex
           xs={{ flexDirection: 'column', paddingTop: 40, gap: 40 }}
-          l={{ flexDirection: 'row', gap: 100 }}
+          m={{ justifyContent: 'center' }}
+          l={{ flexDirection: 'row', gap: 60 }}
         >
-          <Flex
-            xs={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}
-          >
-            <SideImage {...sectionData.images} />
+          <Flex xs={{ flex: 1, justifyContent: 'center' }}>
+            <SideImage {...images} />
           </Flex>
 
-          <Content />
+          <Content content={content} />
         </Flex>
       </Container>
       {children}

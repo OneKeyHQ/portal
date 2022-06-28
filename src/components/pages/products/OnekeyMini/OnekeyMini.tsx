@@ -41,7 +41,9 @@ export const OnekeyMini: FC<OnekeyMiniProps> = (props) => {
 
         <MultiChainSupportSection />
 
-        <TechnicalSpecificationsSection />
+        <TechnicalSpecificationsSection
+          {...onekeyMiniData.technicalSpecifications}
+        />
 
         {/* <RecommendSection /> */}
 
