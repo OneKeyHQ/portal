@@ -33,7 +33,7 @@ export const OnekeyMini: FC<OnekeyMiniProps> = (props) => {
       <Navigation />
 
       <Main>
-        <ProductInformation {...onekeyMiniData} />
+        <ProductInformation {...onekeyMiniData.productInformation} />
 
         <IntroductionSection items={onekeyMiniData.imageIntroduction} />
 
