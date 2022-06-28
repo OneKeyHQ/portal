@@ -7,7 +7,7 @@ export function useImageIntroductionData() {
 
   const items = [
     {
-      name: name1,
+      name: ['Restore', 'your wallet', 'without typing', 'one word.'],
       description: ``,
       images: {
         s: <StaticImage src="./images/small/hardware0.jpg" alt={name1} />,
@@ -17,7 +17,7 @@ export function useImageIntroductionData() {
       },
     },
     {
-      name: name2,
+      name: ['Scan.', 'Set Code.', 'Backed Up.'],
       description:
         "It's that simple. Making the most painful thing in DeFi become easy and enjoyable.",
       images: {
@@ -28,7 +28,7 @@ export function useImageIntroductionData() {
       },
     },
     {
-      name: name3,
+      name: ['Water resistance,', 'also tear-resistant'],
       description: 'No fear of soaking in water or tearing by hand.',
       images: {
         s: <StaticImage src="./images/small/hardware2.jpg" alt={name3} />,

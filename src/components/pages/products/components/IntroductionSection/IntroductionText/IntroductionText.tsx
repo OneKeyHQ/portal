@@ -1,12 +1,12 @@
-import { FC, ReactNode } from 'react';
+import { FC, Fragment, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Flex, Span } from '../../../../../base';
+import { Flex, H2, Span } from '../../../../../base';
 
 export interface IntroductionTextProps {
   children?: ReactNode;
-  name: string;
+  name: string | string[];
   description: string;
 }
 
@@ -17,24 +17,36 @@ export const IntroductionText: FC<IntroductionTextProps> = (props) => {
   return (
     <Flex
       xs={{
-        gap: 8,
         flexDirection: 'column',
         transform: 'translateZ(0)',
-        justifyContent: 'center',
         color: theme.colors.white,
         mixBlendMode: 'difference',
       }}
     >
-      <Span
-        css={{}}
+      <H2
         xs={theme.text.medium700}
         m={theme.text.medium900}
         xl={theme.text.medium1000}
+        xxl={theme.text.medium1200}
       >
-        {name}
-      </Span>
+        {typeof name === 'string' && name}
+        {Array.isArray(name) &&
+          name.map((item) => (
+            <Fragment key={item}>
+              <Span key={item}>{item}</Span>
+              <br />
+            </Fragment>
+          ))}
+      </H2>
 
-      <Span xs={theme.text.normal400} xl={theme.text.normal500}>
+      <Span
+        css={{ paddingTop: 8 }}
+        xs={theme.text.normal400}
+        s={{ maxWidth: 360 }}
+        l={{ maxWidth: 420 }}
+        xl={theme.text.normal500}
+        xxl={theme.text.normal600}
+      >
         {description}
       </Span>
 

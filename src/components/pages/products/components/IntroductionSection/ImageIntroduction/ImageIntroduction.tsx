@@ -43,15 +43,13 @@ export const ImageIntroduction: FC<ImageIntroductionProps> = (props) => {
           <Box
             xs={{
               position: 'absolute',
-              display: 'flex',
-              textAlign: 'center',
-              justifyContent: 'center',
-              alignItems: 'center',
               padding: 12,
-              left: 0,
-              right: 0,
-              top: 0,
-              bottom: 0,
+              left: 24,
+              bottom: 24,
+            }}
+            m={{
+              left: '3vw',
+              bottom: '3vw',
             }}
           >
             <IntroductionText name={item.name} description={item.description} />
