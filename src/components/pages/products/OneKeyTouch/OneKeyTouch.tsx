@@ -9,6 +9,7 @@ import {
   StayInTouchWidthContainerAndPadding,
 } from '../../../common';
 import { FeatureSection } from '../components/FeatureSection';
+import { IntroductionSection } from '../components/IntroductionSection';
 import { MultiChainSupportSection } from '../components/MultiChainSupportSection';
 import { ProductInformation } from '../components/ProductInformation';
 import { TechnicalSpecificationsSection } from '../components/TechnicalSpecificationsSection';
@@ -34,6 +35,8 @@ export const OneKeyTouch: FC<OneKeyTouchProps> = (props) => {
       <Main>
         <ProductInformation {...onekeyTouchData.productInformationData} />
 
+        <IntroductionSection items={onekeyTouchData.imageIntroduction} />
+
         <FeatureSection {...onekeyTouchData.feature} />
 
         <MultiChainSupportSection />
@@ -44,15 +47,7 @@ export const OneKeyTouch: FC<OneKeyTouchProps> = (props) => {
 
         <StayInTouchWidthContainerAndPadding />
 
-        {/*
-
-        <IntroductionSection />
-
-        
-
-        <RecommendSection />
-
-         */}
+        {/* <RecommendSection /> */}
       </Main>
 
       <PageFooter isShowEmailSubscribe={false} isShowMediaLinks={false} />
