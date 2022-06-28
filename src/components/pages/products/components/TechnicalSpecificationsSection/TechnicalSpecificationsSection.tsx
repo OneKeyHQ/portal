@@ -50,7 +50,7 @@ export const TechnicalSpecificationsSection: FC<
         <Flex
           xs={{ flexDirection: 'column', paddingTop: 40, gap: 40 }}
           m={{ justifyContent: 'center' }}
-          l={{ flexDirection: 'row', gap: 60 }}
+          l={{ flexDirection: 'row' }}
         >
           <Flex xs={{ flex: 1, justifyContent: 'center' }}>
             <SideImage {...images} />

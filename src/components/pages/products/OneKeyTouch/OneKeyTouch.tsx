@@ -11,6 +11,7 @@ import {
 import { FeatureSection } from '../components/FeatureSection';
 import { MultiChainSupportSection } from '../components/MultiChainSupportSection';
 import { ProductInformation } from '../components/ProductInformation';
+import { TechnicalSpecificationsSection } from '../components/TechnicalSpecificationsSection';
 
 import { useOneKeyTouchData } from './useOneKeyTouchData';
 
@@ -37,13 +38,17 @@ export const OneKeyTouch: FC<OneKeyTouchProps> = (props) => {
 
         <MultiChainSupportSection />
 
+        <TechnicalSpecificationsSection
+          {...onekeyTouchData.technicalSpecifications}
+        />
+
         <StayInTouchWidthContainerAndPadding />
 
         {/*
 
         <IntroductionSection />
 
-        <TechnicalSpecificationsSection />
+        
 
         <RecommendSection />
 
