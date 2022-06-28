@@ -1,7 +1,11 @@
-const onekeyTouchData = {
-  title: 'Onekey Touch',
-};
+import { useProductInformationData } from './useProductInformationData';
 
-export function useOnekeyTouchData() {
-  return onekeyTouchData;
+export function useOneKeyTouchData() {
+  const productInformationData = useProductInformationData();
+
+  return {
+    title: 'OneKey Touch',
+
+    productInformationData,
+  };
 }

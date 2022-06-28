@@ -4,8 +4,9 @@ import { Helmet } from 'react-helmet';
 
 import { Box, Main } from '../../../base';
 import { Navigation, PageFooter } from '../../../common';
+import { ProductInformation } from '../components/ProductInformation';
 
-import { useOnekeyTouchData } from './useOneKeyTouchData';
+import { useOneKeyTouchData } from './useOneKeyTouchData';
 
 export interface OneKeyTouchProps {
   children?: ReactNode;
@@ -13,7 +14,7 @@ export interface OneKeyTouchProps {
 
 export const OneKeyTouch: FC<OneKeyTouchProps> = (props) => {
   const { children } = props;
-  const onekeyTouchData = useOnekeyTouchData();
+  const onekeyTouchData = useOneKeyTouchData();
 
   return (
     <Box>
@@ -24,7 +25,9 @@ export const OneKeyTouch: FC<OneKeyTouchProps> = (props) => {
       <Navigation />
 
       <Main>
-        {/* <ProductInformation />
+        <ProductInformation {...onekeyTouchData.productInformationData} />
+
+        {/*
 
         <IntroductionSection />
 
