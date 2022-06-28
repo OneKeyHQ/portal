@@ -4,7 +4,7 @@ import { useNavigationDataObject } from '../../../common/Navigation/useNavigatio
 
 import { useFeatureSectionData } from './useFeatureSectionData';
 import { useImageIntroductionData } from './useImageIntroductionData';
-import { useTechnicalSpecificationsSectionData } from './useTechnicalSpecificationsData/useTechnicalSpecificationsSectionData';
+import { useTechnicalSpecificationsSectionData } from './useTechnicalSpecificationsData';
 
 export function useOnekeyMiniData() {
   const { shop } = useNavigationDataObject();
