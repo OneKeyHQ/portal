@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet';
 
 import { Box, Main } from '../../../base';
 import { Navigation, PageFooter } from '../../../common';
+import { FeatureSection } from '../components/FeatureSection';
 import { ProductInformation } from '../components/ProductInformation';
 
 import { useOneKeyTouchData } from './useOneKeyTouchData';
@@ -26,6 +27,8 @@ export const OneKeyTouch: FC<OneKeyTouchProps> = (props) => {
 
       <Main>
         <ProductInformation {...onekeyTouchData.productInformationData} />
+
+        <FeatureSection {...onekeyTouchData.feature} />
 
         {/*
 
