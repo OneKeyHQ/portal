@@ -1,4 +1,6 @@
 // import eipsSvgUrl from './images/eips.svg';
+import { useTranslation } from 'gatsby-plugin-react-i18next';
+
 import portfolioSvgUrl from './images/portfolio.svg';
 import recoverySvgUrl from './images/recovery-phrase-converter.svg';
 import swapSvgUrl from './images/swap.svg';
@@ -14,34 +16,33 @@ export type NavigationDataItem = {
 };
 
 export function useNavigationDataObject() {
+  const { t } = useTranslation();
   const products = {
-    name: 'Products',
+    name: t('menu__products'),
     key: 'products',
   };
 
   const app = {
-    name: 'App',
+    name: t('menu__app'),
     key: 'app',
     path: 'https://onekey.so/download',
   };
 
   const services = {
-    name: 'Services',
+    name: t('menu__services'),
     key: 'services',
     subItems: [
       {
-        name: 'Swap',
+        name: t('menu__swap'),
         key: 'swap',
-        description:
-          'ETH, BSC mainnet support, swap token in lightning speed. Stable supply of liquid pools, rest assured.',
+        description: t('menu__swap_desc'),
         path: 'https://swap.onekey.so/#/swap',
         icon: swapSvgUrl,
       },
       {
-        name: 'Portfolio',
+        name: t('menu__portfolio'),
         key: 'portfolio',
-        description:
-          'Manage all your web3 portfolio, from DeFi to NFTs and beyond. Invest in the latest prospects from one place.',
+        description: t('menu__portfolio_desc'),
         path: 'https://portfolio.onekey.so/',
         icon: portfolioSvgUrl,
       },
@@ -55,17 +56,16 @@ export function useNavigationDataObject() {
       //   icon: eipsSvgUrl,
       // },
       {
-        name: 'Tokenlist',
+        name: t('menu__token_list'),
         key: 'tokenlist',
-        description: 'Add ETH, BSC, HECO tokens to Extension and App',
+        description: t('menu__token_list_desc'),
         path: 'https://onekey.so/tokens',
         icon: tokenlistSvgUrl,
       },
       {
-        name: 'Recovery Phrase Converter',
+        name: t('menu__recovery_phrase_converter'),
         key: 'recovery-phrase-converter',
-        description:
-          'A tool for converting BIP39 mnemonic to addresses and private keys',
+        description: t('menu__recovery_phrase_converter_desc'),
         path: 'https://bip39.onekey.so/',
         icon: recoverySvgUrl,
       },
@@ -73,33 +73,33 @@ export function useNavigationDataObject() {
   };
 
   const security = {
-    name: 'Security',
+    name: t('menu__security'),
     key: 'security',
     path: '/security',
   };
 
   const forDeveloper = {
-    name: 'For Developer',
+    name: t('menu__for_developer'),
     key: 'for-developer',
     path: 'https://docs.onekey.so/',
   };
 
   const forBusiness = {
-    name: 'For Business',
+    name: t('menu__for_business'),
     key: 'for-business',
     subItems: [
       {
-        name: 'Enterprise Solutions',
+        name: t('menu__enterprise_solutions'),
         key: 'enterprise-solutions',
         path: '/enterprise',
       },
       {
-        name: 'Referral',
+        name: t('menu__referral'),
         key: 'referral',
         path: '/affiliate-program',
       },
       {
-        name: 'Co-branded products',
+        name: t('menu__co_branded_products'),
         key: 'co-branded-products',
         path: '/co-branded-partnership',
       },
@@ -107,16 +107,16 @@ export function useNavigationDataObject() {
   };
 
   const helpCenter = {
-    name: 'Help Center',
+    name: t('menu__help_center'),
     key: 'help-center',
     subItems: [
       {
-        name: "Beginner's Guide",
+        name: t('menu__beginners_guide'),
         key: 'beginner-guide',
         path: 'https://help.onekey.so/hc/categories/360000170236',
       },
       {
-        name: 'Hardware Wallet Manual',
+        name: t('menu__hardware_wallet_manual'),
         key: 'hardware-wallet-manual',
         path: 'https://help.onekey.so/hc/articles/360002123856',
       },
@@ -124,26 +124,26 @@ export function useNavigationDataObject() {
   };
 
   const shop = {
-    name: 'Shop',
+    name: t('menu__shop'),
     key: 'shop',
     subItems: [
       {
-        name: 'Amazon (Global)',
+        name: t('menu__amazon_global'),
         key: 'amazon-Global',
         path: 'https://www.amazon.com/dp/B0B2MWW2WJ',
       },
       {
-        name: 'Amazon (Japan)',
+        name: t('menu__amazon_japan'),
         key: 'amazon-Japan',
         path: 'https://www.amazon.co.jp/dp/B0B2MWW2WJ',
       },
       {
-        name: 'YouZan',
+        name: t('menu__youzan'),
         key: 'youzan',
         path: 'https://j.youzan.com/dZTtS2',
       },
       {
-        name: 'Shopify',
+        name: t('menu__Shopify'),
         key: 'shopify',
         path: 'https://shop.onekey.so/',
       },
