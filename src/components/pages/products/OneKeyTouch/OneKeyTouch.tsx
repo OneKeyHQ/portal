@@ -12,6 +12,7 @@ import { FeatureSection } from '../components/FeatureSection';
 import { IntroductionSection } from '../components/IntroductionSection';
 import { MultiChainSupportSection } from '../components/MultiChainSupportSection';
 import { ProductInformation } from '../components/ProductInformation';
+import { RecommendSection } from '../components/RecommendSection';
 import { TechnicalSpecificationsSection } from '../components/TechnicalSpecificationsSection';
 
 import { useOneKeyTouchData } from './useOneKeyTouchData';
@@ -47,7 +48,7 @@ export const OneKeyTouch: FC<OneKeyTouchProps> = (props) => {
 
         <StayInTouchWidthContainerAndPadding />
 
-        {/* <RecommendSection /> */}
+        <RecommendSection include={['mini', 'pro', 'lite']} />
       </Main>
 
       <PageFooter isShowEmailSubscribe={false} isShowMediaLinks={false} />

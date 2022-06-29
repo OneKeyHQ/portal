@@ -41,7 +41,7 @@ export const OneKeyLite: FC<OneKeyLiteProps> = (props) => {
 
         <MultiChainSupportSection />
 
-        <RecommendSection />
+        <RecommendSection include={['mini', 'touch', 'pro']} />
 
         <StayInTouchWidthContainerAndPadding />
       </Main>

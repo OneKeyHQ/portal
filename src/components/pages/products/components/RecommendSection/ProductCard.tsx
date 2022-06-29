@@ -23,7 +23,6 @@ export const ProductCard: FC<ProductCardProps> = (props) => {
     <Box
       {...hoverProps}
       xs={{
-        maxWidth: 420,
         borderRadius: 40,
         backgroundColor: theme.colors.test100,
       }}
@@ -40,7 +39,7 @@ export const ProductCard: FC<ProductCardProps> = (props) => {
             m={{
               height: 320,
             }}
-            xl={{
+            xxl={{
               height: 420,
             }}
             src={data.image}

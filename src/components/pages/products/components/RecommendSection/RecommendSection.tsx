@@ -10,12 +10,19 @@ import { useRecommendSectionData } from './useRecommendSectionData';
 
 export interface RecommendSectionProps {
   children?: ReactNode;
+  include: string[];
 }
 
 export const RecommendSection: FC<RecommendSectionProps> = (props) => {
-  const { children } = props;
+  const { children, include } = props;
   const theme = useTheme();
   const recommendSectionData = useRecommendSectionData();
+
+  const data = recommendSectionData.filter((item) =>
+    include.find((name) =>
+      item.name.toLowerCase().includes(name.toLocaleLowerCase()),
+    ),
+  );
 
   return (
     <Section
@@ -31,13 +38,21 @@ export const RecommendSection: FC<RecommendSectionProps> = (props) => {
       <Container>
         <Box xs={{ paddingTop: 40 }} m={{ paddingTop: 80 }}>
           <OnlyDisplay xs s m>
-            <RecommendSectionSwiper />
+            <RecommendSectionSwiper data={data} />
           </OnlyDisplay>
 
           <OnlyDisplay l xl xxl>
-            <Box m={{ display: 'flex', gap: 25, justifyContent: 'center' }}>
-              {recommendSectionData.map((item) => (
-                <ProductCard key={item.name} data={item} />
+            <Box
+              m={{
+                display: 'flex',
+                gap: 25,
+                justifyContent: 'space-between',
+              }}
+            >
+              {data.map((item) => (
+                <Box xs={{ flex: 1 }} key={item.name}>
+                  <ProductCard data={item} />
+                </Box>
               ))}
             </Box>
           </OnlyDisplay>
