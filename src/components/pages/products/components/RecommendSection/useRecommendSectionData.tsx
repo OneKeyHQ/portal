@@ -18,29 +18,33 @@ export type RecommendSectionDataItem = {
   hoverImage: ReactNode;
 };
 
-export function useRecommendSectionData(): RecommendSectionDataItem[] {
+export function useRecommendSectionData(): {
+  items: RecommendSectionDataItem[];
+} {
   const oneKeyProduct = useOneKeyProduct();
 
-  return [
-    {
-      ...oneKeyProduct.mini,
-      image: MiniImage,
-      hoverImage: <StaticImage src="./images/miniHover.png" alt="mini" />,
-    },
-    {
-      ...oneKeyProduct.touch,
-      image: TouchImage,
-      hoverImage: <StaticImage src="./images/touchHover.png" alt="mini" />,
-    },
-    {
-      ...oneKeyProduct.pro,
-      image: ProImage,
-      hoverImage: <StaticImage src="./images/proHover.png" alt="mini" />,
-    },
-    {
-      ...oneKeyProduct.lite,
-      image: LiteImage,
-      hoverImage: <StaticImage src="./images/liteHover.png" alt="mini" />,
-    },
-  ];
+  return {
+    items: [
+      {
+        ...oneKeyProduct.mini,
+        image: MiniImage,
+        hoverImage: <StaticImage src="./images/miniHover.png" alt="mini" />,
+      },
+      {
+        ...oneKeyProduct.touch,
+        image: TouchImage,
+        hoverImage: <StaticImage src="./images/touchHover.png" alt="mini" />,
+      },
+      {
+        ...oneKeyProduct.pro,
+        image: ProImage,
+        hoverImage: <StaticImage src="./images/proHover.png" alt="mini" />,
+      },
+      {
+        ...oneKeyProduct.lite,
+        image: LiteImage,
+        hoverImage: <StaticImage src="./images/liteHover.png" alt="mini" />,
+      },
+    ],
+  };
 }

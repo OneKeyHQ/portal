@@ -18,7 +18,7 @@ export const RecommendSection: FC<RecommendSectionProps> = (props) => {
   const theme = useTheme();
   const recommendSectionData = useRecommendSectionData();
 
-  const data = recommendSectionData.filter((item) =>
+  const data = recommendSectionData.items.filter((item) =>
     include.find((name) =>
       item.name.toLowerCase().includes(name.toLocaleLowerCase()),
     ),
