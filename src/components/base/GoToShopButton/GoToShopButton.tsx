@@ -1,5 +1,7 @@
 import { AnchorHTMLAttributes, FC, ReactNode } from 'react';
 
+import { useTranslation } from 'gatsby-plugin-react-i18next';
+
 import { Button, ButtonProps } from '../Button';
 
 export interface GoToShopButtonProps {
@@ -11,6 +13,8 @@ export interface GoToShopButtonProps {
 }
 
 export const GoToShopButton: FC<GoToShopButtonProps> = (props) => {
+  const { t } = useTranslation();
+
   const {
     children,
     overrides = {
@@ -29,7 +33,8 @@ export const GoToShopButton: FC<GoToShopButtonProps> = (props) => {
       {...linkOverrides}
     >
       <Button variant="outlined" {...buttonOverrides}>
-        Go to shop {children}
+        {t('action__go_to_shop')}
+        {children}
       </Button>
     </a>
   );

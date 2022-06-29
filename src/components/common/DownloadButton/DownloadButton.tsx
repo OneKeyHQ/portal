@@ -1,5 +1,7 @@
 import { FC } from 'react';
 
+import { useTranslation } from 'gatsby-plugin-react-i18next';
+
 import { Button, ButtonProps, Link, Logo } from '../../base';
 
 export interface DownloadButtonProps {
@@ -15,6 +17,7 @@ export const DownloadButton: FC<DownloadButtonProps> = (props) => {
     },
   } = props;
   const { button = {} } = override;
+  const { t } = useTranslation();
 
   return (
     <Link to="/download">
@@ -29,7 +32,7 @@ export const DownloadButton: FC<DownloadButtonProps> = (props) => {
           />
         }
       >
-        Free Download
+        {t('action__free_download')}
       </Button>
     </Link>
   );
