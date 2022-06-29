@@ -20,7 +20,7 @@ export function useProductPanel() {
   const oneKeyProduct = useOneKeyProduct();
   const theme = useTheme();
 
-  const items: ProductItem[] = useMemo(
+  const items = useMemo<ProductItem[]>(
     () => [
       {
         name: oneKeyProduct.mini.name,
