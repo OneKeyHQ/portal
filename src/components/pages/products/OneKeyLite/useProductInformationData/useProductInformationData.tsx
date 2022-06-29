@@ -14,7 +14,7 @@ export function useProductInformationData() {
       value: 19.99,
       formatted: '$19.99',
     },
-    shopProductId: '41169098178722',
+    shopProductId: '41263919366306',
     gallery: [
       {
         key: 'lite-gallery-00',
