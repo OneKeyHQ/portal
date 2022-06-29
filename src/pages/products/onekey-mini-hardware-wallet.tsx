@@ -1,6 +1,6 @@
 import { graphql } from 'gatsby';
 
-export { OnekeyMini as default } from '../../components/pages/products/OnekeyMini';
+export { OneKeyMini as default } from '../../components/pages/products/OneKeyMini';
 
 export const query = graphql`
   query ($language: String!) {

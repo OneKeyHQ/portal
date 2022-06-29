@@ -1,1 +1,1 @@
-export * from './OnekeyMini';
+export * from './OneKeyMini';

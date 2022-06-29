@@ -3,7 +3,7 @@ import { useImageIntroductionData } from './useImageIntroductionData';
 import { useProductInformationData } from './useProductInformationData';
 import { useTechnicalSpecificationsSectionData } from './useTechnicalSpecificationsData';
 
-export function useOnekeyMiniData() {
+export function useOneKeyMiniData() {
   const imageIntroduction = useImageIntroductionData();
   const feature = useFeatureSectionData();
   const technicalSpecifications = useTechnicalSpecificationsSectionData();

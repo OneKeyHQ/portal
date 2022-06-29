@@ -15,35 +15,35 @@ import { ProductInformation } from '../components/ProductInformation';
 import { RecommendSection } from '../components/RecommendSection';
 import { TechnicalSpecificationsSection } from '../components/TechnicalSpecificationsSection';
 
-import { useOnekeyMiniData } from './useOnekeyMiniData';
+import { useOneKeyMiniData } from './useOneKeyMiniData';
 
-export interface OnekeyMiniProps {
+export interface OneKeyMiniProps {
   children?: ReactNode;
 }
 
-export const OnekeyMini: FC<OnekeyMiniProps> = (props) => {
+export const OneKeyMini: FC<OneKeyMiniProps> = (props) => {
   const { children } = props;
-  const onekeyMiniData = useOnekeyMiniData();
+  const oneKeyMiniData = useOneKeyMiniData();
 
   return (
     <Box>
       <Helmet>
-        <title>{onekeyMiniData.title}</title>
+        <title>{oneKeyMiniData.title}</title>
       </Helmet>
 
       <Navigation />
 
       <Main>
-        <ProductInformation {...onekeyMiniData.productInformation} />
+        <ProductInformation {...oneKeyMiniData.productInformation} />
 
-        <IntroductionSection items={onekeyMiniData.imageIntroduction} />
+        <IntroductionSection items={oneKeyMiniData.imageIntroduction} />
 
-        <FeatureSection {...onekeyMiniData.feature} />
+        <FeatureSection {...oneKeyMiniData.feature} />
 
         <MultiChainSupportSection />
 
         <TechnicalSpecificationsSection
-          {...onekeyMiniData.technicalSpecifications}
+          {...oneKeyMiniData.technicalSpecifications}
         />
 
         <RecommendSection include={['touch', 'pro', 'lite']} />
