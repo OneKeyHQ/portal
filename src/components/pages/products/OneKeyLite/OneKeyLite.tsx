@@ -12,6 +12,7 @@ import { FeatureSection } from '../components/FeatureSection';
 import { IntroductionSection } from '../components/IntroductionSection';
 import { MultiChainSupportSection } from '../components/MultiChainSupportSection';
 import { ProductInformation } from '../components/ProductInformation';
+import { RecommendSection } from '../components/RecommendSection';
 
 import { useOneKeyLiteData } from './useOneKeyLiteData';
 
@@ -40,9 +41,9 @@ export const OneKeyLite: FC<OneKeyLiteProps> = (props) => {
 
         <MultiChainSupportSection />
 
-        <StayInTouchWidthContainerAndPadding />
+        <RecommendSection />
 
-        {/* <RecommendSection /> */}
+        <StayInTouchWidthContainerAndPadding />
       </Main>
 
       <PageFooter isShowEmailSubscribe={false} isShowMediaLinks={false} />
