@@ -46,9 +46,9 @@ export const OneKeyTouch: FC<OneKeyTouchProps> = (props) => {
           {...onekeyTouchData.technicalSpecifications}
         />
 
-        <StayInTouchWidthContainerAndPadding />
-
         <RecommendSection include={['mini', 'pro', 'lite']} />
+
+        <StayInTouchWidthContainerAndPadding />
       </Main>
 
       <PageFooter isShowEmailSubscribe={false} isShowMediaLinks={false} />
