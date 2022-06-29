@@ -24,115 +24,115 @@ export function usePageFooterData() {
     },
     menuData: [
       {
-        name: t('footer__navigation__product'),
+        name: t('menu__product'),
         link: '',
         list: [
           {
-            name: t('footer__navigation__crowdfunding'),
+            name: t('menu__crowdfunding'),
             link: 'https://crowdfund.onekey.so/',
             status: 'external',
           },
           {
-            name: t('footer__navigation__mobile_wallet'),
+            name: t('menu__mobile_wallet'),
             link: 'https://onekey.so/download',
             status: 'external',
           },
           {
-            name: t('footer__navigation__hardware_device'),
+            name: t('menu__hardware_device'),
             link: 'https://onekey.so/hardware',
             status: 'external',
           },
           {
-            name: t('footer__navigation__browser_extension'),
+            name: t('menu__browser_extension'),
             link: 'https://onekey.so/plugin',
             status: 'external',
           },
           {
-            name: t('footer__navigation__swap'),
+            name: t('menu__swap'),
             link: 'https://swap.onekey.so/',
             status: 'external',
           },
           {
-            name: t('footer__navigation__token_list'),
+            name: t('menu__token_list'),
             link: 'https://onekey.so/tokens',
             status: 'external',
           },
           {
-            name: t('footer__navigation__recovery_phrase_converter'),
+            name: t('menu__recovery_phrase_converter'),
             link: 'https://bip39.onekey.so/',
             status: 'external',
           },
         ],
       },
       {
-        name: t('footer__navigation__resource'),
+        name: t('menu__resource'),
         link: '',
         list: [
           {
-            name: t('footer__navigation__system_status'),
+            name: t('menu__system_status'),
             link: 'https://onekeyhq.github.io/upptime',
             status: 'external',
           },
           {
-            name: t('footer__navigation__open_source_community'),
+            name: t('menu__open_source_community'),
             link: 'https://github.com/OneKeyHQ/OneKey-Wallet',
             status: 'external',
           },
           {
-            name: t('footer__navigation__media_kits'),
+            name: t('menu__media_kits'),
             link: 'https://help.onekey.so/hc/articles/360002200956',
             status: 'external',
           },
           {
-            name: t('footer__navigation__privacy_agreement'),
+            name: t('menu__privacy_agreement'),
             link: 'https://help.onekey.so/hc/articles/360002003315',
             status: 'external',
           },
           {
-            name: t('footer__navigation__user_agreement'),
+            name: t('menu__user_agreement'),
             link: 'https://help.onekey.so/hc/articles/360002014776',
             status: 'external',
           },
         ],
       },
       {
-        name: t('footer__navigation__information'),
+        name: t('menu__information'),
         link: '',
         list: [
           {
-            name: t('footer__navigation__submit_dapp'),
+            name: t('menu__submit_dapp'),
             link: 'https://gr4yl99ujhl.typeform.com/to/kDJuiIQ9',
             status: 'external',
           },
           {
-            name: t('footer__navigation__submit_token'),
+            name: t('menu__submit_token'),
             link: 'https://gr4yl99ujhl.typeform.com/to/ZM0qyr9e',
             status: 'external',
           },
           {
-            name: t('footer__navigation__venture_capital'),
+            name: t('menu__venture_capital'),
             link: 'https://onekey.so/ventures',
             status: 'external',
           },
           {
-            name: t('footer__navigation__sales_alliance'),
+            name: t('menu__sales_alliance'),
             link: 'https://help.onekey.so/hc/articles/360002658076',
             status: 'external',
           },
           {
-            name: t('footer__navigation__advertising'),
+            name: t('menu__advertising'),
             link: 'https://help.onekey.so/hc/articles/360002658096',
             status: 'external',
           },
           {
-            name: t('footer__navigation__investor_relations'),
+            name: t('menu__investor_relations'),
             link: 'https://onekey.so/invest',
             status: 'external',
           },
         ],
       },
       {
-        name: t('footer__navigation__crypto_assets'),
+        name: t('menu__crypto_assets'),
         link: '/crypto-assets',
         list: [
           {

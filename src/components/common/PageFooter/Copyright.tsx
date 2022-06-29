@@ -11,7 +11,7 @@ export const Copyright: FC = () => {
 
   return (
     <Span xs={{ ...theme.text.normal100, color: '#ffffff99' }}>
-      {t('website_copyright')}
+      {t('app__copyright')}
     </Span>
   );
 };
