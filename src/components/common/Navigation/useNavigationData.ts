@@ -1,4 +1,6 @@
 // import eipsSvgUrl from './images/eips.svg';
+import { useTranslation } from 'gatsby-plugin-react-i18next';
+
 import portfolioSvgUrl from './images/portfolio.svg';
 import recoverySvgUrl from './images/recovery-phrase-converter.svg';
 import swapSvgUrl from './images/swap.svg';
@@ -14,19 +16,21 @@ export type NavigationDataItem = {
 };
 
 export function useNavigationDataObject() {
+  const { t } = useTranslation();
+
   const products = {
     name: 'Products',
     key: 'products',
   };
 
   const app = {
-    name: 'App',
+    name: t('website__navigation_app'),
     key: 'app',
     path: 'https://onekey.so/download',
   };
 
   const services = {
-    name: 'Services',
+    name: t('website__navigation_services'),
     key: 'services',
     subItems: [
       {
@@ -73,33 +77,33 @@ export function useNavigationDataObject() {
   };
 
   const security = {
-    name: 'Security',
+    name: t('website__navigation_security'),
     key: 'security',
     path: '/security',
   };
 
   const forDeveloper = {
-    name: 'For Developer',
+    name: t('website__navigation_for_developer'),
     key: 'for-developer',
     path: 'https://docs.onekey.so/',
   };
 
   const forBusiness = {
-    name: 'For Business',
+    name: t('website__navigation_for_business'),
     key: 'for-business',
     subItems: [
       {
-        name: 'Enterprise Solutions',
+        name: t('website__navigation_enterprise_solutions'),
         key: 'enterprise-solutions',
         path: '/enterprise',
       },
       {
-        name: 'Referral',
+        name: t('website__navigation_referral'),
         key: 'referral',
         path: '/affiliate-program',
       },
       {
-        name: 'Co-branded products',
+        name: t('website__navigation_co_branded_products'),
         key: 'co-branded-products',
         path: '/co-branded-partnership',
       },
@@ -107,7 +111,7 @@ export function useNavigationDataObject() {
   };
 
   const helpCenter = {
-    name: 'Help Center',
+    name: t('website__navigation_help_center'),
     key: 'help-center',
     subItems: [
       {
@@ -124,7 +128,7 @@ export function useNavigationDataObject() {
   };
 
   const shop = {
-    name: 'Shop',
+    name: t('website__navigation_shop'),
     key: 'shop',
     subItems: [
       {
