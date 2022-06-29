@@ -21,7 +21,7 @@ export function useHardwareData() {
       image: miniOutlineImage,
       hoverImage: miniHover,
       title: oneKeyProduct.mini.name,
-      description: 'Mini sized, safety without compromise.',
+      description: oneKeyProduct.mini.description,
       status: 'available',
       link: oneKeyProduct.mini.shopLink,
     },
@@ -29,16 +29,14 @@ export function useHardwareData() {
       image: touchOutlineImage,
       title: oneKeyProduct.touch.name,
       hoverImage: touchHover,
-      description:
-        'All-new design, secure chip supercharged, beautiful and true color display.',
+      description: oneKeyProduct.touch.description,
       status: 'available',
     },
     {
       image: todoOutlineImage,
-      title: oneKeyProduct.touch.name,
+      title: oneKeyProduct.pro.name,
       hoverImage: '',
-      description:
-        'Biometric tech, optical encryption, so many reasons to go Pro.',
+      description: oneKeyProduct.pro.description,
       status: 'coming-soon',
     },
   ] as const;

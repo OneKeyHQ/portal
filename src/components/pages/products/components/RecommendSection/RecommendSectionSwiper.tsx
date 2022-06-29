@@ -5,17 +5,17 @@ import { FreeMode } from 'swiper';
 import { Swiper as SwiperComponent, SwiperSlide } from '../../../../base';
 
 import { ProductCard } from './ProductCard';
-import { useRecommendSectionData } from './useRecommendSectionData';
+import { RecommendSectionDataItem } from './useRecommendSectionData';
 
 export interface RecommendSectionSwiperProps {
   children?: ReactNode;
+  data: RecommendSectionDataItem[];
 }
 
 export const RecommendSectionSwiper: FC<RecommendSectionSwiperProps> = (
   props,
 ) => {
-  const { children } = props;
-  const recommendSectionData = useRecommendSectionData();
+  const { children, data } = props;
 
   return (
     <SwiperComponent
@@ -25,7 +25,7 @@ export const RecommendSectionSwiper: FC<RecommendSectionSwiperProps> = (
         enabled: true,
       }}
     >
-      {recommendSectionData.map((item) => (
+      {data.map((item) => (
         <SwiperSlide
           style={{
             width: 300,

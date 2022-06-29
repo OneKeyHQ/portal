@@ -17,9 +17,8 @@ export function useImageIntroductionData() {
       },
     },
     {
-      name: name2,
-      description:
-        'Secure chip adds another layer of security. We use cutting edge technology to protect sensitive information, like world-class banks.',
+      name: ['Security', 'built right in'],
+      description: 'We use top secure chip to protect sensitive information.',
       images: {
         s: <StaticImage src="./images/s/hardware1.jpg" alt={name2} />,
         m: <StaticImage src="./images/m/hardware1.jpg" alt={name2} />,
@@ -28,9 +27,8 @@ export function useImageIntroductionData() {
       },
     },
     {
-      name: name3,
-      description:
-        'With one wallet, you can manage your DeFi and NFT portfolios, trade across 30+ networks, and connect to any decentralized application.',
+      name: ['OneKey', 'Platform'],
+      description: 'Travel around all blockchain with one wallet.',
       images: {
         s: <StaticImage src="./images/s/hardware2.jpg" alt={name3} />,
         m: <StaticImage src="./images/m/hardware2.jpg" alt={name3} />,

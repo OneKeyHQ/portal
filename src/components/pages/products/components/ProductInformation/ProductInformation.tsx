@@ -28,9 +28,9 @@ export const ProductInformation: FC<ProductInformationProps> = (props) => {
             width: '100%',
             flexDirection: 'column',
             paddingTop: 100,
-            paddingBottom: 60,
           }}
           l={{
+            paddingBottom: 60,
             gap: 60,
             alignItems: 'flex-end',
             flexDirection: 'row',

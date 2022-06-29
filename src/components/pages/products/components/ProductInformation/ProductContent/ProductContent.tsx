@@ -3,6 +3,7 @@ import { FC, ReactNode } from 'react';
 import { useTheme } from '@emotion/react';
 
 import {
+  Box,
   DeliveryIcon,
   Divider,
   Flex,
@@ -49,11 +50,32 @@ export const ProductContent: FC<ProductContentProps> = (props) => {
         gap: 32,
       }}
     >
-      <Flex xs={{ flexDirection: 'column', gap: 16, maxWidth: 500 }}>
-        <Span xs={theme.text.medium700} xl={theme.text.medium800}>
-          {name} - {slogan}
+      <Flex xs={{ flexDirection: 'column', gap: 8, maxWidth: 500 }}>
+        <Span
+          xs={{
+            ...theme.text.medium300,
+            color: theme.colors.test300,
+            textTransform: 'uppercase',
+          }}
+        >
+          {slogan}
         </Span>
-        <Span xs={theme.text.normal300}>{description}</Span>
+        <Span
+          xs={theme.text.medium800}
+          l={theme.text.medium900}
+          xl={theme.text.medium1000}
+        >
+          {name}
+        </Span>
+        <Span
+          xs={{
+            ...theme.text.normal300,
+            color: theme.colors.test400,
+            opacity: 0.6,
+          }}
+        >
+          {description}
+        </Span>
       </Flex>
 
       <Span xs={theme.text.normal800} xl={theme.text.normal900}>
@@ -77,7 +99,10 @@ export const ProductContent: FC<ProductContentProps> = (props) => {
           <Span xs={theme.text.normal300}>24/7 Support</Span>
         </Flex>
       </Flex>
-      <Review />
+
+      <Box xs={{ paddingTop: 18 }}>
+        <Review />
+      </Box>
       {children}
     </Flex>
   );

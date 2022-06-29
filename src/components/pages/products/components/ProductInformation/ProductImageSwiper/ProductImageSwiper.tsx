@@ -93,7 +93,7 @@ export const ProductImageSwiper: FC<ProductImageSwiperProps> = (props) => {
       <Flex xs={{ justifyContent: 'center' }}>
         <Progress
           containerColor={theme.colors.test200}
-          amount={6}
+          amount={gallery.length}
           activeIndex={activeIndex}
         />
       </Flex>
