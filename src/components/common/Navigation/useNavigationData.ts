@@ -156,7 +156,7 @@ export function useNavigationDataObject(): Record<
         path: oneKeyProduct.mini.shops.youzan?.url,
       },
       {
-        name: t('menu__Shopify'),
+        name: t('menu__shopify'),
         key: 'shopify',
         path: oneKeyProduct.mini.shops.shopify?.url,
       },
