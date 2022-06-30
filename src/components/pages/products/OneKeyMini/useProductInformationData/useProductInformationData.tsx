@@ -7,19 +7,20 @@ export function useProductInformationData(): ProductInformationProps {
   const { mini } = useOneKeyProduct();
 
   return {
+    status: mini.status,
     shops: filterShops([
       mini.shops.amazonGlobal,
       mini.shops.amazonJapan,
       mini.shops.youzan,
       mini.shops.shopify,
     ]),
-    name: 'Onekey Mini',
+    name: mini.name,
     slogan: 'Crypto Hardware Wallet',
     description:
       'Secure, buy, exchange, grow your crypto and manage your NFTs with our new Bluetooth-enabled hardware wallet. All your digital assets secured in one place.',
     price: {
-      value: 58,
-      formatted: '$58.00',
+      value: mini.price,
+      formatted: mini.formattedPrice,
     },
     shopProductId: '41169098178722',
     gallery: [

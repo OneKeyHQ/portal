@@ -88,7 +88,7 @@ export function useOneKeyProduct(): OneKeyProducts {
       formattedPrice: '$195.00',
       description:
         'Biometric tech, optical encryption, so many reasons to go Pro.',
-      path: '/products/onekey-pro-hardware-wallet/',
+      path: '',
       shops: {
         amazonGlobal: undefined,
         amazonJapan: undefined,

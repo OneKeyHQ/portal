@@ -1,15 +1,20 @@
 import { StaticImage } from 'gatsby-plugin-image';
+import { useOneKeyProduct } from '../../../../../data';
+import { ProductInformationProps } from '../../components/ProductInformation';
 
-export function useProductInformationData() {
+export function useProductInformationData(): ProductInformationProps {
+  const { touch } = useOneKeyProduct();
+
   return {
+    status: touch.status,
     shops: [],
-    name: 'OneKey Touch',
+    name: touch.name,
     slogan: 'Crypto Hardware Wallet',
     description:
       'All-new design, secure chip supercharged, beautiful and true color display.',
     price: {
-      value: 135,
-      formatted: '$135.00',
+      value: touch.price,
+      formatted: touch.formattedPrice,
     },
     shopProductId: '41169098178722',
     gallery: [

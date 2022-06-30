@@ -14,6 +14,7 @@ export const Link: FC<LinkProps> = (props) => {
   const { to, children, target = '_blank', ...omittedProps } = props;
 
   if (!to) {
+    // if children is array of elements, we need to clone them
     return cloneElement(children as React.ReactElement);
   }
 

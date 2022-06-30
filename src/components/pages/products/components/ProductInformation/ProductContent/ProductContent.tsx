@@ -14,12 +14,15 @@ import {
 import { AddToCart } from './AddToCart';
 import { OtherStoresSelect, OtherStoresSelectProps } from './OtherStoresSelect';
 import { Review } from './Review';
+import { ProductStatus } from '../../../../../../data';
+import { ComingSoon } from './ComingSoon';
 
 export interface ProductContentProps extends OtherStoresSelectProps {
   children?: ReactNode;
   name: string;
   slogan: string;
   description: string;
+  status: ProductStatus;
   price: {
     value: number;
     formatted: string;
@@ -28,8 +31,16 @@ export interface ProductContentProps extends OtherStoresSelectProps {
 }
 
 export const ProductContent: FC<ProductContentProps> = (props) => {
-  const { children, shopProductId, name, slogan, description, price, shops } =
-    props;
+  const {
+    children,
+    shopProductId,
+    name,
+    slogan,
+    description,
+    price,
+    shops,
+    status,
+  } = props;
   const theme = useTheme();
 
   return (
@@ -82,9 +93,11 @@ export const ProductContent: FC<ProductContentProps> = (props) => {
         {price.formatted}
       </Span>
 
-      <AddToCart shopProductId={shopProductId} />
+      {status === 'comingSoon' && <ComingSoon />}
 
-      <OtherStoresSelect shops={shops} />
+      {status === 'normal' && <AddToCart shopProductId={shopProductId} />}
+
+      {status === 'normal' && <OtherStoresSelect shops={shops} />}
 
       <Flex xs={{ flexDirection: 'column', gap: 22 }} l={{ gap: 16 }}>
         <Divider />
