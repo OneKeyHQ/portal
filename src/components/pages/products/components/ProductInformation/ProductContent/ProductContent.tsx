@@ -2,6 +2,7 @@ import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
+import { ProductStatus } from '../../../../../../data';
 import {
   Box,
   DeliveryIcon,
@@ -12,10 +13,9 @@ import {
 } from '../../../../../base';
 
 import { AddToCart } from './AddToCart';
+import { ComingSoon } from './ComingSoon';
 import { OtherStoresSelect, OtherStoresSelectProps } from './OtherStoresSelect';
 import { Review } from './Review';
-import { ProductStatus } from '../../../../../../data';
-import { ComingSoon } from './ComingSoon';
 
 export interface ProductContentProps extends OtherStoresSelectProps {
   children?: ReactNode;

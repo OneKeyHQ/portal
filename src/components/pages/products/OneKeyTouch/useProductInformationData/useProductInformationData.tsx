@@ -1,4 +1,5 @@
 import { StaticImage } from 'gatsby-plugin-image';
+
 import { useOneKeyProduct } from '../../../../../data';
 import { ProductInformationProps } from '../../components/ProductInformation';
 
