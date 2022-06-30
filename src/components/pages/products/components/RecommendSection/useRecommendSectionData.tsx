@@ -16,6 +16,7 @@ export type RecommendSectionDataItem = {
   formattedPrice: string;
   image: string;
   hoverImage: ReactNode;
+  path: string;
 };
 
 export function useRecommendSectionData(): {
