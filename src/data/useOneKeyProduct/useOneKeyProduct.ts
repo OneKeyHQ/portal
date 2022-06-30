@@ -3,7 +3,8 @@ import { useTranslation } from 'gatsby-plugin-react-i18next';
 import { OneKeyProducts, Shop } from './types';
 
 export function filterShops(array: (Shop | undefined)[]) {
-  const isNotUndefined = (value?: Shop): value is Shop => value !== undefined;
+  const isNotUndefined = (value?: Shop): value is Shop =>
+    !!(value && value.name && value.url);
 
   return array.filter(isNotUndefined);
 }
@@ -13,7 +14,7 @@ export function useOneKeyProduct(): OneKeyProducts {
   const tAmazonGlobal = t('menu__amazon_global');
   const tAmazonJapan = t('menu__amazon_japan');
   const tYouzan = t('menu__youzan');
-  const tShopify = t('menu__shopify');
+  const tShopify = 'Shopify';
 
   return {
     mini: {

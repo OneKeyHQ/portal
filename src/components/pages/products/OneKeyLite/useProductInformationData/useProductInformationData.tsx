@@ -1,8 +1,16 @@
 import { StaticImage } from 'gatsby-plugin-image';
+import { filterShops, useOneKeyProduct } from '../../../../../data';
 
 export function useProductInformationData() {
+  const { lite } = useOneKeyProduct();
+
   return {
-    shops: [],
+    shops: filterShops([
+      lite.shops.amazonGlobal,
+      lite.shops.amazonJapan,
+      lite.shops.youzan,
+      lite.shops.shopify,
+    ]),
     name: 'OneKey Lite',
     slogan: 'Recovery Phrase Backup Card',
     description: 'A higher definition of private key cold storage.',
