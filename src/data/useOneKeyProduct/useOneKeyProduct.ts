@@ -66,8 +66,14 @@ export function useOneKeyProduct(): OneKeyProducts {
       description: 'A higher definition of private key cold storage.',
       path: '/products/onekey-lite-hardware-wallet/',
       shops: {
-        amazonGlobal: undefined,
-        amazonJapan: undefined,
+        amazonGlobal: {
+          name: tAmazonGlobal,
+          url: 'https://www.amazon.com/gp/product/B0B4KGG7LB',
+        },
+        amazonJapan: {
+          name: tAmazonJapan,
+          url: 'https://www.amazon.co.jp/dp/B0B596BZ1V',
+        },
         shopify: {
           name: tShopify,
           url: 'https://shop.onekey.so/products/onekey-lite-recovery-phrase-backup-card-for-onekey-wallet-app?variant=41263919366306',

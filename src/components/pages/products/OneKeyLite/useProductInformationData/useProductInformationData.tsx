@@ -1,4 +1,5 @@
 import { StaticImage } from 'gatsby-plugin-image';
+
 import { filterShops, useOneKeyProduct } from '../../../../../data';
 
 export function useProductInformationData() {
