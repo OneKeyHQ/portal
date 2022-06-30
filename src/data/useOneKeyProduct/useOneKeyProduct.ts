@@ -23,7 +23,7 @@ export function useOneKeyProduct(): OneKeyProducts {
       price: 58,
       formattedPrice: '$58.00',
       description: 'Mini sized, safety without compromise.',
-      path: '/products/onekey-lite-hardware-wallet/',
+      path: '/products/onekey-mini-hardware-wallet/',
       shops: {
         amazonGlobal: {
           url: 'https://www.amazon.com/dp/B0B2MWW2WJ',
