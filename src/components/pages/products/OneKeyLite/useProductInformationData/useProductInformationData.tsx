@@ -1,12 +1,8 @@
 import { StaticImage } from 'gatsby-plugin-image';
 
-import { useNavigationDataObject } from '../../../../common/Navigation/useNavigationData';
-
 export function useProductInformationData() {
-  const { shop } = useNavigationDataObject();
-
   return {
-    shops: shop.subItems,
+    shops: [],
     name: 'OneKey Lite',
     slogan: 'Recovery Phrase Backup Card',
     description: 'A higher definition of private key cold storage.',

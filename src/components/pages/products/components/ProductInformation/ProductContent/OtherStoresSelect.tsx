@@ -15,8 +15,7 @@ export interface OtherStoresSelectProps {
   children?: ReactNode;
   shops: {
     name: string;
-    key: string;
-    path: string;
+    url: string;
   }[];
 }
 
@@ -53,7 +52,7 @@ export const OtherStoresSelect: FC<OtherStoresSelectProps> = (props) => {
         isActive={isMenuOpen}
       >
         {shops.map((item) => (
-          <Link to={item.path} key={item.key}>
+          <Link to={item.url} key={item.name}>
             <MenuItem>
               <Box xs={{ paddingLeft: 0, paddingRight: 0 }}>{item.name}</Box>
             </MenuItem>

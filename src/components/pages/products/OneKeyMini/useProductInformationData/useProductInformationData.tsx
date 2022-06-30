@@ -1,12 +1,18 @@
 import { StaticImage } from 'gatsby-plugin-image';
 
-import { useNavigationDataObject } from '../../../../common/Navigation/useNavigationData';
+import { filterShops, useOneKeyProduct } from '../../../../../data';
+import { ProductInformationProps } from '../../components/ProductInformation';
 
-export function useProductInformationData() {
-  const { shop } = useNavigationDataObject();
+export function useProductInformationData(): ProductInformationProps {
+  const { mini } = useOneKeyProduct();
 
   return {
-    shops: shop.subItems,
+    shops: filterShops([
+      mini.shops.amazonGlobal,
+      mini.shops.amazonJapan,
+      mini.shops.youzan,
+      mini.shops.shopify,
+    ]),
     name: 'Onekey Mini',
     slogan: 'Crypto Hardware Wallet',
     description:

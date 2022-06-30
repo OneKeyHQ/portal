@@ -17,7 +17,17 @@ export type NavigationDataItem = {
   subItems?: NavigationDataItem[];
 };
 
-export function useNavigationDataObject() {
+export function useNavigationDataObject(): Record<
+  | 'products'
+  | 'app'
+  | 'services'
+  | 'security'
+  | 'forDeveloper'
+  | 'forBusiness'
+  | 'helpCenter'
+  | 'shop',
+  NavigationDataItem
+> {
   const oneKeyProduct = useOneKeyProduct();
   const { t } = useTranslation();
   const products = {
@@ -133,22 +143,22 @@ export function useNavigationDataObject() {
       {
         name: t('menu__amazon_global'),
         key: 'amazon-Global',
-        path: oneKeyProduct.mini.shops.amazonGlobal,
+        path: oneKeyProduct.mini.shops.amazonGlobal?.url,
       },
       {
         name: t('menu__amazon_japan'),
         key: 'amazon-Japan',
-        path: oneKeyProduct.mini.shops.amazonJapan,
+        path: oneKeyProduct.mini.shops.amazonJapan?.url,
       },
       {
         name: t('menu__youzan'),
         key: 'youzan',
-        path: oneKeyProduct.mini.shops.youzan,
+        path: oneKeyProduct.mini.shops.youzan?.url,
       },
       {
         name: t('menu__Shopify'),
         key: 'shopify',
-        path: oneKeyProduct.mini.shops.shopify,
+        path: oneKeyProduct.mini.shops.shopify?.url,
       },
     ],
   };
