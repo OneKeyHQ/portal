@@ -1,6 +1,8 @@
 // import eipsSvgUrl from './images/eips.svg';
 import { useTranslation } from 'gatsby-plugin-react-i18next';
 
+import { useOneKeyProduct } from '../../../data';
+
 import portfolioSvgUrl from './images/portfolio.svg';
 import recoverySvgUrl from './images/recovery-phrase-converter.svg';
 import swapSvgUrl from './images/swap.svg';
@@ -16,6 +18,7 @@ export type NavigationDataItem = {
 };
 
 export function useNavigationDataObject() {
+  const oneKeyProduct = useOneKeyProduct();
   const { t } = useTranslation();
   const products = {
     name: t('menu__products'),
@@ -130,22 +133,22 @@ export function useNavigationDataObject() {
       {
         name: t('menu__amazon_global'),
         key: 'amazon-Global',
-        path: 'https://www.amazon.com/dp/B0B2MWW2WJ',
+        path: oneKeyProduct.mini.shops.amazonGlobal,
       },
       {
         name: t('menu__amazon_japan'),
         key: 'amazon-Japan',
-        path: 'https://www.amazon.co.jp/dp/B0B2MWW2WJ',
+        path: oneKeyProduct.mini.shops.amazonJapan,
       },
       {
         name: t('menu__youzan'),
         key: 'youzan',
-        path: 'https://j.youzan.com/dZTtS2',
+        path: oneKeyProduct.mini.shops.youzan,
       },
       {
         name: t('menu__Shopify'),
         key: 'shopify',
-        path: 'https://shop.onekey.so/',
+        path: oneKeyProduct.mini.shops.shopify,
       },
     ],
   };

@@ -24,19 +24,19 @@ export function useProductPanel() {
     () => [
       {
         name: oneKeyProduct.mini.name,
-        link: oneKeyProduct.mini.shopLink,
+        link: oneKeyProduct.mini.path,
         backgroundColor: theme.colors.test400,
         fontColor: theme.colors.white,
       },
       {
         name: oneKeyProduct.touch.name,
-        link: oneKeyProduct.touch.shopLink,
+        link: oneKeyProduct.touch.path,
         backgroundColor: theme.colors.test200,
         fontColor: theme.colors.test500,
       },
       {
         name: oneKeyProduct.lite.name,
-        link: oneKeyProduct.lite.shopLink,
+        link: oneKeyProduct.lite.path,
         backgroundColor: theme.colors.test100,
         fontColor: theme.colors.test500,
       },

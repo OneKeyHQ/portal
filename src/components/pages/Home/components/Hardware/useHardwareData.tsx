@@ -23,13 +23,14 @@ export function useHardwareData() {
       title: oneKeyProduct.mini.name,
       description: oneKeyProduct.mini.description,
       status: 'available',
-      link: oneKeyProduct.mini.shopLink,
+      link: oneKeyProduct.mini.path,
     },
     {
       image: touchOutlineImage,
       title: oneKeyProduct.touch.name,
       hoverImage: touchHover,
       description: oneKeyProduct.touch.description,
+      link: oneKeyProduct.touch.path,
       status: 'available',
     },
     {
