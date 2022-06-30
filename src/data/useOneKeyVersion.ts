@@ -118,52 +118,56 @@ export function useOneKeyVersion() {
     [oneKeyVersion, remoteData],
   );
 
-  if (oneKeyVersionData) {
-    const { android, desktop, ext, ios } = oneKeyVersionData;
+  try {
+    if (oneKeyVersionData) {
+      const { android, desktop, ext, ios } = oneKeyVersionData;
 
-    // android
-    formattedData.androidAPK.url = android.url;
-    formattedData.androidAPK.version = android.version.join('.');
+      // android
+      formattedData.androidAPK.url = android.url;
+      formattedData.androidAPK.version = android.version.join('.');
 
-    formattedData.androidGooglePlay.url = android.googlePlay;
-    formattedData.androidGooglePlay.version = android.version.join('.');
+      formattedData.androidGooglePlay.url = android.googlePlay;
+      formattedData.androidGooglePlay.version = android.version.join('.');
 
-    // ios
-    formattedData.ios.version = ios.version.join('.');
-    formattedData.ios.url = ios.url;
+      // ios
+      formattedData.ios.version = ios.version.join('.');
+      formattedData.ios.url = ios.url;
 
-    // mac
-    formattedData.macIntel.url = desktop.macX64;
-    formattedData.macIntel.version = desktop.version.join('.');
+      // mac
+      formattedData.macIntel.url = desktop.macX64;
+      formattedData.macIntel.version = desktop.version.join('.');
 
-    formattedData.macSilicon.url = desktop.macArm;
-    formattedData.macSilicon.version = desktop.version.join('.');
+      formattedData.macSilicon.url = desktop.macArm;
+      formattedData.macSilicon.version = desktop.version.join('.');
 
-    // win
-    formattedData.win.url = desktop.win;
-    formattedData.win.version = desktop.version.join('.');
+      // win
+      formattedData.win.url = desktop.win;
+      formattedData.win.version = desktop.version.join('.');
 
-    // linux
-    formattedData.linux.url = desktop.linux;
-    formattedData.linux.version = desktop.version.join('.');
+      // linux
+      formattedData.linux.url = desktop.linux;
+      formattedData.linux.version = desktop.version.join('.');
 
-    // asc
-    formattedData.asc.url = desktop.sha256SumAsc ?? '';
-    formattedData.asc.version = desktop.version.join('.');
+      // asc
+      formattedData.asc.url = desktop.sha256SumAsc ?? '';
+      formattedData.asc.version = desktop.version.join('.');
 
-    // ext
-    formattedData.chrome.url = ext.chrome ?? '';
-    formattedData.firefox.url = ext.firefox ?? '';
-    formattedData.edge.url = ext.edge ?? '';
+      // ext
+      formattedData.chrome.url = ext.chrome ?? '';
+      formattedData.firefox.url = ext.firefox ?? '';
+      formattedData.edge.url = ext.edge ?? '';
 
-    // bridge
-    formattedData.bridge.version = oneKeyVersionData.bridge.version.join('.');
-    formattedData.bridge.linux32Rpm.url = oneKeyVersionData.bridge.linux32Rpm;
-    formattedData.bridge.linux64Rpm.url = oneKeyVersionData.bridge.linux64Rpm;
-    formattedData.bridge.linux32Deb.url = oneKeyVersionData.bridge.linux32Deb;
-    formattedData.bridge.linux64Deb.url = oneKeyVersionData.bridge.linux64Deb;
-    formattedData.bridge.win.url = oneKeyVersionData.bridge.win;
-    formattedData.bridge.mac.url = oneKeyVersionData.bridge.mac;
+      // bridge
+      formattedData.bridge.version = oneKeyVersionData.bridge.version.join('.');
+      formattedData.bridge.linux32Rpm.url = oneKeyVersionData.bridge.linux32Rpm;
+      formattedData.bridge.linux64Rpm.url = oneKeyVersionData.bridge.linux64Rpm;
+      formattedData.bridge.linux32Deb.url = oneKeyVersionData.bridge.linux32Deb;
+      formattedData.bridge.linux64Deb.url = oneKeyVersionData.bridge.linux64Deb;
+      formattedData.bridge.win.url = oneKeyVersionData.bridge.win;
+      formattedData.bridge.mac.url = oneKeyVersionData.bridge.mac;
+    }
+  } catch (e) {
+    console.error(e);
   }
 
   return {
