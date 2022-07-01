@@ -24,23 +24,17 @@ export const Slogan: React.FC = () => {
     >
       <Container>
         <Box
-          xs={{
-            ...theme.text.medium700,
+          css={{
             color: theme.colors.test500,
           }}
+          xs={theme.text.medium700}
           m={{
             textAlign: 'center',
             ...theme.text.medium900,
           }}
-          l={{
-            ...theme.text.medium900,
-          }}
-          xl={{
-            ...theme.text.medium1000,
-          }}
-          xxl={{
-            ...theme.text.medium1100,
-          }}
+          l={theme.text.medium900}
+          xl={theme.text.medium1000}
+          xxl={theme.text.medium1100}
         >
           <motion.p
             viewport={{ once: true, amount: 'all' }}
