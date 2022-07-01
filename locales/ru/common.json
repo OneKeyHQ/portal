@@ -3,6 +3,7 @@
     "action__go_to_shop": "Идти в магазин",
     "action__launch_app": "Запустить приложение",
     "action__learn_more": "Учить больше",
+    "action__subscribe": "Подписывайся",
     "app__copyright": "2022 OneKey, Inc. Все права защищены.",
     "coin__bitcoin": "Биткойн",
     "coin__dash": "Бросаться",
@@ -54,9 +55,5 @@
     "menu__token_list_desc": "Добавьте токены ETH, BSC, HECO в расширение и приложение",
     "menu__user_agreement": "Пользовательское Соглашение",
     "menu__venture_capital": "Венчурный капитал",
-    "menu__youzan": "Юзан",
-    "title__hiring": "Мы набираем в команду целеустремленных людей.",
-    "title__home_hero_1": "Все в одном\\n крипто кошелек.",
-    "title__home_hero_2": "Доверенный\\n миллионами.",
-    "title__trustpilot_score_and_review": "Оценка и обзор Trustpilot"
+    "menu__youzan": "Юзан"
 }

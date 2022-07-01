@@ -3,6 +3,7 @@
     "action__go_to_shop": "اذهب إلى المتجر",
     "action__launch_app": "إطلاق التطبيق",
     "action__learn_more": "يتعلم أكثر",
+    "action__subscribe": "الإشتراك",
     "app__copyright": "2022 OneKey، Inc. جميع الحقوق محفوظة.",
     "coin__bitcoin": "بيتكوين",
     "coin__dash": "اندفاع",
@@ -54,9 +55,5 @@
     "menu__token_list_desc": "أضف الرموز المميزة ETH و BSC و HECO إلى الامتداد والتطبيق",
     "menu__user_agreement": "اتفاقية المستخدم",
     "menu__venture_capital": "رأس المال الاستثماري",
-    "menu__youzan": "YouZan",
-    "title__hiring": "نحن نوظف أشخاصًا لديهم دوافع ذاتية للانضمام إلى الفريق.",
-    "title__home_hero_1": "الكل في واحد\\n محفظة التشفير.",
-    "title__home_hero_2": "موثوق به\\n بالملايين.",
-    "title__trustpilot_score_and_review": "نقاط Trustpilot والاستعراض"
+    "menu__youzan": "YouZan"
 }

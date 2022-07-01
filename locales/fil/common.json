@@ -3,6 +3,7 @@
     "action__go_to_shop": "Pumunta sa Shop",
     "action__launch_app": "Ilunsad ang App",
     "action__learn_more": "Matuto pa",
+    "action__subscribe": "Mag-subscribe",
     "app__copyright": "2022 OneKey, Inc. Nakalaan ang lahat ng karapatan.",
     "coin__bitcoin": "Bitcoin",
     "coin__dash": "Dash",
@@ -54,9 +55,5 @@
     "menu__token_list_desc": "Magdagdag ng ETH, BSC, HECO token sa Extension at App",
     "menu__user_agreement": "Kasunduan ng User",
     "menu__venture_capital": "Puhunan",
-    "menu__youzan": "YouZan",
-    "title__hiring": "Nag-hire kami ng mga self-motivated na tao para sumali sa team.",
-    "title__home_hero_1": "Lahat sa isa\\n crypto wallet.",
-    "title__home_hero_2": "Pinagkakatiwalaan\\n ng milyun-milyon.",
-    "title__trustpilot_score_and_review": "Trustpilot score at pagsusuri"
+    "menu__youzan": "YouZan"
 }

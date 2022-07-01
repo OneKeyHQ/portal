@@ -3,6 +3,7 @@
     "action__go_to_shop": "Aller à la boutique",
     "action__launch_app": "Lancer l'application",
     "action__learn_more": "Apprendre encore plus",
+    "action__subscribe": "S'abonner",
     "app__copyright": "2022 OneKey, Inc. Tous droits réservés.",
     "coin__bitcoin": "Bitcoin",
     "coin__dash": "Se précipiter",
@@ -54,9 +55,5 @@
     "menu__token_list_desc": "Ajouter des jetons ETH, BSC, HECO à l'extension et à l'application",
     "menu__user_agreement": "Accord de l'utilisateur",
     "menu__venture_capital": "Capital-risque",
-    "menu__youzan": "YouZan",
-    "title__hiring": "Nous recrutons des personnes motivées pour rejoindre l'équipe.",
-    "title__home_hero_1": "Tout en un\\n porte-monnaie crypté.",
-    "title__home_hero_2": "De confiance\\n par millions.",
-    "title__trustpilot_score_and_review": "Note et avis Trustpilot"
+    "menu__youzan": "YouZan"
 }

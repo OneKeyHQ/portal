@@ -3,6 +3,7 @@
     "action__go_to_shop": "Ir a la tienda",
     "action__launch_app": "Ejecutar aplicación",
     "action__learn_more": "Aprende más",
+    "action__subscribe": "Suscribir",
     "app__copyright": "2022 OneKey, Inc. Todos los derechos reservados.",
     "coin__bitcoin": "Bitcoin",
     "coin__dash": "Estrellarse",
@@ -54,9 +55,5 @@
     "menu__token_list_desc": "Agregue tokens ETH, BSC, HECO a la extensión y la aplicación",
     "menu__user_agreement": "Acuerdo del Usuario",
     "menu__venture_capital": "Capital de riesgo",
-    "menu__youzan": "YouZan",
-    "title__hiring": "Estamos contratando personas motivadas para unirse al equipo.",
-    "title__home_hero_1": "Todo en uno\\n billetera criptográfica.",
-    "title__home_hero_2": "De confianza\\n por millones",
-    "title__trustpilot_score_and_review": "Puntuación y revisión de Trustpilot"
+    "menu__youzan": "YouZan"
 }

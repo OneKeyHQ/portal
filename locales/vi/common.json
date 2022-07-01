@@ -3,6 +3,7 @@
     "action__go_to_shop": "Đi đến cửa hàng",
     "action__launch_app": "Chạy chương trình",
     "action__learn_more": "Tìm hiểu thêm",
+    "action__subscribe": "Đặt mua",
     "app__copyright": "2022 OneKey, Inc. Mọi quyền được bảo lưu.",
     "coin__bitcoin": "Bitcoin",
     "coin__dash": "Dấu gạch ngang",
@@ -54,9 +55,5 @@
     "menu__token_list_desc": "Thêm mã thông báo ETH, BSC, HECO vào Tiện ích mở rộng và Ứng dụng",
     "menu__user_agreement": "sự thỏa thuận của người dùng",
     "menu__venture_capital": "Đầu tư mạo hiểm",
-    "menu__youzan": "YouZan",
-    "title__hiring": "Chúng tôi đang thuê những người năng động để tham gia vào nhóm.",
-    "title__home_hero_1": "Tất cả hợp lại thành một\\n ví tiền điện tử.",
-    "title__home_hero_2": "Đáng tin cậy\\n bởi hàng triệu.",
-    "title__trustpilot_score_and_review": "Điểm và đánh giá Trustpilot"
+    "menu__youzan": "YouZan"
 }

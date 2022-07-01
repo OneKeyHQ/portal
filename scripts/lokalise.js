@@ -22,9 +22,10 @@ async function main() {
   const { project_id: projectId } = project;
 
   try {
-    const response = await lokaliseApi
-      .files()
-      .download(projectId, { format: 'json', original_filenames: false });
+    const response = await lokaliseApi.files().download(projectId, {
+      format: 'json',
+      directory_prefix: '%LANG_ISO%',
+    });
 
     await download(response.bundle_url, scriptPath('./.tmp/zip'));
 
@@ -34,24 +35,9 @@ async function main() {
 
     fs.rmSync(scriptPath('./.tmp'), { recursive: true, force: true });
 
-    fs.readdirSync(scriptPath('../locales/locale')).forEach((file) => {
+    fs.readdirSync(scriptPath('../locales')).forEach((file) => {
       // en.json => en
       languages.push(file.split('.')[0]);
-    });
-
-    // create languages folder and copy en.json to it
-    languages.forEach((language) => {
-      // create common.json
-      fs.writeFileSync(
-        scriptPath(`../locales/${language}/common.json`),
-        fs.readFileSync(scriptPath(`../locales/locale/${language}.json`)),
-      );
-    });
-
-    // delete locale folder
-    fs.rmSync(scriptPath('../locales/locale'), {
-      recursive: true,
-      force: true,
     });
 
     fs.writeFileSync(

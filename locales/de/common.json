@@ -3,6 +3,7 @@
     "action__go_to_shop": "Zum Laden gehen",
     "action__launch_app": "App starten",
     "action__learn_more": "Lern mehr",
+    "action__subscribe": "Abonnieren",
     "app__copyright": "2022 OneKey, Inc. Alle Rechte vorbehalten.",
     "coin__bitcoin": "Bitcoin",
     "coin__dash": "Bindestrich",
@@ -54,9 +55,5 @@
     "menu__token_list_desc": "Fügen Sie ETH-, BSC- und HECO-Token zu Extension und App hinzu",
     "menu__user_agreement": "Nutzungsbedingungen",
     "menu__venture_capital": "Risikokapital",
-    "menu__youzan": "YouZan",
-    "title__hiring": "Wir stellen selbstmotivierte Leute ein, um dem Team beizutreten.",
-    "title__home_hero_1": "Alles in einem\\n Krypto-Wallet.",
-    "title__home_hero_2": "Vertrauenswürdige\\n um Millionen.",
-    "title__trustpilot_score_and_review": "Trustpilot-Ergebnis und Bewertung"
+    "menu__youzan": "YouZan"
 }
