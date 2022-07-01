@@ -8,6 +8,7 @@ import {
   Box,
   Container,
   Flex,
+  I18n,
   Section,
   Span,
   Swiper as SwiperComponent,
@@ -53,7 +54,7 @@ export const Why: FC = () => {
             <Span
               css={{ ...theme.text.medium900, color: theme.colors.test500 }}
             >
-              Why Choose OneKey?
+              <I18n name="title__why_choose_onekey" />
             </Span>
 
             {/* controller */}
