@@ -9,6 +9,9 @@
     "coin__dash": "Dash",
     "coin__dogecoin": "Dogecoin",
     "coin__ethereum": "Ethereum",
+    "form__email_subscribe_information": "สมัครรับการแจ้งเตือนของเรา (เพื่อความเป็นส่วนตัว โปรดใช้อีเมลอื่นที่ไม่ใช่อีเมลที่คุณใช้ซื้อ OneKey เรายังลบข้อมูลคำสั่งซื้อเหล่านั้นเป็นระยะ)",
+    "form__enter_your_email": "กรอกอีเมล์ของคุณ",
+    "form__please_enter_an_email_address": "กรุณาใส่ที่อยู่อีเมล.",
     "menu__advertising": "การโฆษณา",
     "menu__amazon_global": "อเมซอน (ทั่วโลก)",
     "menu__amazon_japan": "อเมซอน (ญี่ปุ่น)",
@@ -55,5 +58,8 @@
     "menu__token_list_desc": "เพิ่มโทเค็น ETH, BSC, HECO ไปยังส่วนขยายและแอป",
     "menu__user_agreement": "ข้อตกลงการใช้",
     "menu__venture_capital": "กลุ่มทุน",
-    "menu__youzan": "ยูซาน"
+    "menu__youzan": "ยูซาน",
+    "onekey": "OneKey",
+    "title__stay_in_touch": "อยู่ในการติดต่อ",
+    "title__subscribe_to_our_notifications": "สมัครรับการแจ้งเตือนของเรา"
 }

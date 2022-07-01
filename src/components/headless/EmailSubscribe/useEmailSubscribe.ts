@@ -1,10 +1,12 @@
 import { useCallback, useState } from 'react';
 
 import { revueFromSubscriptionSubmit } from '@dinehq/revue-form-subscriber';
+import { useTranslation } from 'gatsby-plugin-react-i18next';
 
 import { isEmail } from '../../../utils';
 
 export function useEmailSubscribe() {
+  const { t } = useTranslation();
   const [email, setEmail] = useState('');
   const [showErrorMessage, setShowErrorMessage] = useState(false);
 
@@ -37,14 +39,13 @@ export function useEmailSubscribe() {
     setShowErrorMessage,
     subscribe,
     texts: {
-      title: 'Subscribe to our notifications',
-      errorMessage: 'Please enter an email address.',
-      information:
-        'Subscribe to our notifications (for privacy reason, use different email than the one you use to purchase onekey. we also periodically delete those order information)',
+      title: t('title__subscribe_to_our_notifications'),
+      errorMessage: t('form__please_enter_an_email_address'),
+      information: t('form__email_subscribe_information'),
     },
     inputProps: {
       type: 'email',
-      placeholder: 'Enter your email',
+      placeholder: t('form__enter_your_email'),
       value: email,
       onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
         setEmail(e.target.value);
@@ -52,7 +53,7 @@ export function useEmailSubscribe() {
     },
     buttonProps: {
       disabled: !email,
-      children: 'Subscribe',
+      children: t('action__subscribe'),
       onClick: subscribe,
     },
   };

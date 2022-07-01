@@ -9,6 +9,9 @@
     "coin__dash": "ダッシュ",
     "coin__dogecoin": "ドージコイン",
     "coin__ethereum": "イーサリアム",
+    "form__email_subscribe_information": "通知を購読します（プライバシー上の理由から、購入に使用したものとは異なる電子メールを使用しますOneKey 。これらの注文情報も定期的に削除します）",
+    "form__enter_your_email": "メールアドレスを入力",
+    "form__please_enter_an_email_address": "メールアドレスを入力してください。",
     "menu__advertising": "広告",
     "menu__amazon_global": "アマゾン（グローバル）",
     "menu__amazon_japan": "アマゾン（日本）",
@@ -55,5 +58,8 @@
     "menu__token_list_desc": "ETH、BSC、HECOトークンを拡張機能とアプリに追加します",
     "menu__user_agreement": "ユーザー規約",
     "menu__venture_capital": "ベンチャーキャピタル",
-    "menu__youzan": "YouZan"
+    "menu__youzan": "YouZan",
+    "onekey": "OneKey",
+    "title__stay_in_touch": "連絡を取り合う",
+    "title__subscribe_to_our_notifications": "通知を購読する"
 }

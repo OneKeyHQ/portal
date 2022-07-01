@@ -9,6 +9,9 @@
     "coin__dash": "Dấu gạch ngang",
     "coin__dogecoin": "Dogecoin",
     "coin__ethereum": "Ethereum",
+    "form__email_subscribe_information": "Đăng ký nhận thông báo của chúng tôi (vì lý do bảo mật, hãy sử dụng email khác với email bạn sử dụng để mua hàng OneKey . Chúng tôi cũng định kỳ xóa các thông tin đặt hàng đó)",
+    "form__enter_your_email": "Nhập email của bạn",
+    "form__please_enter_an_email_address": "Vui lòng nhập một địa chỉ email.",
     "menu__advertising": "Quảng cáo",
     "menu__amazon_global": "Amazon (Toàn cầu)",
     "menu__amazon_japan": "Amazon (Nhật Bản)",
@@ -55,5 +58,8 @@
     "menu__token_list_desc": "Thêm mã thông báo ETH, BSC, HECO vào Tiện ích mở rộng và Ứng dụng",
     "menu__user_agreement": "sự thỏa thuận của người dùng",
     "menu__venture_capital": "Đầu tư mạo hiểm",
-    "menu__youzan": "YouZan"
+    "menu__youzan": "YouZan",
+    "onekey": "OneKey",
+    "title__stay_in_touch": "Giữ liên lạc",
+    "title__subscribe_to_our_notifications": "Đăng ký nhận thông báo của chúng tôi"
 }

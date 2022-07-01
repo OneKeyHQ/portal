@@ -1,5 +1,7 @@
 import { FC, ReactNode } from 'react';
 
+import { useTranslation } from 'gatsby-plugin-react-i18next';
+
 import { useTheme } from '../../../theme';
 import { Flex } from '../../base';
 import { Box, Span } from '../../base/Box';
@@ -15,6 +17,7 @@ export const StayInTouch: FC<StayInTouchProps> = (props) => {
   const { children } = props;
   const theme = useTheme();
   const { size: themeSize } = theme;
+  const { t } = useTranslation();
 
   return (
     <Box
@@ -65,7 +68,7 @@ export const StayInTouch: FC<StayInTouchProps> = (props) => {
             m={{ ...theme.text.medium700 }}
             l={{ ...theme.text.medium800 }}
           >
-            Stay in Touch
+            {t('title__stay_in_touch')}
           </Span>
 
           <MediaLinkList color={theme.colors.test500} />

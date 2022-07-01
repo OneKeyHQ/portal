@@ -9,6 +9,9 @@
     "coin__dash": "اندفاع",
     "coin__dogecoin": "دوجكوين",
     "coin__ethereum": "إيثريوم",
+    "form__email_subscribe_information": "اشترك في إشعاراتنا (لأسباب تتعلق بالخصوصية ، استخدم بريدًا إلكترونيًا مختلفًا عن الذي تستخدمه للشراء OneKey . نحذف أيضًا معلومات الطلب هذه بشكل دوري)",
+    "form__enter_your_email": "أدخل بريدك الإلكتروني",
+    "form__please_enter_an_email_address": "الرجاء إدخال عنوان البريد الإلكتروني.",
     "menu__advertising": "دعاية",
     "menu__amazon_global": "أمازون (عالميًا)",
     "menu__amazon_japan": "أمازون (اليابان)",
@@ -55,5 +58,8 @@
     "menu__token_list_desc": "أضف الرموز المميزة ETH و BSC و HECO إلى الامتداد والتطبيق",
     "menu__user_agreement": "اتفاقية المستخدم",
     "menu__venture_capital": "رأس المال الاستثماري",
-    "menu__youzan": "YouZan"
+    "menu__youzan": "YouZan",
+    "onekey": "OneKey",
+    "title__stay_in_touch": "ابق على تواصل",
+    "title__subscribe_to_our_notifications": "اشترك في إشعاراتنا"
 }

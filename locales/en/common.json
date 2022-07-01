@@ -9,6 +9,9 @@
     "coin__dash": "Dash",
     "coin__dogecoin": "Dogecoin",
     "coin__ethereum": "Ethereum",
+    "form__email_subscribe_information": "Subscribe to our notifications (for privacy reason, use different email than the one you use to purchase OneKey. we also periodically delete those order information)",
+    "form__enter_your_email": "Enter your email",
+    "form__please_enter_an_email_address": "Please enter an email address.",
     "menu__advertising": "Advertising",
     "menu__amazon_global": "Amazon (Global)",
     "menu__amazon_japan": "Amazon (Japan)",
@@ -55,5 +58,8 @@
     "menu__token_list_desc": "Add ETH, BSC, HECO tokens to Extension and App",
     "menu__user_agreement": "User Agreement",
     "menu__venture_capital": "Venture Capital",
-    "menu__youzan": "YouZan"
+    "menu__youzan": "YouZan",
+    "onekey": "OneKey",
+    "title__stay_in_touch": "Stay in touch",
+    "title__subscribe_to_our_notifications": "Subscribe to our notifications"
 }

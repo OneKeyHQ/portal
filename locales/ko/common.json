@@ -9,6 +9,9 @@
     "coin__dash": "대시",
     "coin__dogecoin": "도지코인",
     "coin__ethereum": "이더 리움",
+    "form__email_subscribe_information": "알림 구독(개인 정보 보호를 위해 OneKey 구매에 사용하는 이메일과 다른 이메일을 사용하세요. 또한 해당 주문 정보도 주기적으로 삭제합니다.)",
+    "form__enter_your_email": "이메일을 입력하세요",
+    "form__please_enter_an_email_address": "이메일 주소를 입력 해주세요.",
     "menu__advertising": "광고하는",
     "menu__amazon_global": "아마존(글로벌)",
     "menu__amazon_japan": "아마존(일본)",
@@ -55,5 +58,8 @@
     "menu__token_list_desc": "확장 및 앱에 ETH, BSC, HECO 토큰 추가",
     "menu__user_agreement": "사용자 계약",
     "menu__venture_capital": "벤처캐피탈",
-    "menu__youzan": "유잔"
+    "menu__youzan": "유잔",
+    "onekey": "OneKey",
+    "title__stay_in_touch": "연락을 유지하다",
+    "title__subscribe_to_our_notifications": "알림 구독"
 }

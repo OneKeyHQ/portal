@@ -9,6 +9,9 @@
     "coin__dash": "Dash",
     "coin__dogecoin": "Dogecoin",
     "coin__ethereum": "Ethereum",
+    "form__email_subscribe_information": "Mag-subscribe sa aming mga notification (para sa kadahilanang privacy, gumamit ng ibang email kaysa sa ginagamit mo sa pagbili ng OneKey . pana-panahon din naming tinatanggal ang impormasyon ng order na iyon)",
+    "form__enter_your_email": "Ilagay ang iyong email",
+    "form__please_enter_an_email_address": "Mangyaring magpasok ng email address.",
     "menu__advertising": "Advertising",
     "menu__amazon_global": "Amazon (Global)",
     "menu__amazon_japan": "Amazon (Japan)",
@@ -55,5 +58,8 @@
     "menu__token_list_desc": "Magdagdag ng ETH, BSC, HECO token sa Extension at App",
     "menu__user_agreement": "Kasunduan ng User",
     "menu__venture_capital": "Puhunan",
-    "menu__youzan": "YouZan"
+    "menu__youzan": "YouZan",
+    "onekey": "OneKey",
+    "title__stay_in_touch": "Manatiling nakikipag-ugnayan",
+    "title__subscribe_to_our_notifications": "Mag-subscribe sa aming mga notification"
 }

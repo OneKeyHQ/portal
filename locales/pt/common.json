@@ -9,6 +9,9 @@
     "coin__dash": "Traço",
     "coin__dogecoin": "Dogecoin",
     "coin__ethereum": "Ethereum",
+    "form__email_subscribe_information": "Assine nossas notificações (por motivos de privacidade, use um e-mail diferente daquele que você usa para comprar OneKey . também excluímos periodicamente essas informações do pedido)",
+    "form__enter_your_email": "Digite seu e-mail",
+    "form__please_enter_an_email_address": "Por favor insira um endereço de e-mail.",
     "menu__advertising": "Publicidade",
     "menu__amazon_global": "Amazônia (Global)",
     "menu__amazon_japan": "Amazônia (Japão)",
@@ -55,5 +58,8 @@
     "menu__token_list_desc": "Adicione tokens ETH, BSC, HECO à extensão e ao aplicativo",
     "menu__user_agreement": "Termo de Acordo do Usuário",
     "menu__venture_capital": "Capital de risco",
-    "menu__youzan": "YouZan"
+    "menu__youzan": "YouZan",
+    "onekey": "OneKey",
+    "title__stay_in_touch": "Manter contato",
+    "title__subscribe_to_our_notifications": "Assine nossas notificações"
 }

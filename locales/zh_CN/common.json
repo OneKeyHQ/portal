@@ -9,6 +9,9 @@
     "coin__dash": "短跑",
     "coin__dogecoin": "狗狗币",
     "coin__ethereum": "以太坊",
+    "form__email_subscribe_information": "订阅我们的通知（出于隐私原因，请使用与您购买时使用的电子邮件不同的电子邮件OneKey 。我们还会定期删除这些订单信息）",
+    "form__enter_your_email": "输入你的电子邮箱",
+    "form__please_enter_an_email_address": "请输入电子邮件地址。",
     "menu__advertising": "广告",
     "menu__amazon_global": "亚马逊（全球）",
     "menu__amazon_japan": "亚马逊（日本）",
@@ -55,5 +58,8 @@
     "menu__token_list_desc": "将 ETH、BSC、HECO 代币添加到 Extension 和 App",
     "menu__user_agreement": "用户协议",
     "menu__venture_capital": "风险投资",
-    "menu__youzan": "有赞"
+    "menu__youzan": "有赞",
+    "onekey": "OneKey",
+    "title__stay_in_touch": "保持联系",
+    "title__subscribe_to_our_notifications": "订阅我们的通知"
 }

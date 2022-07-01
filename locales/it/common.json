@@ -9,6 +9,9 @@
     "coin__dash": "Trattino",
     "coin__dogecoin": "Dogecoin",
     "coin__ethereum": "Ethereum",
+    "form__email_subscribe_information": "Iscriviti alle nostre notifiche (per motivi di privacy, utilizza un'e-mail diversa da quella che usi per acquistare OneKey . eliminiamo periodicamente anche le informazioni sull'ordine)",
+    "form__enter_your_email": "Inserisci il tuo indirizzo email",
+    "form__please_enter_an_email_address": "Si prega di inserire un indirizzo email.",
     "menu__advertising": "Pubblicità",
     "menu__amazon_global": "Amazon (globale)",
     "menu__amazon_japan": "Amazzonia (Giappone)",
@@ -55,5 +58,8 @@
     "menu__token_list_desc": "Aggiungi token ETH, BSC, HECO a Extension e App",
     "menu__user_agreement": "Accordo per gli utenti",
     "menu__venture_capital": "Capitale di rischio",
-    "menu__youzan": "TuZan"
+    "menu__youzan": "TuZan",
+    "onekey": "OneKey",
+    "title__stay_in_touch": "Rimani in contatto",
+    "title__subscribe_to_our_notifications": "Iscriviti alle nostre notifiche"
 }

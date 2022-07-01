@@ -9,6 +9,9 @@
     "coin__dash": "ড্যাশ",
     "coin__dogecoin": "Dogecoin",
     "coin__ethereum": "ইথেরিয়াম",
+    "form__email_subscribe_information": "আমাদের বিজ্ঞপ্তিগুলিতে সাবস্ক্রাইব করুন (গোপনীয়তার কারণে, আপনি যে ইমেলটি OneKey কেনার জন্য ব্যবহার করেন তার থেকে আলাদা ইমেল ব্যবহার করুন। আমরা পর্যায়ক্রমে সেই অর্ডার তথ্যগুলিও মুছে ফেলি)",
+    "form__enter_your_email": "তুমার ইমেইল প্রবেশ করাও",
+    "form__please_enter_an_email_address": "একটি ইমেল ঠিকানা লিখুন.",
     "menu__advertising": "বিজ্ঞাপন",
     "menu__amazon_global": "আমাজন (গ্লোবাল)",
     "menu__amazon_japan": "আমাজন (জাপান)",
@@ -55,5 +58,8 @@
     "menu__token_list_desc": "এক্সটেনশন এবং অ্যাপে ETH, BSC, HECO টোকেন যোগ করুন",
     "menu__user_agreement": "ব্যবহারকারী চুক্তি",
     "menu__venture_capital": "ভেঞ্চার ক্যাপিটাল",
-    "menu__youzan": "ইউজান"
+    "menu__youzan": "ইউজান",
+    "onekey": "OneKey",
+    "title__stay_in_touch": "সাথে থাকুন",
+    "title__subscribe_to_our_notifications": "আমাদের বিজ্ঞপ্তি সাবস্ক্রাইব করুন"
 }

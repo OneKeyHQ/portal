@@ -9,6 +9,9 @@
     "coin__dash": "тире",
     "coin__dogecoin": "Dogecoin",
     "coin__ethereum": "Ethereum",
+    "form__email_subscribe_information": "Підпишіться на наші сповіщення (з міркувань конфіденційності використовуйте іншу електронну адресу, ніж та, яку ви використовуєте для покупки OneKey . Ми також періодично видаляємо цю інформацію про замовлення)",
+    "form__enter_your_email": "Введіть свою електронну адресу",
+    "form__please_enter_an_email_address": "Будь ласка, введіть адресу електронної пошти.",
     "menu__advertising": "Реклама",
     "menu__amazon_global": "Amazon (глобальний)",
     "menu__amazon_japan": "Amazon (Японія)",
@@ -55,5 +58,8 @@
     "menu__token_list_desc": "Додайте токени ETH, BSC, HECO до розширення та програми",
     "menu__user_agreement": "Угода користувача",
     "menu__venture_capital": "Венчурний капітал",
-    "menu__youzan": "YouZan"
+    "menu__youzan": "YouZan",
+    "onekey": "OneKey",
+    "title__stay_in_touch": "Будь на зв'язку",
+    "title__subscribe_to_our_notifications": "Підпишіться на наші сповіщення"
 }
