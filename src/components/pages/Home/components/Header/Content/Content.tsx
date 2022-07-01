@@ -4,7 +4,7 @@ import { useTheme } from '@emotion/react';
 import { useTranslation } from 'gatsby-plugin-react-i18next';
 
 import { useMediaQuery } from '../../../../../../hooks';
-import { dynamicTextStyle } from '../../../../../../utils';
+import { dynamicTextStyle, splitMultiline } from '../../../../../../utils';
 import {
   Box,
   ButtonProps,
@@ -74,15 +74,15 @@ export const Content: FC<ContentProps> = () => {
           xl={{ ...dynamicTextStyle(theme.text.medium800, 'xlarge') }}
           xxl={{ ...theme.text.medium1000 }}
         >
-          {t('title__home_hero_1').split('\\n')[0]}
+          {splitMultiline(t('title__home_hero_1'))[0]}
           {!mediaQuery.small ? <br /> : ''}
-          {t('title__home_hero_1').split('\\n')[1]}
+          {splitMultiline(t('title__home_hero_1'))[1]}
 
           <br />
 
-          {t('title__home_hero_2').split('\\n')[0]}
+          {splitMultiline(t('title__home_hero_2'))[0]}
           {!mediaQuery.small ? <br /> : ''}
-          {t('title__home_hero_2').split('\\n')[1]}
+          {splitMultiline(t('title__home_hero_2'))[1]}
         </H1>
 
         {/* buttons */}
