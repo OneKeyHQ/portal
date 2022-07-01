@@ -1,6 +1,8 @@
 {
     "title__advanced_on_chain_wallet_app": "Erweiterte On-Chain-Wallet-App.",
     "title__advanced_on_chain_wallet_app_desc": "Verwenden Sie die OneKey-App separat, um Ihre Krypto-Assets sicher und bequem zu speichern und zu verwenden. Die Vermögenswerte jedes Benutzers werden angemessen gesichert und lokal gespeichert.",
+    "title__end_to_end_encryption": "Ende-zu-Ende-Verschlüsselung",
+    "title__end_to_end_encryption_desc": "OneKey verwendet branchenführende Verschlüsselungstechnologie, um Ihre Informationen lokal zu speichern. Nur Sie können diese Informationen entschlüsseln.",
     "title__hiring": "Wir stellen selbstmotivierte Leute ein, um dem Team beizutreten.",
     "title__home_hero_1": "Alles in einem\\n Krypto-Wallet.",
     "title__home_hero_2": "Vertrauenswürdige\\n um Millionen.",
@@ -9,5 +11,13 @@
     "title__intuitive_hardware_desc": "Wählen Sie OneKey-Hardware\\n Geldbeutel genau das Richtige für Sie.",
     "title__need_more_security__no_problem": "Brauchen Sie mehr Sicherheit? Kein Problem.",
     "title__need_more_security__no_problem_desc": "Hardware-Wallets bringen die Verbriefung digitaler Assets auf eine andere Ebene. Von der physischen Isolierung von Hackern bis hin zur Verhinderung von Trojanern und Softwareangriffen. Alle Überweisungen müssen von der Hardware Wallet genehmigt werden, sodass Sie sich keine Sorgen über den Verlust oder Diebstahl Ihres Mobiltelefons machen müssen.",
-    "title__trustpilot_score_and_review": "Trustpilot-Ergebnis und Bewertung"
+    "title__security": "Sicherheit",
+    "title__security_desc": "Sicherheit,\\n sowohl hart als auch weich.",
+    "title__simple_yet_secure": "Einfach und doch sicher",
+    "title__simple_yet_secure_desc": "Verwenden Sie die OneKey App allein oder mit der Hardware, um sie für Anfänger einfach zu halten, ohne Kompromisse bei der Sicherheit einzugehen.",
+    "title__truly_open_source": "Wirklich Open-Source",
+    "title__truly_open_source_desc": "Open Source bedeutet, dass wir keinen Code verstecken und für jedermann offen sind, was Mut und Engagement erfordert.",
+    "title__trustpilot_score_and_review": "Trustpilot-Ergebnis und Bewertung",
+    "title__your_crypto_in_your_hands": "Ihre Krypto, in Ihren Händen",
+    "title__your_crypto_in_your_hands_desc": "OneKey speichert weder Ihre privaten Schlüssel noch Ihren Wiederherstellungs-Seed, unsere gesamte Hardware und Software ist Open Source."
 }

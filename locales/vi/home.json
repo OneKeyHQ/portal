@@ -1,6 +1,8 @@
 {
     "title__advanced_on_chain_wallet_app": "Ứng dụng ví trực tuyến nâng cao.",
     "title__advanced_on_chain_wallet_app_desc": "Sử dụng Ứng dụng OneKey riêng để lưu trữ và sử dụng tài sản tiền điện tử của bạn một cách an toàn và thuận tiện. Tài sản của mỗi người dùng được bảo mật và lưu trữ cục bộ một cách thích hợp.",
+    "title__end_to_end_encryption": "Mã hóa end-to-end",
+    "title__end_to_end_encryption_desc": "OneKey sử dụng công nghệ mã hóa hàng đầu trong ngành để lưu trữ cục bộ thông tin của bạn. Chỉ bạn mới có thể giải mã thông tin đó.",
     "title__hiring": "Chúng tôi đang thuê những người năng động để tham gia vào nhóm.",
     "title__home_hero_1": "Tất cả hợp lại thành một\\n ví tiền điện tử.",
     "title__home_hero_2": "Đáng tin cậy\\n bởi hàng triệu.",
@@ -9,5 +11,13 @@
     "title__intuitive_hardware_desc": "Chọn phần cứng OneKey\\n ví phù hợp với bạn.",
     "title__need_more_security__no_problem": "Cần thêm bảo mật? Không vấn đề gì.",
     "title__need_more_security__no_problem_desc": "Ví phần cứng đưa việc chứng khoán hóa tài sản kỹ thuật số lên một cấp độ khác. Từ cách ly vật lý với tin tặc đến ngăn chặn ngựa Trojan và các cuộc tấn công phần mềm. Tất cả các chuyển khoản phải được chấp thuận bởi ví phần cứng, vì vậy bạn không phải lo lắng về việc mất hoặc đánh cắp điện thoại di động của mình.",
-    "title__trustpilot_score_and_review": "Điểm và đánh giá Trustpilot"
+    "title__security": "Bảo vệ",
+    "title__security_desc": "Bảo vệ,\\n vừa cứng vừa mềm.",
+    "title__simple_yet_secure": "Đơn giản nhưng an toàn",
+    "title__simple_yet_secure_desc": "Sử dụng ứng dụng OneKey bằng chính nó hoặc bằng phần cứng, đơn giản cho người mới bắt đầu mà không ảnh hưởng đến bảo mật.",
+    "title__truly_open_source": "Nguồn mở thực sự",
+    "title__truly_open_source_desc": "Mã nguồn mở có nghĩa là chúng tôi không giấu bất kỳ mã nào và luôn sẵn sàng cho mọi người kiểm tra, điều này cần có sự can đảm và cam kết.",
+    "title__trustpilot_score_and_review": "Điểm và đánh giá Trustpilot",
+    "title__your_crypto_in_your_hands": "Tiền điện tử của bạn, trong tay bạn",
+    "title__your_crypto_in_your_hands_desc": "OneKey sẽ không lưu trữ khóa cá nhân hoặc hạt giống khôi phục của bạn, tất cả phần cứng và phần mềm của chúng tôi đều là mã nguồn mở."
 }

@@ -1,6 +1,8 @@
 {
     "title__advanced_on_chain_wallet_app": "Aplicativo avançado de carteira on-chain.",
     "title__advanced_on_chain_wallet_app_desc": "Use o aplicativo OneKey separadamente para armazenar e usar seus ativos de criptografia de maneira segura e conveniente. Os ativos de cada usuário são adequadamente protegidos e armazenados localmente.",
+    "title__end_to_end_encryption": "Criptografia de ponta a ponta",
+    "title__end_to_end_encryption_desc": "OneKey usa tecnologia de criptografia líder do setor para armazenar suas informações localmente. Só você pode descriptografar essas informações.",
     "title__hiring": "Estamos contratando pessoas automotivadas para se juntar à equipe.",
     "title__home_hero_1": "Tudo em um\\n carteira criptográfica.",
     "title__home_hero_2": "Confiável\\n por milhões.",
@@ -9,5 +11,13 @@
     "title__intuitive_hardware_desc": "Escolha o hardware OneKey\\n carteira certa para você.",
     "title__need_more_security__no_problem": "Precisa de mais segurança? Sem problemas.",
     "title__need_more_security__no_problem_desc": "As carteiras de hardware levam a securitização de ativos digitais a outro nível. Desde o isolamento físico de hackers até a prevenção de cavalos de Tróia e ataques de software. Todas as transferências devem ser aprovadas pela carteira de hardware, para que você não precise se preocupar com a perda ou roubo do seu celular.",
-    "title__trustpilot_score_and_review": "Pontuação e revisão do Trustpilot"
+    "title__security": "segurança",
+    "title__security_desc": "Segurança,\\n tanto duro como macio.",
+    "title__simple_yet_secure": "Simples mas seguro",
+    "title__simple_yet_secure_desc": "Use o OneKey sozinho ou com o hardware, mantendo-o simples para iniciantes sem comprometer a segurança.",
+    "title__truly_open_source": "Verdadeiramente código aberto",
+    "title__truly_open_source_desc": "Código aberto significa que não escondemos nenhum código e estamos abertos à inspeção de todos, o que exige coragem e comprometimento.",
+    "title__trustpilot_score_and_review": "Pontuação e revisão do Trustpilot",
+    "title__your_crypto_in_your_hands": "Sua criptomoeda, em suas mãos",
+    "title__your_crypto_in_your_hands_desc": "O OneKey não armazenará suas chaves privadas ou sementes de recuperação, todo o nosso hardware e software são de código aberto."
 }

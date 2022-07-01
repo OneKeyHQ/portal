@@ -1,6 +1,8 @@
 {
     "title__advanced_on_chain_wallet_app": "Advanced on-chain wallet app.",
     "title__advanced_on_chain_wallet_app_desc": "Use OneKey App separately to store and use your crypto assets in a secure and convenient manner. Each user's assets are appropriately secured and stored locally.",
+    "title__end_to_end_encryption": "End-to-end encryption",
+    "title__end_to_end_encryption_desc": "OneKey uses industry-leading encryption technology to store your information locally. Only you can decrypt that information.",
     "title__hiring": "We're hiring self-motivated people to join the team.",
     "title__home_hero_1": "All-in-one\\ncrypto wallet.",
     "title__home_hero_2": "Trusted\\nby millions.",
@@ -9,5 +11,13 @@
     "title__intuitive_hardware_desc": "Choose OneKey hardware\\nwallet right for you.",
     "title__need_more_security__no_problem": "Need more security?  No problem.",
     "title__need_more_security__no_problem_desc": "Hardware wallets take the securitisation of digital assets to another level. From physically isolating hackers to preventing Trojan horses and software attacks. All transfers must be approved by the hardware wallet, so you don't have to worry about the loss or theft of your mobile phone.",
-    "title__trustpilot_score_and_review": "Trustpilot score & review"
+    "title__security": "security",
+    "title__security_desc": "Security,\\nboth hard and soft.",
+    "title__simple_yet_secure": "Simple yet secure",
+    "title__simple_yet_secure_desc": "Use the OneKey App by itself or with the hardware, keeping it simple for beginners without compromising on security.",
+    "title__truly_open_source": "Truly open source",
+    "title__truly_open_source_desc": "Open source means that we don't hide any code and are open to inspection by everyone, which takes courage and commitment.",
+    "title__trustpilot_score_and_review": "Trustpilot score & review",
+    "title__your_crypto_in_your_hands": "Your crypto, in your hands",
+    "title__your_crypto_in_your_hands_desc": "OneKey will not store your private keys or recovery seed, all our hardware and software are open source."
 }

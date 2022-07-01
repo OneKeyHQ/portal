@@ -1,6 +1,8 @@
 {
     "title__advanced_on_chain_wallet_app": "Application avancée de portefeuille en chaîne.",
     "title__advanced_on_chain_wallet_app_desc": "Utilisez OneKey App séparément pour stocker et utiliser vos actifs cryptographiques de manière sécurisée et pratique. Les actifs de chaque utilisateur sont correctement sécurisés et stockés localement.",
+    "title__end_to_end_encryption": "Cryptage de bout en bout",
+    "title__end_to_end_encryption_desc": "OneKey utilise une technologie de cryptage de pointe pour stocker vos informations localement. Vous seul pouvez décrypter ces informations.",
     "title__hiring": "Nous recrutons des personnes motivées pour rejoindre l'équipe.",
     "title__home_hero_1": "Tout en un\\n porte-monnaie crypté.",
     "title__home_hero_2": "De confiance\\n par millions.",
@@ -9,5 +11,13 @@
     "title__intuitive_hardware_desc": "Choisissez le matériel OneKey\\n portefeuille qui vous convient.",
     "title__need_more_security__no_problem": "Besoin de plus de sécurité ? Aucun problème.",
     "title__need_more_security__no_problem_desc": "Les portefeuilles matériels élèvent la sécurisation des actifs numériques à un autre niveau. De l'isolement physique des pirates à la prévention des chevaux de Troie et des attaques logicielles. Tous les transferts doivent être approuvés par le portefeuille matériel, vous n'avez donc pas à vous soucier de la perte ou du vol de votre téléphone portable.",
-    "title__trustpilot_score_and_review": "Note et avis Trustpilot"
+    "title__security": "Sécurité",
+    "title__security_desc": "Sécurité,\\n à la fois dur et mou.",
+    "title__simple_yet_secure": "Simple mais sécurisé",
+    "title__simple_yet_secure_desc": "Utilisez l' OneKey seule ou avec le matériel, en la gardant simple pour les débutants sans compromettre la sécurité.",
+    "title__truly_open_source": "Vraiment open source",
+    "title__truly_open_source_desc": "L'open source signifie que nous ne cachons aucun code et que nous sommes ouverts à l'inspection de tous, ce qui demande du courage et de l'engagement.",
+    "title__trustpilot_score_and_review": "Note et avis Trustpilot",
+    "title__your_crypto_in_your_hands": "Votre crypto, entre vos mains",
+    "title__your_crypto_in_your_hands_desc": "OneKey ne stockera pas vos clés privées ou vos graines de récupération, tout notre matériel et nos logiciels sont open source."
 }

@@ -1,6 +1,8 @@
 {
     "title__advanced_on_chain_wallet_app": "先進的鏈上錢包應用程序。",
     "title__advanced_on_chain_wallet_app_desc": "單獨使用 OneKey App 以安全便捷的方式存儲和使用您的加密資產。每個用戶的資產都在本地得到適當的保護和存儲。",
+    "title__end_to_end_encryption": "端到端加密",
+    "title__end_to_end_encryption_desc": "OneKey使用行業領先的加密技術在本地存儲您的信息。只有您可以解密該信息。",
     "title__hiring": "我們正在招聘有上進心的人加入團隊。",
     "title__home_hero_1": "一體\\n加密錢包。",
     "title__home_hero_2": "值得信賴\\n以百萬計。",
@@ -9,5 +11,13 @@
     "title__intuitive_hardware_desc": "選擇一鍵硬件\\n適合你的錢包。",
     "title__need_more_security__no_problem": "需要更多安全性？沒問題。",
     "title__need_more_security__no_problem_desc": "硬件錢包將數字資產的證券化提升到了另一個層次。從物理隔離黑客到防止特洛伊木馬和軟件攻擊。所有轉賬都必須經過硬件錢包的批准，因此您不必擔心手機丟失或被盜。",
-    "title__trustpilot_score_and_review": "Trustpilot 評分和評論"
+    "title__security": "安全",
+    "title__security_desc": "安全，\\n既硬又軟。",
+    "title__simple_yet_secure": "簡單而安全",
+    "title__simple_yet_secure_desc": "單獨使用OneKey應用程序或與硬件一起使用，在不影響安全性的情況下為初學者保持簡單。",
+    "title__truly_open_source": "真正的開源",
+    "title__truly_open_source_desc": "開源意味著我們不隱藏任何代碼，開放給所有人檢查，這需要勇氣和承諾。",
+    "title__trustpilot_score_and_review": "Trustpilot 評分和評論",
+    "title__your_crypto_in_your_hands": "你的加密貨幣，在你的手中",
+    "title__your_crypto_in_your_hands_desc": "OneKey 不會存儲您的私鑰或恢復種子，我們所有的硬件和軟件都是開源的。"
 }
