@@ -1,4 +1,5 @@
 {
+    "action__coming_soon": "快來了",
     "action__free_download": "免費下載",
     "action__go_to_shop": "去商店",
     "action__launch_app": "啟動應用程序",
@@ -9,6 +10,9 @@
     "coin__dash": "短跑",
     "coin__dogecoin": "狗狗幣",
     "coin__ethereum": "以太坊",
+    "content__all_new_design__secure_chip_supercharged__beautiful_and_true_color_display": "全新設計，安全芯片增壓，靚麗真彩顯示。",
+    "content__biometric_tech__optical_encryption__so_many_reasons_to_go_pro": "生物識別技術、光學加密，有很多選擇 Pro 的理由。",
+    "content__mini_sized_safety_without_compromise": "迷你尺寸，安全性毫不妥協。",
     "form__email_subscribe_information": "訂閱我們的通知（出於隱私原因，請使用與您購買時使用的電子郵件不同的電子郵件OneKey 。我們還會定期刪除這些訂單信息）",
     "form__enter_your_email": "輸入你的電子郵箱",
     "form__please_enter_an_email_address": "請輸入電子郵件地址。",

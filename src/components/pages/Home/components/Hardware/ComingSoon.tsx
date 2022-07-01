@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { BoxProps, Span } from '../../../../base';
+import { BoxProps, I18n, Span } from '../../../../base';
 
 export const ComingSoon: FC<BoxProps> = (props) => {
   const theme = useTheme();
@@ -22,7 +22,7 @@ export const ComingSoon: FC<BoxProps> = (props) => {
       }}
       externalProps={props}
     >
-      coming soon
+      <I18n name="action__coming_soon" />
     </Span>
   );
 };

@@ -11,6 +11,7 @@ import {
   Container,
   Flex,
   GoToShopButton,
+  I18n,
   Span,
   Swiper as SwiperComponent,
   SwiperSlide,
@@ -67,18 +68,23 @@ export const Hardware: React.FC = () => {
                 xs={{
                   ...theme.text.medium500,
                   color: theme.background.test300,
+                  textTransform: 'uppercase',
                 }}
                 m={{
                   ...theme.text.medium600,
                 }}
               >
-                INTUITIVE HARDWARE
+                <I18n name="title__intuitive_hardware" />
               </Span>
               <Span
                 xs={{ ...theme.text.medium800, color: '#ffffff' }}
                 m={{ ...theme.text.medium900 }}
               >
-                Choose OneKey hardware <br /> wallet right for you.
+                <I18n
+                  name="title__intuitive_hardware_desc"
+                  multiLine={['m', 'l', 'xl', 'xxl']}
+                  singleLine={['xs', 's']}
+                />
               </Span>
             </Flex>
             <Box>

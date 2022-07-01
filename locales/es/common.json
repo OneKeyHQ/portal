@@ -1,4 +1,5 @@
 {
+    "action__coming_soon": "próximamente, en breve, pronto",
     "action__free_download": "Descarga gratis",
     "action__go_to_shop": "Ir a la tienda",
     "action__launch_app": "Ejecutar aplicación",
@@ -9,6 +10,9 @@
     "coin__dash": "Estrellarse",
     "coin__dogecoin": "dogecoin",
     "coin__ethereum": "Etéreo",
+    "content__all_new_design__secure_chip_supercharged__beautiful_and_true_color_display": "Diseño completamente nuevo, chip seguro sobrealimentado, hermosa y verdadera pantalla a color.",
+    "content__biometric_tech__optical_encryption__so_many_reasons_to_go_pro": "Tecnología biométrica, encriptación óptica, tantas razones para volverse profesional.",
+    "content__mini_sized_safety_without_compromise": "Mini tamaño, seguridad sin compromiso.",
     "form__email_subscribe_information": "Suscríbase a nuestras notificaciones (por razones de privacidad, use un correo electrónico diferente al que usa para comprar OneKey . También borramos periódicamente esa información de pedido)",
     "form__enter_your_email": "Introduce tu correo electrónico",
     "form__please_enter_an_email_address": "Por favor introduzca una dirección de correo eléctronico.",

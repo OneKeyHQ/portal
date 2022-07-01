@@ -1,4 +1,5 @@
 {
+    "action__coming_soon": "Prossimamente",
     "action__free_download": "Download gratuito",
     "action__go_to_shop": "Vai a fare la spesa",
     "action__launch_app": "Avvia app",
@@ -9,6 +10,9 @@
     "coin__dash": "Trattino",
     "coin__dogecoin": "Dogecoin",
     "coin__ethereum": "Ethereum",
+    "content__all_new_design__secure_chip_supercharged__beautiful_and_true_color_display": "Design completamente nuovo, display a colori sicuro e sovralimentato con chip sicuro.",
+    "content__biometric_tech__optical_encryption__so_many_reasons_to_go_pro": "Tecnologia biometrica, crittografia ottica, tanti motivi per passare a Pro.",
+    "content__mini_sized_safety_without_compromise": "Dimensioni ridotte, sicurezza senza compromessi.",
     "form__email_subscribe_information": "Iscriviti alle nostre notifiche (per motivi di privacy, utilizza un'e-mail diversa da quella che usi per acquistare OneKey . eliminiamo periodicamente anche le informazioni sull'ordine)",
     "form__enter_your_email": "Inserisci il tuo indirizzo email",
     "form__please_enter_an_email_address": "Si prega di inserire un indirizzo email.",

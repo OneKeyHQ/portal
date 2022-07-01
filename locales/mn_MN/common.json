@@ -1,4 +1,5 @@
 {
+    "action__coming_soon": "тун удахгүй",
     "action__free_download": "Үнэгүй татах",
     "action__go_to_shop": "Дэлгүүрт оч",
     "action__launch_app": "Апп-ыг ажиллуул",
@@ -9,6 +10,9 @@
     "coin__dash": "Зураас",
     "coin__dogecoin": "Догекоин",
     "coin__ethereum": "Ethereum",
+    "content__all_new_design__secure_chip_supercharged__beautiful_and_true_color_display": "Цоо шинэ загвар, найдвартай чипээр цэнэглэгдсэн, үзэсгэлэнтэй, жинхэнэ өнгөт дэлгэц.",
+    "content__biometric_tech__optical_encryption__so_many_reasons_to_go_pro": "Биометрийн технологи, оптик шифрлэлт, Pro руу шилжих олон шалтгаан бий.",
+    "content__mini_sized_safety_without_compromise": "Хэмжээ багатай, аюулгүй байдал алдагдахгүй.",
     "form__email_subscribe_information": "Манай мэдэгдлүүдийг захиалах (нууцлалын үүднээс худалдан авахдаа ашигладаг имэйлээс өөр имэйл ашиглана уу OneKey . Бид мөн эдгээр захиалгын мэдээллийг үе үе устгадаг)",
     "form__enter_your_email": "Имэйлээ оруулна уу",
     "form__please_enter_an_email_address": "Имэйл хаягаа оруулна уу.",

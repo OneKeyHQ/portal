@@ -1,4 +1,5 @@
 {
+    "action__coming_soon": "вскоре",
     "action__free_download": "Скачать бесплатно",
     "action__go_to_shop": "Идти в магазин",
     "action__launch_app": "Запустить приложение",
@@ -9,6 +10,9 @@
     "coin__dash": "Бросаться",
     "coin__dogecoin": "Догикойн",
     "coin__ethereum": "Эфириум",
+    "content__all_new_design__secure_chip_supercharged__beautiful_and_true_color_display": "Абсолютно новый дизайн, защищенный чип с наддувом, красивый и реалистичный цветной дисплей.",
+    "content__biometric_tech__optical_encryption__so_many_reasons_to_go_pro": "Биометрические технологии, оптическое шифрование — так много причин, чтобы стать профессионалом.",
+    "content__mini_sized_safety_without_compromise": "Миниатюрный размер, безопасность без компромиссов.",
     "form__email_subscribe_information": "Подпишитесь на наши уведомления (из соображений конфиденциальности используйте другой адрес электронной почты, отличный от того, который вы использовали для покупки OneKey . Мы также периодически удаляем эту информацию о заказе)",
     "form__enter_your_email": "Введите адрес электронной почты",
     "form__please_enter_an_email_address": "Пожалуйста, введите свой адрес электронной почты.",

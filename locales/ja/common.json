@@ -1,4 +1,5 @@
 {
+    "action__coming_soon": "近日公開",
     "action__free_download": "無料ダウンロード",
     "action__go_to_shop": "店へ出かける",
     "action__launch_app": "アプリを起動",
@@ -9,6 +10,9 @@
     "coin__dash": "ダッシュ",
     "coin__dogecoin": "ドージコイン",
     "coin__ethereum": "イーサリアム",
+    "content__all_new_design__secure_chip_supercharged__beautiful_and_true_color_display": "まったく新しいデザイン、安全なチップ過給、美しくトゥルーカラーのディスプレイ。",
+    "content__biometric_tech__optical_encryption__so_many_reasons_to_go_pro": "生体認証技術、光暗号化、Proに移行する理由はたくさんあります。",
+    "content__mini_sized_safety_without_compromise": "ミニサイズ、妥協のない安全性。",
     "form__email_subscribe_information": "通知を購読します（プライバシー上の理由から、購入に使用したものとは異なる電子メールを使用しますOneKey 。これらの注文情報も定期的に削除します）",
     "form__enter_your_email": "メールアドレスを入力",
     "form__please_enter_an_email_address": "メールアドレスを入力してください。",

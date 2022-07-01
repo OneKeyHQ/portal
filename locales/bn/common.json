@@ -1,4 +1,5 @@
 {
+    "action__coming_soon": "শীঘ্রই আসছে",
     "action__free_download": "বিনামুল্যে ডাউনলোড",
     "action__go_to_shop": "দোকানে যাও",
     "action__launch_app": "এপ্লিকেশন চালু করুন",
@@ -9,6 +10,9 @@
     "coin__dash": "ড্যাশ",
     "coin__dogecoin": "Dogecoin",
     "coin__ethereum": "ইথেরিয়াম",
+    "content__all_new_design__secure_chip_supercharged__beautiful_and_true_color_display": "সম্পূর্ণ নতুন ডিজাইন, সুরক্ষিত চিপ সুপারচার্জড, সুন্দর এবং সত্যিকারের রঙের ডিসপ্লে।",
+    "content__biometric_tech__optical_encryption__so_many_reasons_to_go_pro": "বায়োমেট্রিক প্রযুক্তি, অপটিক্যাল এনক্রিপশন, প্রো যাওয়ার অনেক কারণ।",
+    "content__mini_sized_safety_without_compromise": "মিনি আকারের, আপস ছাড়া নিরাপত্তা.",
     "form__email_subscribe_information": "আমাদের বিজ্ঞপ্তিগুলিতে সাবস্ক্রাইব করুন (গোপনীয়তার কারণে, আপনি যে ইমেলটি OneKey কেনার জন্য ব্যবহার করেন তার থেকে আলাদা ইমেল ব্যবহার করুন। আমরা পর্যায়ক্রমে সেই অর্ডার তথ্যগুলিও মুছে ফেলি)",
     "form__enter_your_email": "তুমার ইমেইল প্রবেশ করাও",
     "form__please_enter_an_email_address": "একটি ইমেল ঠিকানা লিখুন.",

@@ -1,4 +1,5 @@
 {
+    "action__coming_soon": "malapit na",
     "action__free_download": "Libreng pag-download",
     "action__go_to_shop": "Pumunta sa Shop",
     "action__launch_app": "Ilunsad ang App",
@@ -9,6 +10,9 @@
     "coin__dash": "Dash",
     "coin__dogecoin": "Dogecoin",
     "coin__ethereum": "Ethereum",
+    "content__all_new_design__secure_chip_supercharged__beautiful_and_true_color_display": "Bagong disenyo, secure na chip supercharged, maganda at totoong kulay na display.",
+    "content__biometric_tech__optical_encryption__so_many_reasons_to_go_pro": "Biometric tech, optical encryption, napakaraming dahilan para maging Pro.",
+    "content__mini_sized_safety_without_compromise": "Mini sized, kaligtasan nang walang kompromiso.",
     "form__email_subscribe_information": "Mag-subscribe sa aming mga notification (para sa kadahilanang privacy, gumamit ng ibang email kaysa sa ginagamit mo sa pagbili ng OneKey . pana-panahon din naming tinatanggal ang impormasyon ng order na iyon)",
     "form__enter_your_email": "Ilagay ang iyong email",
     "form__please_enter_an_email_address": "Mangyaring magpasok ng email address.",

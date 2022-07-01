@@ -1,4 +1,5 @@
 {
+    "action__coming_soon": "coming soon",
     "action__free_download": "Free Download",
     "action__go_to_shop": "Go to Shop",
     "action__launch_app": "Launch App",
@@ -9,6 +10,9 @@
     "coin__dash": "Dash",
     "coin__dogecoin": "Dogecoin",
     "coin__ethereum": "Ethereum",
+    "content__all_new_design__secure_chip_supercharged__beautiful_and_true_color_display": "All-new design, secure chip supercharged, beautiful and true color display.",
+    "content__biometric_tech__optical_encryption__so_many_reasons_to_go_pro": "Biometric tech, optical encryption, so many reasons to go Pro.",
+    "content__mini_sized_safety_without_compromise": "Mini sized, safety without compromise.",
     "form__email_subscribe_information": "Subscribe to our notifications (for privacy reason, use different email than the one you use to purchase OneKey. we also periodically delete those order information)",
     "form__enter_your_email": "Enter your email",
     "form__please_enter_an_email_address": "Please enter an email address.",

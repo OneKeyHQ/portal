@@ -1,4 +1,5 @@
 {
+    "action__coming_soon": "เร็วๆ นี้",
     "action__free_download": "ดาวน์โหลดฟรี",
     "action__go_to_shop": "ไปที่ร้านค้า",
     "action__launch_app": "เปิดแอป",
@@ -9,6 +10,9 @@
     "coin__dash": "Dash",
     "coin__dogecoin": "Dogecoin",
     "coin__ethereum": "Ethereum",
+    "content__all_new_design__secure_chip_supercharged__beautiful_and_true_color_display": "ดีไซน์ใหม่ทั้งหมด ชิพซูเปอร์ชาร์จที่ปลอดภัย หน้าจอสีสวยงามและสมจริง",
+    "content__biometric_tech__optical_encryption__so_many_reasons_to_go_pro": "เทคโนโลยีไบโอเมตริกซ์ การเข้ารหัสด้วยแสง เหตุผลมากมายที่ควรใช้ Pro",
+    "content__mini_sized_safety_without_compromise": "ขนาดเล็ก ปลอดภัยไร้ที่ติ",
     "form__email_subscribe_information": "สมัครรับการแจ้งเตือนของเรา (เพื่อความเป็นส่วนตัว โปรดใช้อีเมลอื่นที่ไม่ใช่อีเมลที่คุณใช้ซื้อ OneKey เรายังลบข้อมูลคำสั่งซื้อเหล่านั้นเป็นระยะ)",
     "form__enter_your_email": "กรอกอีเมล์ของคุณ",
     "form__please_enter_an_email_address": "กรุณาใส่ที่อยู่อีเมล.",

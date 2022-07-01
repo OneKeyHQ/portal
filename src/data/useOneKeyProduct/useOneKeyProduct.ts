@@ -22,7 +22,7 @@ export function useOneKeyProduct(): OneKeyProducts {
       name: 'OneKey Mini',
       price: 58,
       formattedPrice: '$58.00',
-      description: 'Mini sized, safety without compromise.',
+      description: t('content__mini_sized_safety_without_compromise'),
       path: '/products/onekey-mini-hardware-wallet/',
       shops: {
         amazonGlobal: {
@@ -48,8 +48,9 @@ export function useOneKeyProduct(): OneKeyProducts {
       name: 'OneKey Touch',
       price: 135,
       formattedPrice: '$135.00',
-      description:
-        'All-new design, secure chip supercharged, beautiful and true color display.',
+      description: t(
+        'content__all_new_design__secure_chip_supercharged__beautiful_and_true_color_display',
+      ),
       path: '/products/onekey-touch-hardware-wallet/',
       shops: {
         amazonGlobal: undefined,
@@ -86,8 +87,9 @@ export function useOneKeyProduct(): OneKeyProducts {
       name: 'OneKey Pro',
       price: 195,
       formattedPrice: '$195.00',
-      description:
-        'Biometric tech, optical encryption, so many reasons to go Pro.',
+      description: t(
+        'content__biometric_tech__optical_encryption__so_many_reasons_to_go_pro',
+      ),
       path: '',
       shops: {
         amazonGlobal: undefined,
