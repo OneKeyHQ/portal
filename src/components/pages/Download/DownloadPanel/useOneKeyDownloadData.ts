@@ -23,7 +23,7 @@ export function useOneKeyDownloadData() {
   const ios = {
     icon: AppleIcon,
     name: 'App Store',
-    description: `v${formattedData.ios.version}, for iOS 13.0+,<br/>Not available on the Chinese App Store`,
+    description: `v${formattedData.ios.version}, for iOS 14.0+, Not available on the Chinese App Store`,
     url: formattedData.ios.url,
     faq: {
       title: 'iOS FAQ',
