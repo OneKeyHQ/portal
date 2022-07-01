@@ -1,7 +1,11 @@
 {
+    "title__advanced_on_chain_wallet_app": "Advanced on-chain wallet app.",
+    "title__advanced_on_chain_wallet_app_desc": "Use OneKey App separately to store and use your crypto assets in a secure and convenient manner. Each user's assets are appropriately secured and stored locally.",
     "title__hiring": "We're hiring self-motivated people to join the team.",
     "title__home_hero_1": "All-in-one\\ncrypto wallet.",
     "title__home_hero_2": "Trusted\\nby millions.",
     "title__home_slogan": "OneKey is the smartest way\\nto secure, buy, exchange and\\ngrow your crypto assets.",
+    "title__need_more_security__no_problem": "Need more security?  No problem.",
+    "title__need_more_security__no_problem_desc": "Hardware wallets take the securitisation of digital assets to another level. From physically isolating hackers to preventing Trojan horses and software attacks. All transfers must be approved by the hardware wallet, so you don't have to worry about the loss or theft of your mobile phone.",
     "title__trustpilot_score_and_review": "Trustpilot score & review"
 }

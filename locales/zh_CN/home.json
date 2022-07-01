@@ -1,7 +1,11 @@
 {
+    "title__advanced_on_chain_wallet_app": "先进的链上钱包应用程序。",
+    "title__advanced_on_chain_wallet_app_desc": "单独使用 OneKey App 以安全便捷的方式存储和使用您的加密资产。每个用户的资产都在本地得到适当的保护和存储。",
     "title__hiring": "我们正在招聘有上进心的人加入团队。",
     "title__home_hero_1": "一体\\n加密钱包。",
     "title__home_hero_2": "值得信赖\\n以百万计。",
     "title__home_slogan": "OneKey是最聪明的方法\\n确保、购买、交换和\\n增加你的加密资产。",
+    "title__need_more_security__no_problem": "需要更多安全性？没问题。",
+    "title__need_more_security__no_problem_desc": "硬件钱包将数字资产的证券化提升到了另一个层次。从物理隔离黑客到防止特洛伊木马和软件攻击。所有转账都必须经过硬件钱包的批准，因此您不必担心手机丢失或被盗。",
     "title__trustpilot_score_and_review": "Trustpilot 评分和评论"
 }
