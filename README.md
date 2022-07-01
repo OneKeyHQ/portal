@@ -42,3 +42,9 @@ yarn run build
 ```
 yarn run icon
 ```
+
+## Generate i18n files
+
+```
+yarn run lokalise
+```

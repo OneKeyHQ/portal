@@ -8,3 +8,4 @@ export * from './fetcher';
 export * from './isEmail';
 export * from './staticAssetPrefix';
 export * from './splitMultiline';
+export * from './removeTextBreak';

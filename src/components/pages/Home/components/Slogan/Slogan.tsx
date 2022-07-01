@@ -3,15 +3,13 @@ import React from 'react';
 import { useTheme } from '@emotion/react';
 import { motion } from 'framer-motion';
 
-import { useMediaQuery } from '../../../../../hooks';
-import { Box, Container, Section } from '../../../../base';
+import { Box, Container, I18n, Section } from '../../../../base';
 
 import { itemVariants, variants } from './animationVariants';
 import { OneKey } from './OneKey';
 
 export const Slogan: React.FC = () => {
   const theme = useTheme();
-  const media = useMediaQuery();
 
   return (
     <Section
@@ -50,18 +48,14 @@ export const Slogan: React.FC = () => {
             whileInView="open"
             initial="closed"
           >
-            {media.medium ? (
-              <motion.span variants={itemVariants}>
-                <OneKey /> is the smartest way
-                <br /> to secure, buy, exchange and <br />
-                grow your crypto assets.
-              </motion.span>
-            ) : (
-              <motion.span variants={itemVariants}>
-                <OneKey /> is the smartest way to secure, buy, exchange and grow
-                your crypto assets.
-              </motion.span>
-            )}
+            <motion.span variants={itemVariants}>
+              <OneKey />{' '}
+              <I18n
+                singleLine={['xs', 's']}
+                multiLine={['m', 'l', 'xl', 'xxl']}
+                name="title__home_slogan"
+              />
+            </motion.span>
           </motion.p>
         </Box>
       </Container>

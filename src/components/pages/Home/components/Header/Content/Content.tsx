@@ -4,7 +4,7 @@ import { useTheme } from '@emotion/react';
 import { useTranslation } from 'gatsby-plugin-react-i18next';
 
 import { useMediaQuery } from '../../../../../../hooks';
-import { dynamicTextStyle, splitMultiline } from '../../../../../../utils';
+import { dynamicTextStyle } from '../../../../../../utils';
 import {
   Box,
   ButtonProps,
@@ -12,6 +12,7 @@ import {
   Flex,
   GoToShopButton,
   H1,
+  I18n,
   Link,
   Span,
 } from '../../../../../base';
@@ -74,15 +75,19 @@ export const Content: FC<ContentProps> = () => {
           xl={{ ...dynamicTextStyle(theme.text.medium800, 'xlarge') }}
           xxl={{ ...theme.text.medium1000 }}
         >
-          {splitMultiline(t('title__home_hero_1'))[0]}
-          {!mediaQuery.small ? <br /> : ''}
-          {splitMultiline(t('title__home_hero_1'))[1]}
+          <I18n
+            multiLine={['xs', 's']}
+            singleLine={['m', 'l', 'xl', 'xxl']}
+            name="title__home_hero_1"
+          />
 
           <br />
 
-          {splitMultiline(t('title__home_hero_2'))[0]}
-          {!mediaQuery.small ? <br /> : ''}
-          {splitMultiline(t('title__home_hero_2'))[1]}
+          <I18n
+            multiLine={['xs', 's']}
+            singleLine={['m', 'l', 'xl', 'xxl']}
+            name="title__home_hero_2"
+          />
         </H1>
 
         {/* buttons */}

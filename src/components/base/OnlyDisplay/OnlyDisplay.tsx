@@ -1,8 +1,8 @@
 import { FC, ReactNode } from 'react';
 
-import { Box } from '../Box';
+import { Box, BoxProps } from '../Box';
 
-export interface OnlyDisplayProps {
+export interface OnlyDisplayProps extends BoxProps {
   children?: ReactNode;
   xs?: boolean;
   s?: boolean;
@@ -10,6 +10,7 @@ export interface OnlyDisplayProps {
   l?: boolean;
   xl?: boolean;
   xxl?: boolean;
+  display?: string;
 }
 
 export const OnlyDisplay: FC<OnlyDisplayProps> = (props) => {
@@ -21,16 +22,21 @@ export const OnlyDisplay: FC<OnlyDisplayProps> = (props) => {
     xl = false,
     xxl = false,
     children,
+    display = 'block',
+    as,
+    ...otherProps
   } = props;
 
   return (
     <Box
-      xs={{ display: xs ? 'block' : 'none' }}
-      s={{ display: s ? 'block' : 'none' }}
-      m={{ display: m ? 'block' : 'none' }}
-      l={{ display: l ? 'block' : 'none' }}
-      xl={{ display: xl ? 'block' : 'none' }}
-      xxl={{ display: xxl ? 'block' : 'none' }}
+      as={as}
+      xs={{ display: xs ? display : 'none' }}
+      s={{ display: s ? display : 'none' }}
+      m={{ display: m ? display : 'none' }}
+      l={{ display: l ? display : 'none' }}
+      xl={{ display: xl ? display : 'none' }}
+      xxl={{ display: xxl ? display : 'none' }}
+      externalProps={otherProps}
     >
       {children}
     </Box>

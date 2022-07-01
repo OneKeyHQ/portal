@@ -22,3 +22,5 @@ export * from './OnlyDisplay';
 export * from './EmailLink';
 export * from './Select';
 export * from './Menu';
+export * from './MultilineText';
+export * from './I18n';
