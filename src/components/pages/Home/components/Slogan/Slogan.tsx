@@ -2,6 +2,7 @@ import React from 'react';
 
 import { useTheme } from '@emotion/react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'gatsby-plugin-react-i18next';
 
 import { Box, Container, I18n, Section } from '../../../../base';
 
@@ -10,6 +11,7 @@ import { OneKey } from './OneKey';
 
 export const Slogan: React.FC = () => {
   const theme = useTheme();
+  const { t } = useTranslation();
 
   return (
     <Section
@@ -47,7 +49,7 @@ export const Slogan: React.FC = () => {
               <I18n
                 singleLine={['xs', 's']}
                 multiLine={['m', 'l', 'xl', 'xxl']}
-                name="title__home_slogan"
+                text={t('title__home_slogan').replace('OneKey', '')}
               />
             </motion.span>
           </motion.p>

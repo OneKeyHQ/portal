@@ -9,17 +9,24 @@ import { OnlyDisplay } from '../OnlyDisplay';
 
 export interface I18nProps {
   children?: ReactNode;
-  name: string;
+  name?: string;
   text?: string;
   multiLine?: ResponsiveStyleKeys[];
   singleLine?: ResponsiveStyleKeys[];
 }
 
 export const I18n: FC<I18nProps> = (props) => {
-  const { children, name, multiLine, singleLine, text: nativeText } = props;
+  const {
+    children,
+    name,
+    multiLine,
+    singleLine,
+    text: nativeText = '',
+  } = props;
   const { t } = useTranslation();
-  const text = t(name);
-  const singleLineText = nativeText || removeTextBreak(text);
+
+  const text = name ? t(name) : nativeText;
+  const singleLineText = removeTextBreak(text);
 
   if (!multiLine || !singleLine) {
     return (
@@ -48,7 +55,7 @@ export const I18n: FC<I18nProps> = (props) => {
   );
 
   return (
-    <Fragment key={text}>
+    <Fragment key={text || singleLineText || nativeText}>
       <OnlyDisplay display="inline" as="span" {...singleLineProps}>
         {singleLineText}
       </OnlyDisplay>
