@@ -64,6 +64,12 @@
     "menu__venture_capital": "Венчурный капитал",
     "menu__youzan": "Юзан",
     "onekey": "OneKey",
+    "title__app_store": "Магазин приложений",
+    "title__browser_extension": "Расширение для браузера",
+    "title__desktop_app": "Настольное приложение",
+    "title__google_play": "Гугл игры",
+    "title__mobile_app": "Мобильное приложение",
+    "title__other_platforms": "Другие платформы",
     "title__stay_in_touch": "Оставайтесь на связи",
     "title__subscribe_to_our_notifications": "Подпишитесь на наши уведомления"
 }

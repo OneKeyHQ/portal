@@ -64,6 +64,12 @@
     "menu__venture_capital": "กลุ่มทุน",
     "menu__youzan": "ยูซาน",
     "onekey": "OneKey",
+    "title__app_store": "แอพสโตร์",
+    "title__browser_extension": "ส่วนขยายเบราว์เซอร์",
+    "title__desktop_app": "แอพเดสก์ท็อป",
+    "title__google_play": "Google Play",
+    "title__mobile_app": "แอพมือถือ",
+    "title__other_platforms": "แพลตฟอร์มอื่นๆ",
     "title__stay_in_touch": "อยู่ในการติดต่อ",
     "title__subscribe_to_our_notifications": "สมัครรับการแจ้งเตือนของเรา"
 }

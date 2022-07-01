@@ -64,6 +64,12 @@
     "menu__venture_capital": "风险投资",
     "menu__youzan": "有赞",
     "onekey": "OneKey",
+    "title__app_store": "应用商店",
+    "title__browser_extension": "浏览器扩展",
+    "title__desktop_app": "桌面应用",
+    "title__google_play": "谷歌播放",
+    "title__mobile_app": "移动应用",
+    "title__other_platforms": "其他平台",
     "title__stay_in_touch": "保持联系",
     "title__subscribe_to_our_notifications": "订阅我们的通知"
 }

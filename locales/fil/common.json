@@ -64,6 +64,12 @@
     "menu__venture_capital": "Puhunan",
     "menu__youzan": "YouZan",
     "onekey": "OneKey",
+    "title__app_store": "App Store",
+    "title__browser_extension": "Extension ng browser",
+    "title__desktop_app": "Desktop app",
+    "title__google_play": "Google-play",
+    "title__mobile_app": "Mobile app",
+    "title__other_platforms": "Iba pang mga platform",
     "title__stay_in_touch": "Manatiling nakikipag-ugnayan",
     "title__subscribe_to_our_notifications": "Mag-subscribe sa aming mga notification"
 }

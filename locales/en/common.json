@@ -64,6 +64,12 @@
     "menu__venture_capital": "Venture Capital",
     "menu__youzan": "YouZan",
     "onekey": "OneKey",
+    "title__app_store": "App Store",
+    "title__browser_extension": "Browser extension",
+    "title__desktop_app": "Desktop app",
+    "title__google_play": "Google Play",
+    "title__mobile_app": "Mobile app",
+    "title__other_platforms": "Other platforms",
     "title__stay_in_touch": "Stay in touch",
     "title__subscribe_to_our_notifications": "Subscribe to our notifications"
 }

@@ -64,6 +64,12 @@
     "menu__venture_capital": "ভেঞ্চার ক্যাপিটাল",
     "menu__youzan": "ইউজান",
     "onekey": "OneKey",
+    "title__app_store": "অ্যাপ স্টোর",
+    "title__browser_extension": "ব্রাউজার এক্সটেনশন",
+    "title__desktop_app": "ডেস্কটপ অ্যাপ",
+    "title__google_play": "গুগল প্লে",
+    "title__mobile_app": "মোবাইল অ্যাপ",
+    "title__other_platforms": "অন্যান্য প্ল্যাটফর্ম",
     "title__stay_in_touch": "সাথে থাকুন",
     "title__subscribe_to_our_notifications": "আমাদের বিজ্ঞপ্তি সাবস্ক্রাইব করুন"
 }

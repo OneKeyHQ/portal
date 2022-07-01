@@ -64,6 +64,12 @@
     "menu__venture_capital": "Гарааны хөрөнгө",
     "menu__youzan": "YouZan",
     "onekey": "OneKey",
+    "title__app_store": "App Store",
+    "title__browser_extension": "Хөтөчийн өргөтгөл",
+    "title__desktop_app": "Ширээний програм",
+    "title__google_play": "Google Play",
+    "title__mobile_app": "Гар утасны програм",
+    "title__other_platforms": "Бусад платформууд",
     "title__stay_in_touch": "Холбоотой байгаарай",
     "title__subscribe_to_our_notifications": "Манай мэдэгдлүүдийг захиалаарай"
 }

@@ -64,6 +64,12 @@
     "menu__venture_capital": "벤처캐피탈",
     "menu__youzan": "유잔",
     "onekey": "OneKey",
+    "title__app_store": "앱 스토어",
+    "title__browser_extension": "브라우저 확장",
+    "title__desktop_app": "데스크탑 앱",
+    "title__google_play": "구글 플레이",
+    "title__mobile_app": "모바일 앱",
+    "title__other_platforms": "기타 플랫폼",
     "title__stay_in_touch": "연락을 유지하다",
     "title__subscribe_to_our_notifications": "알림 구독"
 }

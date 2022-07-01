@@ -64,6 +64,12 @@
     "menu__venture_capital": "Đầu tư mạo hiểm",
     "menu__youzan": "YouZan",
     "onekey": "OneKey",
+    "title__app_store": "Cửa hàng ứng dụng",
+    "title__browser_extension": "Tiện ích mở rộng trình duyệt",
+    "title__desktop_app": "Ứng dụng máy tính để bàn",
+    "title__google_play": "chợ ứng dụng Google Play",
+    "title__mobile_app": "Ứng dụng di động",
+    "title__other_platforms": "Các nền tảng khác",
     "title__stay_in_touch": "Giữ liên lạc",
     "title__subscribe_to_our_notifications": "Đăng ký nhận thông báo của chúng tôi"
 }

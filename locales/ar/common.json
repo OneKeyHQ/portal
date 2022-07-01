@@ -64,6 +64,12 @@
     "menu__venture_capital": "رأس المال الاستثماري",
     "menu__youzan": "YouZan",
     "onekey": "OneKey",
+    "title__app_store": "متجر التطبيقات",
+    "title__browser_extension": "امتداد المتصفح",
+    "title__desktop_app": "التطبيق سطح المكتب",
+    "title__google_play": "تطبيقات جوجل",
+    "title__mobile_app": "تطبيق الهاتف المحمول",
+    "title__other_platforms": "منصات أخرى",
     "title__stay_in_touch": "ابق على تواصل",
     "title__subscribe_to_our_notifications": "اشترك في إشعاراتنا"
 }

@@ -64,6 +64,12 @@
     "menu__venture_capital": "Венчурний капітал",
     "menu__youzan": "YouZan",
     "onekey": "OneKey",
+    "title__app_store": "Магазин додатків",
+    "title__browser_extension": "Розширення для браузера",
+    "title__desktop_app": "Настільний додаток",
+    "title__google_play": "Google Play",
+    "title__mobile_app": "Мобільний додаток",
+    "title__other_platforms": "Інші платформи",
     "title__stay_in_touch": "Будь на зв'язку",
     "title__subscribe_to_our_notifications": "Підпишіться на наші сповіщення"
 }

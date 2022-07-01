@@ -64,6 +64,12 @@
     "menu__venture_capital": "Capital de risco",
     "menu__youzan": "YouZan",
     "onekey": "OneKey",
+    "title__app_store": "Loja de aplicativos",
+    "title__browser_extension": "Extensão do navegador",
+    "title__desktop_app": "Aplicativo para computador",
+    "title__google_play": "Google Play",
+    "title__mobile_app": "Aplicativo móvel",
+    "title__other_platforms": "Outras plataformas",
     "title__stay_in_touch": "Manter contato",
     "title__subscribe_to_our_notifications": "Assine nossas notificações"
 }

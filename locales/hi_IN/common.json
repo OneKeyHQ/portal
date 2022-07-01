@@ -64,6 +64,12 @@
     "menu__venture_capital": "उद्यम पूंजी",
     "menu__youzan": "YouZan",
     "onekey": "OneKey",
+    "title__app_store": "ऐप स्टोर",
+    "title__browser_extension": "ब्राउज़र एक्सटेंशन",
+    "title__desktop_app": "डेस्कटॉप ऐप",
+    "title__google_play": "गूगल प्ले",
+    "title__mobile_app": "मोबाइल एप्लिकेशन",
+    "title__other_platforms": "अन्य प्लेटफार्म",
     "title__stay_in_touch": "संपर्क में रहना",
     "title__subscribe_to_our_notifications": "हमारे नोटिफिकेशन को सब्सक्राइब करें"
 }

@@ -1,13 +1,21 @@
 import { useMemo } from 'react';
 
 import { useTheme } from '@emotion/react';
+import { useTranslation } from 'gatsby-plugin-react-i18next';
 
 import {
   DownloadTypes,
   useDownloadData,
 } from '../../../../../data/useDownloadData';
 import { useMediaQuery, useRuntimeDetect } from '../../../../../hooks';
-import { Container, Flex, Img, Section, Span } from '../../../../base';
+import {
+  Container,
+  Flex,
+  Img,
+  MultilineText,
+  Section,
+  Span,
+} from '../../../../base';
 
 import arrowSvg from './images/arrow.svg';
 import { StartItem } from './StartItem';
@@ -17,6 +25,7 @@ export const Start = () => {
   const media = useMediaQuery();
   const downloadData = useDownloadData();
   const { isIOS, isAndroid } = useRuntimeDetect();
+  const { t } = useTranslation();
 
   const items = useMemo(() => {
     const innerItems = [];
@@ -75,9 +84,9 @@ export const Start = () => {
               xs={{ ...theme.text.medium900 }}
               xl={{ ...theme.text.medium1200 }}
             >
-              Start using
-              <br />
-              OneKey wallet today.
+              <MultilineText
+                text={t('title__start_using_onekey_wallet_today')}
+              />
             </Span>
 
             <Img
