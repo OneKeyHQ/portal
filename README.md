@@ -48,3 +48,16 @@ yarn run icon
 ```
 yarn run lokalise
 ```
+
+<!--
+function toKey(text) {
+  return {
+    [text
+      .toLowerCase()
+      .replaceAll(' ', '_')
+      .replaceAll('-', '_')
+      .replaceAll('.', '')
+      .replaceAll('?', '_')]: text,
+  };
+}
+ -->

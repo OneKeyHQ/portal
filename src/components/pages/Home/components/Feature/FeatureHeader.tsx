@@ -2,7 +2,7 @@ import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Box, Span } from '../../../../base';
+import { Box, I18n, Span } from '../../../../base';
 import { DownloadButton } from '../../../../common/DownloadButton';
 
 export interface HeaderProps {
@@ -31,7 +31,7 @@ export const FeatureHeader: FC<HeaderProps> = () => {
         m={{ ...textStyle.medium900 }}
         l={{ ...textStyle.medium1000 }}
       >
-        Supercharge great Web3 products.
+        <I18n name="title__supercharge_great_web3_products" />
       </Span>
       <Span
         xs={{ ...textStyle.normal200, color: theme.colors.test400 }}
@@ -39,8 +39,7 @@ export const FeatureHeader: FC<HeaderProps> = () => {
         l={{ ...textStyle.normal400 }}
         xl={{ ...textStyle.normal500 }}
       >
-        Compatible with MetaMask and other wallets. DeFi and Mining also
-        integrated.
+        <I18n name="title__supercharge_great_web3_products_desc" />
       </Span>
 
       <Box>

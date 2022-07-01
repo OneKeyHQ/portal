@@ -1,47 +1,34 @@
 import { StaticImage } from 'gatsby-plugin-image';
+import { useTranslation } from 'gatsby-plugin-react-i18next';
 
 export function useFeatureData() {
+  const { t } = useTranslation();
+
+  const title1 = t('title__free_and_open_source');
+  const title2 = t('title__trade_at_the_best_price');
+  const title3 = t('title__peace_of_mind');
+  const title4 = t('title__all_platforms_covered');
+
   return [
     {
-      image: (
-        <StaticImage
-          src="./images/home-software-01.png"
-          alt="Free and open source"
-        />
-      ),
-      title: 'Free and open source',
-      description:
-        'Other crypto wallets may have backdoor or viruses. We are completely transparent.',
+      image: <StaticImage src="./images/home-software-01.png" alt={title1} />,
+      title: title1,
+      description: t('title__free_and_open_source_desc'),
     },
     {
-      image: (
-        <StaticImage
-          src="./images/home-software-02.png"
-          alt="Trade at the best price"
-        />
-      ),
-      title: 'Trade at the best price',
-      description:
-        "Hassle free, you won't need to jump between exchanges. Securely trade your crypto assets with us. ",
+      image: <StaticImage src="./images/home-software-02.png" alt={title2} />,
+      title: title2,
+      description: t('title__trade_at_the_best_price_desc'),
     },
     {
-      image: (
-        <StaticImage src="./images/home-software-03.png" alt="Peace of mind" />
-      ),
-      title: 'Peace of mind',
-      description:
-        'We use industry-leading technology to protect your crypto, making it super secure.',
+      image: <StaticImage src="./images/home-software-03.png" alt={title3} />,
+      title: title3,
+      description: t('title__peace_of_mind_desc'),
     },
     {
-      image: (
-        <StaticImage
-          src="./images/home-software-04.png"
-          alt="All platforms covered"
-        />
-      ),
-      title: 'All platforms covered',
-      description:
-        "iOS, macOS, Android, Windows, Linux, Chrome, Firefox, Edge, Brave... We got'em all",
+      image: <StaticImage src="./images/home-software-04.png" alt={title4} />,
+      title: title4,
+      description: t('title__all_platforms_covered_desc'),
     },
   ];
 }
