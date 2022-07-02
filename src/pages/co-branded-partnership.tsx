@@ -4,7 +4,12 @@ export { CoBrandedPartnership as default } from '../components/pages/CoBrandedPa
 
 export const query = graphql`
   query ($language: String!) {
-    locales: allLocale(filter: { language: { eq: $language } }) {
+    locales: allLocale(
+      filter: {
+        ns: { in: ["common", "co-branded-partnership"] }
+        language: { eq: $language }
+      }
+    ) {
       edges {
         node {
           ns
