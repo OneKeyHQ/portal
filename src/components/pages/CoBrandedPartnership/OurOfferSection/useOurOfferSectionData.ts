@@ -1,35 +1,49 @@
+import { useTranslation } from 'gatsby-plugin-react-i18next';
+
 export function useOurOfferSectionData() {
+  const { t } = useTranslation();
+
   return {
-    title: 'Our Offer',
-    description:
-      'Customize your OneKey hardware wallet and reward your community, partners, or staff with incentives.',
     cards: [
       {
-        title: 'Standard',
-        points: ['Logo engraving', 'Minimum 100 units'],
-        button: {
-          text: 'Lean More',
-          link: 'https://help.onekey.so/hc/articles/4978923682703',
-        },
-      },
-      {
-        title: 'Pro Team',
-        points: ['Logo engraving', 'Custom packaging', 'Minimum 300 units'],
-        button: {
-          text: 'Lean More',
-          link: 'https://help.onekey.so/hc/articles/4978923682703',
-        },
-      },
-      {
-        title: 'Dropshipping',
+        title: t('title__standard'),
         points: [
-          'Logo engraving',
-          'Custom packaging',
-          'Deliver to end-users',
-          'Minimum 1000 units',
+          t('title__logo_engraving'),
+          t('minimum_int_units', {
+            value: 100,
+          }),
         ],
         button: {
-          text: 'Lean More',
+          text: t('action__learn_more'),
+          link: 'https://help.onekey.so/hc/articles/4978923682703',
+        },
+      },
+      {
+        title: t('title__pro_team'),
+        points: [
+          t('title__logo_engraving'),
+          t('custom_packaging'),
+          t('minimum_int_units', {
+            value: 300,
+          }),
+        ],
+        button: {
+          text: t('action__learn_more'),
+          link: 'https://help.onekey.so/hc/articles/4978923682703',
+        },
+      },
+      {
+        title: t('title__dropshipping'),
+        points: [
+          t('title__logo_engraving'),
+          t('custom_packaging'),
+          t('deliver_to_end_users'),
+          t('minimum_int_units', {
+            value: 1000,
+          }),
+        ],
+        button: {
+          text: t('action__learn_more'),
           link: 'https://help.onekey.so/hc/articles/4978923682703',
         },
       },

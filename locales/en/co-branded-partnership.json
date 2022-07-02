@@ -1,7 +1,7 @@
 {
     "custom_packaging": "Custom packaging",
     "deliver_to_end_users": "Deliver to end-users",
-    "minimum_int_units": "Minimum %s units",
+    "minimum_int_units": "Minimum {{value}} units",
     "title__co_branded_partnership": "Co-branded\\npartnership",
     "title__co_branded_partnership_desc": "Check out our co-branded offers to bring your marketing to life.",
     "title__dropshipping": "Dropshipping",

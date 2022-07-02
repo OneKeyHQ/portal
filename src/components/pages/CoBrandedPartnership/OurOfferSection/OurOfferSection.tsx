@@ -2,7 +2,7 @@ import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Container, Flex, H2, Section, Span } from '../../../base';
+import { Container, Flex, H2, I18n, Section, Span } from '../../../base';
 import { FeatureInformationCard } from '../../../common';
 
 import { useOurOfferSectionData } from './useOurOfferSectionData';
@@ -32,7 +32,7 @@ export const OurOfferSection: FC<OurOfferSectionProps> = (props) => {
           s={theme.text.medium800}
           m={theme.text.medium900}
         >
-          {ourOfferSectionData.title}
+          <I18n name="title__our_offer" />
         </H2>
 
         <Span
@@ -41,7 +41,7 @@ export const OurOfferSection: FC<OurOfferSectionProps> = (props) => {
           s={theme.text.normal400}
           m={theme.text.normal500}
         >
-          {ourOfferSectionData.description}
+          <I18n name="title__our_offer_desc" />
         </Span>
       </Flex>
 

@@ -45,7 +45,7 @@
     "menu__privacy_agreement": "隐私协议",
     "menu__product": "产品",
     "menu__products": "产品",
-    "menu__recovery_phrase_converter": "",
+    "menu__recovery_phrase_converter": "助记词生成器",
     "menu__recovery_phrase_converter_desc": "一个将 BIP39 助记词转换为地址和私钥的工具",
     "menu__referral": "推荐返佣",
     "menu__resource": "资源",

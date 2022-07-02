@@ -1,16 +1,16 @@
 {
     "custom_packaging": "Захиалгат савлагаа",
-    "deliver_to_end_users": "",
-    "minimum_int_units": "Хамгийн багадаа %s нэгж",
+    "deliver_to_end_users": "Эцсийн хэрэглэгчдэд хүргэх",
+    "minimum_int_units": "Хамгийн бага {{value}} нэгж",
     "title__co_branded_partnership": "Хамтарсан брэнд\\n түншлэл",
     "title__co_branded_partnership_desc": "Маркетингаа амьдралд хэрэгжүүлэхийн тулд манай хамтын брэндийн саналуудыг шалгаарай.",
-    "title__dropshipping": "",
-    "title__dropshipping_desc": "",
+    "title__dropshipping": "Dropshipping",
+    "title__dropshipping_desc": "Бид хамтдаа бүтээгдхүүний загвар гаргах ба OneKey бусад үйл явцыг хариуцах болно - үүнд хүргэлтийн логистик багтана.",
     "title__logo_engraving": "Лого сийлбэр",
     "title__our_offer": "Бидний санал",
-    "title__our_offer_desc": "",
-    "title__pro_team": "",
+    "title__our_offer_desc": "OneKey техник хангамжийн түрийвчээ тохируулж, хамт олон, түншүүд эсвэл ажилтнуудаа урамшууллаар урамшуулаарай.",
+    "title__pro_team": "Мэргэжлийн баг",
     "title__pro_team_desc": "Хамгийн сүүлийн үеийн OneKey төхөөрөмжөө сурталчилж, хувийн болго. Үйлчилгээ нь тоног төхөөрөмжийн түрийвчийг сийлбэрлэхээс эхлээд сав баглаа боодол, карт, ханцуйвчийг өөрчлөх хүртэл олон янз байдаг.",
-    "title__standard": "",
-    "title__standard_desc": ""
+    "title__standard": "Стандарт",
+    "title__standard_desc": "Өөрийн OneKey хамгийн сүүлийн үеийн төхөөрөмжийг захиалгат сийлбэрээр тохируулаарай."
 }

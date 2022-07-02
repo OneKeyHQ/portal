@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 
 import { StaticImage } from 'gatsby-plugin-image';
+import { useTranslation } from 'gatsby-plugin-react-i18next';
 
 import { useContactUs } from '../../../../data';
 import { CheckIcon } from '../../../base';
@@ -28,69 +29,73 @@ export function useProductShowcaseSectionData(): {
   items: ProductShowcaseSectionDataItems;
 } {
   const contactUs = useContactUs();
+  const { t } = useTranslation();
 
   return {
     items: [
       {
-        name: 'Co-Branded Standard',
-        units: 'Minimum 100 units',
-        description:
-          "Personalize your OneKey's latest device with a custom engraving.",
+        name: t('title__standard'),
+        units: t('minimum_int_units', {
+          value: 100,
+        }),
+        description: t('title__standard_desc'),
         imageNode: <StaticImage src="./images/co-intro-0.jpg" alt="image" />,
         points: [
           {
             iconNode: tempIcon,
-            text: 'Logo engraving',
+            text: t('title__logo_engraving'),
           },
         ],
         button: {
-          text: 'Contact us',
+          text: t('action__contact_us'),
           url: contactUs.url,
         },
       },
       {
-        name: 'Pro Team',
-        units: 'Minimum 300 units',
-        description:
-          'Promote and personalize your latest OneKey device. Services range from engraving the hardware wallet to customizations of packaging, cards and sleeves.',
+        name: t('title__pro_team'),
+        units: t('minimum_int_units', {
+          value: 300,
+        }),
+        description: t('title__pro_team_desc'),
         imageNode: <StaticImage src="./images/co-intro-1.jpg" alt="image" />,
         points: [
           {
             iconNode: tempIcon,
-            text: 'Logo engraving',
+            text: t('title__logo_engraving'),
           },
           {
             iconNode: tempIcon,
-            text: 'Custom packaging',
+            text: t('custom_packaging'),
           },
         ],
         button: {
-          text: 'Contact us',
+          text: t('action__contact_us'),
           url: contactUs.url,
         },
       },
       {
-        name: 'Dropshipping',
-        units: 'Minimum 1000 units',
-        description:
-          "We'll design the product together, and OneKey will take care of the rest of the process - this includes delivery logistics.",
+        name: t('title__dropshipping'),
+        units: t('minimum_int_units', {
+          value: 1000,
+        }),
+        description: t('title__dropshipping_desc'),
         imageNode: <StaticImage src="./images/co-intro-2.jpg" alt="image" />,
         points: [
           {
             iconNode: tempIcon,
-            text: 'Logo engraving',
+            text: t('title__logo_engraving'),
           },
           {
             iconNode: tempIcon,
-            text: 'Custom packaging',
+            text: t('custom_packaging'),
           },
           {
             iconNode: tempIcon,
-            text: 'Deliver to end-users',
+            text: t('deliver_to_end_users'),
           },
         ],
         button: {
-          text: 'Contact us',
+          text: t('action__contact_us'),
           url: contactUs.url,
         },
       },

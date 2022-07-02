@@ -1,6 +1,7 @@
 import { FC, ReactNode } from 'react';
 
 import { useContactUs } from '../../../data/useContactUs';
+import { I18n } from '../../base';
 import { Button, ButtonProps } from '../../base/Button';
 import { ArrowRightIcon } from '../../base/Icon';
 import { Link } from '../../base/Link';
@@ -21,7 +22,7 @@ export const ContactUsButton: FC<ContactUsButtonProps> = (props) => {
         rightIcon={<ArrowRightIcon width={24} height={24} />}
         {...buttonOverride}
       >
-        Contact us
+        <I18n name="action__contact_us" />
       </Button>
 
       {children}

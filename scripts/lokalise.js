@@ -25,6 +25,7 @@ async function main() {
     const response = await lokaliseApi.files().download(projectId, {
       format: 'json',
       directory_prefix: '%LANG_ISO%',
+      placeholder_format: 'i18n',
     });
 
     await download(response.bundle_url, scriptPath('./.tmp/zip'));

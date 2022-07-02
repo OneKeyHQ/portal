@@ -1,16 +1,16 @@
 {
     "custom_packaging": "Emballage personnalisé",
-    "deliver_to_end_users": "",
-    "minimum_int_units": "Minimum %s unités",
+    "deliver_to_end_users": "Livrer aux utilisateurs finaux",
+    "minimum_int_units": "Unités {{value}} minimales",
     "title__co_branded_partnership": "Co-marqué\\n Partenariat",
     "title__co_branded_partnership_desc": "Découvrez nos offres co-brandées pour donner vie à votre marketing.",
-    "title__dropshipping": "",
-    "title__dropshipping_desc": "",
+    "title__dropshipping": "Livraison directe",
+    "title__dropshipping_desc": "Nous concevrons le produit ensemble et OneKey se chargera du reste du processus, y compris la logistique de livraison.",
     "title__logo_engraving": "Gravure de logos",
     "title__our_offer": "Notre offre",
-    "title__our_offer_desc": "",
-    "title__pro_team": "",
+    "title__our_offer_desc": "Personnalisez votre portefeuille matériel OneKey et récompensez votre communauté, vos partenaires ou votre personnel avec des incitations.",
+    "title__pro_team": "Équipe professionnelle",
     "title__pro_team_desc": "Faites la promotion et personnalisez votre dernier OneKey . Les services vont de la gravure du portefeuille matériel à la personnalisation des emballages, des cartes et des pochettes.",
-    "title__standard": "",
-    "title__standard_desc": ""
+    "title__standard": "Standard",
+    "title__standard_desc": "Personnalisez le dernier appareil de votre OneKey avec une gravure personnalisée."
 }

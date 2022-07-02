@@ -1,16 +1,16 @@
 {
     "custom_packaging": "Embalaje personalizado",
-    "deliver_to_end_users": "",
-    "minimum_int_units": "Mínimo %s unidades",
+    "deliver_to_end_users": "Entregar a los usuarios finales",
+    "minimum_int_units": "Unidades mínimas de {{value}}",
     "title__co_branded_partnership": "marca compartida\\n camaradería",
     "title__co_branded_partnership_desc": "Consulte nuestras ofertas de marca compartida para dar vida a su marketing.",
-    "title__dropshipping": "",
-    "title__dropshipping_desc": "",
+    "title__dropshipping": "Envío directo",
+    "title__dropshipping_desc": "Diseñaremos el producto juntos y OneKey se encargará del resto del proceso, lo que incluye la logística de entrega.",
     "title__logo_engraving": "Grabado de logotipo",
     "title__our_offer": "Nuestra oferta",
-    "title__our_offer_desc": "",
-    "title__pro_team": "",
+    "title__our_offer_desc": "Personalice su billetera de hardware OneKey y recompense a su comunidad, socios o personal con incentivos.",
+    "title__pro_team": "Equipo profesional",
     "title__pro_team_desc": "Promocione y personalice su último dispositivo OneKey . Los servicios van desde el grabado de la billetera de hardware hasta la personalización de empaques, tarjetas y fundas.",
-    "title__standard": "",
-    "title__standard_desc": ""
+    "title__standard": "Estándar",
+    "title__standard_desc": "Personaliza el último dispositivo de tu OneKey con un grabado personalizado."
 }

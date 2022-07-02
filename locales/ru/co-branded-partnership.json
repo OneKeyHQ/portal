@@ -1,16 +1,16 @@
 {
     "custom_packaging": "Индивидуальная упаковка",
-    "deliver_to_end_users": "",
-    "minimum_int_units": "Минимум %s единиц",
+    "deliver_to_end_users": "Доставить конечным пользователям",
+    "minimum_int_units": "Минимум {{value}} единиц",
     "title__co_branded_partnership": "Совместный бренд\\n партнерство",
     "title__co_branded_partnership_desc": "Ознакомьтесь с нашими совместными предложениями, чтобы воплотить в жизнь свой маркетинг.",
-    "title__dropshipping": "",
-    "title__dropshipping_desc": "",
+    "title__dropshipping": "Дропшиппинг",
+    "title__dropshipping_desc": "Мы вместе разработаем продукт, а OneKey позаботится обо всем остальном процессе, включая логистику доставки.",
     "title__logo_engraving": "Гравировка логотипа",
     "title__our_offer": "Наше предложение",
-    "title__our_offer_desc": "",
-    "title__pro_team": "",
+    "title__our_offer_desc": "Настройте свой аппаратный кошелек OneKey и вознаградите свое сообщество, партнеров или сотрудников поощрениями.",
+    "title__pro_team": "профессиональная команда",
     "title__pro_team_desc": "Рекламируйте и персонализируйте свое последнее OneKey устройство. Услуги варьируются от гравировки аппаратного кошелька до настройки упаковки, карточек и футляров.",
-    "title__standard": "",
-    "title__standard_desc": ""
+    "title__standard": "Стандарт",
+    "title__standard_desc": "Персонализируйте свое последнее устройство OneKey с помощью пользовательской гравировки."
 }

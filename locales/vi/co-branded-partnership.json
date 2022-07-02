@@ -1,16 +1,16 @@
 {
     "custom_packaging": "Bao bì tùy chỉnh",
-    "deliver_to_end_users": "",
-    "minimum_int_units": "Đơn vị %s tối thiểu",
+    "deliver_to_end_users": "Cung cấp cho người dùng cuối",
+    "minimum_int_units": "Đơn vị {{value}} tối thiểu",
     "title__co_branded_partnership": "Đồng thương hiệu\\n quan hệ đối tác",
     "title__co_branded_partnership_desc": "Kiểm tra các ưu đãi đồng thương hiệu của chúng tôi để đưa hoạt động tiếp thị của bạn vào cuộc sống.",
-    "title__dropshipping": "",
-    "title__dropshipping_desc": "",
+    "title__dropshipping": "Vận chuyển thả",
+    "title__dropshipping_desc": "Chúng tôi sẽ cùng nhau thiết kế sản phẩm và OneKey sẽ đảm nhận phần còn lại của quy trình - điều này bao gồm cả hậu cần giao hàng.",
     "title__logo_engraving": "Khắc logo",
     "title__our_offer": "Ưu đãi của chúng tôi",
-    "title__our_offer_desc": "",
-    "title__pro_team": "",
+    "title__our_offer_desc": "Tùy chỉnh ví phần cứng OneKey của bạn và thưởng cho cộng đồng, đối tác hoặc nhân viên của bạn các ưu đãi.",
+    "title__pro_team": "Đội chuyên nghiệp",
     "title__pro_team_desc": "Quảng cáo và cá nhân hóa thiết bị OneKey mới nhất của bạn. Các dịch vụ bao gồm từ khắc ví phần cứng đến các tùy chỉnh của bao bì, thẻ và tay áo.",
-    "title__standard": "",
-    "title__standard_desc": ""
+    "title__standard": "Tiêu chuẩn",
+    "title__standard_desc": "Cá nhân hóa thiết bị mới nhất OneKey của bạn bằng bản khắc tùy chỉnh."
 }

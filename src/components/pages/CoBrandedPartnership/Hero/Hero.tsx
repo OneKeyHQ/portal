@@ -4,13 +4,8 @@ import { useTheme } from '@emotion/react';
 import { StaticImage } from 'gatsby-plugin-image';
 
 import { isBrowser } from '../../../../utils';
-import { Box, Container, Flex, Span } from '../../../base';
-import {
-  BackgroundMask,
-  ContactUsButton,
-  MultilineText,
-} from '../../../common';
-import { useCoBrandedPartnership } from '../useCoBrandedPartnership';
+import { Box, Container, Flex, I18n, Span } from '../../../base';
+import { BackgroundMask, ContactUsButton } from '../../../common';
 
 export interface HeroProps {
   children?: ReactNode;
@@ -19,7 +14,6 @@ export interface HeroProps {
 export const Hero: FC<HeroProps> = (props) => {
   const { children } = props;
   const theme = useTheme();
-  const coBrandedPartnership = useCoBrandedPartnership();
 
   return (
     <Box xs={{ position: 'relative' }}>
@@ -75,11 +69,11 @@ export const Hero: FC<HeroProps> = (props) => {
               l={theme.text.medium900}
               xl={theme.text.medium1000}
             >
-              <MultilineText text={coBrandedPartnership.hero.title} />
+              <I18n name="title__co_branded_partnership" alwaysMultiLine />
             </Span>
 
-            <Span xs={theme.text.normal300}>
-              {coBrandedPartnership.hero.subtitle}
+            <Span xs={theme.text.normal300} l={{ maxWidth: '60%' }}>
+              <I18n name="title__co_branded_partnership_desc" />
             </Span>
 
             <Box xs={{ marginRight: 0 }} m={{ marginRight: 'auto' }}>

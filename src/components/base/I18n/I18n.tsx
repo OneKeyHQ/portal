@@ -12,8 +12,26 @@ export interface I18nProps {
   name?: string;
   text?: string;
   multiLine?: ResponsiveStyleKeys[];
+  alwaysMultiLine?: boolean;
   singleLine?: ResponsiveStyleKeys[];
+  alwaysSingleLine?: boolean;
 }
+
+const defaultValue = {
+  xs: true,
+  s: true,
+  m: true,
+  l: true,
+  xl: true,
+  xxl: true,
+};
+
+// ['m', 'l', 'xl', 'xxl'] => { m: true, l: true, xl: true, xxl: true }
+
+const arrayToObject = (acc: Record<string, boolean>, curr: string) => {
+  acc[curr] = true;
+  return acc;
+};
 
 export const I18n: FC<I18nProps> = (props) => {
   const {
@@ -21,6 +39,8 @@ export const I18n: FC<I18nProps> = (props) => {
     name,
     multiLine,
     singleLine,
+    alwaysMultiLine = false,
+    alwaysSingleLine = false,
     text: nativeText = '',
   } = props;
   const { t } = useTranslation();
@@ -28,7 +48,25 @@ export const I18n: FC<I18nProps> = (props) => {
   const text = name ? t(name) : nativeText;
   const singleLineText = removeTextBreak(text);
 
-  if (!multiLine || !singleLine) {
+  let multiLineProps;
+  let singleLineProps;
+
+  if (alwaysMultiLine) {
+    multiLineProps = defaultValue;
+    singleLineProps = {};
+  } else if (alwaysSingleLine) {
+    multiLineProps = {};
+    singleLineProps = defaultValue;
+  } else if (multiLine && singleLine) {
+    if (multiLine) {
+      multiLineProps = multiLine.reduce(arrayToObject, {});
+    }
+    if (singleLine) {
+      singleLineProps = singleLine.reduce(arrayToObject, {});
+    }
+  }
+
+  if (!multiLineProps || !singleLineProps) {
     return (
       <Fragment key={text}>
         {singleLineText}
@@ -36,23 +74,6 @@ export const I18n: FC<I18nProps> = (props) => {
       </Fragment>
     );
   }
-
-  // ['m', 'l', 'xl', 'xxl'] => { m: true, l: true, xl: true, xxl: true }
-
-  const arrayToObject = (acc: Record<string, boolean>, curr: string) => {
-    acc[curr] = true;
-    return acc;
-  };
-
-  const multiLineProps = multiLine.reduce<Record<string, boolean>>(
-    arrayToObject,
-    {},
-  );
-
-  const singleLineProps = singleLine.reduce<Record<string, boolean>>(
-    arrayToObject,
-    {},
-  );
 
   return (
     <Fragment key={text || singleLineText || nativeText}>

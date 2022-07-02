@@ -1,16 +1,16 @@
 {
     "custom_packaging": "تغليف حسب الطلب",
-    "deliver_to_end_users": "",
-    "minimum_int_units": "الحد الأدنى من الوحدات %s",
+    "deliver_to_end_users": "تسليم إلى المستخدمين النهائيين",
+    "minimum_int_units": "الحد الأدنى من وحدات {{value}}",
     "title__co_branded_partnership": "ذات علامة تجارية مشتركة\\n شراكة",
     "title__co_branded_partnership_desc": "تحقق من عروضنا ذات العلامات التجارية المشتركة لإضفاء الحيوية على التسويق الخاص بك.",
-    "title__dropshipping": "",
-    "title__dropshipping_desc": "",
+    "title__dropshipping": "إسقاط الشحن",
+    "title__dropshipping_desc": "سنقوم بتصميم المنتج معًا ، OneKey باقي العملية - بما في ذلك لوجستيات التسليم.",
     "title__logo_engraving": "نقش الشعار",
     "title__our_offer": "عرضنا",
-    "title__our_offer_desc": "",
-    "title__pro_team": "",
+    "title__our_offer_desc": "قم بتخصيص OneKey محفظة الأجهزة الخاصة بك وكافئ المجتمع أو الشركاء أو الموظفين بالحوافز.",
+    "title__pro_team": "فريق محترف",
     "title__pro_team_desc": "قم بترقية وتخصيص أحدث OneKey . تتراوح الخدمات من نقش محفظة الأجهزة إلى تخصيصات التعبئة والتغليف والبطاقات والأكمام.",
-    "title__standard": "",
-    "title__standard_desc": ""
+    "title__standard": "اساسي",
+    "title__standard_desc": "إضفاء الطابع الشخصي على جهاز OneKey الأخير الخاص بك بنقش مخصص."
 }

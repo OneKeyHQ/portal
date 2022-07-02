@@ -1,16 +1,16 @@
 {
     "custom_packaging": "Спеціальна упаковка",
-    "deliver_to_end_users": "",
-    "minimum_int_units": "Мінімум %s одиниць",
+    "deliver_to_end_users": "Доставляти кінцевим споживачам",
+    "minimum_int_units": "Мінімальна кількість {{value}} одиниць",
     "title__co_branded_partnership": "Спільний бренд\\n партнерство",
     "title__co_branded_partnership_desc": "Ознайомтеся з нашими ко-брендовими пропозиціями, щоб оживити свій маркетинг.",
-    "title__dropshipping": "",
-    "title__dropshipping_desc": "",
+    "title__dropshipping": "Дропшиппінг",
+    "title__dropshipping_desc": "Ми разом розробимо продукт, а OneKey подбає про решту процесу, включаючи логістику доставки.",
     "title__logo_engraving": "Гравірування логотипу",
     "title__our_offer": "Наша пропозиція",
-    "title__our_offer_desc": "",
-    "title__pro_team": "",
+    "title__our_offer_desc": "Налаштуйте свій апаратний гаманець OneKey і нагородіть свою спільноту, партнерів або персонал заохоченнями.",
+    "title__pro_team": "Професійна команда",
     "title__pro_team_desc": "Рекламуйте та персоналізуйте свій останній пристрій OneKey . Послуги варіюються від гравіювання апаратного гаманця до персоналізації упаковки, карток і чохлів.",
-    "title__standard": "",
-    "title__standard_desc": ""
+    "title__standard": "Стандартний",
+    "title__standard_desc": "Персоналізуйте свій останній пристрій OneKey за допомогою спеціального гравіювання."
 }
