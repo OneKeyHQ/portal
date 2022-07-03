@@ -4,7 +4,12 @@ export { Enterprise as default } from '../components/pages/Enterprise';
 
 export const query = graphql`
   query ($language: String!) {
-    locales: allLocale(filter: { language: { eq: $language } }) {
+    locales: allLocale(
+      filter: {
+        ns: { in: ["common", "enterprise"] }
+        language: { eq: $language }
+      }
+    ) {
       edges {
         node {
           ns

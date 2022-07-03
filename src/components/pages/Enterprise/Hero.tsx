@@ -2,7 +2,7 @@ import { FC, ReactNode } from 'react';
 
 import { StaticImage } from 'gatsby-plugin-image';
 
-import { Box, Span } from '../../base';
+import { Box, I18n } from '../../base';
 import {
   HeroDesktopBackground,
   HeroLayout,
@@ -48,14 +48,8 @@ export const Hero: FC<HeroProps> = (props) => {
       </HeroDesktopBackground>
 
       <HeroLayout
-        title={
-          <Span>
-            Enterprise
-            <br />
-            solutions
-          </Span>
-        }
-        description="Explore the world of co-branding with us, and see your campaign come to life."
+        title={<I18n name="title__enterprise_solutions" alwaysMultiLine />}
+        description={<I18n name="title__enterprise_solutions_desc" />}
       />
 
       {children}

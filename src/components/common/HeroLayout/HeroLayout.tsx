@@ -10,7 +10,7 @@ import { ContactUsButton } from '../ContactUsButton';
 export interface HeroLayoutProps {
   children?: ReactNode;
   title?: string | ReactNode;
-  description?: string;
+  description?: string | ReactNode;
 }
 
 export const HeroLayout: FC<HeroLayoutProps> = (props) => {
