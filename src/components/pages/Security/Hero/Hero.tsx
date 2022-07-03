@@ -4,7 +4,7 @@ import { useTheme } from '@emotion/react';
 import { StaticImage } from 'gatsby-plugin-image';
 
 import { isBrowser } from '../../../../utils';
-import { Box, Container, Flex, Span } from '../../../base';
+import { Box, Container, Flex, I18n, Span } from '../../../base';
 import { BackgroundMask } from '../../../common';
 
 export interface HeroProps {
@@ -72,12 +72,11 @@ export const Hero: FC<HeroProps> = (props) => {
             xl={theme.text.medium900}
             xxl={theme.text.medium1000}
           >
-            Security, <br />
-            both hard and soft.
+            <I18n name="title__security_both_hard_and_soft" alwaysMultiLine />
           </Span>
 
           <Span xxl={theme.text.medium300}>
-            Asia's most trusted and easy-to-use hardware wallet.
+            <I18n name="title__security_both_hard_and_soft_desc" />
           </Span>
         </Flex>
       </Container>

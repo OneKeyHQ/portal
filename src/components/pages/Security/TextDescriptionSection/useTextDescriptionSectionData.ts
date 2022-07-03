@@ -1,24 +1,26 @@
+import { useTranslation } from 'gatsby-plugin-react-i18next';
+
 export function useTextDescriptionSectionData() {
+  const { t } = useTranslation();
+
   return {
-    title: 'Earn the trust of top and professional institutions',
-    description:
-      'OneKey provides best-in-class security for encrypted assets without compromising accessibility and day-to-day operations. The future is always unpredictable and our mission is to give everyone the ability to keep their crypto assets safe.',
+    title: t('title__earn_the_trust_of_top_and_professional_institutions'),
+    description: t(
+      'title__earn_the_trust_of_top_and_professional_institutions_desc',
+    ),
 
     items: [
       {
-        name: 'CE and RoHS Certification',
-        description:
-          'Its internal high-quality random number generator satisfies NIST SP 800-90A/B/C.',
+        name: t('title__ce_and_rohs_certification'),
+        description: t('title__ce_and_rohs_certification_desc'),
       },
       {
-        name: 'Ultrasonic Welding Process',
-        description:
-          'if someone tries to tamper with the device and seal it again, you can notice a clear difference and the device is visibly perceived when it is tampered with.',
+        name: t('title__ultrasonic_welding_process'),
+        description: t('title__ultrasonic_welding_process_desc'),
       },
       {
-        name: 'EAL6 Certification',
-        description:
-          'Some of the OneKey product lines have passed EAL6 Certification, and we will expand it to the entire product line.',
+        name: t('title__eal6_certification'),
+        description: t('title__eal6_certification_desc'),
       },
     ],
   };

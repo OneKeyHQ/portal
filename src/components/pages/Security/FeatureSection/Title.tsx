@@ -27,7 +27,10 @@ export const Title: FC<TitleProps> = (props) => {
         m={{ gap: 24 }}
       >
         <Span
-          css={{ color: theme.colors.test300 }}
+          css={{
+            color: theme.colors.test300,
+            textTransform: 'uppercase',
+          }}
           xs={theme.text.medium400}
           m={theme.text.medium600}
         >
