@@ -1,35 +1,39 @@
+import { useTranslation } from 'gatsby-plugin-react-i18next';
+
 export function useAffiliateProgramData() {
+  const { t } = useTranslation();
+
   return {
     cards: [
       {
-        title: 'Affiliate',
+        title: t('title__affiliate'),
         descriptions: [
-          'Are you a Tiktoker, Youtuber, Mirrorer, or an influencer in the crypto world?',
-          'Become a OneKey affiliate and be rewarded for promoting our products.',
+          t('title__affiliate_desc_1'),
+          t('title__affiliate_desc_2'),
         ],
         points: [
-          'Attractive commissions in crypto',
-          'Direct relation with OneKey',
-          'Early access to OneKey news',
+          t('title__affiliate_item_1'),
+          t('title__affiliate_item_2'),
+          t('title__affiliate_item_3'),
         ],
         button: {
-          text: 'Become a OneKey Affiliate',
+          text: t('action__become_a_onekey_affiliate'),
           link: 'https://af.uppromote.com/onekeyhq/register',
         },
       },
       {
-        title: 'Reseller',
+        title: t('title__reseller'),
         descriptions: [
-          "Do you want to sell OneKey's products on your website or store?",
-          'Join the OneKey Reseller Program and get access to the best hardware wallets in Web3.',
+          t('title__reseller_desc_1'),
+          t('title__reseller_desc_2'),
         ],
         points: [
-          'Get the best price',
-          'Customer success specialist support',
-          'Assist in providing material and promotional designs',
+          t('title__reseller_item_1'),
+          t('title__reseller_item_2'),
+          t('title__reseller_item_3'),
         ],
         button: {
-          text: 'Become a OneKey Reseller',
+          text: t('action__become_a_onekey_reseller'),
           link: 'https://help.onekey.so/hc/requests/new',
         },
       },

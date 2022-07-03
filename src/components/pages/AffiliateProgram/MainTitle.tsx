@@ -2,7 +2,7 @@ import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Flex, Span } from '../../base';
+import { Flex, I18n, Span } from '../../base';
 
 export interface MainTitleProps {
   children?: ReactNode;
@@ -32,15 +32,14 @@ export const MainTitle: FC<MainTitleProps> = (props) => {
         l={{ ...theme.text.medium900 }}
         xl={{ ...theme.text.medium1000 }}
       >
-        Affiliate Program
+        <I18n name="title__affiliate_program" />
       </Span>
       <Span
         xs={{ ...theme.text.medium300, paddingTop: 20 }}
         m={{ ...theme.text.normal300 }}
         l={{ ...theme.text.normal400 }}
       >
-        Asia's most trusted and easy-to-use hardware wallet, get the most out of
-        and for your traffic.
+        <I18n name="title__affiliate_program_desc" />
       </Span>
 
       {children}

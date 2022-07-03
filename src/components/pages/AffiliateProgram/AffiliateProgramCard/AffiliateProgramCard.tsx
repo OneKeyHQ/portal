@@ -1,8 +1,9 @@
 import React from 'react';
 
 import { useTheme } from '@emotion/react';
+import { useTranslation } from 'gatsby-plugin-react-i18next';
 
-import { Box, EmailLink, Span } from '../../../base';
+import { Box, EmailLink, I18n, Span } from '../../../base';
 import {
   FeatureInformationCard,
   FeatureInformationCardProps,
@@ -15,6 +16,7 @@ export const AffiliateProgramCard: React.FC<AffiliateProgramCardProps> = (
 ) => {
   const { children, ...otherProps } = props;
   const theme = useTheme();
+  const { t } = useTranslation();
 
   return (
     <FeatureInformationCard {...otherProps}>
@@ -26,13 +28,13 @@ export const AffiliateProgramCard: React.FC<AffiliateProgramCardProps> = (
           paddingRight: 32,
         }}
         m={{
-          paddingBottom: 80,
-          paddingLeft: 80,
-          paddingRight: 80,
+          paddingBottom: 60,
+          paddingLeft: 60,
+          paddingRight: 60,
         }}
         xl={{
-          paddingLeft: 0,
-          paddingRight: 0,
+          paddingLeft: 30,
+          paddingRight: 30,
         }}
       >
         <Span xs={{ ...theme.text.normal200 }}>
@@ -44,11 +46,11 @@ export const AffiliateProgramCard: React.FC<AffiliateProgramCardProps> = (
                 fontWeight: 'bold',
               }}
             >
-              Contact
+              <I18n name="action__contact" />
             </Span>{' '}
           </EmailLink>
-          our customer success team to learn more details about our affiliate
-          program.
+
+          {t('action__contact_desc').replace(t('action__contact'), '')}
         </Span>
       </Box>
 
