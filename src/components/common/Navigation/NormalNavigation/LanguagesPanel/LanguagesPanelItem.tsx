@@ -25,9 +25,7 @@ export const LanguagesPanelItem: FC<LanguagesPanelItemProps> = (props) => {
       }}
     >
       <Flex xs={{ gap: 20, color: theme.colors.test500 }}>
-        <Box>
-          <H2 xs={theme.text.medium400}>{children}</H2>
-        </Box>
+        <H2 xs={theme.text.medium400}>{children}</H2>
       </Flex>
     </Box>
   );

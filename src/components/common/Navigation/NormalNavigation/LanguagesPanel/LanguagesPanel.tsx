@@ -9,6 +9,7 @@ import { Box, Span } from '../../../../base/Box';
 import { Container } from '../../../../base/Container';
 import { Flex } from '../../../../base/Flex';
 
+import { languagesMap } from './languages';
 import { LanguagesPanelItem } from './LanguagesPanelItem';
 
 export interface LanguagesPanelProps {
@@ -47,7 +48,9 @@ export const LanguagesPanel: FC<LanguagesPanelProps> = (props) => {
                 <Box xs={{ width: '33.3%' }}>
                   <Link key={lng} to={originalPath} language={lng}>
                     <LanguagesPanelItem>
-                      <Span xs={{ textTransform: 'uppercase' }}>{lng}</Span>
+                      <Span xs={{ textTransform: 'uppercase' }}>
+                        {languagesMap[lng.toUpperCase()]}
+                      </Span>
                     </LanguagesPanelItem>
                   </Link>
                 </Box>

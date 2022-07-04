@@ -6,6 +6,7 @@ import { useI18next } from 'gatsby-plugin-react-i18next';
 import { useHover } from '../../../../../hooks';
 import { Box, Flex, LanguageIcon } from '../../../../base';
 import { LanguagesPanel } from '../LanguagesPanel';
+import { languagesMap } from '../LanguagesPanel/languages';
 
 export interface LanguageSwitchButtonProps {
   children?: ReactNode;
@@ -32,7 +33,7 @@ export const LanguageSwitchButton: FC<LanguageSwitchButtonProps> = (props) => {
       >
         <LanguageIcon width={24} height={24} />
         <Box xs={{ textTransform: 'uppercase', ...theme.text.medium300 }}>
-          {i18n.language}
+          {languagesMap[i18n.language.toUpperCase()]}
         </Box>
       </Flex>
 
