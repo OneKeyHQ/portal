@@ -1,7 +1,10 @@
 {
+    "action__check_the_full_list": "Suriin ang buong listahan",
     "action__coming_soon": "malapit na",
     "action__contact_us": "Makipag-ugnayan sa amin",
+    "action__download": "I-download",
     "action__free_download": "Libreng pag-download",
+    "action__getting_started": "Nagsisimula",
     "action__go_to_shop": "Pumunta sa Shop",
     "action__launch_app": "Ilunsad ang App",
     "action__learn_more": "Matuto pa",
@@ -31,6 +34,8 @@
     "menu__enterprise_solutions": "Mga Solusyon sa Enterprise",
     "menu__for_business": "Para sa negosyo",
     "menu__for_developer": "Para sa Developer",
+    "menu__getting_started": "Nagsisimula",
+    "menu__getting_started_desc": "Magsimula nang mabilis mula 0 hanggang 1, at karamihan sa mga tanong na maaari mong makaharap ay masasagot dito.",
     "menu__hardware_device": "Hardware Device",
     "menu__hardware_wallet_manual": "Manual ng Hardware Wallet",
     "menu__help_center": "Help Center",
@@ -70,7 +75,9 @@
     "title__desktop_app": "Desktop app",
     "title__google_play": "Google Play",
     "title__mobile_app": "Mobile app",
+    "title__multi_chain_support": "Multi-Chain Support",
     "title__other_platforms": "Iba pang mga platform",
+    "title__set_up_your_onekey_hardware_wallet": "I-set up ang iyong OneKey hardware wallet",
     "title__stay_in_touch": "Manatiling nakikipag-ugnayan",
     "title__subscribe_to_our_notifications": "Mag-subscribe sa aming mga notification"
 }

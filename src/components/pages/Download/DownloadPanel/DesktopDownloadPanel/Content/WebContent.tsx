@@ -8,8 +8,6 @@ export interface WebContentProps {
   children?: ReactNode;
 }
 
-const title = ['Instant launch.', 'Incredibly simple.'];
-
 export const WebContent: FC<WebContentProps> = (props) => {
   const { children } = props;
 
@@ -22,7 +20,7 @@ export const WebContent: FC<WebContentProps> = (props) => {
         gap: 32,
       }}
     >
-      <Title text={title} />
+      <Title name="title__instant_launch_incredibly_simple" />
       <LaunchAppButton />
       {children}
     </Flex>

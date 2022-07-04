@@ -1,3 +1,12 @@
 {
-    "title__download_onekey": "ডাউনলোড করুন\\nOneKey ।"
+    "title__bring_your_crypto_assets_to_mobile_too": "আপনার আনুন\\n ক্রিপ্টো সম্পদ\\n মোবাইলেও।",
+    "title__download_onekey": "ডাউনলোড করুন\\nOneKey ।",
+    "title__edge_version_has_not_support_hardware_yet": "এজ সংস্করণ এখনও হার্ডওয়্যার সমর্থন করে না।",
+    "title__how_to_activate_discover_page": "আবিষ্কার পৃষ্ঠাটি কীভাবে সক্রিয় করবেন",
+    "title__how_to_register_an_account": "কিভাবে একটি অ্যাকাউন্ট নিবন্ধন",
+    "title__instant_launch_incredibly_simple": "তাৎক্ষণিক লঞ্চ।\\n অবিশ্বাস্যভাবে সহজ.",
+    "title__not_available_on_the_chinese_app_store": "চাইনিজ অ্যাপ স্টোরে পাওয়া যায় না",
+    "title__onekey_bridge": "OneKey সেতু",
+    "title__onekey_bridge_desc": "OneKey হার্ডওয়্যার ওয়ালেট এবং ব্রাউজারের মধ্যে স্থানান্তর স্থিতিশীলতা বাড়ায়।",
+    "title__package_checksum": "প্যাকেজ চেকসাম।"
 }

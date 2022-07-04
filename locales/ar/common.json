@@ -1,7 +1,10 @@
 {
+    "action__check_the_full_list": "تحقق من القائمة الكاملة",
     "action__coming_soon": "قريبا",
     "action__contact_us": "اتصل بنا",
+    "action__download": "تحميل",
     "action__free_download": "تنزيل مجاني",
+    "action__getting_started": "ابدء",
     "action__go_to_shop": "اذهب إلى المتجر",
     "action__launch_app": "إطلاق التطبيق",
     "action__learn_more": "يتعلم أكثر",
@@ -31,6 +34,8 @@
     "menu__enterprise_solutions": "حلول المشاريع",
     "menu__for_business": "للعمل",
     "menu__for_developer": "للمطور",
+    "menu__getting_started": "ابدء",
+    "menu__getting_started_desc": "ابدأ بسرعة من 0 إلى 1 ، ويمكن الإجابة على معظم الأسئلة التي قد تواجهها هنا.",
     "menu__hardware_device": "جهاز الجهاز",
     "menu__hardware_wallet_manual": "دليل محفظة الأجهزة",
     "menu__help_center": "مركز المساعدة",
@@ -70,7 +75,9 @@
     "title__desktop_app": "التطبيق سطح المكتب",
     "title__google_play": "تطبيقات جوجل",
     "title__mobile_app": "تطبيق الهاتف المحمول",
+    "title__multi_chain_support": "دعم متعدد السلاسل",
     "title__other_platforms": "منصات أخرى",
+    "title__set_up_your_onekey_hardware_wallet": "قم بإعداد OneKey محفظة الأجهزة الخاصة بك",
     "title__stay_in_touch": "ابق على تواصل",
     "title__subscribe_to_our_notifications": "اشترك في إشعاراتنا"
 }

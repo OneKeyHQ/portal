@@ -2,7 +2,7 @@ import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Box, Flex, Span } from '../../../base';
+import { Box, Flex, I18n, Span } from '../../../base';
 
 import { BridgeDownloadMenu } from './BridgeDownloadMenu';
 
@@ -27,7 +27,9 @@ export const BridgeDownload: FC<BridgeDownloadProps> = (props) => {
     >
       <Flex xs={{ justifyContent: 'space-between', alignItems: 'center' }}>
         <Box>
-          <Box xs={theme.text.medium700}>OneKey Bridge</Box>
+          <Box xs={theme.text.medium700}>
+            <I18n name="title__onekey_bridge" />
+          </Box>
 
           <Span
             xs={{
@@ -35,8 +37,7 @@ export const BridgeDownload: FC<BridgeDownloadProps> = (props) => {
               color: theme.colors.test300,
             }}
           >
-            Enhances the transfer stability between the OneKey hardware wallet
-            and the browser.
+            <I18n name="title__onekey_bridge_desc" />
           </Span>
         </Box>
 

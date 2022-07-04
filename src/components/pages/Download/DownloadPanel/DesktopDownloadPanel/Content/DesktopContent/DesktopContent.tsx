@@ -55,7 +55,7 @@ export const DesktopContent: React.FC<DesktopContentProps> = (props) => {
           justifyContent: 'center',
         }}
       >
-        <Title text={desktop.pageTitle} />
+        <Title name={desktop.pageTitle} />
 
         <Flex xs={{ gap: 16 }}>
           <MacDownloadButton buttonType={buttonType('mac')} />

@@ -1,7 +1,10 @@
 {
+    "action__check_the_full_list": "Проверить полный список",
     "action__coming_soon": "вскоре",
     "action__contact_us": "Свяжитесь с нами",
+    "action__download": "Скачать",
     "action__free_download": "Скачать бесплатно",
+    "action__getting_started": "Начиная",
     "action__go_to_shop": "Идти в магазин",
     "action__launch_app": "Запустить приложение",
     "action__learn_more": "Учить больше",
@@ -31,6 +34,8 @@
     "menu__enterprise_solutions": "Корпоративные решения",
     "menu__for_business": "Для бизнеса",
     "menu__for_developer": "Для разработчиков",
+    "menu__getting_started": "Начиная",
+    "menu__getting_started_desc": "Начните быстро с 0 до 1, и здесь вы найдете ответы на большинство вопросов, с которыми вы можете столкнуться.",
     "menu__hardware_device": "Аппаратное устройство",
     "menu__hardware_wallet_manual": "Руководство по аппаратному кошельку",
     "menu__help_center": "Центр помощи",
@@ -70,7 +75,9 @@
     "title__desktop_app": "Настольное приложение",
     "title__google_play": "Гугл игры",
     "title__mobile_app": "Мобильное приложение",
+    "title__multi_chain_support": "Поддержка нескольких цепей",
     "title__other_platforms": "Другие платформы",
+    "title__set_up_your_onekey_hardware_wallet": "Настройте аппаратный кошелек OneKey",
     "title__stay_in_touch": "Оставайтесь на связи",
     "title__subscribe_to_our_notifications": "Подпишитесь на наши уведомления"
 }

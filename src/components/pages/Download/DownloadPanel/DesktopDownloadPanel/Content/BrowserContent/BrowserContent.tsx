@@ -49,7 +49,7 @@ export const BrowserContent: FC<BrowserContentProps> = (props) => {
           justifyContent: 'center',
         }}
       >
-        <Title text={browser.pageTitle} />
+        <Title name={browser.pageTitle} />
 
         <Flex xs={{ gap: 16 }}>
           {buttons.map((item) => (

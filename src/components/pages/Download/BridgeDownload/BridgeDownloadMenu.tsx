@@ -7,6 +7,7 @@ import {
   Box,
   Button,
   ChevronDownIcon,
+  I18n,
   Link,
   MenuItem,
   MenuItems,
@@ -41,7 +42,7 @@ export const BridgeDownloadMenu: FC<BridgeDownloadMenuProps> = (props) => {
         variant="outlined"
         rightIcon={<ChevronDownIcon width={24} height={24} />}
       >
-        Download
+        <I18n name="action__download" />
       </Button>
 
       <MenuItems {...menu.menuItemsProps}>

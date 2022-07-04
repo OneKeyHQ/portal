@@ -1,3 +1,12 @@
 {
-    "title__download_onekey": "다운로드\\n OneKey ."
+    "title__bring_your_crypto_assets_to_mobile_too": "당신의\\n 암호화 자산\\n 모바일에도.",
+    "title__download_onekey": "다운로드\\n OneKey .",
+    "title__edge_version_has_not_support_hardware_yet": "Edge 버전은 아직 하드웨어를 지원하지 않습니다.",
+    "title__how_to_activate_discover_page": "검색 페이지를 활성화하는 방법",
+    "title__how_to_register_an_account": "계정 등록 방법",
+    "title__instant_launch_incredibly_simple": "즉시 실행.\\n 놀랍도록 간단합니다.",
+    "title__not_available_on_the_chinese_app_store": "중국 앱 스토어에서 사용할 수 없음",
+    "title__onekey_bridge": "OneKey 다리",
+    "title__onekey_bridge_desc": "OneKey 하드웨어 지갑과 브라우저 간의 전송 안정성을 향상시킵니다.",
+    "title__package_checksum": "패키지 체크섬."
 }
