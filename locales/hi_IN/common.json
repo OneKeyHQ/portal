@@ -1,7 +1,10 @@
 {
+    "action__check_the_full_list": "पूरी लिस्ट चेक करें",
     "action__coming_soon": "जल्द आ रहा है",
     "action__contact_us": "संपर्क करें",
+    "action__download": "डाउनलोड",
     "action__free_download": "मुफ्त डाउनलोड",
+    "action__getting_started": "शुरू करना",
     "action__go_to_shop": "दुकान में जाओ",
     "action__launch_app": "ऐप लांच करें",
     "action__learn_more": "और अधिक जानें",
@@ -11,6 +14,7 @@
     "coin__dash": "Dash",
     "coin__dogecoin": "डॉगकॉइन",
     "coin__ethereum": "Ethereum",
+    "content__a_higher_definition_of_private_key_cold_storage": "निजी कुंजी कोल्ड स्टोरेज की उच्च परिभाषा।",
     "content__all_new_design__secure_chip_supercharged__beautiful_and_true_color_display": "बिल्कुल नया डिज़ाइन, सुरक्षित चिप सुपरचार्ज्ड, सुंदर और सच्चे रंग का डिस्प्ले।",
     "content__biometric_tech__optical_encryption__so_many_reasons_to_go_pro": "बायोमेट्रिक तकनीक, ऑप्टिकल एन्क्रिप्शन, प्रो जाने के कई कारण।",
     "content__mini_sized_safety_without_compromise": "मिनी आकार, समझौता किए बिना सुरक्षा।",
@@ -31,6 +35,8 @@
     "menu__enterprise_solutions": "उद्यम समाधान",
     "menu__for_business": "व्यापार के लिए",
     "menu__for_developer": "डेवलपर के लिए",
+    "menu__getting_started": "शुरू करना",
+    "menu__getting_started_desc": "0 से 1 तक जल्दी से आरंभ करें, और आपके सामने आने वाले अधिकांश प्रश्नों के उत्तर यहां दिए जा सकते हैं।",
     "menu__hardware_device": "हार्डवेयर डिवाइस",
     "menu__hardware_wallet_manual": "हार्डवेयर वॉलेट मैनुअल",
     "menu__help_center": "सहायता केंद्र",
@@ -70,7 +76,9 @@
     "title__desktop_app": "डेस्कटॉप ऐप",
     "title__google_play": "गूगल प्ले",
     "title__mobile_app": "मोबाइल एप्लिकेशन",
+    "title__multi_chain_support": "मल्टी-चेन सपोर्ट",
     "title__other_platforms": "अन्य प्लेटफार्म",
+    "title__set_up_your_onekey_hardware_wallet": "अपना OneKey हार्डवेयर वॉलेट सेट करें",
     "title__stay_in_touch": "संपर्क में रहना",
     "title__subscribe_to_our_notifications": "हमारे नोटिफिकेशन को सब्सक्राइब करें"
 }

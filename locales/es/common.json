@@ -1,7 +1,10 @@
 {
+    "action__check_the_full_list": "Consulta la lista completa",
     "action__coming_soon": "próximamente, en breve, pronto",
     "action__contact_us": "Contáctenos",
+    "action__download": "Descargar",
     "action__free_download": "Descarga gratis",
+    "action__getting_started": "Empezando",
     "action__go_to_shop": "Ir a la tienda",
     "action__launch_app": "Ejecutar aplicación",
     "action__learn_more": "Aprende más",
@@ -11,6 +14,7 @@
     "coin__dash": "Dash",
     "coin__dogecoin": "dogecoin",
     "coin__ethereum": "Etéreo",
+    "content__a_higher_definition_of_private_key_cold_storage": "Una definición más alta de almacenamiento en frío de clave privada.",
     "content__all_new_design__secure_chip_supercharged__beautiful_and_true_color_display": "Diseño completamente nuevo, chip seguro sobrealimentado, hermosa y verdadera pantalla a color.",
     "content__biometric_tech__optical_encryption__so_many_reasons_to_go_pro": "Tecnología biométrica, encriptación óptica, tantas razones para volverse profesional.",
     "content__mini_sized_safety_without_compromise": "Mini tamaño, seguridad sin compromiso.",
@@ -31,6 +35,8 @@
     "menu__enterprise_solutions": "Soluciones empresariales",
     "menu__for_business": "Para Negocios",
     "menu__for_developer": "para desarrollador",
+    "menu__getting_started": "Empezando",
+    "menu__getting_started_desc": "Comience rápidamente de 0 a 1, y la mayoría de las preguntas que pueda encontrar se pueden responder aquí.",
     "menu__hardware_device": "Dispositivo de hardware",
     "menu__hardware_wallet_manual": "Manual de billetera de hardware",
     "menu__help_center": "Centro de ayuda",
@@ -70,7 +76,9 @@
     "title__desktop_app": "Aplicación de escritorio",
     "title__google_play": "Google Play",
     "title__mobile_app": "Aplicación movil",
+    "title__multi_chain_support": "Soporte multicadena",
     "title__other_platforms": "Otras plataformas",
+    "title__set_up_your_onekey_hardware_wallet": "Configure su billetera de hardware OneKey",
     "title__stay_in_touch": "Mantente en contacto",
     "title__subscribe_to_our_notifications": "Suscríbete a nuestras notificaciones"
 }

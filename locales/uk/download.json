@@ -1,3 +1,12 @@
 {
-    "title__download_onekey": "Завантажити\\n OneKey ."
+    "title__bring_your_crypto_assets_to_mobile_too": "Принеси свій\\n криптоактиви\\n на мобільний теж.",
+    "title__download_onekey": "Завантажити\\n OneKey .",
+    "title__edge_version_has_not_support_hardware_yet": "Версія Edge ще не підтримує обладнання.",
+    "title__how_to_activate_discover_page": "Як активувати сторінку пошуку",
+    "title__how_to_register_an_account": "Як зареєструвати обліковий запис",
+    "title__instant_launch_incredibly_simple": "Миттєвий запуск.\\n Неймовірно просто.",
+    "title__not_available_on_the_chinese_app_store": "Недоступно в китайському App Store",
+    "title__onekey_bridge": "OneKey Міст",
+    "title__onekey_bridge_desc": "Підвищує стабільність передачі між апаратним гаманцем OneKey і браузером.",
+    "title__package_checksum": "Контрольна сума пакета."
 }

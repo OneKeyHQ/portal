@@ -1,8 +1,12 @@
+import { useTranslation } from 'gatsby-plugin-react-i18next';
+
 import normalImageUrl from './images/normal.svg';
 
 export function useTechnicalSpecificationsSectionData() {
+  const { t } = useTranslation();
+
   return {
-    title: 'Technical Specifications',
+    title: t('title__technical_specifications'),
     images: {
       largeImageUrl: normalImageUrl,
       mediumImageUrl: normalImageUrl,

@@ -1,7 +1,10 @@
 {
+    "action__check_the_full_list": "完全なリストを確認してください",
     "action__coming_soon": "近日公開",
     "action__contact_us": "お問い合わせ",
+    "action__download": "ダウンロード",
     "action__free_download": "無料ダウンロード",
+    "action__getting_started": "入門",
     "action__go_to_shop": "店へ出かける",
     "action__launch_app": "アプリを起動",
     "action__learn_more": "もっと詳しく知る",
@@ -11,6 +14,7 @@
     "coin__dash": "Dash",
     "coin__dogecoin": "ドージコイン",
     "coin__ethereum": "イーサリアム",
+    "content__a_higher_definition_of_private_key_cold_storage": "秘密鍵のコールドストレージのより高い定義。",
     "content__all_new_design__secure_chip_supercharged__beautiful_and_true_color_display": "まったく新しいデザイン、安全なチップ過給、美しくトゥルーカラーのディスプレイ。",
     "content__biometric_tech__optical_encryption__so_many_reasons_to_go_pro": "生体認証技術、光暗号化、Proに移行する理由はたくさんあります。",
     "content__mini_sized_safety_without_compromise": "ミニサイズ、妥協のない安全性。",
@@ -31,6 +35,8 @@
     "menu__enterprise_solutions": "エンタープライズソリューション",
     "menu__for_business": "ビジネス用",
     "menu__for_developer": "開発者向け",
+    "menu__getting_started": "入門",
+    "menu__getting_started_desc": "0から1まですぐに始めてください、そしてあなたが遭遇するかもしれない質問のほとんどはここで答えることができます。",
     "menu__hardware_device": "ハードウェアデバイス",
     "menu__hardware_wallet_manual": "ハードウェアウォレットマニュアル",
     "menu__help_center": "ヘルプセンター",
@@ -70,7 +76,9 @@
     "title__desktop_app": "デスクトップアプリ",
     "title__google_play": "グーグルプレイ",
     "title__mobile_app": "モバイルアプリ",
+    "title__multi_chain_support": "マルチチェーンサポート",
     "title__other_platforms": "その他のプラットフォーム",
+    "title__set_up_your_onekey_hardware_wallet": "OneKeyハードウェアウォレットを設定します",
     "title__stay_in_touch": "連絡を取り合う",
     "title__subscribe_to_our_notifications": "通知を購読する"
 }

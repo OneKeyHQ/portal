@@ -1,3 +1,12 @@
 {
-    "title__download_onekey": "ดาวน์โหลด\\n OneKey ."
+    "title__bring_your_crypto_assets_to_mobile_too": "เอาของคุณไป\\n สินทรัพย์เข้ารหัส\\n สู่มือถือด้วย",
+    "title__download_onekey": "ดาวน์โหลด\\n OneKey .",
+    "title__edge_version_has_not_support_hardware_yet": "เวอร์ชัน Edge ยังไม่รองรับฮาร์ดแวร์",
+    "title__how_to_activate_discover_page": "วิธีเปิดใช้งาน Discover page",
+    "title__how_to_register_an_account": "วิธีการลงทะเบียนบัญชี",
+    "title__instant_launch_incredibly_simple": "เปิดตัวทันที\\n ง่ายอย่างไม่น่าเชื่อ",
+    "title__not_available_on_the_chinese_app_store": "ไม่มีใน Chinese App Store",
+    "title__onekey_bridge": "OneKey สะพาน",
+    "title__onekey_bridge_desc": "ปรับปรุงความเสถียรในการถ่ายโอนระหว่างกระเป๋าสตางค์ฮาร์ดแวร์ OneKey และเบราว์เซอร์",
+    "title__package_checksum": "เช็คซัมแพคเกจ"
 }

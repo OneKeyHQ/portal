@@ -1,7 +1,10 @@
 {
+    "action__check_the_full_list": "查看完整列表",
     "action__coming_soon": "即将上线",
     "action__contact_us": "联系我们",
+    "action__download": "下载",
     "action__free_download": "免费下载",
+    "action__getting_started": "入门",
     "action__go_to_shop": "前往商店",
     "action__launch_app": "启动应用",
     "action__learn_more": "了解更多",
@@ -11,6 +14,7 @@
     "coin__dash": "Dash",
     "coin__dogecoin": "狗狗币",
     "coin__ethereum": "以太坊",
+    "content__a_higher_definition_of_private_key_cold_storage": "更高定义的私钥冷存储。",
     "content__all_new_design__secure_chip_supercharged__beautiful_and_true_color_display": "全新设计，安全芯片加持，靓丽真彩显示。",
     "content__biometric_tech__optical_encryption__so_many_reasons_to_go_pro": "生物识别、光学加密，选择 Pro 的理由超级多。",
     "content__mini_sized_safety_without_compromise": "尺寸迷你，安全性毫不妥协。",
@@ -31,6 +35,8 @@
     "menu__enterprise_solutions": "企业解决方案",
     "menu__for_business": "商业合作",
     "menu__for_developer": "开发者",
+    "menu__getting_started": "入门",
+    "menu__getting_started_desc": "从0到1快速入门，你可能遇到的大部分问题都可以在这里得到解答。",
     "menu__hardware_device": "硬件设备",
     "menu__hardware_wallet_manual": "硬件钱包手册",
     "menu__help_center": "帮助中心",
@@ -70,7 +76,9 @@
     "title__desktop_app": "桌面端",
     "title__google_play": "谷歌商店",
     "title__mobile_app": "移动端",
+    "title__multi_chain_support": "多链支持",
     "title__other_platforms": "其他平台",
+    "title__set_up_your_onekey_hardware_wallet": "设置您的OneKey硬件钱包",
     "title__stay_in_touch": "保持联系",
     "title__subscribe_to_our_notifications": "订阅我们的通知"
 }

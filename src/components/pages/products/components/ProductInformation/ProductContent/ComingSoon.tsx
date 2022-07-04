@@ -2,7 +2,7 @@ import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Box } from '../../../../../base';
+import { Box, I18n } from '../../../../../base';
 
 export interface ComingSoonProps {
   children?: ReactNode;
@@ -40,7 +40,8 @@ export const ComingSoon: FC<ComingSoonProps> = (props) => {
         ...theme.text.medium400,
       }}
     >
-      Coming Soon {children}
+      <I18n name="action__coming_soon" />
+      {children}
     </Box>
   );
 };

@@ -1,11 +1,14 @@
+import { useTranslation } from 'gatsby-plugin-react-i18next';
+
 import { FeatureSectionProps } from '../../components/FeatureSection';
 import { Image1, Image2, Image3 } from '../../components/FeatureSection/Images';
 
 export function useFeatureSectionData(): FeatureSectionProps {
+  const { t } = useTranslation();
+
   return {
-    title: 'Focus and Release',
-    description:
-      'Multi-Ways, Multi-Directions, Multi-Views to First Experiences',
+    title: t('title__focus_and_release'),
+    description: t('title__focus_and_release_desc'),
     items: [
       {
         imageNode: Image1,

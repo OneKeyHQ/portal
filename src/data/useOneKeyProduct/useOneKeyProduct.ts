@@ -64,7 +64,9 @@ export function useOneKeyProduct(): OneKeyProducts {
       name: 'OneKey Lite',
       price: 19.99,
       formattedPrice: '$19.99',
-      description: 'A higher definition of private key cold storage.',
+      description: t(
+        'content__a_higher_definition_of_private_key_cold_storage',
+      ),
       path: '/products/onekey-lite-hardware-wallet/',
       shops: {
         amazonGlobal: {

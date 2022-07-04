@@ -1,7 +1,10 @@
 {
+    "action__check_the_full_list": "Consultez la liste complète",
     "action__coming_soon": "Bientôt disponible",
     "action__contact_us": "Contactez-nous",
+    "action__download": "Télécharger",
     "action__free_download": "Téléchargement Gratuit",
+    "action__getting_started": "Commencer",
     "action__go_to_shop": "Aller à la boutique",
     "action__launch_app": "Lancer l'application",
     "action__learn_more": "Apprendre encore plus",
@@ -11,6 +14,7 @@
     "coin__dash": "Dash",
     "coin__dogecoin": "Dogecoin",
     "coin__ethereum": "Ethereum",
+    "content__a_higher_definition_of_private_key_cold_storage": "Une définition plus élevée du stockage à froid des clés privées.",
     "content__all_new_design__secure_chip_supercharged__beautiful_and_true_color_display": "Tout nouveau design, puce sécurisée suralimentée, affichage couleur magnifique et fidèle.",
     "content__biometric_tech__optical_encryption__so_many_reasons_to_go_pro": "Technologie biométrique, cryptage optique, autant de raisons de devenir Pro.",
     "content__mini_sized_safety_without_compromise": "Taille mini, sécurité sans compromis.",
@@ -31,6 +35,8 @@
     "menu__enterprise_solutions": "Solutions d'entreprise",
     "menu__for_business": "Pour le business",
     "menu__for_developer": "Pour le développeur",
+    "menu__getting_started": "Commencer",
+    "menu__getting_started_desc": "Commencez rapidement de 0 à 1, et la plupart des questions que vous pourriez rencontrer trouveront une réponse ici.",
     "menu__hardware_device": "Périphérique matériel",
     "menu__hardware_wallet_manual": "Manuel du portefeuille matériel",
     "menu__help_center": "Centre d'aide",
@@ -70,7 +76,9 @@
     "title__desktop_app": "Application de bureau",
     "title__google_play": "Google Play",
     "title__mobile_app": "Application mobile",
+    "title__multi_chain_support": "Prise en charge multi-chaînes",
     "title__other_platforms": "Autres plateformes",
+    "title__set_up_your_onekey_hardware_wallet": "Configurez votre portefeuille matériel OneKey",
     "title__stay_in_touch": "Reste en contact",
     "title__subscribe_to_our_notifications": "Abonnez-vous à nos notifications"
 }
