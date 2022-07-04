@@ -37,8 +37,12 @@ async function main() {
     fs.rmSync(scriptPath('./.tmp'), { recursive: true, force: true });
 
     fs.readdirSync(scriptPath('../locales')).forEach((file) => {
+      const lang = file.split('.')[0];
+
       // en.json => en
-      languages.push(file.split('.')[0]);
+      if (lang) {
+        languages.push(lang);
+      }
     });
 
     fs.writeFileSync(
