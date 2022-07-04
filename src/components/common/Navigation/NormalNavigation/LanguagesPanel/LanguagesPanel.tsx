@@ -8,8 +8,8 @@ import { Link } from '../../../../base';
 import { Box, Span } from '../../../../base/Box';
 import { Container } from '../../../../base/Container';
 import { Flex } from '../../../../base/Flex';
+import { languagesMap } from '../../languages';
 
-import { languagesMap } from './languages';
 import { LanguagesPanelItem } from './LanguagesPanelItem';
 
 export interface LanguagesPanelProps {

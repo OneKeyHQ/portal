@@ -5,8 +5,8 @@ import { useI18next } from 'gatsby-plugin-react-i18next';
 
 import { useHover } from '../../../../../hooks';
 import { Box, Flex, LanguageIcon } from '../../../../base';
+import { languagesMap } from '../../languages';
 import { LanguagesPanel } from '../LanguagesPanel';
-import { languagesMap } from '../LanguagesPanel/languages';
 
 export interface LanguageSwitchButtonProps {
   children?: ReactNode;
