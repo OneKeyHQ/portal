@@ -31,6 +31,8 @@
     "menu__enterprise_solutions": "โซลูชั่นระดับองค์กร",
     "menu__for_business": "สำหรับธุรกิจ",
     "menu__for_developer": "สำหรับนักพัฒนา",
+    "menu__getting_started": "เริ่มต้น",
+    "menu__getting_started_desc": "เริ่มต้นอย่างรวดเร็วจาก 0 ถึง 1 และคำถามส่วนใหญ่ที่คุณอาจพบมีคำตอบที่นี่",
     "menu__hardware_device": "อุปกรณ์ฮาร์ดแวร์",
     "menu__hardware_wallet_manual": "คู่มือกระเป๋าสตางค์ฮาร์ดแวร์",
     "menu__help_center": "ศูนย์ช่วยเหลือ",

@@ -31,6 +31,8 @@
     "menu__enterprise_solutions": "エンタープライズソリューション",
     "menu__for_business": "ビジネス用",
     "menu__for_developer": "開発者向け",
+    "menu__getting_started": "入門",
+    "menu__getting_started_desc": "0から1まですぐに始めてください、そしてあなたが遭遇するかもしれない質問のほとんどはここで答えることができます。",
     "menu__hardware_device": "ハードウェアデバイス",
     "menu__hardware_wallet_manual": "ハードウェアウォレットマニュアル",
     "menu__help_center": "ヘルプセンター",

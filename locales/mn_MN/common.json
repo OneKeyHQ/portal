@@ -31,6 +31,8 @@
     "menu__enterprise_solutions": "Enterprise Solutions",
     "menu__for_business": "Бизнесийн хувьд",
     "menu__for_developer": "Хөгжүүлэгчийн хувьд",
+    "menu__getting_started": "Эхлэх",
+    "menu__getting_started_desc": "0-ээс 1 хүртэл хурдан эхлэх ба танд тулгарч болох ихэнх асуултын хариултыг эндээс авах боломжтой.",
     "menu__hardware_device": "Техник хангамжийн төхөөрөмж",
     "menu__hardware_wallet_manual": "Техник хангамжийн түрийвчний гарын авлага",
     "menu__help_center": "Тусламжийн төв",

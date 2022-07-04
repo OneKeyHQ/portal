@@ -2,6 +2,7 @@ import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
+import { I18n } from '../../../../base';
 import { Box, BoxProps, Span } from '../../../../base/Box';
 import { MenuListArrowIcon } from '../../../../base/Icon';
 import { Link } from '../../../../base/Link';
@@ -57,7 +58,7 @@ export const RightArea: FC<RightAreaProps> = (props) => {
                 color: theme.colors.test500,
               }}
             >
-              Getting Started
+              <I18n name="menu__getting_started" />
               <MenuListArrowIcon />
             </Span>
           </Box>
@@ -67,8 +68,7 @@ export const RightArea: FC<RightAreaProps> = (props) => {
               color: theme.colors.test300,
             }}
           >
-            Get started quickly from 0 to 1, and most of the questions you may
-            encounter can be answered here.
+            <I18n name="menu__getting_started_desc" />
           </Span>
         </Box>
 

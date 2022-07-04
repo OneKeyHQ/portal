@@ -31,6 +31,8 @@
     "menu__enterprise_solutions": "Mga Solusyon sa Enterprise",
     "menu__for_business": "Para sa negosyo",
     "menu__for_developer": "Para sa Developer",
+    "menu__getting_started": "Nagsisimula",
+    "menu__getting_started_desc": "Magsimula nang mabilis mula 0 hanggang 1, at karamihan sa mga tanong na maaari mong makaharap ay masasagot dito.",
     "menu__hardware_device": "Hardware Device",
     "menu__hardware_wallet_manual": "Manual ng Hardware Wallet",
     "menu__help_center": "Help Center",

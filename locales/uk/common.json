@@ -31,6 +31,8 @@
     "menu__enterprise_solutions": "Enterprise Solutions",
     "menu__for_business": "Для бізнесу",
     "menu__for_developer": "Для розробника",
+    "menu__getting_started": "Починаємо",
+    "menu__getting_started_desc": "Почніть швидко від 0 до 1, і тут можна знайти відповіді на більшість запитань, які можуть виникнути.",
     "menu__hardware_device": "Апаратний пристрій",
     "menu__hardware_wallet_manual": "Посібник з апаратного гаманця",
     "menu__help_center": "Центр допомоги",

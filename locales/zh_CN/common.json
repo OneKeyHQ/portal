@@ -31,6 +31,8 @@
     "menu__enterprise_solutions": "企业解决方案",
     "menu__for_business": "商业合作",
     "menu__for_developer": "开发者",
+    "menu__getting_started": "入门",
+    "menu__getting_started_desc": "从0到1快速入门，你可能遇到的大部分问题都可以在这里得到解答。",
     "menu__hardware_device": "硬件设备",
     "menu__hardware_wallet_manual": "硬件钱包手册",
     "menu__help_center": "帮助中心",
