@@ -43,7 +43,7 @@ export const LanguagesPanel: FC<LanguagesPanelProps> = (props) => {
               boxShadow: theme.shadow.hover,
             }}
           >
-            <Flex xs={{ width: 500, flexWrap: 'wrap' }}>
+            <Flex xs={{ width: 460, flexWrap: 'wrap' }}>
               {languages.map((lng) => (
                 <Box xs={{ width: '33.3%' }}>
                   <Link key={lng} to={originalPath} language={lng}>
