@@ -10,6 +10,7 @@ import { DownloadButton } from '../../DownloadButton';
 import { NavigationAnimationWrap } from '../NavigationAnimationWrap';
 import { useNavigationDataObject } from '../useNavigationData';
 
+import { LanguageSwitchButton } from './LanguageSwitchButton';
 import { NavigationItem } from './NavigationItem';
 import { ProductPanel } from './ProductPanel';
 import { ServicesPanel } from './ServicesPanel';
@@ -78,10 +79,8 @@ export const NormalNavigation: React.FC<NormalNavigationProps> = () => {
           ))}
         </Ul>
 
-        <Box css={{ display: 'flex', alignItems: 'center' }}>
-          <Link language="ja" to="/">
-            JA
-          </Link>
+        <Box xs={{ paddingLeft: 32, paddingRight: 32 }}>
+          <LanguageSwitchButton />
         </Box>
 
         <DownloadButton
