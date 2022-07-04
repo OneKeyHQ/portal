@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Li, Ul } from '../../../base/Box';
+import { Box, Li, Ul } from '../../../base/Box';
 import { Container } from '../../../base/Container';
 import { Link } from '../../../base/Link';
 import { Logo } from '../../../base/Logo';
@@ -76,16 +76,13 @@ export const NormalNavigation: React.FC<NormalNavigationProps> = () => {
               <NavigationItem {...item} />
             </Li>
           ))}
-
-          {/* <Box css={{ display: 'flex', gap: 8, alignItems: 'center' }}>
-              <img
-                alt="language select icon"
-                src={languageSelectIcon}
-                css={{ width: 24, height: 24 }}
-              />
-              <NavigationItem>EN</NavigationItem>
-            </Box> */}
         </Ul>
+
+        <Box css={{ display: 'flex', alignItems: 'center' }}>
+          <Link language="ja" to="/">
+            JA
+          </Link>
+        </Box>
 
         <DownloadButton
           override={{

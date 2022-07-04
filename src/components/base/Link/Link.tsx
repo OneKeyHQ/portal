@@ -6,7 +6,7 @@ import { Anchor, Box, BoxProps } from '../Box';
 
 export interface LinkProps extends BoxProps {
   to: string;
-  toLanguage?: string;
+  language?: string;
   target?: React.HTMLAttributeAnchorTarget;
 }
 
