@@ -12,13 +12,13 @@ export function useFeatureSectionData(): FeatureSectionProps {
     items: [
       {
         imageNode: Image5,
-        name: 'Portable',
-        description: 'Easy to fits in wallet, pocket, envelope, card case...',
+        name: t('title__portable'),
+        description: t('title__portable_lite_feature_desc'),
       },
       {
         imageNode: Image6,
-        name: 'Security',
-        description: '10 wrong code attempts trigger self-erase',
+        name: t('title__security'),
+        description: t('title__security_lite_feature_desc'),
       },
     ],
   };

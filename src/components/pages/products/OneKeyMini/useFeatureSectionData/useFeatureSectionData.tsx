@@ -12,7 +12,7 @@ export function useFeatureSectionData(): FeatureSectionProps {
     items: [
       {
         imageNode: Image1,
-        name: 'Open source',
+        name: t('title__open_source'),
         description: 'Open source transparent, WYSIWYG.',
       },
       {

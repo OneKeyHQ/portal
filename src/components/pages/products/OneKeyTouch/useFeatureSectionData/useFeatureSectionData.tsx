@@ -12,19 +12,18 @@ export function useFeatureSectionData(): FeatureSectionProps {
     items: [
       {
         imageNode: Image1,
-        name: 'Open source',
-        description: 'Open source transparent, WYSIWYG.',
+        name: t('title__open_source'),
+        description: t('title__open_source_desc'),
       },
       {
         imageNode: Image4,
-        name: 'Easy to use',
-        description: 'Beginner friendly.',
+        name: t('title__easy_to_use'),
+        description: t('title__easy_to_use_desc'),
       },
       {
         imageNode: Image3,
-        name: 'Self-destruction seal',
-        description:
-          'To ensure every new items on your hand, every step is for safety.',
+        name: t('title__self_destruction_seal'),
+        description: t('title__self_destruction_seal_desc'),
       },
     ],
   };
