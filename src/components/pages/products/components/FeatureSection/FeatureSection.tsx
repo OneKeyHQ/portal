@@ -49,7 +49,9 @@ export const FeatureSection: FC<FeatureSectionProps> = (props) => {
             }}
           >
             {featureSectionData.map((item) => (
-              <FeatureItem key={item.name} {...item} />
+              <Box xs={{ width: '30%' }}>
+                <FeatureItem key={item.name} {...item} />
+              </Box>
             ))}
           </Flex>
         </Box>
