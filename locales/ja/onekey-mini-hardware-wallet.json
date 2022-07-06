@@ -1,3 +1,9 @@
 {
-    "content__onekey_mini_product_desc": "新しいBluetooth対応ハードウェアウォレットを使用して、暗号を保護、購入、交換、拡張し、NFTを管理します。すべてのデジタル資産を1か所で保護します。"
+    "content__onekey_mini_product_desc": "新しいBluetooth対応ハードウェアウォレットを使用して、暗号を保護、購入、交換、拡張し、NFTを管理します。すべてのデジタル資産を1か所で保護します。",
+    "title__mini_sized": "ミニサイズ",
+    "title__mini_sized_desc": "ミニサイズ、妥協のない安全性。",
+    "title__onekey_platform": "OneKey\\nプラットホーム",
+    "title__onekey_platform_desc": "1つのウォレットですべてのブロックチェーンを移動します。",
+    "title__security_built_right_in": "安全\\nビルトイン",
+    "title__security_built_right_in_desc": "機密情報を保護するためにトップセキュアチップを使用しています。"
 }

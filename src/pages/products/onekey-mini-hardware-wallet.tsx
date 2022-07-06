@@ -6,7 +6,7 @@ export const query = graphql`
   query ($language: String!) {
     locales: allLocale(
       filter: {
-        ns: { in: ["common", "product", "onekey-touch-mini-wallet"] }
+        ns: { in: ["common", "product", "onekey-mini-hardware-wallet"] }
         language: { eq: $language }
       }
     ) {
