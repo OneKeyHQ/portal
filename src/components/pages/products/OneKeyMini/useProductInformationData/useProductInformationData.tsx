@@ -17,7 +17,7 @@ export function useProductInformationData(): ProductInformationProps {
       mini.shops.shopify,
     ]),
     name: mini.name,
-    slogan: 'Crypto Hardware Wallet',
+    slogan: t('content__crypto_hardware_wallet'),
     description: t('content__onekey_mini_product_desc'),
     price: {
       value: mini.price,
