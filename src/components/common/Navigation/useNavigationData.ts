@@ -39,7 +39,7 @@ export function useNavigationDataObject(): Record<
   const app = {
     name: t('menu__app'),
     key: 'app',
-    path: 'https://onekey.so/download',
+    path: '/download',
   };
 
   const services = {
