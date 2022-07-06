@@ -5,6 +5,7 @@ import { useTheme } from '@emotion/react';
 import {
   Box,
   Flex,
+  I18n,
   Link,
   Span,
   StarHalfIcon,
@@ -38,7 +39,8 @@ export const Review: FC<ReviewProps> = (props) => {
       >
         <Span>
           <Span xs={theme.text.medium200} m={theme.text.medium300}>
-            4.4 Star Rating
+            4.4
+            <I18n name="title__star_rating" />
           </Span>
 
           <Link to="https://www.trustpilot.com/review/onekey.so">
@@ -51,7 +53,7 @@ export const Review: FC<ReviewProps> = (props) => {
               }}
               m={{ paddingLeft: 6 }}
             >
-              See Reviews
+              <I18n name="title__see_reviews" />
             </Span>
           </Link>
         </Span>
@@ -64,7 +66,7 @@ export const Review: FC<ReviewProps> = (props) => {
               color: theme.colors.test500,
             }}
           >
-            Shipping & Return
+            <I18n name="title__shipping_return" />
           </Span>
         </Link>
       </Flex>

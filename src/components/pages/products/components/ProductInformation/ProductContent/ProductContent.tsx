@@ -8,6 +8,7 @@ import {
   DeliveryIcon,
   Divider,
   Flex,
+  I18n,
   ServiceIcon,
   Span,
 } from '../../../../../base';
@@ -104,12 +105,16 @@ export const ProductContent: FC<ProductContentProps> = (props) => {
 
         <Flex xs={{ alignItems: 'center', gap: 8 }}>
           <DeliveryIcon width={32} height={32} />
-          <Span xs={theme.text.normal300}>Free International Shipping</Span>
+          <Span xs={theme.text.normal300}>
+            <I18n name="content__free_international_shipping" />
+          </Span>
         </Flex>
 
         <Flex xs={{ alignItems: 'center', gap: 8 }}>
           <ServiceIcon width={32} height={32} />
-          <Span xs={theme.text.normal300}>24/7 Support</Span>
+          <Span xs={theme.text.normal300}>
+            <I18n name="content__24_7_support" />
+          </Span>
         </Flex>
       </Flex>
 
