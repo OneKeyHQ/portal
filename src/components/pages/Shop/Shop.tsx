@@ -10,6 +10,8 @@ import {
 } from '../../common';
 
 import { Hero } from './components/Hero';
+import { ProductCompare } from './components/ProductCompare';
+import { Products } from './components/Products';
 
 export const Shop: React.FC = () => (
   <>
@@ -25,6 +27,10 @@ export const Shop: React.FC = () => (
       <Hero />
 
       <Container>
+        <Products />
+
+        <ProductCompare />
+
         <StayInTouchWidthContainerAndPadding />
       </Container>
     </Main>
