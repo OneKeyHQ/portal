@@ -16,7 +16,7 @@ import { Products } from './components/Products';
 export const Shop: React.FC = () => (
   <>
     <Helmet>
-      <title>OneKey</title>
+      <title>Shop</title>
     </Helmet>
 
     <SEO title="onekey" />
