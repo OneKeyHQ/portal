@@ -6,6 +6,7 @@ import { Box } from '../../../base/Box';
 import { Flex } from '../../../base/Flex';
 import { MenuCloseIcon, MenuIcon } from '../../../base/Icon';
 import { Logo } from '../../../base/Logo';
+import { DownloadButton } from '../../DownloadButton';
 import { NavigationAnimationWrap } from '../NavigationAnimationWrap';
 import { useNavigationData } from '../useNavigationData';
 
@@ -98,6 +99,15 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = (props) => {
           </Flex>
 
           <MobileMenuItems mobileMenus={navigationData} />
+
+          <Box
+            xs={{
+              paddingLeft: 20,
+              paddingRight: 20,
+            }}
+          >
+            <DownloadButton />
+          </Box>
         </Box>
       )}
     </Fragment>

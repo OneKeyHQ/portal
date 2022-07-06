@@ -2,24 +2,22 @@ import { FC } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Span } from '../../../../base/Box';
+import { I18n, Span } from '../../../../base';
 import { Flex } from '../../../../base/Flex';
 
 export interface TitleProps {
-  text: string[];
+  name?: string;
 }
 
 export const Title: FC<TitleProps> = (props) => {
-  const { text } = props;
+  const { name } = props;
   const theme = useTheme();
 
   return (
     <Flex xs={{ flexDirection: 'column' }}>
-      {text.map((item) => (
-        <Span key={item} xs={theme.text.medium800} l={theme.text.medium900}>
-          {item}
-        </Span>
-      ))}
+      <Span xs={theme.text.medium800} l={theme.text.medium900}>
+        {name && <I18n name={name} alwaysMultiLine />}
+      </Span>
     </Flex>
   );
 };

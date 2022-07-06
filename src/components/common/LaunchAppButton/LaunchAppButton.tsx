@@ -1,6 +1,7 @@
 import { FC } from 'react';
 
 import { useOneKeyVersion } from '../../../data';
+import { I18n } from '../../base';
 import { Button, ButtonProps } from '../../base/Button';
 import { Logo } from '../../base/Logo';
 
@@ -32,7 +33,7 @@ export const LaunchAppButton: FC<LaunchAppButtonProps> = (props) => {
           />
         }
       >
-        Launch App
+        <I18n name="action__launch_app" />
       </Button>
     </a>
   );

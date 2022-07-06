@@ -4,7 +4,12 @@ export { default } from '../components/pages/Download';
 
 export const query = graphql`
   query ($language: String!) {
-    locales: allLocale(filter: { language: { eq: $language } }) {
+    locales: allLocale(
+      filter: {
+        ns: { in: ["common", "download"] }
+        language: { eq: $language }
+      }
+    ) {
       edges {
         node {
           ns
