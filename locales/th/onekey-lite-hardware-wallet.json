@@ -1,5 +1,10 @@
 {
     "title__portable": "แบบพกพา",
     "title__portable_lite_feature_desc": "ง่ายต่อการใส่กระเป๋าสตางค์ กระเป๋า ซองจดหมาย การ์ด...",
-    "title__security_lite_feature_desc": "การพยายามใส่รหัสผิด 10 ครั้งทำให้เกิดการลบตัวเอง"
+    "title__restore_your_wallet_without_typing_one_word": "คืนค่า\\n กระเป๋าเงินของคุณ\\n โดยไม่ต้องพิมพ์\\n หนึ่งคำ",
+    "title__scan_set_code_backed_up": "สแกน.\\n ตั้งรหัส.\\n ได้รับการสนุบสนุน, ช่วยเหลือ.",
+    "title__scan_set_code_backed_up_desc": "มันง่ายมาก การทำให้สิ่งที่เจ็บปวดที่สุดใน DeFi กลายเป็นเรื่องง่ายและสนุก",
+    "title__security_lite_feature_desc": "การพยายามใส่รหัสผิด 10 ครั้งทำให้เกิดการลบตัวเอง",
+    "title__water_resistance_also_tear_resistant": "ต้านทานน้ำ,\\n ยังทนต่อการฉีกขาด",
+    "title__water_resistance_also_tear_resistant_desc": "ไม่ต้องกลัวแช่น้ำหรือฉีกขาดด้วยมือ"
 }

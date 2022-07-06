@@ -1,5 +1,10 @@
 {
     "title__portable": "Portátil",
     "title__portable_lite_feature_desc": "Fácil de caber na carteira, bolso, envelope, porta-cartões...",
-    "title__security_lite_feature_desc": "10 tentativas de código errado acionam o apagamento automático"
+    "title__restore_your_wallet_without_typing_one_word": "Restaurar\\n sua carteira\\n sem digitar\\n uma palavra.",
+    "title__scan_set_code_backed_up": "Varredura.\\n Definir código.\\n Backup.",
+    "title__scan_set_code_backed_up_desc": "É simples assim. Tornar a coisa mais dolorosa no DeFi se torne fácil e agradável.",
+    "title__security_lite_feature_desc": "10 tentativas de código errado acionam o apagamento automático",
+    "title__water_resistance_also_tear_resistant": "Resistência à água,\\n também resistente a rasgos",
+    "title__water_resistance_also_tear_resistant_desc": "Sem medo de mergulhar na água ou rasgar com a mão."
 }

@@ -1,5 +1,10 @@
 {
     "title__portable": "tragbar",
     "title__portable_lite_feature_desc": "Passt einfach in Brieftasche, Tasche, Umschlag, Kartenetui ...",
-    "title__security_lite_feature_desc": "10 Versuche mit falschem Code lösen die Selbstlöschung aus"
+    "title__restore_your_wallet_without_typing_one_word": "Wiederherstellen\\n deine Geldbörse\\n ohne zu tippen\\n ein Wort.",
+    "title__scan_set_code_backed_up": "Scan.\\n Code festlegen.\\n Gesichert.",
+    "title__scan_set_code_backed_up_desc": "So einfach ist das. Die schmerzhafteste Sache in DeFi wird einfach und angenehm.",
+    "title__security_lite_feature_desc": "10 Versuche mit falschem Code lösen die Selbstlöschung aus",
+    "title__water_resistance_also_tear_resistant": "Wasserbeständigkeit,\\n auch reißfest",
+    "title__water_resistance_also_tear_resistant_desc": "Keine Angst vor dem Einweichen in Wasser oder dem Reißen von Hand."
 }

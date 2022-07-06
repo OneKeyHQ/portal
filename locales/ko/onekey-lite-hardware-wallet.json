@@ -1,5 +1,10 @@
 {
     "title__portable": "가지고 다닐 수 있는",
     "title__portable_lite_feature_desc": "지갑, 주머니, 봉투, 카드 케이스에 쏙...",
-    "title__security_lite_feature_desc": "10번의 잘못된 코드 시도가 자동 삭제를 유발함"
+    "title__restore_your_wallet_without_typing_one_word": "복원하다\\n 당신의 지갑\\n 타이핑 없이\\n 한 단어.",
+    "title__scan_set_code_backed_up": "주사.\\n 코드를 설정합니다.\\n 백업됨.",
+    "title__scan_set_code_backed_up_desc": "간단합니다. DeFi에서 가장 고통스러운 일을 쉽고 즐겁게 만듭니다.",
+    "title__security_lite_feature_desc": "10번의 잘못된 코드 시도가 자동 삭제를 유발함",
+    "title__water_resistance_also_tear_resistant": "방수,\\n 또한 눈물 방지",
+    "title__water_resistance_also_tear_resistant_desc": "물에 젖거나 손으로 찢어질 염려가 없습니다."
 }

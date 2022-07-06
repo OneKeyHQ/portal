@@ -1,5 +1,10 @@
 {
     "title__portable": "पोर्टेबल",
     "title__portable_lite_feature_desc": "वॉलेट, पॉकेट, लिफाफा, कार्ड केस में फिट होना आसान...",
-    "title__security_lite_feature_desc": "10 गलत कोड प्रयास सेल्फ-इरेज़ को ट्रिगर करते हैं"
+    "title__restore_your_wallet_without_typing_one_word": "पुनर्स्थापित करना\\n आपका बटुआ\\n बिना टाइप किए\\n एक शब्द।",
+    "title__scan_set_code_backed_up": "स्कैन।\\n कोड सेट करें।\\n को समर्थन।",
+    "title__scan_set_code_backed_up_desc": "यह इत्ना आसान है। डेफी में सबसे दर्दनाक चीज बनाना आसान और सुखद हो जाता है।",
+    "title__security_lite_feature_desc": "10 गलत कोड प्रयास सेल्फ-इरेज़ को ट्रिगर करते हैं",
+    "title__water_resistance_also_tear_resistant": "पानी प्रतिरोध,\\n आंसू प्रतिरोधी भी",
+    "title__water_resistance_also_tear_resistant_desc": "पानी में भीगने या हाथ से फटने का डर नहीं।"
 }

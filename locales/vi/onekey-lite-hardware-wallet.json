@@ -1,5 +1,10 @@
 {
     "title__portable": "Cầm tay",
     "title__portable_lite_feature_desc": "Dễ dàng cho vào ví, túi, phong bì, hộp đựng thẻ ...",
-    "title__security_lite_feature_desc": "10 lần nhập sai mã kích hoạt tự xóa"
+    "title__restore_your_wallet_without_typing_one_word": "Khôi phục\\n ví của bạn\\n không cần đánh máy\\n một từ.",
+    "title__scan_set_code_backed_up": "Quét.\\n Đặt mã.\\n Hỗ trợ.",
+    "title__scan_set_code_backed_up_desc": "Nó đơn giản mà. Làm cho điều khó khăn nhất trong DeFi trở nên dễ dàng và thú vị.",
+    "title__security_lite_feature_desc": "10 lần nhập sai mã kích hoạt tự xóa",
+    "title__water_resistance_also_tear_resistant": "Không thấm nước,\\n cũng chống rách",
+    "title__water_resistance_also_tear_resistant_desc": "Không sợ ngấm nước hoặc làm rách bằng tay."
 }

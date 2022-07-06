@@ -1,5 +1,10 @@
 {
     "title__portable": "Portable",
     "title__portable_lite_feature_desc": "Madaling magkasya sa wallet, bulsa, sobre, card case...",
-    "title__security_lite_feature_desc": "Ang 10 maling code na pagtatangka ay nag-trigger ng self-erase"
+    "title__restore_your_wallet_without_typing_one_word": "Ibalik\\n iyong pitaka\\n nang hindi nagta-type\\n isang salita.",
+    "title__scan_set_code_backed_up": "Scan.\\n Itakda ang Code.\\n Sinuportahan.",
+    "title__scan_set_code_backed_up_desc": "Ganun kasimple. Gawing madali at kasiya-siya ang pinakamasakit na bagay sa DeFi.",
+    "title__security_lite_feature_desc": "Ang 10 maling code na pagtatangka ay nag-trigger ng self-erase",
+    "title__water_resistance_also_tear_resistant": "paglaban sa tubig,\\n lumalaban din sa luha",
+    "title__water_resistance_also_tear_resistant_desc": "Walang takot na magbabad sa tubig o mapunit sa pamamagitan ng kamay."
 }

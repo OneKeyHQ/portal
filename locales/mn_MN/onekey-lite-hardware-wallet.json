@@ -1,5 +1,10 @@
 {
     "title__portable": "Зөөврийн",
     "title__portable_lite_feature_desc": "Түрийвч, халаас, дугтуй, картын хайрцагт амархан...",
-    "title__security_lite_feature_desc": "10 буруу код оролдлого нь өөрийгөө устгахад хүргэдэг"
+    "title__restore_your_wallet_without_typing_one_word": "Сэргээх\\n таны түрийвч\\n бичихгүйгээр\\n нэг үг.",
+    "title__scan_set_code_backed_up": "Сканнердах.\\n Код тохируулах.\\n Нөөцлөгдөх.",
+    "title__scan_set_code_backed_up_desc": "Ийм энгийн. DeFi-д хамгийн зовлонтой зүйлийг хийх нь амархан бөгөөд тааламжтай болдог.",
+    "title__security_lite_feature_desc": "10 буруу код оролдлого нь өөрийгөө устгахад хүргэдэг",
+    "title__water_resistance_also_tear_resistant": "Усны эсэргүүцэл,\\n мөн урагдахад тэсвэртэй",
+    "title__water_resistance_also_tear_resistant_desc": "Усанд дүрэх, гараараа урагдахаас айхгүй."
 }

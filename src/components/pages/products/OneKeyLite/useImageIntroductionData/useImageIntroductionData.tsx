@@ -1,13 +1,17 @@
 import { StaticImage } from 'gatsby-plugin-image';
+import { useTranslation } from 'gatsby-plugin-react-i18next';
+
+import { splitMultiline } from '../../../../../utils';
 
 export function useImageIntroductionData() {
-  const name1 = 'Restore your wallet without typing one word.';
-  const name2 = 'Scan. Set Code. Backed Up.';
-  const name3 = 'Water resistance, also tear-resistant';
+  const { t } = useTranslation();
+  const name1 = t('title__restore_your_wallet_without_typing_one_word');
+  const name2 = t('title__scan_set_code_backed_up');
+  const name3 = t('title__water_resistance_also_tear_resistant');
 
   const items = [
     {
-      name: ['Restore', 'your wallet', 'without typing', 'one word.'],
+      name: splitMultiline(name1),
       description: ``,
       images: {
         s: <StaticImage src="./images/small/hardware0.jpg" alt={name1} />,
@@ -17,9 +21,8 @@ export function useImageIntroductionData() {
       },
     },
     {
-      name: ['Scan.', 'Set Code.', 'Backed Up.'],
-      description:
-        "It's that simple. Making the most painful thing in DeFi become easy and enjoyable.",
+      name: splitMultiline(name2),
+      description: t('title__scan_set_code_backed_up_desc'),
       images: {
         s: <StaticImage src="./images/small/hardware1.jpg" alt={name2} />,
         m: <StaticImage src="./images/large/hardware1.jpg" alt={name2} />,
@@ -28,8 +31,8 @@ export function useImageIntroductionData() {
       },
     },
     {
-      name: ['Water resistance,', 'also tear-resistant'],
-      description: 'No fear of soaking in water or tearing by hand.',
+      name: splitMultiline(name3),
+      description: t('title__water_resistance_also_tear_resistant_desc'),
       images: {
         s: <StaticImage src="./images/small/hardware2.jpg" alt={name3} />,
         m: <StaticImage src="./images/large/hardware2.jpg" alt={name3} />,

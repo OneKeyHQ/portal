@@ -1,5 +1,10 @@
 {
     "title__portable": "Портативний",
     "title__portable_lite_feature_desc": "Легко поміщається в гаманець, кишеню, конверт, візитницю...",
-    "title__security_lite_feature_desc": "10 спроб неправильного введення коду викликають самостійнення"
+    "title__restore_your_wallet_without_typing_one_word": "Відновлення\\n ваш гаманець\\n без набору тексту\\n одне слово.",
+    "title__scan_set_code_backed_up": "Сканувати.\\n Встановити код.\\n Резервне копіювання.",
+    "title__scan_set_code_backed_up_desc": "Це так просто. Зробіть найболючіше в DeFi легким і приємним.",
+    "title__security_lite_feature_desc": "10 спроб неправильного введення коду викликають самостійнення",
+    "title__water_resistance_also_tear_resistant": "Водотривкість,\\n також стійкий до розривів",
+    "title__water_resistance_also_tear_resistant_desc": "Ніякого страху замочити у воді або порвати руками."
 }
