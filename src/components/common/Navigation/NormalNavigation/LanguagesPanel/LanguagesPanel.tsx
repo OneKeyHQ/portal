@@ -45,8 +45,8 @@ export const LanguagesPanel: FC<LanguagesPanelProps> = (props) => {
           >
             <Flex xs={{ width: 460, flexWrap: 'wrap' }}>
               {languages.map((lng) => (
-                <Box xs={{ width: '33.3%' }}>
-                  <Link key={lng} to={originalPath} language={lng}>
+                <Box key={lng} xs={{ width: '33.3%' }}>
+                  <Link to={originalPath} language={lng}>
                     <LanguagesPanelItem>
                       <Span xs={{ textTransform: 'uppercase' }}>
                         {languagesMap[lng.toUpperCase()]}
