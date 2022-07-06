@@ -1,5 +1,9 @@
 import { FC, ReactNode } from 'react';
 
+import { Section } from '../../../../base';
+
+import { ProductsTitle } from './ProductsTitle';
+
 export interface ProductsProps {
   children?: ReactNode;
 }
@@ -7,5 +11,11 @@ export interface ProductsProps {
 export const Products: FC<ProductsProps> = (props) => {
   const { children } = props;
 
-  return <div>Products {children}</div>;
+  return (
+    <Section>
+      <ProductsTitle />
+
+      {children}
+    </Section>
+  );
 };
