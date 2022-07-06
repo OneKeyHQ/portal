@@ -1,4 +1,5 @@
 {
+    "action__add_to_cart": "Idagdag sa cart",
     "action__check_the_full_list": "Suriin ang buong listahan",
     "action__coming_soon": "malapit na",
     "action__contact_us": "Makipag-ugnayan sa amin",
@@ -8,6 +9,7 @@
     "action__go_to_shop": "Pumunta sa Shop",
     "action__launch_app": "Ilunsad ang App",
     "action__learn_more": "Matuto pa",
+    "action__other_stores": "Iba pang mga Tindahan",
     "action__subscribe": "Mag-subscribe",
     "app__copyright": "2022 OneKey, Inc. Nakalaan ang lahat ng karapatan.",
     "coin__bitcoin": "Bitcoin",

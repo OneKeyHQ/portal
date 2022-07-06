@@ -1,4 +1,5 @@
 {
+    "action__add_to_cart": "添加到购物车",
     "action__check_the_full_list": "查看完整列表",
     "action__coming_soon": "即将上线",
     "action__contact_us": "联系我们",
@@ -8,6 +9,7 @@
     "action__go_to_shop": "前往商店",
     "action__launch_app": "启动应用",
     "action__learn_more": "了解更多",
+    "action__other_stores": "其他店铺",
     "action__subscribe": "订阅",
     "app__copyright": "2022 OneKey, Inc. 保留所有权利。",
     "coin__bitcoin": "比特币",

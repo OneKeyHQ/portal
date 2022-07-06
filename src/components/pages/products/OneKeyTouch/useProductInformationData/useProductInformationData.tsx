@@ -11,8 +11,7 @@ export function useProductInformationData(): ProductInformationProps {
     shops: [],
     name: touch.name,
     slogan: 'Crypto Hardware Wallet',
-    description:
-      'All-new design, secure chip supercharged, beautiful and true color display.',
+    description: touch.description,
     price: {
       value: touch.price,
       formatted: touch.formattedPrice,

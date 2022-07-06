@@ -6,6 +6,7 @@ import {
   Box,
   ChevronDownIcon,
   Flex,
+  I18n,
   Link,
   MenuItem,
   MenuItems,
@@ -42,7 +43,8 @@ export const OtherStoresSelect: FC<OtherStoresSelectProps> = (props) => {
         }}
         onClick={() => setIsMenuOpen(!isMenuOpen)}
       >
-        Other Stores <ChevronDownIcon width={24} height={24} />
+        <I18n name="action__other_stores" />{' '}
+        <ChevronDownIcon width={24} height={24} />
       </Flex>
 
       {children}

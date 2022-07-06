@@ -1,4 +1,5 @@
 {
+    "action__add_to_cart": "কার্টে যোগ করুন",
     "action__check_the_full_list": "সম্পূর্ণ তালিকা পরীক্ষা করুন",
     "action__coming_soon": "শীঘ্রই আসছে",
     "action__contact_us": "যোগাযোগ করুন",
@@ -8,6 +9,7 @@
     "action__go_to_shop": "দোকানে যাও",
     "action__launch_app": "এপ্লিকেশন চালু করুন",
     "action__learn_more": "আরও জানুন",
+    "action__other_stores": "অন্যান্য দোকান",
     "action__subscribe": "সাবস্ক্রাইব",
     "app__copyright": "2022 OneKey, Inc. সর্বস্বত্ব সংরক্ষিত।",
     "coin__bitcoin": "বিটকয়েন",

@@ -2,6 +2,7 @@ import { FC, ReactNode, useState } from 'react';
 
 import { navigate } from 'gatsby';
 
+import { I18n } from '../../../../../base';
 import { Box } from '../../../../../base/Box';
 import { Button } from '../../../../../base/Button';
 import { Flex } from '../../../../../base/Flex';
@@ -53,7 +54,9 @@ export const AddToCart: FC<AddToCartProps> = (props) => {
       </Box>
 
       <Button onClick={buy} variant="filled">
-        <Box xs={{ width: 120 }}>Add to cart</Box>
+        <Box xs={{ width: 120 }}>
+          <I18n name="action__add_to_cart" />
+        </Box>
       </Button>
 
       {children}

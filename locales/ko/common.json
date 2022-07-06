@@ -1,4 +1,5 @@
 {
+    "action__add_to_cart": "장바구니에 추가",
     "action__check_the_full_list": "전체 목록 확인",
     "action__coming_soon": "곧 온다",
     "action__contact_us": "문의하기",
@@ -8,6 +9,7 @@
     "action__go_to_shop": "가게에 가다",
     "action__launch_app": "앱 실행",
     "action__learn_more": "더 알아보기",
+    "action__other_stores": "기타 상점",
     "action__subscribe": "구독하다",
     "app__copyright": "2022 OneKey, Inc. 판권 소유.",
     "coin__bitcoin": "비트코인",

@@ -1,4 +1,5 @@
 {
+    "action__add_to_cart": "Adicionar ao carrinho",
     "action__check_the_full_list": "Confira a lista completa",
     "action__coming_soon": "em breve",
     "action__contact_us": "Contate-Nos",
@@ -8,6 +9,7 @@
     "action__go_to_shop": "Ir para a loja",
     "action__launch_app": "Lançamento do Aplicativo",
     "action__learn_more": "Saber mais",
+    "action__other_stores": "Outras lojas",
     "action__subscribe": "Se inscrever",
     "app__copyright": "2022 OneKey, Inc. Todos os direitos reservados.",
     "coin__bitcoin": "Bitcoin",

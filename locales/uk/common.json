@@ -1,4 +1,5 @@
 {
+    "action__add_to_cart": "Додати в кошик",
     "action__check_the_full_list": "Перевірте повний список",
     "action__coming_soon": "незабаром",
     "action__contact_us": "Зв'яжіться з нами",
@@ -8,6 +9,7 @@
     "action__go_to_shop": "Перейти до магазину",
     "action__launch_app": "Запустіть додаток",
     "action__learn_more": "Вивчайте більше",
+    "action__other_stores": "Інші магазини",
     "action__subscribe": "Підписатися",
     "app__copyright": "2022 OneKey, Inc. Усі права захищено.",
     "coin__bitcoin": "біткойн",

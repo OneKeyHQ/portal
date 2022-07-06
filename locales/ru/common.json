@@ -1,4 +1,5 @@
 {
+    "action__add_to_cart": "Добавить в корзину",
     "action__check_the_full_list": "Проверить полный список",
     "action__coming_soon": "вскоре",
     "action__contact_us": "Свяжитесь с нами",
@@ -8,6 +9,7 @@
     "action__go_to_shop": "Идти в магазин",
     "action__launch_app": "Запустить приложение",
     "action__learn_more": "Учить больше",
+    "action__other_stores": "Другие магазины",
     "action__subscribe": "Подписывайся",
     "app__copyright": "2022 OneKey, Inc. Все права защищены.",
     "coin__bitcoin": "Биткойн",

@@ -16,7 +16,7 @@ export function useProductInformationData(): ProductInformationProps {
     ]),
     name: lite.name,
     slogan: 'Recovery Phrase Backup Card',
-    description: 'A higher definition of private key cold storage.',
+    description: lite.description,
     price: {
       value: lite.price,
       formatted: lite.formattedPrice,
