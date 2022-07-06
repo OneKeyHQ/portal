@@ -1,6 +1,6 @@
 import { FC, Fragment, ReactNode } from 'react';
 
-import { useTranslation } from 'gatsby-plugin-react-i18next';
+import { useI18next, useTranslation } from 'gatsby-plugin-react-i18next';
 
 import { removeTextBreak } from '../../../utils';
 import { ResponsiveStyleKeys } from '../Box';
@@ -44,9 +44,10 @@ export const I18n: FC<I18nProps> = (props) => {
     text: nativeText = '',
   } = props;
   const { t } = useTranslation();
-
+  const i18n = useI18next();
+  const notNeedSpace = ['ja', 'zh_HK', 'zh_CN'].includes(i18n.language);
   const text = name ? t(name) : nativeText;
-  const singleLineText = removeTextBreak(text);
+  const singleLineText = removeTextBreak(text, !notNeedSpace);
 
   let multiLineProps;
   let singleLineProps;
