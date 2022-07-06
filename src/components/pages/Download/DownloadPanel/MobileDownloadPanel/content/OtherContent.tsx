@@ -55,7 +55,7 @@ export const OtherContent: FC<OtherContentProps> = (props) => {
 
   return (
     <ContentContainer>
-      <Title text={desktop.pageTitle} />
+      <Title name={desktop.pageTitle} />
 
       <Flex xs={{ gap: 16 }}>
         {buttons.map((item) => (
