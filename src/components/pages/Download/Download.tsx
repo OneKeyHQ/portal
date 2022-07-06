@@ -3,10 +3,14 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 
 import { Container, Flex, Main, OnlyDisplay, SEO } from '../../base';
-import { Navigation, PageFooter, StayInTouch } from '../../common';
+import {
+  Navigation,
+  PageFooter,
+  StayInTouch,
+  TwoMediaCards,
+} from '../../common';
 
 import { BridgeDownload } from './BridgeDownload';
-import { Cards } from './Cards';
 import { DownloadPanel } from './DownloadPanel';
 
 const Download: React.FC = () => (
@@ -36,7 +40,7 @@ const Download: React.FC = () => (
             <BridgeDownload />
           </OnlyDisplay>
 
-          <Cards />
+          <TwoMediaCards />
 
           <StayInTouch />
         </Flex>

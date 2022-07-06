@@ -7,6 +7,7 @@ import {
   Navigation,
   PageFooter,
   StayInTouchWidthContainerAndPadding,
+  TwoMediaCards,
 } from '../../common';
 
 import { Hero } from './components/Hero';
@@ -30,6 +31,8 @@ export const Shop: React.FC = () => (
         <Products />
 
         <ProductCompare />
+
+        <TwoMediaCards />
 
         <StayInTouchWidthContainerAndPadding />
       </Container>
