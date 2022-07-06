@@ -12,13 +12,13 @@ export function useFeatureSectionData(): FeatureSectionProps {
     items: [
       {
         imageNode: Image5,
-        name: t('title__portable'),
-        description: t('title__portable_lite_feature_desc'),
+        name: t('title__feature_portable'),
+        description: t('title__feature_portable_desc'),
       },
       {
         imageNode: Image6,
-        name: t('title__security'),
-        description: t('title__security_lite_feature_desc'),
+        name: t('title__feature_security'),
+        description: t('title__feature_security_desc'),
       },
     ],
   };

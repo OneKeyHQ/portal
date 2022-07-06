@@ -1,10 +1,7 @@
 {
-    "title__portable": "محمول",
-    "title__portable_lite_feature_desc": "من السهل وضعها في المحفظة ، الجيب ، الأظرف ، حافظة البطاقات ...",
     "title__restore_your_wallet_without_typing_one_word": "يعيد\\n محفظتك\\n بدون كتابة\\n كلمه واحده.",
     "title__scan_set_code_backed_up": "مسح.\\n تعيين رمز.\\n استعيدت.",
     "title__scan_set_code_backed_up_desc": "بكل بساطة. يصبح صنع أكثر الأشياء إيلامًا في DeFi أمرًا سهلاً وممتعًا.",
-    "title__security_lite_feature_desc": "10 محاولات رمز خاطئة تؤدي إلى محو ذاتي",
     "title__water_resistance_also_tear_resistant": "مقاوم المياه،\\n أيضا مقاومة المسيل للدموع",
     "title__water_resistance_also_tear_resistant_desc": "لا خوف من النقع في الماء أو التمزق باليد."
 }

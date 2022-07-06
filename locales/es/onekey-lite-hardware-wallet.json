@@ -1,10 +1,7 @@
 {
-    "title__portable": "Portátil",
-    "title__portable_lite_feature_desc": "Fácil de guardar en cartera, bolsillo, sobre, tarjetero...",
     "title__restore_your_wallet_without_typing_one_word": "Restaurar\\n tu billetera\\n sin escribir\\n una palabra.",
     "title__scan_set_code_backed_up": "Escanear.\\n Establecer código.\\n Respaldado.",
     "title__scan_set_code_backed_up_desc": "Es así de simple. Hacer que lo más doloroso en DeFi se vuelva fácil y agradable.",
-    "title__security_lite_feature_desc": "10 intentos de código incorrectos activan el borrado automático",
     "title__water_resistance_also_tear_resistant": "Resistencia al agua,\\n también resistente al desgarro",
     "title__water_resistance_also_tear_resistant_desc": "Sin miedo a empapar en agua o rasgar con la mano."
 }

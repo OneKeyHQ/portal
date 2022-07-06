@@ -1,10 +1,7 @@
 {
-    "title__portable": "便携的",
-    "title__portable_lite_feature_desc": "易于放入钱包、口袋、信封、卡片盒......",
     "title__restore_your_wallet_without_typing_one_word": "恢复\\n你的钱包\\n无需打字\\n一个词。",
     "title__scan_set_code_backed_up": "扫描。\\n设置代码。\\n支持。",
     "title__scan_set_code_backed_up_desc": "就是这么简单。让 DeFi 中最痛苦的事情变得轻松愉快。",
-    "title__security_lite_feature_desc": "10 次错误代码尝试触发自擦除",
     "title__water_resistance_also_tear_resistant": "耐水性，\\n也抗撕裂",
     "title__water_resistance_also_tear_resistant_desc": "不怕泡水，也不怕用手撕。"
 }

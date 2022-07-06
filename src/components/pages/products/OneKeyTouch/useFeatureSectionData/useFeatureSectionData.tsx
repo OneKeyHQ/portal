@@ -12,18 +12,18 @@ export function useFeatureSectionData(): FeatureSectionProps {
     items: [
       {
         imageNode: Image1,
-        name: t('title__open_source'),
-        description: t('title__open_source_desc'),
+        name: t('title__feature_open_source'),
+        description: t('title__feature_open_source_desc'),
       },
       {
         imageNode: Image4,
-        name: t('title__easy_to_use'),
-        description: t('title__easy_to_use_desc'),
+        name: t('title__feature_easy_to_use'),
+        description: t('title__feature_easy_to_use_desc'),
       },
       {
         imageNode: Image3,
-        name: t('title__self_destruction_seal'),
-        description: t('title__self_destruction_seal_desc'),
+        name: t('title__feature_self_destruction_seal'),
+        description: t('title__feature_self_destruction_seal_desc'),
       },
     ],
   };
