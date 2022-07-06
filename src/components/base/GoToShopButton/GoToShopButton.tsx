@@ -3,6 +3,7 @@ import { AnchorHTMLAttributes, FC, ReactNode } from 'react';
 import { useTranslation } from 'gatsby-plugin-react-i18next';
 
 import { Button, ButtonProps } from '../Button';
+import { Link } from '../Link';
 
 export interface GoToShopButtonProps {
   children?: ReactNode;
@@ -26,16 +27,11 @@ export const GoToShopButton: FC<GoToShopButtonProps> = (props) => {
   const { button: buttonOverrides = {}, link: linkOverrides = {} } = overrides;
 
   return (
-    <a
-      href="https://shop.onekey.so/"
-      target="_blank"
-      rel="noreferrer"
-      {...linkOverrides}
-    >
+    <Link to="/shop" {...linkOverrides}>
       <Button variant="outlined" {...buttonOverrides}>
         {t('action__go_to_shop')}
         {children}
       </Button>
-    </a>
+    </Link>
   );
 };
