@@ -1,8 +1,14 @@
 {
+    "title__carry_on": "Үргэлжлүүл",
+    "title__carry_on_desc": "1,000 гаруй криптог халаасандаа хийнэ.",
     "title__easy_to_use": "Хэрэглэхэд хялбар",
     "title__easy_to_use_desc": "Эхлэгчдэд ээлтэй.",
+    "title__one_platform_manage_all": "Нэг платформ,\\n бүгдийг удирдана",
+    "title__one_platform_manage_all_desc": "Салбартаа тэргүүлэгч үйлчлүүлэгч таны бүх крипто хөрөнгийг аюулгүйгээр удирдах боломжтой.",
     "title__open_source": "Нээлттэй эх сурвалж",
     "title__open_source_desc": "Нээлттэй эх сурвалж ил тод, WYSIWYG.",
     "title__self_destruction_seal": "Өөрийгөө устгах тамга",
-    "title__self_destruction_seal_desc": "Таны гарт байгаа шинэ зүйл бүрийг аюулгүй байлгахын тулд алхам бүрийг аюулгүй байлгах хэрэгтэй."
+    "title__self_destruction_seal_desc": "Таны гарт байгаа шинэ зүйл бүрийг аюулгүй байлгахын тулд алхам бүрийг аюулгүй байлгах хэрэгтэй.",
+    "title__touch_it_feel_it": "Үүнд хүр,\\n үүнийг мэдрэх",
+    "title__touch_it_feel_it_desc": "Multi-Touch технологитой, жинхэнэ өнгөт дэлгэцтэй дэлхийн анхны техник хангамжийн түрийвч."
 }

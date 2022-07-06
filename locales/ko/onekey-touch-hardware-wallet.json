@@ -1,8 +1,14 @@
 {
+    "title__carry_on": "계속",
+    "title__carry_on_desc": "주머니에 1,000개 이상의 암호화폐를 넣고 있습니다.",
     "title__easy_to_use": "사용하기 쉬운",
     "title__easy_to_use_desc": "초보자 친화적.",
+    "title__one_platform_manage_all": "하나의 플랫폼,\\n 모두 관리",
+    "title__one_platform_manage_all_desc": "모든 암호화 자산을 안전하게 관리할 수 있는 업계 최고의 클라이언트입니다.",
     "title__open_source": "오픈 소스",
     "title__open_source_desc": "오픈 소스 투명, WYSIWYG.",
     "title__self_destruction_seal": "자기파괴 봉인",
-    "title__self_destruction_seal_desc": "손에 있는 모든 새 항목을 보장하기 위해 모든 단계는 안전을 위한 것입니다."
+    "title__self_destruction_seal_desc": "손에 있는 모든 새 항목을 보장하기 위해 모든 단계는 안전을 위한 것입니다.",
+    "title__touch_it_feel_it": "만지다,\\n 느낌",
+    "title__touch_it_feel_it_desc": "Multi-Touch 기술과 트루 컬러 디스플레이가 적용된 세계 최초의 하드웨어 지갑."
 }

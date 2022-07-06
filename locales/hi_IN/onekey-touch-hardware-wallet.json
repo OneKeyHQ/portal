@@ -1,8 +1,14 @@
 {
+    "title__carry_on": "जारी रखना",
+    "title__carry_on_desc": "अपनी जेब में 1,000 से अधिक क्रिप्टो डालें।",
     "title__easy_to_use": "प्रयोग करने में आसान",
     "title__easy_to_use_desc": "शुरुआत के अनुकूल।",
+    "title__one_platform_manage_all": "एक मंच,\\n सभी का प्रबंधन करें",
+    "title__one_platform_manage_all_desc": "उद्योग-अग्रणी क्लाइंट आपकी सभी क्रिप्टो संपत्तियों को सुरक्षित रूप से प्रबंधित करने के लिए।",
     "title__open_source": "खुला स्त्रोत",
     "title__open_source_desc": "खुला स्रोत पारदर्शी, WYSIWYG.",
     "title__self_destruction_seal": "आत्म-विनाश मुहर",
-    "title__self_destruction_seal_desc": "आपके हाथ में हर नई वस्तु सुनिश्चित करने के लिए, हर कदम सुरक्षा के लिए है।"
+    "title__self_destruction_seal_desc": "आपके हाथ में हर नई वस्तु सुनिश्चित करने के लिए, हर कदम सुरक्षा के लिए है।",
+    "title__touch_it_feel_it": "छुओ इसे,\\n इसे महसूस करें",
+    "title__touch_it_feel_it_desc": "मल्टी-टच तकनीक और ट्रू कलर डिस्प्ले के साथ दुनिया का पहला हार्डवेयर वॉलेट।"
 }

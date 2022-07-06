@@ -1,8 +1,14 @@
 {
+    "title__carry_on": "Продолжать",
+    "title__carry_on_desc": "Положите в карман более 1000 крипто.",
     "title__easy_to_use": "Легко использовать",
     "title__easy_to_use_desc": "Дружелюбный к новичкам.",
+    "title__one_platform_manage_all": "Одна платформа,\\n управлять всем",
+    "title__one_platform_manage_all_desc": "Ведущий в отрасли клиент для безопасного управления всеми вашими криптоактивами.",
     "title__open_source": "Открытый исходный код",
     "title__open_source_desc": "Прозрачный открытый исходный код, WYSIWYG.",
     "title__self_destruction_seal": "Печать самоуничтожения",
-    "title__self_destruction_seal_desc": "Чтобы каждый новый предмет был у вас под рукой, каждый шаг делается для безопасности."
+    "title__self_destruction_seal_desc": "Чтобы каждый новый предмет был у вас под рукой, каждый шаг делается для безопасности.",
+    "title__touch_it_feel_it": "Потрогай это,\\n чувствовать это",
+    "title__touch_it_feel_it_desc": "Первый в мире аппаратный кошелек с технологией Multi-Touch и полноцветным дисплеем."
 }

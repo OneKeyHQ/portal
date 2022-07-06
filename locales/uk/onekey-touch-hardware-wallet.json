@@ -1,8 +1,14 @@
 {
+    "title__carry_on": "Продовжуй",
+    "title__carry_on_desc": "Покладіть у свою кишеню понад 1000 криптовалют.",
     "title__easy_to_use": "Простий у використанні",
     "title__easy_to_use_desc": "Зручний для початківців.",
+    "title__one_platform_manage_all": "Одна платформа,\\n керувати всім",
+    "title__one_platform_manage_all_desc": "Провідний у галузі клієнт для безпечного керування всіма вашими криптоактивами.",
     "title__open_source": "Відкрите джерело",
     "title__open_source_desc": "Прозорий код з відкритим кодом, WYSIWYG.",
     "title__self_destruction_seal": "Печатка самознищення",
-    "title__self_destruction_seal_desc": "Щоб кожен новий предмет був у вас під рукою, кожен крок зроблений для безпеки."
+    "title__self_destruction_seal_desc": "Щоб кожен новий предмет був у вас під рукою, кожен крок зроблений для безпеки.",
+    "title__touch_it_feel_it": "Торкнись цього,\\n відчуваю",
+    "title__touch_it_feel_it_desc": "Перший у світі апаратний гаманець із технологією Multi-Touch і кольоровим дисплеєм."
 }

@@ -1,8 +1,14 @@
 {
+    "title__carry_on": "続ける",
+    "title__carry_on_desc": "あなたのポケットに1,000以上の暗号を入れます。",
     "title__easy_to_use": "使いやすい",
     "title__easy_to_use_desc": "初心者に優しい。",
+    "title__one_platform_manage_all": "1つのプラットフォーム、\\nすべてを管理する",
+    "title__one_platform_manage_all_desc": "すべての暗号資産を安全に管理する業界をリードするクライアント。",
     "title__open_source": "オープンソース",
     "title__open_source_desc": "オープンソースの透過性、WYSIWYG。",
     "title__self_destruction_seal": "自己破壊シール",
-    "title__self_destruction_seal_desc": "あなたの手にすべての新しいアイテムを確実にするために、すべてのステップは安全のためです。"
+    "title__self_destruction_seal_desc": "あなたの手にすべての新しいアイテムを確実にするために、すべてのステップは安全のためです。",
+    "title__touch_it_feel_it": "触って、\\nそれを感じる",
+    "title__touch_it_feel_it_desc": "マルチタッチ技術とトゥルーカラーディスプレイを備えた世界初のハードウェアウォレット。"
 }

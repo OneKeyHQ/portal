@@ -1,8 +1,14 @@
 {
+    "title__carry_on": "Carry On",
+    "title__carry_on_desc": "Putting over 1,000 cryptos in your pocket.",
     "title__easy_to_use": "Easy to use",
     "title__easy_to_use_desc": "Beginner friendly.",
+    "title__one_platform_manage_all": "One platform,\\nmanage all",
+    "title__one_platform_manage_all_desc": "Industry-leading client to manage all your crypto assets, safely.",
     "title__open_source": "Open source",
     "title__open_source_desc": "Open source transparent, WYSIWYG.",
     "title__self_destruction_seal": "Self-destruction seal",
-    "title__self_destruction_seal_desc": "To ensure every new items on your hand, every step is for safety."
+    "title__self_destruction_seal_desc": "To ensure every new items on your hand, every step is for safety.",
+    "title__touch_it_feel_it": "Touch it,\\nfeel it",
+    "title__touch_it_feel_it_desc": "The world's first hardware wallet with Multi-Touch tech and true color display."
 }

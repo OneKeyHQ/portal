@@ -1,8 +1,14 @@
 {
+    "title__carry_on": "Proseguire",
+    "title__carry_on_desc": "Mettere in tasca oltre 1.000 criptovalute.",
     "title__easy_to_use": "Facile da usare",
     "title__easy_to_use_desc": "Adatto ai principianti.",
+    "title__one_platform_manage_all": "Una piattaforma,\\n gestisci tutto",
+    "title__one_platform_manage_all_desc": "Cliente leader del settore per gestire tutte le tue risorse crittografiche, in sicurezza.",
     "title__open_source": "Open source",
     "title__open_source_desc": "Open source trasparente, WYSIWYG.",
     "title__self_destruction_seal": "Sigillo di autodistruzione",
-    "title__self_destruction_seal_desc": "Per garantire ogni nuovo articolo a portata di mano, ogni passo è per la sicurezza."
+    "title__self_destruction_seal_desc": "Per garantire ogni nuovo articolo a portata di mano, ogni passo è per la sicurezza.",
+    "title__touch_it_feel_it": "Toccalo,\\n sentilo",
+    "title__touch_it_feel_it_desc": "Il primo portafoglio hardware al mondo con tecnologia Multi-Touch e display True Color."
 }

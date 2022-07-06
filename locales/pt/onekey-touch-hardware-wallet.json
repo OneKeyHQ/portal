@@ -1,8 +1,14 @@
 {
+    "title__carry_on": "Continuar",
+    "title__carry_on_desc": "Colocando mais de 1.000 criptomoedas no seu bolso.",
     "title__easy_to_use": "Fácil de usar",
     "title__easy_to_use_desc": "Amigável para iniciantes.",
+    "title__one_platform_manage_all": "Uma plataforma,\\n gerenciar todos",
+    "title__one_platform_manage_all_desc": "Cliente líder do setor para gerenciar todos os seus ativos de criptografia com segurança.",
     "title__open_source": "Código aberto",
     "title__open_source_desc": "Open source transparente, WYSIWYG.",
     "title__self_destruction_seal": "Selo de autodestruição",
-    "title__self_destruction_seal_desc": "Para garantir todos os novos itens em sua mão, cada passo é para a segurança."
+    "title__self_destruction_seal_desc": "Para garantir todos os novos itens em sua mão, cada passo é para a segurança.",
+    "title__touch_it_feel_it": "Toque isso,\\n sinta",
+    "title__touch_it_feel_it_desc": "A primeira carteira de hardware do mundo com tecnologia Multi-Touch e tela true color."
 }
