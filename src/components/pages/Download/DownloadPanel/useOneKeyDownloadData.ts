@@ -1,3 +1,5 @@
+import { useTranslation } from 'gatsby-plugin-react-i18next';
+
 import { useOneKeyVersion } from '../../../../data';
 import {
   AndroidIcon,
@@ -17,23 +19,26 @@ import {
 
 export function useOneKeyDownloadData() {
   const { formattedData } = useOneKeyVersion();
+  const { t } = useTranslation();
 
   // platforms
 
   const ios = {
     icon: AppleIcon,
     name: 'App Store',
-    description: `v${formattedData.ios.version}, for iOS 14.0+, Not available on the Chinese App Store`,
+    description: `v${formattedData.ios.version}, for iOS 14.0+, ${t(
+      'title__not_available_on_the_chinese_app_store',
+    )}}`,
     url: formattedData.ios.url,
     faq: {
       title: 'iOS FAQ',
       questions: [
         {
-          text: 'How to register an account?',
+          text: t('title__how_to_register_an_account'),
           url: 'https://help.onekey.so/hc/articles/4404262744591',
         },
         {
-          text: 'How to activate discover page?',
+          text: t('title__how_to_activate_discover_page'),
           url: 'https://help.onekey.so/hc/articles/360004394795',
         },
       ],
@@ -105,7 +110,7 @@ export function useOneKeyDownloadData() {
       title: '',
       questions: [
         {
-          text: "Edge version hasn't support Hardware yet.",
+          text: t('title__edge_version_has_not_support_hardware_yet'),
         },
       ],
     },
@@ -166,19 +171,19 @@ export function useOneKeyDownloadData() {
     icon: MobileIcon,
     name: 'Mobile',
     description: 'iOS and Android',
-    pageTitle: ['Bring your', 'crypto assets', 'to mobile, too.'],
+    pageTitle: 'title__bring_your_crypto_assets_to_mobile_too',
   };
 
   const desktop = {
     icon: DesktopIcon,
     name: 'Desktop',
     description: 'Mac, Windows, Linux',
-    pageTitle: ['Download', 'OneKey.'],
+    pageTitle: 'title__download_onekey',
     faq: {
       title: '',
       questions: [
         {
-          text: 'Package checksum.',
+          text: t('title__package_checksum'),
           url: 'https://help.onekey.so/hc/articles/4978747315343',
         },
       ],
@@ -189,7 +194,7 @@ export function useOneKeyDownloadData() {
     icon: WebIcon,
     name: 'Browser',
     description: 'Chrome, Firefox, Edge',
-    pageTitle: ['Download', 'OneKey.'],
+    pageTitle: 'title__download_onekey',
   };
 
   const bridge = {

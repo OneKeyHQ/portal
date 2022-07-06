@@ -1,7 +1,10 @@
 {
+    "action__check_the_full_list": "전체 목록 확인",
     "action__coming_soon": "곧 온다",
     "action__contact_us": "문의하기",
+    "action__download": "다운로드",
     "action__free_download": "무료 다운로드",
+    "action__getting_started": "시작하기",
     "action__go_to_shop": "가게에 가다",
     "action__launch_app": "앱 실행",
     "action__learn_more": "더 알아보기",
@@ -31,6 +34,8 @@
     "menu__enterprise_solutions": "엔터프라이즈 솔루션",
     "menu__for_business": "사업용",
     "menu__for_developer": "개발자용",
+    "menu__getting_started": "시작하기",
+    "menu__getting_started_desc": "0부터 1까지 빠르게 시작하세요. 여기에서 접할 수 있는 대부분의 질문에 대한 답변을 얻을 수 있습니다.",
     "menu__hardware_device": "하드웨어 장치",
     "menu__hardware_wallet_manual": "하드웨어 지갑 매뉴얼",
     "menu__help_center": "지원 센터",
@@ -70,7 +75,9 @@
     "title__desktop_app": "데스크탑 앱",
     "title__google_play": "구글 플레이",
     "title__mobile_app": "모바일 앱",
+    "title__multi_chain_support": "멀티체인 지원",
     "title__other_platforms": "기타 플랫폼",
+    "title__set_up_your_onekey_hardware_wallet": "OneKey 하드웨어 지갑 설정",
     "title__stay_in_touch": "연락을 유지하다",
     "title__subscribe_to_our_notifications": "알림 구독"
 }

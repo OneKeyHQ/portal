@@ -36,7 +36,7 @@ export const MobileMenuItem: FC<MobileMenuItemProps> = (props) => {
       key={menuItem.name}
     >
       {!menuItem.subItems && (
-        <Link to={menuItem.path || ''}>
+        <Link to={menuItem.path || ''} language={menuItem.language}>
           <Flex
             xs={{
               alignItems: 'center',
@@ -75,14 +75,21 @@ export const MobileMenuItem: FC<MobileMenuItemProps> = (props) => {
             }}
             onClick={() => setIsOpen(!isOpen)}
           >
-            <Box
+            <Flex
               xs={{
+                alignItems: 'center',
                 paddingTop: 10,
                 paddingBottom: 10,
               }}
             >
+              {menuItem.icon && (
+                <Box xs={{ width: 24, height: 24, marginRight: 6 }}>
+                  <Img src={menuItem.icon} />
+                </Box>
+              )}
+
               {menuItem.name}
-            </Box>
+            </Flex>
 
             <Box
               xs={{

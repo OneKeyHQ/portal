@@ -1,3 +1,12 @@
 {
-    "title__download_onekey": "Татаж авах\\n OneKey ."
+    "title__bring_your_crypto_assets_to_mobile_too": "Өөрийгөө авчир\\n крипто хөрөнгө\\n гар утас руу ч гэсэн.",
+    "title__download_onekey": "Татаж авах\\n OneKey .",
+    "title__edge_version_has_not_support_hardware_yet": "Edge хувилбар нь техник хангамжийг хараахан дэмжээгүй байна.",
+    "title__how_to_activate_discover_page": "Discover хуудсыг хэрхэн идэвхжүүлэх вэ",
+    "title__how_to_register_an_account": "Бүртгэлээ хэрхэн бүртгүүлэх вэ",
+    "title__instant_launch_incredibly_simple": "Шууд эхлүүлэх.\\n Гайхалтай энгийн.",
+    "title__not_available_on_the_chinese_app_store": "Хятадын App Store дээр байхгүй",
+    "title__onekey_bridge": "OneKey Гүүр",
+    "title__onekey_bridge_desc": "OneKey техник хангамжийн түрийвч болон хөтчийн хооронд дамжуулах тогтвортой байдлыг сайжруулна.",
+    "title__package_checksum": "Багцын шалгах нийлбэр."
 }

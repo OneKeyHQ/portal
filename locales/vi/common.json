@@ -1,7 +1,10 @@
 {
+    "action__check_the_full_list": "Kiểm tra danh sách đầy đủ",
     "action__coming_soon": "Sắp có",
     "action__contact_us": "Liên hệ chúng tôi",
+    "action__download": "Tải xuống",
     "action__free_download": "Tải xuống miễn phí",
+    "action__getting_started": "Bắt đầu",
     "action__go_to_shop": "Đi đến cửa hàng",
     "action__launch_app": "Chạy chương trình",
     "action__learn_more": "Tìm hiểu thêm",
@@ -31,6 +34,8 @@
     "menu__enterprise_solutions": "Giải pháp doanh nghiệp",
     "menu__for_business": "Cho doanh nghiệp",
     "menu__for_developer": "Dành cho nhà phát triển",
+    "menu__getting_started": "Bắt đầu",
+    "menu__getting_started_desc": "Bắt đầu nhanh chóng từ 0 đến 1 và hầu hết các câu hỏi bạn có thể gặp phải đều có thể được trả lời tại đây.",
     "menu__hardware_device": "Thiết bị phần cứng",
     "menu__hardware_wallet_manual": "Hướng dẫn sử dụng Ví phần cứng",
     "menu__help_center": "Trung tâm trợ giúp",
@@ -70,7 +75,9 @@
     "title__desktop_app": "Ứng dụng máy tính để bàn",
     "title__google_play": "chợ ứng dụng Google Play",
     "title__mobile_app": "Ứng dụng di động",
+    "title__multi_chain_support": "Hỗ trợ đa chuỗi",
     "title__other_platforms": "Các nền tảng khác",
+    "title__set_up_your_onekey_hardware_wallet": "Thiết lập ví phần cứng OneKey của bạn",
     "title__stay_in_touch": "Giữ liên lạc",
     "title__subscribe_to_our_notifications": "Đăng ký nhận thông báo của chúng tôi"
 }

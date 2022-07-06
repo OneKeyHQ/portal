@@ -1,7 +1,10 @@
 {
+    "action__check_the_full_list": "ตรวจสอบรายชื่อทั้งหมด",
     "action__coming_soon": "เร็วๆ นี้",
     "action__contact_us": "ติดต่อเรา",
+    "action__download": "ดาวน์โหลด",
     "action__free_download": "ดาวน์โหลดฟรี",
+    "action__getting_started": "เริ่มต้น",
     "action__go_to_shop": "ไปที่ร้านค้า",
     "action__launch_app": "เปิดแอป",
     "action__learn_more": "เรียนรู้เพิ่มเติม",
@@ -31,6 +34,8 @@
     "menu__enterprise_solutions": "โซลูชั่นระดับองค์กร",
     "menu__for_business": "สำหรับธุรกิจ",
     "menu__for_developer": "สำหรับนักพัฒนา",
+    "menu__getting_started": "เริ่มต้น",
+    "menu__getting_started_desc": "เริ่มต้นอย่างรวดเร็วจาก 0 ถึง 1 และคำถามส่วนใหญ่ที่คุณอาจพบมีคำตอบที่นี่",
     "menu__hardware_device": "อุปกรณ์ฮาร์ดแวร์",
     "menu__hardware_wallet_manual": "คู่มือกระเป๋าสตางค์ฮาร์ดแวร์",
     "menu__help_center": "ศูนย์ช่วยเหลือ",
@@ -70,7 +75,9 @@
     "title__desktop_app": "แอพเดสก์ท็อป",
     "title__google_play": "Google Play",
     "title__mobile_app": "แอพมือถือ",
+    "title__multi_chain_support": "รองรับหลายเชน",
     "title__other_platforms": "แพลตฟอร์มอื่นๆ",
+    "title__set_up_your_onekey_hardware_wallet": "ตั้งค่า OneKey hardware wallet ของคุณ",
     "title__stay_in_touch": "อยู่ในการติดต่อ",
     "title__subscribe_to_our_notifications": "สมัครรับการแจ้งเตือนของเรา"
 }

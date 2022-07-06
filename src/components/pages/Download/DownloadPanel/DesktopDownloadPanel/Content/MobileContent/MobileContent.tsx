@@ -30,7 +30,7 @@ export const MobileContent: React.FC<MobileContentProps> = (props) => {
           justifyContent: 'center',
         }}
       >
-        <Title text={mobile.pageTitle} />
+        <Title name={mobile.pageTitle} />
 
         <Flex xs={{ gap: 16 }}>
           <DownloadButton

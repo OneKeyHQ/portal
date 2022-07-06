@@ -1,3 +1,12 @@
 {
-    "title__download_onekey": "Télécharger\\nOneKey ."
+    "title__bring_your_crypto_assets_to_mobile_too": "Apporte ton\\n actifs cryptographiques\\n au mobile aussi.",
+    "title__download_onekey": "Télécharger\\nOneKey .",
+    "title__edge_version_has_not_support_hardware_yet": "La version Edge ne prend pas encore en charge le matériel.",
+    "title__how_to_activate_discover_page": "Comment activer la page de découverte",
+    "title__how_to_register_an_account": "Comment enregistrer un compte",
+    "title__instant_launch_incredibly_simple": "Lancement instantané.\\n Incroyablement simple.",
+    "title__not_available_on_the_chinese_app_store": "Non disponible sur l'App Store chinois",
+    "title__onekey_bridge": "OneKey Pont",
+    "title__onekey_bridge_desc": "Améliore la stabilité du transfert entre le portefeuille matériel OneKey et le navigateur.",
+    "title__package_checksum": "Somme de contrôle du paquet."
 }

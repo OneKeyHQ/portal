@@ -14,6 +14,7 @@ export type NavigationDataItem = {
   path?: string;
   icon?: string;
   description?: string;
+  language?: string;
   subItems?: NavigationDataItem[];
 };
 

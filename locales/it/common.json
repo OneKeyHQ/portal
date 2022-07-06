@@ -1,7 +1,10 @@
 {
+    "action__check_the_full_list": "Controlla l'elenco completo",
     "action__coming_soon": "Prossimamente",
     "action__contact_us": "Contattaci",
+    "action__download": "Scarica",
     "action__free_download": "Download gratuito",
+    "action__getting_started": "Iniziare",
     "action__go_to_shop": "Vai a fare la spesa",
     "action__launch_app": "Avvia app",
     "action__learn_more": "Per saperne di più",
@@ -31,6 +34,8 @@
     "menu__enterprise_solutions": "Soluzioni aziendali",
     "menu__for_business": "Per affari",
     "menu__for_developer": "Per Sviluppatore",
+    "menu__getting_started": "Iniziare",
+    "menu__getting_started_desc": "Inizia rapidamente da 0 a 1 e la maggior parte delle domande che potresti incontrare possono trovare risposta qui.",
     "menu__hardware_device": "Dispositivo hardware",
     "menu__hardware_wallet_manual": "Manuale del portafoglio hardware",
     "menu__help_center": "Centro assistenza",
@@ -70,7 +75,9 @@
     "title__desktop_app": "App desktop",
     "title__google_play": "Google Play",
     "title__mobile_app": "App mobile",
+    "title__multi_chain_support": "Supporto multicatena",
     "title__other_platforms": "Altre piattaforme",
+    "title__set_up_your_onekey_hardware_wallet": "Configura il tuo portafoglio hardware OneKey .",
     "title__stay_in_touch": "Rimani in contatto",
     "title__subscribe_to_our_notifications": "Iscriviti alle nostre notifiche"
 }
