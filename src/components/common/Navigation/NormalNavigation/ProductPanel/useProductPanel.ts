@@ -6,6 +6,7 @@ import { atom, useAtom } from 'jotai';
 import { useOneKeyProduct } from '../../../../../data/useOneKeyProduct';
 
 type ProductItem = {
+  key: string;
   name: string;
   link: string;
   backgroundColor: string;
@@ -23,20 +24,30 @@ export function useProductPanel() {
   const items = useMemo<ProductItem[]>(
     () => [
       {
+        key: oneKeyProduct.mini.name,
         name: oneKeyProduct.mini.name,
         link: oneKeyProduct.mini.path,
         backgroundColor: theme.colors.test400,
         fontColor: theme.colors.white,
       },
       {
+        key: oneKeyProduct.touch.name,
         name: oneKeyProduct.touch.name,
         link: oneKeyProduct.touch.path,
         backgroundColor: theme.colors.test200,
         fontColor: theme.colors.test500,
       },
       {
+        key: oneKeyProduct.lite.name,
         name: oneKeyProduct.lite.name,
         link: oneKeyProduct.lite.path,
+        backgroundColor: theme.colors.test100,
+        fontColor: theme.colors.test500,
+      },
+      {
+        key: 'shop',
+        name: 'View All Products',
+        link: '/shop',
         backgroundColor: theme.colors.test100,
         fontColor: theme.colors.test500,
       },
@@ -48,12 +59,12 @@ export function useProductPanel() {
 
   useEffect(() => {
     if (items[0] && !currentSelected) {
-      setCurrentSelected(items[0].name);
+      setCurrentSelected(items[0].key);
     }
   }, [currentSelected, items, setCurrentSelected]);
 
   const currentSelectedProduct =
-    items.find((item) => item.name === currentSelected) ||
+    items.find((item) => item.key === currentSelected) ||
     (items[0] as ProductItem);
 
   const {

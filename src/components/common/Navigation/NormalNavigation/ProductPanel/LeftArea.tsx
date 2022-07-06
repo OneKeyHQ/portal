@@ -7,6 +7,7 @@ import ReactDOM from 'react-dom';
 
 import { useOneKeyProduct } from '../../../../../data/useOneKeyProduct';
 import { isBrowser } from '../../../../../utils';
+import { Divider } from '../../../../base';
 import { Box, Li, Ul } from '../../../../base/Box';
 import { Link } from '../../../../base/Link';
 
@@ -51,10 +52,10 @@ export const LeftArea: FC<LeftAreaProps> = (props) => {
     >
       <Box xs={{ width: '50%', display: 'flex', alignItems: 'center' }}>
         <Ul xs={{ margin: 0, padding: 0 }}>
-          {items.map((item) => (
+          {items.map((item, index) => (
             <Link key={item.name} to={item.link}>
               <Li
-                onMouseMove={() => handleMouseMove(item.name)}
+                onMouseMove={() => handleMouseMove(item.key)}
                 xs={{
                   ...theme.text.medium400,
                   listStyle: 'none',
@@ -67,6 +68,11 @@ export const LeftArea: FC<LeftAreaProps> = (props) => {
                   },
                 }}
               >
+                {index === items.length - 1 && (
+                  <Box xs={{ opacity: 0.2, paddingTop: 8, paddingBottom: 8 }}>
+                    <Divider color={currentProductFontColor} />
+                  </Box>
+                )}
                 <motion.div variants={itemVariants}>{item.name}</motion.div>
               </Li>
             </Link>
@@ -114,6 +120,15 @@ export const LeftArea: FC<LeftAreaProps> = (props) => {
                 alt="OneKeyTouch"
               />
             )}
+            {currentSelected === 'shop' && (
+              <StaticImage
+                loading="eager"
+                draggable={false}
+                css={{ width: '100%', height: '100%' }}
+                src="./images/Shop.png"
+                alt="Shop"
+              />
+            )}
           </motion.div>
         </AnimatePresence>
       </Box>
@@ -135,6 +150,7 @@ export const LeftArea: FC<LeftAreaProps> = (props) => {
             <StaticImage src="./images/OneKeyLite.png" alt="OneKeyLite" />
             <StaticImage src="./images/OneKeyMini.png" alt="OneKeyMini" />
             <StaticImage src="./images/OneKeyTouch.png" alt="OneKeyTouch" />
+            <StaticImage src="./images/Shop.png" alt="Shop" />
           </Box>,
           document.body,
         )}
