@@ -18,6 +18,14 @@ export type NavigationDataItem = {
   subItems?: NavigationDataItem[];
 };
 
+export function useShopMenu() {
+  return {
+    name: 'View All Products',
+    key: 'shop',
+    path: '/shop',
+  } as const;
+}
+
 export function useNavigationDataObject(): Record<
   | 'products'
   | 'app'
@@ -30,6 +38,8 @@ export function useNavigationDataObject(): Record<
 > {
   const oneKeyProduct = useOneKeyProduct();
   const { t } = useTranslation();
+  const shopMenu = useShopMenu();
+
   const products = {
     name: t('menu__products'),
     key: 'products',
@@ -49,11 +59,7 @@ export function useNavigationDataObject(): Record<
         key: oneKeyProduct.lite.name,
         path: oneKeyProduct.lite.path,
       },
-      {
-        name: 'View All Products',
-        key: 'shop',
-        path: '/shop',
-      },
+      shopMenu,
     ],
   };
 

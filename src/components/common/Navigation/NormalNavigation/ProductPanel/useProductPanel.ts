@@ -4,6 +4,7 @@ import { useTheme } from '@emotion/react';
 import { atom, useAtom } from 'jotai';
 
 import { useOneKeyProduct } from '../../../../../data/useOneKeyProduct';
+import { useShopMenu } from '../../useNavigationData';
 
 type ProductItem = {
   key: string;
@@ -20,6 +21,7 @@ export const useCurrentSelected = () => useAtom(currentSelectedAtom);
 export function useProductPanel() {
   const oneKeyProduct = useOneKeyProduct();
   const theme = useTheme();
+  const shopMenu = useShopMenu();
 
   const items = useMemo<ProductItem[]>(
     () => [
@@ -45,14 +47,13 @@ export function useProductPanel() {
         fontColor: theme.colors.test500,
       },
       {
-        key: 'shop',
-        name: 'View All Products',
-        link: '/shop',
+        ...shopMenu,
+        link: shopMenu.path,
         backgroundColor: theme.colors.test100,
         fontColor: theme.colors.test500,
       },
     ],
-    [oneKeyProduct, theme],
+    [oneKeyProduct, theme, shopMenu],
   );
 
   const [currentSelected, setCurrentSelected] = useCurrentSelected();
