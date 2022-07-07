@@ -36,7 +36,6 @@ export const NormalNavigation: React.FC<NormalNavigationProps> = () => {
     data.forDeveloper,
     data.forBusiness,
     data.helpCenter,
-    data.shop,
   ];
 
   return (
