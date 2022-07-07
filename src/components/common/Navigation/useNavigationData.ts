@@ -34,6 +34,28 @@ export function useNavigationDataObject(): Record<
   const products = {
     name: t('menu__products'),
     key: 'products',
+    subItems: [
+      {
+        name: oneKeyProduct.touch.name,
+        key: oneKeyProduct.touch.name,
+        path: oneKeyProduct.touch.path,
+      },
+      {
+        name: oneKeyProduct.mini.name,
+        key: oneKeyProduct.mini.name,
+        path: oneKeyProduct.mini.path,
+      },
+      {
+        name: oneKeyProduct.lite.name,
+        key: oneKeyProduct.lite.name,
+        path: oneKeyProduct.lite.path,
+      },
+      {
+        name: 'View All Products',
+        key: 'shop',
+        path: '/shop',
+      },
+    ],
   };
 
   const app = {

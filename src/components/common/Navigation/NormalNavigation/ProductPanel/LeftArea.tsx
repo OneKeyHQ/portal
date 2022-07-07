@@ -68,12 +68,15 @@ export const LeftArea: FC<LeftAreaProps> = (props) => {
                   },
                 }}
               >
-                {index === items.length - 1 && (
-                  <Box xs={{ opacity: 0.2, paddingTop: 8, paddingBottom: 8 }}>
-                    <Divider color={currentProductFontColor} />
-                  </Box>
-                )}
-                <motion.div variants={itemVariants}>{item.name}</motion.div>
+                <motion.div variants={itemVariants}>
+                  {index === items.length - 1 && (
+                    <Box xs={{ opacity: 0.2, paddingTop: 8, paddingBottom: 8 }}>
+                      <Divider color={currentProductFontColor} />
+                    </Box>
+                  )}
+
+                  {item.name}
+                </motion.div>
               </Li>
             </Link>
           ))}
