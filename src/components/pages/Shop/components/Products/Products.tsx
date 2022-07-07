@@ -2,6 +2,7 @@ import { FC, ReactNode } from 'react';
 
 import { Section } from '../../../../base';
 
+import { Cards } from './Cards';
 import { ProductsTitle } from './ProductsTitle';
 
 export interface ProductsProps {
@@ -14,6 +15,8 @@ export const Products: FC<ProductsProps> = (props) => {
   return (
     <Section>
       <ProductsTitle />
+
+      <Cards />
 
       {children}
     </Section>
