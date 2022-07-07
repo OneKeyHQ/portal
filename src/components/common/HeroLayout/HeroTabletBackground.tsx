@@ -4,11 +4,11 @@ import { isBrowser } from '../../../utils/isBrowser';
 import { Box } from '../../base/Box';
 import { OnlyDisplay } from '../../base/OnlyDisplay';
 
-export interface HeroMobileBackgroundProps {
+export interface HeroTabletBackgroundProps {
   children?: ReactNode;
 }
 
-export const HeroMobileBackground: FC<HeroMobileBackgroundProps> = (props) => {
+export const HeroTabletBackground: FC<HeroTabletBackgroundProps> = (props) => {
   const { children } = props;
 
   if (!isBrowser()) {
@@ -16,7 +16,7 @@ export const HeroMobileBackground: FC<HeroMobileBackgroundProps> = (props) => {
   }
 
   return (
-    <OnlyDisplay xs>
+    <OnlyDisplay s m>
       <Box
         xs={{
           height: '100%',

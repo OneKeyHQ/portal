@@ -5,7 +5,6 @@ import { useTheme } from '@emotion/react';
 import { Span } from '../../base/Box';
 import { Container } from '../../base/Container';
 import { Flex } from '../../base/Flex';
-import { ContactUsButton } from '../ContactUsButton';
 
 export interface HeroLayoutProps {
   children?: ReactNode;
@@ -21,13 +20,14 @@ export const HeroLayout: FC<HeroLayoutProps> = (props) => {
     <Container>
       <Flex
         xs={{
+          width: '40%',
           position: 'relative',
           paddingTop: 80,
           flexDirection: 'column',
-          justifyContent: 'flex-end',
+          justifyContent: 'center',
           height: '80vh',
           minHeight: 600,
-          maxHeight: 1000,
+          maxHeight: 744,
           gap: 20,
           paddingBottom: 30,
           zIndex: 10,
@@ -50,12 +50,12 @@ export const HeroLayout: FC<HeroLayoutProps> = (props) => {
           </Span>
           <Span xs={theme.text.normal300}>{description}</Span>
 
-          <Flex
+          {/* <Flex
             xs={{ justifyContent: 'flex-start' }}
             l={{ justifyContent: 'flex-start' }}
           >
             <ContactUsButton />
-          </Flex>
+          </Flex> */}
         </Flex>
       </Flex>
 
