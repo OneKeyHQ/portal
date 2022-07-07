@@ -18,6 +18,7 @@ export const HeroTitle: FC<HeroTitleProps> = (props) => {
       m={theme.text.medium800}
       l={theme.text.medium900}
       xl={theme.text.medium1000}
+      xxl={theme.text.medium1100}
     >
       {children}
     </Span>

@@ -16,10 +16,15 @@ export const ProductsTitle: FC<ProductsTitleProps> = (props) => {
     <Box>
       <H2
         xs={{
+          paddingTop: 80,
+          paddingBottom: 48,
           ...theme.text.medium700,
           textAlign: 'center',
         }}
-        m={theme.text.medium800}
+        m={{
+          paddingTop: 120,
+          ...theme.text.medium800,
+        }}
         l={theme.text.medium900}
         xl={theme.text.medium1000}
       >
