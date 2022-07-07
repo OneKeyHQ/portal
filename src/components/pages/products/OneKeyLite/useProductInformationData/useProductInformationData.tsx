@@ -1,10 +1,12 @@
 import { StaticImage } from 'gatsby-plugin-image';
+import { useTranslation } from 'gatsby-plugin-react-i18next';
 
 import { filterShops, useOneKeyProduct } from '../../../../../data';
 import { ProductInformationProps } from '../../components/ProductInformation';
 
 export function useProductInformationData(): ProductInformationProps {
   const { lite } = useOneKeyProduct();
+  const { t } = useTranslation();
 
   return {
     status: lite.status,
@@ -15,8 +17,8 @@ export function useProductInformationData(): ProductInformationProps {
       lite.shops.shopify,
     ]),
     name: lite.name,
-    slogan: 'Recovery Phrase Backup Card',
-    description: 'A higher definition of private key cold storage.',
+    slogan: t('content__recovery_phrase_backup_card'),
+    description: lite.description,
     price: {
       value: lite.price,
       formatted: lite.formattedPrice,

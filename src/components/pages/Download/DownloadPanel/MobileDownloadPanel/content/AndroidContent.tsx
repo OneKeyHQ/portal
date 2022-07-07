@@ -38,7 +38,7 @@ export const AndroidContent: FC<AndroidContentProps> = (props) => {
 
   return (
     <ContentContainer>
-      <Title text={mobile.pageTitle} />
+      <Title name={mobile.pageTitle} />
 
       <Flex xs={{ gap: 16 }}>
         {buttons.map((item) => (

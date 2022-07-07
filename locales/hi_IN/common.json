@@ -1,4 +1,5 @@
 {
+    "action__add_to_cart": "कार्ट में जोड़ें",
     "action__check_the_full_list": "पूरी लिस्ट चेक करें",
     "action__coming_soon": "जल्द आ रहा है",
     "action__contact_us": "संपर्क करें",
@@ -8,12 +9,14 @@
     "action__go_to_shop": "दुकान में जाओ",
     "action__launch_app": "ऐप लांच करें",
     "action__learn_more": "और अधिक जानें",
+    "action__other_stores": "अन्य स्टोर",
     "action__subscribe": "सदस्यता लेने के",
     "app__copyright": "2022 OneKey, Inc. सर्वाधिकार सुरक्षित।",
     "coin__bitcoin": "Bitcoin",
     "coin__dash": "Dash",
     "coin__dogecoin": "डॉगकॉइन",
     "coin__ethereum": "Ethereum",
+    "content__a_higher_definition_of_private_key_cold_storage": "निजी कुंजी कोल्ड स्टोरेज की उच्च परिभाषा।",
     "content__all_new_design__secure_chip_supercharged__beautiful_and_true_color_display": "बिल्कुल नया डिज़ाइन, सुरक्षित चिप सुपरचार्ज्ड, सुंदर और सच्चे रंग का डिस्प्ले।",
     "content__biometric_tech__optical_encryption__so_many_reasons_to_go_pro": "बायोमेट्रिक तकनीक, ऑप्टिकल एन्क्रिप्शन, प्रो जाने के कई कारण।",
     "content__mini_sized_safety_without_compromise": "मिनी आकार, समझौता किए बिना सुरक्षा।",
@@ -77,6 +80,7 @@
     "title__mobile_app": "मोबाइल एप्लिकेशन",
     "title__multi_chain_support": "मल्टी-चेन सपोर्ट",
     "title__other_platforms": "अन्य प्लेटफार्म",
+    "title__security": "सुरक्षा",
     "title__set_up_your_onekey_hardware_wallet": "अपना OneKey हार्डवेयर वॉलेट सेट करें",
     "title__stay_in_touch": "संपर्क में रहना",
     "title__subscribe_to_our_notifications": "हमारे नोटिफिकेशन को सब्सक्राइब करें"

@@ -1,4 +1,5 @@
 {
+    "action__add_to_cart": "In den Warenkorb legen",
     "action__check_the_full_list": "Überprüfen Sie die vollständige Liste",
     "action__coming_soon": "demnächst",
     "action__contact_us": "Kontaktiere uns",
@@ -8,12 +9,14 @@
     "action__go_to_shop": "Zum Laden gehen",
     "action__launch_app": "App starten",
     "action__learn_more": "Lern mehr",
+    "action__other_stores": "Andere Geschäfte",
     "action__subscribe": "Abonnieren",
     "app__copyright": "2022 OneKey, Inc. Alle Rechte vorbehalten.",
     "coin__bitcoin": "Bitcoin",
     "coin__dash": "Dash",
     "coin__dogecoin": "Dogecoins",
     "coin__ethereum": "Äther",
+    "content__a_higher_definition_of_private_key_cold_storage": "Eine höhere Definition von Private Key Cold Storage.",
     "content__all_new_design__secure_chip_supercharged__beautiful_and_true_color_display": "Völlig neues Design, sicherer Chip mit Kompressor, schönes und farbechtes Display.",
     "content__biometric_tech__optical_encryption__so_many_reasons_to_go_pro": "Biometrische Technologie, optische Verschlüsselung, so viele Gründe, Pro zu werden.",
     "content__mini_sized_safety_without_compromise": "Mini-Größe, Sicherheit ohne Kompromisse.",
@@ -77,6 +80,7 @@
     "title__mobile_app": "App",
     "title__multi_chain_support": "Multi-Chain-Unterstützung",
     "title__other_platforms": "Andere Plattformen",
+    "title__security": "Sicherheit",
     "title__set_up_your_onekey_hardware_wallet": "Richten Sie Ihre Hardware-Wallet OneKey",
     "title__stay_in_touch": "In Kontakt bleiben",
     "title__subscribe_to_our_notifications": "Abonnieren Sie unsere Benachrichtigungen"

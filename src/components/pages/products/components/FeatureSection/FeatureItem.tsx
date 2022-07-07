@@ -38,6 +38,7 @@ export const FeatureItem: FC<FeatureItemProps> = (props) => {
 
       <Box xs={{ paddingTop: 4 }} m={{ paddingTop: 48 }}>
         <Span
+          css={{ textTransform: 'capitalize' }}
           xs={theme.text.medium400}
           s={theme.text.medium500}
           m={theme.text.medium700}

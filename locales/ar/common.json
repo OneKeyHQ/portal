@@ -1,4 +1,5 @@
 {
+    "action__add_to_cart": "أضف إلى السلة",
     "action__check_the_full_list": "تحقق من القائمة الكاملة",
     "action__coming_soon": "قريبا",
     "action__contact_us": "اتصل بنا",
@@ -8,12 +9,14 @@
     "action__go_to_shop": "اذهب إلى المتجر",
     "action__launch_app": "إطلاق التطبيق",
     "action__learn_more": "يتعلم أكثر",
+    "action__other_stores": "متاجر أخرى",
     "action__subscribe": "الإشتراك",
     "app__copyright": "2022 OneKey، Inc. جميع الحقوق محفوظة.",
     "coin__bitcoin": "بيتكوين",
     "coin__dash": "Dash",
     "coin__dogecoin": "دوجكوين",
     "coin__ethereum": "إيثريوم",
+    "content__a_higher_definition_of_private_key_cold_storage": "تعريف أعلى للتخزين البارد للمفتاح الخاص.",
     "content__all_new_design__secure_chip_supercharged__beautiful_and_true_color_display": "تصميم جديد تمامًا ، رقاقة آمنة فائقة الشحن ، شاشة ملونة جميلة وحقيقية.",
     "content__biometric_tech__optical_encryption__so_many_reasons_to_go_pro": "تقنية المقاييس الحيوية ، والتشفير البصري ، والعديد من الأسباب للذهاب إلى Pro.",
     "content__mini_sized_safety_without_compromise": "حجم صغير ، أمان بدون تنازلات.",
@@ -77,6 +80,7 @@
     "title__mobile_app": "تطبيق الهاتف المحمول",
     "title__multi_chain_support": "دعم متعدد السلاسل",
     "title__other_platforms": "منصات أخرى",
+    "title__security": "الأمان",
     "title__set_up_your_onekey_hardware_wallet": "قم بإعداد OneKey محفظة الأجهزة الخاصة بك",
     "title__stay_in_touch": "ابق على تواصل",
     "title__subscribe_to_our_notifications": "اشترك في إشعاراتنا"

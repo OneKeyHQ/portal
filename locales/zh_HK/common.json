@@ -1,4 +1,5 @@
 {
+    "action__add_to_cart": "添加到購物車",
     "action__check_the_full_list": "查看完整列表",
     "action__coming_soon": "即將上線",
     "action__contact_us": "聯繫我們",
@@ -8,12 +9,14 @@
     "action__go_to_shop": "前往商店",
     "action__launch_app": "啟動應用",
     "action__learn_more": "了解更多",
+    "action__other_stores": "其他店鋪",
     "action__subscribe": "訂閱",
     "app__copyright": "2022 OneKey, Inc. 保留所有權利。",
     "coin__bitcoin": "比特幣",
     "coin__dash": "Dash",
     "coin__dogecoin": "狗狗幣",
     "coin__ethereum": "以太坊",
+    "content__a_higher_definition_of_private_key_cold_storage": "更高定義的私鑰冷存儲。",
     "content__all_new_design__secure_chip_supercharged__beautiful_and_true_color_display": "全新設計，安全芯片加持，靚麗真彩顯示。",
     "content__biometric_tech__optical_encryption__so_many_reasons_to_go_pro": "生物識咪、光學加密，選擇 Pro 嘅理由超級多。",
     "content__mini_sized_safety_without_compromise": "尺寸迷你，安全性毫不妥協。",
@@ -77,6 +80,7 @@
     "title__mobile_app": "移動應用",
     "title__multi_chain_support": "多鏈支持",
     "title__other_platforms": "其他平台",
+    "title__security": "安全",
     "title__set_up_your_onekey_hardware_wallet": "設置您的OneKey硬件錢包",
     "title__stay_in_touch": "保持聯繫",
     "title__subscribe_to_our_notifications": "訂閱我們的通知"

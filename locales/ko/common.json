@@ -1,4 +1,5 @@
 {
+    "action__add_to_cart": "장바구니에 추가",
     "action__check_the_full_list": "전체 목록 확인",
     "action__coming_soon": "곧 온다",
     "action__contact_us": "문의하기",
@@ -8,12 +9,14 @@
     "action__go_to_shop": "가게에 가다",
     "action__launch_app": "앱 실행",
     "action__learn_more": "더 알아보기",
+    "action__other_stores": "기타 상점",
     "action__subscribe": "구독하다",
     "app__copyright": "2022 OneKey, Inc. 판권 소유.",
     "coin__bitcoin": "비트코인",
     "coin__dash": "Dash",
     "coin__dogecoin": "도지코인",
     "coin__ethereum": "이더 리움",
+    "content__a_higher_definition_of_private_key_cold_storage": "개인 키 콜드 스토리지의 더 높은 정의.",
     "content__all_new_design__secure_chip_supercharged__beautiful_and_true_color_display": "완전히 새로운 디자인, 보안 칩 슈퍼차지, 아름답고 트루 컬러 디스플레이.",
     "content__biometric_tech__optical_encryption__so_many_reasons_to_go_pro": "생체 인식 기술, 광학 암호화, Pro를 선택해야 하는 많은 이유.",
     "content__mini_sized_safety_without_compromise": "미니 사이즈, 타협 없는 안전성.",
@@ -77,6 +80,7 @@
     "title__mobile_app": "모바일 앱",
     "title__multi_chain_support": "멀티체인 지원",
     "title__other_platforms": "기타 플랫폼",
+    "title__security": "보안",
     "title__set_up_your_onekey_hardware_wallet": "OneKey 하드웨어 지갑 설정",
     "title__stay_in_touch": "연락을 유지하다",
     "title__subscribe_to_our_notifications": "알림 구독"

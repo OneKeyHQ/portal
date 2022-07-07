@@ -1,10 +1,12 @@
 import { StaticImage } from 'gatsby-plugin-image';
+import { useTranslation } from 'gatsby-plugin-react-i18next';
 
 import { filterShops, useOneKeyProduct } from '../../../../../data';
 import { ProductInformationProps } from '../../components/ProductInformation';
 
 export function useProductInformationData(): ProductInformationProps {
   const { mini } = useOneKeyProduct();
+  const { t } = useTranslation();
 
   return {
     status: mini.status,
@@ -15,9 +17,8 @@ export function useProductInformationData(): ProductInformationProps {
       mini.shops.shopify,
     ]),
     name: mini.name,
-    slogan: 'Crypto Hardware Wallet',
-    description:
-      'Secure, buy, exchange, grow your crypto and manage your NFTs with our new Bluetooth-enabled hardware wallet. All your digital assets secured in one place.',
+    slogan: t('content__crypto_hardware_wallet'),
+    description: t('content__onekey_mini_product_desc'),
     price: {
       value: mini.price,
       formatted: mini.formattedPrice,

@@ -1,14 +1,18 @@
 import { StaticImage } from 'gatsby-plugin-image';
+import { useTranslation } from 'gatsby-plugin-react-i18next';
+
+import { splitMultiline } from '../../../../../utils';
 
 export function useImageIntroductionData() {
-  const name1 = 'Mini sized';
-  const name2 = 'Security built right in';
-  const name3 = 'OneKey Platform';
+  const { t } = useTranslation();
+  const name1 = t('title__mini_sized');
+  const name2 = t('title__security_built_right_in');
+  const name3 = t('title__onekey_platform');
 
   const items = [
     {
       name: name1,
-      description: 'Mini sized, safety without compromise.',
+      description: t('title__mini_sized_desc'),
       images: {
         s: <StaticImage src="./images/s/hardware0.jpg" alt={name1} />,
         m: <StaticImage src="./images/m/hardware0.jpg" alt={name1} />,
@@ -17,8 +21,8 @@ export function useImageIntroductionData() {
       },
     },
     {
-      name: ['Security', 'built right in'],
-      description: 'We use top secure chip to protect sensitive information.',
+      name: splitMultiline(name2),
+      description: t('title__security_built_right_in_desc'),
       images: {
         s: <StaticImage src="./images/s/hardware1.jpg" alt={name2} />,
         m: <StaticImage src="./images/m/hardware1.jpg" alt={name2} />,
@@ -27,8 +31,8 @@ export function useImageIntroductionData() {
       },
     },
     {
-      name: ['OneKey', 'Platform'],
-      description: 'Travel around all blockchain with one wallet.',
+      name: splitMultiline(name3),
+      description: t('title__onekey_platform_desc'),
       images: {
         s: <StaticImage src="./images/s/hardware2.jpg" alt={name3} />,
         m: <StaticImage src="./images/m/hardware2.jpg" alt={name3} />,

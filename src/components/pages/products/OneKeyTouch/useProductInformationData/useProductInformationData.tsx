@@ -1,18 +1,19 @@
 import { StaticImage } from 'gatsby-plugin-image';
+import { useTranslation } from 'gatsby-plugin-react-i18next';
 
 import { useOneKeyProduct } from '../../../../../data';
 import { ProductInformationProps } from '../../components/ProductInformation';
 
 export function useProductInformationData(): ProductInformationProps {
   const { touch } = useOneKeyProduct();
+  const { t } = useTranslation();
 
   return {
     status: touch.status,
     shops: [],
     name: touch.name,
-    slogan: 'Crypto Hardware Wallet',
-    description:
-      'All-new design, secure chip supercharged, beautiful and true color display.',
+    slogan: t('content__crypto_hardware_wallet'),
+    description: touch.description,
     price: {
       value: touch.price,
       formatted: touch.formattedPrice,

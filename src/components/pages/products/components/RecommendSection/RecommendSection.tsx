@@ -2,7 +2,14 @@ import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Box, Container, OnlyDisplay, Section, Span } from '../../../../base';
+import {
+  Box,
+  Container,
+  I18n,
+  OnlyDisplay,
+  Section,
+  Span,
+} from '../../../../base';
 
 import { ProductCard } from './ProductCard';
 import { RecommendSectionSwiper } from './RecommendSectionSwiper';
@@ -31,7 +38,7 @@ export const RecommendSection: FC<RecommendSectionProps> = (props) => {
     >
       <Box css={{ textAlign: 'center' }}>
         <Span xs={theme.text.medium800} m={theme.text.medium900}>
-          You Might Also Like
+          <I18n name="title__you_might_also_like" />
         </Span>
       </Box>
 

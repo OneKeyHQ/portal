@@ -1,4 +1,5 @@
 {
+    "action__add_to_cart": "Thêm vào giỏ hàng",
     "action__check_the_full_list": "Kiểm tra danh sách đầy đủ",
     "action__coming_soon": "Sắp có",
     "action__contact_us": "Liên hệ chúng tôi",
@@ -8,12 +9,14 @@
     "action__go_to_shop": "Đi đến cửa hàng",
     "action__launch_app": "Chạy chương trình",
     "action__learn_more": "Tìm hiểu thêm",
+    "action__other_stores": "Cửa hàng khác",
     "action__subscribe": "Đặt mua",
     "app__copyright": "2022 OneKey, Inc. Mọi quyền được bảo lưu.",
     "coin__bitcoin": "Bitcoin",
     "coin__dash": "Dash",
     "coin__dogecoin": "Dogecoin",
     "coin__ethereum": "Ethereum",
+    "content__a_higher_definition_of_private_key_cold_storage": "Định nghĩa cao hơn về kho lạnh khóa riêng.",
     "content__all_new_design__secure_chip_supercharged__beautiful_and_true_color_display": "Thiết kế hoàn toàn mới, chip siêu nạp an toàn, màu sắc hiển thị đẹp và trung thực.",
     "content__biometric_tech__optical_encryption__so_many_reasons_to_go_pro": "Công nghệ sinh trắc học, mã hóa quang học, rất nhiều lý do để trở thành Pro.",
     "content__mini_sized_safety_without_compromise": "Kích thước nhỏ, an toàn mà không thỏa hiệp.",
@@ -77,6 +80,7 @@
     "title__mobile_app": "Ứng dụng di động",
     "title__multi_chain_support": "Hỗ trợ đa chuỗi",
     "title__other_platforms": "Các nền tảng khác",
+    "title__security": "Bảo vệ",
     "title__set_up_your_onekey_hardware_wallet": "Thiết lập ví phần cứng OneKey của bạn",
     "title__stay_in_touch": "Giữ liên lạc",
     "title__subscribe_to_our_notifications": "Đăng ký nhận thông báo của chúng tôi"

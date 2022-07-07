@@ -2,17 +2,18 @@ import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Box, Container, Section, Span } from '../../../../base';
+import { Box, Container, I18n, Section, Span } from '../../../../base';
 
 import { ImageIntroduction, ImageIntroductionProps } from './ImageIntroduction';
 // import { FullscreenScrollAnimation } from '../FullscreenScrollAnimation';
 
 export interface IntroductionSectionProps extends ImageIntroductionProps {
   children?: ReactNode;
+  name: string;
 }
 
 export const IntroductionSection: FC<IntroductionSectionProps> = (props) => {
-  const { children, items } = props;
+  const { children, items, name } = props;
   const theme = useTheme();
 
   return (
@@ -30,7 +31,7 @@ export const IntroductionSection: FC<IntroductionSectionProps> = (props) => {
               }}
               m={{ ...theme.text.medium600 }}
             >
-              INTRODUCING
+              <I18n name="title__introducing" />
             </Span>
             <Box xs={{ paddingTop: 8 }}>
               <Span
@@ -38,7 +39,7 @@ export const IntroductionSection: FC<IntroductionSectionProps> = (props) => {
                 m={theme.text.medium900}
                 xl={theme.text.medium1000}
               >
-                OneKey Mini
+                {name}
               </Span>
             </Box>
           </Box>

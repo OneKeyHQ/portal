@@ -35,7 +35,10 @@ export const OneKeyLite: FC<OneKeyLiteProps> = (props) => {
       <Main>
         <ProductInformation {...OneKeyLiteData.productInformationData} />
 
-        <IntroductionSection items={OneKeyLiteData.imageIntroduction} />
+        <IntroductionSection
+          name={OneKeyLiteData.productInformationData.name}
+          items={OneKeyLiteData.imageIntroduction}
+        />
 
         <FeatureSection {...OneKeyLiteData.feature} />
 

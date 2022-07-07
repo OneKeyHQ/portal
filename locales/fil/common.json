@@ -1,4 +1,5 @@
 {
+    "action__add_to_cart": "Idagdag sa cart",
     "action__check_the_full_list": "Suriin ang buong listahan",
     "action__coming_soon": "malapit na",
     "action__contact_us": "Makipag-ugnayan sa amin",
@@ -8,12 +9,14 @@
     "action__go_to_shop": "Pumunta sa Shop",
     "action__launch_app": "Ilunsad ang App",
     "action__learn_more": "Matuto pa",
+    "action__other_stores": "Iba pang mga Tindahan",
     "action__subscribe": "Mag-subscribe",
     "app__copyright": "2022 OneKey, Inc. Nakalaan ang lahat ng karapatan.",
     "coin__bitcoin": "Bitcoin",
     "coin__dash": "Dash",
     "coin__dogecoin": "Dogecoin",
     "coin__ethereum": "Ethereum",
+    "content__a_higher_definition_of_private_key_cold_storage": "Isang mas mataas na kahulugan ng pribadong key cold storage.",
     "content__all_new_design__secure_chip_supercharged__beautiful_and_true_color_display": "Bagong disenyo, secure na chip supercharged, maganda at totoong kulay na display.",
     "content__biometric_tech__optical_encryption__so_many_reasons_to_go_pro": "Biometric tech, optical encryption, napakaraming dahilan para maging Pro.",
     "content__mini_sized_safety_without_compromise": "Mini sized, kaligtasan nang walang kompromiso.",
@@ -77,6 +80,7 @@
     "title__mobile_app": "Mobile app",
     "title__multi_chain_support": "Multi-Chain Support",
     "title__other_platforms": "Iba pang mga platform",
+    "title__security": "seguridad",
     "title__set_up_your_onekey_hardware_wallet": "I-set up ang iyong OneKey hardware wallet",
     "title__stay_in_touch": "Manatiling nakikipag-ugnayan",
     "title__subscribe_to_our_notifications": "Mag-subscribe sa aming mga notification"

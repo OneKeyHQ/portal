@@ -36,7 +36,10 @@ export const OneKeyTouch: FC<OneKeyTouchProps> = (props) => {
       <Main>
         <ProductInformation {...onekeyTouchData.productInformationData} />
 
-        <IntroductionSection items={onekeyTouchData.imageIntroduction} />
+        <IntroductionSection
+          name={onekeyTouchData.productInformationData.name}
+          items={onekeyTouchData.imageIntroduction}
+        />
 
         <FeatureSection {...onekeyTouchData.feature} />
 

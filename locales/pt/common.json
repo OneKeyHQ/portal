@@ -1,4 +1,5 @@
 {
+    "action__add_to_cart": "Adicionar ao carrinho",
     "action__check_the_full_list": "Confira a lista completa",
     "action__coming_soon": "em breve",
     "action__contact_us": "Contate-Nos",
@@ -8,12 +9,14 @@
     "action__go_to_shop": "Ir para a loja",
     "action__launch_app": "Lançamento do Aplicativo",
     "action__learn_more": "Saber mais",
+    "action__other_stores": "Outras lojas",
     "action__subscribe": "Se inscrever",
     "app__copyright": "2022 OneKey, Inc. Todos os direitos reservados.",
     "coin__bitcoin": "Bitcoin",
     "coin__dash": "Dash",
     "coin__dogecoin": "Dogecoin",
     "coin__ethereum": "Ethereum",
+    "content__a_higher_definition_of_private_key_cold_storage": "Uma definição mais alta de armazenamento frio de chave privada.",
     "content__all_new_design__secure_chip_supercharged__beautiful_and_true_color_display": "Design totalmente novo, chip seguro superalimentado, tela de cores bonitas e verdadeiras.",
     "content__biometric_tech__optical_encryption__so_many_reasons_to_go_pro": "Tecnologia biométrica, criptografia óptica, tantas razões para se tornar Pro.",
     "content__mini_sized_safety_without_compromise": "Tamanho mini, segurança sem compromisso.",
@@ -77,6 +80,7 @@
     "title__mobile_app": "Aplicativo móvel",
     "title__multi_chain_support": "Suporte a várias cadeias",
     "title__other_platforms": "Outras plataformas",
+    "title__security": "segurança",
     "title__set_up_your_onekey_hardware_wallet": "Configure sua carteira de hardware OneKey",
     "title__stay_in_touch": "Manter contato",
     "title__subscribe_to_our_notifications": "Assine nossas notificações"

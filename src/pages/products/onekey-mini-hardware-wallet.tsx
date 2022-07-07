@@ -4,7 +4,12 @@ export { OneKeyMini as default } from '../../components/pages/products/OneKeyMin
 
 export const query = graphql`
   query ($language: String!) {
-    locales: allLocale(filter: { language: { eq: $language } }) {
+    locales: allLocale(
+      filter: {
+        ns: { in: ["common", "product", "onekey-mini-hardware-wallet"] }
+        language: { eq: $language }
+      }
+    ) {
       edges {
         node {
           ns

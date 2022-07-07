@@ -1,4 +1,5 @@
 {
+    "action__add_to_cart": "Aggiungi al carrello",
     "action__check_the_full_list": "Controlla l'elenco completo",
     "action__coming_soon": "Prossimamente",
     "action__contact_us": "Contattaci",
@@ -8,12 +9,14 @@
     "action__go_to_shop": "Vai a fare la spesa",
     "action__launch_app": "Avvia app",
     "action__learn_more": "Per saperne di più",
+    "action__other_stores": "Altri negozi",
     "action__subscribe": "sottoscrivi",
     "app__copyright": "2022 OneKey, Inc. Tutti i diritti riservati.",
     "coin__bitcoin": "Bitcoin",
     "coin__dash": "Dash",
     "coin__dogecoin": "Dogecoin",
     "coin__ethereum": "Ethereum",
+    "content__a_higher_definition_of_private_key_cold_storage": "Una definizione più elevata di conservazione a freddo della chiave privata.",
     "content__all_new_design__secure_chip_supercharged__beautiful_and_true_color_display": "Design completamente nuovo, display a colori sicuro e sovralimentato con chip sicuro.",
     "content__biometric_tech__optical_encryption__so_many_reasons_to_go_pro": "Tecnologia biometrica, crittografia ottica, tanti motivi per passare a Pro.",
     "content__mini_sized_safety_without_compromise": "Dimensioni ridotte, sicurezza senza compromessi.",
@@ -77,6 +80,7 @@
     "title__mobile_app": "App mobile",
     "title__multi_chain_support": "Supporto multicatena",
     "title__other_platforms": "Altre piattaforme",
+    "title__security": "sicurezza",
     "title__set_up_your_onekey_hardware_wallet": "Configura il tuo portafoglio hardware OneKey .",
     "title__stay_in_touch": "Rimani in contatto",
     "title__subscribe_to_our_notifications": "Iscriviti alle nostre notifiche"

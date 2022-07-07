@@ -1,27 +1,29 @@
+import { useTranslation } from 'gatsby-plugin-react-i18next';
+
 import { FeatureSectionProps } from '../../components/FeatureSection';
 import { Image1, Image2, Image3 } from '../../components/FeatureSection/Images';
 
 export function useFeatureSectionData(): FeatureSectionProps {
+  const { t } = useTranslation();
+
   return {
-    title: 'Focus and Release',
-    description:
-      'Multi-Ways, Multi-Directions, Multi-Views to First Experiences',
+    title: t('title__focus_and_release'),
+    description: t('title__focus_and_release_desc'),
     items: [
       {
         imageNode: Image1,
-        name: 'Open source',
-        description: 'Open source transparent, WYSIWYG.',
+        name: t('title__feature_open_source'),
+        description: t('title__feature_open_source_desc'),
       },
       {
         imageNode: Image2,
-        name: 'Light and mini sized',
-        description: 'Battery-free, compact and durable, suitable for holders.',
+        name: t('title__feature_light_and_mini_sized'),
+        description: t('title__feature_light_and_mini_sized_desc'),
       },
       {
         imageNode: Image3,
-        name: 'Self-destruction seal',
-        description:
-          'To ensure every new items on your hand, every step is for safety.',
+        name: t('title__feature_self_destruction_seal'),
+        description: t('title__feature_self_destruction_seal_desc'),
       },
     ],
   };
