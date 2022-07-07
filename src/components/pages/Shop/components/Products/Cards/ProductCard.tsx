@@ -25,26 +25,27 @@ export const ProductCard: FC<ProductCardProps> = (props) => {
         <Fragment key={name}>
           <Flex xs={{ alignItems: 'center', justifyContent: 'center' }}>
             <Box
-              m={{ width: 480, height: 480 }}
-              l={{ width: 516, height: 516 }}
-              xl={{ width: 664, height: 664 }}
+              m={{ width: 360, height: 360 }}
+              l={{ width: 480, height: 480 }}
+              xl={{ width: 516, height: 516 }}
+              xxl={{ width: 664, height: 664 }}
             >
               {image}
             </Box>
           </Flex>
 
-          <Box xs={{ paddingLeft: 24, paddingRight: 24 }}>
-            <Divider />
-          </Box>
-
           <Flex
             xs={{
               color: theme.colors.test500,
-              padding: '24px 24px 40px 24px',
+              padding: 24,
               gap: 24,
               flexDirection: 'column',
             }}
+            m={{ padding: '32px 64px' }}
+            l={{ padding: 64 }}
           >
+            <Divider />
+
             <Flex xs={{ gap: 8, flexDirection: 'column' }}>
               <Span xs={theme.text.medium700}>{name}</Span>
               <Span xs={theme.text.normal400}>{description}</Span>

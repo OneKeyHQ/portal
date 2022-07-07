@@ -10,6 +10,7 @@ export type ProductItem = {
   price: number;
   formattedPrice: string;
   image: ReactNode;
+  bigImage?: ReactNode;
   path: string;
 };
 
@@ -36,6 +37,13 @@ export function useProductsData() {
         alt="touch"
       />
     ),
+    bigImage: (
+      <StaticImage
+        style={{ width: '100%', height: 'auto' }}
+        src="./images/touchBig.png"
+        alt="touch"
+      />
+    ),
   };
 
   const lite: ProductItem = {
@@ -50,6 +58,6 @@ export function useProductsData() {
   };
 
   return {
-    items: { mini, touch, lite },
+    items: { touch, mini, lite },
   } as const;
 }
