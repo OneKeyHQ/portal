@@ -18,25 +18,20 @@ export function useRecommendSectionData() {
 
   const mini: ProductItem = {
     ...oneKeyProduct.mini,
-    image: <StaticImage src="./images/miniHover.png" alt="mini" />,
+    image: <StaticImage src="./images/mini.png" alt="mini" />,
   };
 
   const touch: ProductItem = {
     ...oneKeyProduct.touch,
-    image: <StaticImage src="./images/touchHover.png" alt="mini" />,
-  };
-
-  const pro: ProductItem = {
-    ...oneKeyProduct.pro,
-    image: <StaticImage src="./images/proHover.png" alt="mini" />,
+    image: <StaticImage src="./images/touch.png" alt="touch" />,
   };
 
   const lite: ProductItem = {
     ...oneKeyProduct.lite,
-    image: <StaticImage src="./images/liteHover.png" alt="mini" />,
+    image: <StaticImage src="./images/lite.png" alt="lite" />,
   };
 
   return {
-    items: { mini, touch, pro, lite },
+    items: { mini, touch, lite },
   } as const;
 }
