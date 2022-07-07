@@ -12,11 +12,7 @@ export function useEmailSubscribe() {
 
   const subscribe = useCallback(() => {
     try {
-      if (!email) {
-        return;
-      }
-
-      if (!isEmail(email)) {
+      if (!email || !isEmail(email)) {
         setShowErrorMessage(true);
         return;
       }
@@ -52,7 +48,6 @@ export function useEmailSubscribe() {
       },
     },
     buttonProps: {
-      disabled: !email,
       children: t('action__subscribe'),
       onClick: subscribe,
     },
