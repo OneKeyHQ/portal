@@ -2,7 +2,7 @@ import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Box, H2 } from '../../../../base';
+import { Box, H2, I18n } from '../../../../base';
 
 export interface ProductsTitleProps {
   children?: ReactNode;
@@ -23,7 +23,7 @@ export const ProductsTitle: FC<ProductsTitleProps> = (props) => {
         l={theme.text.medium900}
         xl={theme.text.medium1000}
       >
-        Hardware wallets
+        <I18n name="title__hardware_wallets" />
       </H2>
 
       {children}

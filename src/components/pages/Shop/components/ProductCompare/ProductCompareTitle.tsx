@@ -2,7 +2,7 @@ import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Box, H2, Span } from '../../../../base';
+import { Box, H2, I18n, Span } from '../../../../base';
 
 export interface ProductCompareTitleProps {
   children?: ReactNode;
@@ -29,7 +29,7 @@ export const ProductCompareTitle: FC<ProductCompareTitleProps> = (props) => {
         l={theme.text.medium900}
         xl={theme.text.medium1000}
       >
-        Compare OneKey crypto hardware wallets
+        <I18n name="title__compare_onekey_crypto_hardware_wallets" />
       </H2>
 
       <Span
@@ -40,7 +40,7 @@ export const ProductCompareTitle: FC<ProductCompareTitleProps> = (props) => {
         }}
         m={theme.text.normal500}
       >
-        Which one is right for you?
+        <I18n name="content__which_one_is_right_for_you" />
       </Span>
 
       {children}
