@@ -25,8 +25,7 @@ export function useNavigationDataObject(): Record<
   | 'security'
   | 'forDeveloper'
   | 'forBusiness'
-  | 'helpCenter'
-  | 'shop',
+  | 'helpCenter',
   NavigationDataItem
 > {
   const oneKeyProduct = useOneKeyProduct();
@@ -159,33 +158,6 @@ export function useNavigationDataObject(): Record<
     ],
   };
 
-  const shop = {
-    name: t('menu__shop'),
-    key: 'shop',
-    subItems: [
-      {
-        name: t('menu__amazon_global'),
-        key: 'amazon-Global',
-        path: oneKeyProduct.mini.shops.amazonGlobal?.url,
-      },
-      {
-        name: t('menu__amazon_japan'),
-        key: 'amazon-Japan',
-        path: oneKeyProduct.mini.shops.amazonJapan?.url,
-      },
-      {
-        name: t('menu__youzan'),
-        key: 'youzan',
-        path: oneKeyProduct.mini.shops.youzan?.url,
-      },
-      {
-        name: t('menu__shopify'),
-        key: 'shopify',
-        path: oneKeyProduct.mini.shops.shopify?.url,
-      },
-    ],
-  };
-
   return {
     products,
     app,
@@ -194,7 +166,6 @@ export function useNavigationDataObject(): Record<
     forDeveloper,
     forBusiness,
     helpCenter,
-    shop,
   };
 }
 
@@ -209,6 +180,5 @@ export function useNavigationData(): NavigationDataItem[] {
     object.forDeveloper,
     object.forBusiness,
     object.helpCenter,
-    object.shop,
   ];
 }
