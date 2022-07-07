@@ -49,6 +49,7 @@ export const Hero: FC<HeroProps> = (props) => {
               height: '100%',
               objectFit: 'cover',
             }}
+            loop
             src="/shop/hero/shop-hero-animation-compressed.mp4"
           />
         </Box>
