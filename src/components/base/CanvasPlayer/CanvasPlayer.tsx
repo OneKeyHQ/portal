@@ -58,8 +58,31 @@ export const CanvasPlayer: FC<CanvasPlayerProps> = (props) => {
     // application resize
     if (application.current && animatedSpriteState) {
       application.current.renderer.resize(width, height);
-      animatedSpriteState.width = width;
-      animatedSpriteState.height = height;
+
+      const { texture } = animatedSpriteState;
+      const imageSpriteWidth = texture.baseTexture.width;
+      const imageSpriteHeight = texture.baseTexture.height;
+      const containerWidth = width;
+      const containerHeight = height;
+
+      const imageRatio = imageSpriteWidth / imageSpriteHeight;
+      const containerRatio = containerWidth / containerHeight;
+
+      if (containerRatio > imageRatio) {
+        animatedSpriteState.height /=
+          animatedSpriteState.width / containerWidth;
+        animatedSpriteState.width = containerWidth;
+        animatedSpriteState.position.x = 0;
+        animatedSpriteState.position.y =
+          (containerHeight - animatedSpriteState.height) / 2;
+      } else {
+        animatedSpriteState.width /=
+          animatedSpriteState.height / containerHeight;
+        animatedSpriteState.height = containerHeight;
+        animatedSpriteState.position.y = 0;
+        animatedSpriteState.position.x =
+          (containerWidth - animatedSpriteState.width) / 2;
+      }
     }
   }, [width, height, animatedSpriteState]);
 
