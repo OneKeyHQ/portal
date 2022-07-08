@@ -9,10 +9,10 @@ export interface ImageIntroductionProps {
     name: string | string[];
     description: string;
     images: {
-      s: ReactNode;
-      m: ReactNode;
-      l: ReactNode;
-      xl: ReactNode;
+      s?: ReactNode;
+      m?: ReactNode;
+      l?: ReactNode;
+      xl?: ReactNode;
     };
   }[];
 }

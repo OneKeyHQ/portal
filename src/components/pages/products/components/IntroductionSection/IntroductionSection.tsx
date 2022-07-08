@@ -3,8 +3,8 @@ import { FC, ReactNode } from 'react';
 import { Box, Section } from '../../../../base';
 
 import { ImageIntroduction, ImageIntroductionProps } from './ImageIntroduction';
+import { IntroductionContainer } from './IntroductionContainer';
 import { IntroductionSectionTitle } from './IntroductionSectionTitle';
-// import { FullscreenScrollAnimation } from '../FullscreenScrollAnimation';
 
 export interface IntroductionSectionProps extends ImageIntroductionProps {
   children?: ReactNode;
@@ -22,17 +22,10 @@ export const IntroductionSection: FC<IntroductionSectionProps> = (props) => {
       >
         <IntroductionSectionTitle name={name} />
 
-        <Box
-          xs={{ paddingTop: 40, paddingLeft: 24, paddingRight: 24 }}
-          m={{ paddingLeft: 32, paddingRight: 32 }}
-          xl={{ paddingLeft: 36, paddingRight: 36 }}
-          xxl={{ paddingLeft: 40, paddingRight: 40 }}
-        >
+        <IntroductionContainer>
           <ImageIntroduction items={items} />
-        </Box>
+        </IntroductionContainer>
 
-        {/* todo */}
-        {/* <FullscreenScrollAnimation /> */}
         {children}
       </Box>
     </Section>
