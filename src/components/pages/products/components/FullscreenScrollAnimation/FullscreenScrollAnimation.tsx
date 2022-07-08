@@ -1,12 +1,13 @@
 import { FC, ReactNode } from 'react';
 
-import { useTransform } from 'framer-motion';
+import { motion, useTransform } from 'framer-motion';
 
 import {
   useElementInViewportProgress,
+  usePositionAnimation,
   useWindowSize,
 } from '../../../../../hooks';
-import { staticAssetPrefix } from '../../../../../utils';
+import { mergeRefs, staticAssetPrefix } from '../../../../../utils';
 import { Box, CanvasPlayer } from '../../../../base';
 
 export interface FullscreenScrollAnimationProps {
@@ -49,6 +50,18 @@ export const FullscreenScrollAnimation: FC<FullscreenScrollAnimationProps> = (
   const { children } = props;
   const { height: windowHeight = 1, width: windowWidth = 1 } = useWindowSize();
   const { ref, elementInViewportProgress } = useElementInViewportProgress(0);
+  const { ref: paddingRef, motionValue: paddingMotionValue } =
+    usePositionAnimation({
+      from: 60,
+      to: 0,
+    });
+  const { ref: borderRadiusRef, motionValue: borderRadiusMotionValue } =
+    usePositionAnimation({
+      from: 40,
+      to: 0,
+    });
+
+  const containerRef = mergeRefs(borderRadiusRef, paddingRef);
 
   const motionValue = useTransform(
     elementInViewportProgress,
@@ -78,17 +91,34 @@ export const FullscreenScrollAnimation: FC<FullscreenScrollAnimationProps> = (
               width: '100%',
               height: '100vh',
               overflow: 'hidden',
+              '& canvas': {
+                display: 'block',
+              },
             }}
           >
-            <Box xs={{}}>
-              <CanvasPlayer
-                objectFit="cover"
-                width={windowWidth}
-                height={windowHeight}
-                images={images}
-                frame={parseInt(motionValue.get().toFixed(0))}
-              />
-            </Box>
+            <motion.div
+              ref={containerRef}
+              style={{
+                paddingLeft: paddingMotionValue,
+                paddingRight: paddingMotionValue,
+              }}
+            >
+              <motion.div
+                style={{
+                  overflow: 'hidden',
+                  transform: `translate3d(0,0,0)`,
+                  borderRadius: borderRadiusMotionValue,
+                }}
+              >
+                <CanvasPlayer
+                  objectFit="cover"
+                  width={windowWidth}
+                  height={windowHeight}
+                  images={images}
+                  frame={parseInt(motionValue.get().toFixed(0))}
+                />
+              </motion.div>
+            </motion.div>
           </Box>
         </Box>
       </Box>
