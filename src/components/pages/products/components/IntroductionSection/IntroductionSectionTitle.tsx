@@ -17,7 +17,7 @@ export const IntroductionSectionTitle: FC<IntroductionSectionTitleProps> = (
 
   return (
     <Container>
-      <Box xs={{ textAlign: 'center' }}>
+      <Box xs={{ textAlign: 'center', paddingBottom: 40 }}>
         <Span
           xs={{
             ...theme.text.medium500,

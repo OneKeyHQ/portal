@@ -13,7 +13,7 @@ export const IntroductionContainer: FC<IntroductionContainerProps> = (
 
   return (
     <Box
-      xs={{ paddingTop: 40, paddingLeft: 24, paddingRight: 24 }}
+      xs={{ paddingLeft: 24, paddingRight: 24 }}
       m={{ paddingLeft: 32, paddingRight: 32 }}
       xl={{ paddingLeft: 36, paddingRight: 36 }}
       xxl={{ paddingLeft: 40, paddingRight: 40 }}
