@@ -82,6 +82,7 @@ export const FullscreenScrollAnimation: FC<FullscreenScrollAnimationProps> = (
           >
             <Box xs={{}}>
               <CanvasPlayer
+                objectFit="cover"
                 width={windowWidth}
                 height={windowHeight}
                 images={images}
