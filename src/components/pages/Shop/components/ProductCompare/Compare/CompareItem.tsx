@@ -2,14 +2,17 @@ import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
+import { useMediaQuery } from '../../../../../../hooks';
 import {
   Box,
   Button,
+  ButtonProps,
   ChevronRightIcon,
   Divider,
   Flex,
   I18n,
   Img,
+  Link,
   Span,
 } from '../../../../../base';
 import { ProductCompareItem } from '../useProductCompareData';
@@ -19,8 +22,21 @@ export interface CompareItemProps extends ProductCompareItem {
 }
 
 export const CompareItem: FC<CompareItemProps> = (props) => {
-  const { children, image, name, price, productCompareDetail } = props;
+  const {
+    children,
+    image,
+    name,
+    price,
+    productCompareDetail,
+    productDetailUrl,
+  } = props;
   const theme = useTheme();
+
+  const mediaQuery = useMediaQuery();
+
+  const buttonProp: ButtonProps = mediaQuery.small
+    ? { size: 'medium' }
+    : { size: 'large' };
 
   return (
     <Flex
@@ -57,31 +73,35 @@ export const CompareItem: FC<CompareItemProps> = (props) => {
         }}
       >
         <Span
-          xs={{
-            ...theme.text.medium500,
-          }}
+          xs={theme.text.medium500}
+          s={theme.text.medium600}
+          l={theme.text.medium700}
         >
           {name}
         </Span>
         <Span
-          xs={{
-            ...theme.text.normal400,
-          }}
+          xs={theme.text.normal400}
+          s={theme.text.normal500}
+          l={theme.text.normal600}
         >
           {price}
         </Span>
 
-        <Button size="small">
-          <I18n name="action__buy" />
-        </Button>
+        <Link to={productDetailUrl}>
+          <Button xs={{ minWidth: 100 }} {...buttonProp}>
+            <I18n name="action__buy" />
+          </Button>
+        </Link>
 
-        <Button
-          variant="text"
-          size="small"
-          rightIcon={<ChevronRightIcon width={24} height={24} />}
-        >
-          <I18n name="action__learn_more" />
-        </Button>
+        <Link to={productDetailUrl}>
+          <Button
+            variant="text"
+            {...buttonProp}
+            rightIcon={<ChevronRightIcon width={24} height={24} />}
+          >
+            <I18n name="action__learn_more" />
+          </Button>
+        </Link>
       </Flex>
 
       <Divider color={theme.colors.test200} />
@@ -105,9 +125,19 @@ export const CompareItem: FC<CompareItemProps> = (props) => {
             }}
           >
             {item.icon && <Img src={item.icon} />}
-            {!item.icon && <Span xs={theme.text.medium500}>{item.name}</Span>}
+            {!item.icon && (
+              <Span
+                xs={theme.text.medium300}
+                s={theme.text.medium400}
+                m={theme.text.medium500}
+              >
+                {item.name}
+              </Span>
+            )}
 
-            <Span xs={theme.text.normal300}>{item.value}</Span>
+            <Span xs={theme.text.normal200} s={theme.text.normal300}>
+              {item.value}
+            </Span>
           </Flex>
         ))}
       </Flex>

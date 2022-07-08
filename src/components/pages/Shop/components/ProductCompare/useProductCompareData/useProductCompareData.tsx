@@ -77,7 +77,7 @@ export function useProductCompareData(): {
       touch: {
         image: <StaticImage src="./images/touch.png" alt="touch" />,
         name: product.touch.name,
-        price: product.mini.formattedPrice,
+        price: product.touch.formattedPrice,
         productDetailUrl: product.touch.path,
         productCompareDetail: [
           {
