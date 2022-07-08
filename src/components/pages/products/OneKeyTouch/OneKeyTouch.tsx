@@ -2,7 +2,7 @@ import { FC, ReactNode } from 'react';
 
 import { Helmet } from 'react-helmet';
 
-import { Box, Main } from '../../../base';
+import { Box, Main, OnlyDisplay } from '../../../base';
 import {
   Navigation,
   PageFooter,
@@ -37,16 +37,20 @@ export const OneKeyTouch: FC<OneKeyTouchProps> = (props) => {
       <Main>
         <ProductInformation {...onekeyTouchData.productInformationData} />
 
-        <IntroductionSection
-          name={onekeyTouchData.productInformationData.name}
-          items={onekeyTouchData.imageIntroduction}
-        />
+        <OnlyDisplay xs s m>
+          <IntroductionSection
+            name={onekeyTouchData.productInformationData.name}
+            items={onekeyTouchData.imageIntroduction}
+          />
+        </OnlyDisplay>
+
+        <OnlyDisplay l xl xxl>
+          <FullscreenScrollAnimation />
+        </OnlyDisplay>
 
         <FeatureSection {...onekeyTouchData.feature} />
 
         <MultiChainSupportSection />
-
-        <FullscreenScrollAnimation />
 
         <TechnicalSpecificationsSection
           {...onekeyTouchData.technicalSpecifications}
