@@ -14,10 +14,32 @@ export interface FullscreenScrollAnimationProps {
 }
 
 const images = [
+  ...new Array(70)
+    .fill(0)
+    .map((_, i) =>
+      staticAssetPrefix(
+        `/onekey-touch-feature-01/onekey-touch-feature-01_${i
+          .toString()
+          .padStart(4, '0')}.webp`,
+      ),
+    ),
   ...new Array(60)
     .fill(0)
     .map((_, i) =>
-      staticAssetPrefix(`/hardware-mini-features/onekey-mini-features${i}.jpg`),
+      staticAssetPrefix(
+        `/onekey-touch-feature-02/onekey-touch-feature-02_${i
+          .toString()
+          .padStart(4, '0')}.webp`,
+      ),
+    ),
+  ...new Array(60)
+    .fill(0)
+    .map((_, i) =>
+      staticAssetPrefix(
+        `/onekey-touch-feature-03/onekey-touch-feature-03_${i
+          .toString()
+          .padStart(4, '0')}.webp`,
+      ),
     ),
 ];
 
@@ -28,7 +50,11 @@ export const FullscreenScrollAnimation: FC<FullscreenScrollAnimationProps> = (
   const { height: windowHeight = 1, width: windowWidth = 1 } = useWindowSize();
   const { ref, elementInViewportProgress } = useElementInViewportProgress(0);
 
-  const motionValue = useTransform(elementInViewportProgress, [0, 2], [0, 59]);
+  const motionValue = useTransform(
+    elementInViewportProgress,
+    [1, 3],
+    [0, 69 + 59 + 59],
+  );
 
   return (
     <Box>
@@ -36,26 +62,33 @@ export const FullscreenScrollAnimation: FC<FullscreenScrollAnimationProps> = (
 
       <Box
         css={{
-          height: '00%',
+          height: '300vh',
           position: 'relative',
+          zIndex: 9999,
         }}
       >
         <Box
           css={{
-            bottom: 0,
+            top: 0,
             position: 'sticky',
-            width: '100vw',
-            height: '100vh',
-            borderRadius: 24,
-            overflow: 'hidden',
           }}
         >
-          <CanvasPlayer
-            width={windowWidth}
-            height={windowHeight}
-            images={images}
-            frame={parseInt(motionValue.get().toFixed(0))}
-          />
+          <Box
+            xs={{
+              width: '100%',
+              height: '100vh',
+              overflow: 'hidden',
+            }}
+          >
+            <Box xs={{}}>
+              <CanvasPlayer
+                width={windowWidth}
+                height={windowHeight}
+                images={images}
+                frame={parseInt(motionValue.get().toFixed(0))}
+              />
+            </Box>
+          </Box>
         </Box>
       </Box>
       {children}

@@ -9,6 +9,7 @@ import {
   StayInTouchWidthContainerAndPadding,
 } from '../../../common';
 import { FeatureSection } from '../components/FeatureSection';
+import { FullscreenScrollAnimation } from '../components/FullscreenScrollAnimation';
 import { IntroductionSection } from '../components/IntroductionSection';
 import { MultiChainSupportSection } from '../components/MultiChainSupportSection';
 import { ProductInformation } from '../components/ProductInformation';
@@ -44,6 +45,8 @@ export const OneKeyTouch: FC<OneKeyTouchProps> = (props) => {
         <FeatureSection {...onekeyTouchData.feature} />
 
         <MultiChainSupportSection />
+
+        <FullscreenScrollAnimation />
 
         <TechnicalSpecificationsSection
           {...onekeyTouchData.technicalSpecifications}
