@@ -11,10 +11,11 @@ interface CanvasPlayerProps {
   width: number;
   height: number;
   objectFit?: 'normal' | 'cover';
+  onLoad?: (arg0: { app: Application; animatedSprite: AnimatedSprite }) => void;
 }
 
 export const CanvasPlayer: FC<CanvasPlayerProps> = (props) => {
-  const { frame, images, width, height, objectFit = 'normal' } = props;
+  const { frame, images, width, height, objectFit = 'normal', onLoad } = props;
   // is initialized
   const isInitialized = useRef(false);
   const application = useRef<Application | null>(null);
@@ -39,10 +40,12 @@ export const CanvasPlayer: FC<CanvasPlayerProps> = (props) => {
           width,
           height,
         },
-        ({ animatedSprite }) => {
-          animatedSprite.gotoAndStop(0);
+        (args) => {
+          args.animatedSprite.gotoAndStop(0);
 
-          setAnimatedSpriteState(animatedSprite);
+          setAnimatedSpriteState(args.animatedSprite);
+
+          onLoad?.(args);
         },
       );
     }
@@ -53,12 +56,14 @@ export const CanvasPlayer: FC<CanvasPlayerProps> = (props) => {
         // application.current = null;
       }
     };
-  }, [images, width, height]);
+  }, [images, width, height, onLoad]);
 
   useEffect(() => {
     // application resize
     if (application.current && animatedSpriteState) {
       application.current.renderer.resize(width, height);
+
+      console.log('width, height', width, height);
 
       if (objectFit === 'normal') {
         animatedSpriteState.width = width;

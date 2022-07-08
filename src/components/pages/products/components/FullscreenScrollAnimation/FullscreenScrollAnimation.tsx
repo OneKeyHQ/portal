@@ -1,54 +1,25 @@
 import { FC, ReactNode } from 'react';
 
-import { motion, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 import {
   useElementInViewportProgress,
   usePositionAnimation,
-  useWindowSize,
 } from '../../../../../hooks';
-import { mergeRefs, staticAssetPrefix } from '../../../../../utils';
-import { Box, CanvasPlayer } from '../../../../base';
+import { mergeRefs } from '../../../../../utils';
+import { Box } from '../../../../base';
+
+import { Player } from './Player';
 
 export interface FullscreenScrollAnimationProps {
   children?: ReactNode;
 }
 
-const images = [
-  ...new Array(70)
-    .fill(0)
-    .map((_, i) =>
-      staticAssetPrefix(
-        `/onekey-touch-feature-01/onekey-touch-feature-01_${i
-          .toString()
-          .padStart(4, '0')}.webp`,
-      ),
-    ),
-  ...new Array(60)
-    .fill(0)
-    .map((_, i) =>
-      staticAssetPrefix(
-        `/onekey-touch-feature-02/onekey-touch-feature-02_${i
-          .toString()
-          .padStart(4, '0')}.webp`,
-      ),
-    ),
-  ...new Array(60)
-    .fill(0)
-    .map((_, i) =>
-      staticAssetPrefix(
-        `/onekey-touch-feature-03/onekey-touch-feature-03_${i
-          .toString()
-          .padStart(4, '0')}.webp`,
-      ),
-    ),
-];
-
 export const FullscreenScrollAnimation: FC<FullscreenScrollAnimationProps> = (
   props,
 ) => {
   const { children } = props;
-  const { height: windowHeight = 1, width: windowWidth = 1 } = useWindowSize();
+
   const { ref, elementInViewportProgress } = useElementInViewportProgress(0);
   const { ref: paddingRef, motionValue: paddingMotionValue } =
     usePositionAnimation({
@@ -62,12 +33,6 @@ export const FullscreenScrollAnimation: FC<FullscreenScrollAnimationProps> = (
     });
 
   const containerRef = mergeRefs(borderRadiusRef, paddingRef);
-
-  const motionValue = useTransform(
-    elementInViewportProgress,
-    [1, 3],
-    [0, 69 + 59 + 59],
-  );
 
   return (
     <Box>
@@ -110,13 +75,7 @@ export const FullscreenScrollAnimation: FC<FullscreenScrollAnimationProps> = (
                   borderRadius: borderRadiusMotionValue,
                 }}
               >
-                <CanvasPlayer
-                  objectFit="cover"
-                  width={windowWidth}
-                  height={windowHeight}
-                  images={images}
-                  frame={parseInt(motionValue.get().toFixed(0))}
-                />
+                <Player elementInViewportProgress={elementInViewportProgress} />
               </motion.div>
             </motion.div>
           </Box>

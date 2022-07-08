@@ -34,7 +34,12 @@ export function init(
 
   const loader = new Loader();
 
-  for (const image of images) {
+  // remove duplicated images
+  const imagesWithoutDuplicated = images.filter(
+    (image, index) => images.indexOf(image) === index,
+  );
+
+  for (const image of imagesWithoutDuplicated) {
     loader.add(image);
   }
 
