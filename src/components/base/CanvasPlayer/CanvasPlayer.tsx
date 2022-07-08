@@ -63,8 +63,6 @@ export const CanvasPlayer: FC<CanvasPlayerProps> = (props) => {
     if (application.current && animatedSpriteState) {
       application.current.renderer.resize(width, height);
 
-      console.log('width, height', width, height);
-
       if (objectFit === 'normal') {
         animatedSpriteState.width = width;
         animatedSpriteState.height = height;
