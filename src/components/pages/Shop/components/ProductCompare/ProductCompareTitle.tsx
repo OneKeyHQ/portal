@@ -17,7 +17,13 @@ export const ProductCompareTitle: FC<ProductCompareTitleProps> = (props) => {
       xs={{
         display: 'flex',
         flexDirection: 'column',
+        alignItems: 'center',
         gap: 24,
+        paddingTop: 80,
+        paddingBottom: 48,
+      }}
+      m={{
+        paddingTop: 120,
       }}
     >
       <H2
@@ -29,7 +35,10 @@ export const ProductCompareTitle: FC<ProductCompareTitleProps> = (props) => {
         l={theme.text.medium900}
         xl={theme.text.medium1000}
       >
-        <I18n name="title__compare_onekey_crypto_hardware_wallets" />
+        <I18n
+          name="title__compare_onekey_crypto_hardware_wallets"
+          alwaysMultiLine
+        />
       </H2>
 
       <Span
