@@ -1,78 +1,88 @@
 import { FC } from 'react';
 
-import { MotionValue, useTransform } from 'framer-motion';
+import {
+  AnimatePresence,
+  MotionValue,
+  motion,
+  useTransform,
+} from 'framer-motion';
 
 import { useWindowSize } from '../../../../../hooks';
-import { staticAssetPrefix } from '../../../../../utils';
 import { Box, CanvasPlayer } from '../../../../base';
+import { useOneKeyTouchData } from '../../OneKeyTouch/useOneKeyTouchData';
+import { IntroductionText } from '../IntroductionSection/IntroductionText';
 
 export interface PlayerProps {
   elementInViewportProgress: MotionValue<number>;
+  items: {
+    name: string | string[];
+    description: string;
+    frames: string[];
+  }[];
 }
 
-const images = [
-  ...new Array(70)
-    .fill(0)
-    .map((_, i) =>
-      staticAssetPrefix(
-        `/onekey-touch-feature-01/onekey-touch-feature-01_${i
-          .toString()
-          .padStart(4, '0')}.webp`,
-      ),
-    ),
-  ...new Array(15)
-    .fill(0)
-    .map(() =>
-      staticAssetPrefix(
-        `/onekey-touch-feature-01/onekey-touch-feature-01_0070.webp`,
-      ),
-    ),
-  ...new Array(60)
-    .fill(0)
-    .map((_, i) =>
-      staticAssetPrefix(
-        `/onekey-touch-feature-02/onekey-touch-feature-02_${i
-          .toString()
-          .padStart(4, '0')}.webp`,
-      ),
-    ),
-  ...new Array(15)
-    .fill(0)
-    .map(() =>
-      staticAssetPrefix(
-        `/onekey-touch-feature-02/onekey-touch-feature-02_0060.webp`,
-      ),
-    ),
-  ...new Array(60)
-    .fill(0)
-    .map((_, i) =>
-      staticAssetPrefix(
-        `/onekey-touch-feature-03/onekey-touch-feature-03_${i
-          .toString()
-          .padStart(4, '0')}.webp`,
-      ),
-    ),
-];
-
 export const Player: FC<PlayerProps> = (props) => {
-  const { elementInViewportProgress } = props;
+  const { elementInViewportProgress, items } = props;
   const { height: windowHeight = 1, width: windowWidth = 1 } = useWindowSize();
+  const onekeyTouchData = useOneKeyTouchData();
+  const allImages = items.reduce(
+    (acc: string[], item) => acc.concat(item.frames),
+    [],
+  );
 
   const motionValue = useTransform(
     elementInViewportProgress,
     [0.8, 3.2],
-    [0, images.length - 1],
+    [0, allImages.length - 1],
   );
 
+  const currentFrame = parseInt(motionValue.get().toFixed(0));
+
   return (
-    <Box>
+    <Box xs={{ position: 'relative' }}>
       <CanvasPlayer
         objectFit="cover"
         width={windowWidth}
         height={windowHeight}
-        images={images}
-        frame={parseInt(motionValue.get().toFixed(0))}
+        images={allImages}
+        frame={currentFrame}
       />
+
+      <Box
+        xs={{
+          position: 'absolute',
+          padding: 12,
+          left: 24,
+          bottom: 24,
+        }}
+        m={{
+          left: '3vw',
+          bottom: '3vw',
+        }}
+      >
+        <AnimatePresence exitBeforeEnter>
+          {onekeyTouchData.imageIntroduction.map((item) => {
+            const is = item.frames.includes(allImages[currentFrame] || '');
+
+            return (
+              is && (
+                <motion.div
+                  key={item.description}
+                  animate={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, y: 12 }}
+                  exit={{ opacity: 0, y: -12 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <IntroductionText
+                    name={item.name}
+                    description={item.description}
+                  />
+                </motion.div>
+              )
+            );
+          })}
+        </AnimatePresence>
+      </Box>
     </Box>
   );
 };

@@ -45,14 +45,16 @@ export const OneKeyTouch: FC<OneKeyTouchProps> = (props) => {
             name={onekeyTouchData.productInformationData.name}
           />
 
-          <OnlyDisplay xs s m>
+          <OnlyDisplay xs s>
             <IntroductionContainer>
               <ImageIntroduction items={onekeyTouchData.imageIntroduction} />
             </IntroductionContainer>
           </OnlyDisplay>
 
-          <OnlyDisplay l xl xxl>
-            <FullscreenScrollAnimation />
+          <OnlyDisplay m l xl xxl>
+            <FullscreenScrollAnimation
+              items={onekeyTouchData.imageIntroduction}
+            />
           </OnlyDisplay>
         </IntroductionSection>
 

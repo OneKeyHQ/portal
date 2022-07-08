@@ -9,16 +9,17 @@ import {
 import { mergeRefs } from '../../../../../utils';
 import { Box } from '../../../../base';
 
-import { Player } from './Player';
+import { Player, PlayerProps } from './Player';
 
 export interface FullscreenScrollAnimationProps {
   children?: ReactNode;
+  items: PlayerProps['items'];
 }
 
 export const FullscreenScrollAnimation: FC<FullscreenScrollAnimationProps> = (
   props,
 ) => {
-  const { children } = props;
+  const { children, items } = props;
 
   const { ref, elementInViewportProgress } = useElementInViewportProgress(0);
   const { ref: paddingRef, motionValue: paddingMotionValue } =
@@ -75,7 +76,10 @@ export const FullscreenScrollAnimation: FC<FullscreenScrollAnimationProps> = (
                   borderRadius: borderRadiusMotionValue,
                 }}
               >
-                <Player elementInViewportProgress={elementInViewportProgress} />
+                <Player
+                  items={items}
+                  elementInViewportProgress={elementInViewportProgress}
+                />
               </motion.div>
             </motion.div>
           </Box>
