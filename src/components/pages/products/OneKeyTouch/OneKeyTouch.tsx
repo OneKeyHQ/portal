@@ -11,6 +11,9 @@ import {
 import { FeatureSection } from '../components/FeatureSection';
 import { FullscreenScrollAnimation } from '../components/FullscreenScrollAnimation';
 import { IntroductionSection } from '../components/IntroductionSection';
+import { ImageIntroduction } from '../components/IntroductionSection/ImageIntroduction';
+import { IntroductionContainer } from '../components/IntroductionSection/IntroductionContainer';
+import { IntroductionSectionTitle } from '../components/IntroductionSection/IntroductionSectionTitle';
 import { MultiChainSupportSection } from '../components/MultiChainSupportSection';
 import { ProductInformation } from '../components/ProductInformation';
 import { RecommendSection } from '../components/RecommendSection';
@@ -37,16 +40,21 @@ export const OneKeyTouch: FC<OneKeyTouchProps> = (props) => {
       <Main>
         <ProductInformation {...onekeyTouchData.productInformationData} />
 
-        <OnlyDisplay xs s m>
-          <IntroductionSection
+        <IntroductionSection>
+          <IntroductionSectionTitle
             name={onekeyTouchData.productInformationData.name}
-            items={onekeyTouchData.imageIntroduction}
           />
-        </OnlyDisplay>
 
-        <OnlyDisplay l xl xxl>
-          <FullscreenScrollAnimation />
-        </OnlyDisplay>
+          <OnlyDisplay xs s m>
+            <IntroductionContainer>
+              <ImageIntroduction items={onekeyTouchData.imageIntroduction} />
+            </IntroductionContainer>
+          </OnlyDisplay>
+
+          <OnlyDisplay l xl xxl>
+            <FullscreenScrollAnimation />
+          </OnlyDisplay>
+        </IntroductionSection>
 
         <FeatureSection {...onekeyTouchData.feature} />
 

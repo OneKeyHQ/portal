@@ -2,7 +2,7 @@ import { FC, ReactNode } from 'react';
 
 import { Helmet } from 'react-helmet';
 
-import { Box, Main } from '../../../base';
+import { Box, Main, OnlyDisplay } from '../../../base';
 import {
   Navigation,
   PageFooter,
@@ -10,6 +10,9 @@ import {
 } from '../../../common';
 import { FeatureSection } from '../components/FeatureSection';
 import { IntroductionSection } from '../components/IntroductionSection';
+import { ImageIntroduction } from '../components/IntroductionSection/ImageIntroduction';
+import { IntroductionContainer } from '../components/IntroductionSection/IntroductionContainer';
+import { IntroductionSectionTitle } from '../components/IntroductionSection/IntroductionSectionTitle';
 import { MultiChainSupportSection } from '../components/MultiChainSupportSection';
 import { ProductInformation } from '../components/ProductInformation';
 import { RecommendSection } from '../components/RecommendSection';
@@ -35,10 +38,17 @@ export const OneKeyLite: FC<OneKeyLiteProps> = (props) => {
       <Main>
         <ProductInformation {...OneKeyLiteData.productInformationData} />
 
-        <IntroductionSection
-          name={OneKeyLiteData.productInformationData.name}
-          items={OneKeyLiteData.imageIntroduction}
-        />
+        <IntroductionSection>
+          <IntroductionSectionTitle
+            name={OneKeyLiteData.productInformationData.name}
+          />
+
+          <OnlyDisplay xs s m>
+            <IntroductionContainer>
+              <ImageIntroduction items={OneKeyLiteData.imageIntroduction} />
+            </IntroductionContainer>
+          </OnlyDisplay>
+        </IntroductionSection>
 
         <FeatureSection {...OneKeyLiteData.feature} />
 
