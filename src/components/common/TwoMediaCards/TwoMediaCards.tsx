@@ -13,7 +13,7 @@ export const TwoMediaCards: FC<TwoMediaCardsProps> = (props) => {
 
   return (
     <Flex
-      xs={{ flexDirection: 'column', gap: 40 }}
+      xs={{ flexDirection: 'column', gap: 24 }}
       m={{ flexDirection: 'row' }}
     >
       <SetUpYourOnekeyHardwareWalletMediaCard />

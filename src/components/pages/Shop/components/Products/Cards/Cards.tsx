@@ -18,14 +18,14 @@ export const Cards: FC<CardsProps> = (props) => {
     <Flex
       xs={{
         flexDirection: 'column',
-        gap: 16,
+        gap: 24,
       }}
     >
       <OnlyDisplay xs s>
         <Flex
           xs={{
             flexDirection: 'column',
-            gap: 16,
+            gap: 24,
           }}
         >
           {Object.values(products.items).map((item) => (
@@ -38,12 +38,12 @@ export const Cards: FC<CardsProps> = (props) => {
         <Flex
           xs={{
             flexDirection: 'column',
-            gap: 16,
+            gap: 24,
           }}
         >
           <BigProductCard {...products.items.touch} />
 
-          <Flex xs={{ gap: 16 }}>
+          <Flex xs={{ gap: 24 }}>
             <Box xs={{ flex: 1 }}>
               <ProductCard {...products.items.mini} />
             </Box>
