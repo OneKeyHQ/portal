@@ -17,7 +17,7 @@ export const HeroDesktopBackground: FC<HeroDesktopBackgroundProps> = (
   }
 
   return (
-    <OnlyDisplay m l xl xxl>
+    <OnlyDisplay l xl xxl>
       {children}
     </OnlyDisplay>
   );

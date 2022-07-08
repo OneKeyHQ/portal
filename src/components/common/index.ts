@@ -17,3 +17,5 @@ export * from './MultilineText';
 export * from './HeroBanner';
 export * from './NormalCenterPageHeader';
 export * from './StatusIcon';
+export * from './SetUpYourOnekeyHardwareWalletMediaCard';
+export * from './TwoMediaCards';

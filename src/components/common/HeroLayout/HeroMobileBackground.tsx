@@ -16,7 +16,7 @@ export const HeroMobileBackground: FC<HeroMobileBackgroundProps> = (props) => {
   }
 
   return (
-    <OnlyDisplay xs s>
+    <OnlyDisplay xs>
       <Box
         xs={{
           height: '100%',

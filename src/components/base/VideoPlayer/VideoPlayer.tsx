@@ -27,7 +27,12 @@ export const VideoPlayer: FC<VideoPlayerProps> = (props) => {
       preload="true"
       autoPlay
       muted
-      style={{ display: 'block', width: '100%', height: 'auto' }}
+      style={{
+        display: 'block',
+        width: '100%',
+        height: 'auto',
+        objectFit: 'cover',
+      }}
       src={src}
       poster={poster}
       {...rest}
