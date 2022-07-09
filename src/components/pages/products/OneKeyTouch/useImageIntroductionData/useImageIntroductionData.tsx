@@ -79,6 +79,13 @@ export function useImageIntroductionData() {
                 .padStart(4, '0')}.webp`,
             ),
           ),
+        ...new Array(15)
+          .fill(0)
+          .map(() =>
+            staticAssetPrefix(
+              `/onekey-touch-feature-03/onekey-touch-feature-03_0060.webp`,
+            ),
+          ),
       ],
     },
   ];

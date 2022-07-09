@@ -8,10 +8,11 @@ export interface IntroductionTextProps {
   children?: ReactNode;
   name: string | string[];
   description: string;
+  color?: 'black' | 'difference';
 }
 
 export const IntroductionText: FC<IntroductionTextProps> = (props) => {
-  const { children, name, description } = props;
+  const { children, name, description, color = 'difference' } = props;
   const theme = useTheme();
 
   return (
@@ -19,8 +20,14 @@ export const IntroductionText: FC<IntroductionTextProps> = (props) => {
       xs={{
         flexDirection: 'column',
         transform: 'translateZ(0)',
-        color: theme.colors.white,
-        mixBlendMode: 'difference',
+        ...(color === 'difference'
+          ? {
+              mixBlendMode: 'difference',
+              color: theme.colors.white,
+            }
+          : {
+              color: theme.colors.test500,
+            }),
       }}
     >
       <H2

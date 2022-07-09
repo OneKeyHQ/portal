@@ -9,6 +9,7 @@ import {
   StayInTouchWidthContainerAndPadding,
 } from '../../../common';
 import { FeatureSection } from '../components/FeatureSection';
+import { FullscreenScrollAnimation } from '../components/FullscreenScrollAnimation';
 import { IntroductionSection } from '../components/IntroductionSection';
 import { ImageIntroduction } from '../components/IntroductionSection/ImageIntroduction';
 import { IntroductionContainer } from '../components/IntroductionSection/IntroductionContainer';
@@ -44,10 +45,16 @@ export const OneKeyMini: FC<OneKeyMiniProps> = (props) => {
             name={oneKeyMiniData.productInformation.name}
           />
 
-          <OnlyDisplay xs s m>
+          <OnlyDisplay xs s>
             <IntroductionContainer>
               <ImageIntroduction items={oneKeyMiniData.imageIntroduction} />
             </IntroductionContainer>
+          </OnlyDisplay>
+
+          <OnlyDisplay m l xl xxl>
+            <FullscreenScrollAnimation
+              items={oneKeyMiniData.imageIntroduction}
+            />
           </OnlyDisplay>
         </IntroductionSection>
 

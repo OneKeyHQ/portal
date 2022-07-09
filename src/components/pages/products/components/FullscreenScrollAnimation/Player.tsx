@@ -9,7 +9,6 @@ import {
 
 import { useWindowSize } from '../../../../../hooks';
 import { Box, CanvasPlayer } from '../../../../base';
-import { useOneKeyTouchData } from '../../OneKeyTouch/useOneKeyTouchData';
 import { IntroductionText } from '../IntroductionSection/IntroductionText';
 
 export interface PlayerProps {
@@ -17,6 +16,7 @@ export interface PlayerProps {
   items: {
     name: string | string[];
     description: string;
+    textColor?: string;
     frames: string[];
   }[];
 }
@@ -24,7 +24,6 @@ export interface PlayerProps {
 export const Player: FC<PlayerProps> = (props) => {
   const { elementInViewportProgress, items } = props;
   const { height: windowHeight = 1, width: windowWidth = 1 } = useWindowSize();
-  const onekeyTouchData = useOneKeyTouchData();
   const allImages = items.reduce(
     (acc: string[], item) => acc.concat(item.frames),
     [],
@@ -61,7 +60,7 @@ export const Player: FC<PlayerProps> = (props) => {
         }}
       >
         <AnimatePresence exitBeforeEnter>
-          {onekeyTouchData.imageIntroduction.map((item) => {
+          {items.map((item) => {
             const is = item.frames.includes(allImages[currentFrame] || '');
 
             return (
@@ -74,6 +73,7 @@ export const Player: FC<PlayerProps> = (props) => {
                   transition={{ duration: 0.3 }}
                 >
                   <IntroductionText
+                    color={item.textColor as 'black' | 'difference'}
                     name={item.name}
                     description={item.description}
                   />
