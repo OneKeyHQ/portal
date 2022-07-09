@@ -2,7 +2,7 @@ import { FC, ReactNode } from 'react';
 
 import { Helmet } from 'react-helmet';
 
-import { Box, Main, OnlyDisplay } from '../../../base';
+import { Box, Main } from '../../../base';
 import {
   Navigation,
   PageFooter,
@@ -43,11 +43,9 @@ export const OneKeyLite: FC<OneKeyLiteProps> = (props) => {
             name={OneKeyLiteData.productInformationData.name}
           />
 
-          <OnlyDisplay xs s m>
-            <IntroductionContainer>
-              <ImageIntroduction items={OneKeyLiteData.imageIntroduction} />
-            </IntroductionContainer>
-          </OnlyDisplay>
+          <IntroductionContainer>
+            <ImageIntroduction items={OneKeyLiteData.imageIntroduction} />
+          </IntroductionContainer>
         </IntroductionSection>
 
         <FeatureSection {...OneKeyLiteData.feature} />
