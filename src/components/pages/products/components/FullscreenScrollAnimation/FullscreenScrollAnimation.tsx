@@ -34,6 +34,10 @@ export const FullscreenScrollAnimation: FC<FullscreenScrollAnimationProps> = (
     });
 
   const containerRef = mergeRefs(borderRadiusRef, paddingRef);
+  const allImages = items.reduce(
+    (acc: string[], item) => acc.concat(item.frames),
+    [],
+  );
 
   return (
     <Box>
@@ -41,7 +45,7 @@ export const FullscreenScrollAnimation: FC<FullscreenScrollAnimationProps> = (
 
       <Box
         css={{
-          height: '300vh',
+          height: allImages.length * 15,
           position: 'relative',
           zIndex: 9999,
         }}
