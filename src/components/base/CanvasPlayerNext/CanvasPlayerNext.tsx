@@ -38,6 +38,10 @@ export const CanvasPlayerNext: FC<CanvasPlayerNextProps> = (props) => {
   useEffect(() => {
     if (player.current) {
       player.current.setProgress(progress);
+
+      const state = player.current.getProgressState(progress);
+
+      console.log(state);
     }
   }, [progress]);
 

@@ -6,6 +6,13 @@ type PlayerConfig = {
   height: number;
 };
 
+type ProgressState = {
+  frames?: string[];
+  type: 'fade' | 'frame';
+  progressStart: number;
+  progressEnd: number;
+}[];
+
 function cleanDuplicateStringArray(array: string[]): string[] {
   return Array.from(new Set(array));
 }
@@ -22,6 +29,8 @@ class Player {
   frameGroups: string[][] = [];
 
   animatedSprites: AnimatedSprite[] = [];
+
+  progressState: ProgressState = [];
 
   constructor(config: PlayerConfig) {
     const { element, width, height } = config;
@@ -64,6 +73,18 @@ class Player {
     return totalProgress;
   }
 
+  getProgressState(progress: number) {
+    const { progressState } = this;
+
+    for (const state of progressState) {
+      if (progress >= state.progressStart && progress < state.progressEnd) {
+        return state;
+      }
+    }
+
+    return null;
+  }
+
   resizeAllAnimatedSpriteState() {
     for (const animatedSprite of this.animatedSprites) {
       this.resizeAnimatedSpriteState(animatedSprite);
@@ -100,6 +121,27 @@ class Player {
     for (const frameGroup of frameGroups) {
       this.loadFrames(frameGroup);
     }
+
+    const progressState: ProgressState = [];
+
+    frameGroups.forEach((frameGroup, index) => {
+      progressState.push({
+        frames: frameGroup,
+        type: 'frame',
+        progressStart: index * frameGroup.length,
+        progressEnd: (index + 1) * frameGroup.length,
+      });
+
+      if (index !== frameGroups.length - 1) {
+        progressState.push({
+          type: 'fade',
+          progressStart: frameGroup.length,
+          progressEnd: frameGroup.length + this.FADE_FRAMES_COUNT,
+        });
+      }
+    });
+
+    this.progressState = progressState;
   }
 
   setProgress(progress: number) {
