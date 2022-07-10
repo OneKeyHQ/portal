@@ -77,8 +77,6 @@ class Player {
     const containerWidth = this.width;
     const containerHeight = this.height;
 
-    console.log('containerWidth', containerWidth);
-
     const imageRatio = imageSpriteWidth / imageSpriteHeight;
     const containerRatio = containerWidth / containerHeight;
     if (containerRatio > imageRatio) {
@@ -110,9 +108,9 @@ class Player {
 
   loadFrames(frames: string[]) {
     const firstFrameLoader = new Loader();
-    // const MainLoader = new Loader();
+    const mainLoader = new Loader();
     const imagesWithoutDuplicated = cleanDuplicateStringArray(frames);
-    const firstFrame = imagesWithoutDuplicated[30];
+    const firstFrame = imagesWithoutDuplicated[20];
 
     if (!firstFrame) {
       throw new Error('No frames to load');
@@ -121,17 +119,27 @@ class Player {
     firstFrameLoader.add(firstFrame).load(() => {
       const firstTexture = Texture.from(firstFrame);
 
-      const firstSprite = new AnimatedSprite([firstTexture]);
-      firstSprite.x = 0;
-      firstSprite.y = 0;
-      firstSprite.animationSpeed = 0.5;
-      firstSprite.loop = false;
-      firstSprite.scale.set(this.width, this.height);
+      const animatedSprite = new AnimatedSprite([firstTexture]);
+      animatedSprite.animationSpeed = 1;
+      animatedSprite.loop = false;
 
-      this.resizeAnimatedSpriteState(firstSprite);
+      this.animatedSprites.push(animatedSprite);
+      this.application.stage.addChild(animatedSprite);
 
-      this.animatedSprites.push(firstSprite);
-      this.application.stage.addChild(firstSprite);
+      this.resizeAnimatedSpriteState(animatedSprite);
+
+      mainLoader.add(imagesWithoutDuplicated);
+
+      mainLoader.load(() => {
+        const textures = imagesWithoutDuplicated.map((image) =>
+          Texture.from(image),
+        );
+
+        animatedSprite.textures = [firstTexture, ...textures];
+
+        this.resizeAnimatedSpriteState(animatedSprite);
+        animatedSprite.play();
+      });
     });
   }
 }
