@@ -29,8 +29,8 @@ export function useProductPanel() {
         key: oneKeyProduct.mini.name,
         name: oneKeyProduct.mini.name,
         link: oneKeyProduct.mini.path,
-        backgroundColor: theme.colors.test400,
-        fontColor: theme.colors.white,
+        backgroundColor: theme.colors.test100,
+        fontColor: theme.colors.test500,
       },
       {
         key: oneKeyProduct.touch.name,
