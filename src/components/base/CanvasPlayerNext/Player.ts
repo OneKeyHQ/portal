@@ -8,6 +8,7 @@ type PlayerConfig = {
 
 type ProgressState = {
   frames?: string[];
+  animatedSprite?: AnimatedSprite;
   type: 'fade' | 'frame';
   progressStart: number;
   progressEnd: number;
@@ -118,20 +119,25 @@ class Player {
   setFrameGroups(frameGroups: string[][]) {
     this.frameGroups = frameGroups;
 
-    for (const frameGroup of frameGroups) {
-      this.loadFrames(frameGroup);
-    }
-
     const progressState: ProgressState = [];
 
     frameGroups.forEach((frameGroup, index) => {
+      // load
+      const animatedSprite = this.loadFrames(
+        frameGroup,
+        frameGroups.length - index,
+      );
+
+      // frame state
       progressState.push({
+        animatedSprite,
         frames: frameGroup,
         type: 'frame',
         progressStart: index * frameGroup.length,
         progressEnd: (index + 1) * frameGroup.length,
       });
 
+      // fade state
       if (index !== frameGroups.length - 1) {
         progressState.push({
           type: 'fade',
@@ -145,14 +151,23 @@ class Player {
   }
 
   setProgress(progress: number) {
-    console.log(progress);
+    const state = this.getProgressState(progress);
+
+    console.log('state', state);
+
+    state?.animatedSprite?.gotoAndStop(progress);
   }
 
-  loadFrames(frames: string[]) {
+  loadFrames(frames: string[], index = 0): AnimatedSprite {
     const firstFrameLoader = new Loader();
     const mainLoader = new Loader();
     const imagesWithoutDuplicated = cleanDuplicateStringArray(frames);
-    const firstFrame = imagesWithoutDuplicated[20];
+    const firstFrame = imagesWithoutDuplicated.shift();
+
+    const animatedSprite = new AnimatedSprite([Texture.EMPTY]);
+    animatedSprite.animationSpeed = 1;
+    animatedSprite.loop = false;
+    animatedSprite.zIndex = index * 1000;
 
     if (!firstFrame) {
       throw new Error('No frames to load');
@@ -161,18 +176,12 @@ class Player {
     firstFrameLoader.add(firstFrame).load(() => {
       const firstTexture = Texture.from(firstFrame);
 
-      const animatedSprite = new AnimatedSprite([firstTexture]);
-      animatedSprite.animationSpeed = 1;
-      animatedSprite.loop = false;
-
+      animatedSprite.textures = [firstTexture];
       this.animatedSprites.push(animatedSprite);
+      this.resizeAnimatedSpriteState(animatedSprite);
       this.application.stage.addChild(animatedSprite);
 
-      this.resizeAnimatedSpriteState(animatedSprite);
-
-      mainLoader.add(imagesWithoutDuplicated);
-
-      mainLoader.load(() => {
+      mainLoader.add(imagesWithoutDuplicated).load(() => {
         const textures = imagesWithoutDuplicated.map((image) =>
           Texture.from(image),
         );
@@ -180,9 +189,10 @@ class Player {
         animatedSprite.textures = [firstTexture, ...textures];
 
         this.resizeAnimatedSpriteState(animatedSprite);
-        animatedSprite.play();
       });
     });
+
+    return animatedSprite;
   }
 }
 

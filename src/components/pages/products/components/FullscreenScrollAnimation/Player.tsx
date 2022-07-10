@@ -34,7 +34,7 @@ export const Player: FC<PlayerProps> = (props) => {
   const motionValue = useTransform(
     elementInViewportProgress,
     [0.8, 3.2],
-    [0, allImages.length - 1],
+    [0, 250],
   );
 
   const currentFrame = parseInt(motionValue.get().toFixed(0));
