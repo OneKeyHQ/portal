@@ -120,13 +120,13 @@ export function useNavigationDataObject(): Record<
   };
 
   const forDeveloper = {
-    name: t('menu__for_developer'),
+    name: t('menu__developer'),
     key: 'for-developer',
     path: 'https://docs.onekey.so/',
   };
 
   const forBusiness = {
-    name: t('menu__for_business'),
+    name: t('menu__solutions'),
     key: 'for-business',
     subItems: [
       {
@@ -148,7 +148,7 @@ export function useNavigationDataObject(): Record<
   };
 
   const helpCenter = {
-    name: t('menu__help_center'),
+    name: t('menu__support'),
     key: 'help-center',
     subItems: [
       {
