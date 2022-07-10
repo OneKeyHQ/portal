@@ -25,14 +25,8 @@ export const FeatureItem: FC<FeatureItemProps> = (props) => {
         alignItems: 'center',
         textAlign: 'center',
       }}
-      m={{ maxWidth: 280 }}
-      l={{ maxWidth: 360 }}
     >
-      <Box
-        xs={{ width: 64, height: 64 }}
-        s={{ width: 128, height: 128 }}
-        m={{ width: 200, height: 200 }}
-      >
+      <Box xs={{ width: 128, height: 128 }} m={{ width: 200, height: 200 }}>
         {imageNode}
       </Box>
 

@@ -42,14 +42,18 @@ export const FeatureSection: FC<FeatureSectionProps> = (props) => {
               flexDirection: 'column',
             }}
             m={{
-              gap: 0,
               paddingTop: 80,
               alignItems: 'flex-start',
               flexDirection: 'row',
             }}
+            xl={{
+              justifyContent: 'center',
+              paddingLeft: 100,
+              paddingRight: 100,
+            }}
           >
             {featureSectionData.map((item) => (
-              <Box xs={{ width: '30%' }}>
+              <Box xs={{ flex: 1 }} xxl={{ flex: '0 0 420px' }}>
                 <FeatureItem key={item.name} {...item} />
               </Box>
             ))}
