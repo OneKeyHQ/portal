@@ -27,13 +27,6 @@ export function useImageIntroductionData() {
                 .padStart(4, '0')}.webp`,
             ),
           ),
-        ...new Array(15)
-          .fill(0)
-          .map(() =>
-            staticAssetPrefix(
-              `/onekey-touch-feature-01/onekey-touch-feature-01_0070.webp`,
-            ),
-          ),
       ],
     },
     {
@@ -53,13 +46,6 @@ export function useImageIntroductionData() {
                 .padStart(4, '0')}.webp`,
             ),
           ),
-        ...new Array(15)
-          .fill(0)
-          .map(() =>
-            staticAssetPrefix(
-              `/onekey-touch-feature-02/onekey-touch-feature-02_0060.webp`,
-            ),
-          ),
       ],
     },
     {
@@ -77,13 +63,6 @@ export function useImageIntroductionData() {
               `/onekey-touch-feature-03/onekey-touch-feature-03_${i
                 .toString()
                 .padStart(4, '0')}.webp`,
-            ),
-          ),
-        ...new Array(15)
-          .fill(0)
-          .map(() =>
-            staticAssetPrefix(
-              `/onekey-touch-feature-03/onekey-touch-feature-03_0060.webp`,
             ),
           ),
       ],

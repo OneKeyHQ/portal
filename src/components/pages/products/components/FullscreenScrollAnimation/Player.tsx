@@ -8,7 +8,7 @@ import {
 } from 'framer-motion';
 
 import { useWindowSize } from '../../../../../hooks';
-import { Box, CanvasPlayer } from '../../../../base';
+import { Box, CanvasPlayerNext } from '../../../../base';
 import { IntroductionText } from '../IntroductionSection/IntroductionText';
 
 export interface PlayerProps {
@@ -29,6 +29,8 @@ export const Player: FC<PlayerProps> = (props) => {
     [],
   );
 
+  const allFrames = items.map((item) => item.frames);
+
   const motionValue = useTransform(
     elementInViewportProgress,
     [0.8, 3.2],
@@ -39,12 +41,11 @@ export const Player: FC<PlayerProps> = (props) => {
 
   return (
     <Box xs={{ position: 'relative' }}>
-      <CanvasPlayer
-        objectFit="cover"
+      <CanvasPlayerNext
         width={windowWidth}
         height={windowHeight}
-        images={allImages}
-        frame={currentFrame}
+        frames={allFrames}
+        progress={currentFrame}
       />
 
       <Box
