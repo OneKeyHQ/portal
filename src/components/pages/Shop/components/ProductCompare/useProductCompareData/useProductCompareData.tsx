@@ -87,7 +87,7 @@ export function useProductCompareData(): {
           {
             name: 'display',
             icon: display31,
-            value: '1.44 Inch IPS Display (Color)',
+            value: '3.1 Inch IPS Display (Color)',
           },
           {
             name: 'control',
