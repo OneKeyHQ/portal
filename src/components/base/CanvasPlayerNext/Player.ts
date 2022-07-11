@@ -176,11 +176,16 @@ class Player {
 
       if (previousState?.animatedSprite) {
         previousState.animatedSprite.alpha = 1;
+
+        // previousState.animatedSprite.transform.position.y =
+        //   -((newProgress - state.progressStart) / state.length) * this.height;
       }
 
       if (nextState?.animatedSprite) {
         nextState.animatedSprite.alpha =
           (newProgress - state.progressStart) / state.length;
+        // nextState.animatedSprite.transform.position.y =
+        //   ((newProgress - state.progressStart) / state.length) * this.height;
       }
     } else if (state?.animatedSprite) {
       state.animatedSprite.alpha = 1;

@@ -45,7 +45,7 @@ export const FullscreenScrollAnimation: FC<FullscreenScrollAnimationProps> = (
 
       <Box
         css={{
-          height: `${allImages.length * 3}vh`,
+          height: `${allImages.length * 4}vh`,
           position: 'relative',
           zIndex: 9999,
         }}
