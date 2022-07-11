@@ -53,6 +53,7 @@ export const OneKeyMini: FC<OneKeyMiniProps> = (props) => {
 
           <OnlyDisplay m l xl xxl>
             <FullscreenScrollAnimation
+              backgroundColor="#F0F1F2"
               items={oneKeyMiniData.imageIntroduction}
             />
           </OnlyDisplay>

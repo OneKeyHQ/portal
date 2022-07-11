@@ -13,13 +13,14 @@ import { Player, PlayerProps } from './Player';
 
 export interface FullscreenScrollAnimationProps {
   children?: ReactNode;
+  backgroundColor: string;
   items: PlayerProps['items'];
 }
 
 export const FullscreenScrollAnimation: FC<FullscreenScrollAnimationProps> = (
   props,
 ) => {
-  const { children, items } = props;
+  const { children, items, backgroundColor } = props;
 
   const { ref, elementInViewportProgress } = useElementInViewportProgress(0);
   const { ref: paddingRef, motionValue: paddingMotionValue } =
@@ -62,6 +63,7 @@ export const FullscreenScrollAnimation: FC<FullscreenScrollAnimationProps> = (
               height: '100vh',
               overflow: 'hidden',
               '& canvas': {
+                background: backgroundColor,
                 display: 'block',
               },
             }}
@@ -81,6 +83,7 @@ export const FullscreenScrollAnimation: FC<FullscreenScrollAnimationProps> = (
                 }}
               >
                 <Player
+                  backgroundColor={backgroundColor}
                   items={items}
                   elementInViewportProgress={elementInViewportProgress}
                 />

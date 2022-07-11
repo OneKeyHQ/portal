@@ -5,6 +5,7 @@ import { Player, ProgressStateItem } from './Player';
 interface CanvasPlayerNextProps {
   progress: number;
   frames: string[][];
+  backgroundColor: string;
   width: number;
   height: number;
   onTotalProgressChange?: (
@@ -14,7 +15,14 @@ interface CanvasPlayerNextProps {
 }
 
 export const CanvasPlayerNext: FC<CanvasPlayerNextProps> = (props) => {
-  const { progress = 0, frames, width, height, onTotalProgressChange } = props;
+  const {
+    progress = 0,
+    frames,
+    width,
+    height,
+    onTotalProgressChange,
+    backgroundColor,
+  } = props;
   const player = useRef<Player | null>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -26,6 +34,7 @@ export const CanvasPlayerNext: FC<CanvasPlayerNextProps> = (props) => {
         element: canvas,
         width,
         height,
+        backgroundColor,
       });
 
       player.current.resize(width, height);
@@ -37,7 +46,7 @@ export const CanvasPlayerNext: FC<CanvasPlayerNextProps> = (props) => {
 
       onTotalProgressChange?.(totalProgress, currentState);
     }
-  }, [frames, width, height, progress, onTotalProgressChange]);
+  }, [frames, width, height, progress, onTotalProgressChange, backgroundColor]);
 
   useEffect(() => {
     if (player.current) {

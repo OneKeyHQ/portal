@@ -53,6 +53,7 @@ export const OneKeyTouch: FC<OneKeyTouchProps> = (props) => {
 
           <OnlyDisplay m l xl xxl>
             <FullscreenScrollAnimation
+              backgroundColor="#0D1013"
               items={onekeyTouchData.imageIntroduction}
             />
           </OnlyDisplay>

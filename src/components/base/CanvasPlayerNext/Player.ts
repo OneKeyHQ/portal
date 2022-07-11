@@ -5,6 +5,7 @@ type PlayerConfig = {
   element: HTMLCanvasElement;
   width: number;
   height: number;
+  backgroundColor?: string;
 };
 
 export type ProgressStateItem = {
@@ -55,9 +56,6 @@ class Player {
       antialias: true,
       backgroundAlpha: 0,
     });
-
-    // set the background color to black
-    this.application.renderer.backgroundColor = 0x000000;
   }
 
   resize(width: number, height: number): void {
@@ -181,10 +179,10 @@ class Player {
       if (nextState?.animatedSprite) {
         nextState.animatedSprite.alpha = 1;
 
-        // nextState.animatedSprite.transform.position.y =
-        //   (1 - (newProgress - state.progressStart) / state.length) *
-        //   this.height *
-        //   0.5;
+        nextState.animatedSprite.transform.position.y =
+          (1 - (newProgress - state.progressStart) / state.length) *
+          this.height *
+          0.5;
       }
     } else if (state?.animatedSprite) {
       state.animatedSprite.alpha = 1;
