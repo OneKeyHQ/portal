@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 
 import {
   AnimatePresence,
@@ -24,6 +24,7 @@ export interface PlayerProps {
 export const Player: FC<PlayerProps> = (props) => {
   const { elementInViewportProgress, items } = props;
   const { height: windowHeight = 1, width: windowWidth = 1 } = useWindowSize();
+  const [totalProgress, setTotalProgress] = useState(0);
   const allImages = items.reduce(
     (acc: string[], item) => acc.concat(item.frames),
     [],
@@ -33,8 +34,8 @@ export const Player: FC<PlayerProps> = (props) => {
 
   const motionValue = useTransform(
     elementInViewportProgress,
-    [0.8, 3.2],
-    [0, 250],
+    [0.8, 2.8],
+    [0, totalProgress],
   );
 
   const currentFrame = parseInt(motionValue.get().toFixed(0));
@@ -46,6 +47,9 @@ export const Player: FC<PlayerProps> = (props) => {
         height={windowHeight}
         frames={allFrames}
         progress={currentFrame}
+        onTotalProgressChange={(progress) => {
+          setTotalProgress(progress);
+        }}
       />
 
       <Box

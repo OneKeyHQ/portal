@@ -19,7 +19,7 @@ function cleanDuplicateStringArray(array: string[]): string[] {
 }
 
 class Player {
-  FADE_FRAMES_COUNT = 30;
+  FADE_FRAMES_COUNT = 10;
 
   application: Application;
 
@@ -32,6 +32,8 @@ class Player {
   animatedSprites: AnimatedSprite[] = [];
 
   progressState: ProgressState = [];
+
+  totalProgress = 0;
 
   constructor(config: PlayerConfig) {
     const { element, width, height } = config;
@@ -61,24 +63,14 @@ class Player {
   }
 
   getTotalProgress(): number {
-    const { frameGroups } = this;
-
-    let totalProgress = 0;
-
-    for (const frameGroup of frameGroups) {
-      totalProgress += frameGroup.length;
-    }
-
-    totalProgress += this.FADE_FRAMES_COUNT * (frameGroups.length - 1);
-
-    return totalProgress;
+    return this.totalProgress;
   }
 
   getProgressState(progress: number) {
     const { progressState } = this;
 
     for (const state of progressState) {
-      if (progress >= state.progressStart && progress < state.progressEnd) {
+      if (progress >= state.progressStart && progress <= state.progressEnd) {
         return state;
       }
     }
@@ -121,6 +113,8 @@ class Player {
 
     const progressState: ProgressState = [];
 
+    this.totalProgress = 0;
+
     frameGroups.forEach((frameGroup, index) => {
       // load
       const animatedSprite = this.loadFrames(
@@ -133,16 +127,16 @@ class Player {
         animatedSprite,
         frames: frameGroup,
         type: 'frame',
-        progressStart: index * frameGroup.length,
-        progressEnd: (index + 1) * frameGroup.length,
+        progressStart: this.totalProgress,
+        progressEnd: (this.totalProgress += frameGroup.length),
       });
 
       // fade state
       if (index !== frameGroups.length - 1) {
         progressState.push({
           type: 'fade',
-          progressStart: frameGroup.length,
-          progressEnd: frameGroup.length + this.FADE_FRAMES_COUNT,
+          progressStart: this.totalProgress,
+          progressEnd: (this.totalProgress += this.FADE_FRAMES_COUNT),
         });
       }
     });
@@ -151,11 +145,24 @@ class Player {
   }
 
   setProgress(progress: number) {
+    const { animatedSprites } = this;
+    const maxProgress = this.getTotalProgress();
     const state = this.getProgressState(progress);
 
-    console.log('state', state);
+    console.log(maxProgress, progress, state);
 
-    state?.animatedSprite?.gotoAndStop(progress);
+    if (progress >= maxProgress) {
+      return;
+    }
+
+    animatedSprites.forEach((animatedSprite) => {
+      animatedSprite.alpha = 0;
+    });
+
+    if (state?.animatedSprite) {
+      state.animatedSprite.alpha = 1;
+      state.animatedSprite.gotoAndStop(progress);
+    }
   }
 
   loadFrames(frames: string[], index = 0): AnimatedSprite {
@@ -168,6 +175,7 @@ class Player {
     animatedSprite.animationSpeed = 1;
     animatedSprite.loop = false;
     animatedSprite.zIndex = index * 1000;
+    animatedSprite.alpha = 0;
 
     if (!firstFrame) {
       throw new Error('No frames to load');
