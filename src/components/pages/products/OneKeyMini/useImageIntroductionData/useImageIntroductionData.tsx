@@ -28,13 +28,6 @@ export function useImageIntroductionData() {
                 .padStart(4, '0')}.webp`,
             ),
           ),
-        ...new Array(15)
-          .fill(0)
-          .map(() =>
-            staticAssetPrefix(
-              `/onekey-mini-feature-01/onekey-mini-feature-01_0060.webp`,
-            ),
-          ),
       ],
     },
     {
@@ -55,13 +48,6 @@ export function useImageIntroductionData() {
                 .padStart(4, '0')}.webp`,
             ),
           ),
-        ...new Array(15)
-          .fill(0)
-          .map(() =>
-            staticAssetPrefix(
-              `/onekey-mini-feature-02/onekey-mini-feature-02_0060.webp`,
-            ),
-          ),
       ],
     },
     {
@@ -80,13 +66,6 @@ export function useImageIntroductionData() {
               `/onekey-mini-feature-03/onekey-mini-feature-03_${i
                 .toString()
                 .padStart(4, '0')}.webp`,
-            ),
-          ),
-        ...new Array(15)
-          .fill(0)
-          .map(() =>
-            staticAssetPrefix(
-              `/onekey-mini-feature-03/onekey-mini-feature-03_0060.webp`,
             ),
           ),
       ],

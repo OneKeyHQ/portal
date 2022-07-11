@@ -158,8 +158,6 @@ class Player {
     const maxProgress = this.getTotalProgress();
     let newProgress = progress;
 
-    console.log(progress, maxProgress);
-
     if (progress > maxProgress) {
       newProgress = maxProgress;
     } else if (progress < 0) {
