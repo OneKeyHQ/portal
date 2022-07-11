@@ -91,6 +91,7 @@ class Player {
 
   resizeAnimatedSpriteState(animatedSpriteState: AnimatedSprite) {
     const { texture } = animatedSpriteState;
+    const { stage } = this.application;
     const imageSpriteWidth = texture.baseTexture.width;
     const imageSpriteHeight = texture.baseTexture.height;
     const containerWidth = this.width;
@@ -99,17 +100,15 @@ class Player {
     const imageRatio = imageSpriteWidth / imageSpriteHeight;
     const containerRatio = containerWidth / containerHeight;
     if (containerRatio > imageRatio) {
-      animatedSpriteState.height /= animatedSpriteState.width / containerWidth;
-      animatedSpriteState.width = containerWidth;
-      animatedSpriteState.position.x = 0;
-      animatedSpriteState.position.y =
-        (containerHeight - animatedSpriteState.height) / 2;
+      stage.height /= stage.width / containerWidth;
+      stage.width = containerWidth;
+      stage.position.x = 0;
+      stage.position.y = (containerHeight - stage.height) / 2;
     } else {
-      animatedSpriteState.width /= animatedSpriteState.height / containerHeight;
-      animatedSpriteState.height = containerHeight;
-      animatedSpriteState.position.y = 0;
-      animatedSpriteState.position.x =
-        (containerWidth - animatedSpriteState.width) / 2;
+      stage.width /= stage.height / containerHeight;
+      stage.height = containerHeight;
+      stage.position.y = 0;
+      stage.position.x = (containerWidth - stage.width) / 2;
     }
   }
 
@@ -122,10 +121,7 @@ class Player {
 
     frameGroups.forEach((frameGroup, index) => {
       // load
-      const animatedSprite = this.loadFrames(
-        frameGroup,
-        frameGroups.length - index,
-      );
+      const animatedSprite = this.loadFrames(frameGroup, index);
 
       // frame state
       progressStates.push({
@@ -175,17 +171,20 @@ class Player {
       const nextState = this.getProgressState(state.progressEnd + 1);
 
       if (previousState?.animatedSprite) {
-        previousState.animatedSprite.alpha = 1;
+        previousState.animatedSprite.alpha =
+          1 - (newProgress - state.progressStart) / state.length;
 
-        // previousState.animatedSprite.transform.position.y =
-        //   -((newProgress - state.progressStart) / state.length) * this.height;
+        previousState.animatedSprite.transform.position.y =
+          -((newProgress - state.progressStart) / state.length) * this.height;
       }
 
       if (nextState?.animatedSprite) {
-        nextState.animatedSprite.alpha =
-          (newProgress - state.progressStart) / state.length;
+        nextState.animatedSprite.alpha = 1;
+
         // nextState.animatedSprite.transform.position.y =
-        //   ((newProgress - state.progressStart) / state.length) * this.height;
+        //   (1 - (newProgress - state.progressStart) / state.length) *
+        //   this.height *
+        //   0.5;
       }
     } else if (state?.animatedSprite) {
       state.animatedSprite.alpha = 1;
@@ -202,7 +201,7 @@ class Player {
     const animatedSprite = new AnimatedSprite([Texture.EMPTY]);
     animatedSprite.animationSpeed = 1;
     animatedSprite.loop = false;
-    animatedSprite.zIndex = index * 1000;
+    animatedSprite.zIndex = (10 - index) * 1000;
     animatedSprite.alpha = 0;
 
     if (!firstFrame) {
@@ -216,6 +215,9 @@ class Player {
       this.animatedSprites.push(animatedSprite);
       this.resizeAnimatedSpriteState(animatedSprite);
       this.application.stage.addChild(animatedSprite);
+      this.application.stage.children.sort(
+        (itemA, itemB) => itemA.zIndex - itemB.zIndex,
+      );
 
       mainLoader.add(imagesWithoutDuplicated).load(() => {
         const textures = imagesWithoutDuplicated.map((image) =>
