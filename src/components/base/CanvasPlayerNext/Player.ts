@@ -1,3 +1,4 @@
+import { nanoid } from 'nanoid';
 import { AnimatedSprite, Application, Loader, Texture } from 'pixi.js';
 
 type PlayerConfig = {
@@ -7,6 +8,7 @@ type PlayerConfig = {
 };
 
 type ProgressState = {
+  id: string;
   frames?: string[];
   animatedSprite?: AnimatedSprite;
   type: 'fade' | 'frame';
@@ -124,6 +126,7 @@ class Player {
 
       // frame state
       progressState.push({
+        id: nanoid(),
         animatedSprite,
         frames: frameGroup,
         type: 'frame',
@@ -134,6 +137,7 @@ class Player {
       // fade state
       if (index !== frameGroups.length - 1) {
         progressState.push({
+          id: nanoid(),
           type: 'fade',
           progressStart: this.totalProgress,
           progressEnd: (this.totalProgress += this.FADE_FRAMES_COUNT),
@@ -151,7 +155,7 @@ class Player {
 
     console.log(maxProgress, progress, state);
 
-    if (progress >= maxProgress) {
+    if (progress >= maxProgress || progress < 0) {
       return;
     }
 
