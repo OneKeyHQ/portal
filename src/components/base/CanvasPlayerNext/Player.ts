@@ -7,7 +7,7 @@ type PlayerConfig = {
   height: number;
 };
 
-type ProgressState = {
+export type ProgressStateItem = {
   id: string;
   frames?: string[];
   animatedSprite?: AnimatedSprite;
@@ -15,7 +15,9 @@ type ProgressState = {
   progressStart: number;
   progressEnd: number;
   length: number;
-}[];
+};
+
+export type ProgressStates = ProgressStateItem[];
 
 function cleanDuplicateStringArray(array: string[]): string[] {
   return Array.from(new Set(array));
@@ -34,7 +36,7 @@ class Player {
 
   animatedSprites: AnimatedSprite[] = [];
 
-  progressState: ProgressState = [];
+  progressStates: ProgressStates = [];
 
   totalProgress = 0;
 
@@ -69,10 +71,10 @@ class Player {
     return this.totalProgress;
   }
 
-  getProgressState(progress: number) {
-    const { progressState } = this;
+  getProgressState(progress: number): ProgressStateItem | null {
+    const { progressStates } = this;
 
-    for (const state of progressState) {
+    for (const state of progressStates) {
       if (progress >= state.progressStart && progress <= state.progressEnd) {
         return state;
       }
@@ -114,7 +116,7 @@ class Player {
   setFrameGroups(frameGroups: string[][]) {
     this.frameGroups = frameGroups;
 
-    const progressState: ProgressState = [];
+    const progressStates: ProgressStates = [];
 
     this.totalProgress = -1;
 
@@ -126,7 +128,7 @@ class Player {
       );
 
       // frame state
-      progressState.push({
+      progressStates.push({
         id: nanoid(),
         animatedSprite,
         frames: frameGroup,
@@ -138,7 +140,7 @@ class Player {
 
       // fade state
       if (index !== frameGroups.length - 1) {
-        progressState.push({
+        progressStates.push({
           id: nanoid(),
           type: 'fade',
           length: this.FADE_FRAMES_COUNT,
@@ -148,7 +150,7 @@ class Player {
       }
     });
 
-    this.progressState = progressState;
+    this.progressStates = progressStates;
   }
 
   setProgress(progress: number) {

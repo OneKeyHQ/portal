@@ -9,6 +9,7 @@ import {
 
 import { useWindowSize } from '../../../../../hooks';
 import { Box, CanvasPlayerNext } from '../../../../base';
+import { ProgressStateItem } from '../../../../base/CanvasPlayerNext/Player';
 import { IntroductionText } from '../IntroductionSection/IntroductionText';
 
 export interface PlayerProps {
@@ -25,10 +26,8 @@ export const Player: FC<PlayerProps> = (props) => {
   const { elementInViewportProgress, items } = props;
   const { height: windowHeight = 1, width: windowWidth = 1 } = useWindowSize();
   const [totalProgress, setTotalProgress] = useState(0);
-  const allImages = items.reduce(
-    (acc: string[], item) => acc.concat(item.frames),
-    [],
-  );
+  const [currentPlayerState, setCurrentPlayerState] =
+    useState<ProgressStateItem | null>(null);
 
   const allFrames = items.map((item) => item.frames);
 
@@ -38,7 +37,7 @@ export const Player: FC<PlayerProps> = (props) => {
     [0, totalProgress],
   );
 
-  const currentFrame = parseInt(motionValue.get().toFixed(0));
+  const currentProgress = parseInt(motionValue.get().toFixed(0));
 
   return (
     <Box xs={{ position: 'relative' }}>
@@ -46,9 +45,10 @@ export const Player: FC<PlayerProps> = (props) => {
         width={windowWidth}
         height={windowHeight}
         frames={allFrames}
-        progress={currentFrame}
-        onTotalProgressChange={(progress) => {
+        progress={currentProgress}
+        onTotalProgressChange={(progress, currentState) => {
           setTotalProgress(progress);
+          setCurrentPlayerState(currentState);
         }}
       />
 
@@ -66,7 +66,21 @@ export const Player: FC<PlayerProps> = (props) => {
       >
         <AnimatePresence exitBeforeEnter>
           {items.map((item) => {
-            const is = item.frames.includes(allImages[currentFrame] || '');
+            console.log('item', item);
+            let is = false;
+
+            if (currentPlayerState?.type === 'fade') {
+              is = false;
+            } else if (currentPlayerState?.frames) {
+              const isCurrentState = currentPlayerState.frames.some((frame) =>
+                item.frames.includes(frame),
+              );
+
+              is =
+                isCurrentState &&
+                currentProgress > currentPlayerState.progressStart + 5 &&
+                currentProgress < currentPlayerState.progressEnd - 5;
+            }
 
             return (
               is && (
