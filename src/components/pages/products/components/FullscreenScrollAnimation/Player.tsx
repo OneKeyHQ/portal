@@ -34,7 +34,7 @@ export const Player: FC<PlayerProps> = (props) => {
 
   const motionValue = useTransform(
     elementInViewportProgress,
-    [0.8, 2.8],
+    [0.8, 2.6],
     [0, totalProgress],
   );
 

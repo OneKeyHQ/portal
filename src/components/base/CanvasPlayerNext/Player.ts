@@ -14,6 +14,7 @@ type ProgressState = {
   type: 'fade' | 'frame';
   progressStart: number;
   progressEnd: number;
+  length: number;
 }[];
 
 function cleanDuplicateStringArray(array: string[]): string[] {
@@ -21,7 +22,7 @@ function cleanDuplicateStringArray(array: string[]): string[] {
 }
 
 class Player {
-  FADE_FRAMES_COUNT = 10;
+  FADE_FRAMES_COUNT = 20;
 
   application: Application;
 
@@ -53,8 +54,8 @@ class Player {
       backgroundAlpha: 0,
     });
 
-    // set the background color to white
-    this.application.renderer.backgroundColor = 0xffffff;
+    // set the background color to black
+    this.application.renderer.backgroundColor = 0x000000;
   }
 
   resize(width: number, height: number): void {
@@ -115,7 +116,7 @@ class Player {
 
     const progressState: ProgressState = [];
 
-    this.totalProgress = 0;
+    this.totalProgress = -1;
 
     frameGroups.forEach((frameGroup, index) => {
       // load
@@ -130,8 +131,9 @@ class Player {
         animatedSprite,
         frames: frameGroup,
         type: 'frame',
-        progressStart: this.totalProgress,
-        progressEnd: (this.totalProgress += frameGroup.length),
+        length: frameGroup.length,
+        progressStart: (this.totalProgress += 1),
+        progressEnd: (this.totalProgress += frameGroup.length - 1),
       });
 
       // fade state
@@ -139,8 +141,9 @@ class Player {
         progressState.push({
           id: nanoid(),
           type: 'fade',
-          progressStart: this.totalProgress,
-          progressEnd: (this.totalProgress += this.FADE_FRAMES_COUNT),
+          length: this.FADE_FRAMES_COUNT,
+          progressStart: (this.totalProgress += 1),
+          progressEnd: (this.totalProgress += this.FADE_FRAMES_COUNT - 1),
         });
       }
     });
@@ -151,21 +154,35 @@ class Player {
   setProgress(progress: number) {
     const { animatedSprites } = this;
     const maxProgress = this.getTotalProgress();
-    const state = this.getProgressState(progress);
+    let newProgress = progress;
 
-    console.log(maxProgress, progress, state);
-
-    if (progress >= maxProgress || progress < 0) {
-      return;
+    if (progress > maxProgress) {
+      newProgress = maxProgress;
+    } else if (progress < 0) {
+      newProgress = 0;
     }
+
+    const state = this.getProgressState(newProgress);
 
     animatedSprites.forEach((animatedSprite) => {
       animatedSprite.alpha = 0;
     });
 
-    if (state?.animatedSprite) {
+    if (state?.type === 'fade') {
+      const previousState = this.getProgressState(state.progressStart - 1);
+      const nextState = this.getProgressState(state.progressEnd + 1);
+
+      if (previousState?.animatedSprite) {
+        previousState.animatedSprite.alpha = 1;
+      }
+
+      if (nextState?.animatedSprite) {
+        nextState.animatedSprite.alpha =
+          (newProgress - state.progressStart) / state.length;
+      }
+    } else if (state?.animatedSprite) {
       state.animatedSprite.alpha = 1;
-      state.animatedSprite.gotoAndStop(progress);
+      state.animatedSprite.gotoAndStop(newProgress - state.progressStart);
     }
   }
 
