@@ -33,13 +33,19 @@ export const ImageIntroduction: FC<ImageIntroductionProps> = (props) => {
             }}
           >
             {item.video && (
-              <VideoPlayer
-                style={{
-                  width: '100%',
-                }}
-                loop
-                src={item.video}
-              />
+              <Fragment key={item.description}>
+                <OnlyDisplay xs>{item.images.s}</OnlyDisplay>
+
+                <OnlyDisplay s m l xl xxl>
+                  <VideoPlayer
+                    style={{
+                      width: '100%',
+                    }}
+                    loop
+                    src={item.video}
+                  />
+                </OnlyDisplay>
+              </Fragment>
             )}
 
             {!item.video && (
