@@ -33,7 +33,7 @@ export const Player: FC<PlayerProps> = (props) => {
 
   const motionValue = useTransform(
     elementInViewportProgress,
-    [0.8, 2.6],
+    [0.8, 3],
     [0, totalProgress],
   );
 
@@ -66,7 +66,6 @@ export const Player: FC<PlayerProps> = (props) => {
       >
         <AnimatePresence exitBeforeEnter>
           {items.map((item) => {
-            console.log('item', item);
             let is = false;
 
             if (currentPlayerState?.type === 'fade') {
