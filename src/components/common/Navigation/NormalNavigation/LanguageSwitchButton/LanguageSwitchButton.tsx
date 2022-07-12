@@ -32,7 +32,7 @@ export const LanguageSwitchButton: FC<LanguageSwitchButtonProps> = (props) => {
         }}
       >
         <LanguageIcon width={24} height={24} />
-        <Box xs={{ textTransform: 'uppercase', ...theme.text.medium300 }}>
+        <Box xs={theme.text.medium300}>
           {languagesMap[i18n.language.toUpperCase()]}
         </Box>
       </Flex>
