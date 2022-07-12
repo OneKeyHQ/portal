@@ -25,7 +25,12 @@ export const Content: FC<ContentProps> = (props) => {
         color: theme.colors.white,
         gap: 64,
       }}
-      m={{ paddingTop: 36, flexDirection: 'row' }}
+      s={{
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        width: '60vw',
+      }}
+      m={{ width: 'auto', paddingTop: 36, flexDirection: 'row' }}
       l={{ gap: 100 }}
       xl={{ gap: 120 }}
     >
