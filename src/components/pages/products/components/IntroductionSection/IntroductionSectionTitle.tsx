@@ -22,6 +22,7 @@ export const IntroductionSectionTitle: FC<IntroductionSectionTitleProps> = (
           xs={{
             ...theme.text.medium500,
             color: theme.colors.test300,
+            textTransform: 'capitalize',
           }}
           m={{ ...theme.text.medium600 }}
         >
