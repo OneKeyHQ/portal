@@ -44,7 +44,7 @@ export function useOneKeyProduct(): OneKeyProducts {
       },
     },
     touch: {
-      status: 'comingSoon',
+      status: 'normal',
       name: 'OneKey Touch',
       price: 135,
       formattedPrice: '$135.00',

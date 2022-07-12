@@ -37,7 +37,13 @@ export const RecommendSection: FC<RecommendSectionProps> = (props) => {
       m={{ paddingBottom: 40, paddingTop: 40 }}
     >
       <Box css={{ textAlign: 'center' }}>
-        <Span xs={theme.text.medium800} m={theme.text.medium900}>
+        <Span
+          xs={{
+            ...theme.text.medium800,
+            color: theme.colors.test500,
+          }}
+          m={theme.text.medium900}
+        >
           <I18n name="title__you_might_also_like" />
         </Span>
       </Box>

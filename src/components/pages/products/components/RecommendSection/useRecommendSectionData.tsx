@@ -2,7 +2,10 @@ import { ReactNode } from 'react';
 
 import { StaticImage } from 'gatsby-plugin-image';
 
-import { useOneKeyProduct } from '../../../../../data/useOneKeyProduct';
+import {
+  ProductStatus,
+  useOneKeyProduct,
+} from '../../../../../data/useOneKeyProduct';
 
 import LiteImage from './images/lite.svg';
 import MiniImage from './images/mini.svg';
@@ -17,6 +20,7 @@ export type RecommendSectionDataItem = {
   image: string;
   hoverImage: ReactNode;
   path: string;
+  status: ProductStatus;
 };
 
 export function useRecommendSectionData(): {

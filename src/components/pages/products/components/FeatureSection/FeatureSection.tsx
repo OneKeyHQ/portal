@@ -23,7 +23,10 @@ export const FeatureSection: FC<FeatureSectionProps> = (props) => {
         <Box xs={{ paddingTop: 120 }}>
           <Flex xs={{ textAlign: 'center', gap: 20, flexDirection: 'column' }}>
             <Span
-              xs={theme.text.medium800}
+              xs={{
+                ...theme.text.medium800,
+                color: theme.colors.test500,
+              }}
               m={theme.text.medium900}
               l={theme.text.medium1000}
             >

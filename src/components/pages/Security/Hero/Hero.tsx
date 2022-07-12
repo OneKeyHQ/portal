@@ -68,7 +68,10 @@ export const Hero: FC<HeroProps> = (props) => {
           }}
         >
           <Span
-            xs={theme.text.medium800}
+            xs={{
+              ...theme.text.medium800,
+              color: theme.colors.test500,
+            }}
             xl={theme.text.medium900}
             xxl={theme.text.medium1000}
           >

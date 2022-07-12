@@ -27,7 +27,12 @@ export const BridgeDownload: FC<BridgeDownloadProps> = (props) => {
     >
       <Flex xs={{ justifyContent: 'space-between', alignItems: 'center' }}>
         <Box>
-          <Box xs={theme.text.medium700}>
+          <Box
+            xs={{
+              ...theme.text.medium700,
+              color: theme.colors.test500,
+            }}
+          >
             <I18n name="title__onekey_bridge" />
           </Box>
 

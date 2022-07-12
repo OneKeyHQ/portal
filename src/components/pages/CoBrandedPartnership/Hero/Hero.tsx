@@ -64,7 +64,10 @@ export const Hero: FC<HeroProps> = (props) => {
             l={{ textAlign: 'left', gap: 20 }}
           >
             <Span
-              xs={theme.text.medium700}
+              xs={{
+                ...theme.text.medium700,
+                color: theme.colors.test500,
+              }}
               m={theme.text.medium800}
               l={theme.text.medium900}
               xl={theme.text.medium1000}

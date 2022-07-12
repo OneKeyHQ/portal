@@ -5,6 +5,7 @@ import { useTheme } from '@emotion/react';
 import { useHover } from '../../../../../hooks';
 import { Box, Divider, Flex, Img, Link, Span } from '../../../../base';
 
+import { ComingSoonLabel } from './ComingSoonLabel';
 import { RecommendSectionDataItem } from './useRecommendSectionData';
 
 export interface ProductCardProps {
@@ -27,7 +28,7 @@ export const ProductCard: FC<ProductCardProps> = (props) => {
         backgroundColor: theme.colors.test100,
       }}
     >
-      <Link to={data.path}>
+      <Link to={data.status === 'normal' ? data.path : ''}>
         <Fragment key={data.name}>
           <Flex
             xs={{ padding: 50, alignItems: 'center', justifyContent: 'center' }}
@@ -47,19 +48,21 @@ export const ProductCard: FC<ProductCardProps> = (props) => {
                 src={data.image}
               />
 
-              <Box
-                xs={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  width: '100%',
-                  height: '100%',
-                  transition: theme.transitions.allCubicBezier,
-                  opacity: isHovered ? 1 : 0,
-                }}
-              >
-                {data.hoverImage}
-              </Box>
+              {data.status === 'normal' && (
+                <Box
+                  xs={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    transition: theme.transitions.allCubicBezier,
+                    opacity: isHovered ? 1 : 0,
+                  }}
+                >
+                  {data.hoverImage}
+                </Box>
+              )}
             </Box>
           </Flex>
 
@@ -76,7 +79,17 @@ export const ProductCard: FC<ProductCardProps> = (props) => {
             }}
           >
             <Flex xs={{ gap: 8, flexDirection: 'column' }}>
-              <Span xs={theme.text.medium700}>{data.name}</Span>
+              <Flex
+                xs={{
+                  gap: 8,
+                  flexWrap: 'wrap',
+                  alignItems: 'center',
+                }}
+              >
+                <Span xs={theme.text.medium700}>{data.name}</Span>
+                {data.status === 'comingSoon' && <ComingSoonLabel />}
+              </Flex>
+
               <Span xs={theme.text.normal400}>{data.description}</Span>
             </Flex>
 

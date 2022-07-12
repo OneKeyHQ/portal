@@ -35,7 +35,11 @@ export const AddToCart: FC<AddToCartProps> = (props) => {
       <Box xs={{ position: 'relative' }}>
         <Button variant="outlined" onClick={() => setIsMenuOpen(!isMenuOpen)}>
           <Flex
-            xs={{ width: 80, alignItems: 'center', justifyContent: 'center' }}
+            xs={{
+              width: 80,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
           >
             x{amount} <ChevronDownIcon width={24} height={24} />
           </Flex>

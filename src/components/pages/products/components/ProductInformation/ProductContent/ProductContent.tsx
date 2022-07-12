@@ -73,7 +73,10 @@ export const ProductContent: FC<ProductContentProps> = (props) => {
           {slogan}
         </Span>
         <Span
-          xs={theme.text.medium800}
+          xs={{
+            ...theme.text.medium800,
+            color: theme.colors.test500,
+          }}
           l={theme.text.medium900}
           xl={theme.text.medium1000}
         >
@@ -90,7 +93,13 @@ export const ProductContent: FC<ProductContentProps> = (props) => {
         </Span>
       </Flex>
 
-      <Span xs={theme.text.normal800} xl={theme.text.normal900}>
+      <Span
+        xs={{
+          ...theme.text.normal800,
+          color: theme.colors.test500,
+        }}
+        xl={theme.text.normal900}
+      >
         {price.formatted}
       </Span>
 
@@ -105,14 +114,24 @@ export const ProductContent: FC<ProductContentProps> = (props) => {
 
         <Flex xs={{ alignItems: 'center', gap: 8 }}>
           <DeliveryIcon width={32} height={32} />
-          <Span xs={theme.text.normal300}>
+          <Span
+            xs={{
+              ...theme.text.normal300,
+              color: theme.colors.test500,
+            }}
+          >
             <I18n name="content__free_international_shipping" />
           </Span>
         </Flex>
 
         <Flex xs={{ alignItems: 'center', gap: 8 }}>
           <ServiceIcon width={32} height={32} />
-          <Span xs={theme.text.normal300}>
+          <Span
+            xs={{
+              ...theme.text.normal300,
+              color: theme.colors.test500,
+            }}
+          >
             <I18n name="content__24_7_support" />
           </Span>
         </Flex>
