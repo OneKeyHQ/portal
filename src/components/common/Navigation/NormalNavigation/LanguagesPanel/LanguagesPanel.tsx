@@ -5,7 +5,7 @@ import { useI18next } from 'gatsby-plugin-react-i18next';
 
 import { useHover } from '../../../../../hooks';
 import { Link } from '../../../../base';
-import { Box, Span } from '../../../../base/Box';
+import { Box } from '../../../../base/Box';
 import { Container } from '../../../../base/Container';
 import { Flex } from '../../../../base/Flex';
 import { languagesMap } from '../../languages';
@@ -48,9 +48,7 @@ export const LanguagesPanel: FC<LanguagesPanelProps> = (props) => {
                 <Box key={lng} xs={{ width: '33.3%' }}>
                   <Link to={originalPath} language={lng}>
                     <LanguagesPanelItem>
-                      <Span xs={{ textTransform: 'uppercase' }}>
-                        {languagesMap[lng.toUpperCase()]}
-                      </Span>
+                      {languagesMap[lng.toUpperCase()]}
                     </LanguagesPanelItem>
                   </Link>
                 </Box>
