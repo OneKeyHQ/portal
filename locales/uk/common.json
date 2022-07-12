@@ -80,6 +80,7 @@
     "title__google_play": "Google Play",
     "title__mobile_app": "Мобільний додаток",
     "title__multi_chain_support": "Підтримка кількох ланцюгів",
+    "title__multi_chain_support_desc": "Підтримка токенів у мережах ETH, BSC і HECO.",
     "title__other_platforms": "Інші платформи",
     "title__security": "безпеки",
     "title__set_up_your_onekey_hardware_wallet": "Налаштуйте апаратний гаманець OneKey",
