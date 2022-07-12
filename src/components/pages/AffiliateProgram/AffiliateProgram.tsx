@@ -6,7 +6,7 @@ import { Box, Container, Flex, Main } from '../../base';
 import { Navigation, PageFooter, StayInTouch } from '../../common';
 
 import { AffiliateProgramCard } from './AffiliateProgramCard';
-import { MainTitle } from './MainTitle';
+import { Hero } from './Hero';
 import { useAffiliateProgramData } from './useAffiliateProgramData';
 
 export interface AffiliateProgramProps {
@@ -25,14 +25,15 @@ export const AffiliateProgram: FC<AffiliateProgramProps> = (props) => {
       <Navigation />
 
       <Main>
-        <Container>
-          <MainTitle />
+        <Hero />
 
+        <Container>
           <Flex xs={{ alignItems: 'center', justifyContent: 'center' }}>
             <Flex
               xs={{
                 gap: 24,
                 maxWidth: 1336,
+                paddingTop: 80,
                 paddingBottom: 80,
                 flexDirection: 'column',
               }}
