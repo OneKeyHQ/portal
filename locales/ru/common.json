@@ -80,6 +80,7 @@
     "title__google_play": "Гугл игры",
     "title__mobile_app": "Мобильное приложение",
     "title__multi_chain_support": "Поддержка нескольких цепей",
+    "title__multi_chain_support_desc": "Поддержка токенов в цепочках ETH, BSC и HECO.",
     "title__other_platforms": "Другие платформы",
     "title__security": "безопасность",
     "title__set_up_your_onekey_hardware_wallet": "Настройте аппаратный кошелек OneKey",

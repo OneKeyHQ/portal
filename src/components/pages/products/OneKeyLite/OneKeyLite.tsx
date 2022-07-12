@@ -13,7 +13,6 @@ import { IntroductionSection } from '../components/IntroductionSection';
 import { ImageIntroduction } from '../components/IntroductionSection/ImageIntroduction';
 import { IntroductionContainer } from '../components/IntroductionSection/IntroductionContainer';
 import { IntroductionSectionTitle } from '../components/IntroductionSection/IntroductionSectionTitle';
-import { MultiChainSupportSection } from '../components/MultiChainSupportSection';
 import { ProductInformation } from '../components/ProductInformation';
 import { RecommendSection } from '../components/RecommendSection';
 
@@ -50,9 +49,9 @@ export const OneKeyLite: FC<OneKeyLiteProps> = (props) => {
 
         <FeatureSection {...OneKeyLiteData.feature} />
 
-        <MultiChainSupportSection />
-
-        <RecommendSection include={['mini', 'touch', 'pro']} />
+        <Box xs={{ paddingTop: 80 }}>
+          <RecommendSection include={['mini', 'touch', 'pro']} />
+        </Box>
 
         <StayInTouchWidthContainerAndPadding />
       </Main>
