@@ -28,7 +28,10 @@ export const OurOfferSection: FC<OurOfferSectionProps> = (props) => {
         }}
       >
         <H2
-          xs={theme.text.medium700}
+          xs={{
+            ...theme.text.medium700,
+            color: theme.colors.test500,
+          }}
           s={theme.text.medium800}
           m={theme.text.medium900}
         >

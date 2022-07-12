@@ -15,7 +15,13 @@ export const Title: FC<TitleProps> = (props) => {
 
   return (
     <Flex xs={{ flexDirection: 'column' }}>
-      <Span xs={theme.text.medium800} l={theme.text.medium900}>
+      <Span
+        xs={{
+          ...theme.text.medium800,
+          color: theme.colors.test500,
+        }}
+        l={theme.text.medium900}
+      >
         {name && <I18n name={name} alwaysMultiLine />}
       </Span>
     </Flex>

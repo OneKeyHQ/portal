@@ -41,7 +41,13 @@ export const ProductShowcaseSectionItem: FC<ProductShowcaseSectionItemProps> = (
 
         <Flex xs={{ flexDirection: 'column', gap: 16, flex: 1 }}>
           <Flex xs={{ flexDirection: 'column' }}>
-            <Span xs={theme.text.medium700} l={theme.text.medium800}>
+            <Span
+              xs={{
+                ...theme.text.medium700,
+                color: theme.colors.test500,
+              }}
+              l={theme.text.medium800}
+            >
               {name}
             </Span>
 

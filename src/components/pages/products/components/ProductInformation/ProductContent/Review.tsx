@@ -22,7 +22,7 @@ export const Review: FC<ReviewProps> = (props) => {
 
   return (
     <Box>
-      <Flex>
+      <Flex xs={{ color: theme.colors.test500 }}>
         <StarIcon width={24} height={24} />
         <StarIcon width={24} height={24} />
         <StarIcon width={24} height={24} />
@@ -38,7 +38,13 @@ export const Review: FC<ReviewProps> = (props) => {
         }}
       >
         <Span>
-          <Span xs={theme.text.medium200} m={theme.text.medium300}>
+          <Span
+            xs={{
+              ...theme.text.medium200,
+              color: theme.colors.test500,
+            }}
+            m={theme.text.medium300}
+          >
             4.4
             <I18n name="title__star_rating" />
           </Span>

@@ -20,6 +20,7 @@ export const ProductsTitle: FC<ProductsTitleProps> = (props) => {
           paddingBottom: 48,
           ...theme.text.medium700,
           textAlign: 'center',
+          color: theme.colors.test500,
         }}
         m={{
           paddingTop: 120,

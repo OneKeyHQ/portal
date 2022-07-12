@@ -63,7 +63,11 @@ export const FeatureInformationCard: React.FC<FeatureInformationCardProps> = (
         xxl={{ gap: 80, padding: 80 }}
       >
         <Span
-          xs={{ ...theme.text.medium700, textAlign: 'center' }}
+          xs={{
+            ...theme.text.medium700,
+            textAlign: 'center',
+            color: theme.colors.test500,
+          }}
           l={{ ...theme.text.medium800 }}
           xl={{ ...theme.text.medium900 }}
         >

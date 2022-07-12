@@ -35,6 +35,7 @@ export const OtherStoresSelect: FC<OtherStoresSelectProps> = (props) => {
       <Flex
         xs={{
           ...theme.text.medium300,
+          color: theme.colors.test500,
           alignItems: 'center',
           cursor: 'pointer',
           ':hover': {

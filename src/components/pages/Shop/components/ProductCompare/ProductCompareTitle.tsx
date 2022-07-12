@@ -30,6 +30,7 @@ export const ProductCompareTitle: FC<ProductCompareTitleProps> = (props) => {
         xs={{
           ...theme.text.medium700,
           textAlign: 'center',
+          color: theme.colors.test500,
         }}
         m={theme.text.medium800}
         l={theme.text.medium900}

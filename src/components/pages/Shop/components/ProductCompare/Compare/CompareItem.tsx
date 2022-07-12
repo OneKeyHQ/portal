@@ -73,7 +73,10 @@ export const CompareItem: FC<CompareItemProps> = (props) => {
         }}
       >
         <Span
-          xs={theme.text.medium500}
+          xs={{
+            ...theme.text.medium500,
+            color: theme.colors.test500,
+          }}
           s={theme.text.medium600}
           l={theme.text.medium700}
         >
@@ -127,7 +130,10 @@ export const CompareItem: FC<CompareItemProps> = (props) => {
             {item.icon && <Img src={item.icon} />}
             {!item.icon && (
               <Span
-                xs={theme.text.medium300}
+                xs={{
+                  ...theme.text.medium300,
+                  color: theme.colors.test500,
+                }}
                 s={theme.text.medium400}
                 m={theme.text.medium500}
               >

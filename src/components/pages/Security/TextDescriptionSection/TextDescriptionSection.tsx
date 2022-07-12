@@ -44,7 +44,10 @@ export const TextDescriptionSection: FC<TextDescriptionSectionProps> = (
             xl={{ maxWidth: 760 }}
           >
             <H2
-              xs={theme.text.medium700}
+              xs={{
+                ...theme.text.medium700,
+                color: theme.colors.test500,
+              }}
               m={theme.text.medium800}
               xl={theme.text.medium900}
             >
@@ -76,7 +79,10 @@ export const TextDescriptionSection: FC<TextDescriptionSectionProps> = (
                 </Span>
                 <Divider color={theme.colors.test300} />
                 <H3
-                  xs={theme.text.medium500}
+                  xs={{
+                    ...theme.text.medium500,
+                    color: theme.colors.test500,
+                  }}
                   m={theme.text.medium600}
                   xl={theme.text.medium700}
                 >
