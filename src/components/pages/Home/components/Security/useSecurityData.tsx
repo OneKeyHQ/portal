@@ -30,22 +30,22 @@ export function useSecurityData(): NonEmptyArray<SecurityDataItem> {
 
   return [
     {
-      image: <StaticImage src="./images/image1.jpg" alt={title1} />,
+      image: <StaticImage src="./images/home-security-01.jpg" alt={title1} />,
       title: title1,
       description: t('title__your_crypto_in_your_hands_desc'),
     },
     {
-      image: <StaticImage src="./images/image2.jpg" alt={title2} />,
+      image: <StaticImage src="./images/home-security-02.jpg" alt={title2} />,
       title: title2,
       description: t('title__simple_yet_secure_desc'),
     },
     {
-      image: <StaticImage src="./images/image3.jpg" alt={title3} />,
+      image: <StaticImage src="./images/home-security-03.jpg" alt={title3} />,
       title: title3,
       description: t('title__truly_open_source_desc'),
     },
     {
-      image: <StaticImage src="./images/image4.jpg" alt={title4} />,
+      image: <StaticImage src="./images/home-security-04.jpg" alt={title4} />,
       title: title4,
       description: t('title__end_to_end_encryption_desc'),
     },
