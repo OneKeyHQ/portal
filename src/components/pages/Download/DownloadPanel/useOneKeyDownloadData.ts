@@ -28,7 +28,7 @@ export function useOneKeyDownloadData() {
     name: 'App Store',
     description: `v${formattedData.ios.version}, for iOS 14.0+, ${t(
       'title__not_available_on_the_chinese_app_store',
-    )}}`,
+    )}`,
     url: formattedData.ios.url,
     faq: {
       title: 'iOS FAQ',
