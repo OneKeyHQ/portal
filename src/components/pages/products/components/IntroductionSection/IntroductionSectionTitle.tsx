@@ -28,7 +28,7 @@ export const IntroductionSectionTitle: FC<IntroductionSectionTitleProps> = (
         >
           <I18n name="title__introducing" />
         </Span>
-        <Box xs={{ paddingTop: 8 }}>
+        <Box xs={{ paddingTop: 8, color: theme.colors.test500 }}>
           <Span
             xs={theme.text.medium800}
             m={theme.text.medium900}
