@@ -49,7 +49,7 @@ export const OneKeyLite: FC<OneKeyLiteProps> = (props) => {
 
         <FeatureSection {...OneKeyLiteData.feature} />
 
-        <Box xs={{ paddingTop: 80 }}>
+        <Box xs={{ paddingTop: 40 }}>
           <RecommendSection include={['mini', 'touch', 'pro']} />
         </Box>
 

@@ -33,8 +33,8 @@ export const RecommendSection: FC<RecommendSectionProps> = (props) => {
 
   return (
     <Section
-      xs={{ paddingBottom: 20, paddingTop: 20 }}
-      m={{ paddingBottom: 40, paddingTop: 40 }}
+      xs={{ paddingBottom: 20, paddingTop: 60 }}
+      m={{ paddingBottom: 40, paddingTop: 80 }}
     >
       <Box css={{ textAlign: 'center' }}>
         <Span

@@ -24,11 +24,12 @@ export const FeatureSection: FC<FeatureSectionProps> = (props) => {
           <Flex xs={{ textAlign: 'center', gap: 20, flexDirection: 'column' }}>
             <Span
               xs={{
-                ...theme.text.medium800,
+                ...theme.text.medium700,
                 color: theme.colors.test500,
               }}
+              s={theme.text.medium800}
               m={theme.text.medium900}
-              l={theme.text.medium1000}
+              xxl={theme.text.medium1000}
             >
               {title}
             </Span>
