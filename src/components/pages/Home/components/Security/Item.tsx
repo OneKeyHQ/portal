@@ -18,6 +18,7 @@ export const Item: FC<ItemProps> = (props) => {
   return (
     <Flex
       xs={{
+        cursor: 'pointer',
         transition: theme.transitions.allEaseOut,
         flexDirection: 'column',
         gap: 26,
