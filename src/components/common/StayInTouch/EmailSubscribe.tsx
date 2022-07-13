@@ -2,7 +2,15 @@ import { FC } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Button, Divider, Flex, InfoIcon, Span } from '../../base';
+import {
+  Box,
+  Button,
+  Divider,
+  Flex,
+  InfoIcon,
+  OnlyDisplay,
+  Span,
+} from '../../base';
 import { useEmailSubscribe } from '../../headless/EmailSubscribe';
 
 export const EmailSubscribe: FC = () => {
@@ -15,36 +23,60 @@ export const EmailSubscribe: FC = () => {
       css={{ flexDirection: 'column', gap: 16, color: theme.colors.test500 }}
     >
       <Span
-        xs={{ ...theme.text.medium600 }}
-        m={{ ...theme.text.medium700 }}
-        l={{ ...theme.text.medium800 }}
+        xs={{ ...theme.text.medium600, color: theme.colors.test500 }}
+        l={{ ...theme.text.medium700 }}
       >
         {texts.title}
       </Span>
 
-      <Flex css={{ justifyContent: 'space-between', alignItems: 'center' }}>
-        <input
-          css={{
-            width: 100,
-            fontSize: 14,
-            backgroundColor: 'transparent',
-            borderWidth: 0,
-            outline: 'none',
-            color: theme.colors.test500,
-            flex: 1,
-          }}
-          {...inputProps}
-        />
+      <Flex
+        css={{
+          justifyContent: 'space-between',
+          alignItems: 'flex-end',
+          gap: 40,
+        }}
+        l={{ paddingTop: 8 }}
+      >
+        <Box xs={{ flex: 1 }}>
+          <input
+            css={{
+              paddingTop: 12,
+              paddingBottom: 12,
+              backgroundColor: 'transparent',
+              borderWidth: 0,
+              outline: 'none',
+              color: theme.colors.test500,
+              width: '100%',
+              ...theme.text.normal300,
+              '::placeholder': {
+                color: theme.colors.test500,
+                opacity: 0.4,
+              },
+            }}
+            {...inputProps}
+          />
 
+          <Divider />
+        </Box>
+
+        <OnlyDisplay m l xl xxl>
+          <Button
+            themeColor="brand"
+            variant="outlined"
+            size="medium"
+            {...buttonProps}
+          />
+        </OnlyDisplay>
+      </Flex>
+
+      <OnlyDisplay xs s>
         <Button
           themeColor="brand"
           variant="outlined"
-          size="medium"
+          size="small"
           {...buttonProps}
         />
-      </Flex>
-
-      <Divider />
+      </OnlyDisplay>
 
       {showErrorMessage && texts && (
         <Flex
@@ -60,9 +92,12 @@ export const EmailSubscribe: FC = () => {
         </Flex>
       )}
 
+      {/* information */}
       <Span
-        css={{
-          ...theme.text.normal100,
+        xs={{
+          opacity: 0.6,
+          color: theme.colors.test400,
+          ...theme.text.normal200,
         }}
       >
         {texts.information}
