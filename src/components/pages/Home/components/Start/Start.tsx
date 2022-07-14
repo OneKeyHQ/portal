@@ -55,11 +55,7 @@ export const Start = () => {
 
   return (
     <div ref={ref}>
-      <Section
-        onMouseEnter={() => setStatus('visible')}
-        onMouseLeave={() => setStatus('hidden')}
-        css={{ position: 'relative', cursor: 'none' }}
-      >
+      <Section css={{ position: 'relative' }}>
         <Container>
           <Flex
             xs={{
@@ -99,7 +95,7 @@ export const Start = () => {
             </Flex>
             <Flex
               onMouseEnter={() => setStatus('active')}
-              onMouseLeave={() => setStatus('visible')}
+              onMouseLeave={() => setStatus('hidden')}
               css={{ gap: 23 }}
             >
               {items.map((item) => {

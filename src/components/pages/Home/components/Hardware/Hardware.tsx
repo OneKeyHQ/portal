@@ -47,7 +47,6 @@ export const Hardware: React.FC = () => {
     <motion.section
       ref={ref}
       style={{
-        cursor: 'none',
         position: 'relative',
         overflow: 'hidden',
         paddingRight: isMedium ? paddingMotionValue : zeroMotionValue,
@@ -56,7 +55,7 @@ export const Hardware: React.FC = () => {
       }}
     >
       <motion.div
-        onMouseEnter={() => setStatus('visible')}
+        onMouseEnter={() => setStatus('hidden')}
         onMouseLeave={() => setStatus('hidden')}
         style={{
           borderRadius: isMedium
@@ -100,7 +99,7 @@ export const Hardware: React.FC = () => {
                 width: 'fit-content',
               }}
               onMouseEnter={() => setStatus('hidden')}
-              onMouseLeave={() => setStatus('visible')}
+              onMouseLeave={() => setStatus('hidden')}
             >
               <GoToShopButton
                 overrides={{
@@ -125,7 +124,7 @@ export const Hardware: React.FC = () => {
                       item.status !== 'coming-soon' && setStatus('active')
                     }
                     onMouseLeave={() =>
-                      item.status !== 'coming-soon' && setStatus('visible')
+                      item.status !== 'coming-soon' && setStatus('hidden')
                     }
                   >
                     <Item {...item} />
