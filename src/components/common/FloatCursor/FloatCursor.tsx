@@ -8,11 +8,11 @@ export interface FloatCursorProps {
   children?: ReactNode;
   variants: Variants;
   cursorVariant: string;
-  cursorNode?: ReactNode;
+  cursorImage?: string;
 }
 
 export const FloatCursor: FC<FloatCursorProps> = (props) => {
-  const { children, variants, cursorVariant, cursorNode } = props;
+  const { children, variants, cursorVariant, cursorImage } = props;
 
   return (
     <motion.div
@@ -35,7 +35,7 @@ export const FloatCursor: FC<FloatCursorProps> = (props) => {
         mass: 0.1,
       }}
     >
-      {cursorNode || <RoundCursor />}
+      <RoundCursor image={cursorImage} />
 
       {children}
     </motion.div>

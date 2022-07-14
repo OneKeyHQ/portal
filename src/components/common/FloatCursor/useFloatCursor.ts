@@ -44,7 +44,7 @@ export function useFloatCursor() {
     },
     active: {
       opacity: 1,
-      scale: mouse.isDown ? 2.5 : 3,
+      scale: mouse.isDown ? 2.6 : 3.2,
       x: mouse.isDown ? mouseXPosition + 8 : mouseXPosition,
       y: mouse.isDown ? mouseYPosition + 8 : mouseYPosition,
     },

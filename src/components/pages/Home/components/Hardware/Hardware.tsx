@@ -16,11 +16,14 @@ import {
   Swiper as SwiperComponent,
   SwiperSlide,
 } from '../../../../base';
+import { FloatCursor, useFloatCursor } from '../../../../common';
 
+import cursorImage from './images/cursor.svg';
 import { Item } from './Item';
 import { useHardwareData } from './useHardwareData';
 
 export const Hardware: React.FC = () => {
+  const { floatCursorProps, ref: floatCursorRef, setStatus } = useFloatCursor();
   const media = useMediaQuery();
   const theme = useTheme();
   const data = useHardwareData();
@@ -38,12 +41,14 @@ export const Hardware: React.FC = () => {
     });
   const borderRadiusDefaultValue = useMotionValue(isMedium ? 40 : 32);
 
-  const ref = mergeRefs(borderRadiusRef, paddingRef);
+  const ref = mergeRefs(borderRadiusRef, paddingRef, floatCursorRef);
 
   return (
     <motion.section
       ref={ref}
       style={{
+        cursor: 'none',
+        position: 'relative',
         overflow: 'hidden',
         paddingRight: isMedium ? paddingMotionValue : zeroMotionValue,
         paddingLeft: isMedium ? paddingMotionValue : zeroMotionValue,
@@ -51,6 +56,8 @@ export const Hardware: React.FC = () => {
       }}
     >
       <motion.div
+        onMouseEnter={() => setStatus('visible')}
+        onMouseLeave={() => setStatus('hidden')}
         style={{
           borderRadius: isMedium
             ? borderRadiusMotionValue
@@ -87,7 +94,14 @@ export const Hardware: React.FC = () => {
                 />
               </Span>
             </Flex>
-            <Box>
+
+            <Box
+              xs={{
+                width: 'fit-content',
+              }}
+              onMouseEnter={() => setStatus('hidden')}
+              onMouseLeave={() => setStatus('visible')}
+            >
               <GoToShopButton
                 overrides={{
                   button: {
@@ -104,7 +118,18 @@ export const Hardware: React.FC = () => {
             {media.large && (
               <>
                 {data.map((item) => (
-                  <Item key={item.title} {...item} />
+                  <Box
+                    xs={{ flex: 1 }}
+                    key={item.title}
+                    onMouseEnter={() =>
+                      item.status !== 'coming-soon' && setStatus('active')
+                    }
+                    onMouseLeave={() =>
+                      item.status !== 'coming-soon' && setStatus('visible')
+                    }
+                  >
+                    <Item {...item} />
+                  </Box>
                 ))}
               </>
             )}
@@ -129,6 +154,8 @@ export const Hardware: React.FC = () => {
           </Flex>
         </Container>
       </motion.div>
+
+      <FloatCursor cursorImage={cursorImage} {...floatCursorProps} />
     </motion.section>
   );
 };
