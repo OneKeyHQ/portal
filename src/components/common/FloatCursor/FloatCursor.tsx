@@ -30,7 +30,10 @@ export const FloatCursor: FC<FloatCursorProps> = (props) => {
       }}
       variants={variants}
       animate={cursorVariant}
-      transition={{ type: 'spring', delay: 0 }}
+      transition={{
+        type: 'spring',
+        mass: 0.1,
+      }}
     >
       {cursorNode || <RoundCursor />}
 

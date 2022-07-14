@@ -19,8 +19,7 @@ export function useFloatCursor() {
     useState<FloatCursorStatus>('hidden');
   const ref = useRef(null);
   const mouse = useMouse(ref, {
-    enterDelay: 20,
-    leaveDelay: 20,
+    fps: 60,
   });
 
   useEffect(() => {
@@ -56,7 +55,6 @@ export function useFloatCursor() {
       variants,
       cursorVariant,
     },
-    containerProps: {},
     setStatus: (status: FloatCursorStatus) => {
       setCursorVariant(status);
     },
