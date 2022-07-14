@@ -35,7 +35,7 @@ export const Security: FC = () => {
             xs={{
               paddingTop: 80,
               paddingBottom: 80,
-              alignItems: 'flex-start',
+              alignItems: 'stretch',
               backgroundColor: theme.colors.white,
             }}
             m={{
@@ -57,6 +57,7 @@ export const Security: FC = () => {
                   gap: 32,
                 }}
                 xxl={{
+                  gap: 48,
                   marginTop: 100,
                 }}
                 onMouseEnter={() => setIsAnimating(true)}
@@ -79,25 +80,28 @@ export const Security: FC = () => {
             </Box>
 
             {/* right */}
-            <Box
-              xs={{
-                background: theme.background.test100,
-                borderRadius: 40,
-                overflow: 'hidden',
-                flex: 1,
-              }}
-            >
-              <AnimatePresence exitBeforeEnter>
-                <motion.div
-                  key={currentItem.title}
-                  animate={{ opacity: 1 }}
-                  initial={{ opacity: 0 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.15 }}
-                >
-                  {currentItem?.image}
-                </motion.div>
-              </AnimatePresence>
+            <Box xs={{ flex: 1, position: 'relative' }}>
+              <Box
+                xs={{
+                  position: 'sticky',
+                  top: 100,
+                  overflow: 'hidden',
+                  background: theme.background.test100,
+                  borderRadius: 40,
+                }}
+              >
+                <AnimatePresence exitBeforeEnter>
+                  <motion.div
+                    key={currentItem.title}
+                    animate={{ opacity: 1 }}
+                    initial={{ opacity: 0 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.15 }}
+                  >
+                    {currentItem?.image}
+                  </motion.div>
+                </AnimatePresence>
+              </Box>
             </Box>
           </Flex>
         </Container>

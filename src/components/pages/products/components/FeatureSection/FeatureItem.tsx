@@ -36,7 +36,7 @@ export const FeatureItem: FC<FeatureItemProps> = (props) => {
           xs={theme.text.medium400}
           s={theme.text.medium500}
           m={theme.text.medium700}
-          l={theme.text.medium800}
+          xxl={theme.text.medium800}
         >
           {name}
         </Span>

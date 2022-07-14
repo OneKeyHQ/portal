@@ -32,7 +32,6 @@ export const AffiliateProgram: FC<AffiliateProgramProps> = (props) => {
             <Flex
               xs={{
                 gap: 24,
-                maxWidth: 1336,
                 paddingTop: 80,
                 paddingBottom: 80,
                 flexDirection: 'column',

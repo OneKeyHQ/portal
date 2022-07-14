@@ -1,5 +1,11 @@
 import { nanoid } from 'nanoid';
-import { AnimatedSprite, Application, Loader, Texture } from 'pixi.js';
+import {
+  AnimatedSprite,
+  Application,
+  Container,
+  Loader,
+  Texture,
+} from 'pixi.js';
 
 type PlayerConfig = {
   element: HTMLCanvasElement;
@@ -37,7 +43,11 @@ class Player {
 
   animatedSprites: AnimatedSprite[] = [];
 
+  imageContainers: Container[] = [];
+
   progressStates: ProgressStates = [];
+
+  currentProgress = 0;
 
   totalProgress = 0;
 
@@ -61,8 +71,14 @@ class Player {
   resize(width: number, height: number): void {
     this.width = width;
     this.height = height;
-    this.application.renderer.resize(width, height);
     this.resizeAllAnimatedSpriteState();
+    this.application.renderer.resize(width, height);
+    this.refresh();
+  }
+
+  refresh() {
+    this.setProgress(this.currentProgress);
+    this.application.render();
   }
 
   getTotalProgress(): number {
@@ -87,26 +103,25 @@ class Player {
     }
   }
 
-  resizeAnimatedSpriteState(animatedSpriteState: AnimatedSprite) {
-    const { texture } = animatedSpriteState;
-    const { stage } = this.application;
-    const imageSpriteWidth = texture.baseTexture.width;
-    const imageSpriteHeight = texture.baseTexture.height;
+  resizeAnimatedSpriteState(animatedSprite: AnimatedSprite) {
+    const { texture } = animatedSprite;
+    const imageSpriteWidth = texture.width;
+    const imageSpriteHeight = texture.height;
     const containerWidth = this.width;
     const containerHeight = this.height;
 
     const imageRatio = imageSpriteWidth / imageSpriteHeight;
     const containerRatio = containerWidth / containerHeight;
     if (containerRatio > imageRatio) {
-      stage.height /= stage.width / containerWidth;
-      stage.width = containerWidth;
-      stage.position.x = 0;
-      stage.position.y = (containerHeight - stage.height) / 2;
+      animatedSprite.height /= animatedSprite.width / containerWidth;
+      animatedSprite.width = containerWidth;
+      animatedSprite.position.x = 0;
+      animatedSprite.position.y = (containerHeight - animatedSprite.height) / 2;
     } else {
-      stage.width /= stage.height / containerHeight;
-      stage.height = containerHeight;
-      stage.position.y = 0;
-      stage.position.x = (containerWidth - stage.width) / 2;
+      animatedSprite.width /= animatedSprite.height / containerHeight;
+      animatedSprite.height = containerHeight;
+      animatedSprite.position.y = 0;
+      animatedSprite.position.x = (containerWidth - animatedSprite.width) / 2;
     }
   }
 
@@ -148,44 +163,42 @@ class Player {
   }
 
   setProgress(progress: number) {
-    const { animatedSprites } = this;
+    const { imageContainers } = this;
     const maxProgress = this.getTotalProgress();
     let newProgress = progress;
-
     if (progress > maxProgress) {
       newProgress = maxProgress;
     } else if (progress < 0) {
       newProgress = 0;
     }
 
+    this.currentProgress = newProgress;
+
     const state = this.getProgressState(newProgress);
 
-    animatedSprites.forEach((animatedSprite) => {
-      animatedSprite.alpha = 0;
+    imageContainers.forEach((imageContainer) => {
+      imageContainer.alpha = 0;
     });
 
     if (state?.type === 'fade') {
       const previousState = this.getProgressState(state.progressStart - 1);
       const nextState = this.getProgressState(state.progressEnd + 1);
-
       if (previousState?.animatedSprite) {
-        previousState.animatedSprite.alpha =
+        previousState.animatedSprite.parent.alpha =
           1 - (newProgress - state.progressStart) / state.length;
-
-        previousState.animatedSprite.transform.position.y =
+        previousState.animatedSprite.parent.position.y =
           -((newProgress - state.progressStart) / state.length) * this.height;
       }
-
       if (nextState?.animatedSprite) {
-        nextState.animatedSprite.alpha = 1;
-
-        nextState.animatedSprite.transform.position.y =
+        nextState.animatedSprite.parent.alpha = 1;
+        nextState.animatedSprite.parent.position.y =
           (1 - (newProgress - state.progressStart) / state.length) *
           this.height *
           0.5;
       }
     } else if (state?.animatedSprite) {
-      state.animatedSprite.alpha = 1;
+      state.animatedSprite.parent.position.y = 0;
+      state.animatedSprite.parent.alpha = 1;
       state.animatedSprite.gotoAndStop(newProgress - state.progressStart);
     }
   }
@@ -196,26 +209,35 @@ class Player {
     const imagesWithoutDuplicated = cleanDuplicateStringArray(frames);
     const firstFrame = imagesWithoutDuplicated.shift();
 
-    const animatedSprite = new AnimatedSprite([Texture.EMPTY]);
-    animatedSprite.animationSpeed = 1;
-    animatedSprite.loop = false;
-    animatedSprite.zIndex = (10 - index) * 1000;
-    animatedSprite.alpha = 0;
-
     if (!firstFrame) {
       throw new Error('No frames to load');
     }
+
+    const animatedSprite = new AnimatedSprite([Texture.EMPTY]);
+    animatedSprite.animationSpeed = 1;
+    animatedSprite.loop = false;
+
+    const imageContainer = new Container();
+    imageContainer.x = 0;
+    imageContainer.y = 0;
+    imageContainer.zIndex = index * 1000;
+    imageContainer.addChild(animatedSprite);
+
+    this.imageContainers.push(imageContainer);
+    this.animatedSprites.push(animatedSprite);
+    this.application.stage.addChild(imageContainer);
+
+    this.application.stage.children.sort(
+      (itemA, itemB) => itemB.zIndex - itemA.zIndex,
+    );
 
     firstFrameLoader.add(firstFrame).load(() => {
       const firstTexture = Texture.from(firstFrame);
 
       animatedSprite.textures = [firstTexture];
-      this.animatedSprites.push(animatedSprite);
+
       this.resizeAnimatedSpriteState(animatedSprite);
-      this.application.stage.addChild(animatedSprite);
-      this.application.stage.children.sort(
-        (itemA, itemB) => itemA.zIndex - itemB.zIndex,
-      );
+      this.refresh();
 
       mainLoader.add(imagesWithoutDuplicated).load(() => {
         const textures = imagesWithoutDuplicated.map((image) =>
@@ -225,6 +247,7 @@ class Player {
         animatedSprite.textures = [firstTexture, ...textures];
 
         this.resizeAnimatedSpriteState(animatedSprite);
+        this.refresh();
       });
     });
 

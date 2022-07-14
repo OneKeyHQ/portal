@@ -19,7 +19,7 @@ export const LanguageSwitchButton: FC<LanguageSwitchButtonProps> = (props) => {
   const { hoverProps, isHovered } = useHover({ timeout: 100 });
 
   return (
-    <Box css={{ position: 'relative' }}>
+    <Box css={{ position: 'relative', color: theme.colors.test500 }}>
       <Flex
         {...hoverProps}
         xs={{

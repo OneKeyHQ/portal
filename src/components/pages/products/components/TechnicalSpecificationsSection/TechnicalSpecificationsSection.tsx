@@ -43,6 +43,8 @@ export const TechnicalSpecificationsSection: FC<
             color: theme.colors.white,
             textAlign: 'center',
           }}
+          xl={theme.text.medium900}
+          xxl={theme.text.medium1000}
         >
           {title}
         </H1>

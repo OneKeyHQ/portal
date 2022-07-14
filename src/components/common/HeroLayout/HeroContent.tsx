@@ -25,7 +25,7 @@ export const HeroContent: FC<HeroContentProps> = (props) => {
           paddingBottom: 50,
           zIndex: 10,
         }}
-        m={{ minHeight: 700 }}
+        m={{ minHeight: 640 }}
         l={{ paddingBottom: 64, justifyContent, width: '40%' }}
         xl={{ minHeight: 800 }}
       >

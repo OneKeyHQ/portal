@@ -37,9 +37,9 @@ export const CanvasPlayerNext: FC<CanvasPlayerNextProps> = (props) => {
         backgroundColor,
       });
 
-      player.current.resize(width, height);
       player.current.setFrameGroups(frames);
       player.current.setProgress(progress);
+      player.current.resize(width, height);
 
       const totalProgress = player.current.getTotalProgress();
       const currentState = player.current.getProgressState(progress);

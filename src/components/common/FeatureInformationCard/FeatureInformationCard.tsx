@@ -103,7 +103,9 @@ export const FeatureInformationCard: React.FC<FeatureInformationCardProps> = (
                 >
                   <CheckIcon width={24} height={24} />
                 </Box>
-                <Box xs={{ paddingLeft: 16 }}>{point}</Box>
+                <Box xs={{ paddingLeft: 16, color: theme.colors.test500 }}>
+                  {point}
+                </Box>
               </Flex>
             ))}
           </Flex>

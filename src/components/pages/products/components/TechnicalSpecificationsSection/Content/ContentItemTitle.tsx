@@ -12,5 +12,5 @@ export const ContentItemTitle: FC<ContentItemTitleProps> = (props) => {
   const { children } = props;
   const theme = useTheme();
 
-  return <H2 xs={theme.text.medium600}> {children}</H2>;
+  return <H2 xs={theme.text.medium600}>{children}</H2>;
 };

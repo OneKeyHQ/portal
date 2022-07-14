@@ -18,6 +18,7 @@ export const Item: FC<ItemProps> = (props) => {
   return (
     <Flex
       xs={{
+        cursor: 'pointer',
         transition: theme.transitions.allEaseOut,
         flexDirection: 'column',
         gap: 26,
@@ -26,9 +27,8 @@ export const Item: FC<ItemProps> = (props) => {
           opacity: 1,
         },
       }}
-      xl={{
-        gap: 32,
-      }}
+      xl={{ gap: 32 }}
+      xxl={{ gap: 48 }}
       {...otherProps}
     >
       <Box
@@ -41,13 +41,15 @@ export const Item: FC<ItemProps> = (props) => {
       <Flex css={{ flexDirection: 'column', gap: 8 }}>
         <Span
           xs={{ color: theme.colors.test500, ...theme.text.medium600 }}
-          xl={{ ...theme.text.medium700 }}
+          xl={theme.text.medium700}
+          xxl={theme.text.medium800}
         >
           {title}
         </Span>
         <Span
-          xs={{ ...theme.text.normal300, color: theme.colors.test500 }}
-          xl={{ ...theme.text.normal400 }}
+          xs={{ ...theme.text.normal200, color: theme.colors.test500 }}
+          xl={theme.text.normal300}
+          xxl={theme.text.normal400}
         >
           {description}
         </Span>

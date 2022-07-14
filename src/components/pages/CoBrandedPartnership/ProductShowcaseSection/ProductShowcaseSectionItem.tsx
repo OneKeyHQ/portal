@@ -64,7 +64,13 @@ export const ProductShowcaseSectionItem: FC<ProductShowcaseSectionItemProps> = (
                 <Box xs={{ color: theme.colors.brandAlt500 }}>
                   {point.iconNode}
                 </Box>
-                <Box xs={{ paddingLeft: 16, ...theme.text.medium400 }}>
+                <Box
+                  xs={{
+                    color: theme.colors.test500,
+                    paddingLeft: 16,
+                    ...theme.text.medium400,
+                  }}
+                >
                   {point.text}
                 </Box>
               </Flex>

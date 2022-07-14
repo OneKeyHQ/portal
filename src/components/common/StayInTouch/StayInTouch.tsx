@@ -16,7 +16,6 @@ export interface StayInTouchProps {
 export const StayInTouch: FC<StayInTouchProps> = (props) => {
   const { children } = props;
   const theme = useTheme();
-  const { size: themeSize } = theme;
   const { t } = useTranslation();
 
   return (
@@ -24,25 +23,11 @@ export const StayInTouch: FC<StayInTouchProps> = (props) => {
       xs={{
         borderRadius: 40,
         backgroundColor: '#92baa3',
-        paddingTop: 40,
-        paddingBottom: 40,
-        paddingLeft: 24,
-        paddingRight: 24,
+        padding: '40px 24px',
       }}
-      l={{
-        paddingTop: 70,
-        paddingBottom: 70,
-        paddingLeft: themeSize.l.column + themeSize.l.gutter,
-        paddingRight: themeSize.l.column + themeSize.l.gutter,
-      }}
-      xl={{
-        paddingLeft: themeSize.xl.column + themeSize.xl.gutter,
-        paddingRight: themeSize.xl.column + themeSize.xl.gutter,
-      }}
-      xxl={{
-        paddingLeft: themeSize.xxl.column + themeSize.xxl.gutter,
-        paddingRight: themeSize.xxl.column + themeSize.xxl.gutter,
-      }}
+      m={{ padding: '70px 77px' }}
+      xl={{ padding: '70px 111px' }}
+      xxl={{ padding: '70px 136px' }}
     >
       <Flex
         xs={{
@@ -65,8 +50,7 @@ export const StayInTouch: FC<StayInTouchProps> = (props) => {
           <Span
             css={{ color: theme.colors.test500 }}
             xs={{ ...theme.text.medium600 }}
-            m={{ ...theme.text.medium700 }}
-            l={{ ...theme.text.medium800 }}
+            l={{ ...theme.text.medium700 }}
           >
             {t('title__stay_in_touch')}
           </Span>
