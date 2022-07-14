@@ -20,7 +20,6 @@ export const RoundCursor: FC<RoundCursorProps> = (props) => {
         height: '100%',
         userSelect: 'none',
         pointerEvents: 'none',
-        willChange: 'transform',
       }}
     >
       {children}
