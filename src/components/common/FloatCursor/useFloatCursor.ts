@@ -1,6 +1,5 @@
-import { useEffect, useRef, useState } from 'react';
+import { RefObject, useEffect, useRef, useState } from 'react';
 
-import useMouse from '@react-hook/mouse-position';
 import { Transition, Variants } from 'framer-motion';
 
 export type FloatCursorStatus = 'hidden' | 'visible' | 'active';
@@ -9,22 +8,46 @@ export interface UseFloatCursor {
   floatCursorProps: {
     variants: Variants;
     cursorVariant: string;
-    spring: Transition;
+    transition: Transition;
   };
+}
+
+function useMouse(ref: RefObject<HTMLDivElement>) {
+  const [mouse, setMouse] = useState({
+    x: 0,
+    y: 0,
+  });
+
+  useEffect(() => {
+    const onMouseMove = (e: MouseEvent) => {
+      setMouse({
+        x: e.clientX,
+        y: e.clientY,
+      });
+    };
+
+    const element = ref.current;
+
+    element?.addEventListener('mousemove', onMouseMove);
+
+    return () => {
+      element?.removeEventListener('mousemove', onMouseMove);
+    };
+  }, [ref]);
+
+  return mouse;
 }
 
 export function useFloatCursor() {
   const lastPosition = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
   const [cursorVariant, setCursorVariant] =
     useState<FloatCursorStatus>('hidden');
-  const ref = useRef(null);
-  const mouse = useMouse(ref, {
-    fps: 60,
-  });
+  const ref = useRef<HTMLDivElement>(null);
+  const mouse = useMouse(ref);
 
   useEffect(() => {
-    if (mouse.clientX && mouse.clientY) {
-      lastPosition.current = { x: mouse.clientX - 36, y: mouse.clientY - 36 };
+    if (mouse.x && mouse.y) {
+      lastPosition.current = { x: mouse.x - 36, y: mouse.y - 36 };
     }
   }, [mouse]);
 
@@ -44,7 +67,7 @@ export function useFloatCursor() {
     },
     active: {
       opacity: 1,
-      scale: mouse.isDown ? 0.6 : 1,
+      scale: 1,
       x: mouseXPosition,
       y: mouseYPosition,
     },
@@ -54,6 +77,11 @@ export function useFloatCursor() {
     floatCursorProps: {
       variants,
       cursorVariant,
+      transition: {
+        type: 'spring',
+        mass: 0.01,
+        stiffness: 600,
+      },
     },
     setStatus: (status: FloatCursorStatus) => {
       setCursorVariant(status);

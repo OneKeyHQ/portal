@@ -1,6 +1,6 @@
 import { FC, ReactNode } from 'react';
 
-import { Variants, motion } from 'framer-motion';
+import { Transition, Variants, motion } from 'framer-motion';
 
 import { RoundCursor } from '../../base';
 
@@ -9,10 +9,11 @@ export interface FloatCursorProps {
   variants: Variants;
   cursorVariant: string;
   cursorImage?: string;
+  transition: Transition;
 }
 
 export const FloatCursor: FC<FloatCursorProps> = (props) => {
-  const { children, variants, cursorVariant, cursorImage } = props;
+  const { children, variants, cursorVariant, cursorImage, transition } = props;
 
   return (
     <motion.div
@@ -30,11 +31,7 @@ export const FloatCursor: FC<FloatCursorProps> = (props) => {
       }}
       variants={variants}
       animate={cursorVariant}
-      transition={{
-        type: 'spring',
-        mass: 0.001,
-        stiffness: 600,
-      }}
+      transition={transition}
     >
       <RoundCursor image={cursorImage} />
 
