@@ -59,7 +59,7 @@ export function useFloatCursor() {
       x: mouseXPosition,
       y: mouseYPosition,
       opacity: 0,
-      scale: 0.5,
+      scale: 0.2,
     },
     visible: {
       opacity: 1,
@@ -82,7 +82,7 @@ export function useFloatCursor() {
       transition: {
         type: 'spring',
         mass: 0.01,
-        stiffness: 500,
+        stiffness: 250,
       },
     },
     setStatus: (status: FloatCursorStatus) => {
