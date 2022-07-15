@@ -24,7 +24,7 @@ export function useFloatCursor() {
 
   useEffect(() => {
     if (mouse.clientX && mouse.clientY) {
-      lastPosition.current = { x: mouse.clientX - 15, y: mouse.clientY - 15 };
+      lastPosition.current = { x: mouse.clientX - 36, y: mouse.clientY - 36 };
     }
   }, [mouse]);
 
@@ -44,9 +44,9 @@ export function useFloatCursor() {
     },
     active: {
       opacity: 1,
-      scale: mouse.isDown ? 2.6 : 3.2,
-      x: mouse.isDown ? mouseXPosition + 8 : mouseXPosition,
-      y: mouse.isDown ? mouseYPosition + 8 : mouseYPosition,
+      scale: mouse.isDown ? 0.6 : 1,
+      x: mouseXPosition,
+      y: mouseYPosition,
     },
   };
 

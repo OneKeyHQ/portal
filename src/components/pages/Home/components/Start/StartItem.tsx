@@ -22,19 +22,23 @@ export const StartItem: FC<StartItemProps> = (props) => {
       xs={{
         flex: 1,
         position: 'relative',
+      }}
+      m={{
         transition: theme.transitions.allEaseOut,
+        willChange: 'opacity',
+        opacity: 0.4,
         ':hover': {
-          opacity: 0.6,
+          opacity: 1,
         },
       }}
     >
       <Link
         css={{
           cursor: 'none',
-          color: theme.background.test500,
+          color: theme.colors.test500,
           ':hover': {
             cursor: 'none',
-            color: theme.background.test500,
+            color: theme.colors.test500,
           },
         }}
         to={path}
@@ -43,7 +47,7 @@ export const StartItem: FC<StartItemProps> = (props) => {
           css={{
             height: 1,
             width: '100%',
-            backgroundColor: theme.background.test500,
+            backgroundColor: theme.colors.test500,
           }}
         />
         <Flex
@@ -65,7 +69,7 @@ export const StartItem: FC<StartItemProps> = (props) => {
             css={{
               flexDirection: 'column',
               gap: 8,
-              color: theme.background.test500,
+              color: theme.colors.test500,
             }}
           >
             <Span xs={{ ...theme.text.medium600 }}>{name}</Span>

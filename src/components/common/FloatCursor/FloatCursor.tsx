@@ -17,8 +17,8 @@ export const FloatCursor: FC<FloatCursorProps> = (props) => {
   return (
     <motion.div
       style={{
-        width: 30,
-        height: 30,
+        width: 72,
+        height: 72,
         originX: 0.5,
         transformOrigin: 'center',
         userSelect: 'none',
@@ -32,7 +32,8 @@ export const FloatCursor: FC<FloatCursorProps> = (props) => {
       animate={cursorVariant}
       transition={{
         type: 'spring',
-        mass: 0.1,
+        mass: 0.001,
+        stiffness: 600,
       }}
     >
       <RoundCursor image={cursorImage} />

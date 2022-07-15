@@ -87,12 +87,18 @@ export const Item: FC<ItemProps> = (props) => {
               backgroundColor: theme.colors.test300,
             }}
           />
-          <Flex css={{ flexDirection: 'column', gap: 8 }}>
+          <Flex
+            css={{
+              flexDirection: 'column',
+              gap: 8,
+              transition: theme.transitions.allEaseOut,
+              color: isHovered ? theme.colors.white : theme.background.test300,
+            }}
+          >
             <Flex
               xs={{
                 alignItems: 'center',
                 ...theme.text.medium500,
-                color: theme.colors.white,
               }}
               m={{ ...theme.text.medium600 }}
             >
@@ -106,10 +112,6 @@ export const Item: FC<ItemProps> = (props) => {
             <Span
               xs={{
                 ...theme.text.normal200,
-                transition: theme.transitions.allEaseOut,
-                color: isHovered
-                  ? theme.colors.white
-                  : theme.background.test300,
               }}
               m={{
                 ...theme.text.normal300,
