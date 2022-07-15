@@ -80,7 +80,7 @@ export function useFloatCursor() {
       transition: {
         type: 'spring',
         mass: 0.01,
-        stiffness: 600,
+        stiffness: 500,
       },
     },
     setStatus: (status: FloatCursorStatus) => {
