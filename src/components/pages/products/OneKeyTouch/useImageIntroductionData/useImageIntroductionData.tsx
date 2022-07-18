@@ -14,8 +14,18 @@ export function useImageIntroductionData() {
       name: splitMultiline(name1),
       description: t('title__touch_it_feel_it_desc'),
       images: {
-        s: <StaticImage src="./images/small/touch-hardware0.jpg" alt={name1} />,
-        m: <StaticImage src="./images/large/touch-hardware0.jpg" alt={name1} />,
+        s: (
+          <StaticImage
+            src="./images/small/touch-information-mobile-01.jpg"
+            alt={name1}
+          />
+        ),
+        m: (
+          <StaticImage
+            src="./images/large/touch-information-tablet-01.jpg"
+            alt={name1}
+          />
+        ),
       },
       frames: [
         ...new Array(70)
@@ -33,8 +43,18 @@ export function useImageIntroductionData() {
       name: name2,
       description: t('title__carry_on_desc'),
       images: {
-        s: <StaticImage src="./images/small/touch-hardware1.jpg" alt={name2} />,
-        m: <StaticImage src="./images/large/touch-hardware1.jpg" alt={name2} />,
+        s: (
+          <StaticImage
+            src="./images/small/touch-information-mobile-02.jpg"
+            alt={name2}
+          />
+        ),
+        m: (
+          <StaticImage
+            src="./images/large/touch-information-tablet-02.jpg"
+            alt={name2}
+          />
+        ),
       },
       frames: [
         ...new Array(60)
@@ -52,8 +72,18 @@ export function useImageIntroductionData() {
       name: splitMultiline(name3),
       description: t('title__one_platform_manage_all_desc'),
       images: {
-        s: <StaticImage src="./images/small/touch-hardware2.jpg" alt={name3} />,
-        m: <StaticImage src="./images/large/touch-hardware2.jpg" alt={name3} />,
+        s: (
+          <StaticImage
+            src="./images/small/touch-information-mobile-03.jpg"
+            alt={name3}
+          />
+        ),
+        m: (
+          <StaticImage
+            src="./images/large/touch-information-tablet-03.jpg"
+            alt={name3}
+          />
+        ),
       },
       frames: [
         ...new Array(60)

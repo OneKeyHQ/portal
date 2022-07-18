@@ -38,6 +38,8 @@ export const ProductCard: FC<ProductCardProps> = (props) => {
                 xs={{
                   width: 'auto',
                   height: 220,
+                  opacity: data.status === 'normal' && isHovered ? 0 : 1,
+                  transition: theme.transitions.allCubicBezier,
                 }}
                 m={{
                   height: 320,

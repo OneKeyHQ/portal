@@ -9,7 +9,7 @@ export function useProductInformationData(): ProductInformationProps {
   const { t } = useTranslation();
 
   return {
-    status: touch.status,
+    status: 'comingSoon',
     shops: [],
     name: touch.name,
     slogan: t('content__crypto_hardware_wallet'),

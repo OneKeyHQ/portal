@@ -75,7 +75,7 @@ export const TextDescriptionSection: FC<TextDescriptionSectionProps> = (
                   css={{ color: theme.colors.test300 }}
                   xs={theme.text.medium500}
                 >
-                  {`0${index}`}
+                  {`0${index + 1}`}
                 </Span>
                 <Divider color={theme.colors.test300} />
                 <H3
