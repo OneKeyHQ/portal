@@ -50,6 +50,7 @@ export const DesktopLayout: FC<DesktopLayoutProps> = (props) => {
               width: 420,
               flexDirection: 'column',
               gap: 300,
+              paddingBottom: 300,
             }}
             xl={{ width: 500 }}
             xxl={{ width: 600 }}
