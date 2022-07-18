@@ -23,7 +23,6 @@ export const ProductShowcaseSectionItem: FC<ProductShowcaseSectionItemProps> = (
       <Flex
         xs={{ flexDirection: 'column', gap: 20 }}
         m={{
-          alignItems: 'center',
           flexDirection: 'row-reverse',
         }}
         l={{ gap: 160 }}

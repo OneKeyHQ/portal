@@ -24,6 +24,8 @@ export { ReactComponent as ChevronUpIcon } from './images/chevron-up.svg';
 export { default as ChevronUpIconInline } from './images/chevron-up.svg';
 export { ReactComponent as ChromeIcon } from './images/chrome.svg';
 export { default as ChromeIconInline } from './images/chrome.svg';
+export { ReactComponent as CircleIcon } from './images/circle.svg';
+export { default as CircleIconInline } from './images/circle.svg';
 export { ReactComponent as CloseIcon } from './images/close.svg';
 export { default as CloseIconInline } from './images/close.svg';
 export { ReactComponent as DeliveryIcon } from './images/delivery.svg';

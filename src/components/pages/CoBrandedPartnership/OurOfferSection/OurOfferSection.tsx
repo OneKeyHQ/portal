@@ -1,8 +1,8 @@
 import { FC, ReactNode } from 'react';
 
 import { Container, Flex, Section } from '../../../base';
-import { FeatureInformationCard } from '../../../common';
 
+import { OurOfferSectionItem } from './OurOfferSectionItem';
 import { OurOfferSectionTitle } from './OurOfferSectionTitle';
 import { useOurOfferSectionData } from './useOurOfferSectionData';
 
@@ -15,16 +15,19 @@ export const OurOfferSection: FC<OurOfferSectionProps> = (props) => {
   const ourOfferSectionData = useOurOfferSectionData();
 
   return (
-    <Section xs={{ paddingTop: 80, paddingBottom: 80 }}>
+    <Section
+      xs={{ paddingTop: 40, paddingBottom: 40 }}
+      m={{ paddingTop: 100, paddingBottom: 100 }}
+    >
       <Container>
         <OurOfferSectionTitle />
 
         <Flex
-          xs={{ gap: 20, paddingTop: 80, flexDirection: 'column' }}
+          xs={{ gap: 24, paddingTop: 60, flexDirection: 'column' }}
           m={{ flexDirection: 'row' }}
         >
           {ourOfferSectionData.cards.map((card) => (
-            <FeatureInformationCard key={card.title} {...card} />
+            <OurOfferSectionItem key={card.title} {...card} />
           ))}
         </Flex>
       </Container>

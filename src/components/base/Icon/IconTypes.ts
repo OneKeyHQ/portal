@@ -12,6 +12,7 @@ export type IconTypes =
   | 'ChevronRightIcon'
   | 'ChevronUpIcon'
   | 'ChromeIcon'
+  | 'CircleIcon'
   | 'CloseIcon'
   | 'DeliveryIcon'
   | 'DesktopIcon'
