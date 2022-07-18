@@ -40,6 +40,7 @@ export const Item: FC<ItemProps> = (props) => {
         <Flex
           {...hoverProps}
           css={{
+            cursor: status === 'coming-soon' ? 'not-allowed' : 'none',
             opacity: status === 'coming-soon' ? 0.6 : 1,
             flexDirection: 'column',
             gap: 24,
