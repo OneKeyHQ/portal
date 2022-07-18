@@ -47,19 +47,31 @@ export const Item: FC<ItemProps> = (props) => {
         >
           <Box
             xs={{
+              position: 'relative',
               margin: '0 auto',
               width: '100%',
               height: 384,
               maxWidth: 310,
-              backgroundImage: `url(${image})`,
-              backgroundSize: 'auto 100%',
-              backgroundRepeat: 'no-repeat',
-              backgroundPosition: 'center',
             }}
           >
+            <Box
+              xs={{
+                position: 'relative',
+                width: '100%',
+                height: '100%',
+                backgroundImage: `url(${image})`,
+                backgroundSize: 'auto 100%',
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center',
+                opacity: showProductImage ? 0 : 1,
+                transition: theme.transitions.allEaseOut,
+              }}
+            />
             {hoverImage && (
               <Box
                 xs={{
+                  position: 'absolute',
+                  top: 0,
                   width: '100%',
                   height: '100%',
                   backgroundImage: `url(${hoverImage})`,
