@@ -25,7 +25,7 @@ export const Hero: FC<HeroProps> = (props) => {
       <HeroMobileBackground>
         <StaticImage
           style={{ height: '100%', width: '100%' }}
-          src="./images/mobileHero.jpg"
+          src="./images/shop-mobile-hero.jpg"
           alt="hero"
         />
       </HeroMobileBackground>
@@ -33,7 +33,7 @@ export const Hero: FC<HeroProps> = (props) => {
       <HeroTabletBackground>
         <StaticImage
           style={{ height: '100%', width: '100%' }}
-          src="./images/tabletHero.jpg"
+          src="./images/shop-tablet-hero.jpg"
           alt="hero"
         />
       </HeroTabletBackground>

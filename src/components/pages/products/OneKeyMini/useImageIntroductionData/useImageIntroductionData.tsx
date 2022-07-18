@@ -15,8 +15,18 @@ export function useImageIntroductionData() {
       description: t('title__mini_sized_desc'),
       textColor: 'black',
       images: {
-        s: <StaticImage src="./images/s/hardware0.jpg" alt={name1} />,
-        m: <StaticImage src="./images/m/hardware0.jpg" alt={name1} />,
+        s: (
+          <StaticImage
+            src="./images/s/mini-information-mobile-01.jpg"
+            alt={name1}
+          />
+        ),
+        m: (
+          <StaticImage
+            src="./images/m/mini-information-tablet-01.jpg"
+            alt={name1}
+          />
+        ),
       },
       frames: [
         ...new Array(60)
@@ -35,8 +45,18 @@ export function useImageIntroductionData() {
       description: t('title__security_built_right_in_desc'),
       textColor: 'black',
       images: {
-        s: <StaticImage src="./images/s/hardware1.jpg" alt={name2} />,
-        m: <StaticImage src="./images/m/hardware1.jpg" alt={name2} />,
+        s: (
+          <StaticImage
+            src="./images/s/mini-information-mobile-02.jpg"
+            alt={name2}
+          />
+        ),
+        m: (
+          <StaticImage
+            src="./images/m/mini-information-tablet-02.jpg"
+            alt={name2}
+          />
+        ),
       },
       frames: [
         ...new Array(60)
@@ -54,8 +74,18 @@ export function useImageIntroductionData() {
       name: splitMultiline(name3),
       description: t('title__onekey_platform_desc'),
       images: {
-        s: <StaticImage src="./images/s/hardware2.jpg" alt={name3} />,
-        m: <StaticImage src="./images/m/hardware2.jpg" alt={name3} />,
+        s: (
+          <StaticImage
+            src="./images/s/mini-information-mobile-03.jpg"
+            alt={name3}
+          />
+        ),
+        m: (
+          <StaticImage
+            src="./images/m/mini-information-tablet-03.jpg"
+            alt={name3}
+          />
+        ),
       },
       textColor: 'black',
       frames: [

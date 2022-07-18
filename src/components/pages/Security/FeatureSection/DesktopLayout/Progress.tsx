@@ -28,8 +28,6 @@ export const Progress: FC<ProgressProps> = (props) => {
           background: theme.colors.white,
           top: `calc(50% - ${320}px)`,
         }}
-        xl={{ height: 280 }}
-        xxl={{ height: 250 }}
       />
       {children}
     </Box>

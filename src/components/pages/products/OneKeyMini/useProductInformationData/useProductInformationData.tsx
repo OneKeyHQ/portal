@@ -26,10 +26,6 @@ export function useProductInformationData(): ProductInformationProps {
     shopProductId: '41169098178722',
     gallery: [
       {
-        key: 'mini-gallery-00',
-        node: <StaticImage alt="0" src="./images/mini-gallery-00.png" />,
-      },
-      {
         key: 'mini-gallery-01',
         node: <StaticImage alt="1" src="./images/mini-gallery-01.png" />,
       },
