@@ -38,7 +38,7 @@ export function useProductCompareData(): {
   return {
     items: {
       mini: {
-        image: <StaticImage src="./images/mini.png" alt="mini" />,
+        image: <StaticImage src="./images/shop-compare-mini.png" alt="mini" />,
         name: product.mini.name,
         price: product.mini.formattedPrice,
         productDetailUrl: product.mini.path,
@@ -75,7 +75,9 @@ export function useProductCompareData(): {
         ],
       },
       touch: {
-        image: <StaticImage src="./images/touch.png" alt="touch" />,
+        image: (
+          <StaticImage src="./images/shop-compare-touch.png" alt="touch" />
+        ),
         name: product.touch.name,
         price: product.touch.formattedPrice,
         productDetailUrl: product.touch.path,

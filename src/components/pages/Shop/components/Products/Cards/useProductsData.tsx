@@ -22,7 +22,7 @@ export function useProductsData() {
     image: (
       <StaticImage
         style={{ width: '100%', height: 'auto' }}
-        src="./images/mini.png"
+        src="./images/shop-product-card-mini.png"
         alt="mini"
       />
     ),
@@ -33,14 +33,14 @@ export function useProductsData() {
     image: (
       <StaticImage
         style={{ width: '100%', height: 'auto' }}
-        src="./images/touch.png"
+        src="./images/shop-product-card-touch.png"
         alt="touch"
       />
     ),
     bigImage: (
       <StaticImage
         style={{ width: '100%', height: 'auto' }}
-        src="./images/touchBig.png"
+        src="./images/shop-product-card-touchBig.png"
         alt="touch"
       />
     ),
@@ -51,7 +51,7 @@ export function useProductsData() {
     image: (
       <StaticImage
         style={{ width: '100%', height: 'auto' }}
-        src="./images/lite.png"
+        src="./images/shop-product-card-lite.png"
         alt="lite"
       />
     ),
