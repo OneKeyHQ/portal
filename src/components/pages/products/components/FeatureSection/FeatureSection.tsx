@@ -3,6 +3,7 @@ import { FC, ReactNode } from 'react';
 import { useTheme } from '@emotion/react';
 
 import { Box, Container, Flex, Section, Span } from '../../../../base';
+import { SectionTitle } from '../../../../common';
 
 import { FeatureItem, FeatureSectionDataItem } from './FeatureItem';
 
@@ -22,17 +23,8 @@ export const FeatureSection: FC<FeatureSectionProps> = (props) => {
       <Container>
         <Box xs={{ paddingTop: 120 }}>
           <Flex xs={{ textAlign: 'center', gap: 20, flexDirection: 'column' }}>
-            <Span
-              xs={{
-                ...theme.text.medium700,
-                color: theme.colors.test500,
-              }}
-              s={theme.text.medium800}
-              m={theme.text.medium900}
-              xxl={theme.text.medium1000}
-            >
-              {title}
-            </Span>
+            <SectionTitle>{title}</SectionTitle>
+
             <Span
               css={{ color: theme.colors.test400 }}
               xs={theme.text.normal200}
