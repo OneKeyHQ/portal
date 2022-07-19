@@ -33,7 +33,11 @@ export const FeatureSection: FC<FeatureSectionProps> = (props) => {
             >
               {title}
             </Span>
-            <Span xs={theme.text.normal200} l={theme.text.normal500}>
+            <Span
+              css={{ color: theme.colors.test400 }}
+              xs={theme.text.normal200}
+              l={theme.text.normal500}
+            >
               {description}
             </Span>
           </Flex>

@@ -147,7 +147,11 @@ export const CompareItem: FC<CompareItemProps> = (props) => {
               </Span>
             )}
 
-            <Span xs={theme.text.normal200} s={theme.text.normal300}>
+            <Span
+              css={{ color: theme.colors.test400 }}
+              xs={theme.text.normal200}
+              s={theme.text.normal300}
+            >
               {item.value}
             </Span>
           </Flex>

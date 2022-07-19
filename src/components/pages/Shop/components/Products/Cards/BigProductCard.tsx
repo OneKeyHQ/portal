@@ -43,7 +43,12 @@ export const BigProductCard: FC<BigProductCardProps> = (props) => {
                 <Span xs={theme.text.medium700} l={theme.text.medium900}>
                   {name}
                 </Span>
-                <Span xs={theme.text.normal300}>{description}</Span>
+                <Span
+                  css={{ color: theme.colors.test400 }}
+                  xs={theme.text.normal300}
+                >
+                  {description}
+                </Span>
               </Flex>
 
               <Span xs={theme.text.normal900}>{formattedPrice}</Span>

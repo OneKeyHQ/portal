@@ -81,7 +81,9 @@ export const FeatureInformationCard: React.FC<FeatureInformationCardProps> = (
 
               return (
                 <Fragment key={description}>
-                  <Span>{description}</Span>
+                  <Span css={{ color: theme.colors.test400 }}>
+                    {description}
+                  </Span>
                   {!isLast && <br />}
                 </Fragment>
               );

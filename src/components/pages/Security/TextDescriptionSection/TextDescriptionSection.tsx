@@ -54,7 +54,11 @@ export const TextDescriptionSection: FC<TextDescriptionSectionProps> = (
               {textDescriptionSectionData.title}
             </H2>
             <Box xs={{ paddingTop: 8 }}>
-              <Span xs={theme.text.normal200} xl={theme.text.normal500}>
+              <Span
+                css={{ color: theme.colors.test400 }}
+                xs={theme.text.normal200}
+                xl={theme.text.normal500}
+              >
                 {textDescriptionSectionData.description}
               </Span>
             </Box>
@@ -88,7 +92,12 @@ export const TextDescriptionSection: FC<TextDescriptionSectionProps> = (
                 >
                   {item.name}
                 </H3>
-                <P xs={theme.text.normal300}>{item.description}</P>
+                <P
+                  css={{ color: theme.colors.test400 }}
+                  xs={theme.text.normal300}
+                >
+                  {item.description}
+                </P>
               </Flex>
             ))}
           </Flex>

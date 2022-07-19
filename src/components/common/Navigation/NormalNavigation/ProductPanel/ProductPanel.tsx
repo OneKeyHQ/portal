@@ -55,7 +55,7 @@ export const ProductPanel: FC<ProductPanelProps> = (props) => {
 
   useEffect(() => {
     if (isHovered || isActive) {
-      setCursorVariant('hidden');
+      setCursorVariant('visible');
     } else {
       setCursorVariant('hidden');
     }

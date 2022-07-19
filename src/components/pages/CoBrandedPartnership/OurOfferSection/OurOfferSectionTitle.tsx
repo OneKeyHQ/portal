@@ -34,7 +34,7 @@ export const OurOfferSectionTitle: FC<OurOfferSectionTitleProps> = (props) => {
       </H2>
 
       <Span
-        css={{ maxWidth: 600 }}
+        css={{ maxWidth: 600, color: theme.colors.test400 }}
         xs={theme.text.normal300}
         s={theme.text.normal400}
         m={theme.text.normal500}
