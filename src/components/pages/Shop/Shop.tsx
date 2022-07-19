@@ -33,9 +33,9 @@ export const Shop: React.FC = () => (
         <ProductCompare />
 
         <TwoMediaCards />
-
-        <StayInTouchWidthContainerAndPadding />
       </Container>
+
+      <StayInTouchWidthContainerAndPadding />
     </Main>
 
     <PageFooter isShowEmailSubscribe={false} isShowMediaLinks={false} />

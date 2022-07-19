@@ -13,8 +13,16 @@ export const TwoMediaCards: FC<TwoMediaCardsProps> = (props) => {
 
   return (
     <Flex
-      xs={{ flexDirection: 'column', gap: 24 }}
-      m={{ flexDirection: 'row' }}
+      css={{
+        '@media (min-width: 768px)': {
+          flexDirection: 'row',
+          gap: 20,
+          '& > *': {
+            flex: 1,
+          },
+        },
+      }}
+      xs={{ flexDirection: 'column', gap: 40 }}
     >
       <SetUpYourOnekeyHardwareWalletMediaCard />
 
