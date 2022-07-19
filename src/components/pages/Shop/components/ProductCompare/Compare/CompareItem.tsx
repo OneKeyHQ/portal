@@ -52,6 +52,12 @@ export const CompareItem: FC<CompareItemProps> = (props) => {
       }}
     >
       <Box
+        css={{
+          '@media (min-width: 768px)': {
+            width: 260,
+            height: 260,
+          },
+        }}
         xs={{
           width: 163,
           height: 163,
