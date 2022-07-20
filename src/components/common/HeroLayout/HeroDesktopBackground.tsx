@@ -1,18 +1,19 @@
 import { FC, ReactNode } from 'react';
 
-import { isBrowser } from '../../../utils/isBrowser';
+import { isBrowser } from '../../../utils';
 import { OnlyDisplay } from '../../base/OnlyDisplay';
 
 export interface HeroDesktopBackgroundProps {
   children?: ReactNode;
+  checkBrowser?: boolean;
 }
 
 export const HeroDesktopBackground: FC<HeroDesktopBackgroundProps> = (
   props,
 ) => {
-  const { children } = props;
+  const { children, checkBrowser = true } = props;
 
-  if (!isBrowser()) {
+  if (checkBrowser && !isBrowser()) {
     return null;
   }
 
