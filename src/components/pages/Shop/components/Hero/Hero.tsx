@@ -2,7 +2,8 @@ import { FC, ReactNode } from 'react';
 
 import { StaticImage } from 'gatsby-plugin-image';
 
-import { Box, I18n, VideoPlayer } from '../../../../base';
+import { isBrowser } from '../../../../../utils';
+import { Box, I18n, Img, VideoPlayer } from '../../../../base';
 import {
   HeroContainer,
   HeroContent,
@@ -40,34 +41,36 @@ export const Hero: FC<HeroProps> = (props) => {
         />
       </HeroTabletBackground>
 
-      <HeroDesktopBackground>
+      <HeroDesktopBackground checkBrowser={false}>
         <Box
           xs={{ width: '50%', height: '100%', right: 0, position: 'absolute' }}
         >
-          <StaticImage
+          <Img
             style={{
               height: '100%',
               width: '100%',
               position: 'absolute',
               zIndex: 1,
             }}
-            src="./images/shop-hero-animation-poster.jpg"
+            src={videoPoster}
             alt="video poster"
           />
 
-          <VideoPlayer
-            style={{
-              display: 'block',
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              position: 'absolute',
-              zIndex: 2,
-            }}
-            poster={videoPoster}
-            loop
-            src="/shop/hero/shop-hero-animation-compressed.mp4"
-          />
+          {isBrowser() && (
+            <VideoPlayer
+              style={{
+                display: 'block',
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                position: 'absolute',
+                zIndex: 2,
+              }}
+              poster={videoPoster}
+              loop
+              src="/shop/hero/shop-hero-animation-compressed.mp4"
+            />
+          )}
         </Box>
       </HeroDesktopBackground>
 
