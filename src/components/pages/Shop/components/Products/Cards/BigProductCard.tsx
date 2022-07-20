@@ -40,7 +40,11 @@ export const BigProductCard: FC<BigProductCardProps> = (props) => {
               <Divider />
 
               <Flex xs={{ gap: 8, flexDirection: 'column' }}>
-                <Span xs={theme.text.medium700} l={theme.text.medium900}>
+                <Span
+                  xs={theme.text.medium700}
+                  l={theme.text.medium900}
+                  xl={theme.text.medium1000}
+                >
                   {name}
                 </Span>
                 <Span

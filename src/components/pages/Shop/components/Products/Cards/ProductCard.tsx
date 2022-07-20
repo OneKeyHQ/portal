@@ -59,7 +59,9 @@ export const ProductCard: FC<ProductCardProps> = (props) => {
             <Divider />
 
             <Flex xs={{ gap: 8, flexDirection: 'column' }}>
-              <Span xs={theme.text.medium700}>{name}</Span>
+              <Span xs={theme.text.medium700} l={theme.text.medium800}>
+                {name}
+              </Span>
               <Span
                 css={{ color: theme.colors.test400 }}
                 xs={theme.text.normal400}

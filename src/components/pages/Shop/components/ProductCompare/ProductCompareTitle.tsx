@@ -2,7 +2,8 @@ import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Box, H2, I18n, Span } from '../../../../base';
+import { Box, I18n, Span } from '../../../../base';
+import { SectionTitle } from '../../../../common';
 
 export interface ProductCompareTitleProps {
   children?: ReactNode;
@@ -26,21 +27,12 @@ export const ProductCompareTitle: FC<ProductCompareTitleProps> = (props) => {
         paddingTop: 120,
       }}
     >
-      <H2
-        xs={{
-          ...theme.text.medium700,
-          textAlign: 'center',
-          color: theme.colors.test500,
-        }}
-        m={theme.text.medium800}
-        l={theme.text.medium900}
-        xl={theme.text.medium1000}
-      >
+      <SectionTitle>
         <I18n
           name="title__compare_onekey_crypto_hardware_wallets"
           alwaysMultiLine
         />
-      </H2>
+      </SectionTitle>
 
       <Span
         xs={{

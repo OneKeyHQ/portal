@@ -1,7 +1,5 @@
 import { FC, ReactNode } from 'react';
 
-import { useTheme } from '@emotion/react';
-
 import { Box, Container, I18n, OnlyDisplay, Section } from '../../../../base';
 import { SectionTitle } from '../../../../common';
 
@@ -16,7 +14,6 @@ export interface RecommendSectionProps {
 
 export const RecommendSection: FC<RecommendSectionProps> = (props) => {
   const { children, include } = props;
-  const theme = useTheme();
   const recommendSectionData = useRecommendSectionData();
 
   const data = recommendSectionData.items.filter((item) =>
