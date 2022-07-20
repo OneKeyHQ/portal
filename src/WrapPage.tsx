@@ -16,24 +16,6 @@ const WrapPage: FC<WrapPageProps> = (props) => {
   const { children, pageContext, path } = props;
 
   useEffect(() => {
-    // const isI18nPage = path.includes(`/en/`) || path.includes(`/zh/`);
-
-    // if (isBrowser() && !isI18nPage) {
-    //   const { location } = window;
-    //   const { search } = location;
-    //   const detected = getPageLanguage();
-    //   const {
-    //     originalPath,
-    //   }: {
-    //     originalPath: string;
-    //   } = intl;
-    //   const queryParams = search || '';
-    //   const newUrl = `${location.origin}/${detected}${originalPath}${queryParams}`;
-    //   localStorage.setItem('language', detected);
-    //   location.replace(newUrl);
-    //   return;
-    // }
-
     import('browser-update').then((bu) => {
       bu.default({
         test: false,
