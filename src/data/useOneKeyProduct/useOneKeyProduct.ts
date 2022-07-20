@@ -38,7 +38,7 @@ export function useOneKeyProduct(): OneKeyProducts {
           name: tShopify,
         },
         youzan: {
-          url: 'https://shop.onekey.so/',
+          url: 'https://j.youzan.com/dZTtS2',
           name: tYouzan,
         },
       },
