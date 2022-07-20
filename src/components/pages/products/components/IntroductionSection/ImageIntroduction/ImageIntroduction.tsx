@@ -9,6 +9,7 @@ export interface ImageIntroductionProps {
     name: string | string[];
     description: string;
     video?: string;
+    videoPoster?: string;
     images: {
       s?: ReactNode;
       m?: ReactNode;
@@ -38,6 +39,7 @@ export const ImageIntroduction: FC<ImageIntroductionProps> = (props) => {
 
                 <OnlyDisplay s m l xl xxl>
                   <VideoPlayer
+                    poster={item.videoPoster}
                     style={{
                       width: '100%',
                     }}
