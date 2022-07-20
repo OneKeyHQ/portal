@@ -1,19 +1,44 @@
-import { FC, useEffect } from 'react';
+import { FC, useEffect, useRef } from 'react';
 
+import { withPrefix } from 'gatsby';
+import {
+  LANGUAGE_KEY,
+  PageContext,
+} from 'gatsby-plugin-react-i18next/dist/types';
 import { Helmet } from 'react-helmet';
+
+import { isBrowser } from './utils';
 
 interface WrapPageProps {
   children: React.ReactNode;
-  path: string;
-  pageContext: {
-    language: string;
-    intl: any;
-    isI18nPage: boolean;
-  };
+  pageContext: PageContext;
+  location: Location;
 }
 
+const removePathPrefix = (pathname: string, stripTrailingSlash: boolean) => {
+  const pathPrefix = withPrefix('/');
+  let result = pathname;
+
+  console.log('pathPrefix', pathPrefix);
+
+  if (pathname.startsWith(pathPrefix)) {
+    result = pathname.replace(pathPrefix, '/');
+  }
+
+  if (stripTrailingSlash && result.endsWith('/')) {
+    return result.slice(0, -1);
+  }
+
+  return result;
+};
+
+const redirect = true;
+
 const WrapPage: FC<WrapPageProps> = (props) => {
-  const { children, pageContext, path } = props;
+  const { children, pageContext, location } = props;
+  const { defaultLanguage, routed } = pageContext.i18n;
+  const isRedirect = redirect && !routed;
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     import('browser-update').then((bu) => {
@@ -36,10 +61,39 @@ const WrapPage: FC<WrapPageProps> = (props) => {
         },
       });
     });
-  }, [path]);
+  }, []);
+
+  useEffect(() => {
+    if (isRedirect && isBrowser() && ref.current) {
+      const { search } = location;
+
+      const detected = window.localStorage.getItem(LANGUAGE_KEY) || 'en';
+
+      window.localStorage.setItem(LANGUAGE_KEY, detected);
+
+      if (detected !== defaultLanguage) {
+        const queryParams = search || '';
+        const stripTrailingSlash = false;
+
+        const newUrl = withPrefix(
+          `/${detected}${removePathPrefix(
+            location.pathname,
+            stripTrailingSlash,
+          )}${queryParams}${location.hash}`,
+        );
+
+        // navigate(newUrl);
+        // @ts-ignore
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+        window.___replace(newUrl);
+      }
+    }
+
+    return () => {};
+  }, [defaultLanguage, isRedirect, location]);
 
   return (
-    <div>
+    <div ref={ref}>
       <Helmet
         htmlAttributes={{ lang: pageContext.language }}
         titleTemplate="OneKey Wallet | %s"
