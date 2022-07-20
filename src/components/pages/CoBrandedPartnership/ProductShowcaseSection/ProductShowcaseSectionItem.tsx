@@ -46,6 +46,7 @@ export const ProductShowcaseSectionItem: FC<ProductShowcaseSectionItemProps> = (
                 color: theme.colors.test500,
               }}
               l={theme.text.medium800}
+              xl={theme.text.medium900}
             >
               {name}
             </Span>
