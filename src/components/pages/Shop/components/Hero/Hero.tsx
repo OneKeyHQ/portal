@@ -42,12 +42,25 @@ export const Hero: FC<HeroProps> = (props) => {
         <Box
           xs={{ width: '50%', height: '100%', right: 0, position: 'absolute' }}
         >
+          <StaticImage
+            style={{
+              height: '100%',
+              width: '100%',
+              position: 'absolute',
+              zIndex: 1,
+            }}
+            src="./images/shop-hero-animation-poster.jpg"
+            alt="hero"
+          />
+
           <VideoPlayer
             style={{
               display: 'block',
               width: '100%',
               height: '100%',
               objectFit: 'cover',
+              position: 'absolute',
+              zIndex: 2,
             }}
             loop
             src="/shop/hero/shop-hero-animation-compressed.mp4"
