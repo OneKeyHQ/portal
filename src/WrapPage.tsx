@@ -30,12 +30,9 @@ const removePathPrefix = (pathname: string, stripTrailingSlash: boolean) => {
   return result;
 };
 
-const redirect = true;
-
 const WrapPage: FC<WrapPageProps> = (props) => {
   const { children, pageContext, location } = props;
   const { defaultLanguage, routed, language } = pageContext.i18n;
-  const isRedirect = redirect && !routed;
 
   useEffect(() => {
     import('browser-update').then((bu) => {
@@ -61,17 +58,15 @@ const WrapPage: FC<WrapPageProps> = (props) => {
   }, []);
 
   useEffect(() => {
-    if (isRedirect && isBrowser()) {
+    if (isBrowser()) {
       const { search } = location;
 
       const detected =
-        window.localStorage.getItem(LANGUAGE_KEY) ||
-        language ||
-        defaultLanguage;
+        window.localStorage.getItem(LANGUAGE_KEY) || defaultLanguage;
 
       window.localStorage.setItem(LANGUAGE_KEY, detected);
 
-      if (detected !== defaultLanguage) {
+      if (detected !== defaultLanguage && !routed) {
         const queryParams = search || '';
         const stripTrailingSlash = false;
 
@@ -82,12 +77,14 @@ const WrapPage: FC<WrapPageProps> = (props) => {
           )}${queryParams}${location.hash}`,
         );
 
-        navigate(newUrl);
+        setTimeout(() => {
+          navigate(newUrl);
+        }, 200);
       }
     }
 
     return () => {};
-  }, [defaultLanguage, isRedirect, location]);
+  }, [defaultLanguage, language, location, routed]);
 
   return (
     <div>
