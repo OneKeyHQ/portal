@@ -1,4 +1,4 @@
-import { FC, useEffect, useRef } from 'react';
+import { FC, useEffect } from 'react';
 
 import { navigate, withPrefix } from 'gatsby';
 import {
@@ -36,7 +36,6 @@ const WrapPage: FC<WrapPageProps> = (props) => {
   const { children, pageContext, location } = props;
   const { defaultLanguage, routed } = pageContext.i18n;
   const isRedirect = redirect && !routed;
-  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     import('browser-update').then((bu) => {
@@ -62,7 +61,7 @@ const WrapPage: FC<WrapPageProps> = (props) => {
   }, []);
 
   useEffect(() => {
-    if (isRedirect && isBrowser() && ref.current) {
+    if (isRedirect && isBrowser()) {
       const { search } = location;
 
       const detected =
@@ -89,7 +88,7 @@ const WrapPage: FC<WrapPageProps> = (props) => {
   }, [defaultLanguage, isRedirect, location]);
 
   return (
-    <div ref={ref}>
+    <div>
       <Helmet
         htmlAttributes={{ lang: pageContext.language }}
         titleTemplate="OneKey Wallet | %s"
