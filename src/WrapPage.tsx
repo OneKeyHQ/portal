@@ -82,10 +82,12 @@ const WrapPage: FC<WrapPageProps> = (props) => {
           )}${queryParams}${location.hash}`,
         );
 
-        // navigate(newUrl);
-        // @ts-ignore
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-        window.___replace(newUrl);
+        setTimeout(() => {
+          // navigate(newUrl);
+          // @ts-ignore
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+          window.___replace(newUrl);
+        }, 100);
       }
     }
 
