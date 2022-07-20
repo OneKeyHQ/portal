@@ -64,7 +64,11 @@ const WrapPage: FC<WrapPageProps> = (props) => {
       const detected =
         window.localStorage.getItem(LANGUAGE_KEY) || defaultLanguage;
 
-      window.localStorage.setItem(LANGUAGE_KEY, detected);
+      if (routed) {
+        window.localStorage.setItem(LANGUAGE_KEY, language);
+      } else {
+        window.localStorage.setItem(LANGUAGE_KEY, detected);
+      }
 
       if (detected !== defaultLanguage && !routed) {
         const queryParams = search || '';
@@ -77,6 +81,7 @@ const WrapPage: FC<WrapPageProps> = (props) => {
           )}${queryParams}${location.hash}`,
         );
 
+        // no way
         setTimeout(() => {
           navigate(newUrl);
         }, 200);
