@@ -66,6 +66,7 @@ export const Hero: FC<HeroProps> = (props) => {
                 position: 'absolute',
                 zIndex: 2,
               }}
+              poster={videoPoster}
               loop
               src="/shop/hero/shop-hero-animation-compressed.mp4"
             />
