@@ -19,8 +19,6 @@ const removePathPrefix = (pathname: string, stripTrailingSlash: boolean) => {
   const pathPrefix = withPrefix('/');
   let result = pathname;
 
-  console.log('pathPrefix', pathPrefix);
-
   if (pathname.startsWith(pathPrefix)) {
     result = pathname.replace(pathPrefix, '/');
   }
@@ -82,13 +80,6 @@ const WrapPage: FC<WrapPageProps> = (props) => {
             stripTrailingSlash,
           )}${queryParams}${location.hash}`,
         );
-
-        // setTimeout(() => {
-        //   // navigate(newUrl);
-        //   // @ts-ignore
-        //   // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-        //   window.___replace(newUrl);
-        // }, 100);
 
         navigate(newUrl);
       }
