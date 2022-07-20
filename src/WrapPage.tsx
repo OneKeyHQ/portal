@@ -34,7 +34,7 @@ const redirect = true;
 
 const WrapPage: FC<WrapPageProps> = (props) => {
   const { children, pageContext, location } = props;
-  const { defaultLanguage, routed } = pageContext.i18n;
+  const { defaultLanguage, routed, language } = pageContext.i18n;
   const isRedirect = redirect && !routed;
 
   useEffect(() => {
@@ -65,7 +65,9 @@ const WrapPage: FC<WrapPageProps> = (props) => {
       const { search } = location;
 
       const detected =
-        window.localStorage.getItem(LANGUAGE_KEY) || defaultLanguage;
+        window.localStorage.getItem(LANGUAGE_KEY) ||
+        language ||
+        defaultLanguage;
 
       window.localStorage.setItem(LANGUAGE_KEY, detected);
 
