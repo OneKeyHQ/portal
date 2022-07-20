@@ -70,6 +70,7 @@ export const FeatureInformationCard: React.FC<FeatureInformationCardProps> = (
           }}
           l={{ ...theme.text.medium800 }}
           xl={{ ...theme.text.medium900 }}
+          xxl={{ ...theme.text.medium1000 }}
         >
           {title}
         </Span>
