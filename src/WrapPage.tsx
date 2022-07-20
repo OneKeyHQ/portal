@@ -61,15 +61,14 @@ const WrapPage: FC<WrapPageProps> = (props) => {
     if (isBrowser()) {
       const { search } = location;
 
-      let detected = '';
+      let detected =
+        window.localStorage.getItem(LANGUAGE_KEY) || defaultLanguage;
 
       if (routed) {
         detected = language;
-        window.localStorage.setItem(LANGUAGE_KEY, language);
-      } else {
-        detected = window.localStorage.getItem(LANGUAGE_KEY) || defaultLanguage;
-        window.localStorage.setItem(LANGUAGE_KEY, detected);
       }
+
+      window.localStorage.setItem(LANGUAGE_KEY, detected);
 
       if (detected !== defaultLanguage && !routed) {
         const queryParams = search || '';
