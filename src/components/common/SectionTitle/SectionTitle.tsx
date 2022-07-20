@@ -6,17 +6,20 @@ import { Span } from '../../base';
 
 export interface SectionTitleProps {
   children?: ReactNode;
+  color?: string;
+  textAlign?: 'left' | 'center' | 'right';
 }
 
 export const SectionTitle: FC<SectionTitleProps> = (props) => {
-  const { children } = props;
+  const { children, color, textAlign = 'center' } = props;
   const theme = useTheme();
 
   return (
     <Span
       xs={{
         ...theme.text.medium700,
-        color: theme.colors.test500,
+        textAlign,
+        color: color || theme.colors.test500,
       }}
       m={theme.text.medium800}
       l={theme.text.medium900}
