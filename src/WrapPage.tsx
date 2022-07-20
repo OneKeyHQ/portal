@@ -1,6 +1,6 @@
 import { FC, useEffect, useRef } from 'react';
 
-import { withPrefix } from 'gatsby';
+import { navigate, withPrefix } from 'gatsby';
 import {
   LANGUAGE_KEY,
   PageContext,
@@ -67,7 +67,8 @@ const WrapPage: FC<WrapPageProps> = (props) => {
     if (isRedirect && isBrowser() && ref.current) {
       const { search } = location;
 
-      const detected = window.localStorage.getItem(LANGUAGE_KEY) || 'en';
+      const detected =
+        window.localStorage.getItem(LANGUAGE_KEY) || defaultLanguage;
 
       window.localStorage.setItem(LANGUAGE_KEY, detected);
 
@@ -82,12 +83,14 @@ const WrapPage: FC<WrapPageProps> = (props) => {
           )}${queryParams}${location.hash}`,
         );
 
-        setTimeout(() => {
-          // navigate(newUrl);
-          // @ts-ignore
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-          window.___replace(newUrl);
-        }, 100);
+        // setTimeout(() => {
+        //   // navigate(newUrl);
+        //   // @ts-ignore
+        //   // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+        //   window.___replace(newUrl);
+        // }, 100);
+
+        navigate(newUrl);
       }
     }
 
