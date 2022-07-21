@@ -4,6 +4,7 @@ import { createPortal } from 'react-dom';
 
 import { isBrowser } from '../../../../../utils';
 import { Box, Flex, OnlyDisplay } from '../../../../base';
+import { useIntroductionSectionCenterPosition } from '../../atoms';
 
 import { AddToCartButton } from './components/AddToCartButton';
 import { ProductName } from './components/ProductName';
@@ -15,6 +16,7 @@ export interface MobileCartProps {
 
 export const MobileCart: FC<MobileCartProps> = (props) => {
   const { children } = props;
+  const [centerPosition] = useIntroductionSectionCenterPosition();
 
   if (!isBrowser()) {
     return null;
@@ -22,7 +24,7 @@ export const MobileCart: FC<MobileCartProps> = (props) => {
 
   const { body } = document;
 
-  if (body === null) {
+  if (body === null || centerPosition === false) {
     return null;
   }
 
