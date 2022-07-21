@@ -10,7 +10,7 @@ export const AddToCartButton: FC<AddToCartButtonProps> = (props) => {
   const { children } = props;
 
   return (
-    <Button variant="filled" size="small">
+    <Button fillHeight variant="filled" size="small">
       <I18n name="action__add_to_cart" />
       {children}
     </Button>

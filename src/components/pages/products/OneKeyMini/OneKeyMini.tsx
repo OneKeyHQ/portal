@@ -8,7 +8,7 @@ import {
   PageFooter,
   StayInTouchWidthContainerAndPadding,
 } from '../../../common';
-import { MobileCart } from '../components/Cart';
+import { MobileCart, NavigationCart } from '../components/Cart';
 import { FeatureSection } from '../components/FeatureSection';
 import { FullscreenScrollAnimation } from '../components/FullscreenScrollAnimation';
 import { IntroductionSection } from '../components/IntroductionSection';
@@ -36,7 +36,9 @@ export const OneKeyMini: FC<OneKeyMiniProps> = (props) => {
         <title>{oneKeyMiniData.title}</title>
       </Helmet>
 
-      <Navigation />
+      <Navigation>
+        <NavigationCart />
+      </Navigation>
 
       <Main>
         <ProductInformation {...oneKeyMiniData.productInformation} />
