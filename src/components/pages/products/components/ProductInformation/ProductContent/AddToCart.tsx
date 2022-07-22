@@ -16,12 +16,17 @@ export interface AddToCartProps {
 export const AddToCart: FC<AddToCartProps> = (props) => {
   const { children, shopProductId } = props;
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { buyButtonProps, setAmount, amount, items } = useBuy({
+  const {
+    buyButtonProps,
+    setCurrentProductAmount,
+    currentProductAmount,
+    items,
+  } = useBuy({
     shopProductId,
   });
 
   const selectAmount = (menuProductAmount: number) => {
-    setAmount(menuProductAmount);
+    setCurrentProductAmount(menuProductAmount);
     setIsMenuOpen(false);
   };
 
@@ -37,7 +42,7 @@ export const AddToCart: FC<AddToCartProps> = (props) => {
               justifyContent: 'center',
             }}
           >
-            x{amount} <ChevronDownIcon width={24} height={24} />
+            x{currentProductAmount} <ChevronDownIcon width={24} height={24} />
           </Flex>
         </Button>
 

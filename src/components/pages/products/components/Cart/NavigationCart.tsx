@@ -78,7 +78,7 @@ export const NavigationCart: FC<NavigationCartProps> = (props) => {
             <Flex xs={{ alignItems: 'center', gap: 8 }}>
               <ProductPrice>{price.formatted}</ProductPrice>
 
-              <AmountSelect />
+              <AmountSelect shopProductId={shopProductId} />
 
               <AddToCartButton buttonProps={buyButtonProps} />
             </Flex>

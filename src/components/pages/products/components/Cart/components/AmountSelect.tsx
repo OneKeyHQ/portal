@@ -3,14 +3,19 @@ import { FC, ReactNode } from 'react';
 import { useTheme } from '@emotion/react';
 
 import { Box, ChevronDownIcon, Flex } from '../../../../../base';
+import { useBuy } from '../../../hooks/useBuy';
 
 export interface AmountSelectProps {
   children?: ReactNode;
+  shopProductId: string;
 }
 
 export const AmountSelect: FC<AmountSelectProps> = (props) => {
-  const { children } = props;
+  const { children, shopProductId } = props;
   const theme = useTheme();
+  const { currentProductAmount } = useBuy({
+    shopProductId,
+  });
 
   return (
     <Box
@@ -32,7 +37,7 @@ export const AmountSelect: FC<AmountSelectProps> = (props) => {
           alignItems: 'center',
         }}
       >
-        x1
+        x{currentProductAmount}
         <ChevronDownIcon height={16} width={16} />
         {children}
       </Flex>
