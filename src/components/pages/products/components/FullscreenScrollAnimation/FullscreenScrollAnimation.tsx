@@ -1,11 +1,8 @@
-import { FC, ReactNode } from 'react';
+import { FC, ReactNode, useRef } from 'react';
 
-import { motion } from 'framer-motion';
+import { motion, useScroll } from 'framer-motion';
 
-import {
-  useElementInViewportProgress,
-  usePositionAnimation,
-} from '../../../../../hooks';
+import { usePositionAnimation } from '../../../../../hooks';
 import { mergeRefs } from '../../../../../utils';
 import { Box } from '../../../../base';
 
@@ -22,7 +19,12 @@ export const FullscreenScrollAnimation: FC<FullscreenScrollAnimationProps> = (
 ) => {
   const { children, items, backgroundColor } = props;
 
-  const { ref, elementInViewportProgress } = useElementInViewportProgress(0);
+  const ref = useRef<HTMLDivElement>(null);
+
+  const { scrollYProgress: elementInViewportProgress } = useScroll({
+    target: ref,
+  });
+
   const { ref: paddingRef, motionValue: paddingMotionValue } =
     usePositionAnimation({
       from: 60,
@@ -41,9 +43,7 @@ export const FullscreenScrollAnimation: FC<FullscreenScrollAnimationProps> = (
   );
 
   return (
-    <Box>
-      <div ref={ref} />
-
+    <div ref={ref}>
       <Box
         css={{
           height: `${allImages.length * 5}vh`,
@@ -93,6 +93,6 @@ export const FullscreenScrollAnimation: FC<FullscreenScrollAnimationProps> = (
         </Box>
       </Box>
       {children}
-    </Box>
+    </div>
   );
 };
