@@ -42,11 +42,7 @@ export const NavigationItem: FC<NavigationItemProps> = (props) => {
   );
 
   return (
-    <Box
-      xs={{
-        position: 'relative',
-      }}
-    >
+    <Box xs={{ position: 'relative' }}>
       {/* only a link */}
       {path && <Link to={path}>{contentNode}</Link>}
       {!path && contentNode}

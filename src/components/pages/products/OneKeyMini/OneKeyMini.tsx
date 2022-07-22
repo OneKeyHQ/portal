@@ -37,7 +37,7 @@ export const OneKeyMini: FC<OneKeyMiniProps> = (props) => {
       </Helmet>
 
       <Navigation>
-        <NavigationCart />
+        <NavigationCart {...oneKeyMiniData.productInformation} />
       </Navigation>
 
       <Main>
@@ -77,7 +77,7 @@ export const OneKeyMini: FC<OneKeyMiniProps> = (props) => {
 
       <PageFooter isShowEmailSubscribe={false} isShowMediaLinks={false} />
 
-      <MobileCart />
+      <MobileCart {...oneKeyMiniData.productInformation} />
 
       {children}
     </Box>

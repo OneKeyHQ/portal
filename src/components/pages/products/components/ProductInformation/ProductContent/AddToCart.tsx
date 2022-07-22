@@ -1,13 +1,12 @@
 import { FC, ReactNode, useState } from 'react';
 
-import { navigate } from 'gatsby';
-
 import { I18n } from '../../../../../base';
 import { Box } from '../../../../../base/Box';
 import { Button } from '../../../../../base/Button';
 import { Flex } from '../../../../../base/Flex';
 import { ChevronDownIcon } from '../../../../../base/Icon';
 import { MenuItem, MenuItems } from '../../../../../base/Menu';
+import { useBuy } from '../../../hooks/useBuy';
 
 export interface AddToCartProps {
   children?: ReactNode;
@@ -16,13 +15,10 @@ export interface AddToCartProps {
 
 export const AddToCart: FC<AddToCartProps> = (props) => {
   const { children, shopProductId } = props;
-  const [amount, setAmount] = useState(1);
-  const items = [1, 2, 3, 4, 5, 6, 7, 8];
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const buy = () => {
-    navigate(`https://shop.onekey.so/cart/${shopProductId}:${amount}`);
-  };
+  const { buyButtonProps, setAmount, amount, items } = useBuy({
+    shopProductId,
+  });
 
   const selectAmount = (menuProductAmount: number) => {
     setAmount(menuProductAmount);
@@ -57,7 +53,7 @@ export const AddToCart: FC<AddToCartProps> = (props) => {
         </MenuItems>
       </Box>
 
-      <Button onClick={buy} variant="filled">
+      <Button variant="filled" {...buyButtonProps}>
         <Box xs={{ minWidth: 120 }}>
           <I18n name="action__add_to_cart" />
         </Box>

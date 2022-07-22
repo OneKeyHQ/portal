@@ -2,18 +2,21 @@ import { FC, ReactNode } from 'react';
 
 import { Box, Container, Flex, OnlyDisplay } from '../../../../base';
 import { useIntroductionSectionCenterPosition } from '../../atoms';
+import { useBuy } from '../../hooks/useBuy';
+import { ProductInformationProps } from '../ProductInformation';
 
 import { AddToCartButton } from './components/AddToCartButton';
 import { ProductName } from './components/ProductName';
 import { ProductPrice } from './components/ProductPrice';
 
-export interface NavigationCartProps {
+export interface NavigationCartProps extends ProductInformationProps {
   children?: ReactNode;
 }
 
 export const NavigationCart: FC<NavigationCartProps> = (props) => {
-  const { children } = props;
+  const { children, name, price, shopProductId } = props;
   const [centerPosition] = useIntroductionSectionCenterPosition();
+  const { buyButtonProps } = useBuy({ shopProductId });
 
   if (!centerPosition) {
     return null;
@@ -30,6 +33,8 @@ export const NavigationCart: FC<NavigationCartProps> = (props) => {
           paddingRight: 24,
           backdropFilter: `blur(10px)`,
           WebkitBackdropFilter: `blur(10px)`,
+          position: 'relative',
+          zIndex: 1,
         }}
       >
         <Container>
@@ -40,13 +45,13 @@ export const NavigationCart: FC<NavigationCartProps> = (props) => {
             }}
           >
             <Box xs={{ flex: 1 }}>
-              <ProductName>OneKey Mini</ProductName>
+              <ProductName>{name}</ProductName>
             </Box>
 
             <Flex xs={{ alignItems: 'center', gap: 8 }}>
-              <ProductPrice>$200</ProductPrice>
+              <ProductPrice>{price.formatted}</ProductPrice>
 
-              <AddToCartButton />
+              <AddToCartButton buttonProps={buyButtonProps} />
             </Flex>
           </Flex>
         </Container>
