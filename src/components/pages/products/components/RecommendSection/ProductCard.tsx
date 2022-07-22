@@ -92,7 +92,12 @@ export const ProductCard: FC<ProductCardProps> = (props) => {
                 {data.status === 'comingSoon' && <ComingSoonLabel />}
               </Flex>
 
-              <Span xs={theme.text.normal400}>{data.description}</Span>
+              <Span
+                css={{ color: theme.colors.test400 }}
+                xs={theme.text.normal400}
+              >
+                {data.description}
+              </Span>
             </Flex>
 
             <Span xs={theme.text.normal700}>{data.formattedPrice}</Span>

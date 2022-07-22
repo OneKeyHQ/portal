@@ -79,6 +79,7 @@ export const ProductContent: FC<ProductContentProps> = (props) => {
           }}
           l={theme.text.medium900}
           xl={theme.text.medium1000}
+          xxl={theme.text.medium1200}
         >
           {name}
         </Span>

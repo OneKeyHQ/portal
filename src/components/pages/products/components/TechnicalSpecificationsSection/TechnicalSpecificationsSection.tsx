@@ -2,7 +2,8 @@ import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Box, Container, Flex, H1 } from '../../../../base';
+import { Box, Container, Flex } from '../../../../base';
+import { SectionTitle } from '../../../../common';
 
 import { Content, ContentProps } from './Content';
 import { SideImage } from './SideImage';
@@ -37,17 +38,9 @@ export const TechnicalSpecificationsSection: FC<
       }}
     >
       <Container>
-        <H1
-          xs={{
-            ...theme.text.medium800,
-            color: theme.colors.white,
-            textAlign: 'center',
-          }}
-          xl={theme.text.medium900}
-          xxl={theme.text.medium1000}
-        >
-          {title}
-        </H1>
+        <Box xs={{ textAlign: 'center' }}>
+          <SectionTitle color={theme.colors.white}>{title}</SectionTitle>
+        </Box>
 
         <Flex
           xs={{ flexDirection: 'column', paddingTop: 40, gap: 40 }}

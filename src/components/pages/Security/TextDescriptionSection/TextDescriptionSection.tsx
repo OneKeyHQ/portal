@@ -7,12 +7,12 @@ import {
   Container,
   Divider,
   Flex,
-  H2,
   H3,
   P,
   Section,
   Span,
 } from '../../../base';
+import { SectionTitle } from '../../../common';
 
 import { useTextDescriptionSectionData } from './useTextDescriptionSectionData';
 
@@ -41,20 +41,16 @@ export const TextDescriptionSection: FC<TextDescriptionSectionProps> = (
           <Box
             xs={{ textAlign: 'center', maxWidth: 760 }}
             m={{ maxWidth: 660 }}
-            xl={{ maxWidth: 760 }}
+            xl={{ maxWidth: 860 }}
           >
-            <H2
-              xs={{
-                ...theme.text.medium700,
-                color: theme.colors.test500,
-              }}
-              m={theme.text.medium800}
-              xl={theme.text.medium900}
-            >
-              {textDescriptionSectionData.title}
-            </H2>
+            <SectionTitle>{textDescriptionSectionData.title}</SectionTitle>
+
             <Box xs={{ paddingTop: 8 }}>
-              <Span xs={theme.text.normal200} xl={theme.text.normal500}>
+              <Span
+                css={{ color: theme.colors.test400 }}
+                xs={theme.text.normal200}
+                xl={theme.text.normal500}
+              >
                 {textDescriptionSectionData.description}
               </Span>
             </Box>
@@ -88,7 +84,12 @@ export const TextDescriptionSection: FC<TextDescriptionSectionProps> = (
                 >
                   {item.name}
                 </H3>
-                <P xs={theme.text.normal300}>{item.description}</P>
+                <P
+                  css={{ color: theme.colors.test400 }}
+                  xs={theme.text.normal300}
+                >
+                  {item.description}
+                </P>
               </Flex>
             ))}
           </Flex>

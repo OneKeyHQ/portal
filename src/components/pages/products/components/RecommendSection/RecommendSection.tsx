@@ -1,15 +1,7 @@
 import { FC, ReactNode } from 'react';
 
-import { useTheme } from '@emotion/react';
-
-import {
-  Box,
-  Container,
-  I18n,
-  OnlyDisplay,
-  Section,
-  Span,
-} from '../../../../base';
+import { Box, Container, I18n, OnlyDisplay, Section } from '../../../../base';
+import { SectionTitle } from '../../../../common';
 
 import { ProductCard } from './ProductCard';
 import { RecommendSectionSwiper } from './RecommendSectionSwiper';
@@ -22,7 +14,6 @@ export interface RecommendSectionProps {
 
 export const RecommendSection: FC<RecommendSectionProps> = (props) => {
   const { children, include } = props;
-  const theme = useTheme();
   const recommendSectionData = useRecommendSectionData();
 
   const data = recommendSectionData.items.filter((item) =>
@@ -37,15 +28,9 @@ export const RecommendSection: FC<RecommendSectionProps> = (props) => {
       m={{ paddingBottom: 40, paddingTop: 80 }}
     >
       <Box css={{ textAlign: 'center' }}>
-        <Span
-          xs={{
-            ...theme.text.medium800,
-            color: theme.colors.test500,
-          }}
-          m={theme.text.medium900}
-        >
+        <SectionTitle>
           <I18n name="title__you_might_also_like" />
-        </Span>
+        </SectionTitle>
       </Box>
 
       <Container>

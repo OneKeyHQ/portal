@@ -37,7 +37,7 @@ export const AffiliateProgramCard: React.FC<AffiliateProgramCardProps> = (
           paddingRight: 30,
         }}
       >
-        <Span xs={{ ...theme.text.normal200 }}>
+        <Span xs={{ ...theme.text.normal200, color: theme.colors.test400 }}>
           <EmailLink email="hi@onekey.so">
             <Span
               xs={{

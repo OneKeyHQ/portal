@@ -36,10 +36,10 @@ export function useProductInformationData(): ProductInformationProps {
         key: 'touch-gallery-03',
         node: <StaticImage alt="3" src="./images/touch-gallery-03.png" />,
       },
-      {
-        key: 'touch-gallery-04',
-        node: <StaticImage alt="4" src="./images/touch-gallery-04.png" />,
-      },
+      // {
+      //   key: 'touch-gallery-04',
+      //   node: <StaticImage alt="4" src="./images/touch-gallery-04.png" />,
+      // },
     ],
   };
 }

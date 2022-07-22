@@ -41,8 +41,9 @@ export const Title: FC<TitleProps> = (props) => {
           css={{ color: theme.colors.white }}
           xs={theme.text.medium600}
           m={{ ...theme.text.medium800, maxWidth: 640 }}
-          xl={{ ...theme.text.medium900, maxWidth: 800 }}
-          xxl={{ ...theme.text.medium1000, maxWidth: 820 }}
+          l={{ ...theme.text.medium900, maxWidth: 740 }}
+          xl={{ ...theme.text.medium1000, maxWidth: 900 }}
+          xxl={{ ...theme.text.medium1100, maxWidth: 1120 }}
         >
           {title}
         </H2>

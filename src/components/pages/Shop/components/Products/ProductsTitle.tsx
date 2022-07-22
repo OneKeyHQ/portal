@@ -1,8 +1,7 @@
 import { FC, ReactNode } from 'react';
 
-import { useTheme } from '@emotion/react';
-
-import { Box, H2, I18n } from '../../../../base';
+import { Box, I18n } from '../../../../base';
+import { SectionTitle } from '../../../../common';
 
 export interface ProductsTitleProps {
   children?: ReactNode;
@@ -10,27 +9,21 @@ export interface ProductsTitleProps {
 
 export const ProductsTitle: FC<ProductsTitleProps> = (props) => {
   const { children } = props;
-  const theme = useTheme();
 
   return (
-    <Box>
-      <H2
-        xs={{
-          paddingTop: 80,
-          paddingBottom: 48,
-          ...theme.text.medium700,
-          textAlign: 'center',
-          color: theme.colors.test500,
-        }}
-        m={{
-          paddingTop: 120,
-          ...theme.text.medium800,
-        }}
-        l={theme.text.medium900}
-        xl={theme.text.medium1000}
-      >
+    <Box
+      xs={{
+        paddingTop: 80,
+        paddingBottom: 48,
+        textAlign: 'center',
+      }}
+      m={{
+        paddingTop: 120,
+      }}
+    >
+      <SectionTitle>
         <I18n name="title__hardware_wallets" />
-      </H2>
+      </SectionTitle>
 
       {children}
     </Box>

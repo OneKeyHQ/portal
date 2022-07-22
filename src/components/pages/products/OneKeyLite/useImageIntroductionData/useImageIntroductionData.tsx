@@ -3,6 +3,8 @@ import { useTranslation } from 'gatsby-plugin-react-i18next';
 
 import { splitMultiline } from '../../../../../utils';
 
+import videoPoster from './images/onekey-lite-feature-01-poster.jpg';
+
 export function useImageIntroductionData() {
   const { t } = useTranslation();
   const name1 = t('title__restore_your_wallet_without_typing_one_word');
@@ -14,6 +16,7 @@ export function useImageIntroductionData() {
       name: splitMultiline(name1),
       description: ``,
       video: '/video/onekey-lite-feature-01.mp4',
+      videoPoster,
       images: {
         s: <StaticImage src="./images/small/hardware0.jpg" alt={name1} />,
       },

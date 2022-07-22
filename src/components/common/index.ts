@@ -20,3 +20,4 @@ export * from './StatusIcon';
 export * from './SetUpYourOnekeyHardwareWalletMediaCard';
 export * from './TwoMediaCards';
 export * from './FloatCursor';
+export * from './SectionTitle';
