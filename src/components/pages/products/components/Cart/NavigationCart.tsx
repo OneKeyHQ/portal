@@ -18,6 +18,7 @@ export interface NavigationCartProps extends ProductInformationProps {
 
 const container = {
   hidden: {
+    overflow: 'hidden',
     height: 0,
     opacity: 0,
     transition: {
@@ -52,7 +53,6 @@ export const NavigationCart: FC<NavigationCartProps> = (props) => {
       <motion.div
         style={{
           height: 0,
-          overflow: 'hidden',
           background: `rgba(240, 241, 242, .9)`,
           backdropFilter: `blur(10px)`,
           WebkitBackdropFilter: `blur(10px)`,

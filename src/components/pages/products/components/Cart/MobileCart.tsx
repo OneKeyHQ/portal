@@ -80,7 +80,10 @@ export const MobileCart: FC<MobileCartProps> = (props) => {
             {children}
 
             <Flex xs={{ gap: 4, flexWrap: 'wrap' }}>
-              <AmountSelect shopProductId={shopProductId} />
+              <AmountSelect
+                menuPosition="bottom"
+                shopProductId={shopProductId}
+              />
 
               <AddToCartButton buttonProps={buyButtonProps} />
             </Flex>
