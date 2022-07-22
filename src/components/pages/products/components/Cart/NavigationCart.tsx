@@ -1,4 +1,6 @@
-import { FC, ReactNode } from 'react';
+import { FC, ReactNode, useEffect, useState } from 'react';
+
+import { motion } from 'framer-motion';
 
 import { Box, Container, Flex, OnlyDisplay } from '../../../../base';
 import { useIntroductionSectionCenterPosition } from '../../atoms';
@@ -13,33 +15,58 @@ export interface NavigationCartProps extends ProductInformationProps {
   children?: ReactNode;
 }
 
+const container = {
+  hidden: {
+    height: 0,
+    opacity: 0,
+    transition: {
+      duration: 0.2,
+    },
+  },
+  visible: {
+    height: 'auto',
+    opacity: 1,
+    transition: {
+      duration: 0.2,
+    },
+  },
+};
+
 export const NavigationCart: FC<NavigationCartProps> = (props) => {
   const { children, name, price, shopProductId } = props;
   const [centerPosition] = useIntroductionSectionCenterPosition();
   const { buyButtonProps } = useBuy({ shopProductId });
+  const [cursorVariant, setCursorVariant] = useState('visible');
 
-  if (!centerPosition) {
-    return null;
-  }
+  useEffect(() => {
+    if (centerPosition) {
+      setCursorVariant('visible');
+    } else {
+      setCursorVariant('hidden');
+    }
+  }, [centerPosition]);
 
   return (
     <OnlyDisplay m l xl xxl>
-      <Box
-        xs={{
+      <motion.div
+        style={{
+          overflow: 'hidden',
           background: `rgba(240, 241, 242, .9)`,
-          paddingTop: 16,
-          paddingBottom: 16,
-          paddingLeft: 24,
-          paddingRight: 24,
           backdropFilter: `blur(10px)`,
           WebkitBackdropFilter: `blur(10px)`,
           position: 'relative',
           zIndex: 1,
         }}
+        variants={container}
+        animate={cursorVariant}
       >
         <Container>
           <Flex
             xs={{
+              paddingTop: 16,
+              paddingBottom: 16,
+              paddingLeft: 24,
+              paddingRight: 24,
               justifyContent: 'space-between',
               alignItems: 'center',
             }}
@@ -55,8 +82,9 @@ export const NavigationCart: FC<NavigationCartProps> = (props) => {
             </Flex>
           </Flex>
         </Container>
+
         {children}
-      </Box>
+      </motion.div>
     </OnlyDisplay>
   );
 };
