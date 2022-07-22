@@ -11,6 +11,7 @@ import { useBuy } from '../../hooks/useBuy';
 import { ProductInformationProps } from '../ProductInformation';
 
 import { AddToCartButton } from './components/AddToCartButton';
+import { AmountSelect } from './components/AmountSelect';
 import { ProductName } from './components/ProductName';
 import { ProductPrice } from './components/ProductPrice';
 
@@ -78,7 +79,11 @@ export const MobileCart: FC<MobileCartProps> = (props) => {
 
             {children}
 
-            <AddToCartButton buttonProps={buyButtonProps} />
+            <Flex xs={{ gap: 4, flexWrap: 'wrap' }}>
+              <AmountSelect />
+
+              <AddToCartButton buttonProps={buyButtonProps} />
+            </Flex>
           </Flex>
         </Box>
       </motion.div>

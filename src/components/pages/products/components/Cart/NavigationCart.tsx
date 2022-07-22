@@ -8,6 +8,7 @@ import { useBuy } from '../../hooks/useBuy';
 import { ProductInformationProps } from '../ProductInformation';
 
 import { AddToCartButton } from './components/AddToCartButton';
+import { AmountSelect } from './components/AmountSelect';
 import { ProductName } from './components/ProductName';
 import { ProductPrice } from './components/ProductPrice';
 
@@ -36,7 +37,7 @@ export const NavigationCart: FC<NavigationCartProps> = (props) => {
   const { children, name, price, shopProductId } = props;
   const [centerPosition] = useIntroductionSectionCenterPosition();
   const { buyButtonProps } = useBuy({ shopProductId });
-  const [cursorVariant, setCursorVariant] = useState('visible');
+  const [cursorVariant, setCursorVariant] = useState('hidden');
 
   useEffect(() => {
     if (centerPosition) {
@@ -50,6 +51,7 @@ export const NavigationCart: FC<NavigationCartProps> = (props) => {
     <OnlyDisplay m l xl xxl>
       <motion.div
         style={{
+          height: 0,
           overflow: 'hidden',
           background: `rgba(240, 241, 242, .9)`,
           backdropFilter: `blur(10px)`,
@@ -65,8 +67,6 @@ export const NavigationCart: FC<NavigationCartProps> = (props) => {
             xs={{
               paddingTop: 16,
               paddingBottom: 16,
-              paddingLeft: 24,
-              paddingRight: 24,
               justifyContent: 'space-between',
               alignItems: 'center',
             }}
@@ -77,6 +77,8 @@ export const NavigationCart: FC<NavigationCartProps> = (props) => {
 
             <Flex xs={{ alignItems: 'center', gap: 8 }}>
               <ProductPrice>{price.formatted}</ProductPrice>
+
+              <AmountSelect />
 
               <AddToCartButton buttonProps={buyButtonProps} />
             </Flex>
