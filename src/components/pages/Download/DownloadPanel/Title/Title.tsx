@@ -21,6 +21,7 @@ export const Title: FC<TitleProps> = (props) => {
           color: theme.colors.test500,
         }}
         l={theme.text.medium900}
+        xl={theme.text.medium1000}
       >
         {name && <I18n name={name} alwaysMultiLine />}
       </Span>

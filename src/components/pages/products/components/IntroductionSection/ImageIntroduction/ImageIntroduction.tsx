@@ -1,6 +1,6 @@
 import { FC, Fragment, ReactNode } from 'react';
 
-import { Box, Flex, OnlyDisplay, VideoPlayer } from '../../../../../base';
+import { Box, Flex, Img, OnlyDisplay, VideoPlayer } from '../../../../../base';
 import { IntroductionText } from '../IntroductionText';
 
 export interface ImageIntroductionProps {
@@ -9,6 +9,7 @@ export interface ImageIntroductionProps {
     name: string | string[];
     description: string;
     video?: string;
+    videoPoster?: string;
     images: {
       s?: ReactNode;
       m?: ReactNode;
@@ -37,9 +38,26 @@ export const ImageIntroduction: FC<ImageIntroductionProps> = (props) => {
                 <OnlyDisplay xs>{item.images.s}</OnlyDisplay>
 
                 <OnlyDisplay s m l xl xxl>
+                  <Img
+                    xs={{
+                      width: '100%',
+                      height: 'auto',
+                      display: 'block',
+                      objectFit: 'cover',
+                      position: 'relative',
+                      zIndex: 1,
+                    }}
+                    src={item.videoPoster}
+                  />
+
                   <VideoPlayer
                     style={{
+                      top: 0,
+                      left: 0,
                       width: '100%',
+                      height: '100%',
+                      zIndex: 2,
+                      position: 'absolute',
                     }}
                     loop
                     src={item.video}

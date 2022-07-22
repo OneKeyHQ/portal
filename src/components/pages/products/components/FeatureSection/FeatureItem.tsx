@@ -42,7 +42,10 @@ export const FeatureItem: FC<FeatureItemProps> = (props) => {
         </Span>
       </Box>
 
-      <Box xs={{ paddingTop: 4 }} m={{ paddingTop: 16 }}>
+      <Box
+        xs={{ paddingTop: 4, color: theme.colors.test400 }}
+        m={{ paddingTop: 16 }}
+      >
         <Span xs={theme.text.normal300}>{description}</Span>
       </Box>
       {children}

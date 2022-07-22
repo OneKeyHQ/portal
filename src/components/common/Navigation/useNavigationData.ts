@@ -45,14 +45,14 @@ export function useNavigationDataObject(): Record<
     key: 'products',
     subItems: [
       {
-        name: oneKeyProduct.touch.name,
-        key: oneKeyProduct.touch.name,
-        path: oneKeyProduct.touch.path,
-      },
-      {
         name: oneKeyProduct.mini.name,
         key: oneKeyProduct.mini.name,
         path: oneKeyProduct.mini.path,
+      },
+      {
+        name: oneKeyProduct.touch.name,
+        key: oneKeyProduct.touch.name,
+        path: oneKeyProduct.touch.path,
       },
       {
         name: oneKeyProduct.lite.name,

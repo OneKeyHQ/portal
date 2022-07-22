@@ -1,39 +1,40 @@
 import { FC, useEffect } from 'react';
 
+import { navigate, withPrefix } from 'gatsby';
+import {
+  LANGUAGE_KEY,
+  PageContext,
+} from 'gatsby-plugin-react-i18next/dist/types';
 import { Helmet } from 'react-helmet';
+
+import { isBrowser } from './utils';
 
 interface WrapPageProps {
   children: React.ReactNode;
-  path: string;
-  pageContext: {
-    language: string;
-    intl: any;
-    isI18nPage: boolean;
-  };
+  pageContext: PageContext;
+  location: Location;
 }
 
+const removePathPrefix = (pathname: string, stripTrailingSlash: boolean) => {
+  const pathPrefix = withPrefix('/');
+  let result = pathname;
+
+  if (pathname.startsWith(pathPrefix)) {
+    result = pathname.replace(pathPrefix, '/');
+  }
+
+  if (stripTrailingSlash && result.endsWith('/')) {
+    return result.slice(0, -1);
+  }
+
+  return result;
+};
+
 const WrapPage: FC<WrapPageProps> = (props) => {
-  const { children, pageContext, path } = props;
+  const { children, pageContext, location } = props;
+  const { defaultLanguage, routed, language } = pageContext.i18n;
 
   useEffect(() => {
-    // const isI18nPage = path.includes(`/en/`) || path.includes(`/zh/`);
-
-    // if (isBrowser() && !isI18nPage) {
-    //   const { location } = window;
-    //   const { search } = location;
-    //   const detected = getPageLanguage();
-    //   const {
-    //     originalPath,
-    //   }: {
-    //     originalPath: string;
-    //   } = intl;
-    //   const queryParams = search || '';
-    //   const newUrl = `${location.origin}/${detected}${originalPath}${queryParams}`;
-    //   localStorage.setItem('language', detected);
-    //   location.replace(newUrl);
-    //   return;
-    // }
-
     import('browser-update').then((bu) => {
       bu.default({
         test: false,
@@ -54,7 +55,41 @@ const WrapPage: FC<WrapPageProps> = (props) => {
         },
       });
     });
-  }, [path]);
+  }, []);
+
+  useEffect(() => {
+    if (isBrowser()) {
+      const { search } = location;
+
+      let detected =
+        window.localStorage.getItem(LANGUAGE_KEY) || defaultLanguage;
+
+      if (routed) {
+        detected = language;
+      }
+
+      window.localStorage.setItem(LANGUAGE_KEY, detected);
+
+      if (detected !== defaultLanguage && !routed) {
+        const queryParams = search || '';
+        const stripTrailingSlash = false;
+
+        const newUrl = withPrefix(
+          `/${detected}${removePathPrefix(
+            location.pathname,
+            stripTrailingSlash,
+          )}${queryParams}${location.hash}`,
+        );
+
+        // no way
+        setTimeout(() => {
+          navigate(newUrl);
+        }, 200);
+      }
+    }
+
+    return () => {};
+  }, [defaultLanguage, language, location, routed]);
 
   return (
     <div>

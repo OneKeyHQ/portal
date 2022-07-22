@@ -2,7 +2,8 @@ import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { Box, H1, Span } from '../../base';
+import { Box, Span } from '../../base';
+import { SectionTitle } from '../SectionTitle';
 
 export interface NormalCenterPageHeaderProps {
   children?: ReactNode;
@@ -21,25 +22,22 @@ export const NormalCenterPageHeader: FC<NormalCenterPageHeaderProps> = (
     <Box
       xs={{ textAlign: 'center', paddingTop: '18vh', paddingBottom: '12vh' }}
     >
-      <H1
-        css={{ color: theme.colors.test500 }}
-        xs={theme.text.medium800}
-        l={theme.text.medium900}
-        xl={theme.text.medium1000}
-      >
+      <SectionTitle>
         {title}
         <br />
 
         <Span xs={{ color: theme.colors.brandAlt400 }}>{subtitle}</Span>
-      </H1>
+      </SectionTitle>
 
       <br />
+      <br />
 
-      <Box xs={{ maxWidth: 800, marginLeft: 'auto', marginRight: 'auto' }}>
+      <Box xs={{ marginLeft: 'auto', marginRight: 'auto' }}>
         <Span
           css={{ color: theme.colors.test400 }}
           xs={theme.text.normal200}
           m={theme.text.normal300}
+          l={theme.text.normal400}
         >
           {description}
         </Span>
