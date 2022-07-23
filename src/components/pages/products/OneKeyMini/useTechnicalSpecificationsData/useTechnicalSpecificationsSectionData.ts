@@ -87,7 +87,7 @@ export function useTechnicalSpecificationsSectionData() {
           title: t('title__materials'),
           content: [
             {
-              description: 'Plastic',
+              description: t('content__plastic'),
             },
           ],
         },
