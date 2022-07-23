@@ -107,6 +107,7 @@ export function useTechnicalSpecificationsSectionData() {
             {
               descriptions: [
                 '1 hardware wallet',
+                '1 usb type-c cable',
                 '1 sticker',
                 '2 recovery sheet',
               ],

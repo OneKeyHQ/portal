@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 
 import { StaticImage } from 'gatsby-plugin-image';
+import { useTranslation } from 'gatsby-plugin-react-i18next';
 
 import { useOneKeyProduct } from '../../../../../../data/useOneKeyProduct';
 
@@ -34,6 +35,7 @@ export function useProductCompareData(): {
   };
 } {
   const product = useOneKeyProduct();
+  const { t } = useTranslation();
 
   return {
     items: {
@@ -44,33 +46,35 @@ export function useProductCompareData(): {
         productDetailUrl: product.mini.path,
         productCompareDetail: [
           {
-            name: 'CE, RoHS and CSPRNG',
-            value: 'Certifications and Standards',
+            name: t('title__ce_rohs_and_csprng'),
+            value: t('content__certifications_and_standards'),
           },
           {
-            name: 'display',
+            name: t('title__display'),
             icon: display144,
-            value: '1.44 Inch IPS Display (Color)',
+            value: t('content__int_inch_ips_display_color', {
+              value: 1.44,
+            }),
           },
           {
-            name: 'control',
+            name: t('title__control'),
             icon: control,
-            value: 'Control with Buttons',
+            value: t('content__control_with_buttons'),
           },
           {
-            name: 'battery',
+            name: t('title__battery'),
             icon: none,
             value: ' ',
           },
           {
-            name: 'bluetooth',
+            name: t('title__bluetooth'),
             icon: none,
             value: ' ',
           },
           {
-            name: 'connector',
+            name: t('title__connector'),
             icon: usbc,
-            value: 'USB-C Connector',
+            value: t('content__usb_c_connector'),
           },
         ],
       },
@@ -83,33 +87,37 @@ export function useProductCompareData(): {
         productDetailUrl: product.touch.path,
         productCompareDetail: [
           {
-            name: 'CE, RoHS and CSPRNG',
-            value: 'Certifications and Standards',
+            name: t('title__ce_rohs_and_csprng'),
+            value: t('content__certifications_and_standards'),
           },
           {
-            name: 'display',
+            name: t('title__display'),
             icon: display31,
-            value: '3.1 Inch IPS Display (Color)',
+            value: t('content__int_inch_ips_display_color', {
+              value: 3.1,
+            }),
           },
           {
-            name: 'control',
+            name: t('title__control'),
             icon: touch,
-            value: 'Multi-Touch Screen',
+            value: t('content__multi_touch_screen'),
           },
           {
-            name: 'battery',
+            name: t('title__battery'),
             icon: battery,
-            value: '800mAh Battery',
+            value: t('content__int_mah_battery', {
+              value: 800,
+            }),
           },
           {
-            name: 'bluetooth',
+            name: t('title__bluetooth'),
             icon: bluetooth,
-            value: 'Bluetooth',
+            value: t('content__bluetooth'),
           },
           {
-            name: 'connector',
+            name: t('title__connector'),
             icon: usbc,
-            value: 'USB-C Connector',
+            value: t('content__usb_c_connector'),
           },
         ],
       },
