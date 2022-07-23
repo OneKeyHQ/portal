@@ -19,8 +19,9 @@ export type NavigationDataItem = {
 };
 
 export function useShopMenu() {
+  const { t } = useTranslation();
   return {
-    name: 'View All Products',
+    name: t('title__view_all_products'),
     key: 'shop',
     path: '/shop',
   } as const;
