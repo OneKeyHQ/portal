@@ -17,48 +17,50 @@ export function useTechnicalSpecificationsSectionData() {
     content: {
       left: [
         {
-          title: 'Size and Weight',
+          title: t('title__size_and_weight'),
           content: [
             {
-              title2: 'Size',
+              title2: t('title__size'),
               description: '71 x 34 x 6.8 (mm)',
             },
             {
-              title2: 'Weight',
+              title2: t('title__weight'),
               description: '15.6g',
             },
           ],
         },
         {
-          title: 'Chip and Connector',
+          title: t('title__chip_and_connector'),
           content: [
             {
-              title2: 'Connector',
+              title2: t('title__connector'),
               description: 'USB Type-C',
             },
             {
-              title2: 'Certifications and Standards',
-              description: 'CE, RoHS and CSPRNG',
+              title2: t('title__certifications_and_standards'),
+              description: t('content__ce_rohs_and_csprng'),
             },
             {
-              title2: 'Chips',
+              title2: t('title__chips'),
               description: 'STM32F405RGT6',
             },
           ],
         },
         {
-          title: 'Display',
+          title: t('title__display'),
           content: [
             {
-              title2: 'Screen',
-              description: '1.44-inch',
+              title2: t('title__screen'),
+              description: t('content__int_inch', {
+                value: 1.44,
+              }),
             },
             {
-              title2: 'Display',
-              description: 'IPS Display (Color)',
+              title2: t('title__display'),
+              description: t('title__ips_display_color'),
             },
             {
-              title2: 'Resolution',
+              title2: t('title__resolution'),
               description: '128 x 128',
             },
           ],
@@ -66,7 +68,7 @@ export function useTechnicalSpecificationsSectionData() {
       ],
       right: [
         {
-          title: 'Power and Battery',
+          title: t('title__power_and_battery'),
           content: [
             {
               description: 'N/A',
@@ -74,7 +76,7 @@ export function useTechnicalSpecificationsSectionData() {
           ],
         },
         {
-          title: 'Wireless',
+          title: t('title__wireless'),
           content: [
             {
               description: 'N/A',
@@ -82,7 +84,7 @@ export function useTechnicalSpecificationsSectionData() {
           ],
         },
         {
-          title: 'Materials',
+          title: t('title__materials'),
           content: [
             {
               description: 'Plastic',
@@ -90,7 +92,7 @@ export function useTechnicalSpecificationsSectionData() {
           ],
         },
         {
-          title: 'Compatibility',
+          title: t('title__compatibility'),
           content: [
             {
               descriptions: [
@@ -102,14 +104,14 @@ export function useTechnicalSpecificationsSectionData() {
           ],
         },
         {
-          title: 'In the Box',
+          title: t('title__in_the_box'),
           content: [
             {
               descriptions: [
-                '1 hardware wallet',
-                '1 usb type-c cable',
-                '1 sticker',
-                '2 recovery sheet',
+                t('content__int_hardware_wallet', { value: 1 }),
+                t('content__int_usb_type_c_cable', { value: 1 }),
+                t('content__int_recovery_sheet', { value: 2 }),
+                t('content__int_sticker', { value: 1 }),
               ],
             },
           ],
