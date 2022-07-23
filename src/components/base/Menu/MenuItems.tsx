@@ -4,17 +4,17 @@ import { useTheme } from '@emotion/react';
 
 import { useOnClickOutside } from '../../../hooks';
 import { useHover } from '../../../hooks/useHover';
-import { Box } from '../Box';
+import { Box, BoxProps } from '../Box';
 import { Flex } from '../Flex';
 
-export interface MenuItemsProps {
+export interface MenuItemsProps extends BoxProps {
   children?: ReactNode;
   isActive?: boolean;
   onClickOutside?: () => void;
 }
 
 export const MenuItems: FC<MenuItemsProps> = (props) => {
-  const { children, isActive = false, onClickOutside } = props;
+  const { children, isActive = false, onClickOutside, ...otherProps } = props;
   const { hoverProps, isHovered } = useHover({
     timeout: 50,
   });
@@ -41,6 +41,7 @@ export const MenuItems: FC<MenuItemsProps> = (props) => {
         backgroundColor: theme.colors.white,
         zIndex: 10,
       }}
+      externalProps={otherProps}
     >
       <div ref={ref}>
         <Flex

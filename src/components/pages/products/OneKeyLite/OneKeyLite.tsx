@@ -8,6 +8,7 @@ import {
   PageFooter,
   StayInTouchWidthContainerAndPadding,
 } from '../../../common';
+import { MobileCart, NavigationCart } from '../components/Cart';
 import { FeatureSection } from '../components/FeatureSection';
 import { IntroductionSection } from '../components/IntroductionSection';
 import { ImageIntroduction } from '../components/IntroductionSection/ImageIntroduction';
@@ -32,7 +33,9 @@ export const OneKeyLite: FC<OneKeyLiteProps> = (props) => {
         <title>{OneKeyLiteData.title}</title>
       </Helmet>
 
-      <Navigation />
+      <Navigation>
+        <NavigationCart {...OneKeyLiteData.productInformationData} />
+      </Navigation>
 
       <Main>
         <ProductInformation {...OneKeyLiteData.productInformationData} />
@@ -57,6 +60,8 @@ export const OneKeyLite: FC<OneKeyLiteProps> = (props) => {
       </Main>
 
       <PageFooter isShowEmailSubscribe={false} isShowMediaLinks={false} />
+
+      <MobileCart {...OneKeyLiteData.productInformationData} />
 
       {children}
     </Box>

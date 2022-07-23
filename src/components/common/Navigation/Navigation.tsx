@@ -39,6 +39,8 @@ export const Navigation: FC<NavigationProps> = (props) => {
         <NormalNavigation />
       </OnlyDisplay>
 
+      <div id="navigationSlot" />
+
       {children}
     </Nav>
   );

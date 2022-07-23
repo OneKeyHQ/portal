@@ -32,6 +32,7 @@ export const ServicesPanel: FC<ServicesPanelProps> = (props) => {
         left: 0,
         right: 0,
         top: top * 0.8,
+        zIndex: 3000,
       }}
     >
       <Container>

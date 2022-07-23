@@ -1,11 +1,6 @@
 import { FC, ReactNode } from 'react';
 
-import {
-  motion,
-  useSpring,
-  useTransform,
-  useViewportScroll,
-} from 'framer-motion';
+import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 
 import { useRuntimeDetect } from '../../../hooks';
 
@@ -22,7 +17,7 @@ export const NavigationAnimationWrap: FC<NavigationAnimationWrapProps> = (
   const isWeakMode = isFirefox || isMobilePhone;
 
   const { paddingRange, isSpring = false, children } = props;
-  const { scrollY } = useViewportScroll();
+  const { scrollY } = useScroll();
   const paddingValue = useTransform(scrollY, [0, 100], paddingRange);
   const backgroundColor = useTransform(scrollY, (value: number) => {
     let opacity = 0;

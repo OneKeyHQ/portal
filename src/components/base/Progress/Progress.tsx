@@ -28,8 +28,11 @@ export const Progress: FC<ProgressProps> = (props) => {
         overflow: 'hidden',
         label: 'progress',
         width: 175,
-        height: 3,
+        height: 2,
         background: containerColor || theme.colors.white,
+      }}
+      m={{
+        height: 3,
       }}
     >
       <Box

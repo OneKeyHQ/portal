@@ -2,8 +2,10 @@
 import { FC, ReactNode, createElement } from 'react';
 
 import { useTheme } from '@emotion/react';
+import { createPortal } from 'react-dom';
 
 import { useHover } from '../../../../../hooks';
+import { isBrowser } from '../../../../../utils';
 import { MenuItem, MenuItems } from '../../../../base';
 import { Box } from '../../../../base/Box';
 import { Link } from '../../../../base/Link';
@@ -41,16 +43,15 @@ export const NavigationItem: FC<NavigationItemProps> = (props) => {
     </Box>
   );
 
+  const slot = isBrowser()
+    ? document.getElementById('navigationSlot')
+    : undefined;
+
   return (
-    <Box
-      xs={{
-        position: 'relative',
-      }}
-    >
+    <Box xs={{ position: 'relative' }}>
       {/* only a link */}
       {path && <Link to={path}>{contentNode}</Link>}
       {!path && contentNode}
-
       {/* sub */}
       {!panelComponent && subItems && (
         <MenuItems isActive={isHovered}>
@@ -61,8 +62,13 @@ export const NavigationItem: FC<NavigationItemProps> = (props) => {
           ))}
         </MenuItems>
       )}
+      {/* special panel */}
       {panelComponent &&
-        createElement(panelComponent, { isActive: isHovered, subItems })}
+        slot &&
+        createPortal(
+          createElement(panelComponent, { isActive: isHovered, subItems }),
+          slot,
+        )}
     </Box>
   );
 };
