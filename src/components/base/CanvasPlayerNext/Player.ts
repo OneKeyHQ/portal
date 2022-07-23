@@ -1,10 +1,13 @@
 import { nanoid } from 'nanoid';
+import { addStats } from 'pixi-stats';
 import {
   AnimatedSprite,
   Application,
   Container,
   Loader,
   Texture,
+  Ticker,
+  UPDATE_PRIORITY,
 } from 'pixi.js';
 
 type PlayerConfig = {
@@ -61,11 +64,17 @@ class Player {
       view: element,
       width,
       height,
-      resolution: window.devicePixelRatio,
+      resolution: 1,
       autoDensity: true,
       antialias: true,
       backgroundAlpha: 0,
     });
+
+    const stats = addStats(document, this.application);
+    const ticker: Ticker = Ticker.shared;
+
+    // eslint-disable-next-line @typescript-eslint/unbound-method
+    ticker.add(stats.update, stats, UPDATE_PRIORITY.UTILITY);
   }
 
   resize(width: number, height: number): void {
