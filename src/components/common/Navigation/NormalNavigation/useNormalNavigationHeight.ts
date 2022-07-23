@@ -1,7 +1,7 @@
-import { useTransform, useViewportScroll } from 'framer-motion';
+import { useScroll, useTransform } from 'framer-motion';
 
 export function useNormalNavigationHeight() {
-  const { scrollY } = useViewportScroll();
+  const { scrollY } = useScroll();
 
   return useTransform(scrollY, [0, 132], [132, 88]).get();
 }
