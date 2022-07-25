@@ -263,10 +263,13 @@ class Player {
           this.refresh();
         }
 
-        const image1920 = image.replace('720', '1920');
+        const originImage =
+          window.innerWidth > 2000
+            ? image.replace('720', '2880')
+            : image.replace('720', '1920');
 
-        this.load(image1920, () => {
-          const texture1920 = Texture.from(image1920);
+        this.load(originImage, () => {
+          const texture1920 = Texture.from(originImage);
           const { textures: animatedSpriteTextures } = animatedSprite;
 
           animatedSpriteTextures[index] = texture1920;
