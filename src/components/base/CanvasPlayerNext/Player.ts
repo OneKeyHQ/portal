@@ -87,9 +87,9 @@ class Player {
   resize(width: number, height: number): void {
     this.width = width;
     this.height = height;
-    this.resizeAllAnimatedSpriteState();
     this.application.renderer.resize(width, height);
-    this.refresh();
+    this.resizeAllAnimatedSpriteState();
+    this.refresh(true);
   }
 
   refresh(force = false) {
