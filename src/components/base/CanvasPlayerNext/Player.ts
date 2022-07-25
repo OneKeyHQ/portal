@@ -54,6 +54,8 @@ class Player {
 
   totalProgress = 0;
 
+  loaderQueue = [];
+
   constructor(config: PlayerConfig) {
     const { element, width, height } = config;
 
@@ -217,24 +219,23 @@ class Player {
     console.timeEnd('progress');
   }
 
-  loadFrames(frames: string[], index = 0): AnimatedSprite {
-    const firstFrameLoader = new Loader();
-    const mainLoader = new Loader();
+  loadFrames(frames: string[], frameIndex = 0): AnimatedSprite {
     const imagesWithoutDuplicated = cleanDuplicateStringArray(frames);
-    const firstFrame = imagesWithoutDuplicated.shift();
 
-    if (!firstFrame) {
+    if (imagesWithoutDuplicated.length === 0) {
       throw new Error('No frames to load');
     }
 
-    const animatedSprite = new AnimatedSprite([Texture.EMPTY]);
+    const animatedSprite = new AnimatedSprite(
+      new Array(imagesWithoutDuplicated.length).fill(Texture.EMPTY),
+    );
     animatedSprite.animationSpeed = 1;
     animatedSprite.loop = false;
 
     const imageContainer = new Container();
     imageContainer.x = 0;
     imageContainer.y = 0;
-    imageContainer.zIndex = index * 1000;
+    imageContainer.zIndex = frameIndex * 1000;
     imageContainer.addChild(animatedSprite);
 
     this.imageContainers.push(imageContainer);
@@ -245,20 +246,14 @@ class Player {
       (itemA, itemB) => itemB.zIndex - itemA.zIndex,
     );
 
-    firstFrameLoader.add(firstFrame).load(() => {
-      const firstTexture = Texture.from(firstFrame);
+    imagesWithoutDuplicated.forEach((image, index) => {
+      this.load(image, () => {
+        const texture = Texture.from(image);
+        const { textures } = animatedSprite;
 
-      animatedSprite.textures = [firstTexture];
+        textures[index] = texture;
 
-      this.resizeAnimatedSpriteState(animatedSprite);
-      this.refresh();
-
-      mainLoader.add(imagesWithoutDuplicated).load(() => {
-        const textures = imagesWithoutDuplicated.map((image) =>
-          Texture.from(image),
-        );
-
-        animatedSprite.textures = [firstTexture, ...textures];
+        animatedSprite.textures = textures;
 
         this.resizeAnimatedSpriteState(animatedSprite);
         this.refresh();
@@ -266,6 +261,14 @@ class Player {
     });
 
     return animatedSprite;
+  }
+
+  load(url: string, callback: () => void) {
+    const loader = new Loader().add(url);
+
+    loader.load(callback);
+
+    return loader;
   }
 }
 
