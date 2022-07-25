@@ -238,6 +238,14 @@ class Player {
       parent.alpha = 1;
       parent.visible = true;
       state.animatedSprite.gotoAndStop(newProgress - state.progressStart);
+
+      if (nextStateAnimatedSprite) {
+        nextStateAnimatedSprite.parent.visible = false;
+      }
+
+      if (previousStateAnimatedSprite) {
+        previousStateAnimatedSprite.parent.visible = false;
+      }
     }
   }
 
