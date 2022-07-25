@@ -255,8 +255,10 @@ class Player {
 
         animatedSprite.textures = textures;
 
-        this.resizeAnimatedSpriteState(animatedSprite);
-        this.refresh();
+        if (index === 0) {
+          this.resizeAnimatedSpriteState(animatedSprite);
+          this.refresh();
+        }
       });
     });
 
