@@ -251,6 +251,9 @@ class Player {
         const texture = Texture.from(image);
         const { textures } = animatedSprite;
 
+        texture.frame.width = 1920;
+        texture.frame.height = 1440;
+
         textures[index] = texture;
 
         animatedSprite.textures = textures;
@@ -267,6 +270,9 @@ class Player {
           const { textures: animatedSpriteTextures } = animatedSprite;
 
           animatedSpriteTextures[index] = texture1920;
+
+          texture1920.frame.width = 1920;
+          texture1920.frame.height = 1440;
 
           animatedSprite.textures = animatedSpriteTextures;
 
