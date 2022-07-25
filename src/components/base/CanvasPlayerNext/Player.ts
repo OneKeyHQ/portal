@@ -259,6 +259,19 @@ class Player {
           this.resizeAnimatedSpriteState(animatedSprite);
           this.refresh();
         }
+
+        const image1920 = image.replace('720', '1920');
+
+        this.load(image1920, () => {
+          const texture1920 = Texture.from(image1920);
+          const { textures: animatedSpriteTextures } = animatedSprite;
+
+          animatedSpriteTextures[index] = texture1920;
+
+          animatedSprite.textures = animatedSpriteTextures;
+
+          this.resizeAnimatedSpriteState(animatedSprite);
+        });
       });
     });
 
