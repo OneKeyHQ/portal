@@ -172,8 +172,12 @@ class Player {
   }
 
   setProgress(progress: number) {
-    const { imageContainers } = this;
+    if (progress === this.currentProgress) {
+      return;
+    }
+
     const maxProgress = this.getTotalProgress();
+
     let newProgress = progress;
     if (progress > maxProgress) {
       newProgress = maxProgress;
@@ -185,31 +189,32 @@ class Player {
 
     const state = this.getProgressState(newProgress);
 
-    imageContainers.forEach((imageContainer) => {
-      imageContainer.alpha = 0;
-    });
-
     if (state?.type === 'fade') {
       const previousState = this.getProgressState(state.progressStart - 1);
       const nextState = this.getProgressState(state.progressEnd + 1);
       if (previousState?.animatedSprite) {
-        previousState.animatedSprite.parent.alpha =
-          1 - (newProgress - state.progressStart) / state.length;
-        previousState.animatedSprite.parent.position.y =
+        const { parent } = previousState.animatedSprite;
+        parent.alpha = 1 - (newProgress - state.progressStart) / state.length;
+        parent.position.y =
           -((newProgress - state.progressStart) / state.length) * this.height;
       }
       if (nextState?.animatedSprite) {
-        nextState.animatedSprite.parent.alpha = 1;
-        nextState.animatedSprite.parent.position.y =
+        const { parent } = nextState.animatedSprite;
+        parent.alpha = 1;
+        parent.position.y =
           (1 - (newProgress - state.progressStart) / state.length) *
           this.height *
           0.5;
       }
     } else if (state?.animatedSprite) {
-      state.animatedSprite.parent.position.y = 0;
-      state.animatedSprite.parent.alpha = 1;
+      const { parent } = state.animatedSprite;
+
+      parent.position.y = 0;
+      parent.alpha = 1;
       state.animatedSprite.gotoAndStop(newProgress - state.progressStart);
     }
+
+    console.timeEnd('progress');
   }
 
   loadFrames(frames: string[], index = 0): AnimatedSprite {
