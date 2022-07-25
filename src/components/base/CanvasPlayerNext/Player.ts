@@ -54,6 +54,11 @@ class Player {
 
   totalProgress = 0;
 
+  frameSize = {
+    width: 1920,
+    height: 1440,
+  };
+
   loaderQueue = [];
 
   constructor(config: PlayerConfig) {
@@ -248,20 +253,7 @@ class Player {
 
     imagesWithoutDuplicated.forEach((image, index) => {
       this.load(image, () => {
-        const texture = Texture.from(image);
-        const { textures } = animatedSprite;
-
-        texture.frame.width = 1920;
-        texture.frame.height = 1440;
-
-        textures[index] = texture;
-
-        animatedSprite.textures = textures;
-
-        if (index === 0) {
-          this.resizeAnimatedSpriteState(animatedSprite);
-          this.refresh();
-        }
+        this.updateAnimatedSpriteTexture(animatedSprite, image, index);
 
         if (window.innerWidth < 2000) {
           return;
@@ -270,23 +262,36 @@ class Player {
         const originImage = image.replace('1920', '2880');
 
         this.load(originImage, () => {
-          const texture1920 = Texture.from(originImage);
-          const { textures: animatedSpriteTextures } = animatedSprite;
+          this.updateAnimatedSpriteTexture(animatedSprite, originImage, index);
 
-          animatedSpriteTextures[index] = texture1920;
-
-          texture1920.frame.width = 1920;
-          texture1920.frame.height = 1440;
-
-          animatedSprite.textures = animatedSpriteTextures;
-
-          this.resizeAnimatedSpriteState(animatedSprite);
           this.refresh(true);
         });
       });
     });
 
     return animatedSprite;
+  }
+
+  updateAnimatedSpriteTexture(
+    animatedSprite: AnimatedSprite,
+    textureKey: string,
+    index: number,
+  ) {
+    const { textures } = animatedSprite;
+    const texture = Texture.from(textureKey);
+
+    texture.frame.width = this.frameSize.width;
+    texture.frame.height = this.frameSize.height;
+
+    textures[index] = texture;
+
+    animatedSprite.textures = textures;
+
+    if (index === 0) {
+      this.resizeAnimatedSpriteState(animatedSprite);
+    }
+
+    this.refresh(true);
   }
 
   load(url: string, callback: () => void) {
