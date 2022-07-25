@@ -265,8 +265,8 @@ class Player {
 
         const originImage =
           window.innerWidth > 2000
-            ? image.replace('720', '2880')
-            : image.replace('720', '1920');
+            ? image.replace('1920', '2880')
+            : image.replace('1920', '1920');
 
         this.load(originImage, () => {
           const texture1920 = Texture.from(originImage);
