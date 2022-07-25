@@ -87,8 +87,8 @@ class Player {
     this.refresh();
   }
 
-  refresh() {
-    this.setProgress(this.currentProgress);
+  refresh(force = false) {
+    this.setProgress(this.currentProgress, force);
     this.application.render();
   }
 
@@ -173,8 +173,8 @@ class Player {
     this.progressStates = progressStates;
   }
 
-  setProgress(progress: number) {
-    if (progress === this.currentProgress) {
+  setProgress(progress: number, force = false) {
+    if (progress === this.currentProgress && !force) {
       return;
     }
 
@@ -271,6 +271,7 @@ class Player {
           animatedSprite.textures = animatedSpriteTextures;
 
           this.resizeAnimatedSpriteState(animatedSprite);
+          this.refresh(true);
         });
       });
     });
