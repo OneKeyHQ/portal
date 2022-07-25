@@ -116,6 +116,9 @@ class Player {
   resizeAllAnimatedSpriteState() {
     for (const animatedSprite of this.animatedSprites) {
       this.resizeAnimatedSpriteState(animatedSprite);
+
+      animatedSprite.parent.visible = false;
+      animatedSprite.parent.alpha = 0;
     }
   }
 
@@ -178,6 +181,8 @@ class Player {
     this.progressStates = progressStates;
   }
 
+  resetContainerAndAnimatedSprite() {}
+
   setProgress(progress: number, force = false) {
     if (progress === this.currentProgress && !force) {
       return;
@@ -196,18 +201,31 @@ class Player {
 
     const state = this.getProgressState(newProgress);
 
+    if (!state) {
+      return;
+    }
+
+    const previousState = this.getProgressState(state.progressStart - 1);
+    const nextState = this.getProgressState(state.progressEnd + 1);
+    const nextStateAnimatedSprite = nextState?.animatedSprite;
+    const previousStateAnimatedSprite = previousState?.animatedSprite;
+
     if (state?.type === 'fade') {
-      const previousState = this.getProgressState(state.progressStart - 1);
-      const nextState = this.getProgressState(state.progressEnd + 1);
-      if (previousState?.animatedSprite) {
-        const { parent } = previousState.animatedSprite;
+      if (previousStateAnimatedSprite) {
+        previousStateAnimatedSprite.gotoAndStop(
+          previousStateAnimatedSprite.textures.length - 1,
+        );
+        const { parent } = previousStateAnimatedSprite;
         parent.alpha = 1 - (newProgress - state.progressStart) / state.length;
+        parent.visible = true;
         parent.position.y =
           -((newProgress - state.progressStart) / state.length) * this.height;
       }
-      if (nextState?.animatedSprite) {
-        const { parent } = nextState.animatedSprite;
+      if (nextStateAnimatedSprite) {
+        nextStateAnimatedSprite.gotoAndStop(0);
+        const { parent } = nextStateAnimatedSprite;
         parent.alpha = 1;
+        parent.visible = true;
         parent.position.y =
           (1 - (newProgress - state.progressStart) / state.length) *
           this.height *
@@ -218,10 +236,9 @@ class Player {
 
       parent.position.y = 0;
       parent.alpha = 1;
+      parent.visible = true;
       state.animatedSprite.gotoAndStop(newProgress - state.progressStart);
     }
-
-    console.timeEnd('progress');
   }
 
   loadFrames(frames: string[], frameIndex = 0): AnimatedSprite {
@@ -287,10 +304,7 @@ class Player {
 
     animatedSprite.textures = textures;
 
-    if (index === 0) {
-      this.resizeAnimatedSpriteState(animatedSprite);
-    }
-
+    this.resizeAnimatedSpriteState(animatedSprite);
     this.refresh(true);
   }
 
