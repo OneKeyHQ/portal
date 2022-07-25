@@ -263,10 +263,11 @@ class Player {
           this.refresh();
         }
 
-        const originImage =
-          window.innerWidth > 2000
-            ? image.replace('1920', '2880')
-            : image.replace('1920', '1920');
+        if (window.innerWidth < 2000) {
+          return;
+        }
+
+        const originImage = image.replace('1920', '2880');
 
         this.load(originImage, () => {
           const texture1920 = Texture.from(originImage);
