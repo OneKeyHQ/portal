@@ -117,8 +117,7 @@ class Player {
     for (const animatedSprite of this.animatedSprites) {
       this.resizeAnimatedSpriteState(animatedSprite);
 
-      animatedSprite.parent.visible = false;
-      animatedSprite.parent.alpha = 0;
+      this.hide(animatedSprite.parent);
     }
   }
 
@@ -239,13 +238,15 @@ class Player {
       parent.visible = true;
       state.animatedSprite.gotoAndStop(newProgress - state.progressStart);
 
-      if (nextStateAnimatedSprite) {
-        nextStateAnimatedSprite.parent.visible = false;
-      }
+      this.hide(nextStateAnimatedSprite?.parent);
+      this.hide(previousStateAnimatedSprite?.parent);
+    }
+  }
 
-      if (previousStateAnimatedSprite) {
-        previousStateAnimatedSprite.parent.visible = false;
-      }
+  hide(target?: AnimatedSprite | Container) {
+    if (target) {
+      target.visible = false;
+      target.alpha = 0;
     }
   }
 
