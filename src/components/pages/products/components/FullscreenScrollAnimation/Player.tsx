@@ -9,7 +9,10 @@ import {
 
 import { useWindowSize } from '../../../../../hooks';
 import { Box, CanvasPlayerNext } from '../../../../base';
-import { ProgressStateItem } from '../../../../base/CanvasPlayerNext/Player';
+import {
+  ProgressStateItem,
+  ProgressStates,
+} from '../../../../base/CanvasPlayerNext/Player';
 import { IntroductionText } from '../IntroductionSection/IntroductionText';
 
 export interface PlayerProps {
@@ -29,6 +32,8 @@ export const Player: FC<PlayerProps> = (props) => {
   const [totalProgress, setTotalProgress] = useState(0);
   const [currentPlayerState, setCurrentPlayerState] =
     useState<ProgressStateItem | null>(null);
+  const [playerProgressStates, setPlayerProgressStates] =
+    useState<ProgressStates>([]);
 
   const allFrames = items.map((item) => item.frames);
 
@@ -48,9 +53,10 @@ export const Player: FC<PlayerProps> = (props) => {
         height={windowHeight}
         frames={allFrames}
         progress={currentProgress}
-        onTotalProgressChange={(progress, currentState) => {
+        onTotalProgressChange={(progress, currentState, progressStates) => {
           setTotalProgress(progress);
           setCurrentPlayerState(currentState);
+          setPlayerProgressStates(progressStates);
         }}
       />
 
@@ -67,24 +73,25 @@ export const Player: FC<PlayerProps> = (props) => {
         }}
       >
         <AnimatePresence exitBeforeEnter>
-          {items.map((item) => {
-            let is = false;
+          {items.map((item, index) => {
+            let isShowDescriptionText = false;
 
-            if (currentPlayerState?.type === 'fade') {
-              is = false;
-            } else if (currentPlayerState?.frames) {
-              const isCurrentState = currentPlayerState.frames.some((frame) =>
-                item.frames.includes(frame),
-              );
+            // 0 => 0,1
+            // 1 => 2,3
+            // 2 => 4,5
 
-              is =
-                isCurrentState &&
-                currentProgress > currentPlayerState.progressStart + 5 &&
-                currentProgress < currentPlayerState.progressEnd - 5;
+            if (currentPlayerState) {
+              if (
+                currentPlayerState.id === playerProgressStates[index * 2]?.id ||
+                currentPlayerState.id ===
+                  playerProgressStates[index * 2 + 1]?.id
+              ) {
+                isShowDescriptionText = true;
+              }
             }
 
             return (
-              is && (
+              isShowDescriptionText && (
                 <motion.div
                   key={item.description}
                   animate={{ opacity: 1, y: 0 }}
