@@ -32,7 +32,7 @@ export function useDownloadData() {
   const desktop = {
     type: 'desktop',
     name: t('title__desktop_app'),
-    description: 'Mac, Windows, Linux',
+    description: 'macOS, Windows, Linux',
     path: '/download?client=desktop',
     image: 'desktop',
   };
