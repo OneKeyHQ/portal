@@ -105,7 +105,11 @@ class Player {
     const { progressStates } = this;
 
     for (const state of progressStates) {
-      if (progress >= state.progressStart && progress <= state.progressEnd) {
+      if (
+        (state.progressStart < progress && progress < state.progressEnd) ||
+        state.progressStart === progress ||
+        state.progressEnd === progress
+      ) {
         return state;
       }
     }
@@ -116,8 +120,7 @@ class Player {
   resizeAllAnimatedSpriteState() {
     for (const animatedSprite of this.animatedSprites) {
       this.resizeAnimatedSpriteState(animatedSprite);
-
-      this.hide(animatedSprite.parent);
+      this.hide(animatedSprite);
     }
   }
 
@@ -180,8 +183,6 @@ class Player {
     this.progressStates = progressStates;
   }
 
-  resetContainerAndAnimatedSprite() {}
-
   setProgress(progress: number, force = false) {
     if (progress === this.currentProgress && !force) {
       return;
@@ -204,43 +205,83 @@ class Player {
       return;
     }
 
-    const previousState = this.getProgressState(state.progressStart - 1);
-    const nextState = this.getProgressState(state.progressEnd + 1);
-    const nextStateAnimatedSprite = nextState?.animatedSprite;
-    const previousStateAnimatedSprite = previousState?.animatedSprite;
-
     if (state?.type === 'fade') {
+      const previousState = this.getProgressState(state.progressStart - 1);
+      const nextState = this.getProgressState(state.progressEnd + 1);
+      const nextStateAnimatedSprite = nextState?.animatedSprite;
+      const previousStateAnimatedSprite = previousState?.animatedSprite;
+
       if (previousStateAnimatedSprite) {
         previousStateAnimatedSprite.gotoAndStop(
           previousStateAnimatedSprite.textures.length - 1,
         );
-        const { parent } = previousStateAnimatedSprite;
-        parent.alpha = 1 - (newProgress - state.progressStart) / state.length;
-        parent.visible = true;
-        parent.position.y =
+        previousStateAnimatedSprite.alpha =
+          1 - (newProgress - state.progressStart) / state.length;
+        previousStateAnimatedSprite.visible = true;
+        previousStateAnimatedSprite.parent.position.y =
           -((newProgress - state.progressStart) / state.length) * this.height;
       }
       if (nextStateAnimatedSprite) {
         nextStateAnimatedSprite.gotoAndStop(0);
-        const { parent } = nextStateAnimatedSprite;
-        parent.alpha = 1;
-        parent.visible = true;
-        parent.position.y =
+        nextStateAnimatedSprite.alpha = 1;
+        nextStateAnimatedSprite.visible = true;
+        nextStateAnimatedSprite.parent.position.y =
           (1 - (newProgress - state.progressStart) / state.length) *
           this.height *
           0.5;
       }
     } else if (state?.animatedSprite) {
-      const { parent } = state.animatedSprite;
-
-      parent.position.y = 0;
-      parent.alpha = 1;
-      parent.visible = true;
+      state.animatedSprite.parent.position.y = 0;
+      state.animatedSprite.alpha = 1;
+      state.animatedSprite.visible = true;
       state.animatedSprite.gotoAndStop(newProgress - state.progressStart);
 
-      this.hide(nextStateAnimatedSprite?.parent);
-      this.hide(previousStateAnimatedSprite?.parent);
+      const { previousState, nextState } =
+        this.getRelativeAnimatedSpriteState();
+
+      this.hide(previousState?.animatedSprite);
+      this.hide(nextState?.animatedSprite);
     }
+  }
+
+  getRelativeAnimatedSpriteState() {
+    const { progressStates, currentProgress } = this;
+    const currentState = this.getProgressState(currentProgress);
+
+    if (!currentState) {
+      return {
+        previousState: null,
+        nextState: null,
+        currentProgress,
+      };
+    }
+
+    const allFrames = progressStates.filter((state) => state.type !== 'fade');
+
+    const index = allFrames.findIndex(
+      (state) =>
+        (state.progressStart < currentProgress &&
+          currentProgress < state.progressEnd) ||
+        state.progressStart === currentProgress ||
+        state.progressEnd === currentProgress,
+    );
+
+    if (index === -1) {
+      return {
+        currentState,
+        previousState: null,
+        nextState: null,
+      };
+    }
+
+    const nextState = allFrames[index + 1];
+    const previousState = allFrames[index - 1];
+
+    return {
+      currentState,
+      nextState,
+      previousState,
+    };
   }
 
   hide(target?: AnimatedSprite | Container) {
