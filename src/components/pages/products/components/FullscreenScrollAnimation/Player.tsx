@@ -60,15 +60,25 @@ export const Player: FC<PlayerProps> = (props) => {
         // 1 => 2,3
         // 2 => 4,5
         let opacity = 0;
-        let y = 20;
 
         if (currentPlayerState) {
           if (
             currentPlayerState.id === playerProgressStates[index * 2]?.id ||
             currentPlayerState.id === playerProgressStates[index * 2 + 1]?.id
           ) {
-            opacity = 1;
-            y = 0;
+            if (currentPlayerState.type === 'fade') {
+              const fadeProgress =
+                (currentPlayerState.progressEnd -
+                  currentPlayerState.progressStart) /
+                2;
+
+              const relativeProgress =
+                currentProgress - currentPlayerState.progressStart;
+
+              opacity = 1 - relativeProgress / fadeProgress;
+            } else {
+              opacity = 1;
+            }
           }
         }
 
@@ -87,10 +97,9 @@ export const Player: FC<PlayerProps> = (props) => {
             }}
           >
             <motion.div
-              transition={{ type: 'just' }}
+              transition={{ type: 'keyframes', duration: 0.6 }}
               animate={{
                 opacity,
-                y,
               }}
             >
               <IntroductionText
