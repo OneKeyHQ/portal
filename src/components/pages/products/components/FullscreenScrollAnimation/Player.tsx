@@ -1,11 +1,6 @@
 import { FC, useState } from 'react';
 
-import {
-  AnimatePresence,
-  MotionValue,
-  motion,
-  useTransform,
-} from 'framer-motion';
+import { MotionValue, motion, useTransform } from 'framer-motion';
 
 import { useWindowSize } from '../../../../../hooks';
 import { Box, CanvasPlayerNext } from '../../../../base';
@@ -60,56 +55,53 @@ export const Player: FC<PlayerProps> = (props) => {
         }}
       />
 
-      <Box
-        xs={{
-          position: 'absolute',
-          padding: 12,
-          left: 24,
-          bottom: 24,
-        }}
-        m={{
-          left: '3vw',
-          bottom: '3vw',
-        }}
-      >
-        <AnimatePresence exitBeforeEnter>
-          {items.map((item, index) => {
-            let isShowDescriptionText = false;
+      {items.map((item, index) => {
+        // 0 => 0,1
+        // 1 => 2,3
+        // 2 => 4,5
+        let opacity = 0;
+        let y = 20;
 
-            // 0 => 0,1
-            // 1 => 2,3
-            // 2 => 4,5
+        if (currentPlayerState) {
+          if (
+            currentPlayerState.id === playerProgressStates[index * 2]?.id ||
+            currentPlayerState.id === playerProgressStates[index * 2 + 1]?.id
+          ) {
+            opacity = 1;
+            y = 0;
+          }
+        }
 
-            if (currentPlayerState) {
-              if (
-                currentPlayerState.id === playerProgressStates[index * 2]?.id ||
-                currentPlayerState.id ===
-                  playerProgressStates[index * 2 + 1]?.id
-              ) {
-                isShowDescriptionText = true;
-              }
-            }
-
-            return (
-              isShowDescriptionText && (
-                <motion.div
-                  key={item.description}
-                  animate={{ opacity: 1, y: 0 }}
-                  initial={{ opacity: 0, y: 12 }}
-                  exit={{ opacity: 0, y: -12 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <IntroductionText
-                    color={item.textColor as 'black' | 'difference'}
-                    name={item.name}
-                    description={item.description}
-                  />
-                </motion.div>
-              )
-            );
-          })}
-        </AnimatePresence>
-      </Box>
+        return (
+          <Box
+            key={item.description}
+            xs={{
+              position: 'absolute',
+              padding: 12,
+              left: 24,
+              bottom: 24,
+            }}
+            m={{
+              left: '3vw',
+              bottom: '3vw',
+            }}
+          >
+            <motion.div
+              transition={{ type: 'just' }}
+              animate={{
+                opacity,
+                y,
+              }}
+            >
+              <IntroductionText
+                color={item.textColor as 'black' | 'difference'}
+                name={item.name}
+                description={item.description}
+              />
+            </motion.div>
+          </Box>
+        );
+      })}
     </Box>
   );
 };
