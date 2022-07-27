@@ -1,37 +1,58 @@
-import { FC, ReactNode } from 'react';
+import { FC, ReactNode, useEffect, useRef, useState } from 'react';
 
 import { motion } from 'framer-motion';
 
 import { Box } from '../../../../base';
-import { ProgressStateItem } from '../../../../base/CanvasPlayerNext/Player';
+import { Player } from '../../../../base/CanvasPlayerNext/Player';
 
 export interface PlayerTextProps {
+  player: Player | null;
   children?: ReactNode;
   index: number;
-  currentPlayerState: ProgressStateItem | null;
-  playerProgressStates: ProgressStateItem[];
 }
 
 export const PlayerText: FC<PlayerTextProps> = (props) => {
-  const { children, index, currentPlayerState, playerProgressStates } = props;
+  const { children, index, player } = props;
+  const divRef = useRef<HTMLDivElement>(null);
+  const [opacity, setOpacity] = useState(0);
 
-  let opacity = 0;
-  let y = 0;
+  useEffect(() => {
+    const id = setInterval(() => {
+      let y = 0;
 
-  if (currentPlayerState) {
-    if (
-      currentPlayerState.id === playerProgressStates[index * 2]?.id ||
-      currentPlayerState.id === playerProgressStates[index * 2 + 1]?.id
-    ) {
-      if (currentPlayerState.type === 'fade') {
-        opacity = playerProgressStates[index * 2]?.alpha || 0;
-        y = playerProgressStates[index * 2]?.y || 0;
-      } else {
-        opacity = 1;
-        y = 0;
+      if (!player) {
+        return;
       }
-    }
-  }
+
+      const { progressStates, currentProgress } = player;
+      const currentState = player.getProgressState(currentProgress);
+
+      if (!currentState) {
+        return;
+      }
+
+      if (
+        currentState.id === progressStates[index * 2]?.id ||
+        currentState.id === progressStates[index * 2 + 1]?.id
+      ) {
+        if (currentState.type === 'fade') {
+          setOpacity(progressStates[index * 2]?.alpha || 0);
+          y = progressStates[index * 2]?.y || 0;
+        } else {
+          setOpacity(1);
+          y = 0;
+        }
+      }
+
+      if (divRef.current) {
+        divRef.current.style.transform = `translateY(${y}px)`;
+      }
+    }, 16);
+
+    return () => {
+      clearInterval(id);
+    };
+  }, [index, player]);
 
   return (
     <Box
@@ -46,7 +67,9 @@ export const PlayerText: FC<PlayerTextProps> = (props) => {
         bottom: '3vw',
       }}
     >
-      <motion.div style={{ opacity, y }}>{children}</motion.div>
+      <div ref={divRef}>
+        <motion.div style={{ opacity }}>{children}</motion.div>
+      </div>
     </Box>
   );
 };

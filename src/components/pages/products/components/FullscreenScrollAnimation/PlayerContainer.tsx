@@ -4,15 +4,12 @@ import { MotionValue, useTransform } from 'framer-motion';
 
 import { useWindowSize } from '../../../../../hooks';
 import { Box, CanvasPlayerNext } from '../../../../base';
-import {
-  ProgressStateItem,
-  ProgressStates,
-} from '../../../../base/CanvasPlayerNext/Player';
+import { Player } from '../../../../base/CanvasPlayerNext/Player';
 import { IntroductionText } from '../IntroductionSection/IntroductionText';
 
 import { PlayerText } from './PlayerText';
 
-export interface PlayerProps {
+export interface PlayerContainerProps {
   elementInViewportProgress: MotionValue<number>;
   backgroundColor: string;
   items: {
@@ -23,14 +20,12 @@ export interface PlayerProps {
   }[];
 }
 
-export const Player: FC<PlayerProps> = (props) => {
+export const PlayerContainer: FC<PlayerContainerProps> = (props) => {
   const { elementInViewportProgress, items, backgroundColor } = props;
   const { height: windowHeight = 1, width: windowWidth = 1 } = useWindowSize();
   const [totalProgress, setTotalProgress] = useState(0);
-  const [currentPlayerState, setCurrentPlayerState] =
-    useState<ProgressStateItem | null>(null);
-  const [playerProgressStates, setPlayerProgressStates] =
-    useState<ProgressStates>([]);
+
+  const [player, setPlayer] = useState<Player | null>(null);
 
   const allFrames = items.map((item) => item.frames);
 
@@ -40,7 +35,7 @@ export const Player: FC<PlayerProps> = (props) => {
     [0, totalProgress],
   );
 
-  const currentProgress = parseFloat(motionValue.get().toFixed(1));
+  const currentProgress = parseFloat(motionValue.get().toFixed(0));
 
   return (
     <Box xs={{ position: 'relative' }}>
@@ -50,30 +45,16 @@ export const Player: FC<PlayerProps> = (props) => {
         height={windowHeight}
         frames={allFrames}
         progress={currentProgress}
-        onUpdate={({ progressStates, currentState }) => {
-          setPlayerProgressStates(progressStates);
-
-          if (currentState) {
-            setCurrentPlayerState(currentState);
-          }
+        onInit={(playerInstance) => {
+          setPlayer(playerInstance);
         }}
-        onTotalProgressChange={(progress, currentState, progressStates) => {
+        onTotalProgressChange={(progress) => {
           setTotalProgress(progress);
-          setPlayerProgressStates(progressStates);
-
-          if (currentState) {
-            setCurrentPlayerState(currentState);
-          }
         }}
       />
 
       {items.map((item, index) => (
-        <PlayerText
-          playerProgressStates={playerProgressStates}
-          currentPlayerState={currentPlayerState}
-          index={index}
-          key={item.description}
-        >
+        <PlayerText player={player} index={index} key={item.description}>
           <IntroductionText
             color={item.textColor as 'black' | 'difference'}
             name={item.name}

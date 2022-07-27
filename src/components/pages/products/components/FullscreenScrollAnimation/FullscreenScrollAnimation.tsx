@@ -6,12 +6,12 @@ import { usePositionAnimation } from '../../../../../hooks';
 import { mergeRefs } from '../../../../../utils';
 import { Box } from '../../../../base';
 
-import { Player, PlayerProps } from './Player';
+import { PlayerContainer, PlayerContainerProps } from './PlayerContainer';
 
 export interface FullscreenScrollAnimationProps {
   children?: ReactNode;
   backgroundColor: string;
-  items: PlayerProps['items'];
+  items: PlayerContainerProps['items'];
 }
 
 export const FullscreenScrollAnimation: FC<FullscreenScrollAnimationProps> = (
@@ -82,7 +82,7 @@ export const FullscreenScrollAnimation: FC<FullscreenScrollAnimationProps> = (
                   borderRadius: borderRadiusMotionValue,
                 }}
               >
-                <Player
+                <PlayerContainer
                   backgroundColor={backgroundColor}
                   items={items}
                   elementInViewportProgress={elementInViewportProgress}

@@ -19,6 +19,7 @@ interface CanvasPlayerNextProps {
     progressStates: ProgressStates,
   ) => void;
   onUpdate?: PlayerConfig['onUpdate'];
+  onInit?: (play: Player) => void;
 }
 
 export const CanvasPlayerNext: FC<CanvasPlayerNextProps> = (props) => {
@@ -29,6 +30,7 @@ export const CanvasPlayerNext: FC<CanvasPlayerNextProps> = (props) => {
     height,
     onTotalProgressChange,
     onUpdate = () => {},
+    onInit = () => {},
     backgroundColor,
   } = props;
   const player = useRef<Player | null>(null);
@@ -55,6 +57,7 @@ export const CanvasPlayerNext: FC<CanvasPlayerNextProps> = (props) => {
       const { progressStates } = player.current;
 
       onTotalProgressChange?.(totalProgress, currentState, progressStates);
+      onInit(player.current);
     }
   }, [
     frames,
@@ -64,6 +67,7 @@ export const CanvasPlayerNext: FC<CanvasPlayerNextProps> = (props) => {
     onTotalProgressChange,
     backgroundColor,
     onUpdate,
+    onInit,
   ]);
 
   useEffect(() => {

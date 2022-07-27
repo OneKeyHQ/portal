@@ -247,10 +247,7 @@ class Player {
           .onUpdate(() => {
             previousState.y = previousStateAnimatedSprite.parent.position.y;
             this.emitUpdateEvent();
-          })
-          .onComplete(() => {
-            previousState.y = previousStateAnimatedSprite.parent.position.y;
-            this.emitUpdateEvent();
+            window.localStorage.setItem('y', previousState.y.toString());
           })
           .start();
 
@@ -281,11 +278,6 @@ class Player {
           .easing(TWEEN.Easing.Linear.None)
           .onUpdate(() => {
             nextState.y = nextStateAnimatedSprite.parent.position.y;
-            this.emitUpdateEvent();
-          })
-          .onComplete(() => {
-            nextState.y = nextStateAnimatedSprite.parent.position.y;
-
             this.emitUpdateEvent();
           })
           .start();
