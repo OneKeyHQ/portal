@@ -18,6 +18,7 @@ export const PlayerText: FC<PlayerTextProps> = (props) => {
 
   useEffect(() => {
     const id = setInterval(() => {
+      let currentOpacity = 0;
       let y = 0;
 
       if (!player) {
@@ -36,17 +37,19 @@ export const PlayerText: FC<PlayerTextProps> = (props) => {
         currentState.id === progressStates[index * 2 + 1]?.id
       ) {
         if (currentState.type === 'fade') {
-          setOpacity(progressStates[index * 2]?.alpha || 0);
+          currentOpacity = progressStates[index * 2]?.alpha || 0;
           y = progressStates[index * 2]?.y || 0;
         } else {
-          setOpacity(1);
+          currentOpacity = 1;
           y = 0;
         }
       }
 
       if (divRef.current) {
-        divRef.current.style.transform = `translateY(${y}px)`;
+        divRef.current.style.transform = `translate3d(0,${y}px,0)`;
       }
+
+      setOpacity(currentOpacity);
     }, 16);
 
     return () => {
@@ -67,9 +70,19 @@ export const PlayerText: FC<PlayerTextProps> = (props) => {
         bottom: '3vw',
       }}
     >
-      <div ref={divRef}>
-        <motion.div style={{ opacity }}>{children}</motion.div>
-      </div>
+      <motion.div
+        transition={{
+          type: 'ease',
+          duration: 0.3,
+          ease: 'linear',
+        }}
+        animate={{ opacity }}
+      >
+        <div ref={divRef}>
+          {opacity}
+          {children}
+        </div>
+      </motion.div>
     </Box>
   );
 };
