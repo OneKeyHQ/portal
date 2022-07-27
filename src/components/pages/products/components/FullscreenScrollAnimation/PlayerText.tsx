@@ -28,7 +28,7 @@ export const PlayerText: FC<PlayerTextProps> = (props) => {
       const { progressStates, currentProgress } = player;
       const currentState = player.getProgressState(currentProgress);
 
-      if (!currentState) {
+      if (!currentState || !divRef.current) {
         return;
       }
 
@@ -43,12 +43,12 @@ export const PlayerText: FC<PlayerTextProps> = (props) => {
           currentOpacity = 1;
           y = 0;
         }
+      } else {
+        currentOpacity = 0;
       }
 
-      if (divRef.current) {
-        divRef.current.style.transform = `translate3d(0,${y}px,0)`;
-      }
-
+      divRef.current.style.opacity = currentOpacity.toString();
+      divRef.current.style.transform = `translate3d(0,${y}px,0)`;
       setOpacity(currentOpacity);
     }, 16);
 
@@ -70,18 +70,8 @@ export const PlayerText: FC<PlayerTextProps> = (props) => {
         bottom: '3vw',
       }}
     >
-      <motion.div
-        transition={{
-          type: 'ease',
-          duration: 0.3,
-          ease: 'linear',
-        }}
-        animate={{ opacity }}
-      >
-        <div ref={divRef}>
-          {opacity}
-          {children}
-        </div>
+      <motion.div animate={{ opacity }}>
+        <div ref={divRef}>{children}</div>
       </motion.div>
     </Box>
   );
