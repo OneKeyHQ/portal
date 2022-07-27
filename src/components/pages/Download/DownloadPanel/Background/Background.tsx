@@ -69,7 +69,7 @@ export const Background: FC<BackgroundProps> = (props) => {
           />
         )}
 
-        {currentTab === 'web' && (
+        {(currentTab === 'web' || currentTab === 'bridge') && (
           <StaticImage style={imageStyle} src="./images/web.jpg" alt="web" />
         )}
       </Box>

@@ -7,6 +7,7 @@ import { Container, Flex } from '../../../../../base';
 import { FadeIn } from '../../../../../base/FadeIn';
 import { useCurrentTabAtom } from '../../atom';
 
+import { BridgeContent } from './BridgeContent';
 import { BrowserContent } from './BrowserContent';
 import { DesktopContent } from './DesktopContent';
 import { MobileContent } from './MobileContent';
@@ -36,6 +37,8 @@ export const Content: FC<ContentProps> = (props) => {
         setCurrentTab('browserExtension');
       } else if (client === 'web') {
         setCurrentTab('web');
+      } else if (client === 'bridge') {
+        setCurrentTab('bridge');
       } else {
         setCurrentTab('desktop');
       }
@@ -64,6 +67,7 @@ export const Content: FC<ContentProps> = (props) => {
           {currentTab === 'web' && <WebContent />}
           {currentTab === 'browserExtension' && <BrowserContent />}
           {currentTab === 'mobile' && <MobileContent />}
+          {currentTab === 'bridge' && <BridgeContent />}
         </Flex>
       </FadeIn>
 

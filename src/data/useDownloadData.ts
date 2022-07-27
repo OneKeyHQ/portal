@@ -61,7 +61,16 @@ export function useDownloadData() {
     description: 'Web app',
   };
 
+  const bridge = {
+    type: 'bridge',
+    path: '/download?client=bridge',
+    image: 'web',
+    name: t('title__onekey_bridge'),
+    description: 'Bridge',
+  };
+
   const downloadData = {
+    bridge,
     otherPlatforms,
     ios,
     android,
