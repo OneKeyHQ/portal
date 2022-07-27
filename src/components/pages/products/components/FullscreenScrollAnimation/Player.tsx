@@ -91,19 +91,7 @@ export const Player: FC<PlayerProps> = (props) => {
               bottom: '3vw',
             }}
           >
-            <motion.div
-              transition={{
-                duration: 0.3,
-                delay: 0,
-                ease: 'linear',
-              }}
-              animate={{
-                opacity,
-              }}
-              style={{
-                y,
-              }}
-            >
+            <motion.div style={{ opacity, y, display: 'none' }}>
               <IntroductionText
                 color={item.textColor as 'black' | 'difference'}
                 name={item.name}

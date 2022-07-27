@@ -1,3 +1,4 @@
+import TWEEN from '@tweenjs/tween.js';
 import { nanoid } from 'nanoid';
 import {
   AnimatedSprite,
@@ -61,6 +62,8 @@ class Player {
 
   loaderQueue = [];
 
+  time = 0;
+
   constructor(config: PlayerConfig) {
     const { element, width, height } = config;
 
@@ -75,6 +78,10 @@ class Player {
       autoDensity: true,
       antialias: true,
       backgroundAlpha: 0,
+    });
+
+    this.application.ticker.add(() => {
+      TWEEN.update(this.application.ticker.lastTime);
     });
   }
 
@@ -217,14 +224,29 @@ class Player {
         const alpha = 1 - (newProgress - state.progressStart) / state.length;
 
         previousState.alpha = alpha;
-        previousState.y = y;
+
         previousState.visible = true;
         previousStateAnimatedSprite.gotoAndStop(
           previousStateAnimatedSprite.textures.length - 1,
         );
         previousStateAnimatedSprite.alpha = alpha;
         previousStateAnimatedSprite.visible = true;
-        previousStateAnimatedSprite.parent.position.y = y;
+
+        new TWEEN.Tween(previousStateAnimatedSprite.parent.position)
+          .to({ y }, 100)
+          .easing(TWEEN.Easing.Linear.None)
+          .onUpdate(() => {
+            previousState.y = previousStateAnimatedSprite.parent.position.y;
+          })
+          .start();
+
+        new TWEEN.Tween(previousStateAnimatedSprite)
+          .to({ alpha }, 100)
+          .easing(TWEEN.Easing.Linear.None)
+          .onUpdate(() => {
+            previousState.alpha = previousStateAnimatedSprite.alpha;
+          })
+          .start();
       }
       if (nextStateAnimatedSprite) {
         const y =
@@ -238,7 +260,14 @@ class Player {
         nextStateAnimatedSprite.gotoAndStop(0);
         nextStateAnimatedSprite.alpha = 1;
         nextStateAnimatedSprite.visible = true;
-        nextStateAnimatedSprite.parent.position.y = y;
+
+        new TWEEN.Tween(nextStateAnimatedSprite.parent.position)
+          .to({ y }, 100)
+          .easing(TWEEN.Easing.Linear.None)
+          .onUpdate(() => {
+            nextState.y = nextStateAnimatedSprite.parent.position.y;
+          })
+          .start();
       }
     } else if (state?.animatedSprite) {
       state.animatedSprite.parent.position.y = 0;
