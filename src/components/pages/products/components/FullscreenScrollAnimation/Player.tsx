@@ -60,6 +60,7 @@ export const Player: FC<PlayerProps> = (props) => {
         // 1 => 2,3
         // 2 => 4,5
         let opacity = 0;
+        let y = 20;
 
         if (currentPlayerState) {
           if (
@@ -78,6 +79,7 @@ export const Player: FC<PlayerProps> = (props) => {
               opacity = 1 - relativeProgress / fadeProgress;
             } else {
               opacity = 1;
+              y = 0;
             }
           }
         }
@@ -97,9 +99,10 @@ export const Player: FC<PlayerProps> = (props) => {
             }}
           >
             <motion.div
-              transition={{ type: 'keyframes', duration: 0.6 }}
+              transition={{ type: 'keyframes', duration: 0.5 }}
               animate={{
                 opacity,
+                y,
               }}
             >
               <IntroductionText
