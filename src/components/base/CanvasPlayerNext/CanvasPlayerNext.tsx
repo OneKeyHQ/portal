@@ -1,6 +1,11 @@
 import { FC, useEffect, useRef } from 'react';
 
-import { Player, ProgressStateItem, ProgressStates } from './Player';
+import {
+  Player,
+  PlayerConfig,
+  ProgressStateItem,
+  ProgressStates,
+} from './Player';
 
 interface CanvasPlayerNextProps {
   progress: number;
@@ -10,9 +15,10 @@ interface CanvasPlayerNextProps {
   height: number;
   onTotalProgressChange?: (
     progress: number,
-    currentState: ProgressStateItem | null,
+    currentState: ProgressStateItem | undefined,
     progressStates: ProgressStates,
   ) => void;
+  onUpdate?: PlayerConfig['onUpdate'];
 }
 
 export const CanvasPlayerNext: FC<CanvasPlayerNextProps> = (props) => {
@@ -22,6 +28,7 @@ export const CanvasPlayerNext: FC<CanvasPlayerNextProps> = (props) => {
     width,
     height,
     onTotalProgressChange,
+    onUpdate = () => {},
     backgroundColor,
   } = props;
   const player = useRef<Player | null>(null);
@@ -36,6 +43,7 @@ export const CanvasPlayerNext: FC<CanvasPlayerNextProps> = (props) => {
         width,
         height,
         backgroundColor,
+        onUpdate,
       });
 
       player.current.setFrameGroups(frames);
@@ -48,7 +56,15 @@ export const CanvasPlayerNext: FC<CanvasPlayerNextProps> = (props) => {
 
       onTotalProgressChange?.(totalProgress, currentState, progressStates);
     }
-  }, [frames, width, height, progress, onTotalProgressChange, backgroundColor]);
+  }, [
+    frames,
+    width,
+    height,
+    progress,
+    onTotalProgressChange,
+    backgroundColor,
+    onUpdate,
+  ]);
 
   useEffect(() => {
     if (player.current) {

@@ -8,11 +8,17 @@ import {
   Texture,
 } from 'pixi.js';
 
-type PlayerConfig = {
+export type PlayerConfig = {
   element: HTMLCanvasElement;
   width: number;
   height: number;
   backgroundColor?: string;
+  onUpdate?: (data: {
+    currentState?: ProgressStateItem;
+    progressStates: ProgressStates;
+    totalProgress: number;
+    currentProgress: number;
+  }) => void;
 };
 
 export type ProgressStateItem = {
@@ -64,11 +70,14 @@ class Player {
 
   time = 0;
 
+  onUpdate: PlayerConfig['onUpdate'];
+
   constructor(config: PlayerConfig) {
-    const { element, width, height } = config;
+    const { element, width, height, onUpdate } = config;
 
     this.width = width;
     this.height = height;
+    this.onUpdate = onUpdate;
 
     this.application = new Application({
       view: element,
@@ -102,7 +111,7 @@ class Player {
     return this.totalProgress;
   }
 
-  getProgressState(progress: number): ProgressStateItem | null {
+  getProgressState(progress: number): ProgressStateItem | undefined {
     const { progressStates } = this;
 
     for (const state of progressStates) {
@@ -115,7 +124,7 @@ class Player {
       }
     }
 
-    return null;
+    return undefined;
   }
 
   resizeAllAnimatedSpriteState() {
@@ -237,6 +246,11 @@ class Player {
           .easing(TWEEN.Easing.Linear.None)
           .onUpdate(() => {
             previousState.y = previousStateAnimatedSprite.parent.position.y;
+            this.emitUpdateEvent();
+          })
+          .onComplete(() => {
+            previousState.y = previousStateAnimatedSprite.parent.position.y;
+            this.emitUpdateEvent();
           })
           .start();
 
@@ -245,6 +259,7 @@ class Player {
           .easing(TWEEN.Easing.Linear.None)
           .onUpdate(() => {
             previousState.alpha = previousStateAnimatedSprite.alpha;
+            this.emitUpdateEvent();
           })
           .start();
       }
@@ -266,6 +281,12 @@ class Player {
           .easing(TWEEN.Easing.Linear.None)
           .onUpdate(() => {
             nextState.y = nextStateAnimatedSprite.parent.position.y;
+            this.emitUpdateEvent();
+          })
+          .onComplete(() => {
+            nextState.y = nextStateAnimatedSprite.parent.position.y;
+
+            this.emitUpdateEvent();
           })
           .start();
       }
@@ -293,6 +314,18 @@ class Player {
       state.visible = false;
       state.alpha = 0;
     }
+  }
+
+  emitUpdateEvent() {
+    const { progressStates, totalProgress, currentProgress } = this;
+    const currentState = this.getProgressState(currentProgress);
+
+    this.onUpdate?.({
+      currentState,
+      progressStates,
+      totalProgress,
+      currentProgress,
+    });
   }
 
   getRelativeAnimatedSpriteState() {
