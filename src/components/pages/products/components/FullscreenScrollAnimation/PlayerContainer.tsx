@@ -35,7 +35,7 @@ export const PlayerContainer: FC<PlayerContainerProps> = (props) => {
     [0, totalProgress],
   );
 
-  const currentProgress = parseFloat(motionValue.get().toFixed(0));
+  const currentProgress = parseFloat(motionValue.get().toFixed(1));
 
   return (
     <Box xs={{ position: 'relative' }}>
