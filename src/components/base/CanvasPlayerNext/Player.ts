@@ -242,7 +242,7 @@ class Player {
         previousStateAnimatedSprite.visible = true;
 
         new TWEEN.Tween(previousStateAnimatedSprite.parent.position)
-          .to({ y }, 100)
+          .to({ y }, 16 * 5)
           .easing(TWEEN.Easing.Linear.None)
           .onUpdate(() => {
             previousState.y = previousStateAnimatedSprite.parent.position.y;
@@ -252,7 +252,7 @@ class Player {
           .start();
 
         new TWEEN.Tween(previousStateAnimatedSprite)
-          .to({ alpha }, 100)
+          .to({ alpha }, 16 * 5)
           .easing(TWEEN.Easing.Linear.None)
           .onUpdate(() => {
             previousState.alpha = previousStateAnimatedSprite.alpha;
@@ -274,7 +274,7 @@ class Player {
         nextStateAnimatedSprite.visible = true;
 
         new TWEEN.Tween(nextStateAnimatedSprite.parent.position)
-          .to({ y }, 100)
+          .to({ y }, 16 * 5)
           .easing(TWEEN.Easing.Linear.None)
           .onUpdate(() => {
             nextState.y = nextStateAnimatedSprite.parent.position.y;
