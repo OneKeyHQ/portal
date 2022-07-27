@@ -22,6 +22,9 @@ export type ProgressStateItem = {
   progressStart: number;
   progressEnd: number;
   length: number;
+  alpha: number;
+  y: number;
+  visible: boolean;
 };
 
 export type ProgressStates = ProgressStateItem[];
@@ -157,6 +160,9 @@ class Player {
         length: frameGroup.length,
         progressStart: (this.totalProgress += 1),
         progressEnd: (this.totalProgress += frameGroup.length - 1),
+        alpha: 1,
+        y: 0,
+        visible: true,
       });
 
       // fade state
@@ -167,6 +173,9 @@ class Player {
           length: this.FADE_FRAMES_COUNT,
           progressStart: (this.totalProgress += 1),
           progressEnd: (this.totalProgress += this.FADE_FRAMES_COUNT - 1),
+          alpha: 1,
+          y: 0,
+          visible: true,
         });
       }
     });
@@ -203,35 +212,57 @@ class Player {
       const previousStateAnimatedSprite = previousState?.animatedSprite;
 
       if (previousStateAnimatedSprite) {
+        const y =
+          -((newProgress - state.progressStart) / state.length) * this.height;
+        const alpha = 1 - (newProgress - state.progressStart) / state.length;
+
+        previousState.alpha = alpha;
+        previousState.y = y;
+        previousState.visible = true;
         previousStateAnimatedSprite.gotoAndStop(
           previousStateAnimatedSprite.textures.length - 1,
         );
-        previousStateAnimatedSprite.alpha =
-          1 - (newProgress - state.progressStart) / state.length;
+        previousStateAnimatedSprite.alpha = alpha;
         previousStateAnimatedSprite.visible = true;
-        previousStateAnimatedSprite.parent.position.y =
-          -((newProgress - state.progressStart) / state.length) * this.height;
+        previousStateAnimatedSprite.parent.position.y = y;
       }
       if (nextStateAnimatedSprite) {
-        nextStateAnimatedSprite.gotoAndStop(0);
-        nextStateAnimatedSprite.alpha = 1;
-        nextStateAnimatedSprite.visible = true;
-        nextStateAnimatedSprite.parent.position.y =
+        const y =
           (1 - (newProgress - state.progressStart) / state.length) *
           this.height *
           0.5;
+
+        nextState.alpha = 1;
+        nextState.y = y;
+        nextState.visible = true;
+        nextStateAnimatedSprite.gotoAndStop(0);
+        nextStateAnimatedSprite.alpha = 1;
+        nextStateAnimatedSprite.visible = true;
+        nextStateAnimatedSprite.parent.position.y = y;
       }
     } else if (state?.animatedSprite) {
       state.animatedSprite.parent.position.y = 0;
       state.animatedSprite.alpha = 1;
       state.animatedSprite.visible = true;
       state.animatedSprite.gotoAndStop(newProgress - state.progressStart);
+      state.visible = true;
+      state.alpha = 1;
+      state.y = 0;
 
       const { previousState, nextState } =
         this.getRelativeAnimatedSpriteState();
 
+      this.stateHide(previousState);
+      this.stateHide(nextState);
       this.hide(previousState?.animatedSprite);
       this.hide(nextState?.animatedSprite);
+    }
+  }
+
+  stateHide(state?: ProgressStateItem) {
+    if (state) {
+      state.visible = false;
+      state.alpha = 0;
     }
   }
 
@@ -241,8 +272,8 @@ class Player {
 
     if (!currentState) {
       return {
-        previousState: null,
-        nextState: null,
+        previousState: undefined,
+        nextState: undefined,
         currentProgress,
       };
     }
@@ -260,8 +291,8 @@ class Player {
     if (index === -1) {
       return {
         currentState,
-        previousState: null,
-        nextState: null,
+        previousState: undefined,
+        nextState: undefined,
       };
     }
 
