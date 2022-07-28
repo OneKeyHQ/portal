@@ -62,7 +62,7 @@ export const ProductContent: FC<ProductContentProps> = (props) => {
         gap: 32,
       }}
     >
-      <Flex xs={{ flexDirection: 'column', gap: 8, maxWidth: 500 }}>
+      <Flex xs={{ flexDirection: 'column', gap: 8 }}>
         <Span
           xs={{
             ...theme.text.medium300,
@@ -86,6 +86,7 @@ export const ProductContent: FC<ProductContentProps> = (props) => {
         <Span
           xs={{
             ...theme.text.normal300,
+            maxWidth: 500,
             color: theme.colors.test400,
             opacity: 0.6,
           }}
