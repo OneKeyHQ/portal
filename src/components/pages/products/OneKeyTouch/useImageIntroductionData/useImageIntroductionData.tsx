@@ -32,7 +32,7 @@ export function useImageIntroductionData() {
           .fill(0)
           .map((_, i) =>
             staticAssetPrefix(
-              `/onekey-touch-feature-01/onekey-touch-feature-01_${i
+              `/1920-onekey-touch-feature-01/onekey-touch-feature-01_${i
                 .toString()
                 .padStart(4, '0')}.webp`,
             ),
@@ -61,7 +61,7 @@ export function useImageIntroductionData() {
           .fill(0)
           .map((_, i) =>
             staticAssetPrefix(
-              `/onekey-touch-feature-02/onekey-touch-feature-02_${i
+              `/1920-onekey-touch-feature-02/onekey-touch-feature-02_${i
                 .toString()
                 .padStart(4, '0')}.webp`,
             ),
@@ -90,7 +90,7 @@ export function useImageIntroductionData() {
           .fill(0)
           .map((_, i) =>
             staticAssetPrefix(
-              `/onekey-touch-feature-03/onekey-touch-feature-03_${i
+              `/1920-onekey-touch-feature-03/onekey-touch-feature-03_${i
                 .toString()
                 .padStart(4, '0')}.webp`,
             ),

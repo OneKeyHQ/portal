@@ -1,6 +1,11 @@
 import { FC, useEffect, useRef } from 'react';
 
-import { Player, ProgressStateItem } from './Player';
+import {
+  Player,
+  PlayerConfig,
+  ProgressStateItem,
+  ProgressStates,
+} from './Player';
 
 interface CanvasPlayerNextProps {
   progress: number;
@@ -10,8 +15,11 @@ interface CanvasPlayerNextProps {
   height: number;
   onTotalProgressChange?: (
     progress: number,
-    currentState: ProgressStateItem | null,
+    currentState: ProgressStateItem | undefined,
+    progressStates: ProgressStates,
   ) => void;
+  onUpdate?: PlayerConfig['onUpdate'];
+  onInit?: (play: Player) => void;
 }
 
 export const CanvasPlayerNext: FC<CanvasPlayerNextProps> = (props) => {
@@ -21,6 +29,8 @@ export const CanvasPlayerNext: FC<CanvasPlayerNextProps> = (props) => {
     width,
     height,
     onTotalProgressChange,
+    onUpdate = () => {},
+    onInit = () => {},
     backgroundColor,
   } = props;
   const player = useRef<Player | null>(null);
@@ -35,6 +45,7 @@ export const CanvasPlayerNext: FC<CanvasPlayerNextProps> = (props) => {
         width,
         height,
         backgroundColor,
+        onUpdate,
       });
 
       player.current.setFrameGroups(frames);
@@ -43,10 +54,21 @@ export const CanvasPlayerNext: FC<CanvasPlayerNextProps> = (props) => {
 
       const totalProgress = player.current.getTotalProgress();
       const currentState = player.current.getProgressState(progress);
+      const { progressStates } = player.current;
 
-      onTotalProgressChange?.(totalProgress, currentState);
+      onTotalProgressChange?.(totalProgress, currentState, progressStates);
+      onInit(player.current);
     }
-  }, [frames, width, height, progress, onTotalProgressChange, backgroundColor]);
+  }, [
+    frames,
+    width,
+    height,
+    progress,
+    onTotalProgressChange,
+    backgroundColor,
+    onUpdate,
+    onInit,
+  ]);
 
   useEffect(() => {
     if (player.current) {
@@ -54,8 +76,9 @@ export const CanvasPlayerNext: FC<CanvasPlayerNextProps> = (props) => {
 
       const totalProgress = player.current.getTotalProgress();
       const currentState = player.current.getProgressState(progress);
+      const { progressStates } = player.current;
 
-      onTotalProgressChange?.(totalProgress, currentState);
+      onTotalProgressChange?.(totalProgress, currentState, progressStates);
     }
   }, [onTotalProgressChange, progress]);
 

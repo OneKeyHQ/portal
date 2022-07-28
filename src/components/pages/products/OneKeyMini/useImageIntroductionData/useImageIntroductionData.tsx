@@ -33,7 +33,7 @@ export function useImageIntroductionData() {
           .fill(0)
           .map((_, i) =>
             staticAssetPrefix(
-              `/onekey-mini-feature-01/onekey-mini-feature-01_${i
+              `/1920-onekey-mini-feature-01/onekey-mini-feature-01_${i
                 .toString()
                 .padStart(4, '0')}.webp`,
             ),
@@ -63,7 +63,7 @@ export function useImageIntroductionData() {
           .fill(0)
           .map((_, i) =>
             staticAssetPrefix(
-              `/onekey-mini-feature-02/onekey-mini-feature-02_${i
+              `/1920-onekey-mini-feature-02/onekey-mini-feature-02_${i
                 .toString()
                 .padStart(4, '0')}.webp`,
             ),
@@ -93,7 +93,7 @@ export function useImageIntroductionData() {
           .fill(0)
           .map((_, i) =>
             staticAssetPrefix(
-              `/onekey-mini-feature-03/onekey-mini-feature-03_${i
+              `/1920-onekey-mini-feature-03/onekey-mini-feature-03_${i
                 .toString()
                 .padStart(4, '0')}.webp`,
             ),
