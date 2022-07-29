@@ -1,9 +1,10 @@
-import { FC, ReactNode } from 'react';
+import { FC, ReactNode, SetStateAction, useEffect } from 'react';
 
 import { useTheme } from '@emotion/react';
 
 import { isBrowser } from '../../../../../utils';
 import { Box } from '../../../../base';
+import { TabTypes, useCurrentTabAtom } from '../atom';
 import { Background } from '../Background';
 
 import { Content } from './Content';
@@ -16,6 +17,21 @@ export interface DesktopDownloadPanelProps {
 export const DesktopDownloadPanel: FC<DesktopDownloadPanelProps> = (props) => {
   const { children } = props;
   const theme = useTheme();
+  const [, setCurrentTabAtom] = useCurrentTabAtom();
+
+  console.log(window.location.search);
+
+  useEffect(() => {
+    if (isBrowser()) {
+      const urlParams = new URLSearchParams(window.location.search);
+
+      if (urlParams.has('client')) {
+        const client = urlParams.get('client');
+
+        setCurrentTabAtom(client as SetStateAction<TabTypes>);
+      }
+    }
+  }, [setCurrentTabAtom]);
 
   return (
     <Box

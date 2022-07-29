@@ -1,9 +1,12 @@
 import { useTranslation } from 'gatsby-plugin-react-i18next';
 
+import { useOneKeyVersion } from './useOneKeyVersion';
+
 export type DownloadTypes = keyof ReturnType<typeof useDownloadData>;
 
 export function useDownloadData() {
   const { t } = useTranslation();
+  const { formattedData } = useOneKeyVersion();
 
   const otherPlatforms = {
     type: 'otherPlatforms',
@@ -55,7 +58,7 @@ export function useDownloadData() {
 
   const web = {
     type: 'web',
-    path: '',
+    path: formattedData.web.url,
     image: 'web',
     name: 'Web',
     description: 'Web app',

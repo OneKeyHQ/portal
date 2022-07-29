@@ -22,7 +22,6 @@ export const Tabs: FC<TabsProps> = (props) => {
     downloadData.desktop,
     downloadData.mobile,
     downloadData.browserExtension,
-    downloadData.web,
     downloadData.bridge,
   ];
   const [currentTabAtom, setCurrentTabAtom] = useCurrentTabAtom();

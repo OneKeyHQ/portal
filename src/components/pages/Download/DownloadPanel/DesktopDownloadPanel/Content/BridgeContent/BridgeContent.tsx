@@ -10,22 +10,22 @@ export interface BridgeContentProps {
 export const BridgeContent: FC<BridgeContentProps> = (props) => {
   const { children } = props;
 
-  const normalButtons = [
-    {
-      text: win.name,
-      icon: win.icon,
-      infos: win.description,
-      url: win.url,
-      systemType: 'windows',
-    },
-    {
-      text: linux.name,
-      icon: linux.icon,
-      infos: linux.description,
-      url: linux.url,
-      systemType: 'linux',
-    },
-  ];
+  // const normalButtons = [
+  //   {
+  //     text: win.name,
+  //     icon: win.icon,
+  //     infos: win.description,
+  //     url: win.url,
+  //     systemType: 'windows',
+  //   },
+  //   {
+  //     text: linux.name,
+  //     icon: linux.icon,
+  //     infos: linux.description,
+  //     url: linux.url,
+  //     systemType: 'linux',
+  //   },
+  // ];
 
   return (
     <Flex
