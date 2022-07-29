@@ -123,7 +123,7 @@ export function useNavigationDataObject(): Record<
   const forDeveloper = {
     name: t('menu__developer'),
     key: 'for-developer',
-    path: 'https://docs.onekey.so/',
+    path: 'https://developer.onekey.so/',
   };
 
   const forBusiness = {
