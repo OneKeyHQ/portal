@@ -194,7 +194,7 @@ export function useOneKeyDownloadData() {
     icon: WebIcon,
     name: 'Browser',
     description: 'Chrome, Firefox, Edge',
-    pageTitle: 'title__download_onekey',
+    pageTitle: 'title__safely_travel_around_all_blockchain',
   };
 
   const bridge = {
