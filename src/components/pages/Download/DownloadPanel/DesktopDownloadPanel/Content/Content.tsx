@@ -64,7 +64,6 @@ export const Content: FC<ContentProps> = (props) => {
             overflow: 'hidden',
           }}
         >
-          {currentTab}
           {currentTab === 'desktop' && <DesktopContent />}
           {currentTab === 'web' && <WebContent />}
           {currentTab === 'browserExtension' && <BrowserContent />}

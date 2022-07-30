@@ -42,7 +42,6 @@ export const Tabs: FC<TabsProps> = (props) => {
                 xs={{ width: '25%' }}
                 key={item.name}
                 onClick={() => {
-                  // setCurrentTabAtom(iconType as SetStateAction<TabTypes>);
                   navigate(`?client=${iconType}`);
                 }}
               >
