@@ -20,10 +20,11 @@ export interface ContentProps {
 export const Content: FC<ContentProps> = (props) => {
   const { children } = props;
   const [currentTab, setCurrentTab] = useCurrentTabAtom();
+  const search = isBrowser() ? queryString.parse(window.location.search) : null;
 
   useEffect(() => {
-    if (isBrowser()) {
-      const { client } = queryString.parse(window.location.search);
+    if (isBrowser() && search) {
+      const { client } = search;
 
       if (client === 'desktop') {
         setCurrentTab('desktop');
@@ -43,7 +44,7 @@ export const Content: FC<ContentProps> = (props) => {
         setCurrentTab('desktop');
       }
     }
-  }, [setCurrentTab]);
+  }, [setCurrentTab, search]);
 
   return (
     <Container xs={{ height: '100%' }}>

@@ -2,11 +2,10 @@ import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 import { navigate } from 'gatsby';
-import { SetStateAction } from 'jotai';
 
 import { DownloadTypes, useDownloadData } from '../../../../../../data';
 import { Box, Container, Flex } from '../../../../../base';
-import { TabTypes, useCurrentTabAtom } from '../../atom';
+import { useCurrentTabAtom } from '../../atom';
 
 import { TabItem } from './TabItem';
 
@@ -24,7 +23,7 @@ export const Tabs: FC<TabsProps> = (props) => {
     downloadData.browserExtension,
     downloadData.bridge,
   ];
-  const [currentTabAtom, setCurrentTabAtom] = useCurrentTabAtom();
+  const [currentTabAtom] = useCurrentTabAtom();
 
   return (
     <Box
@@ -43,7 +42,7 @@ export const Tabs: FC<TabsProps> = (props) => {
                 xs={{ width: '25%' }}
                 key={item.name}
                 onClick={() => {
-                  setCurrentTabAtom(iconType as SetStateAction<TabTypes>);
+                  // setCurrentTabAtom(iconType as SetStateAction<TabTypes>);
                   navigate(`?client=${iconType}`);
                 }}
               >
