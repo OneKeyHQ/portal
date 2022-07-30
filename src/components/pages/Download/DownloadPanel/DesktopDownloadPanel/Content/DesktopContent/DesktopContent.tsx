@@ -23,13 +23,6 @@ export const DesktopContent: React.FC<DesktopContentProps> = (props) => {
     types: { desktop },
   } = useOneKeyDownloadData();
 
-  // platforms.bridgeMac,
-  // platforms.bridgeWin,
-  // platforms.bridgeLinux64Deb,
-  // platforms.bridgeLinux64Rpm,
-  // platforms.bridgeLinux32Deb,
-  // platforms.bridgeLinux32Rpm,
-
   const normalButtons = [
     {
       text: win.name,

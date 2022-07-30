@@ -68,8 +68,8 @@ export function useDownloadData() {
     type: 'bridge',
     path: '/download?client=bridge',
     image: 'bridge',
-    name: t('title__onekey_bridge'),
-    description: 'Bridge',
+    name: t('title__hardware_bridge'),
+    description: 'macOS, Windows, Linux',
   };
 
   const downloadData = {

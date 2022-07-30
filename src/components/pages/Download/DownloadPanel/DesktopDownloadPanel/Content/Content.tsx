@@ -61,7 +61,7 @@ export const Content: FC<ContentProps> = (props) => {
             zIndex: 1,
             flexDirection: 'column',
             gap: 16,
-            overflow: 'hidden',
+            // overflow: 'hidden',
           }}
         >
           {currentTab === 'desktop' && <DesktopContent />}
