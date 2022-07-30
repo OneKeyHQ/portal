@@ -67,7 +67,7 @@ export function useDownloadData() {
   const bridge = {
     type: 'bridge',
     path: '/download?client=bridge',
-    image: 'web',
+    image: 'bridge',
     name: t('title__onekey_bridge'),
     description: 'Bridge',
   };

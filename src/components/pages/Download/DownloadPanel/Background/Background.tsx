@@ -1,15 +1,9 @@
-import { FC, ReactNode, useEffect } from 'react';
+import { FC, ReactNode } from 'react';
 
 import { StaticImage } from 'gatsby-plugin-image';
-import { Loader } from 'pixi.js';
 
 import { Box } from '../../../../base';
 import { useCurrentTabAtom } from '../atom';
-
-import browserExtensionImage from './images/browser.jpg';
-import desktopImage from './images/desktop.jpg';
-import mobileImage from './images/mobile.jpg';
-import webImage from './images/web.jpg';
 
 export interface BackgroundProps {
   children?: ReactNode;
@@ -18,12 +12,6 @@ export interface BackgroundProps {
 export const Background: FC<BackgroundProps> = (props) => {
   const { children } = props;
   const [currentTab] = useCurrentTabAtom();
-
-  useEffect(() => {
-    new Loader()
-      .add([desktopImage, browserExtensionImage, webImage, mobileImage])
-      .load();
-  }, []);
 
   const imageStyle = {
     marginLeft: 'auto',
