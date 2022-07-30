@@ -19,8 +19,6 @@ export const DesktopDownloadPanel: FC<DesktopDownloadPanelProps> = (props) => {
   const theme = useTheme();
   const [, setCurrentTabAtom] = useCurrentTabAtom();
 
-  console.log(window.location.search);
-
   useEffect(() => {
     if (isBrowser()) {
       const urlParams = new URLSearchParams(window.location.search);

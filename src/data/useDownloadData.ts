@@ -42,7 +42,7 @@ export function useDownloadData() {
 
   const browserExtension = {
     type: 'browserExtension',
-    path: '/download?client=browser',
+    path: '/download?client=browserExtension',
     image: 'browserExtension',
     name: t('title__browser_extension'),
     description: 'Chrome, Firefox, Edge',

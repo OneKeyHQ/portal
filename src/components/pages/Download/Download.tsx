@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { Page } from 'gatsby';
 import { Helmet } from 'react-helmet';
 
 import { Container, Flex, Main, SEO } from '../../base';
@@ -13,7 +12,7 @@ import {
 
 import { DownloadPanel } from './DownloadPanel';
 
-const Download: React.FC<Page> = () => (
+const Download: React.FC = () => (
   <>
     <Helmet>
       <title>OneKey</title>
