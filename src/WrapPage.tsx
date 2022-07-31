@@ -7,6 +7,7 @@ import {
 } from 'gatsby-plugin-react-i18next/dist/types';
 import { Helmet } from 'react-helmet';
 
+import { Awwwards } from './components/common';
 import { isBrowser } from './utils';
 
 interface WrapPageProps {
@@ -114,6 +115,8 @@ const WrapPage: FC<WrapPageProps> = (props) => {
       </Helmet>
 
       {children}
+
+      <Awwwards />
     </div>
   );
 };
