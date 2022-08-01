@@ -1,5 +1,7 @@
 import { FC, ReactNode } from 'react';
 
+import { Box } from '../../base';
+
 export interface AwwwardsProps {
   children?: ReactNode;
 }
@@ -7,15 +9,33 @@ export interface AwwwardsProps {
 export const Awwwards: FC<AwwwardsProps> = (props) => {
   const { children } = props;
 
+  // show it from 2022-08-07-00-01 to 2022-08-08-00-01
+  const show =
+    new Date('2022-08-07T00:01:00.000Z') < new Date() &&
+    new Date() < new Date('2022-08-08T00:01:00.000Z');
+
+  if (!show) {
+    return null;
+  }
+
   return (
-    <div
+    <Box
       id="awwwards"
-      style={{
+      css={{
         position: 'fixed',
         zIndex: 999,
-        transform: 'translateY(-50%)',
+        transformOrigin: 'center right',
         top: '50%',
         right: 0,
+      }}
+      xs={{
+        transform: 'translateY(-50%) scale(0.6)',
+      }}
+      m={{
+        transform: 'translateY(-50%) scale(0.8)',
+      }}
+      l={{
+        transform: 'translateY(-50%) scale(1)',
       }}
     >
       <a
@@ -36,6 +56,6 @@ export const Awwwards: FC<AwwwardsProps> = (props) => {
       </a>
 
       {children}
-    </div>
+    </Box>
   );
 };
