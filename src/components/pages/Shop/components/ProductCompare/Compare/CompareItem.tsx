@@ -103,12 +103,9 @@ export const CompareItem: FC<CompareItemProps> = (props) => {
         </Link>
 
         <Link to={productDetailUrl}>
-          <Button
-            variant="text"
-            {...buttonProp}
-            rightIcon={<ChevronRightIcon width={24} height={24} />}
-          >
+          <Button variant="text" {...buttonProp}>
             <I18n name="action__learn_more" />
+            <ChevronRightIcon width={24} height={24} />
           </Button>
         </Link>
       </Flex>
