@@ -22,14 +22,14 @@ export interface NavigationItemProps extends NavigationDataItem {
 export const NavigationItem: FC<NavigationItemProps> = (props) => {
   const { name, subItems, path, panelComponent, ...otherProps } = props;
   const { hoverProps, isHovered } = useHover({
-    timeout: 100,
+    timeout: panelComponent ? 200 : 50,
   });
   const theme = useTheme();
 
   const contentNode = (
     <Box
-      {...otherProps}
       {...hoverProps}
+      {...otherProps}
       xs={{
         ...theme.text.medium300,
         color: theme.background.test500,

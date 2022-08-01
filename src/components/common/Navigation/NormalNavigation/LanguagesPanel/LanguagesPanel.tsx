@@ -27,34 +27,33 @@ export const LanguagesPanel: FC<LanguagesPanelProps> = (props) => {
 
   return (
     <Box
+      {...hoverProps}
       xs={{
         position: 'absolute',
-        top: '150%',
         right: 0,
+        paddingTop: 16,
       }}
     >
       <Container>
-        <Box {...hoverProps}>
-          <Box
-            xs={{
-              padding: 8,
-              borderRadius: 16,
-              background: theme.colors.white,
-              boxShadow: theme.shadow.hover,
-            }}
-          >
-            <Flex xs={{ width: 460, flexWrap: 'wrap' }}>
-              {languages.map((lng) => (
-                <Box key={lng} xs={{ width: '33.3%' }}>
-                  <Link to={originalPath} language={lng}>
-                    <LanguagesPanelItem>
-                      {languagesMap[lng.toUpperCase()]}
-                    </LanguagesPanelItem>
-                  </Link>
-                </Box>
-              ))}
-            </Flex>
-          </Box>
+        <Box
+          xs={{
+            padding: 8,
+            borderRadius: 16,
+            background: theme.colors.white,
+            boxShadow: theme.shadow.hover,
+          }}
+        >
+          <Flex xs={{ width: 460, flexWrap: 'wrap' }}>
+            {languages.map((lng) => (
+              <Box key={lng} xs={{ width: '33.3%' }}>
+                <Link to={originalPath} language={lng}>
+                  <LanguagesPanelItem>
+                    {languagesMap[lng.toUpperCase()]}
+                  </LanguagesPanelItem>
+                </Link>
+              </Box>
+            ))}
+          </Flex>
         </Box>
       </Container>
 

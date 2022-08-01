@@ -126,42 +126,42 @@ export function useOneKeyDownloadData() {
   const bridgeMac = {
     icon: AppleIcon,
     name: 'macOS',
-    description: formattedData.bridge.version,
+    description: `v${formattedData.bridge.version}`,
     url: formattedData.bridge.mac.url,
   };
 
   const bridgeWin = {
     icon: WindowsIcon,
     name: 'Windows',
-    description: formattedData.bridge.version,
+    description: `v${formattedData.bridge.version}`,
     url: formattedData.bridge.win.url,
   };
 
   const bridgeLinux64Deb = {
     icon: LinuxIcon,
     name: 'Linux 64-bit (deb)',
-    description: formattedData.bridge.version,
+    description: `v${formattedData.bridge.version}`,
     url: formattedData.bridge.linux64Deb.url,
   };
 
   const bridgeLinux64Rpm = {
     icon: LinuxIcon,
     name: 'Linux 64-bit (rpm)',
-    description: formattedData.bridge.version,
+    description: `v${formattedData.bridge.version}`,
     url: formattedData.bridge.linux64Rpm.url,
   };
 
   const bridgeLinux32Deb = {
     icon: LinuxIcon,
     name: 'Linux 32-bit (deb)',
-    description: formattedData.bridge.version,
+    description: `v${formattedData.bridge.version}`,
     url: formattedData.bridge.linux32Deb.url,
   };
 
   const bridgeLinux32Rpm = {
     icon: LinuxIcon,
     name: 'Linux 32-bit (rpm)',
-    description: formattedData.bridge.version,
+    description: `v${formattedData.bridge.version}`,
     url: formattedData.bridge.linux32Rpm.url,
   };
 
@@ -194,7 +194,7 @@ export function useOneKeyDownloadData() {
     icon: WebIcon,
     name: 'Browser',
     description: 'Chrome, Firefox, Edge',
-    pageTitle: 'title__download_onekey',
+    pageTitle: 'title__safely_travel_around_all_blockchain',
   };
 
   const bridge = {

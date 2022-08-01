@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Helmet } from 'react-helmet';
 
-import { Container, Flex, Main, OnlyDisplay, SEO } from '../../base';
+import { Container, Flex, Main, SEO } from '../../base';
 import {
   Navigation,
   PageFooter,
@@ -10,7 +10,6 @@ import {
   TwoMediaCards,
 } from '../../common';
 
-import { BridgeDownload } from './BridgeDownload';
 import { DownloadPanel } from './DownloadPanel';
 
 const Download: React.FC = () => (
@@ -36,9 +35,9 @@ const Download: React.FC = () => (
           }}
           l={{ paddingTop: 80, paddingBottom: 80 }}
         >
-          <OnlyDisplay l xl xxl>
+          {/* <OnlyDisplay l xl xxl>
             <BridgeDownload />
-          </OnlyDisplay>
+          </OnlyDisplay> */}
 
           <TwoMediaCards />
 

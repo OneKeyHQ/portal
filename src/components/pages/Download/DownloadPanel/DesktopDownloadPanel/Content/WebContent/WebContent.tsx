@@ -1,8 +1,8 @@
 import { FC, ReactNode } from 'react';
 
-import { Flex } from '../../../../../base';
-import { LaunchAppButton } from '../../../../../common/LaunchAppButton';
-import { Title } from '../../Title';
+import { Flex } from '../../../../../../base';
+import { LaunchAppButton } from '../../../../../../common/LaunchAppButton';
+import { Title } from '../../../Title';
 
 export interface WebContentProps {
   children?: ReactNode;

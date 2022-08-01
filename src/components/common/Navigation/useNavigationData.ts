@@ -1,7 +1,7 @@
 // import eipsSvgUrl from './images/eips.svg';
 import { useTranslation } from 'gatsby-plugin-react-i18next';
 
-import { useOneKeyProduct } from '../../../data';
+import { useDownloadData, useOneKeyProduct } from '../../../data';
 
 import portfolioSvgUrl from './images/portfolio.svg';
 import recoverySvgUrl from './images/recovery-phrase-converter.svg';
@@ -40,6 +40,7 @@ export function useNavigationDataObject(): Record<
   const oneKeyProduct = useOneKeyProduct();
   const { t } = useTranslation();
   const shopMenu = useShopMenu();
+  const downloadData = useDownloadData();
 
   const products = {
     name: t('menu__products'),
@@ -67,7 +68,33 @@ export function useNavigationDataObject(): Record<
   const app = {
     name: t('menu__app'),
     key: 'app',
-    path: '/download',
+    subItems: [
+      {
+        name: downloadData.desktop.name,
+        key: downloadData.desktop.name,
+        path: downloadData.desktop.path,
+      },
+      {
+        name: downloadData.mobile.name,
+        key: downloadData.mobile.name,
+        path: downloadData.mobile.path,
+      },
+      {
+        name: downloadData.browserExtension.name,
+        key: downloadData.browserExtension.name,
+        path: downloadData.browserExtension.path,
+      },
+      {
+        name: downloadData.bridge.name,
+        key: downloadData.bridge.name,
+        path: downloadData.bridge.path,
+      },
+      {
+        name: downloadData.web.name,
+        key: downloadData.web.name,
+        path: downloadData.web.path,
+      },
+    ],
   };
 
   const services = {
@@ -123,7 +150,7 @@ export function useNavigationDataObject(): Record<
   const forDeveloper = {
     name: t('menu__developer'),
     key: 'for-developer',
-    path: 'https://docs.onekey.so/',
+    path: 'https://developer.onekey.so/',
   };
 
   const forBusiness = {

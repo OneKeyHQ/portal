@@ -1,9 +1,12 @@
 import { useTranslation } from 'gatsby-plugin-react-i18next';
 
+import { useOneKeyVersion } from './useOneKeyVersion';
+
 export type DownloadTypes = keyof ReturnType<typeof useDownloadData>;
 
 export function useDownloadData() {
   const { t } = useTranslation();
+  const { formattedData } = useOneKeyVersion();
 
   const otherPlatforms = {
     type: 'otherPlatforms',
@@ -32,14 +35,14 @@ export function useDownloadData() {
   const desktop = {
     type: 'desktop',
     name: t('title__desktop_app'),
-    description: 'Mac, Windows, Linux',
+    description: 'macOS, Windows, Linux',
     path: '/download?client=desktop',
     image: 'desktop',
   };
 
   const browserExtension = {
     type: 'browserExtension',
-    path: '/download?client=browser',
+    path: '/download?client=browserExtension',
     image: 'browserExtension',
     name: t('title__browser_extension'),
     description: 'Chrome, Firefox, Edge',
@@ -55,13 +58,22 @@ export function useDownloadData() {
 
   const web = {
     type: 'web',
-    path: '',
+    path: formattedData.web.url,
     image: 'web',
     name: 'Web',
     description: 'Web app',
   };
 
+  const bridge = {
+    type: 'bridge',
+    path: '/download?client=bridge',
+    image: 'bridge',
+    name: t('title__hardware_bridge'),
+    description: 'macOS, Windows, Linux',
+  };
+
   const downloadData = {
+    bridge,
     otherPlatforms,
     ios,
     android,

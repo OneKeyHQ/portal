@@ -28,10 +28,12 @@ export const TabItem: FC<TabItemProps> = (props) => {
         willChange: 'opacity,background',
         opacity: active ? 1 : 0.6,
         background: active ? theme.colors.test500 : 'transparent',
+        color: active ? theme.colors.brandAlt400 : theme.colors.white,
         cursor: 'pointer',
         ':hover': {
           opacity: 1,
           background: theme.colors.test500,
+          color: theme.colors.brandAlt400,
         },
       }}
       xl={{

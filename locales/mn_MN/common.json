@@ -78,6 +78,7 @@
     "title__browser_extension": "Хөтөчийн өргөтгөл",
     "title__desktop_app": "Ширээний програм",
     "title__google_play": "Google Play",
+    "title__hardware_bridge": "Техник хангамжийн гүүр",
     "title__mobile_app": "Гар утасны програм",
     "title__multi_chain_support": "Олон хэлхээний дэмжлэг",
     "title__multi_chain_support_desc": "ETH, BSC болон HECO сүлжээн дэх жетонуудыг дэмжих.",

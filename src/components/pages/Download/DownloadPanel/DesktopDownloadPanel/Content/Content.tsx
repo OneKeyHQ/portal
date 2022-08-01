@@ -7,6 +7,7 @@ import { Container, Flex } from '../../../../../base';
 import { FadeIn } from '../../../../../base/FadeIn';
 import { useCurrentTabAtom } from '../../atom';
 
+import { BridgeContent } from './BridgeContent';
 import { BrowserContent } from './BrowserContent';
 import { DesktopContent } from './DesktopContent';
 import { MobileContent } from './MobileContent';
@@ -19,10 +20,11 @@ export interface ContentProps {
 export const Content: FC<ContentProps> = (props) => {
   const { children } = props;
   const [currentTab, setCurrentTab] = useCurrentTabAtom();
+  const search = isBrowser() ? queryString.parse(window.location.search) : null;
 
   useEffect(() => {
-    if (isBrowser()) {
-      const { client } = queryString.parse(window.location.search);
+    if (isBrowser() && search) {
+      const { client } = search;
 
       if (client === 'desktop') {
         setCurrentTab('desktop');
@@ -36,11 +38,13 @@ export const Content: FC<ContentProps> = (props) => {
         setCurrentTab('browserExtension');
       } else if (client === 'web') {
         setCurrentTab('web');
+      } else if (client === 'bridge') {
+        setCurrentTab('bridge');
       } else {
         setCurrentTab('desktop');
       }
     }
-  }, [setCurrentTab]);
+  }, [setCurrentTab, search]);
 
   return (
     <Container xs={{ height: '100%' }}>
@@ -57,13 +61,14 @@ export const Content: FC<ContentProps> = (props) => {
             zIndex: 1,
             flexDirection: 'column',
             gap: 16,
-            overflow: 'hidden',
+            // overflow: 'hidden',
           }}
         >
           {currentTab === 'desktop' && <DesktopContent />}
           {currentTab === 'web' && <WebContent />}
           {currentTab === 'browserExtension' && <BrowserContent />}
           {currentTab === 'mobile' && <MobileContent />}
+          {currentTab === 'bridge' && <BridgeContent />}
         </Flex>
       </FadeIn>
 

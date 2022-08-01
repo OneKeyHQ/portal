@@ -29,30 +29,35 @@ export const MenuItems: FC<MenuItemsProps> = (props) => {
     <Box
       {...hoverProps}
       xs={{
-        marginTop: 12,
+        paddingTop: 12,
         display: isActive || isHovered ? 'block' : 'none',
-        transition: theme.transitions.allEaseOut,
-        padding: 6,
-        borderRadius: 12,
-        boxShadow: theme.shadow.hover,
         position: 'absolute',
         left: '50%',
         transform: 'translate(-50%, 0)',
-        backgroundColor: theme.colors.white,
-        zIndex: 10,
       }}
-      externalProps={otherProps}
     >
-      <div ref={ref}>
-        <Flex
-          xs={{
-            flexDirection: 'column',
-            gap: 8,
-          }}
-        >
-          {children}
-        </Flex>
-      </div>
+      <Box
+        xs={{
+          transition: theme.transitions.allEaseOut,
+          padding: 6,
+          borderRadius: 12,
+          boxShadow: theme.shadow.hover,
+          backgroundColor: theme.colors.white,
+          zIndex: 10,
+        }}
+        externalProps={otherProps}
+      >
+        <div ref={ref}>
+          <Flex
+            xs={{
+              flexDirection: 'column',
+              gap: 8,
+            }}
+          >
+            {children}
+          </Flex>
+        </div>
+      </Box>
     </Box>
   );
 };

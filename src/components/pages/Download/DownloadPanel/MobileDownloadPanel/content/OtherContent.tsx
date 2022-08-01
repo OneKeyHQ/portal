@@ -16,7 +16,7 @@ export const OtherContent: FC<OtherContentProps> = (props) => {
   const { children } = props;
 
   const {
-    platforms: { macIntel, macSilicon, win, linux, web },
+    platforms: { macIntel, macSilicon, win, linux },
     types: { desktop },
   } = useOneKeyDownloadData();
 
@@ -44,12 +44,6 @@ export const OtherContent: FC<OtherContentProps> = (props) => {
       icon: linux.icon,
       infos: linux.description,
       url: linux.url,
-    },
-    {
-      text: web.name,
-      icon: web.icon,
-      infos: web.description,
-      url: web.url,
     },
   ];
 
