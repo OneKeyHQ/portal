@@ -6,6 +6,7 @@ import { useHover } from '../../../../../hooks';
 import { Box } from '../../../../base/Box';
 import { Container } from '../../../../base/Container';
 import { Flex } from '../../../../base/Flex';
+import { useCurrentActiveMenuItem } from '../atom';
 import { PanelComponentProps } from '../NavigationItem';
 import { useNormalNavigationHeight } from '../useNormalNavigationHeight';
 
@@ -16,10 +17,18 @@ export interface ServicesPanelProps extends PanelComponentProps {
 }
 
 export const ServicesPanel: FC<ServicesPanelProps> = (props) => {
-  const { children, isActive, subItems, currentActiveMenuItem } = props;
+  const { children, isActive, subItems } = props;
   const top = useNormalNavigationHeight();
   const theme = useTheme();
-  const { hoverProps, isHovered } = useHover({ timeout: 100 });
+  const [currentActiveMenuItem, setCurrentActiveMenuItem] =
+    useCurrentActiveMenuItem();
+
+  const { hoverProps, isHovered } = useHover({
+    timeout: 100,
+    onHoverEnd: () => {
+      setCurrentActiveMenuItem('');
+    },
+  });
 
   if (!isActive && !isHovered && currentActiveMenuItem !== 'services') {
     return null;

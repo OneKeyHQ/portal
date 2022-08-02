@@ -6,6 +6,7 @@ import { useHover } from '../../../../../hooks';
 import { Box } from '../../../../base/Box';
 import { Container } from '../../../../base/Container';
 import { Flex } from '../../../../base/Flex';
+import { useCurrentActiveMenuItem } from '../atom';
 import { PanelComponentProps } from '../NavigationItem';
 
 import { LeftArea } from './LeftArea';
@@ -36,11 +37,19 @@ const container = {
 };
 
 export const ProductPanel: FC<ProductPanelProps> = (props) => {
-  const { children, isActive, currentActiveMenuItem } = props;
+  const { children, isActive } = props;
+  const [currentActiveMenuItem, setCurrentActiveMenuItem] =
+    useCurrentActiveMenuItem();
   const { currentProductBackgroundColor } = useProductPanel();
   const [cursorVariant, setCursorVariant] = useState('hidden');
   const { hoverProps: RightAreaHoverProps, isHovered: isRightAreaHovered } =
     useHover({ timeout: 100 });
+  const { hoverProps, isHovered } = useHover({
+    timeout: 100,
+    onHoverEnd: () => {
+      setCurrentActiveMenuItem('');
+    },
+  });
 
   const background = useMemo(
     () =>
@@ -51,12 +60,12 @@ export const ProductPanel: FC<ProductPanelProps> = (props) => {
   );
 
   useEffect(() => {
-    if (currentActiveMenuItem === 'products' || isActive) {
+    if (currentActiveMenuItem === 'products' || isHovered || isActive) {
       setCursorVariant('visible');
     } else {
       setCursorVariant('hidden');
     }
-  }, [currentActiveMenuItem, isActive]);
+  }, [currentActiveMenuItem, isHovered, isActive]);
 
   return (
     <motion.div
@@ -69,7 +78,7 @@ export const ProductPanel: FC<ProductPanelProps> = (props) => {
         zIndex: 10,
       }}
     >
-      <Box xs={{ background }}>
+      <Box {...hoverProps} xs={{ background }}>
         <Container>
           <Flex xs={{ justifyContent: 'space-between' }}>
             <Box xs={{ flex: 1 }}>

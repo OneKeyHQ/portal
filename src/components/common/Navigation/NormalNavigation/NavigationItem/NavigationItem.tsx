@@ -13,7 +13,6 @@ import { NavigationDataItem } from '../../useNavigationData';
 import { useCurrentActiveMenuItem } from '../atom';
 
 export type PanelComponentProps = {
-  currentActiveMenuItem: string;
   isActive: boolean;
   subItems: NavigationDataItem['subItems'];
 };
@@ -27,8 +26,7 @@ export interface NavigationItemProps extends NavigationDataItem {
 export const NavigationItem: FC<NavigationItemProps> = (props) => {
   const { name, subItems, path, itemKey, panelComponent, ...otherProps } =
     props;
-  const [currentActiveMenuItem, setCurrentActiveMenuItem] =
-    useCurrentActiveMenuItem();
+  const [, setCurrentActiveMenuItem] = useCurrentActiveMenuItem();
   const { hoverProps, isHovered } = useHover({
     timeout: panelComponent ? 200 : 50,
     onHoverStart: () => {
@@ -80,7 +78,6 @@ export const NavigationItem: FC<NavigationItemProps> = (props) => {
           createElement(panelComponent, {
             isActive: isHovered,
             subItems,
-            currentActiveMenuItem,
           }),
           slot,
         )}

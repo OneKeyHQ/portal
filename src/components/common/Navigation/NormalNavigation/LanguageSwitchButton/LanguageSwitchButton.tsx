@@ -6,6 +6,7 @@ import { useI18next } from 'gatsby-plugin-react-i18next';
 import { useHover } from '../../../../../hooks';
 import { Box, Flex, LanguageIcon } from '../../../../base';
 import { languagesMap } from '../../languages';
+import { useCurrentActiveMenuItem } from '../atom';
 import { LanguagesPanel } from '../LanguagesPanel';
 
 export interface LanguageSwitchButtonProps {
@@ -16,7 +17,17 @@ export const LanguageSwitchButton: FC<LanguageSwitchButtonProps> = (props) => {
   const { children } = props;
   const i18n = useI18next();
   const theme = useTheme();
-  const { hoverProps, isHovered } = useHover({ timeout: 100 });
+  const [, setCurrentActiveMenuItem] = useCurrentActiveMenuItem();
+
+  const { hoverProps, isHovered } = useHover({
+    timeout: 100,
+    onHoverStart: () => {
+      setCurrentActiveMenuItem('languages');
+    },
+    onHoverEnd: () => {
+      setCurrentActiveMenuItem('');
+    },
+  });
 
   return (
     <Box css={{ position: 'relative', color: theme.colors.test500 }}>

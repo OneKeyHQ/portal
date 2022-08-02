@@ -2,11 +2,13 @@ import { FC, ReactNode } from 'react';
 
 import { useTheme } from '@emotion/react';
 
+import { useHover } from '../../../hooks';
 import { Nav } from '../../base/Box';
 import { OnlyDisplay } from '../../base/OnlyDisplay';
 
 import { MobileNavigation } from './MobileNavigation';
 import { NormalNavigation } from './NormalNavigation';
+import { useCurrentActiveMenuItem } from './NormalNavigation/atom';
 
 export interface NavigationProps {
   children?: ReactNode;
@@ -15,9 +17,17 @@ export interface NavigationProps {
 export const Navigation: FC<NavigationProps> = (props) => {
   const { children } = props;
   const theme = useTheme();
+  const [, setCurrentActiveMenuItem] = useCurrentActiveMenuItem();
+  const { hoverProps } = useHover({
+    timeout: 100,
+    onHoverEnd: () => {
+      setCurrentActiveMenuItem('');
+    },
+  });
 
   return (
     <Nav
+      {...hoverProps}
       xs={{
         position: 'fixed',
         width: '100%',
