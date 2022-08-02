@@ -6,24 +6,24 @@ import { useHover } from '../../../../../hooks';
 import { Box } from '../../../../base/Box';
 import { Container } from '../../../../base/Container';
 import { Flex } from '../../../../base/Flex';
-import { NavigationDataItem } from '../../useNavigationData';
+import { PanelComponentProps } from '../NavigationItem';
 import { useNormalNavigationHeight } from '../useNormalNavigationHeight';
 
 import { ServicesPanelItem } from './ServicesPanelItem';
 
-export interface ServicesPanelProps {
+export interface ServicesPanelProps extends PanelComponentProps {
   children?: ReactNode;
-  isActive: boolean;
-  subItems?: NavigationDataItem[];
 }
 
 export const ServicesPanel: FC<ServicesPanelProps> = (props) => {
-  const { children, isActive, subItems } = props;
+  const { children, isActive, subItems, currentActiveMenuItem } = props;
   const top = useNormalNavigationHeight();
   const theme = useTheme();
   const { hoverProps, isHovered } = useHover({ timeout: 100 });
 
-  if (!isActive && !isHovered) return null;
+  if (!isActive && !isHovered && currentActiveMenuItem !== 'services') {
+    return null;
+  }
 
   return (
     <Box

@@ -73,7 +73,7 @@ export const NormalNavigation: React.FC<NormalNavigationProps> = () => {
                 listStyle: 'none',
               }}
             >
-              <NavigationItem {...item} />
+              <NavigationItem itemKey={item.key} {...item} />
             </Li>
           ))}
         </Ul>
