@@ -42,8 +42,6 @@ export const ProductPanel: FC<ProductPanelProps> = (props) => {
   const { hoverProps: RightAreaHoverProps, isHovered: isRightAreaHovered } =
     useHover({ timeout: 100 });
 
-  console.log('currentActiveMenuItem', currentActiveMenuItem);
-
   const background = useMemo(
     () =>
       `linear-gradient(90deg, ${currentProductBackgroundColor} 0%, ${currentProductBackgroundColor} 50%, ${
