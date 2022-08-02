@@ -45,6 +45,8 @@ export const NavigationAnimationWrap: FC<NavigationAnimationWrapProps> = (
   return (
     <motion.div
       style={{
+        position: 'relative',
+        zIndex: 1,
         backgroundColor,
         paddingTop: isSpring ? paddingSpringValue : paddingValue,
         paddingBottom: isSpring ? paddingSpringValue : paddingValue,
