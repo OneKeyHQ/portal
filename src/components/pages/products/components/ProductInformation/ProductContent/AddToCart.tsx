@@ -5,7 +5,6 @@ import { Box } from '../../../../../base/Box';
 import { Button } from '../../../../../base/Button';
 import { Flex } from '../../../../../base/Flex';
 import { ChevronDownIcon } from '../../../../../base/Icon';
-import { MenuItem, MenuItems } from '../../../../../base/Menu';
 import { useBuy } from '../../../hooks/useBuy';
 
 export interface AddToCartProps {
@@ -16,19 +15,9 @@ export interface AddToCartProps {
 export const AddToCart: FC<AddToCartProps> = (props) => {
   const { children, shopProductId } = props;
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const {
-    buyButtonProps,
-    setCurrentProductAmount,
-    currentProductAmount,
-    items,
-  } = useBuy({
+  const { buyButtonProps, currentProductAmount } = useBuy({
     shopProductId,
   });
-
-  const selectAmount = (menuProductAmount: number) => {
-    setCurrentProductAmount(menuProductAmount);
-    setIsMenuOpen(false);
-  };
 
   return (
     <Flex xs={{ gap: 12 }}>
@@ -45,17 +34,6 @@ export const AddToCart: FC<AddToCartProps> = (props) => {
             x{currentProductAmount} <ChevronDownIcon width={24} height={24} />
           </Flex>
         </Button>
-
-        <MenuItems
-          onClickOutside={() => setIsMenuOpen(false)}
-          isActive={isMenuOpen}
-        >
-          {items.map((item) => (
-            <MenuItem onClick={() => selectAmount(item)} key={item}>
-              <Box xs={{ paddingLeft: 16, paddingRight: 16 }}>x{item}</Box>
-            </MenuItem>
-          ))}
-        </MenuItems>
       </Box>
 
       <Button variant="filled" {...buyButtonProps}>

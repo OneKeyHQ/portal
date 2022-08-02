@@ -11,14 +11,11 @@ const amountAtom = atom<{
 
 export function useBuy(useBuyButtonParams: UseBuyButtonParams) {
   const { shopProductId } = useBuyButtonParams;
-  const items = [1, 2, 3, 4, 5, 6, 7, 8];
   const [amount, setAmount] = useAtom(amountAtom);
   const currentProductAmount = amount[shopProductId] || 1;
 
   const buy = () => {
-    navigate(
-      `https://shop.onekey.so/cart/${shopProductId}:${currentProductAmount}`,
-    );
+    navigate(`https://shop.onekey.so/cart/${shopProductId}:1`);
   };
 
   return {
@@ -28,7 +25,6 @@ export function useBuy(useBuyButtonParams: UseBuyButtonParams) {
 
       setAmount((prev) => ({ ...prev, [shopProductId]: newAmount }));
     },
-    items,
     buyButtonProps: {
       onClick: buy,
     },
