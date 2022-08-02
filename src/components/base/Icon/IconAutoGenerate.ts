@@ -74,6 +74,8 @@ export { ReactComponent as PackageIcon } from './images/package.svg';
 export { default as PackageIconInline } from './images/package.svg';
 export { ReactComponent as ServiceIcon } from './images/service.svg';
 export { default as ServiceIconInline } from './images/service.svg';
+export { ReactComponent as ShopIcon } from './images/shop.svg';
+export { default as ShopIconInline } from './images/shop.svg';
 export { ReactComponent as StarHalfIcon } from './images/star-half.svg';
 export { default as StarHalfIconInline } from './images/star-half.svg';
 export { ReactComponent as StarIcon } from './images/star.svg';
