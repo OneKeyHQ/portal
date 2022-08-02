@@ -20,9 +20,7 @@ export const Navigation: FC<NavigationProps> = (props) => {
   const [, setCurrentActiveMenuItem] = useCurrentActiveMenuItem();
   const { hoverProps } = useHover({
     timeout: 100,
-    onHoverEnd: () => {
-      setCurrentActiveMenuItem('');
-    },
+    onHoverEnd: () => setCurrentActiveMenuItem(''),
   });
 
   return (

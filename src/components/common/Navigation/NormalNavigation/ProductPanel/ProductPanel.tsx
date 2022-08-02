@@ -45,10 +45,7 @@ export const ProductPanel: FC<ProductPanelProps> = (props) => {
   const { hoverProps: RightAreaHoverProps, isHovered: isRightAreaHovered } =
     useHover({ timeout: 100 });
   const { hoverProps, isHovered } = useHover({
-    timeout: 100,
-    onHoverEnd: () => {
-      setCurrentActiveMenuItem('');
-    },
+    onHoverEnd: () => setCurrentActiveMenuItem(''),
   });
 
   const background = useMemo(

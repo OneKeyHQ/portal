@@ -25,9 +25,7 @@ export const ServicesPanel: FC<ServicesPanelProps> = (props) => {
 
   const { hoverProps, isHovered } = useHover({
     timeout: 100,
-    onHoverEnd: () => {
-      setCurrentActiveMenuItem('');
-    },
+    onHoverEnd: () => setCurrentActiveMenuItem(''),
   });
 
   if (!isActive && !isHovered && currentActiveMenuItem !== 'services') {
