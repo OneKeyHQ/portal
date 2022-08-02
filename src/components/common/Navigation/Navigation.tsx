@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react';
+import { FC, ReactNode, useState } from 'react';
 
 import { useTheme } from '@emotion/react';
 
@@ -17,10 +17,17 @@ export interface NavigationProps {
 export const Navigation: FC<NavigationProps> = (props) => {
   const { children } = props;
   const theme = useTheme();
+  const [transitionDelay, setTransitionDelay] = useState<string>('0ms');
   const [, setCurrentActiveMenuItem] = useCurrentActiveMenuItem();
   const { hoverProps } = useHover({
     timeout: 100,
-    onHoverEnd: () => setCurrentActiveMenuItem(''),
+    onHoverEnd: () => {
+      setCurrentActiveMenuItem('');
+      setTransitionDelay('0ms');
+    },
+    onHoverStart: () => {
+      setTransitionDelay('300ms');
+    },
   });
 
   return (
@@ -34,6 +41,7 @@ export const Navigation: FC<NavigationProps> = (props) => {
         left: 0,
         right: 0,
         transition: theme.transitions.allEaseInOut,
+        transitionDelay,
         ':hover': {
           backgroundColor: 'white',
         },
