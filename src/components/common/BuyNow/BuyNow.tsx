@@ -13,6 +13,7 @@ import { Box } from '../../base/Box';
 export interface BuyNowProps {
   buttonOverride?: ButtonProps;
   children?: ReactNode;
+  menuPosition?: 'top' | 'bottom';
   shops: {
     name: string;
     url: string;
@@ -20,7 +21,7 @@ export interface BuyNowProps {
 }
 
 export const BuyNow: FC<BuyNowProps> = (props) => {
-  const { children, shops, buttonOverride } = props;
+  const { children, shops, buttonOverride, menuPosition } = props;
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -41,6 +42,7 @@ export const BuyNow: FC<BuyNowProps> = (props) => {
       </Button>
 
       <MenuItems
+        css={menuPosition === 'bottom' ? { bottom: '110%' } : { top: '100%' }}
         onClickOutside={() => setIsMenuOpen(false)}
         isActive={isMenuOpen}
       >

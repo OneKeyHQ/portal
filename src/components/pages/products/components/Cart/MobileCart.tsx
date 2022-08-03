@@ -76,9 +76,7 @@ export const MobileCart: FC<MobileCartProps> = (props) => {
 
             {children}
 
-            <Flex xs={{ gap: 4, flexWrap: 'wrap' }}>
-              <BuyNow shops={shops} />
-            </Flex>
+            <BuyNow menuPosition="bottom" shops={shops} />
           </Flex>
         </Box>
       </motion.div>
