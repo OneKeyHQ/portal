@@ -1,21 +1,23 @@
 import { StaticImage } from 'gatsby-plugin-image';
 import { useTranslation } from 'gatsby-plugin-react-i18next';
 
-import { filterShops, useOneKeyProduct } from '../../../../../data';
+import { useOneKeyProduct } from '../../../../../data';
+import { useSortShopOrder } from '../../../../../hooks/useSortShopOrder';
 import { ProductInformationProps } from '../../components/ProductInformation';
 
 export function useProductInformationData(): ProductInformationProps {
   const { mini } = useOneKeyProduct();
   const { t } = useTranslation();
+  const shops = useSortShopOrder([
+    mini.shops.amazonGlobal,
+    mini.shops.amazonJapan,
+    mini.shops.youzan,
+    mini.shops.shopify,
+  ]);
 
   return {
     status: mini.status,
-    shops: filterShops([
-      mini.shops.amazonGlobal,
-      mini.shops.amazonJapan,
-      mini.shops.youzan,
-      mini.shops.shopify,
-    ]),
+    shops,
     name: mini.name,
     slogan: t('content__crypto_hardware_wallet'),
     description: t('content__onekey_mini_product_desc'),
