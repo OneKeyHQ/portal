@@ -56,7 +56,6 @@ export const NavigationCart: FC<NavigationCartProps> = (props) => {
           backdropFilter: `blur(10px)`,
           WebkitBackdropFilter: `blur(10px)`,
           position: 'relative',
-          zIndex: 1,
         }}
         variants={container}
         animate={cursorVariant}
