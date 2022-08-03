@@ -5,8 +5,10 @@ import { useTranslation } from 'gatsby-plugin-react-i18next';
 
 import {
   ProductStatus,
+  Shop,
   useOneKeyProduct,
 } from '../../../../../../data/useOneKeyProduct';
+import { useSortShopOrder } from '../../../../../../hooks/useSortShopOrder';
 
 import battery from './images/battery.svg';
 import bluetooth from './images/bluetooth.svg';
@@ -29,6 +31,7 @@ export type ProductCompareItem = {
   productDetailUrl: string;
   name: string;
   status: ProductStatus;
+  shops?: Shop[];
   productCompareDetail: ProductCompareDetailItem[];
 };
 
@@ -40,10 +43,17 @@ export function useProductCompareData(): {
 } {
   const product = useOneKeyProduct();
   const { t } = useTranslation();
+  const shops = useSortShopOrder([
+    product.mini.shops.amazonGlobal,
+    product.mini.shops.amazonJapan,
+    product.mini.shops.youzan,
+    product.mini.shops.shopify,
+  ]);
 
   return {
     items: {
       mini: {
+        shops,
         image: <StaticImage src="./images/shop-compare-mini.png" alt="mini" />,
         name: product.mini.name,
         price: product.mini.formattedPrice,

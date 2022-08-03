@@ -1,9 +1,17 @@
 import { FC, ReactNode, useState } from 'react';
 
-import { Button, I18n, Link, MenuItem, MenuItems } from '../../base';
+import {
+  Button,
+  ButtonProps,
+  I18n,
+  Link,
+  MenuItem,
+  MenuItems,
+} from '../../base';
 import { Box } from '../../base/Box';
 
 export interface BuyNowProps {
+  buttonOverride?: ButtonProps;
   children?: ReactNode;
   shops: {
     name: string;
@@ -12,7 +20,7 @@ export interface BuyNowProps {
 }
 
 export const BuyNow: FC<BuyNowProps> = (props) => {
-  const { children, shops } = props;
+  const { children, shops, buttonOverride } = props;
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -22,13 +30,15 @@ export const BuyNow: FC<BuyNowProps> = (props) => {
         position: 'relative',
       }}
     >
-      <Button onClick={() => setIsMenuOpen(!isMenuOpen)} variant="filled">
-        <Box xs={{ minWidth: 120 }}>
-          <I18n name="action__buy_now" />
+      <Button
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+        variant="filled"
+        {...buttonOverride}
+      >
+        <Box xs={{ minWidth: 100 }}>
+          {children || <I18n name="action__buy_now" />}
         </Box>
       </Button>
-
-      {children}
 
       <MenuItems
         onClickOutside={() => setIsMenuOpen(false)}
