@@ -13,7 +13,7 @@ import {
   Span,
 } from '../../../../../base';
 
-import { AddToCart } from './AddToCart';
+import { BuyNow } from './BuyNow';
 import { ComingSoon } from './ComingSoon';
 import { OtherStoresSelect, OtherStoresSelectProps } from './OtherStoresSelect';
 import { Review } from './Review';
@@ -107,7 +107,7 @@ export const ProductContent: FC<ProductContentProps> = (props) => {
 
       {status === 'comingSoon' && <ComingSoon />}
 
-      {status === 'normal' && <AddToCart shopProductId={shopProductId} />}
+      {status === 'normal' && <BuyNow shopProductId={shopProductId} />}
 
       {status === 'normal' && <OtherStoresSelect shops={shops} />}
 
