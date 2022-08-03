@@ -1,7 +1,7 @@
 import { FC, ReactNode, useState } from 'react';
 
-import { Button, I18n, Link, MenuItem, MenuItems } from '../../../../../base';
-import { Box } from '../../../../../base/Box';
+import { Button, I18n, Link, MenuItem, MenuItems } from '../../base';
+import { Box } from '../../base/Box';
 
 export interface BuyNowProps {
   children?: ReactNode;

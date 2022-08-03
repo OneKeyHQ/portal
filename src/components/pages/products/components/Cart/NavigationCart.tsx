@@ -3,12 +3,9 @@ import { FC, ReactNode, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
 import { Box, Container, Flex, OnlyDisplay } from '../../../../base';
+import { BuyNow, BuyNowProps } from '../../../../common';
 import { useIntroductionSectionCenterPosition } from '../../atoms';
 import { ProductInformationProps } from '../ProductInformation';
-import {
-  BuyNow,
-  BuyNowProps,
-} from '../ProductInformation/ProductContent/BuyNow';
 
 import { ProductName } from './components/ProductName';
 import { ProductPrice } from './components/ProductPrice';

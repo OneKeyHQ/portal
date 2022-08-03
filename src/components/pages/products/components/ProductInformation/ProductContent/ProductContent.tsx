@@ -12,8 +12,8 @@ import {
   ServiceIcon,
   Span,
 } from '../../../../../base';
+import { BuyNow, BuyNowProps } from '../../../../../common';
 
-import { BuyNow, BuyNowProps } from './BuyNow';
 import { ComingSoon } from './ComingSoon';
 import { Review } from './Review';
 
