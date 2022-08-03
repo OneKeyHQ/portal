@@ -3,6 +3,7 @@ import { AnchorHTMLAttributes, FC, ReactNode } from 'react';
 import { useTranslation } from 'gatsby-plugin-react-i18next';
 
 import { Button, ButtonProps } from '../Button';
+import { ShopIcon } from '../Icon';
 import { Link } from '../Link';
 
 export interface GoToShopButtonProps {
@@ -28,7 +29,11 @@ export const GoToShopButton: FC<GoToShopButtonProps> = (props) => {
 
   return (
     <Link to="/shop">
-      <Button variant="outlined" {...buttonOverrides}>
+      <Button
+        rightIcon={<ShopIcon width={24} height={24} />}
+        variant="outlined"
+        {...buttonOverrides}
+      >
         {t('action__go_to_shop')}
         {children}
       </Button>
