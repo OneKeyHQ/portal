@@ -27,6 +27,7 @@ export const CompareItem: FC<CompareItemProps> = (props) => {
     image,
     name,
     price,
+    status,
     productCompareDetail,
     productDetailUrl,
   } = props;
@@ -96,11 +97,18 @@ export const CompareItem: FC<CompareItemProps> = (props) => {
           {price}
         </Span>
 
-        <Link to={productDetailUrl}>
-          <Button xs={{ minWidth: 100 }} {...buttonProp}>
-            <I18n name="action__buy" />
+        {status === 'normal' && (
+          <Link to={productDetailUrl}>
+            <Button xs={{ minWidth: 100 }} {...buttonProp}>
+              <I18n name="action__buy" />
+            </Button>
+          </Link>
+        )}
+        {status === 'comingSoon' && (
+          <Button disabled xs={{ minWidth: 100 }} {...buttonProp}>
+            <I18n name="action__coming_soon" />
           </Button>
-        </Link>
+        )}
 
         <Link to={productDetailUrl}>
           <Button variant="text" {...buttonProp}>

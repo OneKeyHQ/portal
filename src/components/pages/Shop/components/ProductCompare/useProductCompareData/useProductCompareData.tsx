@@ -3,7 +3,10 @@ import { ReactNode } from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 import { useTranslation } from 'gatsby-plugin-react-i18next';
 
-import { useOneKeyProduct } from '../../../../../../data/useOneKeyProduct';
+import {
+  ProductStatus,
+  useOneKeyProduct,
+} from '../../../../../../data/useOneKeyProduct';
 
 import battery from './images/battery.svg';
 import bluetooth from './images/bluetooth.svg';
@@ -25,6 +28,7 @@ export type ProductCompareItem = {
   price: string;
   productDetailUrl: string;
   name: string;
+  status: ProductStatus;
   productCompareDetail: ProductCompareDetailItem[];
 };
 
@@ -44,6 +48,7 @@ export function useProductCompareData(): {
         name: product.mini.name,
         price: product.mini.formattedPrice,
         productDetailUrl: product.mini.path,
+        status: product.mini.status,
         productCompareDetail: [
           {
             name: t('title__ce_rohs_and_csprng'),
@@ -85,6 +90,7 @@ export function useProductCompareData(): {
         name: product.touch.name,
         price: product.touch.formattedPrice,
         productDetailUrl: product.touch.path,
+        status: 'comingSoon',
         productCompareDetail: [
           {
             name: t('title__ce_rohs_and_csprng'),
