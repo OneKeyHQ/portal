@@ -34,6 +34,7 @@ export const MenuItems: FC<MenuItemsProps> = (props) => {
         position: 'absolute',
         left: '50%',
         transform: 'translate(-50%, 0)',
+        zIndex: 1,
       }}
       externalProps={otherProps}
     >
