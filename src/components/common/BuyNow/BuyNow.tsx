@@ -56,6 +56,7 @@ export const BuyNow: FC<BuyNowProps> = (props) => {
       </MenuItems>
 
       <select
+        value=""
         style={{
           position: 'absolute',
           top: 0,
