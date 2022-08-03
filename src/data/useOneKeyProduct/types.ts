@@ -3,9 +3,11 @@ export type ProductStatus = 'normal' | 'comingSoon' | 'soldOut' | 'disabled';
 export type Shop = {
   name: string;
   url: string;
+  key: string;
 };
 
 export type ProductItem = {
+  shopProductId?: string;
   status: ProductStatus;
   name: string;
   price: number;

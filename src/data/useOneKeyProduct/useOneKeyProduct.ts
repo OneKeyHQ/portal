@@ -1,13 +1,6 @@
 import { useTranslation } from 'gatsby-plugin-react-i18next';
 
-import { OneKeyProducts, Shop } from './types';
-
-export function filterShops(array: (Shop | undefined)[]) {
-  const isNotUndefined = (value?: Shop): value is Shop =>
-    !!(value && value.name && value.url);
-
-  return array.filter(isNotUndefined);
-}
+import { OneKeyProducts } from './types';
 
 export function useOneKeyProduct(): OneKeyProducts {
   const { t } = useTranslation();
@@ -18,6 +11,7 @@ export function useOneKeyProduct(): OneKeyProducts {
 
   return {
     mini: {
+      shopProductId: '41169098178722',
       status: 'normal',
       name: 'OneKey Mini',
       price: 58,
@@ -26,24 +20,29 @@ export function useOneKeyProduct(): OneKeyProducts {
       path: '/products/onekey-mini-hardware-wallet/',
       shops: {
         amazonGlobal: {
+          key: 'amazonGlobal',
           url: 'https://www.amazon.com/dp/B0B2MWW2WJ',
           name: tAmazonGlobal,
         },
         amazonJapan: {
+          key: 'amazonJapan',
           url: 'https://www.amazon.co.jp/dp/B0B2MWW2WJ',
           name: tAmazonJapan,
         },
         shopify: {
+          key: 'shopify',
           url: 'https://shop.onekey.so/products/onekey-mini-hardware-wallet?variant=41169098178722',
           name: tShopify,
         },
         youzan: {
+          key: 'youzan',
           url: 'https://j.youzan.com/dZTtS2',
           name: tYouzan,
         },
       },
     },
     touch: {
+      shopProductId: '41169098178722',
       status: 'normal',
       name: 'OneKey Touch',
       price: 135,
@@ -60,6 +59,7 @@ export function useOneKeyProduct(): OneKeyProducts {
       },
     },
     lite: {
+      shopProductId: '41263919366306',
       status: 'normal',
       name: 'OneKey Lite',
       price: 19.99,
@@ -70,14 +70,17 @@ export function useOneKeyProduct(): OneKeyProducts {
       path: '/products/onekey-lite-hardware-wallet/',
       shops: {
         amazonGlobal: {
+          key: 'amazonGlobal',
           name: tAmazonGlobal,
           url: 'https://www.amazon.com/gp/product/B0B4KGG7LB',
         },
         amazonJapan: {
+          key: 'amazonJapan',
           name: tAmazonJapan,
           url: 'https://www.amazon.co.jp/dp/B0B596BZ1V',
         },
         shopify: {
+          key: 'shopify',
           name: tShopify,
           url: 'https://shop.onekey.so/products/onekey-lite-recovery-phrase-backup-card-for-onekey-wallet-app?variant=41263919366306',
         },

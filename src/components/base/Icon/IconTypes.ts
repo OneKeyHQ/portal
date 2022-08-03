@@ -37,6 +37,7 @@ export type IconTypes =
   | 'MobileIcon'
   | 'PackageIcon'
   | 'ServiceIcon'
+  | 'ShopIcon'
   | 'StarHalfIcon'
   | 'StarIcon'
   | 'TwitterIcon'

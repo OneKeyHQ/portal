@@ -15,6 +15,7 @@ import {
   Link,
   Span,
 } from '../../../../../base';
+import { BuyNow } from '../../../../../common';
 import { ProductCompareItem } from '../useProductCompareData';
 
 export interface CompareItemProps extends ProductCompareItem {
@@ -24,9 +25,11 @@ export interface CompareItemProps extends ProductCompareItem {
 export const CompareItem: FC<CompareItemProps> = (props) => {
   const {
     children,
+    shops = [],
     image,
     name,
     price,
+    status,
     productCompareDetail,
     productDetailUrl,
   } = props;
@@ -96,11 +99,18 @@ export const CompareItem: FC<CompareItemProps> = (props) => {
           {price}
         </Span>
 
-        <Link to={productDetailUrl}>
-          <Button xs={{ minWidth: 100 }} {...buttonProp}>
+        {status === 'normal' && (
+          <BuyNow shops={shops} buttonOverride={buttonProp}>
             <I18n name="action__buy" />
+          </BuyNow>
+        )}
+        {status === 'comingSoon' && (
+          <Button disabled {...buttonProp}>
+            <Box xs={{ minWidth: 100 }}>
+              <I18n name="action__coming_soon" />
+            </Box>
           </Button>
-        </Link>
+        )}
 
         <Link to={productDetailUrl}>
           <Button variant="text" {...buttonProp}>

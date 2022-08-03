@@ -3,16 +3,16 @@ import { FC, ReactNode, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
 import { Box, Container, Flex, OnlyDisplay } from '../../../../base';
+import { BuyNow, BuyNowProps } from '../../../../common';
 import { useIntroductionSectionCenterPosition } from '../../atoms';
-import { useBuy } from '../../hooks/useBuy';
 import { ProductInformationProps } from '../ProductInformation';
 
-import { AddToCartButton } from './components/AddToCartButton';
-import { AmountSelect } from './components/AmountSelect';
 import { ProductName } from './components/ProductName';
 import { ProductPrice } from './components/ProductPrice';
 
-export interface NavigationCartProps extends ProductInformationProps {
+export interface NavigationCartProps
+  extends ProductInformationProps,
+    BuyNowProps {
   children?: ReactNode;
 }
 
@@ -35,9 +35,8 @@ const container = {
 };
 
 export const NavigationCart: FC<NavigationCartProps> = (props) => {
-  const { children, name, price, shopProductId } = props;
+  const { children, name, price, shops } = props;
   const [centerPosition] = useIntroductionSectionCenterPosition();
-  const { buyButtonProps } = useBuy({ shopProductId });
   const [cursorVariant, setCursorVariant] = useState('hidden');
 
   useEffect(() => {
@@ -57,7 +56,6 @@ export const NavigationCart: FC<NavigationCartProps> = (props) => {
           backdropFilter: `blur(10px)`,
           WebkitBackdropFilter: `blur(10px)`,
           position: 'relative',
-          zIndex: 1,
         }}
         variants={container}
         animate={cursorVariant}
@@ -78,9 +76,7 @@ export const NavigationCart: FC<NavigationCartProps> = (props) => {
             <Flex xs={{ alignItems: 'center', gap: 8 }}>
               <ProductPrice>{price.formatted}</ProductPrice>
 
-              <AmountSelect shopProductId={shopProductId} />
-
-              <AddToCartButton buttonProps={buyButtonProps} />
+              <BuyNow shops={shops} />
             </Flex>
           </Flex>
         </Container>

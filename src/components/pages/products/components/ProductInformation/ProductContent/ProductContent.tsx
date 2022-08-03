@@ -12,13 +12,12 @@ import {
   ServiceIcon,
   Span,
 } from '../../../../../base';
+import { BuyNow, BuyNowProps } from '../../../../../common';
 
-import { AddToCart } from './AddToCart';
 import { ComingSoon } from './ComingSoon';
-import { OtherStoresSelect, OtherStoresSelectProps } from './OtherStoresSelect';
 import { Review } from './Review';
 
-export interface ProductContentProps extends OtherStoresSelectProps {
+export interface ProductContentProps extends BuyNowProps {
   children?: ReactNode;
   name: string;
   slogan: string;
@@ -28,20 +27,10 @@ export interface ProductContentProps extends OtherStoresSelectProps {
     value: number;
     formatted: string;
   };
-  shopProductId: string;
 }
 
 export const ProductContent: FC<ProductContentProps> = (props) => {
-  const {
-    children,
-    shopProductId,
-    name,
-    slogan,
-    description,
-    price,
-    shops,
-    status,
-  } = props;
+  const { children, name, slogan, description, price, shops, status } = props;
   const theme = useTheme();
 
   return (
@@ -107,9 +96,7 @@ export const ProductContent: FC<ProductContentProps> = (props) => {
 
       {status === 'comingSoon' && <ComingSoon />}
 
-      {status === 'normal' && <AddToCart shopProductId={shopProductId} />}
-
-      {status === 'normal' && <OtherStoresSelect shops={shops} />}
+      {status === 'normal' && <BuyNow shops={shops} />}
 
       <Flex xs={{ flexDirection: 'column', gap: 22 }} l={{ gap: 16 }}>
         <Divider />

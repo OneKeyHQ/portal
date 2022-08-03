@@ -18,7 +18,6 @@ export function useProductInformationData(): ProductInformationProps {
       value: touch.price,
       formatted: touch.formattedPrice,
     },
-    shopProductId: '41169098178722',
     gallery: [
       {
         key: 'touch-gallery-00',

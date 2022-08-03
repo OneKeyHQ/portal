@@ -36,6 +36,7 @@ export const MenuItems: FC<MenuItemsProps> = (props) => {
         transform: 'translate(-50%, 0)',
         zIndex: 1,
       }}
+      externalProps={otherProps}
     >
       <Box
         xs={{
@@ -46,7 +47,6 @@ export const MenuItems: FC<MenuItemsProps> = (props) => {
           backgroundColor: theme.colors.white,
           zIndex: 10,
         }}
-        externalProps={otherProps}
       >
         <div ref={ref}>
           <Flex
