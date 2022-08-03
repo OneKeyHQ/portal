@@ -54,6 +54,27 @@ export const BuyNow: FC<BuyNowProps> = (props) => {
           </Link>
         ))}
       </MenuItems>
+
+      <select
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          opacity: 0,
+          right: 0,
+          bottom: 0,
+        }}
+        onChange={(e) => {
+          const url = e.target.value;
+          window.location.href = url;
+        }}
+      >
+        {shops.map((item) => (
+          <option key={item.name} value={item.url}>
+            {item.name}
+          </option>
+        ))}
+      </select>
     </Box>
   );
 };
