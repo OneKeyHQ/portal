@@ -30,7 +30,7 @@ export const PlatformIcon: FC<PlatformIconProps> = (props) => {
     icon = DownloadExtensionIcon;
   } else if (iconType === 'mobile') {
     icon = DownloadMobileIcon;
-  } else if (iconType === 'web') {
+  } else if (iconType === 'web' || iconType === 'bridge') {
     icon = DownloadWebIcon;
   }
 
