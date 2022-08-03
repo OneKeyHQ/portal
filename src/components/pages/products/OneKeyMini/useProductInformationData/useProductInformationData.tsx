@@ -23,7 +23,6 @@ export function useProductInformationData(): ProductInformationProps {
       value: mini.price,
       formatted: mini.formattedPrice,
     },
-    shopProductId: '41169098178722',
     gallery: [
       {
         key: 'mini-gallery-01',

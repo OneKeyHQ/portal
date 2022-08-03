@@ -7,23 +7,24 @@ import { createPortal } from 'react-dom';
 import { isBrowser } from '../../../../../utils';
 import { Box, Flex, OnlyDisplay } from '../../../../base';
 import { useIntroductionSectionCenterPosition } from '../../atoms';
-import { useBuy } from '../../hooks/useBuy';
 import { ProductInformationProps } from '../ProductInformation';
+import {
+  BuyNow,
+  BuyNowProps,
+} from '../ProductInformation/ProductContent/BuyNow';
 
-import { AddToCartButton } from './components/AddToCartButton';
 import { ProductName } from './components/ProductName';
 import { ProductPrice } from './components/ProductPrice';
 
-export interface MobileCartProps extends ProductInformationProps {
+export interface MobileCartProps extends ProductInformationProps, BuyNowProps {
   children?: ReactNode;
 }
 
 export const MobileCart: FC<MobileCartProps> = (props) => {
-  const { children, shopProductId, name, price } = props;
+  const { children, name, price, shops } = props;
   const [centerPosition] = useIntroductionSectionCenterPosition();
   const bottom = useMotionValue(0);
   const theme = useTheme();
-  const { buyButtonProps } = useBuy({ shopProductId });
 
   useEffect(() => {
     if (centerPosition) {
@@ -79,7 +80,7 @@ export const MobileCart: FC<MobileCartProps> = (props) => {
             {children}
 
             <Flex xs={{ gap: 4, flexWrap: 'wrap' }}>
-              <AddToCartButton buttonProps={buyButtonProps} />
+              <BuyNow shops={shops} />
             </Flex>
           </Flex>
         </Box>

@@ -1,18 +1,9 @@
 import { FC, ReactNode, useState } from 'react';
 
-import { useTheme } from '@emotion/react';
+import { Button, I18n, Link, MenuItem, MenuItems } from '../../../../../base';
+import { Box } from '../../../../../base/Box';
 
-import {
-  Box,
-  ChevronDownIcon,
-  Flex,
-  I18n,
-  Link,
-  MenuItem,
-  MenuItems,
-} from '../../../../../base';
-
-export interface OtherStoresSelectProps {
+export interface BuyNowProps {
   children?: ReactNode;
   shops: {
     name: string;
@@ -20,10 +11,9 @@ export interface OtherStoresSelectProps {
   }[];
 }
 
-export const OtherStoresSelect: FC<OtherStoresSelectProps> = (props) => {
+export const BuyNow: FC<BuyNowProps> = (props) => {
   const { children, shops } = props;
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const theme = useTheme();
 
   return (
     <Box
@@ -32,21 +22,11 @@ export const OtherStoresSelect: FC<OtherStoresSelectProps> = (props) => {
         position: 'relative',
       }}
     >
-      <Flex
-        xs={{
-          ...theme.text.medium300,
-          color: theme.colors.test500,
-          alignItems: 'center',
-          cursor: 'pointer',
-          ':hover': {
-            opacity: 0.6,
-          },
-        }}
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
-      >
-        <I18n name="action__other_stores" />{' '}
-        <ChevronDownIcon width={24} height={24} />
-      </Flex>
+      <Button onClick={() => setIsMenuOpen(!isMenuOpen)} variant="filled">
+        <Box xs={{ minWidth: 120 }}>
+          <I18n name="action__buy_now" />
+        </Box>
+      </Button>
 
       {children}
 

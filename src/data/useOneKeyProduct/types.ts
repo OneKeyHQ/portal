@@ -6,6 +6,7 @@ export type Shop = {
 };
 
 export type ProductItem = {
+  shopProductId?: string;
   status: ProductStatus;
   name: string;
   price: number;

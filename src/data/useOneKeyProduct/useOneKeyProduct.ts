@@ -18,6 +18,7 @@ export function useOneKeyProduct(): OneKeyProducts {
 
   return {
     mini: {
+      shopProductId: '41169098178722',
       status: 'normal',
       name: 'OneKey Mini',
       price: 58,
@@ -44,6 +45,7 @@ export function useOneKeyProduct(): OneKeyProducts {
       },
     },
     touch: {
+      shopProductId: '41169098178722',
       status: 'normal',
       name: 'OneKey Touch',
       price: 135,
@@ -60,6 +62,7 @@ export function useOneKeyProduct(): OneKeyProducts {
       },
     },
     lite: {
+      shopProductId: '41263919366306',
       status: 'normal',
       name: 'OneKey Lite',
       price: 19.99,

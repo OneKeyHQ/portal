@@ -23,7 +23,6 @@ export function useProductInformationData(): ProductInformationProps {
       value: lite.price,
       formatted: lite.formattedPrice,
     },
-    shopProductId: '41263919366306',
     gallery: [
       {
         key: 'lite-gallery-00',
